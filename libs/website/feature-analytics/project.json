@@ -1,0 +1,23 @@
+{
+  "root": "libs/website/feature-analytics",
+  "sourceRoot": "libs/website/feature-analytics/src",
+  "projectType": "library",
+  "targets": {
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/website/feature-analytics/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/website/feature-analytics"],
+      "options": {
+        "jestConfig": "libs/website/feature-analytics/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}

@@ -1,0 +1,28 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "rootDir": ".",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "es2015",
+    "module": "esnext",
+    "lib": ["es2017", "dom"],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@monorepo-tools/website/feature-analytics": [
+        "libs/website/feature-analytics/src/index.ts"
+      ],
+      "@monorepo-tools/website/ui-commons": [
+        "libs/website/ui-commons/src/index.ts"
+      ],
+      "@monorepo-tools/website/ui-home": ["libs/website/ui-home/src/index.ts"]
+    }
+  },
+  "exclude": ["node_modules", "tmp"]
+}
