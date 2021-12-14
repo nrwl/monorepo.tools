@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/**
+ * Only used for animated background on really big definition
+ */
+@media (min-width: 2400px) {
+  div#animated-background {
+    background-size: cover !important;
+  }
+}
