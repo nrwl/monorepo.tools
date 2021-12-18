@@ -831,6 +831,176 @@ export function Index() {
                 />
               </div>
             </div>
+
+            <div className="relative mt-12 sm:mt-16 lg:mt-24">
+              <div className="lg:grid lg:grid-flow-row-dense lg:grid-cols-2 lg:gap-8 lg:items-center">
+                <div className="lg:col-start-2">
+                  <h3 className="text-2xl font-extrabold text-gray-100 tracking-tight sm:text-3xl">
+                    Scalability & powered growth
+                  </h3>
+                  <p className="mt-3 text-lg text-gray-200">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Impedit ex obcaecati natus eligendi delectus, cum deleniti
+                    sunt in labore nihil quod quibusdam expedita nemo.
+                  </p>
+
+                  <dl className="mt-10 space-y-4">
+                    <div className="relative px-4 py-6 bg-gray-900 rounded-md border border-black">
+                      <dt>
+                        <div className="absolute flex items-center justify-center h-12 w-12 rounded-md bg-slate-800 text-white">
+                          {/*lightningbolt*/}
+                          <svg
+                            className="w-6 h-6"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M13 10V3L4 14h7v7l9-11h-7z"
+                            />
+                          </svg>
+                        </div>
+                        <p className="ml-16 text-lg leading-6 font-medium text-gray-300">
+                          Performance
+                        </p>
+                      </dt>
+                      <dd className="mt-2 ml-16 text-base text-gray-400">
+                        Pariatur minima sequi recusandae, porro maiores officia
+                        assumenda aliquam impedito iste blanditiis facere.
+                      </dd>
+                    </div>
+                    <div className="relative px-4 py-6 bg-gray-900 rounded-xl border border-black">
+                      <dt>
+                        <div className="absolute flex items-center justify-center h-12 w-12 rounded-md bg-slate-800 text-white">
+                          {/*cog*/}
+                          <svg
+                            className="w-6 h-6"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"
+                            />
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+                            />
+                          </svg>
+                        </div>
+                        <p className="ml-16 text-lg leading-6 font-medium text-gray-300">
+                          Code generation
+                        </p>
+                      </dt>
+                      <dd className="mt-2 ml-16 text-base text-gray-400">
+                        Pariatur minima sequi recusandae, porro maiores officia
+                        assumenda aliquam impedito iste blanditiis facere.
+                      </dd>
+                    </div>
+                    <div className="relative px-4 py-6 bg-gray-900 rounded-xl border border-black">
+                      <dt>
+                        <div className="absolute flex items-center justify-center h-12 w-12 rounded-md bg-slate-800 text-white">
+                          {/*statusonline*/}
+                          <svg
+                            className="w-6 h-6"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M5.636 18.364a9 9 0 010-12.728m12.728 0a9 9 0 010 12.728m-9.9-2.829a5 5 0 010-7.07m7.072 0a5 5 0 010 7.07M13 12a1 1 0 11-2 0 1 1 0 012 0z"
+                            />
+                          </svg>
+                        </div>
+                        <p className="ml-16 text-lg leading-6 font-medium text-gray-300">
+                          Explicit project constrains
+                        </p>
+                      </dt>
+                      <dd className="mt-2 ml-16 text-base text-gray-400">
+                        Pariatur minima sequi recusandae, porro maiores officia
+                        assumenda aliquam impedito iste blanditiis facere.
+                      </dd>
+                    </div>
+                    <div className="relative px-4 py-6 bg-gray-900 rounded-xl border border-black">
+                      <dt>
+                        <div className="absolute flex items-center justify-center h-12 w-12 rounded-md bg-slate-800 text-white">
+                          {/*sortdescending*/}
+                          <svg
+                            className="w-6 h-6"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M3 4h13M3 8h9m-9 4h9m5-4v12m0 0l-4-4m4 4l4-4"
+                            />
+                          </svg>
+                        </div>
+                        <p className="ml-16 text-lg leading-6 font-medium text-gray-300">
+                          Enforcing code style
+                        </p>
+                      </dt>
+                      <dd className="mt-2 ml-16 text-base text-gray-400">
+                        Pariatur minima sequi recusandae, porro maiores officia
+                        assumenda aliquam impedito iste blanditiis facere.
+                      </dd>
+                    </div>
+                  </dl>
+                </div>
+
+                <div className="mt-10 -mx-4 relative lg:mt-0 lg:col-start-1">
+                  <img
+                    className="relative mx-auto"
+                    width={490}
+                    src="https://place-hold.it/980x1140/f1f1f1"
+                    alt=""
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/*CONCLUSION*/}
+        <div className="bg-slate-800 pt-16 pb-20 px-4 sm:px-6 lg:pt-24 lg:pb-28 lg:px-8">
+          <div className="relative">
+            <h2 className="text-center text-4xl leading-8 font-extrabold tracking-tight text-white sm:text-5xl">
+              # A perception shift
+            </h2>
+            <p className="mt-4 max-w-3xl mx-auto text-center text-xl text-gray-300">
+              It's complex, we know. But you're not alone in this journey.
+            </p>
+          </div>
+          <div className="mt-24 lg:mt-36 relative max-w-lg mx-auto lg:max-w-7xl">
+            <div className="max-w-2xl mx-auto">
+              <h2 className="text-3xl tracking-tight font-extrabold text-gray-100 sm:text-4xl">
+                It is more than code & tools, it changes your organization
+              </h2>
+              <p className="mt-3 text-xl text-gray-300 sm:mt-4">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Pariatur minima sequi recusandae, porro maiores officia
+                assumenda aliquam laborum ab aliquid veritatis impedit odit
+                adipisci optio iste blanditiis facere. Totam, velit.
+              </p>
+            </div>
           </div>
         </div>
 

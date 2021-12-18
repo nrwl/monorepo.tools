@@ -1,48 +1,29 @@
 /* This example requires Tailwind CSS v2.0+ */
 import { CheckIcon, XIcon } from '@heroicons/react/solid';
 
-const plans = [
+const tools = [
   {
     title: 'Turborepo',
     featured: false,
     description:
       'The high-performance build system for JavaScript & TypeScript codebases.',
-    priceMonthly: 5,
-    priceYearly: 56,
-    mainFeatures: [
-      { id: 1, value: 'Basic invoicing' },
-      { id: 2, value: 'Easy to use accounting' },
-      { id: 3, value: 'Mutli-accounts' },
-    ],
   },
   {
     title: 'Nx',
     featured: false,
     description: 'Smart, Extensible Build Framework.',
-    priceMonthly: 19,
-    priceYearly: 220,
-    mainFeatures: [
-      { id: 1, value: 'Advanced invoicing' },
-      { id: 2, value: 'Easy to use accounting' },
-      { id: 3, value: 'Mutli-accounts' },
-      { id: 4, value: 'Tax planning toolkit' },
-      { id: 5, value: 'VAT & VATMOSS filing' },
-      { id: 6, value: 'Free bank transfers' },
-    ],
   },
   {
     title: 'Bazel',
     featured: false,
     description:
       'A fast, scalable, multi-language and extensible build system.',
-    priceMonthly: 12,
-    priceYearly: 140,
-    mainFeatures: [
-      { id: 1, value: 'Basic invoicing' },
-      { id: 2, value: 'Easy to use accounting' },
-      { id: 3, value: 'Mutli-accounts' },
-      { id: 4, value: 'Tax planning toolkit' },
-    ],
+  },
+  {
+    title: 'Lerna',
+    featured: false,
+    description:
+      'A tool for managing JavaScript projects with multiple packages.',
   },
 ];
 const management = [
@@ -52,6 +33,7 @@ const management = [
       { title: 'Turborepo', value: true },
       { title: 'Nx', featured: false, value: true },
       { title: 'Bazel', value: true },
+      { title: 'Lerna', value: true },
     ],
   },
   {
@@ -60,6 +42,7 @@ const management = [
       { title: 'Turborepo', value: true },
       { title: 'Nx', featured: false, value: true },
       { title: 'Bazel', value: true },
+      { title: 'Lerna', value: true },
     ],
   },
   {
@@ -68,6 +51,7 @@ const management = [
       { title: 'Turborepo', value: true },
       { title: 'Nx', featured: false, value: true },
       { title: 'Bazel', value: true },
+      { title: 'Lerna', value: true },
     ],
   },
 ];
@@ -78,6 +62,7 @@ const understandingWorkspace = [
       { title: 'Turborepo', value: true },
       { title: 'Nx', featured: false, value: true },
       { title: 'Bazel', value: true },
+      { title: 'Lerna', value: true },
     ],
   },
   {
@@ -86,6 +71,7 @@ const understandingWorkspace = [
       { title: 'Turborepo', value: false },
       { title: 'Nx', featured: false, value: true },
       { title: 'Bazel', value: true },
+      { title: 'Lerna', value: true },
     ],
   },
 ];
@@ -96,6 +82,7 @@ const tasksManagement = [
       { title: 'Turborepo', value: true },
       { title: 'Nx', featured: false, value: true },
       { title: 'Bazel', value: true },
+      { title: 'Lerna', value: true },
     ],
   },
   {
@@ -104,6 +91,7 @@ const tasksManagement = [
       { title: 'Turborepo', value: true },
       { title: 'Nx', featured: false, value: true },
       { title: 'Bazel', value: true },
+      { title: 'Lerna', value: true },
     ],
   },
   {
@@ -112,6 +100,7 @@ const tasksManagement = [
       { title: 'Turborepo', value: true },
       { title: 'Nx', featured: false, value: true },
       { title: 'Bazel', value: true },
+      { title: 'Lerna', value: true },
     ],
   },
   {
@@ -120,6 +109,7 @@ const tasksManagement = [
       { title: 'Turborepo', value: false },
       { title: 'Nx', featured: false, value: true },
       { title: 'Bazel', value: true },
+      { title: 'Lerna', value: true },
     ],
   },
   {
@@ -128,6 +118,45 @@ const tasksManagement = [
       { title: 'Turborepo', value: false },
       { title: 'Nx', featured: false, value: false },
       { title: 'Bazel', value: true },
+      { title: 'Lerna', value: true },
+    ],
+  },
+];
+const scalability = [
+  {
+    title: 'Performance',
+    tiers: [
+      { title: 'Turborepo', value: true },
+      { title: 'Nx', featured: false, value: true },
+      { title: 'Bazel', value: true },
+      { title: 'Lerna', value: true },
+    ],
+  },
+  {
+    title: 'Code generation',
+    tiers: [
+      { title: 'Turborepo', value: true },
+      { title: 'Nx', featured: false, value: true },
+      { title: 'Bazel', value: true },
+      { title: 'Lerna', value: true },
+    ],
+  },
+  {
+    title: 'Explicit project constrains',
+    tiers: [
+      { title: 'Turborepo', value: true },
+      { title: 'Nx', featured: false, value: true },
+      { title: 'Bazel', value: true },
+      { title: 'Lerna', value: true },
+    ],
+  },
+  {
+    title: 'Enforcing code style',
+    tiers: [
+      { title: 'Turborepo', value: false },
+      { title: 'Nx', featured: false, value: true },
+      { title: 'Bazel', value: true },
+      { title: 'Lerna', value: true },
     ],
   },
 ];
@@ -142,8 +171,8 @@ export default function ToolsReview() {
       <div className="relative">
         <div className="relative max-w-2xl mx-auto pt-16 px-4 text-center sm:pt-32 sm:px-6 lg:max-w-7xl lg:px-8">
           <h1 className="text-4xl font-extrabold tracking-tight text-white sm:text-6xl">
-            <span className="block lg:inline">Many tools available,</span>
-            <span className="block lg:inline"> which one to pick?</span>
+            <span className="block lg:inline">Many solutions,</span>
+            <span className="block lg:inline"> for different goals</span>
           </h1>
           <p className="mt-4 text-xl text-indigo-100">
             Each tools fit a specific set of needs and gives you a precise set
@@ -163,7 +192,7 @@ export default function ToolsReview() {
         </h2>
 
         <div className="max-w-2xl mx-auto py-16 px-4 space-y-16 sm:px-6">
-          {plans.map((plan, mobilePlanIndex) => (
+          {tools.map((plan, mobilePlanIndex) => (
             <div key="plan.title" className="border-t border-slate-900">
               <div
                 className={classNames(
@@ -434,18 +463,18 @@ export default function ToolsReview() {
 
         <div className="max-w-7xl mx-auto py-24 px-8">
           <div className="w-full border-t border-slate-900 flex items-stretch">
-            <div className="-mt-px w-1/4 py-6 pr-4 flex items-end">
+            <div className="-mt-px w-1/5 py-6 pr-4 flex items-end">
               <h3 className="mt-auto text-sm font-bold text-gray-300">
                 Management
               </h3>
             </div>
-            {plans.map((plan, planIdx) => (
+            {tools.map((plan, planIdx) => (
               <div
                 key={plan.title}
                 aria-hidden="true"
                 className={classNames(
-                  planIdx === plans.length - 1 ? '' : 'pr-4',
-                  '-mt-px pl-4 w-1/4'
+                  planIdx === tools.length - 1 ? '' : 'pr-4',
+                  '-mt-px pl-4 w-1/5'
                 )}
               >
                 <div
@@ -469,21 +498,23 @@ export default function ToolsReview() {
               </div>
             ))}
           </div>
-
           <div className="relative">
             {/* Fake card backgrounds */}
             <div
               className="absolute inset-0 flex items-stretch pointer-events-none"
               aria-hidden="true"
             >
-              <div className="w-1/4 pr-4" />
-              <div className="w-1/4 px-4">
+              <div className="w-1/5 pr-4" />
+              <div className="w-1/5 px-4">
                 <div className="w-full h-full bg-slate-700 rounded-lg shadow" />
               </div>
-              <div className="w-1/4 px-4">
+              <div className="w-1/5 px-4">
                 <div className="w-full h-full bg-slate-700 rounded-lg shadow-md" />
               </div>
-              <div className="w-1/4 pl-4">
+              <div className="w-1/5 px-4">
+                <div className="w-full h-full bg-slate-700 rounded-lg shadow-md" />
+              </div>
+              <div className="w-1/5 pl-4">
                 <div className="w-full h-full bg-slate-700 rounded-lg shadow" />
               </div>
             </div>
@@ -495,9 +526,9 @@ export default function ToolsReview() {
                   <th scope="col">
                     <span className="sr-only">Feature</span>
                   </th>
-                  {plans.map((plan) => (
+                  {tools.map((plan) => (
                     <th key={plan.title} scope="col">
-                      <span className="sr-only">{plan.title} plan</span>
+                      <span className="sr-only">{plan.title}</span>
                     </th>
                   ))}
                 </tr>
@@ -507,7 +538,7 @@ export default function ToolsReview() {
                   <tr key={feature.title}>
                     <th
                       scope="row"
-                      className="w-1/4 py-3 pr-4 text-left text-sm font-medium text-gray-300"
+                      className="w-1/5 py-3 pr-4 text-left text-sm font-medium text-gray-300"
                     >
                       {feature.title}
                     </th>
@@ -518,7 +549,7 @@ export default function ToolsReview() {
                           tierIdx === feature.tiers.length - 1
                             ? 'pl-4'
                             : 'px-4',
-                          'relative w-1/4 py-0 text-center'
+                          'relative w-1/5 py-0 text-center'
                         )}
                       >
                         <span className="relative w-full h-full py-3">
@@ -565,14 +596,17 @@ export default function ToolsReview() {
               className="absolute inset-0 flex items-stretch pointer-events-none"
               aria-hidden="true"
             >
-              <div className="w-1/4 pr-4" />
-              <div className="w-1/4 px-4">
+              <div className="w-1/5 pr-4" />
+              <div className="w-1/5 px-4">
                 <div className="w-full h-full rounded-lg ring-1 ring-black ring-opacity-5" />
               </div>
-              <div className="w-1/4 px-4">
+              <div className="w-1/5 px-4">
                 <div className="w-full h-full rounded-lg ring-2 ring-black ring-opacity-5" />
               </div>
-              <div className="w-1/4 pl-4">
+              <div className="w-1/5 px-4">
+                <div className="w-full h-full rounded-lg ring-2 ring-black ring-opacity-5" />
+              </div>
+              <div className="w-1/5 pl-4">
                 <div className="w-full h-full rounded-lg ring-1 ring-black ring-opacity-5" />
               </div>
             </div>
@@ -581,35 +615,37 @@ export default function ToolsReview() {
           <h3 className="mt-10 text-sm font-bold text-gray-300">
             Understanding your workspace
           </h3>
-
           <div className="mt-6 relative">
             {/* Fake card backgrounds */}
             <div
               className="absolute inset-0 flex items-stretch pointer-events-none"
               aria-hidden="true"
             >
-              <div className="w-1/4 pr-4" />
-              <div className="w-1/4 px-4">
+              <div className="w-1/5 pr-4" />
+              <div className="w-1/5 px-4">
                 <div className="w-full h-full bg-slate-700 rounded-lg shadow" />
               </div>
-              <div className="w-1/4 px-4">
+              <div className="w-1/5 px-4">
                 <div className="w-full h-full bg-slate-700 rounded-lg shadow-md" />
               </div>
-              <div className="w-1/4 pl-4">
+              <div className="w-1/5 px-4">
+                <div className="w-full h-full bg-slate-700 rounded-lg shadow-md" />
+              </div>
+              <div className="w-1/5 pl-4">
                 <div className="w-full h-full bg-slate-700 rounded-lg shadow" />
               </div>
             </div>
 
             <table className="relative w-full">
-              <caption className="sr-only">Perk comparison</caption>
+              <caption className="sr-only">Tool comparison</caption>
               <thead>
                 <tr className="text-left">
                   <th scope="col">
-                    <span className="sr-only">Perk</span>
+                    <span className="sr-only">Tool</span>
                   </th>
-                  {plans.map((plan) => (
+                  {tools.map((plan) => (
                     <th key={plan.title} scope="col">
-                      <span className="sr-only">{plan.title} plan</span>
+                      <span className="sr-only">{plan.title}</span>
                     </th>
                   ))}
                 </tr>
@@ -619,7 +655,7 @@ export default function ToolsReview() {
                   <tr key={perk.title}>
                     <th
                       scope="row"
-                      className="w-1/4 py-3 pr-4 text-left text-sm font-medium text-gray-300"
+                      className="w-1/5 py-3 pr-4 text-left text-sm font-medium text-gray-300"
                     >
                       {perk.title}
                     </th>
@@ -628,7 +664,7 @@ export default function ToolsReview() {
                         key={tier.title}
                         className={classNames(
                           tierIdx === perk.tiers.length - 1 ? 'pl-4' : 'px-4',
-                          'relative w-1/4 py-0 text-center'
+                          'relative w-1/5 py-0 text-center'
                         )}
                       >
                         <span className="relative w-full h-full py-3">
@@ -660,14 +696,17 @@ export default function ToolsReview() {
               className="absolute inset-0 flex items-stretch pointer-events-none"
               aria-hidden="true"
             >
-              <div className="w-1/4 pr-4" />
-              <div className="w-1/4 px-4">
+              <div className="w-1/5 pr-4" />
+              <div className="w-1/5 px-4">
                 <div className="w-full h-full rounded-lg ring-1 ring-black ring-opacity-5" />
               </div>
-              <div className="w-1/4 px-4">
+              <div className="w-1/5 px-4">
                 <div className="w-full h-full rounded-lg ring-2 ring-black ring-opacity-5" />
               </div>
-              <div className="w-1/4 pl-4">
+              <div className="w-1/5 px-4">
+                <div className="w-full h-full rounded-lg ring-2 ring-black ring-opacity-5" />
+              </div>
+              <div className="w-1/5 pl-4">
                 <div className="w-full h-full rounded-lg ring-1 ring-black ring-opacity-5" />
               </div>
             </div>
@@ -676,35 +715,37 @@ export default function ToolsReview() {
           <h3 className="mt-10 text-sm font-bold text-gray-300">
             Tasks management
           </h3>
-
           <div className="mt-6 relative">
             {/* Fake card backgrounds */}
             <div
               className="absolute inset-0 flex items-stretch pointer-events-none"
               aria-hidden="true"
             >
-              <div className="w-1/4 pr-4" />
-              <div className="w-1/4 px-4">
+              <div className="w-1/5 pr-4" />
+              <div className="w-1/5 px-4">
                 <div className="w-full h-full bg-slate-700 rounded-lg shadow" />
               </div>
-              <div className="w-1/4 px-4">
+              <div className="w-1/5 px-4">
                 <div className="w-full h-full bg-slate-700 rounded-lg shadow-md" />
               </div>
-              <div className="w-1/4 pl-4">
+              <div className="w-1/5 px-4">
+                <div className="w-full h-full bg-slate-700 rounded-lg shadow-md" />
+              </div>
+              <div className="w-1/5 pl-4">
                 <div className="w-full h-full bg-slate-700 rounded-lg shadow" />
               </div>
             </div>
 
             <table className="relative w-full">
-              <caption className="sr-only">Perk comparison</caption>
+              <caption className="sr-only">Tool comparison</caption>
               <thead>
                 <tr className="text-left">
                   <th scope="col">
-                    <span className="sr-only">Perk</span>
+                    <span className="sr-only">Tool</span>
                   </th>
-                  {plans.map((plan) => (
+                  {tools.map((plan) => (
                     <th key={plan.title} scope="col">
-                      <span className="sr-only">{plan.title} plan</span>
+                      <span className="sr-only">{plan.title}</span>
                     </th>
                   ))}
                 </tr>
@@ -714,7 +755,7 @@ export default function ToolsReview() {
                   <tr key={perk.title}>
                     <th
                       scope="row"
-                      className="w-1/4 py-3 pr-4 text-left text-sm font-medium text-gray-300"
+                      className="w-1/5 py-3 pr-4 text-left text-sm font-medium text-gray-300"
                     >
                       {perk.title}
                     </th>
@@ -723,7 +764,7 @@ export default function ToolsReview() {
                         key={tier.title}
                         className={classNames(
                           tierIdx === perk.tiers.length - 1 ? 'pl-4' : 'px-4',
-                          'relative w-1/4 py-0 text-center'
+                          'relative w-1/5 py-0 text-center'
                         )}
                       >
                         <span className="relative w-full h-full py-3">
@@ -755,14 +796,117 @@ export default function ToolsReview() {
               className="absolute inset-0 flex items-stretch pointer-events-none"
               aria-hidden="true"
             >
-              <div className="w-1/4 pr-4" />
-              <div className="w-1/4 px-4">
+              <div className="w-1/5 pr-4" />
+              <div className="w-1/5 px-4">
                 <div className="w-full h-full rounded-lg ring-1 ring-black ring-opacity-5" />
               </div>
-              <div className="w-1/4 px-4">
+              <div className="w-1/5 px-4">
                 <div className="w-full h-full rounded-lg ring-2 ring-black ring-opacity-5" />
               </div>
-              <div className="w-1/4 pl-4">
+              <div className="w-1/5 px-4">
+                <div className="w-full h-full rounded-lg ring-2 ring-black ring-opacity-5" />
+              </div>
+              <div className="w-1/5 pl-4">
+                <div className="w-full h-full rounded-lg ring-1 ring-black ring-opacity-5" />
+              </div>
+            </div>
+          </div>
+
+          <h3 className="mt-10 text-sm font-bold text-gray-300">
+            Scalability & powered growth
+          </h3>
+          <div className="mt-6 relative">
+            {/* Fake card backgrounds */}
+            <div
+              className="absolute inset-0 flex items-stretch pointer-events-none"
+              aria-hidden="true"
+            >
+              <div className="w-1/5 pr-4" />
+              <div className="w-1/5 px-4">
+                <div className="w-full h-full bg-slate-700 rounded-lg shadow" />
+              </div>
+              <div className="w-1/5 px-4">
+                <div className="w-full h-full bg-slate-700 rounded-lg shadow-md" />
+              </div>
+              <div className="w-1/5 px-4">
+                <div className="w-full h-full bg-slate-700 rounded-lg shadow-md" />
+              </div>
+              <div className="w-1/5 pl-4">
+                <div className="w-full h-full bg-slate-700 rounded-lg shadow" />
+              </div>
+            </div>
+
+            <table className="relative w-full">
+              <caption className="sr-only">Tool comparison</caption>
+              <thead>
+                <tr className="text-left">
+                  <th scope="col">
+                    <span className="sr-only">Tool</span>
+                  </th>
+                  {tools.map((plan) => (
+                    <th key={plan.title} scope="col">
+                      <span className="sr-only">{plan.title}</span>
+                    </th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-slate-600">
+                {scalability.map((perk) => (
+                  <tr key={perk.title}>
+                    <th
+                      scope="row"
+                      className="w-1/5 py-3 pr-4 text-left text-sm font-medium text-gray-300"
+                    >
+                      {perk.title}
+                    </th>
+                    {perk.tiers.map((tier, tierIdx) => (
+                      <td
+                        key={tier.title}
+                        className={classNames(
+                          tierIdx === perk.tiers.length - 1 ? 'pl-4' : 'px-4',
+                          'relative w-1/5 py-0 text-center'
+                        )}
+                      >
+                        <span className="relative w-full h-full py-3">
+                          {tier.value === true ? (
+                            <CheckIcon
+                              className="mx-auto h-5 w-5 text-blue-500"
+                              aria-hidden="true"
+                            />
+                          ) : (
+                            <XIcon
+                              className="mx-auto h-5 w-5 text-gray-400"
+                              aria-hidden="true"
+                            />
+                          )}
+
+                          <span className="sr-only">
+                            {tier.value === true ? 'Yes' : 'No'}
+                          </span>
+                        </span>
+                      </td>
+                    ))}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+
+            {/* Fake card borders */}
+            <div
+              className="absolute inset-0 flex items-stretch pointer-events-none"
+              aria-hidden="true"
+            >
+              <div className="w-1/5 pr-4" />
+              <div className="w-1/5 px-4">
+                <div className="w-full h-full rounded-lg ring-1 ring-black ring-opacity-5" />
+              </div>
+              <div className="w-1/5 px-4">
+                <div className="w-full h-full rounded-lg ring-2 ring-black ring-opacity-5" />
+              </div>
+              <div className="w-1/5 px-4">
+                <div className="w-full h-full rounded-lg ring-2 ring-black ring-opacity-5" />
+              </div>
+              <div className="w-1/5 pl-4">
                 <div className="w-full h-full rounded-lg ring-1 ring-black ring-opacity-5" />
               </div>
             </div>
