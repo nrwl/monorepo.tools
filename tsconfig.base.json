@@ -14,7 +14,12 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@monorepo-tools/website/ui-commons": [
+        "libs/website/ui-commons/src/index.ts"
+      ],
+      "@monorepo-tools/website/ui-home": ["libs/website/ui-home/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

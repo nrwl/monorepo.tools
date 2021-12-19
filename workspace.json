@@ -2,6 +2,8 @@
   "version": 2,
   "projects": {
     "website": "apps/website",
-    "website-e2e": "apps/website-e2e"
+    "website-e2e": "apps/website-e2e",
+    "website-ui-commons": "libs/website/ui-commons",
+    "website-ui-home": "libs/website/ui-home"
   }
 }
