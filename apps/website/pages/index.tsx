@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import ToolsReview from './tools-review';
 
 export function Index() {
@@ -60,20 +61,36 @@ export function Index() {
               </h1>
               <p className="mt-6 max-w-3xl text-xl text-gray-300">
                 Monorepos are hot right now, especially among Web developers. We
-                build this resource to help developers understand what monorepos
-                are, what benefits they can bring, and the tools available to
-                make monorepo development delightful.
+                created this resource to help developers understand what
+                monorepos are, what benefits they can bring, and the tools
+                available to make monorepo development delightful.
               </p>
               <p className="mt-6 max-w-3xl text-xl text-gray-300">
-                There are many great tools, built by great teams, with different
-                philosophies. We do our best to represent each tool objectively,
-                and we welcome pull requests if we got something wrong!
+                There are many great monorepo tools, built by great teams, with
+                different philosophies. We do our best to represent each tool
+                objectively, and we welcome pull requests if we got something
+                wrong!
               </p>
               <p className="mt-6 max-w-3xl text-xl text-gray-300">
-                The tools we'll focus on are: Nx (by Nrwl), Turborepo (by
-                Vercel), Lerna, Rush (by Microsoft), and Bazel (by Google). We
-                chose these tools because of their usage or recognition in the
-                Web development community.
+                The tools we'll focus on are:&nbsp;
+                <a href="https://nx.dev">Nx (by Nrwl)</a>,&nbsp;
+                <a rel="nofollow" href="https://turborepo.org">
+                  Turborepo (by Vercel)
+                </a>
+                ,&nbsp;
+                <a rel="nofollow" href="https://lerna.js.org/">
+                  Lerna
+                </a>
+                ,&nbsp;
+                <a rel="nofollow" href="https://rushjs.io/">
+                  Rush (by Microsoft)
+                </a>
+                , and&nbsp;
+                <a href="https://bazel.build" rel="nofollow">
+                  Bazel (by Google)
+                </a>
+                . We chose these tools because of their usage or recognition in
+                the Web development community.
               </p>
             </div>
           </div>
@@ -94,7 +111,8 @@ export function Index() {
                     What's a monorepo
                   </h3>
                   <p className="mt-4 text-base text-gray-300">
-                    Let's have a common unsterstanding of what a Monorepo is.
+                    Let's start with a common unsterstanding of what a Monorepo
+                    is.
                   </p>
                 </div>
                 <div className="p-6 bg-gray-900 rounded-bl-2xl rounded-br-2xl md:px-8">
@@ -112,7 +130,7 @@ export function Index() {
                     Why you should care
                   </h3>
                   <p className="mt-4 text-base text-gray-300">
-                    What are the situation solved by monorepos.
+                    What are the situations solved by monorepos.
                   </p>
                 </div>
                 <div className="p-6 bg-gray-900 rounded-bl-2xl rounded-br-2xl md:px-8">
@@ -155,19 +173,28 @@ export function Index() {
                 # What's a Monorepo?
               </h2>
               <p className="mt-4 max-w-3xl mx-auto text-center text-xl text-gray-300">
-                Let's defined what we mean when we talk about Monorepos.
+                Let's define what we and others typically mean when we talk
+                about Monorepos.
               </p>
             </div>
 
             <div className="relative mt-12 lg:mt-24 lg:grid lg:grid-cols-2 lg:gap-8 lg:items-center">
               <div className="relative">
                 <h3 className="text-2xl font-extrabold text-gray-100 tracking-tight sm:text-3xl">
-                  &ldquo;A monorepo is a single repository containing multiple
-                  distinct projects, with well-defined relationships.&rdquo;
+                  &ldquo;A monorepo is a single repository containing{' '}
+                  <mark className="bg-yellow-500">
+                    multiple distinct projects
+                  </mark>
+                  , with{' '}
+                  <mark className="bg-yellow-500">
+                    well-defined relationships
+                  </mark>
+                  .&rdquo;
                 </h3>
                 <p className="mt-3 text-lg text-gray-300">
-                  We at Nrwl think this Google/Bazel definition is the most
-                  consistent and accurate statement of what a monorepo is.
+                  We at Nrwl think this definition is the most consistent and
+                  accurate statement of what a monorepo is among established
+                  monorepo tools.
                 </p>
               </div>
 

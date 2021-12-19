@@ -203,9 +203,10 @@ export default function ToolsReview() {
             <span className="block lg:inline"> for different goals</span>
           </h1>
           <p className="mt-4 text-xl text-indigo-100">
-            Each tools fit a specific set of needs and gives you a precise set
-            of features. <br /> Depending on your needs, chose the one that's
-            best for you. (need to rephrase it)
+            Each tool fits a specific set of needs and gives you a precise set
+            of features. <br />
+            Depending on your needs and constraints, we'll help you decide which
+            tools best suit you.
           </p>
         </div>
       </div>
