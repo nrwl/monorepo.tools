@@ -36,15 +36,18 @@ const tools = [
 const management = [
   {
     title: 'Code boundaries',
+    tooltip:
+      'Supports definition of rules to constrain dependency relationships within the repo.',
     tiers: [
       { title: 'Nx', featured: false, value: true },
       { title: 'Bazel', value: true },
-      { title: 'Lerna', value: true },
-      { title: 'Turborepo', value: true },
+      { title: 'Lerna', value: false },
+      { title: 'Turborepo', value: false },
     ],
   },
   {
-    title: 'Code sharing',
+    title: 'Source code sharing',
+    tooltip: 'Facilitates sharing of discrete pieces source code.',
     tiers: [
       { title: 'Nx', featured: false, value: true },
       { title: 'Bazel', value: true },
@@ -54,17 +57,21 @@ const management = [
   },
   {
     title: 'Consistent tooling',
+    tooltip:
+      'The tool is suitable for running tasks in all contexts and environments.',
     tiers: [
       { title: 'Nx', featured: false, value: true },
       { title: 'Bazel', value: true },
       { title: 'Lerna', value: true },
-      { title: 'Turborepo', value: true },
+      { title: 'Turborepo', value: false },
     ],
   },
 ];
 const understandingWorkspace = [
   {
     title: 'Dependency graph visualization',
+    tooltip:
+      'Visualize dependency relationships between projects and/or tasks.',
     tiers: [
       { title: 'Nx', featured: false, value: true },
       { title: 'Bazel', value: true },
@@ -74,6 +81,8 @@ const understandingWorkspace = [
   },
   {
     title: 'Detecting affected projects/packages',
+    tooltip:
+      'Determine what might be affected by a change, to run only affected tasks.',
     tiers: [
       { title: 'Nx', featured: false, value: true },
       { title: 'Bazel', value: true },
@@ -85,6 +94,7 @@ const understandingWorkspace = [
 const tasksManagement = [
   {
     title: 'Local task coordination',
+    tooltip: 'The ability to run tasks in the correct order.',
     tiers: [
       { title: 'Nx', featured: false, value: true },
       { title: 'Bazel', value: true },
@@ -94,6 +104,8 @@ const tasksManagement = [
   },
   {
     title: 'Local computation caching',
+    tooltip:
+      'The ability to store and replay file and process output of tasks.',
     tiers: [
       { title: 'Nx', featured: false, value: true },
       { title: 'Bazel', value: true },
@@ -103,6 +115,8 @@ const tasksManagement = [
   },
   {
     title: 'Distributed computation caching',
+    tooltip:
+      'The ability to share cache artifacts across different environments.',
     tiers: [
       { title: 'Nx', featured: false, value: true },
       { title: 'Bazel', value: true },
@@ -112,6 +126,7 @@ const tasksManagement = [
   },
   {
     title: 'Distributed task execution',
+    tooltip: 'The ability to distribute a task across many machines.',
     tiers: [
       { title: 'Nx', featured: false, value: true },
       { title: 'Bazel', value: true },
@@ -121,6 +136,7 @@ const tasksManagement = [
   },
   {
     title: 'Transparent remote execution',
+    tooltip: '',
     tiers: [
       { title: 'Nx', featured: false, value: false },
       { title: 'Bazel', value: true },
@@ -132,6 +148,7 @@ const tasksManagement = [
 const scalability = [
   {
     title: 'Performance',
+    tooltip: '',
     tiers: [
       { title: 'Nx', featured: false, value: true },
       { title: 'Bazel', value: true },
@@ -141,28 +158,32 @@ const scalability = [
   },
   {
     title: 'Code generation',
+    tooltip: 'Native support for generating code ',
     tiers: [
       { title: 'Nx', featured: false, value: true },
       { title: 'Bazel', value: true },
-      { title: 'Lerna', value: true },
-      { title: 'Turborepo', value: true },
+      { title: 'Lerna', value: false },
+      { title: 'Turborepo', value: false },
     ],
   },
   {
-    title: 'Explicit project constrains',
+    title: 'Explicit project constraints',
+    tooltip:
+      'Enforcing boundaries between code via public APIs or other means.',
     tiers: [
       { title: 'Nx', featured: false, value: true },
       { title: 'Bazel', value: true },
-      { title: 'Lerna', value: true },
-      { title: 'Turborepo', value: true },
+      { title: 'Lerna', value: false },
+      { title: 'Turborepo', value: false },
     ],
   },
   {
     title: 'Enforcing code style',
+    tooltip: 'Native support for enforcing formatting rules.',
     tiers: [
       { title: 'Nx', featured: false, value: true },
       { title: 'Bazel', value: true },
-      { title: 'Lerna', value: true },
+      { title: 'Lerna', value: false },
       { title: 'Turborepo', value: false },
     ],
   },
