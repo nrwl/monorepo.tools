@@ -3,19 +3,18 @@ import { CheckIcon, XIcon } from '@heroicons/react/solid';
 
 const tools = [
   {
-    title: 'Turborepo',
-    featured: false,
-    description:
-      'The high-performance build system for JavaScript & TypeScript codebases.',
-  },
-  {
     title: 'Nx',
     featured: false,
-    description: 'Smart, Extensible Build Framework.',
+    organization: 'Nrwl',
+    organizationUrl: 'https://nrwl.io',
+    description:
+      'Next generation build system with first class monorepo support and powerful integrations.',
   },
   {
     title: 'Bazel',
     featured: false,
+    organization: 'Google',
+    organizationUrl: 'https://google.com',
     description:
       'A fast, scalable, multi-language and extensible build system.',
   },
@@ -25,33 +24,41 @@ const tools = [
     description:
       'A tool for managing JavaScript projects with multiple packages.',
   },
+  {
+    title: 'Turborepo',
+    featured: false,
+    organization: 'Vercel',
+    organizationUrl: 'https://vercel.com',
+    description:
+      'The high-performance build system for JavaScript & TypeScript codebases.',
+  },
 ];
 const management = [
   {
     title: 'Code boundaries',
     tiers: [
-      { title: 'Turborepo', value: true },
       { title: 'Nx', featured: false, value: true },
       { title: 'Bazel', value: true },
       { title: 'Lerna', value: true },
+      { title: 'Turborepo', value: true },
     ],
   },
   {
     title: 'Code sharing',
     tiers: [
-      { title: 'Turborepo', value: true },
       { title: 'Nx', featured: false, value: true },
       { title: 'Bazel', value: true },
       { title: 'Lerna', value: true },
+      { title: 'Turborepo', value: true },
     ],
   },
   {
     title: 'Consistent tooling',
     tiers: [
-      { title: 'Turborepo', value: true },
       { title: 'Nx', featured: false, value: true },
       { title: 'Bazel', value: true },
       { title: 'Lerna', value: true },
+      { title: 'Turborepo', value: true },
     ],
   },
 ];
@@ -59,19 +66,19 @@ const understandingWorkspace = [
   {
     title: 'Dependency graph visualization',
     tiers: [
-      { title: 'Turborepo', value: true },
       { title: 'Nx', featured: false, value: true },
       { title: 'Bazel', value: true },
       { title: 'Lerna', value: true },
+      { title: 'Turborepo', value: true },
     ],
   },
   {
     title: 'Detecting affected projects/packages',
     tiers: [
-      { title: 'Turborepo', value: false },
       { title: 'Nx', featured: false, value: true },
       { title: 'Bazel', value: true },
       { title: 'Lerna', value: true },
+      { title: 'Turborepo', value: false },
     ],
   },
 ];
@@ -79,46 +86,46 @@ const tasksManagement = [
   {
     title: 'Local task coordination',
     tiers: [
-      { title: 'Turborepo', value: true },
       { title: 'Nx', featured: false, value: true },
       { title: 'Bazel', value: true },
       { title: 'Lerna', value: true },
+      { title: 'Turborepo', value: true },
     ],
   },
   {
     title: 'Local computation caching',
     tiers: [
-      { title: 'Turborepo', value: true },
       { title: 'Nx', featured: false, value: true },
       { title: 'Bazel', value: true },
       { title: 'Lerna', value: true },
+      { title: 'Turborepo', value: true },
     ],
   },
   {
     title: 'Distributed computation caching',
     tiers: [
-      { title: 'Turborepo', value: true },
       { title: 'Nx', featured: false, value: true },
       { title: 'Bazel', value: true },
       { title: 'Lerna', value: true },
+      { title: 'Turborepo', value: true },
     ],
   },
   {
     title: 'Distributed task execution',
     tiers: [
-      { title: 'Turborepo', value: false },
       { title: 'Nx', featured: false, value: true },
       { title: 'Bazel', value: true },
       { title: 'Lerna', value: true },
+      { title: 'Turborepo', value: false },
     ],
   },
   {
     title: 'Transparent remote execution',
     tiers: [
-      { title: 'Turborepo', value: false },
       { title: 'Nx', featured: false, value: false },
       { title: 'Bazel', value: true },
       { title: 'Lerna', value: true },
+      { title: 'Turborepo', value: false },
     ],
   },
 ];
@@ -126,37 +133,37 @@ const scalability = [
   {
     title: 'Performance',
     tiers: [
-      { title: 'Turborepo', value: true },
       { title: 'Nx', featured: false, value: true },
       { title: 'Bazel', value: true },
       { title: 'Lerna', value: true },
+      { title: 'Turborepo', value: true },
     ],
   },
   {
     title: 'Code generation',
     tiers: [
-      { title: 'Turborepo', value: true },
       { title: 'Nx', featured: false, value: true },
       { title: 'Bazel', value: true },
       { title: 'Lerna', value: true },
+      { title: 'Turborepo', value: true },
     ],
   },
   {
     title: 'Explicit project constrains',
     tiers: [
-      { title: 'Turborepo', value: true },
       { title: 'Nx', featured: false, value: true },
       { title: 'Bazel', value: true },
       { title: 'Lerna', value: true },
+      { title: 'Turborepo', value: true },
     ],
   },
   {
     title: 'Enforcing code style',
     tiers: [
-      { title: 'Turborepo', value: false },
       { title: 'Nx', featured: false, value: true },
       { title: 'Bazel', value: true },
       { title: 'Lerna', value: true },
+      { title: 'Turborepo', value: false },
     ],
   },
 ];
@@ -208,7 +215,9 @@ export default function ToolsReview() {
                 >
                   {plan.title}
                 </h3>
-                <p className="mt-2 text-sm text-gray-500">{plan.description}</p>
+                <p className="mt-2 text-sm text-gray-500">
+                  &ldquo;{plan.description}&rdquo;
+                </p>
               </div>
               <h4 className="mt-10 text-sm font-bold text-gray-300">
                 Management
@@ -463,11 +472,7 @@ export default function ToolsReview() {
 
         <div className="max-w-7xl mx-auto py-24 px-8">
           <div className="w-full border-t border-slate-900 flex items-stretch">
-            <div className="-mt-px w-1/5 py-6 pr-4 flex items-end">
-              <h3 className="mt-auto text-sm font-bold text-gray-300">
-                Management
-              </h3>
-            </div>
+            <div className="-mt-px w-1/5 py-6 pr-4 flex items-end"></div>
             {tools.map((plan, planIdx) => (
               <div
                 key={plan.title}
@@ -489,14 +494,23 @@ export default function ToolsReview() {
                       'text-sm font-bold'
                     )}
                   >
-                    {plan.title}
+                    {plan.title}{' '}
+                    {plan.organization ? `(by ${plan.organization})` : ''}
                   </p>
                   <p className="mt-2 text-sm text-gray-500">
-                    {plan.description}
+                    &ldquo;{plan.description}&rdquo;
                   </p>
                 </div>
               </div>
             ))}
+          </div>
+
+          <div className="w-full border-t border-slate-900 flex items-stretch">
+            <div className="-mt-px w-1/5 py-6 pr-4 flex items-end">
+              <h3 className="mt-auto text-sm font-bold text-gray-300">
+                Management
+              </h3>
+            </div>
           </div>
           <div className="relative">
             {/* Fake card backgrounds */}
@@ -646,6 +660,16 @@ export default function ToolsReview() {
                   {tools.map((plan) => (
                     <th key={plan.title} scope="col">
                       <span className="sr-only">{plan.title}</span>
+                    </th>
+                  ))}
+                </tr>
+                <tr className="text-left">
+                  <th scope="col">
+                    <span className="sr-only">Organization</span>
+                  </th>
+                  {tools.map((plan) => (
+                    <th key={plan.title} scope="col">
+                      <span className="sr-only">{plan.organization}</span>
                     </th>
                   ))}
                 </tr>
