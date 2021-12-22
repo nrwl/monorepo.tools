@@ -8,7 +8,6 @@ import {
   LightBulbIcon,
   LightningBoltIcon,
   PresentationChartLineIcon,
-  SortDescendingIcon,
   StatusOnlineIcon,
   SwitchVerticalIcon,
   TerminalIcon,
