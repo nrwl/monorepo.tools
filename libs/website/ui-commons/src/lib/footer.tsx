@@ -8,15 +8,15 @@ export function Footer() {
         >
           <div className="px-5 py-2">
             <a
-              href="#"
+              href="#what-is-a-monorepo"
               className="text-base text-gray-500 hover:text-gray-700 dark:text-gray-300"
             >
-              What monorepo?
+              What's a monorepo?
             </a>
           </div>
           <div className="px-5 py-2">
             <a
-              href="#"
+              href="#why-a-monorepo"
               className="text-base text-gray-500 hover:text-gray-700 dark:text-gray-300"
             >
               Why monorepo?
@@ -24,7 +24,7 @@ export function Footer() {
           </div>
           <div className="px-5 py-2">
             <a
-              href="#"
+              href="#monorepo-features"
               className="text-base text-gray-500 hover:text-gray-700 dark:text-gray-300"
             >
               Monorepo features
