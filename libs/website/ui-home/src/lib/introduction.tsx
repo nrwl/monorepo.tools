@@ -10,46 +10,57 @@ export function Introduction() {
             alt=""
           />
           <div
-            className="absolute inset-0 bg-slate-50 dark:bg-slate-800 mix-blend-multiply"
+            className="absolute inset-0 bg-slate-50 dark:bg-slate-800 mix-blend-lighten dark:mix-blend-multiply"
             aria-hidden="true"
           />
         </div>
         <div className="relative max-w-7xl mx-auto py-24 px-4 sm:py-32 sm:px-6 lg:px-8">
-          <h1 className="text-4xl font-extrabold tracking-tight text-gray-900 dark:text-white md:text-5xl lg:text-6xl">
-            Understanding Monorepos
-          </h1>
-          <p className="mt-6 max-w-3xl text-xl text-gray-700 dark:text-gray-300">
-            Monorepos are hot right now, especially among Web developers. We
-            created this resource to help developers understand what monorepos
-            are, what benefits they can bring, and the tools available to make
-            monorepo development delightful.
-          </p>
-          <p className="mt-6 max-w-3xl text-xl text-gray-700 dark:text-gray-300">
-            There are many great monorepo tools, built by great teams, with
-            different philosophies. We do our best to represent each tool
-            objectively, and we welcome pull requests if we got something wrong!
-          </p>
-          <p className="mt-6 max-w-3xl text-xl text-gray-700 dark:text-gray-300">
-            The tools we'll focus on are:&nbsp;
-            <a href="https://nx.dev">Nx (by Nrwl)</a>,&nbsp;
-            <a rel="nofollow" href="https://turborepo.org">
-              Turborepo (by Vercel)
-            </a>
-            ,&nbsp;
-            <a rel="nofollow" href="https://lerna.js.org/">
-              Lerna
-            </a>
-            ,&nbsp;
-            <a rel="nofollow" href="https://rushjs.io/">
-              Rush (by Microsoft)
-            </a>
-            , and&nbsp;
-            <a href="https://bazel.build" rel="nofollow">
-              Bazel (by Google)
-            </a>
-            . We chose these tools because of their usage or recognition in the
-            Web development community.
-          </p>
+          <div className="lg:grid lg:grid-cols-2 lg:gap-16 lg:items-center">
+            <div>
+              <h1 className="text-4xl font-extrabold tracking-tight text-gray-900 dark:text-white md:text-5xl lg:text-6xl">
+                Understanding Monorepos
+              </h1>
+              <p className="mt-6 max-w-3xl text-xl text-gray-700 dark:text-gray-300">
+                Monorepos are hot right now, especially among Web developers. We
+                created this resource to help developers understand what
+                monorepos are, what benefits they can bring, and the tools
+                available to make monorepo development delightful.
+              </p>
+              <p className="mt-6 max-w-3xl text-xl text-gray-700 dark:text-gray-300">
+                There are many great monorepo tools, built by great teams, with
+                different philosophies. We do our best to represent each tool
+                objectively, and we welcome pull requests if we got something
+                wrong!
+              </p>
+              <p className="mt-6 max-w-3xl text-xl text-gray-700 dark:text-gray-300">
+                The tools we'll focus on are:&nbsp;
+                <a href="https://nx.dev">Nx (by Nrwl)</a>,&nbsp;
+                <a rel="nofollow" href="https://turborepo.org">
+                  Turborepo (by Vercel)
+                </a>
+                ,&nbsp;
+                <a rel="nofollow" href="https://lerna.js.org/">
+                  Lerna
+                </a>
+                ,&nbsp;
+                <a rel="nofollow" href="https://rushjs.io/">
+                  Rush (by Microsoft)
+                </a>
+                , and&nbsp;
+                <a href="https://bazel.build" rel="nofollow">
+                  Bazel (by Google)
+                </a>
+                . We chose these tools because of their usage or recognition in
+                the Web development community.
+              </p>
+            </div>
+            <img
+              className="rounded-lg"
+              width={490}
+              src="/images/monorepo.svg"
+              alt=""
+            />
+          </div>
         </div>
       </div>
 
