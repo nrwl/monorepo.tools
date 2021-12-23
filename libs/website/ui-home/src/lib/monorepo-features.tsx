@@ -39,7 +39,7 @@ export function MonorepoFeatures() {
         {/*MANAGEMENT*/}
         <div className="mt-24 lg:mt-32 text-2xl flex leading-loose font-boldtext-gray-800 dark:text-gray-100tracking-tight sm:text-3xl sm:leading-relaxed items-center">
           Management
-          <div className="ml-4 flex flex-grow h-1 w-full bg-slate-100 dark:bg-slate-100 rounded" />
+          <div className="ml-4 flex flex-grow h-1 w-full bg-slate-100 dark:bg-slate-900 rounded" />
         </div>
 
         {/*Code Boundaries*/}
@@ -288,7 +288,7 @@ export function MonorepoFeatures() {
         {/*WORKSPACE*/}
         <div className="mt-24 lg:mt-32 text-2xl flex leading-loose font-boldtext-gray-800 dark:text-gray-100tracking-tight sm:text-3xl sm:leading-relaxed items-center">
           Workspace{' '}
-          <div className="ml-4 flex flex-grow h-1 w-full bg-slate-100 dark:bg-slate-100 rounded" />
+          <div className="ml-4 flex flex-grow h-1 w-full bg-slate-100 dark:bg-slate-900 rounded" />
         </div>
 
         {/*Dependency Graph Visualization*/}
@@ -454,7 +454,7 @@ export function MonorepoFeatures() {
         {/*TASKS*/}
         <div className="mt-24 lg:mt-32 text-2xl flex leading-loose font-boldtext-gray-800 dark:text-gray-100tracking-tight sm:text-3xl sm:leading-relaxed items-center">
           Tasks
-          <div className="ml-4 flex flex-grow h-1 w-full bg-slate-100 dark:bg-slate-100 rounded" />
+          <div className="ml-4 flex flex-grow h-1 w-full bg-slate-100 dark:bg-slate-900 rounded" />
         </div>
 
         {/*Local Task Coordination*/}
@@ -850,7 +850,7 @@ export function MonorepoFeatures() {
         {/*SCALABILITY*/}
         <div className="mt-24 lg:mt-32 text-2xl flex leading-loose font-boldtext-gray-800 dark:text-gray-100tracking-tight sm:text-3xl sm:leading-relaxed items-center">
           Scalability
-          <div className="ml-4 flex flex-grow h-1 w-full bg-slate-100 dark:bg-slate-100 rounded" />
+          <div className="ml-4 flex flex-grow h-1 w-full bg-slate-100 dark:bg-slate-900 rounded" />
         </div>
 
         {/*Performance*/}

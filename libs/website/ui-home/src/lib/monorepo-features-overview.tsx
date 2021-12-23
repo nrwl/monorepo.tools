@@ -161,7 +161,7 @@ export function MonorepoFeaturesOverview() {
             {features.map((feature) => (
               <div
                 key={feature.anchor}
-                className="relative overflow-hidden bg-slate-100 dark:bg-slate-100 rounded-md px-4 py-5 group"
+                className="relative overflow-hidden bg-slate-100 dark:bg-slate-900 rounded-md px-4 py-5 group"
               >
                 <a href={'#' + feature.anchor}>
                   <div className="relative">
@@ -172,7 +172,7 @@ export function MonorepoFeaturesOverview() {
                       />
                     </span>
 
-                    <span className="absolute top-2.5 right-0 inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-slate-50 dark:bg-white bg-opacity-95 text-gray-700 dark:text-gray-300 capitalize">
+                    <span className="absolute top-2.5 right-0 inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-slate-50 dark:bg-white bg-opacity-95 dark:bg-opacity-5 text-gray-700 dark:text-gray-300 capitalize">
                       {feature.category}
                     </span>
                   </div>
