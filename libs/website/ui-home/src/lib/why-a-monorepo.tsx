@@ -2,22 +2,22 @@ export function WhyAMonorepo() {
   return (
     <div
       id="why-a-monorepo"
-      className="bg-slate-800 pt-16 pb-20 px-4 sm:px-6 lg:pt-24 lg:pb-28 lg:px-8"
+      className="bg-slate-50 dark:bg-slate-800 pt-16 pb-20 px-4 sm:px-6 lg:pt-24 lg:pb-28 lg:px-8"
     >
       <div className="relative">
-        <h2 className="text-center text-4xl leading-8 font-extrabold tracking-tight text-white sm:text-5xl">
+        <h2 className="text-center text-4xl leading-8 font-extrabold tracking-tight text-gray-900 dark:text-white sm:text-5xl">
           # But why?
         </h2>
-        <p className="mt-4 max-w-3xl mx-auto text-center text-xl text-gray-300">
+        <p className="mt-4 max-w-3xl mx-auto text-center text-xl text-gray-700 dark:text-gray-300">
           Let's go deeper into the rabbit hole.
         </p>
       </div>
       <div className="mt-24 lg:mt-36 relative max-w-lg mx-auto lg:max-w-7xl">
         <div className="max-w-2xl mx-auto">
-          <h2 className="text-3xl tracking-tight font-semibold text-gray-100 sm:text-4xl">
+          <h2 className="text-3xl tracking-tight font-semibold text-gray-800 dark:text-gray-100sm:text-4xl">
             A &ldquo;Polyrepo&rdquo;
           </h2>
-          <p className="mt-3 text-xl text-gray-300 sm:mt-4">
+          <p className="mt-3 text-xl text-gray-700 dark:text-gray-300 sm:mt-4">
             For the sake of this discussion, let's say the opposite of monorepo
             is "polyrepo". Polyrepo is the current standard way of developing
             applications: a repo for each team, application, or project. And
@@ -29,7 +29,7 @@ export function WhyAMonorepo() {
             src="/images/polyrepo-practice.svg"
             alt=""
           />
-          <p className="mt-3 text-xl text-gray-300 sm:mt-4">
+          <p className="mt-3 text-xl text-gray-700 dark:text-gray-300 sm:mt-4">
             The industry has moved to the polyrepo way of doing things for one
             big reason: team autonomy. Teams want to make their own decisions
             about what libraries they'll use, when they'll deploy their apps or
@@ -40,7 +40,7 @@ export function WhyAMonorepo() {
             src="/images/spectrum-real-world.svg"
             alt=""
           />
-          <p className="mt-3 text-xl text-gray-300 sm:mt-4">
+          <p className="mt-3 text-xl text-gray-700 dark:text-gray-300 sm:mt-4">
             Those are all good things, so why should teams do anything
             differently? Because this autonomy is provided by isolation, and
             isolation harms collaboration. More specifically, these are common
@@ -49,14 +49,14 @@ export function WhyAMonorepo() {
         </div>
         <div className="mt-12 grid gap-16 pt-12 lg:grid-cols-2 lg:gap-22">
           {/*item*/}
-          <div className="px-4 py-6 bg-gray-900 rounded-md shadow-md">
+          <div className="px-4 py-6 bg-slate-100 dark:bg-slate-900 rounded-md shadow-md">
             <div>
-              <span className="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-red-900">
+              <span className="inline-flex items-center px-3 py-0.5 rounded-full text-xs bg-slate-50 dark:bg-white bg-opacity-95 text-gray-700 dark:text-gray-300 capitalize">
                 Polyrepo
               </span>
             </div>
             <div className="block mt-4">
-              <p className="text-xl font-semibold text-gray-300">
+              <p className="text-xl font-semibold text-gray-700 dark:text-gray-300">
                 Cumbersome code sharing
               </p>
               <p className="mt-3 text-base text-gray-400">
@@ -69,14 +69,14 @@ export function WhyAMonorepo() {
               </p>
             </div>
           </div>
-          <div className="px-4 py-6 bg-gray-900 rounded-md shadow-md">
+          <div className="px-4 py-6 bg-slate-100 dark:bg-slate-900 rounded-md shadow-md">
             <div>
-              <span className="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-red-900">
+              <span className="inline-flex items-center px-3 py-0.5 rounded-full text-xs bg-slate-50 dark:bg-white bg-opacity-95 text-gray-700 dark:text-gray-300 capitalize">
                 Polyrepo
               </span>
             </div>
             <div className="block mt-4">
-              <p className="text-xl font-semibold text-gray-300">
+              <p className="text-xl font-semibold text-gray-700 dark:text-gray-300">
                 Significant code duplication
               </p>
               <p className="mt-3 text-base text-gray-400">
@@ -88,14 +88,14 @@ export function WhyAMonorepo() {
               </p>
             </div>
           </div>
-          <div className="px-4 py-6 bg-gray-900 rounded-md shadow-md">
+          <div className="px-4 py-6 bg-slate-100 dark:bg-slate-900 rounded-md shadow-md">
             <div>
-              <span className="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-red-900">
+              <span className="inline-flex items-center px-3 py-0.5 rounded-full text-xs bg-slate-50 dark:bg-white bg-opacity-95 text-gray-700 dark:text-gray-300 capitalize">
                 Polyrepo
               </span>
             </div>
             <div className="block mt-4">
-              <p className="text-xl font-semibold text-gray-300">
+              <p className="text-xl font-semibold text-gray-700 dark:text-gray-300">
                 Costly cross-repo changes to shared libraries and consumers
               </p>
               <p className="mt-3 text-base text-gray-400">
@@ -107,14 +107,14 @@ export function WhyAMonorepo() {
               </p>
             </div>
           </div>
-          <div className="px-4 py-6 bg-gray-900 rounded-md shadow-md">
+          <div className="px-4 py-6 bg-slate-100 dark:bg-slate-900 rounded-md shadow-md">
             <div>
-              <span className="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-red-900">
+              <span className="inline-flex items-center px-3 py-0.5 rounded-full text-xs bg-slate-50 dark:bg-white bg-opacity-95 text-gray-700 dark:text-gray-300 capitalize">
                 Polyrepo
               </span>
             </div>
             <div className="block mt-4">
-              <p className="text-xl font-semibold text-gray-300">
+              <p className="text-xl font-semibold text-gray-700 dark:text-gray-300">
                 Inconsistent tooling
               </p>
               <p className="mt-3 text-base text-gray-400">
@@ -129,10 +129,10 @@ export function WhyAMonorepo() {
       </div>
       <div className="mt-24 lg:mt-36 relative max-w-lg mx-auto lg:max-w-7xl">
         <div className="max-w-2xl mx-auto">
-          <h2 className="text-3xl tracking-tight font-semibold text-gray-100 sm:text-4xl">
+          <h2 className="text-3xl tracking-tight font-semibold text-gray-800 dark:text-gray-100sm:text-4xl">
             A &ldquo;Monorepo&rdquo;
           </h2>
-          <p className="mt-3 text-xl text-gray-300 sm:mt-4">
+          <p className="mt-3 text-xl text-gray-700 dark:text-gray-300 sm:mt-4">
             As we saw, we can end up in pretty tricky situation when working in
             a polyrepo, but how a monorepo can help use solve all of them?
           </p>
@@ -140,14 +140,14 @@ export function WhyAMonorepo() {
 
         <div className="mt-12 grid gap-16 pt-12 lg:grid-cols-2 lg:gap-22">
           {/*item*/}
-          <div className="px-4 py-6 bg-gray-900 rounded-md shadow-md">
+          <div className="px-4 py-6 bg-slate-100 dark:bg-slate-900 rounded-md shadow-md">
             <div>
-              <span className="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-green-900">
+              <span className="inline-flex items-center px-3 py-0.5 rounded-full text-xs bg-slate-50 dark:bg-white bg-opacity-95 text-gray-700 dark:text-gray-300 capitalize">
                 Monorepo
               </span>
             </div>
             <div className="block mt-4">
-              <p className="text-xl font-semibold text-gray-300">
+              <p className="text-xl font-semibold text-gray-700 dark:text-gray-300">
                 No overhead to create new projects
               </p>
               <p className="mt-3 text-base text-gray-400">
@@ -156,14 +156,14 @@ export function WhyAMonorepo() {
               </p>
             </div>
           </div>
-          <div className="px-4 py-6 bg-gray-900 rounded-md shadow-md">
+          <div className="px-4 py-6 bg-slate-100 dark:bg-slate-900 rounded-md shadow-md">
             <div>
-              <span className="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-green-900">
+              <span className="inline-flex items-center px-3 py-0.5 rounded-full text-xs bg-slate-50 dark:bg-white bg-opacity-95 text-gray-700 dark:text-gray-300 capitalize">
                 Monorepo
               </span>
             </div>
             <div className="block mt-4">
-              <p className="text-xl font-semibold text-gray-300">
+              <p className="text-xl font-semibold text-gray-700 dark:text-gray-300">
                 Atomic commits across projects
               </p>
               <p className="mt-3 text-base text-gray-400">
@@ -172,14 +172,14 @@ export function WhyAMonorepo() {
               </p>
             </div>
           </div>
-          <div className="px-4 py-6 bg-gray-900 rounded-md shadow-md">
+          <div className="px-4 py-6 bg-slate-100 dark:bg-slate-900 rounded-md shadow-md">
             <div>
-              <span className="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-green-900">
+              <span className="inline-flex items-center px-3 py-0.5 rounded-full text-xs bg-slate-50 dark:bg-white bg-opacity-95 text-gray-700 dark:text-gray-300 capitalize">
                 Monorepo
               </span>
             </div>
             <div className="block mt-4">
-              <p className="text-xl font-semibold text-gray-300">
+              <p className="text-xl font-semibold text-gray-700 dark:text-gray-300">
                 One version of everything
               </p>
               <p className="mt-3 text-base text-gray-400">
@@ -188,14 +188,14 @@ export function WhyAMonorepo() {
               </p>
             </div>
           </div>
-          <div className="px-4 py-6 bg-gray-900 rounded-md shadow-md">
+          <div className="px-4 py-6 bg-slate-100 dark:bg-slate-900 rounded-md shadow-md">
             <div>
-              <span className="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-green-900">
+              <span className="inline-flex items-center px-3 py-0.5 rounded-full text-xs bg-slate-50 dark:bg-white bg-opacity-95 text-gray-700 dark:text-gray-300 capitalize">
                 Monorepo
               </span>
             </div>
             <div className="block mt-4">
-              <p className="text-xl font-semibold text-gray-300">
+              <p className="text-xl font-semibold text-gray-700 dark:text-gray-300">
                 Developer mobility
               </p>
               <p className="mt-3 text-base text-gray-400">

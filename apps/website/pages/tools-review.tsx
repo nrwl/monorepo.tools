@@ -195,18 +195,18 @@ function classNames(...classes) {
 
 export default function ToolsReview() {
   return (
-    <div className="bg-slate-800">
+    <div className="bg-slate-50 dark:bg-slate-800">
       <div className="relative">
         <div className="relative max-w-2xl mx-auto pt-16 px-4 text-center sm:pt-32 sm:px-6 lg:max-w-7xl lg:px-8">
-          <h1 className="text-4xl font-extrabold tracking-tight text-white sm:text-6xl">
+          <h1 className="text-4xl font-extrabold tracking-tight text-gray-900 dark:text-white sm:text-6xl">
             <span className="block lg:inline">Many solutions,</span>
             <span className="block lg:inline"> for different goals</span>
           </h1>
-          <p className="mt-4 text-xl text-indigo-100">
+          <p className="mt-4 text-xl text-gray-700 dark:text-gray-300">
             Each tool fits a specific set of needs and gives you a precise set
             of features. <br />
-            Depending on your needs and constraints, we'll help you decide which
-            tools best suit you.
+            Depending on your needs and constraints, we&apos;ll help you decide
+            which tools best suit you.
           </p>
         </div>
       </div>
@@ -222,7 +222,10 @@ export default function ToolsReview() {
 
         <div className="max-w-2xl mx-auto py-16 px-4 space-y-16 sm:px-6">
           {tools.map((plan, mobilePlanIndex) => (
-            <div key="plan.title" className="border-t border-slate-900">
+            <div
+              key="plan.title"
+              className="border-t border-slate-100 dark:border-slate-900"
+            >
               <div
                 className={classNames(
                   plan.featured ? 'border-blue-600' : 'border-transparent',
@@ -231,7 +234,9 @@ export default function ToolsReview() {
               >
                 <h3
                   className={classNames(
-                    plan.featured ? 'text-blue-500' : 'text-gray-300',
+                    plan.featured
+                      ? 'text-blue-500'
+                      : 'text-gray-700 dark:text-gray-300',
                     'text-sm font-bold'
                   )}
                 >
@@ -241,7 +246,7 @@ export default function ToolsReview() {
                   &ldquo;{plan.description}&rdquo;
                 </p>
               </div>
-              <h4 className="mt-10 text-sm font-bold text-gray-300">
+              <h4 className="mt-10 text-sm font-bold text-gray-700 dark:text-gray-300">
                 Management
               </h4>
 
@@ -254,7 +259,7 @@ export default function ToolsReview() {
                   <div
                     className={classNames(
                       plan.featured ? 'shadow-md' : 'shadow',
-                      'absolute right-0 w-1/2 h-full bg-slate-700 rounded-lg'
+                      'absolute right-0 w-1/2 h-full bg-slate-100 dark:bg-slate-700 rounded-lg'
                     )}
                   />
                 </div>
@@ -267,13 +272,13 @@ export default function ToolsReview() {
                     'relative py-3 px-4 bg-slate-700 rounded-lg sm:p-0 sm:bg-transparent sm:rounded-none sm:ring-0 sm:shadow-none'
                   )}
                 >
-                  <dl className="divide-y divide-slate-600">
+                  <dl className="divide-y divide-slate-300 dark:divide-slate-600">
                     {management.map((feature) => (
                       <div
                         key={feature.title}
                         className="py-3 flex items-center justify-between sm:grid sm:grid-cols-2"
                       >
-                        <dt className="pr-4 text-sm font-medium text-gray-300">
+                        <dt className="pr-4 text-sm font-medium text-gray-700 dark:text-gray-300">
                           {feature.title}
                         </dt>
                         <dd className="flex items-center justify-end sm:px-4 sm:justify-center">
@@ -283,7 +288,7 @@ export default function ToolsReview() {
                               className={classNames(
                                 feature.tiers[mobilePlanIndex].featured
                                   ? 'text-blue-500'
-                                  : 'text-gray-300',
+                                  : 'text-gray-700 dark:text-gray-300',
                                 'text-sm font-medium'
                               )}
                             >
@@ -332,7 +337,7 @@ export default function ToolsReview() {
                 </div>
               </div>
 
-              <h4 className="mt-10 text-sm font-bold text-gray-300">
+              <h4 className="mt-10 text-sm font-bold text-gray-700 dark:text-gray-300">
                 Understanding your workspace
               </h4>
 
@@ -345,7 +350,7 @@ export default function ToolsReview() {
                   <div
                     className={classNames(
                       plan.featured ? 'shadow-md' : 'shadow',
-                      'absolute right-0 w-1/2 h-full bg-slate-700 rounded-lg'
+                      'absolute right-0 w-1/2 h-full bg-slate-100 dark:bg-slate-700 rounded-lg'
                     )}
                   />
                 </div>
@@ -358,13 +363,13 @@ export default function ToolsReview() {
                     'relative py-3 px-4 bg-slate-700 rounded-lg sm:p-0 sm:bg-transparent sm:rounded-none sm:ring-0 sm:shadow-none'
                   )}
                 >
-                  <dl className="divide-y divide-slate-600">
+                  <dl className="divide-y divide-slate-300 dark:divide-slate-600">
                     {understandingWorkspace.map((perk) => (
                       <div
                         key={perk.title}
                         className="py-3 flex justify-between sm:grid sm:grid-cols-2"
                       >
-                        <dt className="text-sm font-medium text-gray-300 sm:pr-4">
+                        <dt className="text-sm font-medium text-gray-700 dark:text-gray-300 sm:pr-4">
                           {perk.title}
                         </dt>
                         <dd className="text-center sm:px-4">
@@ -407,7 +412,7 @@ export default function ToolsReview() {
                 </div>
               </div>
 
-              <h4 className="mt-10 text-sm font-bold text-gray-300">
+              <h4 className="mt-10 text-sm font-bold text-gray-700 dark:text-gray-300">
                 Tasks management
               </h4>
 
@@ -420,7 +425,7 @@ export default function ToolsReview() {
                   <div
                     className={classNames(
                       plan.featured ? 'shadow-md' : 'shadow',
-                      'absolute right-0 w-1/2 h-full bg-slate-700 rounded-lg'
+                      'absolute right-0 w-1/2 h-full bg-slate-100 dark:bg-slate-700 rounded-lg'
                     )}
                   />
                 </div>
@@ -433,13 +438,13 @@ export default function ToolsReview() {
                     'relative py-3 px-4 bg-slate-700 rounded-lg sm:p-0 sm:bg-transparent sm:rounded-none sm:ring-0 sm:shadow-none'
                   )}
                 >
-                  <dl className="divide-y divide-slate-600">
+                  <dl className="divide-y divide-slate-300 dark:divide-slate-600">
                     {tasksManagement.map((perk) => (
                       <div
                         key={perk.title}
                         className="py-3 flex justify-between sm:grid sm:grid-cols-2"
                       >
-                        <dt className="text-sm font-medium text-gray-300 sm:pr-4">
+                        <dt className="text-sm font-medium text-gray-700 dark:text-gray-300 sm:pr-4">
                           {perk.title}
                         </dt>
                         <dd className="text-center sm:px-4">
@@ -493,8 +498,8 @@ export default function ToolsReview() {
         </h2>
 
         <div className="max-w-7xl mx-auto py-24 px-8">
-          <div className="w-full border-t border-slate-900 flex items-stretch">
-            <div className="-mt-px w-1/5 py-6 pr-4 flex items-end"></div>
+          <div className="w-full border-t border-slate-100 dark:border-slate-900 flex items-stretch">
+            <div className="-mt-px w-1/5 py-6 pr-4 flex items-end" />
             {tools.map((plan, planIdx) => (
               <div
                 key={plan.title}
@@ -512,7 +517,9 @@ export default function ToolsReview() {
                 >
                   <p
                     className={classNames(
-                      plan.featured ? 'text-blue-500' : 'text-gray-300',
+                      plan.featured
+                        ? 'text-blue-500'
+                        : 'text-gray-700 dark:text-gray-300',
                       'text-sm font-bold'
                     )}
                   >
@@ -527,9 +534,9 @@ export default function ToolsReview() {
             ))}
           </div>
 
-          <div className="w-full border-t border-slate-900 flex items-stretch">
+          <div className="w-full border-t border-slate-100 dark:border-slate-900 flex items-stretch">
             <div className="-mt-px w-1/5 py-6 pr-4 flex items-end">
-              <h3 className="mt-auto text-sm font-bold text-gray-300">
+              <h3 className="mt-auto text-sm font-bold text-gray-700 dark:text-gray-300">
                 Management
               </h3>
             </div>
@@ -542,16 +549,16 @@ export default function ToolsReview() {
             >
               <div className="w-1/5 pr-4" />
               <div className="w-1/5 px-4">
-                <div className="w-full h-full bg-slate-700 rounded-lg shadow" />
+                <div className="w-full h-full bg-slate-100 dark:bg-slate-700 rounded-lg shadow" />
               </div>
               <div className="w-1/5 px-4">
-                <div className="w-full h-full bg-slate-700 rounded-lg shadow-md" />
+                <div className="w-full h-full bg-slate-100 dark:bg-slate-700 rounded-lg shadow-md" />
               </div>
               <div className="w-1/5 px-4">
-                <div className="w-full h-full bg-slate-700 rounded-lg shadow-md" />
+                <div className="w-full h-full bg-slate-100 dark:bg-slate-700 rounded-lg shadow-md" />
               </div>
               <div className="w-1/5 pl-4">
-                <div className="w-full h-full bg-slate-700 rounded-lg shadow" />
+                <div className="w-full h-full bg-slate-100 dark:bg-slate-700 rounded-lg shadow" />
               </div>
             </div>
 
@@ -569,12 +576,12 @@ export default function ToolsReview() {
                   ))}
                 </tr>
               </thead>
-              <tbody className="divide-y divide-slate-600">
+              <tbody className="divide-y divide-slate-300 dark:divide-slate-600">
                 {management.map((feature) => (
                   <tr key={feature.title}>
                     <th
                       scope="row"
-                      className="w-1/5 py-3 pr-4 text-left text-sm font-medium text-gray-300"
+                      className="w-1/5 py-3 pr-4 text-left text-sm font-medium text-gray-700 dark:text-gray-300"
                     >
                       {feature.title}
                     </th>
@@ -594,7 +601,7 @@ export default function ToolsReview() {
                               className={classNames(
                                 tier.featured
                                   ? 'text-blue-500'
-                                  : 'text-gray-300',
+                                  : 'text-gray-700 dark:text-gray-300',
                                 'text-sm font-medium'
                               )}
                             >
@@ -648,7 +655,7 @@ export default function ToolsReview() {
             </div>
           </div>
 
-          <h3 className="mt-10 text-sm font-bold text-gray-300">
+          <h3 className="mt-10 text-sm font-bold text-gray-700 dark:text-gray-300">
             Understanding your workspace
           </h3>
           <div className="mt-6 relative">
@@ -659,16 +666,16 @@ export default function ToolsReview() {
             >
               <div className="w-1/5 pr-4" />
               <div className="w-1/5 px-4">
-                <div className="w-full h-full bg-slate-700 rounded-lg shadow" />
+                <div className="w-full h-full bg-slate-100 dark:bg-slate-700 rounded-lg shadow" />
               </div>
               <div className="w-1/5 px-4">
-                <div className="w-full h-full bg-slate-700 rounded-lg shadow-md" />
+                <div className="w-full h-full bg-slate-100 dark:bg-slate-700 rounded-lg shadow-md" />
               </div>
               <div className="w-1/5 px-4">
-                <div className="w-full h-full bg-slate-700 rounded-lg shadow-md" />
+                <div className="w-full h-full bg-slate-100 dark:bg-slate-700 rounded-lg shadow-md" />
               </div>
               <div className="w-1/5 pl-4">
-                <div className="w-full h-full bg-slate-700 rounded-lg shadow" />
+                <div className="w-full h-full bg-slate-100 dark:bg-slate-700 rounded-lg shadow" />
               </div>
             </div>
 
@@ -696,12 +703,12 @@ export default function ToolsReview() {
                   ))}
                 </tr>
               </thead>
-              <tbody className="divide-y divide-slate-600">
+              <tbody className="divide-y divide-slate-300 dark:divide-slate-600">
                 {understandingWorkspace.map((perk) => (
                   <tr key={perk.title}>
                     <th
                       scope="row"
-                      className="w-1/5 py-3 pr-4 text-left text-sm font-medium text-gray-300"
+                      className="w-1/5 py-3 pr-4 text-left text-sm font-medium text-gray-700 dark:text-gray-300"
                     >
                       {perk.title}
                     </th>
@@ -758,7 +765,7 @@ export default function ToolsReview() {
             </div>
           </div>
 
-          <h3 className="mt-10 text-sm font-bold text-gray-300">
+          <h3 className="mt-10 text-sm font-bold text-gray-700 dark:text-gray-300">
             Tasks management
           </h3>
           <div className="mt-6 relative">
@@ -769,16 +776,16 @@ export default function ToolsReview() {
             >
               <div className="w-1/5 pr-4" />
               <div className="w-1/5 px-4">
-                <div className="w-full h-full bg-slate-700 rounded-lg shadow" />
+                <div className="w-full h-full bg-slate-100 dark:bg-slate-700 rounded-lg shadow" />
               </div>
               <div className="w-1/5 px-4">
-                <div className="w-full h-full bg-slate-700 rounded-lg shadow-md" />
+                <div className="w-full h-full bg-slate-100 dark:bg-slate-700 rounded-lg shadow-md" />
               </div>
               <div className="w-1/5 px-4">
-                <div className="w-full h-full bg-slate-700 rounded-lg shadow-md" />
+                <div className="w-full h-full bg-slate-100 dark:bg-slate-700 rounded-lg shadow-md" />
               </div>
               <div className="w-1/5 pl-4">
-                <div className="w-full h-full bg-slate-700 rounded-lg shadow" />
+                <div className="w-full h-full bg-slate-100 dark:bg-slate-700 rounded-lg shadow" />
               </div>
             </div>
 
@@ -796,12 +803,12 @@ export default function ToolsReview() {
                   ))}
                 </tr>
               </thead>
-              <tbody className="divide-y divide-slate-600">
+              <tbody className="divide-y divide-slate-300 dark:divide-slate-600">
                 {tasksManagement.map((perk) => (
                   <tr key={perk.title}>
                     <th
                       scope="row"
-                      className="w-1/5 py-3 pr-4 text-left text-sm font-medium text-gray-300"
+                      className="w-1/5 py-3 pr-4 text-left text-sm font-medium text-gray-700 dark:text-gray-300"
                     >
                       {perk.title}
                     </th>
@@ -858,7 +865,7 @@ export default function ToolsReview() {
             </div>
           </div>
 
-          <h3 className="mt-10 text-sm font-bold text-gray-300">
+          <h3 className="mt-10 text-sm font-bold text-gray-700 dark:text-gray-300">
             Scalability & powered growth
           </h3>
           <div className="mt-6 relative">
@@ -869,16 +876,16 @@ export default function ToolsReview() {
             >
               <div className="w-1/5 pr-4" />
               <div className="w-1/5 px-4">
-                <div className="w-full h-full bg-slate-700 rounded-lg shadow" />
+                <div className="w-full h-full bg-slate-100 dark:bg-slate-700 rounded-lg shadow" />
               </div>
               <div className="w-1/5 px-4">
-                <div className="w-full h-full bg-slate-700 rounded-lg shadow-md" />
+                <div className="w-full h-full bg-slate-100 dark:bg-slate-700 rounded-lg shadow-md" />
               </div>
               <div className="w-1/5 px-4">
-                <div className="w-full h-full bg-slate-700 rounded-lg shadow-md" />
+                <div className="w-full h-full bg-slate-100 dark:bg-slate-700 rounded-lg shadow-md" />
               </div>
               <div className="w-1/5 pl-4">
-                <div className="w-full h-full bg-slate-700 rounded-lg shadow" />
+                <div className="w-full h-full bg-slate-100 dark:bg-slate-700 rounded-lg shadow" />
               </div>
             </div>
 
@@ -896,12 +903,12 @@ export default function ToolsReview() {
                   ))}
                 </tr>
               </thead>
-              <tbody className="divide-y divide-slate-600">
+              <tbody className="divide-y divide-slate-300 dark:divide-slate-600">
                 {scalability.map((perk) => (
                   <tr key={perk.title}>
                     <th
                       scope="row"
-                      className="w-1/5 py-3 pr-4 text-left text-sm font-medium text-gray-300"
+                      className="w-1/5 py-3 pr-4 text-left text-sm font-medium text-gray-700 dark:text-gray-300"
                     >
                       {perk.title}
                     </th>

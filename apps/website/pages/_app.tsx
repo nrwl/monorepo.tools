@@ -18,7 +18,7 @@ function CustomApp({ Component, pageProps }: AppProps) {
         />
         <title>Monorepo explained</title>
       </Head>
-      <main className="monorepo.tools bg-slate-800 text-gray-200 font-display">
+      <main className="monorepo.tools bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 font-display">
         <Component {...pageProps} />
       </main>
     </>
