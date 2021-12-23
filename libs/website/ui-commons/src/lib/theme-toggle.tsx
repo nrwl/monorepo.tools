@@ -34,7 +34,10 @@ export const settings = [
   },
 ];
 
-export function useTheme() {
+export function useTheme(): [
+  string,
+  React.Dispatch<React.SetStateAction<string>>
+] {
   const [setting, setSetting] = useState('system');
   const initial = useRef(true);
 
