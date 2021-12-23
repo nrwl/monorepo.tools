@@ -2,7 +2,7 @@ export function Introduction() {
   return (
     <div className="mt-32 bg-slate-50 dark:bg-slate-800">
       {/* Header */}
-      <div className="relative pt-64 pb-32 bg-slate-50 dark:bg-slate-800">
+      <div className="relative md:pt-64 pb-32 bg-slate-50 dark:bg-slate-800">
         <div className="absolute inset-0">
           <img
             className="w-full h-full object-cover"
@@ -55,7 +55,7 @@ export function Introduction() {
               </p>
             </div>
             <img
-              className="rounded-lg"
+              className="mt-12 md:mt-0 rounded-lg"
               width={490}
               src="/images/monorepo.svg"
               alt=""

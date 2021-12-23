@@ -5,10 +5,10 @@ import {
   MonolithCallout,
   MonorepoFeatures,
   MonorepoFeaturesOverview,
+  ToolsReview,
   WhatIsAMonorepo,
   WhyAMonorepo,
 } from '@monorepo-tools/website/ui-home';
-import ToolsReview from './tools-review';
 
 export function Index() {
   return (

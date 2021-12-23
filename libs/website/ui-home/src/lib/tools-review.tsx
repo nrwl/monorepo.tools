@@ -189,11 +189,11 @@ const scalability = [
   },
 ];
 
-function classNames(...classes) {
+function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(' ');
 }
 
-export default function ToolsReview() {
+export function ToolsReview() {
   return (
     <div className="bg-slate-50 dark:bg-slate-800">
       <div className="relative">
@@ -269,7 +269,7 @@ export default function ToolsReview() {
                     plan.featured
                       ? 'ring-2 ring-blue-600 shadow-md'
                       : 'ring-1 ring-black ring-opacity-5 shadow',
-                    'relative py-3 px-4 bg-slate-700 rounded-lg sm:p-0 sm:bg-transparent sm:rounded-none sm:ring-0 sm:shadow-none'
+                    'relative py-3 px-4 bg-slate-100 dark:bg-slate-700 rounded-lg sm:p-0 sm:bg-transparent sm:rounded-none sm:ring-0 sm:shadow-none'
                   )}
                 >
                   <dl className="divide-y divide-slate-300 dark:divide-slate-600">
@@ -360,7 +360,7 @@ export default function ToolsReview() {
                     plan.featured
                       ? 'ring-2 ring-blue-600 shadow-md'
                       : 'ring-1 ring-black ring-opacity-5 shadow',
-                    'relative py-3 px-4 bg-slate-700 rounded-lg sm:p-0 sm:bg-transparent sm:rounded-none sm:ring-0 sm:shadow-none'
+                    'relative py-3 px-4 bg-slate-100 dark:bg-slate-700 rounded-lg sm:p-0 sm:bg-transparent sm:rounded-none sm:ring-0 sm:shadow-none'
                   )}
                 >
                   <dl className="divide-y divide-slate-300 dark:divide-slate-600">
@@ -435,7 +435,7 @@ export default function ToolsReview() {
                     plan.featured
                       ? 'ring-2 ring-blue-600 shadow-md'
                       : 'ring-1 ring-black ring-opacity-5 shadow',
-                    'relative py-3 px-4 bg-slate-700 rounded-lg sm:p-0 sm:bg-transparent sm:rounded-none sm:ring-0 sm:shadow-none'
+                    'relative py-3 px-4 bg-slate-100 dark:bg-slate-700 rounded-lg sm:p-0 sm:bg-transparent sm:rounded-none sm:ring-0 sm:shadow-none'
                   )}
                 >
                   <dl className="divide-y divide-slate-300 dark:divide-slate-600">
@@ -969,3 +969,5 @@ export default function ToolsReview() {
     </div>
   );
 }
+
+export default ToolsReview;

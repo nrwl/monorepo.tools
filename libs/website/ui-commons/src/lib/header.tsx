@@ -13,7 +13,7 @@ export function Header() {
           backgroundImage: 'url(/images/header-background.svg)',
         }}
       >
-        <header className="relative min-h-screen px-4 py-16 sm:px-6 sm:py-24 md:grid md:place-items-center lg:px-8">
+        <header className="relative md:min-h-screen px-4 py-24 sm:px-6 md:grid md:place-items-center lg:px-8">
           <div className="absolute right-4 top-5 space-x-4 text-gray-300 dark:text-gray-600">
             {settings.map((variant) => (
               <button
