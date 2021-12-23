@@ -74,7 +74,7 @@ export function Introduction() {
             </div>
             <div className="p-6 bg-gray-900 rounded-bl-2xl rounded-br-2xl md:px-8">
               <a
-                href="#"
+                href="#what-is-a-monorepo"
                 className="text-base font-medium text-blue-600 hover:text-blue-500"
               >
                 What's a monorepo<span aria-hidden="true"> &rarr;</span>
@@ -92,7 +92,7 @@ export function Introduction() {
             </div>
             <div className="p-6 bg-gray-900 rounded-bl-2xl rounded-br-2xl md:px-8">
               <a
-                href="#"
+                href="#why-a-monorepo"
                 className="text-base font-medium text-blue-600 hover:text-blue-500"
               >
                 Why a monorepo?<span aria-hidden="true"> &rarr;</span>
@@ -110,7 +110,7 @@ export function Introduction() {
             </div>
             <div className="p-6 bg-gray-900 rounded-bl-2xl rounded-br-2xl md:px-8">
               <a
-                href="#"
+                href="#monorepo-features"
                 className="text-base font-medium text-blue-600 hover:text-blue-500"
               >
                 Monorepo features<span aria-hidden="true"> &rarr;</span>

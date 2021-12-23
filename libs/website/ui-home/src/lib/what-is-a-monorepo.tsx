@@ -1,6 +1,9 @@
 export function WhatIsAMonorepo() {
   return (
-    <div className="py-16 bg-slate-800 overflow-hidden lg:py-24">
+    <div
+      id="what-is-a-monorepo"
+      className="py-16 bg-slate-800 overflow-hidden lg:py-24"
+    >
       <div className="relative mx-auto px-4 sm:px-6 lg:px-8 lg:max-w-7xl">
         <div className="relative">
           <h2 className="text-center text-4xl font-extrabold tracking-tight text-white sm:text-5xl">

@@ -1,6 +1,9 @@
 export function WhyAMonorepo() {
   return (
-    <div className="bg-slate-800 pt-16 pb-20 px-4 sm:px-6 lg:pt-24 lg:pb-28 lg:px-8">
+    <div
+      id="why-a-monorepo"
+      className="bg-slate-800 pt-16 pb-20 px-4 sm:px-6 lg:pt-24 lg:pb-28 lg:px-8"
+    >
       <div className="relative">
         <h2 className="text-center text-4xl leading-8 font-extrabold tracking-tight text-white sm:text-5xl">
           # But why?

@@ -133,7 +133,10 @@ const features = [
 
 export function MonorepoFeaturesOverview() {
   return (
-    <div className="py-16 bg-slate-800 overflow-hidden lg:py-24">
+    <div
+      id="monorepo-features"
+      className="py-16 bg-slate-800 overflow-hidden lg:py-24"
+    >
       <div className="relative max-w-xl mx-auto px-4 sm:px-6 lg:px-8 lg:max-w-7xl">
         <div className="relative">
           <h2 className="text-center text-4xl leading-8 font-extrabold tracking-tight text-white sm:text-5xl">
@@ -147,7 +150,7 @@ export function MonorepoFeaturesOverview() {
 
         <div className="px-4 py-16 sm:px-6 sm:pt-20 sm:pb-24 lg:pt-24 lg:px-8">
           <h2 className="text-3xl font-extrabold text-white tracking-tight">
-            Inbox support built for efficiency
+            Some title here
           </h2>
           <p className="mt-4 max-w-3xl text-lg text-gray-200">
             Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et
