@@ -64,7 +64,7 @@ export function MonorepoFeatures() {
 
             <div className="mt-10" aria-hidden="true">
               <img
-                className="relative mx-auto border border-white dark:border-black"
+                className="relative mx-auto border border-slate-200 dark:border-black"
                 width={490}
                 src="https://place-hold.it/980x749/1e293b/fff"
                 alt=""
@@ -72,7 +72,7 @@ export function MonorepoFeatures() {
             </div>
           </div>
           <dl className="space-y-6">
-            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-white dark:border-black">
+            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
               <dt>
                 <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
                   <Supported />
@@ -84,7 +84,7 @@ export function MonorepoFeatures() {
                 assumenda aliquam impedito iste blanditiis facere.
               </dd>
             </div>
-            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-white dark:border-black">
+            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
               <dt>
                 <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
                   <Supported />
@@ -96,7 +96,7 @@ export function MonorepoFeatures() {
                 assumenda aliquam impedito iste blanditiis facere.
               </dd>
             </div>
-            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-white dark:border-black">
+            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
               <dt>
                 <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
                   <Unsupported />
@@ -108,7 +108,7 @@ export function MonorepoFeatures() {
                 assumenda aliquam impedito iste blanditiis facere.
               </dd>
             </div>
-            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-white dark:border-black">
+            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
               <dt>
                 <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
                   <Unsupported />
@@ -145,7 +145,7 @@ export function MonorepoFeatures() {
 
             <div className="mt-10" aria-hidden="true">
               <img
-                className="relative mx-auto border border-white dark:border-black"
+                className="relative mx-auto border border-slate-200 dark:border-black"
                 width={490}
                 src="https://place-hold.it/980x749/1e293b/fff"
                 alt=""
@@ -153,7 +153,7 @@ export function MonorepoFeatures() {
             </div>
           </div>
           <dl className="space-y-6">
-            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-white dark:border-black">
+            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
               <dt>
                 <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
                   <Supported />
@@ -165,7 +165,7 @@ export function MonorepoFeatures() {
                 assumenda aliquam impedito iste blanditiis facere.
               </dd>
             </div>
-            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-white dark:border-black">
+            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
               <dt>
                 <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
                   <span className="mr-3 w-2 h-2 bg-green-500 rounded-full" />
@@ -177,7 +177,7 @@ export function MonorepoFeatures() {
                 assumenda aliquam impedito iste blanditiis facere.
               </dd>
             </div>
-            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-white dark:border-black">
+            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
               <dt>
                 <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
                   <Supported />
@@ -189,7 +189,7 @@ export function MonorepoFeatures() {
                 assumenda aliquam impedito iste blanditiis facere.
               </dd>
             </div>
-            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-white dark:border-black">
+            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
               <dt>
                 <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
                   <Supported />
@@ -226,7 +226,7 @@ export function MonorepoFeatures() {
 
             <div className="mt-10" aria-hidden="true">
               <img
-                className="relative mx-auto border border-white dark:border-black"
+                className="relative mx-auto border border-slate-200 dark:border-black"
                 width={490}
                 src="https://place-hold.it/980x749/1e293b/fff"
                 alt=""
@@ -234,7 +234,7 @@ export function MonorepoFeatures() {
             </div>
           </div>
           <dl className="space-y-6">
-            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-white dark:border-black">
+            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
               <dt>
                 <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
                   <Supported />
@@ -246,7 +246,7 @@ export function MonorepoFeatures() {
                 assumenda aliquam impedito iste blanditiis facere.
               </dd>
             </div>
-            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-white dark:border-black">
+            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
               <dt>
                 <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
                   <Supported />
@@ -258,7 +258,7 @@ export function MonorepoFeatures() {
                 assumenda aliquam impedito iste blanditiis facere.
               </dd>
             </div>
-            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-white dark:border-black">
+            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
               <dt>
                 <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
                   <span className="mr-3 w-2 h-2 bg-red-500 rounded-full" />
@@ -270,7 +270,7 @@ export function MonorepoFeatures() {
                 assumenda aliquam impedito iste blanditiis facere.
               </dd>
             </div>
-            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-white dark:border-black">
+            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
               <dt>
                 <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
                   <span className="mr-3 w-2 h-2 bg-green-500 rounded-full" />
@@ -326,7 +326,7 @@ export function MonorepoFeatures() {
           </div>
 
           <dl className="space-y-6">
-            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-white dark:border-black">
+            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
               <dt>
                 <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
                   <Supported /> Nx
@@ -337,7 +337,7 @@ export function MonorepoFeatures() {
                 assumenda aliquam impedito iste blanditiis facere.
               </dd>
             </div>
-            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-white dark:border-black">
+            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
               <dt>
                 <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
                   <Supported /> Bazel
@@ -348,7 +348,7 @@ export function MonorepoFeatures() {
                 assumenda aliquam impedito iste blanditiis facere.
               </dd>
             </div>
-            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-white dark:border-black">
+            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
               <dt>
                 <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
                   <Supported /> Turborepo
@@ -359,7 +359,7 @@ export function MonorepoFeatures() {
                 assumenda aliquam impedito iste blanditiis facere.
               </dd>
             </div>
-            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-white dark:border-black">
+            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
               <dt>
                 <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
                   <Supported /> Lerna
@@ -404,7 +404,7 @@ export function MonorepoFeatures() {
           </div>
 
           <dl className="space-y-6">
-            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-white dark:border-black">
+            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
               <dt>
                 <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
                   <Supported /> Nx
@@ -415,7 +415,7 @@ export function MonorepoFeatures() {
                 assumenda aliquam impedito iste blanditiis facere.
               </dd>
             </div>
-            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-white dark:border-black">
+            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
               <dt>
                 <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
                   <Supported /> Bazel
@@ -426,7 +426,7 @@ export function MonorepoFeatures() {
                 assumenda aliquam impedito iste blanditiis facere.
               </dd>
             </div>
-            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-white dark:border-black">
+            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
               <dt>
                 <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
                   <Unsupported /> Turborepo
@@ -437,7 +437,7 @@ export function MonorepoFeatures() {
                 assumenda aliquam impedito iste blanditiis facere.
               </dd>
             </div>
-            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-white dark:border-black">
+            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
               <dt>
                 <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
                   <Supported /> Lerna
@@ -479,7 +479,7 @@ export function MonorepoFeatures() {
 
             <div className="mt-10" aria-hidden="true">
               <img
-                className="relative mx-auto border border-white dark:border-black"
+                className="relative mx-auto border border-slate-200 dark:border-black"
                 width={490}
                 src="https://place-hold.it/980x749/1e293b/fff"
                 alt=""
@@ -488,7 +488,7 @@ export function MonorepoFeatures() {
           </div>
 
           <dl className="space-y-6">
-            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-white dark:border-black">
+            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
               <dt>
                 <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
                   <Supported /> Nx
@@ -499,7 +499,7 @@ export function MonorepoFeatures() {
                 assumenda aliquam impedito iste blanditiis facere.
               </dd>
             </div>
-            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-white dark:border-black">
+            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
               <dt>
                 <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
                   <Supported /> Bazel
@@ -510,7 +510,7 @@ export function MonorepoFeatures() {
                 assumenda aliquam impedito iste blanditiis facere.
               </dd>
             </div>
-            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-white dark:border-black">
+            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
               <dt>
                 <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
                   <Supported /> Turborepo
@@ -521,7 +521,7 @@ export function MonorepoFeatures() {
                 assumenda aliquam impedito iste blanditiis facere.
               </dd>
             </div>
-            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-white dark:border-black">
+            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
               <dt>
                 <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
                   <Supported /> Lerna
@@ -557,7 +557,7 @@ export function MonorepoFeatures() {
 
             <div className="mt-10" aria-hidden="true">
               <img
-                className="relative mx-auto border border-white dark:border-black"
+                className="relative mx-auto border border-slate-200 dark:border-black"
                 width={490}
                 src="https://place-hold.it/980x749/1e293b/fff"
                 alt=""
@@ -566,7 +566,7 @@ export function MonorepoFeatures() {
           </div>
 
           <dl className="space-y-6">
-            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-white dark:border-black">
+            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
               <dt>
                 <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
                   <Supported /> Nx
@@ -577,7 +577,7 @@ export function MonorepoFeatures() {
                 assumenda aliquam impedito iste blanditiis facere.
               </dd>
             </div>
-            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-white dark:border-black">
+            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
               <dt>
                 <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
                   <Supported /> Bazel
@@ -588,7 +588,7 @@ export function MonorepoFeatures() {
                 assumenda aliquam impedito iste blanditiis facere.
               </dd>
             </div>
-            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-white dark:border-black">
+            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
               <dt>
                 <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
                   <Supported /> Turborepo
@@ -599,7 +599,7 @@ export function MonorepoFeatures() {
                 assumenda aliquam impedito iste blanditiis facere.
               </dd>
             </div>
-            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-white dark:border-black">
+            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
               <dt>
                 <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
                   <Supported /> Lerna
@@ -635,7 +635,7 @@ export function MonorepoFeatures() {
 
             <div className="mt-10" aria-hidden="true">
               <img
-                className="relative mx-auto border border-white dark:border-black"
+                className="relative mx-auto border border-slate-200 dark:border-black"
                 width={490}
                 src="https://place-hold.it/980x749/1e293b/fff"
                 alt=""
@@ -644,7 +644,7 @@ export function MonorepoFeatures() {
           </div>
 
           <dl className="space-y-6">
-            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-white dark:border-black">
+            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
               <dt>
                 <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
                   <Supported /> Nx
@@ -655,7 +655,7 @@ export function MonorepoFeatures() {
                 assumenda aliquam impedito iste blanditiis facere.
               </dd>
             </div>
-            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-white dark:border-black">
+            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
               <dt>
                 <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
                   <Supported /> Bazel
@@ -666,7 +666,7 @@ export function MonorepoFeatures() {
                 assumenda aliquam impedito iste blanditiis facere.
               </dd>
             </div>
-            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-white dark:border-black">
+            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
               <dt>
                 <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
                   <Supported /> Turborepo
@@ -677,7 +677,7 @@ export function MonorepoFeatures() {
                 assumenda aliquam impedito iste blanditiis facere.
               </dd>
             </div>
-            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-white dark:border-black">
+            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
               <dt>
                 <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
                   <Supported /> Lerna
@@ -713,7 +713,7 @@ export function MonorepoFeatures() {
 
             <div className="mt-10" aria-hidden="true">
               <img
-                className="relative mx-auto border border-white dark:border-black"
+                className="relative mx-auto border border-slate-200 dark:border-black"
                 width={490}
                 src="https://place-hold.it/980x749/1e293b/fff"
                 alt=""
@@ -722,7 +722,7 @@ export function MonorepoFeatures() {
           </div>
 
           <dl className="space-y-6">
-            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-white dark:border-black">
+            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
               <dt>
                 <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
                   <Supported /> Nx
@@ -733,7 +733,7 @@ export function MonorepoFeatures() {
                 assumenda aliquam impedito iste blanditiis facere.
               </dd>
             </div>
-            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-white dark:border-black">
+            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
               <dt>
                 <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
                   <Supported /> Bazel
@@ -744,7 +744,7 @@ export function MonorepoFeatures() {
                 assumenda aliquam impedito iste blanditiis facere.
               </dd>
             </div>
-            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-white dark:border-black">
+            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
               <dt>
                 <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
                   <Unsupported /> Turborepo
@@ -755,7 +755,7 @@ export function MonorepoFeatures() {
                 assumenda aliquam impedito iste blanditiis facere.
               </dd>
             </div>
-            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-white dark:border-black">
+            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
               <dt>
                 <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
                   <Supported /> Lerna
@@ -791,7 +791,7 @@ export function MonorepoFeatures() {
 
             <div className="mt-10" aria-hidden="true">
               <img
-                className="relative mx-auto border border-white dark:border-black"
+                className="relative mx-auto border border-slate-200 dark:border-black"
                 width={490}
                 src="https://place-hold.it/980x749/1e293b/fff"
                 alt=""
@@ -800,7 +800,7 @@ export function MonorepoFeatures() {
           </div>
 
           <dl className="space-y-6">
-            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-white dark:border-black">
+            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
               <dt>
                 <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
                   <Unsupported /> Nx
@@ -811,7 +811,7 @@ export function MonorepoFeatures() {
                 assumenda aliquam impedito iste blanditiis facere.
               </dd>
             </div>
-            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-white dark:border-black">
+            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
               <dt>
                 <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
                   <Supported /> Bazel
@@ -822,7 +822,7 @@ export function MonorepoFeatures() {
                 assumenda aliquam impedito iste blanditiis facere.
               </dd>
             </div>
-            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-white dark:border-black">
+            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
               <dt>
                 <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
                   <Unsupported /> Turborepo
@@ -833,7 +833,7 @@ export function MonorepoFeatures() {
                 assumenda aliquam impedito iste blanditiis facere.
               </dd>
             </div>
-            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-white dark:border-black">
+            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
               <dt>
                 <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
                   <Supported /> Lerna
@@ -875,7 +875,7 @@ export function MonorepoFeatures() {
 
             <div className="mt-10" aria-hidden="true">
               <img
-                className="relative mx-auto border border-white dark:border-black"
+                className="relative mx-auto border border-slate-200 dark:border-black"
                 width={490}
                 src="https://place-hold.it/980x749/1e293b/fff"
                 alt=""
@@ -884,7 +884,7 @@ export function MonorepoFeatures() {
           </div>
 
           <dl className="space-y-6">
-            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-white dark:border-black">
+            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
               <dt>
                 <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
                   <Supported />
@@ -896,7 +896,7 @@ export function MonorepoFeatures() {
                 assumenda aliquam impedito iste blanditiis facere.
               </dd>
             </div>
-            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-white dark:border-black">
+            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
               <dt>
                 <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
                   <Supported />
@@ -908,7 +908,7 @@ export function MonorepoFeatures() {
                 assumenda aliquam impedito iste blanditiis facere.
               </dd>
             </div>
-            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-white dark:border-black">
+            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
               <dt>
                 <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
                   <Supported />
@@ -920,7 +920,7 @@ export function MonorepoFeatures() {
                 assumenda aliquam impedito iste blanditiis facere.
               </dd>
             </div>
-            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-white dark:border-black">
+            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
               <dt>
                 <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
                   <Supported />
@@ -957,7 +957,7 @@ export function MonorepoFeatures() {
 
             <div className="mt-10" aria-hidden="true">
               <img
-                className="relative mx-auto border border-white dark:border-black"
+                className="relative mx-auto border border-slate-200 dark:border-black"
                 width={490}
                 src="https://place-hold.it/980x749/1e293b/fff"
                 alt=""
@@ -966,7 +966,7 @@ export function MonorepoFeatures() {
           </div>
 
           <dl className="space-y-6">
-            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-white dark:border-black">
+            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
               <dt>
                 <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
                   <Supported />
@@ -978,7 +978,7 @@ export function MonorepoFeatures() {
                 assumenda aliquam impedito iste blanditiis facere.
               </dd>
             </div>
-            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-white dark:border-black">
+            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
               <dt>
                 <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
                   <Supported />
@@ -990,7 +990,7 @@ export function MonorepoFeatures() {
                 assumenda aliquam impedito iste blanditiis facere.
               </dd>
             </div>
-            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-white dark:border-black">
+            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
               <dt>
                 <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
                   <Unsupported />
@@ -1002,7 +1002,7 @@ export function MonorepoFeatures() {
                 assumenda aliquam impedito iste blanditiis facere.
               </dd>
             </div>
-            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-white dark:border-black">
+            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
               <dt>
                 <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
                   <Unsupported />
@@ -1039,7 +1039,7 @@ export function MonorepoFeatures() {
 
             <div className="mt-10" aria-hidden="true">
               <img
-                className="relative mx-auto border border-white dark:border-black"
+                className="relative mx-auto border border-slate-200 dark:border-black"
                 width={490}
                 src="https://place-hold.it/980x749/1e293b/fff"
                 alt=""
@@ -1048,7 +1048,7 @@ export function MonorepoFeatures() {
           </div>
 
           <dl className="space-y-6">
-            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-white dark:border-black">
+            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
               <dt>
                 <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
                   <Supported />
@@ -1060,7 +1060,7 @@ export function MonorepoFeatures() {
                 assumenda aliquam impedito iste blanditiis facere.
               </dd>
             </div>
-            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-white dark:border-black">
+            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
               <dt>
                 <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
                   <Supported />
@@ -1072,7 +1072,7 @@ export function MonorepoFeatures() {
                 assumenda aliquam impedito iste blanditiis facere.
               </dd>
             </div>
-            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-white dark:border-black">
+            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
               <dt>
                 <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
                   <Unsupported />
@@ -1084,7 +1084,7 @@ export function MonorepoFeatures() {
                 assumenda aliquam impedito iste blanditiis facere.
               </dd>
             </div>
-            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-white dark:border-black">
+            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
               <dt>
                 <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
                   <Unsupported />
@@ -1121,7 +1121,7 @@ export function MonorepoFeatures() {
 
             <div className="mt-10" aria-hidden="true">
               <img
-                className="relative mx-auto border border-white dark:border-black"
+                className="relative mx-auto border border-slate-200 dark:border-black"
                 width={490}
                 src="https://place-hold.it/980x749/1e293b/fff"
                 alt=""
@@ -1130,7 +1130,7 @@ export function MonorepoFeatures() {
           </div>
 
           <dl className="space-y-6">
-            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-white dark:border-black">
+            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
               <dt>
                 <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
                   <Supported />
@@ -1142,7 +1142,7 @@ export function MonorepoFeatures() {
                 assumenda aliquam impedito iste blanditiis facere.
               </dd>
             </div>
-            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-white dark:border-black">
+            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
               <dt>
                 <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
                   <Supported />
@@ -1154,7 +1154,7 @@ export function MonorepoFeatures() {
                 assumenda aliquam impedito iste blanditiis facere.
               </dd>
             </div>
-            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-white dark:border-black">
+            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
               <dt>
                 <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
                   <Unsupported />
@@ -1166,7 +1166,7 @@ export function MonorepoFeatures() {
                 assumenda aliquam impedito iste blanditiis facere.
               </dd>
             </div>
-            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-white dark:border-black">
+            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
               <dt>
                 <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
                   <Unsupported />
