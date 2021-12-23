@@ -1,4 +1,9 @@
+import cx from 'classnames';
+import { settings, useTheme } from './theme-toggle';
+
 export function Header() {
+  const [setting, setSetting] = useTheme();
+
   return (
     <div className="w-full bg-slate-50 dark:bg-slate-800">
       <div
@@ -8,7 +13,25 @@ export function Header() {
           backgroundImage: 'url(/images/header-background.svg)',
         }}
       >
-        <header className=" min-h-screen px-4 py-16 sm:px-6 sm:py-24 md:grid md:place-items-center lg:px-8">
+        <header className="relative min-h-screen px-4 py-16 sm:px-6 sm:py-24 md:grid md:place-items-center lg:px-8">
+          <div className="absolute right-4 top-5 space-x-4 text-gray-300 dark:text-gray-600">
+            {settings.map((variant) => (
+              <button
+                key={variant.value}
+                className={cx(
+                  setting === variant.value
+                    ? 'text-gray-200 dark:text-gray-500'
+                    : '',
+                  'p-1 hover:text-gray-400 transition'
+                )}
+                title={variant.label}
+                onClick={() => setSetting(variant.value)}
+              >
+                <variant.icon className="w-6 h-6" />
+                <span className="sr-only">{variant.label}</span>
+              </button>
+            ))}
+          </div>
           <div className="max-w-max mx-auto">
             <div className="w-full">
               <span className="text-5xl font-extrabold text-gray-900 dark:text-white tracking-tighter sm:text-8xl">

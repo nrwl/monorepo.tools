@@ -12,6 +12,7 @@
     "@heroicons/react": "^1.0.5",
     "@netlify-builder/deploy": "^4.1.2",
     "@nrwl/next": "13.3.2",
+    "classnames": "^2.3.1",
     "core-js": "^3.6.5",
     "next": "12.0.7",
     "react": "17.0.2",
