@@ -48,6 +48,13 @@
       "options": {
         "lintFilePatterns": ["apps/website/**/*.{ts,tsx,js,jsx}"]
       }
+    },
+    "deploy": {
+      "builder": "@netlify-builder/deploy:deploy",
+      "options": {
+        "outputPath": "dist/apps/website",
+        "siteId": "661dca4c-fce8-4e2a-93fb-06b08822f698"
+      }
     }
   },
   "tags": []
