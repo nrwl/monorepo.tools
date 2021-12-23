@@ -1,4 +1,4 @@
-<p style="text-align: center;"><img src="./apps/website/public/images/monorepo.png" 
+<p style="text-align: center;"><img src="./apps/website/public/images/monorepo.svg" 
 width="230px" alt="monorepo.tools"></p>
 
 # Monorepo.tools
