@@ -1,4 +1,5 @@
 import {
+  ChevronDownIcon,
   CloudDownloadIcon,
   CodeIcon,
   CogIcon,
@@ -22,6 +23,7 @@ const features = [
     description:
       'Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.',
     icon: HandIcon,
+    anchor: 'code-boundaries',
   },
   {
     name: 'Code sharing',
@@ -29,6 +31,7 @@ const features = [
     description:
       'Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.',
     icon: CodeIcon,
+    anchor: 'code-sharing',
   },
   {
     name: 'Consistent tooling',
@@ -36,6 +39,7 @@ const features = [
     description:
       'Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.',
     icon: TerminalIcon,
+    anchor: 'consistent-tooling',
   },
   {
     name: 'Dependency graph visualization',
@@ -43,6 +47,7 @@ const features = [
     description:
       'Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.',
     icon: PresentationChartLineIcon,
+    anchor: 'dependency-graph-visualization',
   },
   {
     name: 'Detecting affected projects/packages',
@@ -50,6 +55,7 @@ const features = [
     description:
       'Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.',
     icon: LightBulbIcon,
+    anchor: 'detecting-affected-projects-packages',
   },
   {
     name: 'Local task coordination',
@@ -57,6 +63,7 @@ const features = [
     description:
       'Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.',
     icon: SwitchVerticalIcon,
+    anchor: 'local-task-coordination',
   },
   {
     name: 'Local computation caching',
@@ -64,6 +71,7 @@ const features = [
     description:
       'Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.',
     icon: DocumentDownloadIcon,
+    anchor: 'local-computation-caching',
   },
   {
     name: 'Distributed computation caching',
@@ -71,6 +79,7 @@ const features = [
     description:
       'Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.',
     icon: CloudDownloadIcon,
+    anchor: 'distributed-computation-caching',
   },
   {
     name: 'Distributed task execution',
@@ -78,6 +87,7 @@ const features = [
     description:
       'Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.',
     icon: CollectionIcon,
+    anchor: 'distributed-task-execution',
   },
   {
     name: 'Transparent remote execution',
@@ -85,6 +95,7 @@ const features = [
     description:
       'Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.',
     icon: ServerIcon,
+    anchor: 'transparent-remote-execution',
   },
   {
     name: 'Performance',
@@ -92,6 +103,7 @@ const features = [
     description:
       'Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.',
     icon: LightningBoltIcon,
+    anchor: 'performance',
   },
   {
     name: 'Code generation',
@@ -99,6 +111,7 @@ const features = [
     description:
       'Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.',
     icon: CogIcon,
+    anchor: 'code-generation',
   },
   {
     name: 'Explicit project constrains',
@@ -106,6 +119,7 @@ const features = [
     description:
       'Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.',
     icon: StatusOnlineIcon,
+    anchor: 'explicit-project-constrains',
   },
   {
     name: 'Enforcing code style',
@@ -113,6 +127,7 @@ const features = [
     description:
       'Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.',
     icon: SortDescendingIcon,
+    anchor: 'enforcing-code-style',
   },
 ];
 
@@ -142,29 +157,37 @@ export function MonorepoFeaturesOverview() {
           <div className="mt-12 grid grid-cols-1 gap-x-6 gap-y-12 sm:grid-cols-2 lg:mt-16 lg:grid-cols-3 lg:gap-x-8 lg:gap-y-16">
             {features.map((feature) => (
               <div
-                key={feature.name}
-                className="bg-slate-900 rounded-md px-4 py-5"
+                key={feature.anchor}
+                className="relative overflow-hidden bg-slate-900 rounded-md px-4 py-5 group"
               >
-                <div className="relative">
-                  <span className="flex items-center justify-center h-12 w-12 rounded-md bg-white bg-opacity-5">
-                    <feature.icon
-                      className="h-6 w-6 text-gray-200"
-                      aria-hidden="true"
-                    />
-                  </span>
+                <a href={'#' + feature.anchor}>
+                  <div className="relative">
+                    <span className="flex items-center justify-center h-12 w-12 rounded-md bg-white bg-opacity-5">
+                      <feature.icon
+                        className="h-6 w-6 text-gray-200"
+                        aria-hidden="true"
+                      />
+                    </span>
 
-                  <span className="absolute top-2.5 right-0 inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-white bg-opacity-5 text-gray-300 capitalize">
-                    {feature.category}
-                  </span>
-                </div>
-                <div className="mt-6">
-                  <h3 className="text-lg font-medium text-gray-200">
-                    {feature.name}
-                  </h3>
-                  <p className="mt-2 text-base text-gray-300">
-                    {feature.description}
-                  </p>
-                </div>
+                    <span className="absolute top-2.5 right-0 inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-white bg-opacity-5 text-gray-300 capitalize">
+                      {feature.category}
+                    </span>
+                  </div>
+                  <div className="mt-6">
+                    <h3 className="text-lg font-medium text-gray-200">
+                      {feature.name}
+                    </h3>
+                    <p className="mt-2 text-base text-gray-300">
+                      {feature.description}
+                    </p>
+                  </div>
+                  <div className="absolute left-0 -bottom-full w-full h-full flex items-center bg-slate-900/30 group-hover:bottom-0 transition-all ease-out">
+                    <div className="mx-auto p-4 bg-slate-800 shadow rounded-full">
+                      <span className="sr-only">more details</span>
+                      <ChevronDownIcon className="h-6 w-6" />
+                    </div>
+                  </div>
+                </a>
               </div>
             ))}
           </div>

@@ -9,6 +9,7 @@ import {
   LightningBoltIcon,
   PresentationChartLineIcon,
   ServerIcon,
+  SortDescendingIcon,
   StatusOnlineIcon,
   SwitchVerticalIcon,
   TerminalIcon,
@@ -42,7 +43,10 @@ export function MonorepoFeatures() {
         </div>
 
         {/*Code Boundaries*/}
-        <div className="relative mt-12 lg:mt-16 lg:grid lg:grid-cols-2 lg:gap-12 lg:items-start">
+        <div
+          id="code-boundaries"
+          className="relative mt-12 lg:mt-16 lg:grid lg:grid-cols-2 lg:gap-12 lg:items-start"
+        >
           <div className="relative">
             <div className="absolute flex items-center justify-center h-10 w-10 rounded-md text-gray-200 rounded-md bg-slate-900">
               <HandIcon className="w-6 h-6" />
@@ -120,7 +124,10 @@ export function MonorepoFeatures() {
         </div>
 
         {/*Code Sharing*/}
-        <div className="relative mt-12 lg:mt-16 lg:grid lg:grid-cols-2 lg:gap-12 lg:items-start">
+        <div
+          id="code-sharing"
+          className="relative mt-12 lg:mt-16 lg:grid lg:grid-cols-2 lg:gap-12 lg:items-start"
+        >
           <div className="relative">
             <div className="absolute flex items-center justify-center h-10 w-10 rounded-md text-gray-200 rounded-md bg-slate-900">
               <CodeIcon className="w-6 h-6" />
@@ -198,7 +205,10 @@ export function MonorepoFeatures() {
         </div>
 
         {/*Consistent Tooling*/}
-        <div className="relative mt-12 lg:mt-16 lg:grid lg:grid-cols-2 lg:gap-12 lg:items-start">
+        <div
+          id="consistent-tooling"
+          className="relative mt-12 lg:mt-16 lg:grid lg:grid-cols-2 lg:gap-12 lg:items-start"
+        >
           <div className="relative">
             <div className="absolute flex items-center justify-center h-10 w-10 rounded-md text-gray-200 rounded-md bg-slate-900">
               <TerminalIcon className="w-6 h-6" />
@@ -282,7 +292,10 @@ export function MonorepoFeatures() {
         </div>
 
         {/*Dependency Graph Visualization*/}
-        <div className="relative mt-12 lg:mt-16 lg:grid lg:grid-cols-2 lg:gap-12 lg:items-start">
+        <div
+          id="dependency-graph-visualization"
+          className="relative mt-12 lg:mt-16 lg:grid lg:grid-cols-2 lg:gap-12 lg:items-start"
+        >
           <div className="relative">
             <div className="absolute flex items-center justify-center h-10 w-10 rounded-md text-gray-200 rounded-md bg-slate-900">
               <PresentationChartLineIcon className="w-6 h-6" />
@@ -361,7 +374,10 @@ export function MonorepoFeatures() {
         </div>
 
         {/*Detecting Affected Projects/Packages*/}
-        <div className="relative mt-12 lg:mt-16 lg:grid lg:grid-cols-2 lg:gap-12 lg:items-start">
+        <div
+          id="detecting-affected-projects-packages"
+          className="relative mt-12 lg:mt-16 lg:grid lg:grid-cols-2 lg:gap-12 lg:items-start"
+        >
           <div className="relative">
             <div className="absolute flex items-center justify-center h-10 w-10 rounded-md text-gray-200 rounded-md bg-slate-900">
               <LightBulbIcon className="w-6 h-6" />
@@ -442,7 +458,10 @@ export function MonorepoFeatures() {
         </div>
 
         {/*Local Task Coordination*/}
-        <div className="relative mt-12 lg:mt-16 lg:grid lg:grid-cols-2 lg:gap-12 lg:items-start">
+        <div
+          id="local-task-coordination"
+          className="relative mt-12 lg:mt-16 lg:grid lg:grid-cols-2 lg:gap-12 lg:items-start"
+        >
           <div className="relative">
             <div className="absolute flex items-center justify-center h-10 w-10 rounded-md text-gray-200 rounded-md bg-slate-900">
               <SwitchVerticalIcon className="w-6 h-6" />
@@ -517,7 +536,10 @@ export function MonorepoFeatures() {
         </div>
 
         {/*Local Computation Caching*/}
-        <div className="relative mt-12 lg:mt-16 lg:grid lg:grid-cols-2 lg:gap-12 lg:items-start">
+        <div
+          id="local-computation-caching"
+          className="relative mt-12 lg:mt-16 lg:grid lg:grid-cols-2 lg:gap-12 lg:items-start"
+        >
           <div className="relative">
             <div className="absolute flex items-center justify-center h-10 w-10 rounded-md text-gray-200 rounded-md bg-slate-900">
               <DocumentDownloadIcon className="w-6 h-6" />
@@ -591,8 +613,11 @@ export function MonorepoFeatures() {
           </dl>
         </div>
 
-        {/*Cloud Computation Caching*/}
-        <div className="relative mt-12 lg:mt-16 lg:grid lg:grid-cols-2 lg:gap-12 lg:items-start">
+        {/*Distributed Computation Caching*/}
+        <div
+          id="distributed-computation-caching"
+          className="relative mt-12 lg:mt-16 lg:grid lg:grid-cols-2 lg:gap-12 lg:items-start"
+        >
           <div className="relative">
             <div className="absolute flex items-center justify-center h-10 w-10 rounded-md text-gray-200 rounded-md bg-slate-900">
               <CloudDownloadIcon className="w-6 h-6" />
@@ -667,7 +692,10 @@ export function MonorepoFeatures() {
         </div>
 
         {/*Distributed Task Execution*/}
-        <div className="relative mt-12 lg:mt-16 lg:grid lg:grid-cols-2 lg:gap-12 lg:items-start">
+        <div
+          id="distributed-task-execution"
+          className="relative mt-12 lg:mt-16 lg:grid lg:grid-cols-2 lg:gap-12 lg:items-start"
+        >
           <div className="relative">
             <div className="absolute flex items-center justify-center h-10 w-10 rounded-md text-gray-200 rounded-md bg-slate-900">
               <CollectionIcon className="w-6 h-6" />
@@ -742,7 +770,10 @@ export function MonorepoFeatures() {
         </div>
 
         {/*Transparent Remote Execution*/}
-        <div className="relative mt-12 lg:mt-16 lg:grid lg:grid-cols-2 lg:gap-12 lg:items-start">
+        <div
+          id="transparent-remote-execution"
+          className="relative mt-12 lg:mt-16 lg:grid lg:grid-cols-2 lg:gap-12 lg:items-start"
+        >
           <div className="relative">
             <div className="absolute flex items-center justify-center h-10 w-10 rounded-md text-gray-200 rounded-md bg-slate-900">
               <ServerIcon className="w-6 h-6" />
@@ -823,7 +854,10 @@ export function MonorepoFeatures() {
         </div>
 
         {/*Performance*/}
-        <div className="relative mt-12 lg:mt-16 lg:grid lg:grid-cols-2 lg:gap-12 lg:items-start">
+        <div
+          id="performance"
+          className="relative mt-12 lg:mt-16 lg:grid lg:grid-cols-2 lg:gap-12 lg:items-start"
+        >
           <div className="relative">
             <div className="absolute flex items-center justify-center h-10 w-10 rounded-md text-gray-200 rounded-md bg-slate-900">
               <LightningBoltIcon className="w-6 h-6" />
@@ -902,7 +936,10 @@ export function MonorepoFeatures() {
         </div>
 
         {/*Code Generation*/}
-        <div className="relative mt-12 lg:mt-16 lg:grid lg:grid-cols-2 lg:gap-12 lg:items-start">
+        <div
+          id="code-generation"
+          className="relative mt-12 lg:mt-16 lg:grid lg:grid-cols-2 lg:gap-12 lg:items-start"
+        >
           <div className="relative">
             <div className="absolute flex items-center justify-center h-10 w-10 rounded-md text-gray-200 rounded-md bg-slate-900">
               <CogIcon className="w-6 h-6" />
@@ -980,11 +1017,96 @@ export function MonorepoFeatures() {
           </dl>
         </div>
 
-        {/*Enforcing Code Style*/}
-        <div className="relative mt-12 lg:mt-16 lg:grid lg:grid-cols-2 lg:gap-12 lg:items-start">
+        {/*Explicit Project Constrains*/}
+        <div
+          id="explicit-project-constrains"
+          className="relative mt-12 lg:mt-16 lg:grid lg:grid-cols-2 lg:gap-12 lg:items-start"
+        >
           <div className="relative">
             <div className="absolute flex items-center justify-center h-10 w-10 rounded-md text-gray-200 rounded-md bg-slate-900">
               <StatusOnlineIcon className="w-6 h-6" />
+            </div>
+            <h3 className="ml-16 text-xl font-medium text-gray-200 sm:text-2xl sm:leading-relaxed">
+              Explicit project constrains
+            </h3>
+
+            <p className="mt-3 text-lg text-gray-200">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur
+              minima sequi recusandae, porro maiores officia assumenda aliquam
+              laborum ab aliquid veritatis impedit odit adipisci optio iste
+              blanditiis facere. Totam, velit.
+            </p>
+
+            <div className="mt-10" aria-hidden="true">
+              <img
+                className="relative mx-auto border border-black"
+                width={490}
+                src="https://place-hold.it/980x749/1e293b/fff"
+                alt=""
+              />
+            </div>
+          </div>
+
+          <dl className="space-y-6">
+            <div className="p-4 bg-gray-900 rounded-md border border-black">
+              <dt>
+                <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-800 text-gray-300 text-sm uppercase tracking-widest">
+                  <Supported />
+                  Nx
+                </p>
+              </dt>
+              <dd className="mt-4 text-gray-400">
+                Pariatur minima sequi recusandae, porro maiores officia
+                assumenda aliquam impedito iste blanditiis facere.
+              </dd>
+            </div>
+            <div className="p-4 bg-gray-900 rounded-md border border-black">
+              <dt>
+                <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-800 text-gray-300 text-sm uppercase tracking-widest">
+                  <Supported />
+                  Bazel
+                </p>
+              </dt>
+              <dd className="mt-4 text-base text-gray-400">
+                Pariatur minima sequi recusandae, porro maiores officia
+                assumenda aliquam impedito iste blanditiis facere.
+              </dd>
+            </div>
+            <div className="p-4 bg-gray-900 rounded-md border border-black">
+              <dt>
+                <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-800 text-gray-300 text-sm uppercase tracking-widest">
+                  <Unsupported />
+                  Turborepo
+                </p>
+              </dt>
+              <dd className="mt-4 text-base text-gray-400">
+                Pariatur minima sequi recusandae, porro maiores officia
+                assumenda aliquam impedito iste blanditiis facere.
+              </dd>
+            </div>
+            <div className="p-4 bg-gray-900 rounded-md border border-black">
+              <dt>
+                <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-800 text-gray-300 text-sm uppercase tracking-widest">
+                  <Unsupported />
+                  Lerna
+                </p>
+              </dt>
+              <dd className="mt-4 text-base text-gray-400">
+                Pariatur minima sequi recusandae, porro maiores officia
+                assumenda aliquam impedito iste blanditiis facere.
+              </dd>
+            </div>
+          </dl>
+        </div>
+
+        {/*Enforcing Code Style*/}
+        <div
+          id="enforcing-code-style"
+          className="relative mt-12 lg:mt-16 lg:grid lg:grid-cols-2 lg:gap-12 lg:items-start"
+        >
+          <div className="relative">
+            <div className="absolute flex items-center justify-center h-10 w-10 rounded-md text-gray-200 rounded-md bg-slate-900">
+              <SortDescendingIcon className="w-6 h-6" />
             </div>
             <h3 className="ml-16 text-xl font-medium text-gray-200 sm:text-2xl sm:leading-relaxed">
               Enforcing code style
