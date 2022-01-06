@@ -19,10 +19,12 @@ const tools = [
       'A fast, scalable, multi-language and extensible build system.',
   },
   {
-    title: 'Lerna',
+    title: 'Lage',
     featured: false,
+    organization: 'Microsoft',
+    organizationUrl: 'https://microsoft.com',
     description:
-      'A tool for managing JavaScript projects with multiple packages.',
+      'Task runner in JS monorepos',
   },
   {
     title: 'Turborepo',
@@ -32,74 +34,23 @@ const tools = [
     description:
       'The high-performance build system for JavaScript & TypeScript codebases.',
   },
-];
-const management = [
   {
-    title: 'Code boundaries',
-    tooltip:
-      'Supports definition of rules to constrain dependency relationships within the repo.',
-    tiers: [
-      { title: 'Nx', featured: false, value: true },
-      { title: 'Bazel', value: true },
-      { title: 'Lerna', value: false },
-      { title: 'Turborepo', value: false },
-    ],
-  },
-  {
-    title: 'Source code sharing',
-    tooltip: 'Facilitates sharing of discrete pieces source code.',
-    tiers: [
-      { title: 'Nx', featured: false, value: true },
-      { title: 'Bazel', value: true },
-      { title: 'Lerna', value: true },
-      { title: 'Turborepo', value: true },
-    ],
-  },
-  {
-    title: 'Consistent tooling',
-    tooltip:
-      'The tool is suitable for running tasks in all contexts and environments.',
-    tiers: [
-      { title: 'Nx', featured: false, value: true },
-      { title: 'Bazel', value: true },
-      { title: 'Lerna', value: true },
-      { title: 'Turborepo', value: false },
-    ],
+    title: 'Lerna',
+    featured: false,
+    description:
+      'A tool for managing JavaScript projects with multiple packages.',
   },
 ];
-const understandingWorkspace = [
+const fast = [
   {
-    title: 'Dependency graph visualization',
-    tooltip:
-      'Visualize dependency relationships between projects and/or tasks.',
+    title: 'Local task orchestration',
+    tooltip: 'The ability to run tasks in the correct order and in parallel.',
     tiers: [
       { title: 'Nx', featured: false, value: true },
       { title: 'Bazel', value: true },
-      { title: 'Lerna', value: true },
+      { title: 'Lage', value: true },
       { title: 'Turborepo', value: true },
-    ],
-  },
-  {
-    title: 'Detecting affected projects/packages',
-    tooltip:
-      'Determine what might be affected by a change, to run only affected tasks.',
-    tiers: [
-      { title: 'Nx', featured: false, value: true },
-      { title: 'Bazel', value: true },
       { title: 'Lerna', value: true },
-      { title: 'Turborepo', value: false },
-    ],
-  },
-];
-const tasksManagement = [
-  {
-    title: 'Local task coordination',
-    tooltip: 'The ability to run tasks in the correct order.',
-    tiers: [
-      { title: 'Nx', featured: false, value: true },
-      { title: 'Bazel', value: true },
-      { title: 'Lerna', value: true },
-      { title: 'Turborepo', value: true },
     ],
   },
   {
@@ -109,8 +60,9 @@ const tasksManagement = [
     tiers: [
       { title: 'Nx', featured: false, value: true },
       { title: 'Bazel', value: true },
-      { title: 'Lerna', value: true },
+      { title: 'Lage', value: true },
       { title: 'Turborepo', value: true },
+      { title: 'Lerna', value: false },
     ],
   },
   {
@@ -120,71 +72,120 @@ const tasksManagement = [
     tiers: [
       { title: 'Nx', featured: false, value: true },
       { title: 'Bazel', value: true },
-      { title: 'Lerna', value: true },
+      { title: 'Lage', value: true },
       { title: 'Turborepo', value: true },
+      { title: 'Lerna', value: false },
     ],
   },
   {
     title: 'Distributed task execution',
-    tooltip: 'The ability to distribute a task across many machines.',
+    tooltip: 'The ability to distribute a command across many machines.',
     tiers: [
       { title: 'Nx', featured: false, value: true },
       { title: 'Bazel', value: true },
-      { title: 'Lerna', value: true },
+      { title: 'Lage', value: false },
       { title: 'Turborepo', value: false },
+      { title: 'Lerna', value: false },
     ],
   },
   {
     title: 'Transparent remote execution',
-    tooltip: '',
+    tooltip: 'The ability to execute any command on multiple machines while developing locally.',
     tiers: [
       { title: 'Nx', featured: false, value: false },
       { title: 'Bazel', value: true },
-      { title: 'Lerna', value: true },
+      { title: 'Lage', value: false },
       { title: 'Turborepo', value: false },
+      { title: 'Lerna', value: false },
+    ],
+  },
+  {
+    title: 'Detecting affected projects/packages',
+    tooltip:
+      'Determine what might be affected by a change, to run only build/test affected projects.',
+    tiers: [
+      { title: 'Nx', featured: false, value: true },
+      { title: 'Bazel', value: false },
+      { title: 'Lage', value: true },
+      { title: 'Turborepo', value: true },
+      { title: 'Lerna', value: true },
     ],
   },
 ];
-const scalability = [
+
+const understandable = [
   {
-    title: 'Performance',
-    tooltip: '',
+    title: 'Workspace analysis',
+    tooltip:
+      'The ability to understand the understand the project graph of the workspace without extra configuration.',
+    tiers: [
+      { title: 'Nx', featured: false, value: true },
+      { title: 'Bazel', value: false },
+      { title: 'Lage', value: true },
+      { title: 'Turborepo', value: true },
+      { title: 'Lerna', value: true },
+    ],
+  },
+  {
+    title: 'Dependency graph visualization',
+    tooltip:
+      'Visualize dependency relationships between projects and/or tasks.',
     tiers: [
       { title: 'Nx', featured: false, value: true },
       { title: 'Bazel', value: true },
-      { title: 'Lerna', value: true },
+      { title: 'Lage', value: false },
       { title: 'Turborepo', value: true },
+      { title: 'Lerna', value: false },
+    ],
+  }
+];
+
+const manageable = [
+  {
+    title: 'Source code sharing',
+    tooltip: 'Facilitates sharing of discrete pieces source code.',
+    tiers: [
+      { title: 'Nx', featured: false, value: true },
+      { title: 'Bazel', value: true },
+      { title: 'Lage', value: true },
+      { title: 'Turborepo', value: true },
+      { title: 'Lerna', value: true },
+    ],
+  },
+  {
+    title: 'Consistent tooling',
+    tooltip:
+      '   The tool helps you get a consistent experience regardless of what you use to develop your projects: different JavaScript frameworks, Go, Java, etc.',
+    tiers: [
+      { title: 'Nx', featured: false, value: true },
+      { title: 'Bazel', value: true },
+      { title: 'Lage', value: false },
+      { title: 'Turborepo', value: false },
+      { title: 'Lerna', value: false },
     ],
   },
   {
     title: 'Code generation',
-    tooltip: 'Native support for generating code ',
-    tiers: [
-      { title: 'Nx', featured: false, value: true },
-      { title: 'Bazel', value: true },
-      { title: 'Lerna', value: false },
-      { title: 'Turborepo', value: false },
-    ],
-  },
-  {
-    title: 'Explicit project constraints',
     tooltip:
-      'Enforcing boundaries between code via public APIs or other means.',
+      'Native support for generating code',
     tiers: [
       { title: 'Nx', featured: false, value: true },
-      { title: 'Bazel', value: true },
-      { title: 'Lerna', value: false },
+      { title: 'Bazel', value: false },
+      { title: 'Lage', value: false },
       { title: 'Turborepo', value: false },
+      { title: 'Lerna', value: false },
     ],
   },
   {
-    title: 'Enforcing code style',
-    tooltip: 'Native support for enforcing formatting rules.',
+    title: 'Project constraints and visibility',
+    tooltip:
+      'Supports definition of rules to constrain dependency relationships within the repo.',
     tiers: [
       { title: 'Nx', featured: false, value: true },
       { title: 'Bazel', value: true },
-      { title: 'Lerna', value: false },
+      { title: 'Lage', value: false },
       { title: 'Turborepo', value: false },
+      { title: 'Lerna', value: false },
     ],
   },
 ];
@@ -247,7 +248,7 @@ export function ToolsReview() {
                 </p>
               </div>
               <h4 className="mt-10 text-sm font-bold text-gray-700 dark:text-gray-300">
-                Management
+                Fast
               </h4>
 
               <div className="mt-6 relative">
@@ -273,7 +274,7 @@ export function ToolsReview() {
                   )}
                 >
                   <dl className="divide-y divide-slate-300 dark:divide-slate-600">
-                    {management.map((feature) => (
+                    {fast.map((feature) => (
                       <div
                         key={feature.title}
                         className="py-3 flex items-center justify-between sm:grid sm:grid-cols-2"
@@ -338,7 +339,7 @@ export function ToolsReview() {
               </div>
 
               <h4 className="mt-10 text-sm font-bold text-gray-700 dark:text-gray-300">
-                Understanding your workspace
+                Understandable
               </h4>
 
               <div className="mt-6 relative">
@@ -364,7 +365,7 @@ export function ToolsReview() {
                   )}
                 >
                   <dl className="divide-y divide-slate-300 dark:divide-slate-600">
-                    {understandingWorkspace.map((perk) => (
+                    {understandable.map((perk) => (
                       <div
                         key={perk.title}
                         className="py-3 flex justify-between sm:grid sm:grid-cols-2"
@@ -413,7 +414,7 @@ export function ToolsReview() {
               </div>
 
               <h4 className="mt-10 text-sm font-bold text-gray-700 dark:text-gray-300">
-                Tasks management
+                Manageable
               </h4>
 
               <div className="mt-6 relative">
@@ -439,7 +440,7 @@ export function ToolsReview() {
                   )}
                 >
                   <dl className="divide-y divide-slate-300 dark:divide-slate-600">
-                    {tasksManagement.map((perk) => (
+                    {manageable.map((perk) => (
                       <div
                         key={perk.title}
                         className="py-3 flex justify-between sm:grid sm:grid-cols-2"
@@ -537,7 +538,7 @@ export function ToolsReview() {
           <div className="w-full border-t border-slate-100 dark:border-slate-900 flex items-stretch">
             <div className="-mt-px w-1/5 py-6 pr-4 flex items-end">
               <h3 className="mt-auto text-sm font-bold text-gray-700 dark:text-gray-300">
-                Management
+                Fast
               </h3>
             </div>
           </div>
@@ -547,17 +548,20 @@ export function ToolsReview() {
               className="absolute inset-0 flex items-stretch pointer-events-none"
               aria-hidden="true"
             >
-              <div className="w-1/5 pr-4" />
-              <div className="w-1/5 px-4">
+              <div className="w-1/6 pr-5" />
+              <div className="w-1/6 px-5">
                 <div className="w-full h-full bg-slate-100 dark:bg-slate-700 rounded-lg shadow" />
               </div>
-              <div className="w-1/5 px-4">
+              <div className="w-1/6 px-5">
                 <div className="w-full h-full bg-slate-100 dark:bg-slate-700 rounded-lg shadow-md" />
               </div>
-              <div className="w-1/5 px-4">
+              <div className="w-1/6 px-5">
                 <div className="w-full h-full bg-slate-100 dark:bg-slate-700 rounded-lg shadow-md" />
               </div>
-              <div className="w-1/5 pl-4">
+              <div className="w-1/6 pl-5">
+                <div className="w-full h-full bg-slate-100 dark:bg-slate-700 rounded-lg shadow" />
+              </div>
+              <div className="w-1/6 pl-5">
                 <div className="w-full h-full bg-slate-100 dark:bg-slate-700 rounded-lg shadow" />
               </div>
             </div>
@@ -577,7 +581,7 @@ export function ToolsReview() {
                 </tr>
               </thead>
               <tbody className="divide-y divide-slate-300 dark:divide-slate-600">
-                {management.map((feature) => (
+                {fast.map((feature) => (
                   <tr key={feature.title}>
                     <th
                       scope="row"
@@ -639,24 +643,27 @@ export function ToolsReview() {
               className="absolute inset-0 flex items-stretch pointer-events-none"
               aria-hidden="true"
             >
-              <div className="w-1/5 pr-4" />
-              <div className="w-1/5 px-4">
+              <div className="w-1/6 pr-5" />
+              <div className="w-1/6 px-5">
                 <div className="w-full h-full rounded-lg ring-1 ring-black ring-opacity-5" />
               </div>
-              <div className="w-1/5 px-4">
+              <div className="w-1/6 px-5">
                 <div className="w-full h-full rounded-lg ring-2 ring-black ring-opacity-5" />
               </div>
-              <div className="w-1/5 px-4">
+              <div className="w-1/6 px-5">
                 <div className="w-full h-full rounded-lg ring-2 ring-black ring-opacity-5" />
               </div>
-              <div className="w-1/5 pl-4">
+              <div className="w-1/6 pl-5">
+                <div className="w-full h-full rounded-lg ring-1 ring-black ring-opacity-5" />
+              </div>
+              <div className="w-1/6 pl-5">
                 <div className="w-full h-full rounded-lg ring-1 ring-black ring-opacity-5" />
               </div>
             </div>
           </div>
 
           <h3 className="mt-10 text-sm font-bold text-gray-700 dark:text-gray-300">
-            Understanding your workspace
+            Understabldable
           </h3>
           <div className="mt-6 relative">
             {/* Fake card backgrounds */}
@@ -704,7 +711,7 @@ export function ToolsReview() {
                 </tr>
               </thead>
               <tbody className="divide-y divide-slate-300 dark:divide-slate-600">
-                {understandingWorkspace.map((perk) => (
+                {understandable.map((perk) => (
                   <tr key={perk.title}>
                     <th
                       scope="row"
@@ -766,7 +773,7 @@ export function ToolsReview() {
           </div>
 
           <h3 className="mt-10 text-sm font-bold text-gray-700 dark:text-gray-300">
-            Tasks management
+            Manageable
           </h3>
           <div className="mt-6 relative">
             {/* Fake card backgrounds */}
@@ -804,7 +811,7 @@ export function ToolsReview() {
                 </tr>
               </thead>
               <tbody className="divide-y divide-slate-300 dark:divide-slate-600">
-                {tasksManagement.map((perk) => (
+                {manageable.map((perk) => (
                   <tr key={perk.title}>
                     <th
                       scope="row"
@@ -865,105 +872,6 @@ export function ToolsReview() {
             </div>
           </div>
 
-          <h3 className="mt-10 text-sm font-bold text-gray-700 dark:text-gray-300">
-            Scalability & powered growth
-          </h3>
-          <div className="mt-6 relative">
-            {/* Fake card backgrounds */}
-            <div
-              className="absolute inset-0 flex items-stretch pointer-events-none"
-              aria-hidden="true"
-            >
-              <div className="w-1/5 pr-4" />
-              <div className="w-1/5 px-4">
-                <div className="w-full h-full bg-slate-100 dark:bg-slate-700 rounded-lg shadow" />
-              </div>
-              <div className="w-1/5 px-4">
-                <div className="w-full h-full bg-slate-100 dark:bg-slate-700 rounded-lg shadow-md" />
-              </div>
-              <div className="w-1/5 px-4">
-                <div className="w-full h-full bg-slate-100 dark:bg-slate-700 rounded-lg shadow-md" />
-              </div>
-              <div className="w-1/5 pl-4">
-                <div className="w-full h-full bg-slate-100 dark:bg-slate-700 rounded-lg shadow" />
-              </div>
-            </div>
-
-            <table className="relative w-full">
-              <caption className="sr-only">Tool comparison</caption>
-              <thead>
-                <tr className="text-left">
-                  <th scope="col">
-                    <span className="sr-only">Tool</span>
-                  </th>
-                  {tools.map((plan) => (
-                    <th key={plan.title} scope="col">
-                      <span className="sr-only">{plan.title}</span>
-                    </th>
-                  ))}
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-slate-300 dark:divide-slate-600">
-                {scalability.map((perk) => (
-                  <tr key={perk.title}>
-                    <th
-                      scope="row"
-                      className="w-1/5 py-3 pr-4 text-left text-sm font-medium text-gray-700 dark:text-gray-300"
-                    >
-                      {perk.title}
-                    </th>
-                    {perk.tiers.map((tier, tierIdx) => (
-                      <td
-                        key={tier.title}
-                        className={classNames(
-                          tierIdx === perk.tiers.length - 1 ? 'pl-4' : 'px-4',
-                          'relative w-1/5 py-0 text-center'
-                        )}
-                      >
-                        <span className="relative w-full h-full py-3">
-                          {tier.value === true ? (
-                            <CheckIcon
-                              className="mx-auto h-5 w-5 text-blue-500"
-                              aria-hidden="true"
-                            />
-                          ) : (
-                            <XIcon
-                              className="mx-auto h-5 w-5 text-gray-400"
-                              aria-hidden="true"
-                            />
-                          )}
-
-                          <span className="sr-only">
-                            {tier.value === true ? 'Yes' : 'No'}
-                          </span>
-                        </span>
-                      </td>
-                    ))}
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-
-            {/* Fake card borders */}
-            <div
-              className="absolute inset-0 flex items-stretch pointer-events-none"
-              aria-hidden="true"
-            >
-              <div className="w-1/5 pr-4" />
-              <div className="w-1/5 px-4">
-                <div className="w-full h-full rounded-lg ring-1 ring-black ring-opacity-5" />
-              </div>
-              <div className="w-1/5 px-4">
-                <div className="w-full h-full rounded-lg ring-2 ring-black ring-opacity-5" />
-              </div>
-              <div className="w-1/5 px-4">
-                <div className="w-full h-full rounded-lg ring-2 ring-black ring-opacity-5" />
-              </div>
-              <div className="w-1/5 pl-4">
-                <div className="w-full h-full rounded-lg ring-1 ring-black ring-opacity-5" />
-              </div>
-            </div>
-          </div>
         </div>
       </section>
     </div>

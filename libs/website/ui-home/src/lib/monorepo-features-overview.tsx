@@ -18,117 +18,77 @@ import {
 
 const features = [
   {
-    name: 'Code boundaries',
-    category: 'Management',
-    description:
-      'Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.',
-    icon: HandIcon,
-    anchor: 'code-boundaries',
-  },
-  {
-    name: 'Code sharing',
-    category: 'Management',
-    description:
-      'Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.',
-    icon: CodeIcon,
-    anchor: 'code-sharing',
-  },
-  {
-    name: 'Consistent tooling',
-    category: 'Management',
-    description:
-      'Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.',
-    icon: TerminalIcon,
-    anchor: 'consistent-tooling',
-  },
-  {
-    name: 'Dependency graph visualization',
-    category: 'Workspace',
-    description:
-      'Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.',
-    icon: PresentationChartLineIcon,
-    anchor: 'dependency-graph-visualization',
-  },
-  {
-    name: 'Detecting affected projects/packages',
-    category: 'Workspace',
-    description:
-      'Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.',
-    icon: LightBulbIcon,
-    anchor: 'detecting-affected-projects-packages',
-  },
-  {
-    name: 'Local task coordination',
-    category: 'Tasks',
-    description:
-      'Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.',
-    icon: SwitchVerticalIcon,
-    anchor: 'local-task-coordination',
-  },
-  {
     name: 'Local computation caching',
-    category: 'Tasks',
-    description:
-      'Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.',
+    category: 'Fast',
     icon: DocumentDownloadIcon,
     anchor: 'local-computation-caching',
   },
   {
+    name: 'Local task orchestration',
+    category: 'Fast',
+    icon: SwitchVerticalIcon,
+    anchor: 'local-task-orchestration',
+  },
+  {
     name: 'Distributed computation caching',
-    category: 'Tasks',
-    description:
-      'Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.',
+    category: 'Fast',
     icon: CloudDownloadIcon,
     anchor: 'distributed-computation-caching',
   },
   {
     name: 'Distributed task execution',
-    category: 'Tasks',
-    description:
-      'Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.',
+    category: 'Fast',
     icon: CollectionIcon,
     anchor: 'distributed-task-execution',
   },
   {
     name: 'Transparent remote execution',
-    category: 'Tasks',
-    description:
-      'Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.',
+    category: 'Fast',
     icon: ServerIcon,
     anchor: 'transparent-remote-execution',
   },
   {
-    name: 'Performance',
-    category: 'Scalability',
-    description:
-      'Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.',
-    icon: LightningBoltIcon,
-    anchor: 'performance',
+    name: 'Detecting affected projects/packages',
+    category: 'Fast',
+    icon: LightBulbIcon,
+    anchor: 'detecting-affected-projects-packages',
+  },
+  {
+    name: 'Workspace analysis',
+    category: 'Understandable',
+    icon: PresentationChartLineIcon,
+    anchor: 'workspace-analysis',
+  },
+  {
+    name: 'Dependency graph visualization',
+    category: 'Understandable',
+    icon: PresentationChartLineIcon,
+    anchor: 'dependency-graph-visualization',
+  },
+  {
+    name: 'Code sharing',
+    category: 'Manageable',
+    icon: CodeIcon,
+    anchor: 'code-sharing',
+  },
+  {
+    name: 'Consistent tooling',
+    category: 'Manageable',
+    icon: TerminalIcon,
+    anchor: 'consistent-tooling',
   },
   {
     name: 'Code generation',
-    category: 'Scalability',
-    description:
-      'Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.',
+    category: 'Manageable',
     icon: CogIcon,
     anchor: 'code-generation',
   },
   {
-    name: 'Explicit project constrains',
-    category: 'Scalability',
-    description:
-      'Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.',
+    name: 'Project constraints and visibility',
+    category: 'Manageable',
     icon: StatusOnlineIcon,
     anchor: 'explicit-project-constrains',
-  },
-  {
-    name: 'Enforcing code style',
-    category: 'Scalability',
-    description:
-      'Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.',
-    icon: SortDescendingIcon,
-    anchor: 'enforcing-code-style',
-  },
+  }
 ];
 
 export function MonorepoFeaturesOverview() {
@@ -143,19 +103,16 @@ export function MonorepoFeaturesOverview() {
             # Monorepo features
           </h2>
           <p className="mt-4 max-w-3xl mx-auto text-center text-xl text-gray-700 dark:text-gray-300">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus
-            magnam voluptatum cupiditate veritatis in, accusamus quisquam.
+            Everything you need to make monorepos work.
           </p>
         </div>
 
         <div className="px-4 py-16 sm:px-6 sm:pt-20 sm:pb-24 lg:pt-24 lg:px-8">
           <h2 className="text-3xl font-extrabold text-gray-900 dark:text-white tracking-tight">
-            Some title here
+            Right tools
           </h2>
           <p className="mt-4 max-w-3xl text-lg text-gray-800 dark:text-gray-200">
-            Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et
-            magna sit morbi lobortis. Blandit aliquam sit nisl euismod mattis
-            in.
+            Monorepos have a lot of advantages, but to make them work you need to have the right tools. As your workspace growth, the tools will help keep it fast, understandable and manageable.
           </p>
           <div className="mt-12 grid grid-cols-1 gap-x-6 gap-y-12 sm:grid-cols-2 lg:mt-16 lg:grid-cols-3 lg:gap-x-8 lg:gap-y-16">
             {features.map((feature) => (
@@ -180,9 +137,6 @@ export function MonorepoFeaturesOverview() {
                     <h3 className="text-lg font-medium text-gray-800 dark:text-gray-200">
                       {feature.name}
                     </h3>
-                    <p className="mt-2 text-base text-gray-700 dark:text-gray-300">
-                      {feature.description}
-                    </p>
                   </div>
                   <div className="absolute left-0 -bottom-full w-full h-full flex items-center bg-slate-50/70 dark:bg-slate-900/30 group-hover:bottom-0 transition-all ease-out">
                     <div className="mx-auto p-4 bg-slate-50 dark:bg-slate-800 shadow rounded-full">

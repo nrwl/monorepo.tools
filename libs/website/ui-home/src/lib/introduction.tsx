@@ -44,7 +44,7 @@ export function Introduction() {
                 </a>
                 ,&nbsp;
                 <a rel="nofollow" href="https://rushjs.io/">
-                  Rush (by Microsoft)
+                  Lage (by Microsoft)
                 </a>
                 , and&nbsp;
                 <a href="https://bazel.build" rel="nofollow">
