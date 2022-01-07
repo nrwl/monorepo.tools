@@ -1,6 +1,14 @@
 /* This example requires Tailwind CSS v2.0+ */
 import { CheckIcon, XIcon } from '@heroicons/react/solid';
 
+type Supports = 'supported' | 'notSupported' | 'manualImplementation';
+
+interface Item {
+  title: string;
+  tooltip: string;
+  tiers: { title: string; featured?: boolean; value: Supports }[];
+}
+
 const tools = [
   {
     title: 'Nx',
@@ -40,16 +48,16 @@ const tools = [
       'A tool for managing JavaScript projects with multiple packages.',
   },
 ];
-const fast = [
+const fast: Item[] = [
   {
     title: 'Local task orchestration',
     tooltip: 'The ability to run tasks in the correct order and in parallel.',
     tiers: [
-      { title: 'Nx', featured: false, value: true },
-      { title: 'Bazel', value: true },
-      { title: 'Lage', value: true },
-      { title: 'Turborepo', value: true },
-      { title: 'Lerna', value: true },
+      { title: 'Nx', featured: false, value: 'supported' },
+      { title: 'Bazel', value: 'supported' },
+      { title: 'Lage', value: 'supported' },
+      { title: 'Turborepo', value: 'supported' },
+      { title: 'Lerna', value: 'supported' },
     ],
   },
   {
@@ -57,11 +65,11 @@ const fast = [
     tooltip:
       'The ability to store and replay file and process output of tasks.',
     tiers: [
-      { title: 'Nx', featured: false, value: true },
-      { title: 'Bazel', value: true },
-      { title: 'Lage', value: true },
-      { title: 'Turborepo', value: true },
-      { title: 'Lerna', value: false },
+      { title: 'Nx', featured: false, value: 'supported' },
+      { title: 'Bazel', value: 'supported' },
+      { title: 'Lage', value: 'supported' },
+      { title: 'Turborepo', value: 'supported' },
+      { title: 'Lerna', value: 'notSupported' },
     ],
   },
   {
@@ -69,22 +77,22 @@ const fast = [
     tooltip:
       'The ability to share cache artifacts across different environments.',
     tiers: [
-      { title: 'Nx', featured: false, value: true },
-      { title: 'Bazel', value: true },
-      { title: 'Lage', value: true },
-      { title: 'Turborepo', value: true },
-      { title: 'Lerna', value: false },
+      { title: 'Nx', featured: false, value: 'supported' },
+      { title: 'Bazel', value: 'supported' },
+      { title: 'Lage', value: 'supported' },
+      { title: 'Turborepo', value: 'supported' },
+      { title: 'Lerna', value: 'notSupported' },
     ],
   },
   {
     title: 'Distributed task execution',
     tooltip: 'The ability to distribute a command across many machines.',
     tiers: [
-      { title: 'Nx', featured: false, value: true },
-      { title: 'Bazel', value: true },
-      { title: 'Lage', value: false },
-      { title: 'Turborepo', value: false },
-      { title: 'Lerna', value: false },
+      { title: 'Nx', featured: false, value: 'supported' },
+      { title: 'Bazel', value: 'supported' },
+      { title: 'Lage', value: 'notSupported' },
+      { title: 'Turborepo', value: 'notSupported' },
+      { title: 'Lerna', value: 'notSupported' },
     ],
   },
   {
@@ -92,11 +100,11 @@ const fast = [
     tooltip:
       'The ability to execute any command on multiple machines while developing locally.',
     tiers: [
-      { title: 'Nx', featured: false, value: false },
-      { title: 'Bazel', value: true },
-      { title: 'Lage', value: false },
-      { title: 'Turborepo', value: false },
-      { title: 'Lerna', value: false },
+      { title: 'Nx', featured: false, value: 'notSupported' },
+      { title: 'Bazel', value: 'supported' },
+      { title: 'Lage', value: 'notSupported' },
+      { title: 'Turborepo', value: 'notSupported' },
+      { title: 'Lerna', value: 'notSupported' },
     ],
   },
   {
@@ -104,25 +112,25 @@ const fast = [
     tooltip:
       'Determine what might be affected by a change, to run only build/test affected projects.',
     tiers: [
-      { title: 'Nx', featured: false, value: true },
-      { title: 'Bazel', value: false },
-      { title: 'Lage', value: true },
-      { title: 'Turborepo', value: true },
-      { title: 'Lerna', value: true },
+      { title: 'Nx', featured: false, value: 'supported' },
+      { title: 'Bazel', value: 'notSupported' },
+      { title: 'Lage', value: 'supported' },
+      { title: 'Turborepo', value: 'supported' },
+      { title: 'Lerna', value: 'supported' },
     ],
   },
 ];
-const understandable = [
+const understandable: Item[] = [
   {
     title: 'Workspace analysis',
     tooltip:
       'The ability to understand the understand the project graph of the workspace without extra configuration.',
     tiers: [
-      { title: 'Nx', featured: false, value: true },
-      { title: 'Bazel', value: false },
-      { title: 'Lage', value: true },
-      { title: 'Turborepo', value: true },
-      { title: 'Lerna', value: true },
+      { title: 'Nx', featured: false, value: 'supported' },
+      { title: 'Bazel', value: 'notSupported' },
+      { title: 'Lage', value: 'supported' },
+      { title: 'Turborepo', value: 'supported' },
+      { title: 'Lerna', value: 'supported' },
     ],
   },
   {
@@ -130,24 +138,24 @@ const understandable = [
     tooltip:
       'Visualize dependency relationships between projects and/or tasks.',
     tiers: [
-      { title: 'Nx', featured: false, value: true },
-      { title: 'Bazel', value: true },
-      { title: 'Lage', value: false },
-      { title: 'Turborepo', value: true },
-      { title: 'Lerna', value: false },
+      { title: 'Nx', featured: false, value: 'supported' },
+      { title: 'Bazel', value: 'supported' },
+      { title: 'Lage', value: 'notSupported' },
+      { title: 'Turborepo', value: 'supported' },
+      { title: 'Lerna', value: 'notSupported' },
     ],
   },
 ];
-const manageable = [
+const manageable: Item[] = [
   {
     title: 'Source code sharing',
     tooltip: 'Facilitates sharing of discrete pieces source code.',
     tiers: [
-      { title: 'Nx', featured: false, value: true },
-      { title: 'Bazel', value: true },
-      { title: 'Lage', value: true },
-      { title: 'Turborepo', value: true },
-      { title: 'Lerna', value: true },
+      { title: 'Nx', featured: false, value: 'supported' },
+      { title: 'Bazel', value: 'supported' },
+      { title: 'Lage', value: 'supported' },
+      { title: 'Turborepo', value: 'supported' },
+      { title: 'Lerna', value: 'supported' },
     ],
   },
   {
@@ -155,22 +163,22 @@ const manageable = [
     tooltip:
       '   The tool helps you get a consistent experience regardless of what you use to develop your projects: different JavaScript frameworks, Go, Java, etc.',
     tiers: [
-      { title: 'Nx', featured: false, value: true },
-      { title: 'Bazel', value: true },
-      { title: 'Lage', value: false },
-      { title: 'Turborepo', value: false },
-      { title: 'Lerna', value: false },
+      { title: 'Nx', featured: false, value: 'supported' },
+      { title: 'Bazel', value: 'supported' },
+      { title: 'Lage', value: 'notSupported' },
+      { title: 'Turborepo', value: 'notSupported' },
+      { title: 'Lerna', value: 'notSupported' },
     ],
   },
   {
     title: 'Code generation',
     tooltip: 'Native support for generating code',
     tiers: [
-      { title: 'Nx', featured: false, value: true },
-      { title: 'Bazel', value: false },
-      { title: 'Lage', value: false },
-      { title: 'Turborepo', value: false },
-      { title: 'Lerna', value: false },
+      { title: 'Nx', featured: false, value: 'supported' },
+      { title: 'Bazel', value: 'notSupported' },
+      { title: 'Lage', value: 'notSupported' },
+      { title: 'Turborepo', value: 'notSupported' },
+      { title: 'Lerna', value: 'notSupported' },
     ],
   },
   {
@@ -178,14 +186,19 @@ const manageable = [
     tooltip:
       'Supports definition of rules to constrain dependency relationships within the repo.',
     tiers: [
-      { title: 'Nx', featured: false, value: true },
-      { title: 'Bazel', value: true },
-      { title: 'Lage', value: false },
-      { title: 'Turborepo', value: false },
-      { title: 'Lerna', value: false },
+      { title: 'Nx', featured: false, value: 'supported' },
+      { title: 'Bazel', value: 'supported' },
+      { title: 'Lage', value: 'notSupported' },
+      { title: 'Turborepo', value: 'notSupported' },
+      { title: 'Lerna', value: 'notSupported' },
     ],
   },
 ];
+const valuesDictionary: Record<Supports, string> = {
+  supported: 'natively supported',
+  notSupported: 'not supported',
+  manualImplementation: 'implement your own',
+};
 
 function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(' ');
@@ -219,7 +232,7 @@ export function ToolsReview() {
         </h2>
 
         <div className="max-w-2xl mx-auto py-16 px-4 space-y-16 sm:px-6">
-          {tools.map((plan, mobilePlanIndex) => (
+          {tools.map((plan, planIndex) => (
             <div
               key="plan.title"
               className="border-t border-slate-100 dark:border-slate-900"
@@ -280,39 +293,16 @@ export function ToolsReview() {
                           {feature.title}
                         </dt>
                         <dd className="flex items-center justify-end sm:px-4 sm:justify-center">
-                          {typeof feature.tiers[mobilePlanIndex].value ===
-                          'string' ? (
-                            <span
-                              className={classNames(
-                                feature.tiers[mobilePlanIndex].featured
-                                  ? 'text-blue-500'
-                                  : 'text-gray-700 dark:text-gray-300',
-                                'text-sm font-medium'
-                              )}
-                            >
-                              {feature.tiers[mobilePlanIndex].value}
-                            </span>
-                          ) : (
-                            <>
-                              {feature.tiers[mobilePlanIndex].value === true ? (
-                                <CheckIcon
-                                  className="mx-auto h-5 w-5 text-blue-500"
-                                  aria-hidden="true"
-                                />
-                              ) : (
-                                <XIcon
-                                  className="mx-auto h-5 w-5 text-gray-400"
-                                  aria-hidden="true"
-                                />
-                              )}
-
-                              <span className="sr-only">
-                                {feature.tiers[mobilePlanIndex].value === true
-                                  ? 'Yes'
-                                  : 'No'}
-                              </span>
-                            </>
-                          )}
+                          <span
+                            className={classNames(
+                              feature.tiers[planIndex].featured
+                                ? 'text-blue-500'
+                                : 'text-gray-700 dark:text-gray-300',
+                              'text-sm font-medium'
+                            )}
+                          >
+                            {valuesDictionary[feature.tiers[planIndex].value]}
+                          </span>
                         </dd>
                       </div>
                     ))}
@@ -362,31 +352,24 @@ export function ToolsReview() {
                   )}
                 >
                   <dl className="divide-y divide-slate-300 dark:divide-slate-600">
-                    {understandable.map((perk) => (
+                    {understandable.map((feature) => (
                       <div
-                        key={perk.title}
+                        key={feature.title}
                         className="py-3 flex justify-between sm:grid sm:grid-cols-2"
                       >
                         <dt className="text-sm font-medium text-gray-700 dark:text-gray-300 sm:pr-4">
-                          {perk.title}
+                          {feature.title}
                         </dt>
                         <dd className="text-center sm:px-4">
-                          {perk.tiers[mobilePlanIndex].value === true ? (
-                            <CheckIcon
-                              className="mx-auto h-5 w-5 text-blue-500"
-                              aria-hidden="true"
-                            />
-                          ) : (
-                            <XIcon
-                              className="mx-auto h-5 w-5 text-gray-400"
-                              aria-hidden="true"
-                            />
-                          )}
-
-                          <span className="sr-only">
-                            {perk.tiers[mobilePlanIndex].value === true
-                              ? 'Yes'
-                              : 'No'}
+                          <span
+                            className={classNames(
+                              feature.tiers[planIndex].featured
+                                ? 'text-blue-500'
+                                : 'text-gray-700 dark:text-gray-300',
+                              'text-sm font-medium'
+                            )}
+                          >
+                            {valuesDictionary[feature.tiers[planIndex].value]}
                           </span>
                         </dd>
                       </div>
@@ -437,31 +420,24 @@ export function ToolsReview() {
                   )}
                 >
                   <dl className="divide-y divide-slate-300 dark:divide-slate-600">
-                    {manageable.map((perk) => (
+                    {manageable.map((feature) => (
                       <div
-                        key={perk.title}
+                        key={feature.title}
                         className="py-3 flex justify-between sm:grid sm:grid-cols-2"
                       >
                         <dt className="text-sm font-medium text-gray-700 dark:text-gray-300 sm:pr-4">
-                          {perk.title}
+                          {feature.title}
                         </dt>
                         <dd className="text-center sm:px-4">
-                          {perk.tiers[mobilePlanIndex].value === true ? (
-                            <CheckIcon
-                              className="mx-auto h-5 w-5 text-blue-500"
-                              aria-hidden="true"
-                            />
-                          ) : (
-                            <XIcon
-                              className="mx-auto h-5 w-5 text-gray-400"
-                              aria-hidden="true"
-                            />
-                          )}
-
-                          <span className="sr-only">
-                            {perk.tiers[mobilePlanIndex].value === true
-                              ? 'Yes'
-                              : 'No'}
+                          <span
+                            className={classNames(
+                              feature.tiers[planIndex].featured
+                                ? 'text-blue-500'
+                                : 'text-gray-700 dark:text-gray-300',
+                              'text-sm font-medium'
+                            )}
+                          >
+                            {valuesDictionary[feature.tiers[planIndex].value]}
                           </span>
                         </dd>
                       </div>
@@ -498,12 +474,12 @@ export function ToolsReview() {
         <div className="max-w-7xl mx-auto py-24 px-8">
           <div className="w-full border-t border-slate-100 dark:border-slate-900 flex items-stretch">
             <div className="-mt-px w-1/6 py-6 pr-4 flex items-end" />
-            {tools.map((plan, planIdx) => (
+            {tools.map((plan, planIndex) => (
               <div
                 key={plan.title}
                 aria-hidden="true"
                 className={classNames(
-                  planIdx === tools.length - 1 ? '' : 'pr-4',
+                  planIndex === tools.length - 1 ? '' : 'pr-4',
                   '-mt-px pl-4 w-1/6'
                 )}
               >
@@ -597,36 +573,16 @@ export function ToolsReview() {
                         )}
                       >
                         <span className="relative w-full h-full py-3">
-                          {typeof tier.value === 'string' ? (
-                            <span
-                              className={classNames(
-                                tier.featured
-                                  ? 'text-blue-500'
-                                  : 'text-gray-700 dark:text-gray-300',
-                                'text-sm font-medium'
-                              )}
-                            >
-                              {tier.value}
-                            </span>
-                          ) : (
-                            <>
-                              {tier.value === true ? (
-                                <CheckIcon
-                                  className="mx-auto h-5 w-5 text-blue-500"
-                                  aria-hidden="true"
-                                />
-                              ) : (
-                                <XIcon
-                                  className="mx-auto h-5 w-5 text-gray-400"
-                                  aria-hidden="true"
-                                />
-                              )}
-
-                              <span className="sr-only">
-                                {tier.value === true ? 'Yes' : 'No'}
-                              </span>
-                            </>
-                          )}
+                          <span
+                            className={classNames(
+                              tier.featured
+                                ? 'text-blue-500'
+                                : 'text-gray-700 dark:text-gray-300',
+                              'text-sm font-medium'
+                            )}
+                          >
+                            {valuesDictionary[tier.value]}
+                          </span>
                         </span>
                       </td>
                     ))}
@@ -660,7 +616,7 @@ export function ToolsReview() {
           </div>
 
           <h3 className="mt-10 text-sm font-bold text-gray-700 dark:text-gray-300">
-            Understabldable
+            Understandable
           </h3>
           <div className="mt-6 relative">
             {/* Fake card backgrounds */}
@@ -727,22 +683,15 @@ export function ToolsReview() {
                           'relative w-1/6 py-0 text-center'
                         )}
                       >
-                        <span className="relative w-full h-full py-3">
-                          {tier.value === true ? (
-                            <CheckIcon
-                              className="mx-auto h-5 w-5 text-blue-500"
-                              aria-hidden="true"
-                            />
-                          ) : (
-                            <XIcon
-                              className="mx-auto h-5 w-5 text-gray-400"
-                              aria-hidden="true"
-                            />
+                        <span
+                          className={classNames(
+                            tier.featured
+                              ? 'text-blue-500'
+                              : 'text-gray-700 dark:text-gray-300',
+                            'text-sm font-medium'
                           )}
-
-                          <span className="sr-only">
-                            {tier.value === true ? 'Yes' : 'No'}
-                          </span>
+                        >
+                          {valuesDictionary[tier.value]}
                         </span>
                       </td>
                     ))}
@@ -833,22 +782,15 @@ export function ToolsReview() {
                           'relative w-1/6 py-0 text-center'
                         )}
                       >
-                        <span className="relative w-full h-full py-3">
-                          {tier.value === true ? (
-                            <CheckIcon
-                              className="mx-auto h-5 w-5 text-blue-500"
-                              aria-hidden="true"
-                            />
-                          ) : (
-                            <XIcon
-                              className="mx-auto h-5 w-5 text-gray-400"
-                              aria-hidden="true"
-                            />
+                        <span
+                          className={classNames(
+                            tier.featured
+                              ? 'text-blue-500'
+                              : 'text-gray-700 dark:text-gray-300',
+                            'text-sm font-medium'
                           )}
-
-                          <span className="sr-only">
-                            {tier.value === true ? 'Yes' : 'No'}
-                          </span>
+                        >
+                          {valuesDictionary[tier.value]}
                         </span>
                       </td>
                     ))}
