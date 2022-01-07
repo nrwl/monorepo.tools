@@ -28,7 +28,7 @@ function CustomApp({ Component, pageProps }: AppProps) {
         <meta property="og:type" content="website" />
         <meta
           property="og:image"
-          content="https://monorepo.tools/images/monorepo.png"
+          content="https://monorepo.tools/images/mono.png"
         />
         <meta property="og:image:alt" content="monorepo official logo" />
         <meta property="og:image:type" content="image/png" />
