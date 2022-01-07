@@ -1,6 +1,3 @@
-/* This example requires Tailwind CSS v2.0+ */
-import { CheckIcon, XIcon } from '@heroicons/react/solid';
-
 type Supports = 'supported' | 'notSupported' | 'manualImplementation';
 
 interface Item {
