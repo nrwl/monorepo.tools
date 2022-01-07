@@ -23,8 +23,7 @@ const tools = [
     featured: false,
     organization: 'Microsoft',
     organizationUrl: 'https://microsoft.com',
-    description:
-      'Task runner in JS monorepos',
+    description: 'Task runner in JS monorepos',
   },
   {
     title: 'Turborepo',
@@ -90,7 +89,8 @@ const fast = [
   },
   {
     title: 'Transparent remote execution',
-    tooltip: 'The ability to execute any command on multiple machines while developing locally.',
+    tooltip:
+      'The ability to execute any command on multiple machines while developing locally.',
     tiers: [
       { title: 'Nx', featured: false, value: false },
       { title: 'Bazel', value: true },
@@ -112,7 +112,6 @@ const fast = [
     ],
   },
 ];
-
 const understandable = [
   {
     title: 'Workspace analysis',
@@ -137,9 +136,8 @@ const understandable = [
       { title: 'Turborepo', value: true },
       { title: 'Lerna', value: false },
     ],
-  }
+  },
 ];
-
 const manageable = [
   {
     title: 'Source code sharing',
@@ -166,8 +164,7 @@ const manageable = [
   },
   {
     title: 'Code generation',
-    tooltip:
-      'Native support for generating code',
+    tooltip: 'Native support for generating code',
     tiers: [
       { title: 'Nx', featured: false, value: true },
       { title: 'Bazel', value: false },
@@ -500,14 +497,14 @@ export function ToolsReview() {
 
         <div className="max-w-7xl mx-auto py-24 px-8">
           <div className="w-full border-t border-slate-100 dark:border-slate-900 flex items-stretch">
-            <div className="-mt-px w-1/5 py-6 pr-4 flex items-end" />
+            <div className="-mt-px w-1/6 py-6 pr-4 flex items-end" />
             {tools.map((plan, planIdx) => (
               <div
                 key={plan.title}
                 aria-hidden="true"
                 className={classNames(
                   planIdx === tools.length - 1 ? '' : 'pr-4',
-                  '-mt-px pl-4 w-1/5'
+                  '-mt-px pl-4 w-1/6'
                 )}
               >
                 <div
@@ -536,7 +533,7 @@ export function ToolsReview() {
           </div>
 
           <div className="w-full border-t border-slate-100 dark:border-slate-900 flex items-stretch">
-            <div className="-mt-px w-1/5 py-6 pr-4 flex items-end">
+            <div className="-mt-px w-1/6 py-6 pr-4 flex items-end">
               <h3 className="mt-auto text-sm font-bold text-gray-700 dark:text-gray-300">
                 Fast
               </h3>
@@ -585,7 +582,7 @@ export function ToolsReview() {
                   <tr key={feature.title}>
                     <th
                       scope="row"
-                      className="w-1/5 py-3 pr-4 text-left text-sm font-medium text-gray-700 dark:text-gray-300"
+                      className="w-1/6 py-3 pr-4 text-left text-sm font-medium text-gray-700 dark:text-gray-300"
                     >
                       {feature.title}
                     </th>
@@ -596,7 +593,7 @@ export function ToolsReview() {
                           tierIdx === feature.tiers.length - 1
                             ? 'pl-4'
                             : 'px-4',
-                          'relative w-1/5 py-0 text-center'
+                          'relative w-1/6 py-0 text-center'
                         )}
                       >
                         <span className="relative w-full h-full py-3">
@@ -671,17 +668,20 @@ export function ToolsReview() {
               className="absolute inset-0 flex items-stretch pointer-events-none"
               aria-hidden="true"
             >
-              <div className="w-1/5 pr-4" />
-              <div className="w-1/5 px-4">
+              <div className="w-1/6 pr-4" />
+              <div className="w-1/6 px-4">
                 <div className="w-full h-full bg-slate-100 dark:bg-slate-700 rounded-lg shadow" />
               </div>
-              <div className="w-1/5 px-4">
+              <div className="w-1/6 px-4">
                 <div className="w-full h-full bg-slate-100 dark:bg-slate-700 rounded-lg shadow-md" />
               </div>
-              <div className="w-1/5 px-4">
+              <div className="w-1/6 px-4">
                 <div className="w-full h-full bg-slate-100 dark:bg-slate-700 rounded-lg shadow-md" />
               </div>
-              <div className="w-1/5 pl-4">
+              <div className="w-1/6 px-4">
+                <div className="w-full h-full bg-slate-100 dark:bg-slate-700 rounded-lg shadow-md" />
+              </div>
+              <div className="w-1/6 pl-4">
                 <div className="w-full h-full bg-slate-100 dark:bg-slate-700 rounded-lg shadow" />
               </div>
             </div>
@@ -715,7 +715,7 @@ export function ToolsReview() {
                   <tr key={perk.title}>
                     <th
                       scope="row"
-                      className="w-1/5 py-3 pr-4 text-left text-sm font-medium text-gray-700 dark:text-gray-300"
+                      className="w-1/6 py-3 pr-4 text-left text-sm font-medium text-gray-700 dark:text-gray-300"
                     >
                       {perk.title}
                     </th>
@@ -724,7 +724,7 @@ export function ToolsReview() {
                         key={tier.title}
                         className={classNames(
                           tierIdx === perk.tiers.length - 1 ? 'pl-4' : 'px-4',
-                          'relative w-1/5 py-0 text-center'
+                          'relative w-1/6 py-0 text-center'
                         )}
                       >
                         <span className="relative w-full h-full py-3">
@@ -756,17 +756,20 @@ export function ToolsReview() {
               className="absolute inset-0 flex items-stretch pointer-events-none"
               aria-hidden="true"
             >
-              <div className="w-1/5 pr-4" />
-              <div className="w-1/5 px-4">
+              <div className="w-1/6 pr-4" />
+              <div className="w-1/6 px-4">
                 <div className="w-full h-full rounded-lg ring-1 ring-black ring-opacity-5" />
               </div>
-              <div className="w-1/5 px-4">
+              <div className="w-1/6 px-4">
                 <div className="w-full h-full rounded-lg ring-2 ring-black ring-opacity-5" />
               </div>
-              <div className="w-1/5 px-4">
+              <div className="w-1/6 px-4">
                 <div className="w-full h-full rounded-lg ring-2 ring-black ring-opacity-5" />
               </div>
-              <div className="w-1/5 pl-4">
+              <div className="w-1/6 px-4">
+                <div className="w-full h-full rounded-lg ring-2 ring-black ring-opacity-5" />
+              </div>
+              <div className="w-1/6 pl-4">
                 <div className="w-full h-full rounded-lg ring-1 ring-black ring-opacity-5" />
               </div>
             </div>
@@ -781,17 +784,20 @@ export function ToolsReview() {
               className="absolute inset-0 flex items-stretch pointer-events-none"
               aria-hidden="true"
             >
-              <div className="w-1/5 pr-4" />
-              <div className="w-1/5 px-4">
+              <div className="w-1/6 pr-4" />
+              <div className="w-1/6 px-4">
                 <div className="w-full h-full bg-slate-100 dark:bg-slate-700 rounded-lg shadow" />
               </div>
-              <div className="w-1/5 px-4">
+              <div className="w-1/6 px-4">
                 <div className="w-full h-full bg-slate-100 dark:bg-slate-700 rounded-lg shadow-md" />
               </div>
-              <div className="w-1/5 px-4">
+              <div className="w-1/6 px-4">
                 <div className="w-full h-full bg-slate-100 dark:bg-slate-700 rounded-lg shadow-md" />
               </div>
-              <div className="w-1/5 pl-4">
+              <div className="w-1/6 px-4">
+                <div className="w-full h-full bg-slate-100 dark:bg-slate-700 rounded-lg shadow-md" />
+              </div>
+              <div className="w-1/6 pl-4">
                 <div className="w-full h-full bg-slate-100 dark:bg-slate-700 rounded-lg shadow" />
               </div>
             </div>
@@ -815,7 +821,7 @@ export function ToolsReview() {
                   <tr key={perk.title}>
                     <th
                       scope="row"
-                      className="w-1/5 py-3 pr-4 text-left text-sm font-medium text-gray-700 dark:text-gray-300"
+                      className="w-1/6 py-3 pr-4 text-left text-sm font-medium text-gray-700 dark:text-gray-300"
                     >
                       {perk.title}
                     </th>
@@ -824,7 +830,7 @@ export function ToolsReview() {
                         key={tier.title}
                         className={classNames(
                           tierIdx === perk.tiers.length - 1 ? 'pl-4' : 'px-4',
-                          'relative w-1/5 py-0 text-center'
+                          'relative w-1/6 py-0 text-center'
                         )}
                       >
                         <span className="relative w-full h-full py-3">
@@ -856,22 +862,24 @@ export function ToolsReview() {
               className="absolute inset-0 flex items-stretch pointer-events-none"
               aria-hidden="true"
             >
-              <div className="w-1/5 pr-4" />
-              <div className="w-1/5 px-4">
+              <div className="w-1/6 pr-4" />
+              <div className="w-1/6 px-4">
                 <div className="w-full h-full rounded-lg ring-1 ring-black ring-opacity-5" />
               </div>
-              <div className="w-1/5 px-4">
+              <div className="w-1/6 px-4">
                 <div className="w-full h-full rounded-lg ring-2 ring-black ring-opacity-5" />
               </div>
-              <div className="w-1/5 px-4">
+              <div className="w-1/6 px-4">
                 <div className="w-full h-full rounded-lg ring-2 ring-black ring-opacity-5" />
               </div>
-              <div className="w-1/5 pl-4">
+              <div className="w-1/6 px-4">
+                <div className="w-full h-full rounded-lg ring-2 ring-black ring-opacity-5" />
+              </div>
+              <div className="w-1/6 pl-4">
                 <div className="w-full h-full rounded-lg ring-1 ring-black ring-opacity-5" />
               </div>
             </div>
           </div>
-
         </div>
       </section>
     </div>
