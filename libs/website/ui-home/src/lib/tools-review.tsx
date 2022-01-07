@@ -1,15 +1,17 @@
+import { ReactComponentElement } from 'react';
+import { CheckCircleIcon, MinusIcon } from '@heroicons/react/solid';
+
 type Supports = 'supported' | 'notSupported' | 'manualImplementation';
 
 interface Item {
   title: string;
   tooltip: string;
-  tiers: { title: string; featured?: boolean; value: Supports }[];
+  tiers: { title: string; value: Supports }[];
 }
 
 const tools = [
   {
     title: 'Nx',
-    featured: false,
     organization: 'Nrwl',
     organizationUrl: 'https://nrwl.io',
     description:
@@ -17,7 +19,6 @@ const tools = [
   },
   {
     title: 'Bazel',
-    featured: false,
     organization: 'Google',
     organizationUrl: 'https://google.com',
     description:
@@ -25,14 +26,12 @@ const tools = [
   },
   {
     title: 'Lage',
-    featured: false,
     organization: 'Microsoft',
     organizationUrl: 'https://microsoft.com',
     description: 'Task runner in JS monorepos',
   },
   {
     title: 'Turborepo',
-    featured: false,
     organization: 'Vercel',
     organizationUrl: 'https://vercel.com',
     description:
@@ -40,7 +39,6 @@ const tools = [
   },
   {
     title: 'Lerna',
-    featured: false,
     description:
       'A tool for managing JavaScript projects with multiple packages.',
   },
@@ -50,7 +48,7 @@ const fast: Item[] = [
     title: 'Local task orchestration',
     tooltip: 'The ability to run tasks in the correct order and in parallel.',
     tiers: [
-      { title: 'Nx', featured: false, value: 'supported' },
+      { title: 'Nx', value: 'supported' },
       { title: 'Bazel', value: 'supported' },
       { title: 'Lage', value: 'supported' },
       { title: 'Turborepo', value: 'supported' },
@@ -62,7 +60,7 @@ const fast: Item[] = [
     tooltip:
       'The ability to store and replay file and process output of tasks.',
     tiers: [
-      { title: 'Nx', featured: false, value: 'supported' },
+      { title: 'Nx', value: 'supported' },
       { title: 'Bazel', value: 'supported' },
       { title: 'Lage', value: 'supported' },
       { title: 'Turborepo', value: 'supported' },
@@ -74,7 +72,7 @@ const fast: Item[] = [
     tooltip:
       'The ability to share cache artifacts across different environments.',
     tiers: [
-      { title: 'Nx', featured: false, value: 'supported' },
+      { title: 'Nx', value: 'supported' },
       { title: 'Bazel', value: 'supported' },
       { title: 'Lage', value: 'supported' },
       { title: 'Turborepo', value: 'supported' },
@@ -85,7 +83,7 @@ const fast: Item[] = [
     title: 'Distributed task execution',
     tooltip: 'The ability to distribute a command across many machines.',
     tiers: [
-      { title: 'Nx', featured: false, value: 'supported' },
+      { title: 'Nx', value: 'supported' },
       { title: 'Bazel', value: 'supported' },
       { title: 'Lage', value: 'notSupported' },
       { title: 'Turborepo', value: 'notSupported' },
@@ -97,7 +95,7 @@ const fast: Item[] = [
     tooltip:
       'The ability to execute any command on multiple machines while developing locally.',
     tiers: [
-      { title: 'Nx', featured: false, value: 'notSupported' },
+      { title: 'Nx', value: 'notSupported' },
       { title: 'Bazel', value: 'supported' },
       { title: 'Lage', value: 'notSupported' },
       { title: 'Turborepo', value: 'notSupported' },
@@ -109,7 +107,7 @@ const fast: Item[] = [
     tooltip:
       'Determine what might be affected by a change, to run only build/test affected projects.',
     tiers: [
-      { title: 'Nx', featured: false, value: 'supported' },
+      { title: 'Nx', value: 'supported' },
       { title: 'Bazel', value: 'notSupported' },
       { title: 'Lage', value: 'supported' },
       { title: 'Turborepo', value: 'supported' },
@@ -123,7 +121,7 @@ const understandable: Item[] = [
     tooltip:
       'The ability to understand the understand the project graph of the workspace without extra configuration.',
     tiers: [
-      { title: 'Nx', featured: false, value: 'supported' },
+      { title: 'Nx', value: 'supported' },
       { title: 'Bazel', value: 'notSupported' },
       { title: 'Lage', value: 'supported' },
       { title: 'Turborepo', value: 'supported' },
@@ -135,7 +133,7 @@ const understandable: Item[] = [
     tooltip:
       'Visualize dependency relationships between projects and/or tasks.',
     tiers: [
-      { title: 'Nx', featured: false, value: 'supported' },
+      { title: 'Nx', value: 'supported' },
       { title: 'Bazel', value: 'supported' },
       { title: 'Lage', value: 'notSupported' },
       { title: 'Turborepo', value: 'supported' },
@@ -148,7 +146,7 @@ const manageable: Item[] = [
     title: 'Source code sharing',
     tooltip: 'Facilitates sharing of discrete pieces source code.',
     tiers: [
-      { title: 'Nx', featured: false, value: 'supported' },
+      { title: 'Nx', value: 'supported' },
       { title: 'Bazel', value: 'supported' },
       { title: 'Lage', value: 'supported' },
       { title: 'Turborepo', value: 'supported' },
@@ -160,7 +158,7 @@ const manageable: Item[] = [
     tooltip:
       '   The tool helps you get a consistent experience regardless of what you use to develop your projects: different JavaScript frameworks, Go, Java, etc.',
     tiers: [
-      { title: 'Nx', featured: false, value: 'supported' },
+      { title: 'Nx', value: 'supported' },
       { title: 'Bazel', value: 'supported' },
       { title: 'Lage', value: 'notSupported' },
       { title: 'Turborepo', value: 'notSupported' },
@@ -171,7 +169,7 @@ const manageable: Item[] = [
     title: 'Code generation',
     tooltip: 'Native support for generating code',
     tiers: [
-      { title: 'Nx', featured: false, value: 'supported' },
+      { title: 'Nx', value: 'supported' },
       { title: 'Bazel', value: 'notSupported' },
       { title: 'Lage', value: 'notSupported' },
       { title: 'Turborepo', value: 'notSupported' },
@@ -183,7 +181,7 @@ const manageable: Item[] = [
     tooltip:
       'Supports definition of rules to constrain dependency relationships within the repo.',
     tiers: [
-      { title: 'Nx', featured: false, value: 'supported' },
+      { title: 'Nx', value: 'supported' },
       { title: 'Bazel', value: 'supported' },
       { title: 'Lage', value: 'notSupported' },
       { title: 'Turborepo', value: 'notSupported' },
@@ -191,10 +189,31 @@ const manageable: Item[] = [
     ],
   },
 ];
-const valuesDictionary: Record<Supports, string> = {
-  supported: 'natively supported',
-  notSupported: 'not supported',
-  manualImplementation: 'implement your own',
+const valuesDictionary: Record<Supports, () => ReactComponentElement<any>> = {
+  supported: () => (
+    <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-slate-500">
+      <CheckCircleIcon className="w-5 h-5" />
+      <span className="sr-only">natively supported</span>
+    </span>
+  ),
+  notSupported: () => (
+    <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-slate-500">
+      <MinusIcon className="w-5 h-5" />
+      <span className="sr-only">not supported</span>
+    </span>
+  ),
+  manualImplementation: () => (
+    <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-slate-200 text-gray-800 dark:bg-slate-600 dark:text-slate-400">
+      <svg
+        className="mr-1.5 h-2 w-2 text-yellow-500"
+        fill="currentColor"
+        viewBox="0 0 8 8"
+      >
+        <circle cx="4" cy="4" r="3" />
+      </svg>
+      implement your own
+    </span>
+  ),
 };
 
 function classNames(...classes: string[]) {
@@ -234,20 +253,8 @@ export function ToolsReview() {
               key={plan.title}
               className="border-t border-slate-100 dark:border-slate-900"
             >
-              <div
-                className={classNames(
-                  plan.featured ? 'border-blue-600' : 'border-transparent',
-                  '-mt-px pt-6 border-t-2 sm:w-1/2'
-                )}
-              >
-                <h3
-                  className={classNames(
-                    plan.featured
-                      ? 'text-blue-500'
-                      : 'text-gray-700 dark:text-gray-300',
-                    'text-sm font-bold'
-                  )}
-                >
+              <div className="-mt-px pt-6 border-t-2 sm:w-1/2">
+                <h3 className="text-gray-700 dark:text-gray-300 text-sm font-bold">
                   {plan.title}
                 </h3>
                 <p className="mt-2 text-sm text-gray-500">
@@ -264,22 +271,10 @@ export function ToolsReview() {
                   aria-hidden="true"
                   className="hidden absolute inset-0 pointer-events-none sm:block"
                 >
-                  <div
-                    className={classNames(
-                      plan.featured ? 'shadow-md' : 'shadow',
-                      'absolute right-0 w-1/2 h-full bg-slate-100 dark:bg-slate-700 rounded-lg'
-                    )}
-                  />
+                  <div className="shadow absolute right-0 w-1/2 h-full bg-slate-100 dark:bg-slate-700 rounded-lg" />
                 </div>
 
-                <div
-                  className={classNames(
-                    plan.featured
-                      ? 'ring-2 ring-blue-600 shadow-md'
-                      : 'ring-1 ring-black ring-opacity-5 shadow',
-                    'relative py-3 px-4 bg-slate-100 dark:bg-slate-700 rounded-lg sm:p-0 sm:bg-transparent sm:rounded-none sm:ring-0 sm:shadow-none'
-                  )}
-                >
+                <div className="ring-1 ring-black ring-opacity-5 shadow relative py-3 px-4 bg-slate-100 dark:bg-slate-700 rounded-lg sm:p-0 sm:bg-transparent sm:rounded-none sm:ring-0 sm:shadow-none">
                   <dl className="divide-y divide-slate-300 dark:divide-slate-600">
                     {fast.map((feature) => (
                       <div
@@ -290,16 +285,7 @@ export function ToolsReview() {
                           {feature.title}
                         </dt>
                         <dd className="flex items-center justify-end sm:px-4 sm:justify-center">
-                          <span
-                            className={classNames(
-                              feature.tiers[planIndex].featured
-                                ? 'text-blue-500'
-                                : 'text-gray-700 dark:text-gray-300',
-                              'text-sm font-medium'
-                            )}
-                          >
-                            {valuesDictionary[feature.tiers[planIndex].value]}
-                          </span>
+                          {valuesDictionary[feature.tiers[planIndex].value]()}
                         </dd>
                       </div>
                     ))}
@@ -311,14 +297,7 @@ export function ToolsReview() {
                   aria-hidden="true"
                   className="hidden absolute inset-0 pointer-events-none sm:block"
                 >
-                  <div
-                    className={classNames(
-                      plan.featured
-                        ? 'ring-2 ring-blue-600'
-                        : 'ring-1 ring-black ring-opacity-5',
-                      'absolute right-0 w-1/2 h-full rounded-lg'
-                    )}
-                  />
+                  <div className="ring-1 ring-black ring-opacity-5 absolute right-0 w-1/2 h-full rounded-lg" />
                 </div>
               </div>
 
@@ -332,22 +311,10 @@ export function ToolsReview() {
                   aria-hidden="true"
                   className="hidden absolute inset-0 pointer-events-none sm:block"
                 >
-                  <div
-                    className={classNames(
-                      plan.featured ? 'shadow-md' : 'shadow',
-                      'absolute right-0 w-1/2 h-full bg-slate-100 dark:bg-slate-700 rounded-lg'
-                    )}
-                  />
+                  <div className="absolute right-0 w-1/2 h-full bg-slate-100 dark:bg-slate-700 rounded-lg" />
                 </div>
 
-                <div
-                  className={classNames(
-                    plan.featured
-                      ? 'ring-2 ring-blue-600 shadow-md'
-                      : 'ring-1 ring-black ring-opacity-5 shadow',
-                    'relative py-3 px-4 bg-slate-100 dark:bg-slate-700 rounded-lg sm:p-0 sm:bg-transparent sm:rounded-none sm:ring-0 sm:shadow-none'
-                  )}
-                >
+                <div className="ring-1 ring-black ring-opacity-5 shadow relative py-3 px-4 bg-slate-100 dark:bg-slate-700 rounded-lg sm:p-0 sm:bg-transparent sm:rounded-none sm:ring-0 sm:shadow-none">
                   <dl className="divide-y divide-slate-300 dark:divide-slate-600">
                     {understandable.map((feature) => (
                       <div
@@ -358,16 +325,7 @@ export function ToolsReview() {
                           {feature.title}
                         </dt>
                         <dd className="text-center sm:px-4">
-                          <span
-                            className={classNames(
-                              feature.tiers[planIndex].featured
-                                ? 'text-blue-500'
-                                : 'text-gray-700 dark:text-gray-300',
-                              'text-sm font-medium'
-                            )}
-                          >
-                            {valuesDictionary[feature.tiers[planIndex].value]}
-                          </span>
+                          {valuesDictionary[feature.tiers[planIndex].value]()}
                         </dd>
                       </div>
                     ))}
@@ -379,14 +337,7 @@ export function ToolsReview() {
                   aria-hidden="true"
                   className="hidden absolute inset-0 pointer-events-none sm:block"
                 >
-                  <div
-                    className={classNames(
-                      plan.featured
-                        ? 'ring-2 ring-blue-600'
-                        : 'ring-1 ring-black ring-opacity-5',
-                      'absolute right-0 w-1/2 h-full rounded-lg'
-                    )}
-                  />
+                  <div className="ring-1 ring-black ring-opacity-5 absolute right-0 w-1/2 h-full rounded-lg" />
                 </div>
               </div>
 
@@ -400,22 +351,10 @@ export function ToolsReview() {
                   aria-hidden="true"
                   className="hidden absolute inset-0 pointer-events-none sm:block"
                 >
-                  <div
-                    className={classNames(
-                      plan.featured ? 'shadow-md' : 'shadow',
-                      'absolute right-0 w-1/2 h-full bg-slate-100 dark:bg-slate-700 rounded-lg'
-                    )}
-                  />
+                  <div className="shadow absolute right-0 w-1/2 h-full bg-slate-100 dark:bg-slate-700 rounded-lg" />
                 </div>
 
-                <div
-                  className={classNames(
-                    plan.featured
-                      ? 'ring-2 ring-blue-600 shadow-md'
-                      : 'ring-1 ring-black ring-opacity-5 shadow',
-                    'relative py-3 px-4 bg-slate-100 dark:bg-slate-700 rounded-lg sm:p-0 sm:bg-transparent sm:rounded-none sm:ring-0 sm:shadow-none'
-                  )}
-                >
+                <div className="ring-1 ring-black ring-opacity-5 shadow relative py-3 px-4 bg-slate-100 dark:bg-slate-700 rounded-lg sm:p-0 sm:bg-transparent sm:rounded-none sm:ring-0 sm:shadow-none">
                   <dl className="divide-y divide-slate-300 dark:divide-slate-600">
                     {manageable.map((feature) => (
                       <div
@@ -426,16 +365,7 @@ export function ToolsReview() {
                           {feature.title}
                         </dt>
                         <dd className="text-center sm:px-4">
-                          <span
-                            className={classNames(
-                              feature.tiers[planIndex].featured
-                                ? 'text-blue-500'
-                                : 'text-gray-700 dark:text-gray-300',
-                              'text-sm font-medium'
-                            )}
-                          >
-                            {valuesDictionary[feature.tiers[planIndex].value]}
-                          </span>
+                          {valuesDictionary[feature.tiers[planIndex].value]()}
                         </dd>
                       </div>
                     ))}
@@ -447,14 +377,7 @@ export function ToolsReview() {
                   aria-hidden="true"
                   className="hidden absolute inset-0 pointer-events-none sm:block"
                 >
-                  <div
-                    className={classNames(
-                      plan.featured
-                        ? 'ring-2 ring-blue-600'
-                        : 'ring-1 ring-black ring-opacity-5',
-                      'absolute right-0 w-1/2 h-full rounded-lg'
-                    )}
-                  />
+                  <div className="ring-1 ring-black ring-opacity-5 absolute right-0 w-1/2 h-full rounded-lg" />
                 </div>
               </div>
             </div>
@@ -480,20 +403,8 @@ export function ToolsReview() {
                   '-mt-px pl-4 w-1/6'
                 )}
               >
-                <div
-                  className={classNames(
-                    plan.featured ? 'border-blue-600' : 'border-transparent',
-                    'py-6 border-t-2'
-                  )}
-                >
-                  <p
-                    className={classNames(
-                      plan.featured
-                        ? 'text-blue-500'
-                        : 'text-gray-700 dark:text-gray-300',
-                      'text-sm font-bold'
-                    )}
-                  >
+                <div className="border-transparent py-6 border-t-2">
+                  <p className="text-gray-700 dark:text-gray-300 text-sm font-bold">
                     {plan.title}{' '}
                     {plan.organization ? `(by ${plan.organization})` : ''}
                   </p>
@@ -570,16 +481,7 @@ export function ToolsReview() {
                         )}
                       >
                         <span className="relative w-full h-full py-3">
-                          <span
-                            className={classNames(
-                              tier.featured
-                                ? 'text-blue-500'
-                                : 'text-gray-700 dark:text-gray-300',
-                              'text-sm font-medium'
-                            )}
-                          >
-                            {valuesDictionary[tier.value]}
-                          </span>
+                          {valuesDictionary[tier.value]()}
                         </span>
                       </td>
                     ))}
@@ -680,16 +582,7 @@ export function ToolsReview() {
                           'relative w-1/6 py-0 text-center'
                         )}
                       >
-                        <span
-                          className={classNames(
-                            tier.featured
-                              ? 'text-blue-500'
-                              : 'text-gray-700 dark:text-gray-300',
-                            'text-sm font-medium'
-                          )}
-                        >
-                          {valuesDictionary[tier.value]}
-                        </span>
+                        {valuesDictionary[tier.value]()}
                       </td>
                     ))}
                   </tr>
@@ -779,16 +672,7 @@ export function ToolsReview() {
                           'relative w-1/6 py-0 text-center'
                         )}
                       >
-                        <span
-                          className={classNames(
-                            tier.featured
-                              ? 'text-blue-500'
-                              : 'text-gray-700 dark:text-gray-300',
-                            'text-sm font-medium'
-                          )}
-                        >
-                          {valuesDictionary[tier.value]}
-                        </span>
+                        {valuesDictionary[tier.value]()}
                       </td>
                     ))}
                   </tr>
