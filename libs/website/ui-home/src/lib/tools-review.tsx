@@ -1,12 +1,17 @@
 import { ReactComponentElement } from 'react';
-import { CheckCircleIcon, MinusIcon } from '@heroicons/react/solid';
+import {
+  CheckCircleIcon,
+  MinusIcon,
+  QuestionMarkCircleIcon,
+} from '@heroicons/react/solid';
 
 type Supports = 'supported' | 'notSupported' | 'manualImplementation';
 
 interface Item {
   title: string;
   tooltip: string;
-  tiers: { title: string; value: Supports }[];
+  features: { title: string; value: Supports }[];
+  link: string;
 }
 
 const tools = [
@@ -46,8 +51,9 @@ const tools = [
 const fast: Item[] = [
   {
     title: 'Local task orchestration',
+    link: '#local-task-orchestration',
     tooltip: 'The ability to run tasks in the correct order and in parallel.',
-    tiers: [
+    features: [
       { title: 'Nx', value: 'supported' },
       { title: 'Bazel', value: 'supported' },
       { title: 'Lage', value: 'supported' },
@@ -57,9 +63,10 @@ const fast: Item[] = [
   },
   {
     title: 'Local computation caching',
+    link: '#local-computation-caching',
     tooltip:
       'The ability to store and replay file and process output of tasks.',
-    tiers: [
+    features: [
       { title: 'Nx', value: 'supported' },
       { title: 'Bazel', value: 'supported' },
       { title: 'Lage', value: 'supported' },
@@ -69,9 +76,10 @@ const fast: Item[] = [
   },
   {
     title: 'Distributed computation caching',
+    link: '#distributed-computation-caching',
     tooltip:
       'The ability to share cache artifacts across different environments.',
-    tiers: [
+    features: [
       { title: 'Nx', value: 'supported' },
       { title: 'Bazel', value: 'supported' },
       { title: 'Lage', value: 'supported' },
@@ -81,8 +89,9 @@ const fast: Item[] = [
   },
   {
     title: 'Distributed task execution',
+    link: '#distributed-task-execution',
     tooltip: 'The ability to distribute a command across many machines.',
-    tiers: [
+    features: [
       { title: 'Nx', value: 'supported' },
       { title: 'Bazel', value: 'supported' },
       { title: 'Lage', value: 'notSupported' },
@@ -92,9 +101,10 @@ const fast: Item[] = [
   },
   {
     title: 'Transparent remote execution',
+    link: '#transparent-remote-execution',
     tooltip:
       'The ability to execute any command on multiple machines while developing locally.',
-    tiers: [
+    features: [
       { title: 'Nx', value: 'notSupported' },
       { title: 'Bazel', value: 'supported' },
       { title: 'Lage', value: 'notSupported' },
@@ -104,9 +114,10 @@ const fast: Item[] = [
   },
   {
     title: 'Detecting affected projects/packages',
+    link: '#detecting-affected-project-packages',
     tooltip:
       'Determine what might be affected by a change, to run only build/test affected projects.',
-    tiers: [
+    features: [
       { title: 'Nx', value: 'supported' },
       { title: 'Bazel', value: 'notSupported' },
       { title: 'Lage', value: 'supported' },
@@ -118,9 +129,10 @@ const fast: Item[] = [
 const understandable: Item[] = [
   {
     title: 'Workspace analysis',
+    link: '#workspace-analysis',
     tooltip:
       'The ability to understand the understand the project graph of the workspace without extra configuration.',
-    tiers: [
+    features: [
       { title: 'Nx', value: 'supported' },
       { title: 'Bazel', value: 'notSupported' },
       { title: 'Lage', value: 'supported' },
@@ -130,9 +142,10 @@ const understandable: Item[] = [
   },
   {
     title: 'Dependency graph visualization',
+    link: '#dependency-graph-visualization',
     tooltip:
       'Visualize dependency relationships between projects and/or tasks.',
-    tiers: [
+    features: [
       { title: 'Nx', value: 'supported' },
       { title: 'Bazel', value: 'supported' },
       { title: 'Lage', value: 'notSupported' },
@@ -144,8 +157,9 @@ const understandable: Item[] = [
 const manageable: Item[] = [
   {
     title: 'Source code sharing',
+    link: '#source-code-sharing',
     tooltip: 'Facilitates sharing of discrete pieces source code.',
-    tiers: [
+    features: [
       { title: 'Nx', value: 'supported' },
       { title: 'Bazel', value: 'supported' },
       { title: 'Lage', value: 'supported' },
@@ -155,9 +169,10 @@ const manageable: Item[] = [
   },
   {
     title: 'Consistent tooling',
+    link: '#consisten-tooling',
     tooltip:
-      '   The tool helps you get a consistent experience regardless of what you use to develop your projects: different JavaScript frameworks, Go, Java, etc.',
-    tiers: [
+      'The tool helps you get a consistent experience regardless of what you use to develop your projects: different JavaScript frameworks, Go, Java, etc.',
+    features: [
       { title: 'Nx', value: 'supported' },
       { title: 'Bazel', value: 'supported' },
       { title: 'Lage', value: 'notSupported' },
@@ -167,8 +182,9 @@ const manageable: Item[] = [
   },
   {
     title: 'Code generation',
+    link: '#code-generation',
     tooltip: 'Native support for generating code',
-    tiers: [
+    features: [
       { title: 'Nx', value: 'supported' },
       { title: 'Bazel', value: 'notSupported' },
       { title: 'Lage', value: 'notSupported' },
@@ -178,9 +194,10 @@ const manageable: Item[] = [
   },
   {
     title: 'Project constraints and visibility',
+    link: '#project-constraints-and-visibility',
     tooltip:
       'Supports definition of rules to constrain dependency relationships within the repo.',
-    tiers: [
+    features: [
       { title: 'Nx', value: 'supported' },
       { title: 'Bazel', value: 'supported' },
       { title: 'Lage', value: 'notSupported' },
@@ -191,13 +208,19 @@ const manageable: Item[] = [
 ];
 const valuesDictionary: Record<Supports, () => ReactComponentElement<any>> = {
   supported: () => (
-    <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-slate-500">
+    <span
+      title="natively supported"
+      className="inline-flex items-center px-2.5 py-0.5 rounded-full text-slate-400"
+    >
       <CheckCircleIcon className="w-5 h-5" />
       <span className="sr-only">natively supported</span>
     </span>
   ),
   notSupported: () => (
-    <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-slate-500">
+    <span
+      title="not supported"
+      className="inline-flex items-center px-2.5 py-0.5 rounded-full text-slate-400"
+    >
       <MinusIcon className="w-5 h-5" />
       <span className="sr-only">not supported</span>
     </span>
@@ -248,17 +271,22 @@ export function ToolsReview() {
         </h2>
 
         <div className="max-w-2xl mx-auto py-16 px-4 space-y-16 sm:px-6">
-          {tools.map((plan, planIndex) => (
+          {tools.map((tool, toolIndex) => (
             <div
-              key={plan.title}
+              key={tool.title}
               className="border-t border-slate-100 dark:border-slate-900"
             >
               <div className="-mt-px pt-6 border-t-2 sm:w-1/2">
                 <h3 className="text-gray-700 dark:text-gray-300 text-sm font-bold">
-                  {plan.title}
+                  {tool.title}{' '}
+                  {tool.organization ? (
+                    <span className="ml-2 text-xs font-normal">
+                      (by {tool.organization})
+                    </span>
+                  ) : null}
                 </h3>
                 <p className="mt-2 text-sm text-gray-500">
-                  &ldquo;{plan.description}&rdquo;
+                  &ldquo;{tool.description}&rdquo;
                 </p>
               </div>
               <h4 className="mt-10 text-sm font-bold text-gray-700 dark:text-gray-300">
@@ -281,11 +309,20 @@ export function ToolsReview() {
                         key={feature.title}
                         className="py-3 flex items-center justify-between sm:grid sm:grid-cols-2"
                       >
-                        <dt className="pr-4 text-sm font-medium text-gray-700 dark:text-gray-300">
+                        <dt className="flex pr-4 text-sm font-medium text-gray-700 dark:text-gray-300">
+                          <a
+                            href={feature.link}
+                            className="inline-flex mr-1 px-2  text-slate-500"
+                          >
+                            <span className="sr-only">More info</span>
+                            <QuestionMarkCircleIcon className="w-5 h-5" />
+                          </a>
                           {feature.title}
                         </dt>
                         <dd className="flex items-center justify-end sm:px-4 sm:justify-center">
-                          {valuesDictionary[feature.tiers[planIndex].value]()}
+                          {valuesDictionary[
+                            feature.features[toolIndex].value
+                          ]()}
                         </dd>
                       </div>
                     ))}
@@ -321,11 +358,20 @@ export function ToolsReview() {
                         key={feature.title}
                         className="py-3 flex justify-between sm:grid sm:grid-cols-2"
                       >
-                        <dt className="text-sm font-medium text-gray-700 dark:text-gray-300 sm:pr-4">
+                        <dt className="flex text-sm font-medium text-gray-700 dark:text-gray-300 sm:pr-4">
+                          <a
+                            href={feature.link}
+                            className="inline-flex mr-1 px-2 text-slate-500"
+                          >
+                            <span className="sr-only">More info</span>
+                            <QuestionMarkCircleIcon className="w-5 h-5" />
+                          </a>
                           {feature.title}
                         </dt>
                         <dd className="text-center sm:px-4">
-                          {valuesDictionary[feature.tiers[planIndex].value]()}
+                          {valuesDictionary[
+                            feature.features[toolIndex].value
+                          ]()}
                         </dd>
                       </div>
                     ))}
@@ -361,11 +407,20 @@ export function ToolsReview() {
                         key={feature.title}
                         className="py-3 flex justify-between sm:grid sm:grid-cols-2"
                       >
-                        <dt className="text-sm font-medium text-gray-700 dark:text-gray-300 sm:pr-4">
+                        <dt className="flex text-sm font-medium text-gray-700 dark:text-gray-300 sm:pr-4">
+                          <a
+                            href={feature.link}
+                            className="inline-flex mr-1 px-2  text-slate-500"
+                          >
+                            <span className="sr-only">More info</span>
+                            <QuestionMarkCircleIcon className="w-5 h-5" />
+                          </a>
                           {feature.title}
                         </dt>
                         <dd className="text-center sm:px-4">
-                          {valuesDictionary[feature.tiers[planIndex].value]()}
+                          {valuesDictionary[
+                            feature.features[toolIndex].value
+                          ]()}
                         </dd>
                       </div>
                     ))}
@@ -394,22 +449,26 @@ export function ToolsReview() {
         <div className="max-w-7xl mx-auto py-24 px-8">
           <div className="w-full border-t border-slate-100 dark:border-slate-900 flex items-stretch">
             <div className="-mt-px w-1/6 py-6 pr-4 flex items-end" />
-            {tools.map((plan, planIndex) => (
+            {tools.map((tool, toolIndex) => (
               <div
-                key={plan.title}
+                key={tool.title}
                 aria-hidden="true"
                 className={classNames(
-                  planIndex === tools.length - 1 ? '' : 'pr-4',
+                  toolIndex === tools.length - 1 ? '' : 'pr-4',
                   '-mt-px pl-4 w-1/6'
                 )}
               >
                 <div className="border-transparent py-6 border-t-2">
-                  <p className="text-gray-700 dark:text-gray-300 text-sm font-bold">
-                    {plan.title}{' '}
-                    {plan.organization ? `(by ${plan.organization})` : ''}
+                  <p className="text-gray-700 dark:text-gray-300 text-md font-bold">
+                    {tool.title}{' '}
+                    {tool.organization ? (
+                      <span className="ml-2 text-xs font-normal">
+                        (by {tool.organization})
+                      </span>
+                    ) : null}
                   </p>
                   <p className="mt-2 text-sm text-gray-500">
-                    &ldquo;{plan.description}&rdquo;
+                    &ldquo;{tool.description}&rdquo;
                   </p>
                 </div>
               </div>
@@ -454,9 +513,9 @@ export function ToolsReview() {
                   <th scope="col">
                     <span className="sr-only">Feature</span>
                   </th>
-                  {tools.map((plan) => (
-                    <th key={plan.title} scope="col">
-                      <span className="sr-only">{plan.title}</span>
+                  {tools.map((tool) => (
+                    <th key={tool.title} scope="col">
+                      <span className="sr-only">{tool.title}</span>
                     </th>
                   ))}
                 </tr>
@@ -468,13 +527,19 @@ export function ToolsReview() {
                       scope="row"
                       className="w-1/6 py-3 pr-4 text-left text-sm font-medium text-gray-700 dark:text-gray-300"
                     >
-                      {feature.title}
+                      <a
+                        href={feature.link}
+                        title={'More on ' + feature.title}
+                        className="hover:underline"
+                      >
+                        {feature.title}
+                      </a>
                     </th>
-                    {feature.tiers.map((tier, tierIdx) => (
+                    {feature.features.map((tier, tierIdx) => (
                       <td
                         key={tier.title}
                         className={classNames(
-                          tierIdx === feature.tiers.length - 1
+                          tierIdx === feature.features.length - 1
                             ? 'pl-4'
                             : 'px-4',
                           'relative w-1/6 py-0 text-center'
@@ -548,9 +613,9 @@ export function ToolsReview() {
                   <th scope="col">
                     <span className="sr-only">Tool</span>
                   </th>
-                  {tools.map((plan) => (
-                    <th key={plan.title} scope="col">
-                      <span className="sr-only">{plan.title}</span>
+                  {tools.map((tool) => (
+                    <th key={tool.title} scope="col">
+                      <span className="sr-only">{tool.title}</span>
                     </th>
                   ))}
                 </tr>
@@ -558,27 +623,35 @@ export function ToolsReview() {
                   <th scope="col">
                     <span className="sr-only">Organization</span>
                   </th>
-                  {tools.map((plan) => (
-                    <th key={plan.title} scope="col">
-                      <span className="sr-only">{plan.organization}</span>
+                  {tools.map((tool) => (
+                    <th key={tool.title} scope="col">
+                      <span className="sr-only">{tool.organization}</span>
                     </th>
                   ))}
                 </tr>
               </thead>
               <tbody className="divide-y divide-slate-300 dark:divide-slate-600">
-                {understandable.map((perk) => (
-                  <tr key={perk.title}>
+                {understandable.map((feature) => (
+                  <tr key={feature.title}>
                     <th
                       scope="row"
                       className="w-1/6 py-3 pr-4 text-left text-sm font-medium text-gray-700 dark:text-gray-300"
                     >
-                      {perk.title}
+                      <a
+                        href={feature.link}
+                        title={'More on ' + feature.title}
+                        className="hover:underline"
+                      >
+                        {feature.title}
+                      </a>
                     </th>
-                    {perk.tiers.map((tier, tierIdx) => (
+                    {feature.features.map((tier, tierIdx) => (
                       <td
                         key={tier.title}
                         className={classNames(
-                          tierIdx === perk.tiers.length - 1 ? 'pl-4' : 'px-4',
+                          tierIdx === feature.features.length - 1
+                            ? 'pl-4'
+                            : 'px-4',
                           'relative w-1/6 py-0 text-center'
                         )}
                       >
@@ -656,19 +729,27 @@ export function ToolsReview() {
                 </tr>
               </thead>
               <tbody className="divide-y divide-slate-300 dark:divide-slate-600">
-                {manageable.map((perk) => (
-                  <tr key={perk.title}>
+                {manageable.map((feature) => (
+                  <tr key={feature.title}>
                     <th
                       scope="row"
                       className="w-1/6 py-3 pr-4 text-left text-sm font-medium text-gray-700 dark:text-gray-300"
                     >
-                      {perk.title}
+                      <a
+                        href={feature.link}
+                        title={'More on ' + feature.title}
+                        className="hover:underline"
+                      >
+                        {feature.title}
+                      </a>
                     </th>
-                    {perk.tiers.map((tier, tierIdx) => (
+                    {feature.features.map((tier, tierIdx) => (
                       <td
                         key={tier.title}
                         className={classNames(
-                          tierIdx === perk.tiers.length - 1 ? 'pl-4' : 'px-4',
+                          tierIdx === feature.features.length - 1
+                            ? 'pl-4'
+                            : 'px-4',
                           'relative w-1/6 py-0 text-center'
                         )}
                       >
