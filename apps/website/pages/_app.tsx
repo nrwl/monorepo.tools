@@ -32,13 +32,19 @@ function CustomApp({ Component, pageProps }: AppProps) {
         />
         <meta property="og:image:alt" content="monorepo official logo" />
         <meta property="og:image:type" content="image/png" />
-        <meta property="og:image:width" content="300" />
-        <meta property="og:image:height" content="300" />
+        <meta property="og:image:width" content="505" />
+        <meta property="og:image:height" content="512" />
         <meta property="og:site_name" content="monorepo.tools" />
         <title>Monorepo explained</title>
         <meta
           name="description"
           content="Everything you need to know about monorepos, and the tools to build them."
+        />
+        <link rel="icon" href="/images/browser/favicon-32x32.ico" sizes="32" />
+        <link rel="icon" href="/images/browser/icon.svg" type="image/svg+xml" />
+        <link
+          rel="apple-touch-icon"
+          href="/images/browser/apple-touch-icon.png"
         />
       </Head>
       <main className="monorepo.tools bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 font-display">
