@@ -231,7 +231,7 @@ export function ToolsReview() {
         <div className="max-w-2xl mx-auto py-16 px-4 space-y-16 sm:px-6">
           {tools.map((plan, planIndex) => (
             <div
-              key="plan.title"
+              key={plan.title}
               className="border-t border-slate-100 dark:border-slate-900"
             >
               <div
