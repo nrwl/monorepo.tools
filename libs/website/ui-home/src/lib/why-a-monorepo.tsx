@@ -1,6 +1,6 @@
 export function WhyAMonorepo() {
   return (
-    <article
+    <div
       id="why-a-monorepo"
       className="bg-slate-50 dark:bg-slate-800 pt-16 pb-20 px-4 sm:px-6 lg:pt-24 lg:pb-28 lg:px-8"
     >
@@ -60,9 +60,9 @@ export function WhyAMonorepo() {
               </span>
             </div>
             <div className="block mt-4">
-              <h4 className="text-xl font-semibold text-gray-700 dark:text-gray-300">
+              <h2 className="text-xl font-semibold text-gray-700 dark:text-gray-300">
                 Cumbersome code sharing
-              </h4>
+              </h2>
               <p className="mt-3 text-base text-gray-400">
                 To share code across repositories, you'd likely create a
                 repository for the shared code. Now you have to set up the
@@ -80,9 +80,9 @@ export function WhyAMonorepo() {
               </span>
             </div>
             <div className="block mt-4">
-              <h4 className="text-xl font-semibold text-gray-700 dark:text-gray-300">
+              <h2 className="text-xl font-semibold text-gray-700 dark:text-gray-300">
                 Significant code duplication
-              </h4>
+              </h2>
               <p className="mt-3 text-base text-gray-400">
                 No one wants to go through the hassle of setting up a shared
                 repo, so teams just write their own implementations of common
@@ -99,9 +99,9 @@ export function WhyAMonorepo() {
               </span>
             </div>
             <div className="block mt-4">
-              <h4 className="text-xl font-semibold text-gray-700 dark:text-gray-300">
+              <h2 className="text-xl font-semibold text-gray-700 dark:text-gray-300">
                 Costly cross-repo changes to shared libraries and consumers
-              </h4>
+              </h2>
               <p className="mt-3 text-base text-gray-400">
                 When a shared library in a separate repo need to be changed
                 together (new feature, regression, breaking change), the
@@ -118,9 +118,9 @@ export function WhyAMonorepo() {
               </span>
             </div>
             <div className="block mt-4">
-              <h4 className="text-xl font-semibold text-gray-700 dark:text-gray-300">
+              <h2 className="text-xl font-semibold text-gray-700 dark:text-gray-300">
                 Inconsistent tooling
-              </h4>
+              </h2>
               <p className="mt-3 text-base text-gray-400">
                 Each project uses its own set of commands for running tests,
                 building, serving, linting, deploying, and so forth.
@@ -151,9 +151,9 @@ export function WhyAMonorepo() {
               </span>
             </div>
             <div className="block mt-4">
-              <h4 className="text-xl font-semibold text-gray-700 dark:text-gray-300">
+              <h2 className="text-xl font-semibold text-gray-700 dark:text-gray-300">
                 No overhead to create new projects
-              </h4>
+              </h2>
               <p className="mt-3 text-base text-gray-400">
                 Use the existing CI setup, and no need to publish versioned
                 packages if all consumers are in the same repo.
@@ -167,9 +167,9 @@ export function WhyAMonorepo() {
               </span>
             </div>
             <div className="block mt-4">
-              <h4 className="text-xl font-semibold text-gray-700 dark:text-gray-300">
+              <h2 className="text-xl font-semibold text-gray-700 dark:text-gray-300">
                 Atomic commits across projects
-              </h4>
+              </h2>
               <p className="mt-3 text-base text-gray-400">
                 Everything works together at every commit. There's no such thing
                 as a breaking change when you fix everything in the same commit.
@@ -183,9 +183,9 @@ export function WhyAMonorepo() {
               </span>
             </div>
             <div className="block mt-4">
-              <h4 className="text-xl font-semibold text-gray-700 dark:text-gray-300">
+              <h2 className="text-xl font-semibold text-gray-700 dark:text-gray-300">
                 One version of everything
-              </h4>
+              </h2>
               <p className="mt-3 text-base text-gray-400">
                 No need to worry about incompatibility because of projects
                 depending on conflicting versions of third party libraries.
@@ -199,9 +199,9 @@ export function WhyAMonorepo() {
               </span>
             </div>
             <div className="block mt-4">
-              <h4 className="text-xl font-semibold text-gray-700 dark:text-gray-300">
+              <h2 className="text-xl font-semibold text-gray-700 dark:text-gray-300">
                 Developer mobility
-              </h4>
+              </h2>
               <p className="mt-3 text-base text-gray-400">
                 Get a consistent way of building and testing applications
                 written using different tools and technologies. Developers can
@@ -212,7 +212,7 @@ export function WhyAMonorepo() {
           </section>
         </div>
       </article>
-    </article>
+    </div>
   );
 }
 

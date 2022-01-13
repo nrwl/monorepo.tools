@@ -24,7 +24,7 @@ const ManualImplementation = () => (
 
 export function MonorepoFeatures() {
   return (
-    <article className="py-16 bg-slate-50 dark:bg-slate-800 overflow-hidden lg:py-24">
+    <div className="py-16 bg-slate-50 dark:bg-slate-800 overflow-hidden lg:py-24">
       <div className="relative max-w-xl mx-auto px-4 sm:px-6 lg:px-8 lg:max-w-7xl">
         <div className="relative">
           <div className="text-center text-4xl leading-8 font-extrabold tracking-tight text-gray-900 dark:text-white sm:text-5xl">
@@ -1106,7 +1106,7 @@ export function MonorepoFeatures() {
           </dl>
         </div>
       </div>
-    </article>
+    </div>
   );
 }
 

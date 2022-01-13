@@ -108,9 +108,9 @@ export function Introduction() {
           {/*LINKS*/}
           <div className="flex flex-col bg-slate-50 dark:bg-slate-800 rounded-2xl shadow-xl">
             <div className="flex-1 relative pt-16 px-6 pb-8 md:px-8">
-              <h3 className="text-xl font-medium text-gray-800 dark:text-gray-200">
+              <h2 className="text-xl font-medium text-gray-800 dark:text-gray-200">
                 What's a monorepo
-              </h3>
+              </h2>
               <p className="mt-4 text-base text-gray-700 dark:text-gray-300">
                 Let's start with a common unsterstanding of what a Monorepo is.
               </p>
@@ -126,9 +126,9 @@ export function Introduction() {
           </div>
           <div className="flex flex-col bg-slate-50 dark:bg-slate-800 rounded-2xl shadow-xl">
             <div className="flex-1 relative pt-16 px-6 pb-8 md:px-8">
-              <h3 className="text-xl font-medium text-gray-800 dark:text-gray-200">
+              <h2 className="text-xl font-medium text-gray-800 dark:text-gray-200">
                 Why you should care
-              </h3>
+              </h2>
               <p className="mt-4 text-base text-gray-700 dark:text-gray-300">
                 What are the situations solved by monorepos.
               </p>
@@ -144,9 +144,9 @@ export function Introduction() {
           </div>
           <div className="flex flex-col bg-slate-50 dark:bg-slate-800 rounded-2xl shadow-xl">
             <div className="flex-1 relative pt-16 px-6 pb-8 md:px-8">
-              <h3 className="text-xl font-medium text-gray-800 dark:text-gray-200">
+              <h2 className="text-xl font-medium text-gray-800 dark:text-gray-200">
                 Features of a monorepo
-              </h3>
+              </h2>
               <p className="mt-4 text-base text-gray-700 dark:text-gray-300">
                 What to expect from a monorepo tool
               </p>

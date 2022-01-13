@@ -1,14 +1,14 @@
 export function WhatIsAMonorepo() {
   return (
-    <article
+    <div
       id="what-is-a-monorepo"
       className="py-16 bg-slate-50 dark:bg-slate-800 overflow-hidden lg:py-24"
     >
       <div className="relative mx-auto px-4 sm:px-6 lg:px-8 lg:max-w-7xl">
         <header className="relative">
-          <h1 className="text-center text-4xl font-extrabold tracking-tight text-gray-900 dark:text-white sm:text-5xl">
+          <div className="text-center text-4xl font-extrabold tracking-tight text-gray-900 dark:text-white sm:text-5xl">
             # What's a Monorepo?
-          </h1>
+          </div>
           <p className="mt-4 max-w-3xl mx-auto text-center text-xl text-gray-700 dark:text-gray-300">
             Let's define what we and others typically mean when we talk about
             Monorepos.
@@ -86,7 +86,7 @@ export function WhatIsAMonorepo() {
           </div>
         </article>
       </div>
-    </article>
+    </div>
   );
 }
 
