@@ -282,9 +282,9 @@ export function ToolsReview() {
                   &ldquo;{tool.description}&rdquo;
                 </p>
               </div>
-              <h4 className="mt-10 text-sm font-bold text-gray-700 dark:text-gray-300">
+              <div className="mt-10 text-sm font-bold text-gray-700 dark:text-gray-300">
                 Fast
-              </h4>
+              </div>
 
               <div className="mt-6 relative">
                 {/* Fake card background */}
@@ -331,9 +331,9 @@ export function ToolsReview() {
                 </div>
               </div>
 
-              <h4 className="mt-10 text-sm font-bold text-gray-700 dark:text-gray-300">
+              <div className="mt-10 text-sm font-bold text-gray-700 dark:text-gray-300">
                 Understandable
-              </h4>
+              </div>
 
               <div className="mt-6 relative">
                 {/* Fake card background */}
@@ -380,9 +380,9 @@ export function ToolsReview() {
                 </div>
               </div>
 
-              <h4 className="mt-10 text-sm font-bold text-gray-700 dark:text-gray-300">
+              <div className="mt-10 text-sm font-bold text-gray-700 dark:text-gray-300">
                 Manageable
-              </h4>
+              </div>
 
               <div className="mt-6 relative">
                 {/* Fake card background */}

@@ -11,7 +11,6 @@ import {
   SwitchVerticalIcon,
   TerminalIcon,
 } from '@heroicons/react/solid';
-import ToolsSupportCallout from './tools-support-callout';
 
 const Supported = () => (
   <span className="mr-3 w-2 h-2 bg-green-500 rounded-full" />
@@ -28,9 +27,9 @@ export function MonorepoFeatures() {
     <article className="py-16 bg-slate-50 dark:bg-slate-800 overflow-hidden lg:py-24">
       <div className="relative max-w-xl mx-auto px-4 sm:px-6 lg:px-8 lg:max-w-7xl">
         <div className="relative">
-          <h1 className="text-center text-4xl leading-8 font-extrabold tracking-tight text-gray-900 dark:text-white sm:text-5xl">
+          <div className="text-center text-4xl leading-8 font-extrabold tracking-tight text-gray-900 dark:text-white sm:text-5xl">
             # Monorepo tools
-          </h1>
+          </div>
           <p className="mt-4 max-w-3xl mx-auto text-center text-xl text-gray-700 dark:text-gray-300">
             How do they compare? let's see how each tools answer to each
             features.
@@ -44,7 +43,7 @@ export function MonorepoFeatures() {
         </div>
 
         {/*Local Computation Caching*/}
-        <section
+        <div
           id="local-computation-caching"
           className="relative mt-12 lg:mt-16 lg:grid lg:grid-cols-2 lg:gap-12 lg:items-start"
         >
@@ -52,9 +51,9 @@ export function MonorepoFeatures() {
             <div className="absolute flex items-center justify-center h-10 w-10 rounded-md text-gray-800 dark:text-gray-200 rounded-md bg-slate-100 dark:bg-slate-900">
               <DocumentDownloadIcon className="w-6 h-6" />
             </div>
-            <h3 className="ml-16 text-xl font-medium text-gray-800 dark:text-gray-200 sm:text-2xl sm:leading-relaxed">
+            <div className="ml-16 text-xl font-medium text-gray-800 dark:text-gray-200 sm:text-2xl sm:leading-relaxed">
               Local computation caching
-            </h3>
+            </div>
 
             <p className="mt-3 text-lg text-gray-700 dark:text-gray-300">
               The ability to store and replay file and process output of tasks.
@@ -130,10 +129,10 @@ export function MonorepoFeatures() {
               </dd>
             </div>
           </dl>
-        </section>
+        </div>
 
         {/*Local task orchestration*/}
-        <section
+        <div
           id="local-task-orchestration"
           className="relative mt-12 lg:mt-16 lg:grid lg:grid-cols-2 lg:gap-12 lg:items-start"
         >
@@ -141,9 +140,9 @@ export function MonorepoFeatures() {
             <div className="absolute flex items-center justify-center h-10 w-10 rounded-md text-gray-800 dark:text-gray-200 rounded-md bg-slate-100 dark:bg-slate-900">
               <SwitchVerticalIcon className="w-6 h-6" />
             </div>
-            <h3 className="ml-16 text-xl font-medium text-gray-800 dark:text-gray-200 sm:text-2xl sm:leading-relaxed">
+            <div className="ml-16 text-xl font-medium text-gray-800 dark:text-gray-200 sm:text-2xl sm:leading-relaxed">
               Local task orchestration
-            </h3>
+            </div>
 
             <p className="mt-3 text-lg text-gray-700 dark:text-gray-300">
               The ability to run tasks in the correct order and in parallel. All
@@ -216,10 +215,10 @@ export function MonorepoFeatures() {
               </dd>
             </div>
           </dl>
-        </section>
+        </div>
 
         {/*Distributed Computation Caching*/}
-        <section
+        <div
           id="distributed-computation-caching"
           className="relative mt-12 lg:mt-16 lg:grid lg:grid-cols-2 lg:gap-12 lg:items-start"
         >
@@ -227,9 +226,9 @@ export function MonorepoFeatures() {
             <div className="absolute flex items-center justify-center h-10 w-10 rounded-md text-gray-800 dark:text-gray-200 rounded-md bg-slate-100 dark:bg-slate-900">
               <CloudDownloadIcon className="w-6 h-6" />
             </div>
-            <h3 className="ml-16 text-xl font-medium text-gray-800 dark:text-gray-200 sm:text-2xl sm:leading-relaxed">
+            <div className="ml-16 text-xl font-medium text-gray-800 dark:text-gray-200 sm:text-2xl sm:leading-relaxed">
               Distributed computation caching
-            </h3>
+            </div>
 
             <p className="mt-3 text-lg text-gray-700 dark:text-gray-300">
               The ability to share cache artifacts across different
@@ -299,10 +298,10 @@ export function MonorepoFeatures() {
               </dd>
             </div>
           </dl>
-        </section>
+        </div>
 
         {/*Distributed Task Execution*/}
-        <section
+        <div
           id="distributed-task-execution"
           className="relative mt-12 lg:mt-16 lg:grid lg:grid-cols-2 lg:gap-12 lg:items-start"
         >
@@ -310,9 +309,9 @@ export function MonorepoFeatures() {
             <div className="absolute flex items-center justify-center h-10 w-10 rounded-md text-gray-800 dark:text-gray-200 rounded-md bg-slate-100 dark:bg-slate-900">
               <CollectionIcon className="w-6 h-6" />
             </div>
-            <h3 className="ml-16 text-xl font-medium text-gray-800 dark:text-gray-200 sm:text-2xl sm:leading-relaxed">
+            <div className="ml-16 text-xl font-medium text-gray-800 dark:text-gray-200 sm:text-2xl sm:leading-relaxed">
               Distributed task execution
-            </h3>
+            </div>
 
             <p className="mt-3 text-lg text-gray-700 dark:text-gray-300">
               The ability to distribute a command across many machines, while
@@ -385,10 +384,10 @@ export function MonorepoFeatures() {
               </dd>
             </div>
           </dl>
-        </section>
+        </div>
 
         {/*Transparent Remote Execution*/}
-        <section
+        <div
           id="transparent-remote-execution"
           className="relative mt-12 lg:mt-16 lg:grid lg:grid-cols-2 lg:gap-12 lg:items-start"
         >
@@ -396,9 +395,9 @@ export function MonorepoFeatures() {
             <div className="absolute flex items-center justify-center h-10 w-10 rounded-md text-gray-800 dark:text-gray-200 rounded-md bg-slate-100 dark:bg-slate-900">
               <ServerIcon className="w-6 h-6" />
             </div>
-            <h3 className="ml-16 text-xl font-medium text-gray-800 dark:text-gray-200 sm:text-2xl sm:leading-relaxed">
+            <div className="ml-16 text-xl font-medium text-gray-800 dark:text-gray-200 sm:text-2xl sm:leading-relaxed">
               Transparent remote execution
-            </h3>
+            </div>
 
             <p className="mt-3 text-lg text-gray-700 dark:text-gray-300">
               The ability to execute any command on multiple machines while
@@ -458,10 +457,10 @@ export function MonorepoFeatures() {
               </dd>
             </div>
           </dl>
-        </section>
+        </div>
 
         {/*Affected*/}
-        <section
+        <div
           id="detecting-affected-projects-packages"
           className="relative mt-12 lg:mt-16 lg:grid lg:grid-cols-2 lg:gap-12 lg:items-start"
         >
@@ -469,9 +468,9 @@ export function MonorepoFeatures() {
             <div className="absolute flex items-center justify-center h-10 w-10 rounded-md text-gray-800 dark:text-gray-200 rounded-md bg-slate-100 dark:bg-slate-900">
               <LightBulbIcon className="w-6 h-6" />
             </div>
-            <h3 className="ml-16 text-xl font-medium text-gray-800 dark:text-gray-200 sm:text-2xl sm:leading-relaxed">
+            <div className="ml-16 text-xl font-medium text-gray-800 dark:text-gray-200 sm:text-2xl sm:leading-relaxed">
               Detecting affected projects/packages
-            </h3>
+            </div>
 
             <p className="mt-3 text-lg text-gray-700 dark:text-gray-300">
               Determine what might be affected by a change, to run only
@@ -543,7 +542,7 @@ export function MonorepoFeatures() {
               </dd>
             </div>
           </dl>
-        </section>
+        </div>
 
         {/*UNDERSTANDABLE*/}
         <div className="mt-24 lg:mt-32 text-2xl flex leading-loose font-boldtext-gray-800 dark:text-gray-100tracking-tight sm:text-3xl sm:leading-relaxed items-center">
@@ -552,7 +551,7 @@ export function MonorepoFeatures() {
         </div>
 
         {/*Workspace analysis*/}
-        <section
+        <div
           id="workspace-analysis"
           className="relative mt-12 lg:mt-16 lg:grid lg:grid-cols-2 lg:gap-12 lg:items-start"
         >
@@ -560,9 +559,9 @@ export function MonorepoFeatures() {
             <div className="absolute flex items-center justify-center h-10 w-10 rounded-md text-gray-800 dark:text-gray-200 rounded-md bg-slate-100 dark:bg-slate-900">
               <PresentationChartLineIcon className="w-6 h-6" />
             </div>
-            <h3 className="ml-16 text-xl font-medium text-gray-800 dark:text-gray-200 sm:text-2xl sm:leading-relaxed">
+            <div className="ml-16 text-xl font-medium text-gray-800 dark:text-gray-200 sm:text-2xl sm:leading-relaxed">
               Workspace analysis
-            </h3>
+            </div>
 
             <p className="mt-3 text-lg text-gray-700 dark:text-gray-300">
               The ability to understand the understand the project graph of the
@@ -640,10 +639,10 @@ export function MonorepoFeatures() {
               </dd>
             </div>
           </dl>
-        </section>
+        </div>
 
         {/*Dependency Graph Visualization*/}
-        <section
+        <div
           id="dependency-graph-visualization"
           className="relative mt-12 lg:mt-16 lg:grid lg:grid-cols-2 lg:gap-12 lg:items-start"
         >
@@ -651,9 +650,9 @@ export function MonorepoFeatures() {
             <div className="absolute flex items-center justify-center h-10 w-10 rounded-md text-gray-800 dark:text-gray-200 rounded-md bg-slate-100 dark:bg-slate-900">
               <PresentationChartLineIcon className="w-6 h-6" />
             </div>
-            <h3 className="ml-16 text-xl font-medium text-gray-800 dark:text-gray-200 sm:text-2xl sm:leading-relaxed">
+            <div className="ml-16 text-xl font-medium text-gray-800 dark:text-gray-200 sm:text-2xl sm:leading-relaxed">
               Dependency graph visualization
-            </h3>
+            </div>
 
             <p className="mt-3 text-lg text-gray-700 dark:text-gray-300">
               Visualize dependency relationships between projects and/or tasks.
@@ -731,7 +730,7 @@ export function MonorepoFeatures() {
               </dd>
             </div>
           </dl>
-        </section>
+        </div>
 
         {/*MANAGEMENT*/}
         <div className="mt-24 lg:mt-32 text-2xl flex leading-loose font-boldtext-gray-800 dark:text-gray-100tracking-tight sm:text-3xl sm:leading-relaxed items-center">
@@ -740,7 +739,7 @@ export function MonorepoFeatures() {
         </div>
 
         {/*Code Sharing*/}
-        <section
+        <div
           id="code-sharing"
           className="relative mt-12 lg:mt-16 lg:grid lg:grid-cols-2 lg:gap-12 lg:items-start"
         >
@@ -748,9 +747,9 @@ export function MonorepoFeatures() {
             <div className="absolute flex items-center justify-center h-10 w-10 rounded-md text-gray-800 dark:text-gray-200 rounded-md bg-slate-100 dark:bg-slate-900">
               <CodeIcon className="w-6 h-6" />
             </div>
-            <h3 className="ml-16 text-xl font-medium text-gray-800 dark:text-gray-200 sm:text-2xl sm:leading-relaxed">
+            <div className="ml-16 text-xl font-medium text-gray-800 dark:text-gray-200 sm:text-2xl sm:leading-relaxed">
               Source code sharing
-            </h3>
+            </div>
 
             <p className="mt-3 text-lg text-gray-700 dark:text-gray-300">
               Facilitates sharing of discrete pieces source code.
@@ -827,10 +826,10 @@ export function MonorepoFeatures() {
               </dd>
             </div>
           </dl>
-        </section>
+        </div>
 
         {/*Consistent Tooling*/}
-        <section
+        <div
           id="consistent-tooling"
           className="relative mt-12 lg:mt-16 lg:grid lg:grid-cols-2 lg:gap-12 lg:items-start"
         >
@@ -838,9 +837,9 @@ export function MonorepoFeatures() {
             <div className="absolute flex items-center justify-center h-10 w-10 rounded-md text-gray-800 dark:text-gray-200 rounded-md bg-slate-100 dark:bg-slate-900">
               <TerminalIcon className="w-6 h-6" />
             </div>
-            <h3 className="ml-16 text-xl font-medium text-gray-800 dark:text-gray-200 sm:text-2xl sm:leading-relaxed">
+            <div className="ml-16 text-xl font-medium text-gray-800 dark:text-gray-200 sm:text-2xl sm:leading-relaxed">
               Consistent tooling
-            </h3>
+            </div>
 
             <p className="mt-3 text-lg text-gray-700 dark:text-gray-300">
               The tool helps you get a consistent experience regardless of what
@@ -916,10 +915,10 @@ export function MonorepoFeatures() {
               </dd>
             </div>
           </dl>
-        </section>
+        </div>
 
         {/*Code Generation*/}
-        <section
+        <div
           id="code-generation"
           className="relative mt-12 lg:mt-16 lg:grid lg:grid-cols-2 lg:gap-12 lg:items-start"
         >
@@ -927,9 +926,9 @@ export function MonorepoFeatures() {
             <div className="absolute flex items-center justify-center h-10 w-10 rounded-md text-gray-800 dark:text-gray-200 rounded-md bg-slate-100 dark:bg-slate-900">
               <CogIcon className="w-6 h-6" />
             </div>
-            <h3 className="ml-16 text-xl font-medium text-gray-800 dark:text-gray-200 sm:text-2xl sm:leading-relaxed">
+            <div className="ml-16 text-xl font-medium text-gray-800 dark:text-gray-200 sm:text-2xl sm:leading-relaxed">
               Code generation
-            </h3>
+            </div>
 
             <p className="mt-3 text-lg text-gray-700 dark:text-gray-300">
               Native support for generating code
@@ -1005,10 +1004,10 @@ export function MonorepoFeatures() {
               </dd>
             </div>
           </dl>
-        </section>
+        </div>
 
         {/*Explicit Project Constrains*/}
-        <section
+        <div
           id="explicit-project-constrains"
           className="relative mt-12 lg:mt-16 lg:grid lg:grid-cols-2 lg:gap-12 lg:items-start"
         >
@@ -1016,9 +1015,9 @@ export function MonorepoFeatures() {
             <div className="absolute flex items-center justify-center h-10 w-10 rounded-md text-gray-800 dark:text-gray-200 rounded-md bg-slate-100 dark:bg-slate-900">
               <StatusOnlineIcon className="w-6 h-6" />
             </div>
-            <h3 className="ml-16 text-xl font-medium text-gray-800 dark:text-gray-200 sm:text-2xl sm:leading-relaxed">
+            <div className="ml-16 text-xl font-medium text-gray-800 dark:text-gray-200 sm:text-2xl sm:leading-relaxed">
               Project constraints and visibility
-            </h3>
+            </div>
 
             <p className="mt-3 text-lg text-gray-700 dark:text-gray-300">
               Supports definition of rules to constrain dependency relationships
@@ -1105,7 +1104,7 @@ export function MonorepoFeatures() {
               </dd>
             </div>
           </dl>
-        </section>
+        </div>
       </div>
     </article>
   );

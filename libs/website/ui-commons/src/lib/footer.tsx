@@ -6,6 +6,7 @@ export function Footer() {
           className="-mx-5 -my-2 flex flex-wrap justify-center"
           aria-label="Footer"
         >
+          <h2 className="sr-only">monorepo.tools</h2>
           <div className="px-5 py-2">
             <a
               href="#what-is-a-monorepo"
