@@ -2,12 +2,13 @@ export function Introduction() {
   return (
     <div className="mt-32 bg-slate-50 dark:bg-slate-800">
       {/* Header */}
-      <div className="relative md:pt-64 pb-32 bg-slate-50 dark:bg-slate-800">
+      <article className="relative md:pt-64 pb-32 bg-slate-50 dark:bg-slate-800">
         <div className="absolute inset-0">
           <img
+            aria-hidden="true"
             className="w-full h-full object-cover"
             src="https://images.unsplash.com/photo-1491895200222-0fc4a4c35e18?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1974&q=80"
-            alt=""
+            alt="cover"
           />
           <div
             className="absolute inset-0 bg-slate-50 dark:bg-slate-800 mix-blend-lighten dark:mix-blend-multiply"
@@ -99,16 +100,10 @@ export function Introduction() {
             </svg>
           </div>
         </div>
-      </div>
+      </article>
 
       {/* Overlapping cards */}
-      <section
-        className="-mt-28 max-w-7xl mx-auto relative z-10 pb-32 px-4 sm:px-6 lg:px-8"
-        aria-labelledby="contact-heading"
-      >
-        <h2 className="sr-only" id="contact-heading">
-          Content
-        </h2>
+      <section className="-mt-28 max-w-7xl mx-auto relative z-10 pb-32 px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 gap-y-20 lg:grid-cols-3 lg:gap-y-0 lg:gap-x-8">
           {/*LINKS*/}
           <div className="flex flex-col bg-slate-50 dark:bg-slate-800 rounded-2xl shadow-xl">
@@ -123,7 +118,7 @@ export function Introduction() {
             <div className="p-6 bg-slate-100 dark:bg-slate-900 rounded-bl-2xl rounded-br-2xl md:px-8">
               <a
                 href="#what-is-a-monorepo"
-                className="text-base font-medium text-blue-600 hover:text-blue-500"
+                className="text-base font-medium text-gray-700 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-300"
               >
                 What's a monorepo<span aria-hidden="true"> &rarr;</span>
               </a>
@@ -141,7 +136,7 @@ export function Introduction() {
             <div className="p-6 bg-slate-100 dark:bg-slate-900 rounded-bl-2xl rounded-br-2xl md:px-8">
               <a
                 href="#why-a-monorepo"
-                className="text-base font-medium text-blue-600 hover:text-blue-500"
+                className="text-base font-medium text-gray-700 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-300"
               >
                 Why a monorepo?<span aria-hidden="true"> &rarr;</span>
               </a>
@@ -159,7 +154,7 @@ export function Introduction() {
             <div className="p-6 bg-slate-100 dark:bg-slate-900 rounded-bl-2xl rounded-br-2xl md:px-8">
               <a
                 href="#monorepo-features"
-                className="text-base font-medium text-blue-600 hover:text-blue-500"
+                className="text-base font-medium text-gray-700 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-300"
               >
                 Monorepo features<span aria-hidden="true"> &rarr;</span>
               </a>

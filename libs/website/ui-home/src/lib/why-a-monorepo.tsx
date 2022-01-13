@@ -1,22 +1,22 @@
 export function WhyAMonorepo() {
   return (
-    <div
+    <article
       id="why-a-monorepo"
       className="bg-slate-50 dark:bg-slate-800 pt-16 pb-20 px-4 sm:px-6 lg:pt-24 lg:pb-28 lg:px-8"
     >
       <div className="relative">
-        <h2 className="text-center text-4xl leading-8 font-extrabold tracking-tight text-gray-900 dark:text-white sm:text-5xl">
+        <h1 className="text-center text-4xl leading-8 font-extrabold tracking-tight text-gray-900 dark:text-white sm:text-5xl">
           # But why?
-        </h2>
+        </h1>
         <p className="mt-4 max-w-3xl mx-auto text-center text-xl text-gray-700 dark:text-gray-300">
           Let's go deeper into the rabbit hole.
         </p>
       </div>
-      <div className="mt-24 lg:mt-36 relative max-w-lg mx-auto lg:max-w-7xl">
+      <article className="mt-24 lg:mt-36 relative max-w-lg mx-auto lg:max-w-7xl">
         <div className="max-w-2xl mx-auto">
-          <h2 className="text-3xl tracking-tight font-semibold text-gray-800 dark:text-gray-100sm:text-4xl">
+          <h1 className="text-3xl tracking-tight font-semibold text-gray-800 dark:text-gray-100 sm:text-4xl">
             A &ldquo;Polyrepo&rdquo;
-          </h2>
+          </h1>
           <p className="mt-3 text-xl text-gray-700 dark:text-gray-300 sm:mt-4">
             For the sake of this discussion, let's say the opposite of monorepo
             is "polyrepo". Polyrepo is the current standard way of developing
@@ -25,9 +25,11 @@ export function WhyAMonorepo() {
             build pipeline.
           </p>
           <img
+            aria-hidden="true"
+            loading="lazy"
             className="mt-10 w-full h-full object-cover"
             src="/images/polyrepo-practice.svg"
-            alt=""
+            alt="polyrepo practice"
           />
           <p className="mt-3 text-xl text-gray-700 dark:text-gray-300 sm:mt-4">
             The industry has moved to the polyrepo way of doing things for one
@@ -36,9 +38,11 @@ export function WhyAMonorepo() {
             libraries, and who can contribute to or use their code.
           </p>
           <img
+            aria-hidden="true"
+            loading="lazy"
             className="mt-10 w-full h-full object-cover"
             src="/images/spectrum-real-world.svg"
-            alt=""
+            alt="spectrum real world"
           />
           <p className="mt-3 text-xl text-gray-700 dark:text-gray-300 sm:mt-4">
             Those are all good things, so why should teams do anything
@@ -49,7 +53,7 @@ export function WhyAMonorepo() {
         </div>
         <div className="mt-12 grid gap-16 pt-12 lg:grid-cols-2 lg:gap-22">
           {/*item*/}
-          <div className="px-4 py-6 bg-slate-100 dark:bg-slate-900 rounded-md shadow-md">
+          <section className="px-4 py-6 bg-slate-100 dark:bg-slate-900 rounded-md shadow-md">
             <div>
               <span className="inline-flex items-center px-3 py-0.5 rounded-full text-xs bg-slate-50 dark:bg-white bg-opacity-95 dark:bg-opacity-5 text-gray-700 dark:text-gray-300 capitalize">
                 Polyrepo
@@ -68,8 +72,8 @@ export function WhyAMonorepo() {
                 party libraries across repositories...
               </p>
             </div>
-          </div>
-          <div className="px-4 py-6 bg-slate-100 dark:bg-slate-900 rounded-md shadow-md">
+          </section>
+          <section className="px-4 py-6 bg-slate-100 dark:bg-slate-900 rounded-md shadow-md">
             <div>
               <span className="inline-flex items-center px-3 py-0.5 rounded-full text-xs bg-slate-50 dark:bg-white bg-opacity-95 dark:bg-opacity-5 text-gray-700 dark:text-gray-300 capitalize">
                 Polyrepo
@@ -80,15 +84,15 @@ export function WhyAMonorepo() {
                 Significant code duplication
               </p>
               <p className="mt-3 text-base text-gray-400">
-                no one wants to go through the hassle of setting up a shared
+                No one wants to go through the hassle of setting up a shared
                 repo, so teams just write their own implementations of common
                 services and components in each repo. This wastes up-front time,
                 but also increases the burden of maintenance, security, and
                 quality control as the components and services change.
               </p>
             </div>
-          </div>
-          <div className="px-4 py-6 bg-slate-100 dark:bg-slate-900 rounded-md shadow-md">
+          </section>
+          <section className="px-4 py-6 bg-slate-100 dark:bg-slate-900 rounded-md shadow-md">
             <div>
               <span className="inline-flex items-center px-3 py-0.5 rounded-full text-xs bg-slate-50 dark:bg-white bg-opacity-95 dark:bg-opacity-5 text-gray-700 dark:text-gray-300 capitalize">
                 Polyrepo
@@ -99,15 +103,15 @@ export function WhyAMonorepo() {
                 Costly cross-repo changes to shared libraries and consumers
               </p>
               <p className="mt-3 text-base text-gray-400">
-                when a shared library in a separate repo need to be changed
+                When a shared library in a separate repo need to be changed
                 together (new feature, regression, breaking change), the
                 developer has to set their environment up to work on two repos
                 at once, and then submit the change to two different
                 repositories, with disconnected revision histories.
               </p>
             </div>
-          </div>
-          <div className="px-4 py-6 bg-slate-100 dark:bg-slate-900 rounded-md shadow-md">
+          </section>
+          <section className="px-4 py-6 bg-slate-100 dark:bg-slate-900 rounded-md shadow-md">
             <div>
               <span className="inline-flex items-center px-3 py-0.5 rounded-full text-xs bg-slate-50 dark:bg-white bg-opacity-95 dark:bg-opacity-5 text-gray-700 dark:text-gray-300 capitalize">
                 Polyrepo
@@ -124,14 +128,14 @@ export function WhyAMonorepo() {
                 to use from project to project.
               </p>
             </div>
-          </div>
+          </section>
         </div>
-      </div>
-      <div className="mt-24 lg:mt-36 relative max-w-lg mx-auto lg:max-w-7xl">
+      </article>
+      <article className="mt-24 lg:mt-36 relative max-w-lg mx-auto lg:max-w-7xl">
         <div className="max-w-2xl mx-auto">
-          <h2 className="text-3xl tracking-tight font-semibold text-gray-800 dark:text-gray-100sm:text-4xl">
+          <h1 className="text-3xl tracking-tight font-semibold text-gray-800 dark:text-gray-100 sm:text-4xl">
             A &ldquo;Monorepo&rdquo;
-          </h2>
+          </h1>
           <p className="mt-3 text-xl text-gray-700 dark:text-gray-300 sm:mt-4">
             As we saw, we can end up in pretty tricky situation when working in
             a polyrepo, but how a monorepo can help use solve all of them?
@@ -140,7 +144,7 @@ export function WhyAMonorepo() {
 
         <div className="mt-12 grid gap-16 pt-12 lg:grid-cols-2 lg:gap-22">
           {/*item*/}
-          <div className="px-4 py-6 bg-slate-100 dark:bg-slate-900 rounded-md shadow-md">
+          <section className="px-4 py-6 bg-slate-100 dark:bg-slate-900 rounded-md shadow-md">
             <div>
               <span className="inline-flex items-center px-3 py-0.5 rounded-full text-xs bg-slate-50 dark:bg-white bg-opacity-95 dark:bg-opacity-5 text-gray-700 dark:text-gray-300 capitalize">
                 Monorepo
@@ -155,8 +159,8 @@ export function WhyAMonorepo() {
                 packages if all consumers are in the same repo.
               </p>
             </div>
-          </div>
-          <div className="px-4 py-6 bg-slate-100 dark:bg-slate-900 rounded-md shadow-md">
+          </section>
+          <section className="px-4 py-6 bg-slate-100 dark:bg-slate-900 rounded-md shadow-md">
             <div>
               <span className="inline-flex items-center px-3 py-0.5 rounded-full text-xs bg-slate-50 dark:bg-white bg-opacity-95 dark:bg-opacity-5 text-gray-700 dark:text-gray-300 capitalize">
                 Monorepo
@@ -171,8 +175,8 @@ export function WhyAMonorepo() {
                 as a breaking change when you fix everything in the same commit.
               </p>
             </div>
-          </div>
-          <div className="px-4 py-6 bg-slate-100 dark:bg-slate-900 rounded-md shadow-md">
+          </section>
+          <section className="px-4 py-6 bg-slate-100 dark:bg-slate-900 rounded-md shadow-md">
             <div>
               <span className="inline-flex items-center px-3 py-0.5 rounded-full text-xs bg-slate-50 dark:bg-white bg-opacity-95 dark:bg-opacity-5 text-gray-700 dark:text-gray-300 capitalize">
                 Monorepo
@@ -187,8 +191,8 @@ export function WhyAMonorepo() {
                 depending on conflicting versions of third party libraries.
               </p>
             </div>
-          </div>
-          <div className="px-4 py-6 bg-slate-100 dark:bg-slate-900 rounded-md shadow-md">
+          </section>
+          <section className="px-4 py-6 bg-slate-100 dark:bg-slate-900 rounded-md shadow-md">
             <div>
               <span className="inline-flex items-center px-3 py-0.5 rounded-full text-xs bg-slate-50 dark:bg-white bg-opacity-95 dark:bg-opacity-5 text-gray-700 dark:text-gray-300 capitalize">
                 Monorepo
@@ -205,10 +209,10 @@ export function WhyAMonorepo() {
                 that their changes are safe.
               </p>
             </div>
-          </div>
+          </section>
         </div>
-      </div>
-    </div>
+      </article>
+    </article>
   );
 }
 

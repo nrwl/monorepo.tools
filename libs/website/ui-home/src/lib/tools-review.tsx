@@ -248,10 +248,10 @@ export function ToolsReview() {
     <div className="bg-slate-50 dark:bg-slate-800">
       <div className="relative">
         <div className="relative max-w-2xl mx-auto pt-16 px-4 text-center sm:pt-32 sm:px-6 lg:max-w-7xl lg:px-8">
-          <h1 className="text-4xl font-extrabold tracking-tight text-gray-900 dark:text-white sm:text-6xl">
+          <div className="text-4xl font-extrabold tracking-tight text-gray-900 dark:text-white sm:text-6xl">
             <span className="block lg:inline">Many solutions,</span>
             <span className="block lg:inline"> for different goals</span>
-          </h1>
+          </div>
           <p className="mt-4 text-xl text-gray-700 dark:text-gray-300">
             Each tool fits a specific set of needs and gives you a precise set
             of features. <br />
@@ -262,14 +262,7 @@ export function ToolsReview() {
       </div>
 
       {/* Feature comparison (up to lg) */}
-      <section
-        aria-labelledby="mobile-comparison-heading"
-        className="lg:hidden"
-      >
-        <h2 id="mobile-comparison-heading" className="sr-only">
-          Feature comparison
-        </h2>
-
+      <section className="lg:hidden">
         <div className="max-w-2xl mx-auto py-16 px-4 space-y-16 sm:px-6">
           {tools.map((tool, toolIndex) => (
             <div
@@ -441,11 +434,7 @@ export function ToolsReview() {
       </section>
 
       {/* Feature comparison (lg+) */}
-      <section aria-labelledby="comparison-heading" className="hidden lg:block">
-        <h2 id="comparison-heading" className="sr-only">
-          Feature comparison
-        </h2>
-
+      <section className="hidden lg:block">
         <div className="max-w-7xl mx-auto py-24 px-8">
           <div className="w-full border-t border-slate-100 dark:border-slate-900 flex items-stretch">
             <div className="-mt-px w-1/6 py-6 pr-4 flex items-end" />

@@ -88,7 +88,7 @@ const features = [
     category: 'Manageable',
     icon: StatusOnlineIcon,
     anchor: 'explicit-project-constrains',
-  }
+  },
 ];
 
 export function MonorepoFeaturesOverview() {
@@ -107,12 +107,14 @@ export function MonorepoFeaturesOverview() {
           </p>
         </div>
 
-        <div className="px-4 py-16 sm:px-6 sm:pt-20 sm:pb-24 lg:pt-24 lg:px-8">
+        <nav className="px-4 py-16 sm:px-6 sm:pt-20 sm:pb-24 lg:pt-24 lg:px-8">
           <h2 className="text-3xl font-extrabold text-gray-900 dark:text-white tracking-tight">
-            Right tools
+            What monorepo tools should provide
           </h2>
           <p className="mt-4 max-w-3xl text-lg text-gray-800 dark:text-gray-200">
-            Monorepos have a lot of advantages, but to make them work you need to have the right tools. As your workspace growth, the tools will help keep it fast, understandable and manageable.
+            Monorepos have a lot of advantages, but to make them work you need
+            to have the right tools. As your workspace growth, the tools has to
+            help you keep it fast, understandable and manageable.
           </p>
           <div className="mt-12 grid grid-cols-1 gap-x-6 gap-y-12 sm:grid-cols-2 lg:mt-16 lg:grid-cols-3 lg:gap-x-8 lg:gap-y-16">
             {features.map((feature) => (
@@ -120,9 +122,12 @@ export function MonorepoFeaturesOverview() {
                 key={feature.anchor}
                 className="relative overflow-hidden bg-slate-100 dark:bg-slate-900 rounded-md px-4 py-5 group"
               >
-                <a href={'#' + feature.anchor}>
+                <a href={'#' + feature.anchor} title={feature.name}>
                   <div className="relative">
-                    <span className="flex items-center justify-center h-12 w-12 rounded-md bg-slate-50 dark:bg-white bg-opacity-95 dark:bg-opacity-5">
+                    <span
+                      aria-hidden="true"
+                      className="flex items-center justify-center h-12 w-12 rounded-md bg-slate-50 dark:bg-white bg-opacity-95 dark:bg-opacity-5"
+                    >
                       <feature.icon
                         className="h-6 w-6 text-gray-800 dark:text-gray-200"
                         aria-hidden="true"
@@ -148,7 +153,7 @@ export function MonorepoFeaturesOverview() {
               </div>
             ))}
           </div>
-        </div>
+        </nav>
       </div>
     </div>
   );

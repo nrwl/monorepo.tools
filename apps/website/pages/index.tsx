@@ -6,6 +6,7 @@ import {
   MonorepoFeatures,
   MonorepoFeaturesOverview,
   ToolsReview,
+  ToolsSupportCallout,
   WhatIsAMonorepo,
   WhyAMonorepo,
 } from '@monorepo-tools/website/ui-home';
@@ -15,7 +16,7 @@ export function Index() {
     <>
       <Header />
 
-      <main>
+      <main role="main">
         <Introduction />
 
         <WhatIsAMonorepo />
@@ -25,6 +26,8 @@ export function Index() {
         <WhyAMonorepo />
 
         <MonorepoFeaturesOverview />
+
+        <ToolsSupportCallout />
 
         <MonorepoFeatures />
 
