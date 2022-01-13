@@ -37,12 +37,12 @@ export function Header() {
               <span className="text-5xl font-extrabold text-gray-900 dark:text-white tracking-tighter sm:text-8xl">
                 monorepo
               </span>
-              <span className="text-3xl font-semibold text-blue-500 tracking-tight sm:text-5xl">
+              <span className="text-3xl font-semibold text-yellow-500 tracking-tight sm:text-5xl">
                 .tools
               </span>
             </div>
             <div className="mt-14 flex justify-end">
-              <div className="sm:w-2/3 sm:border-l-4 border-blue-500">
+              <div className="sm:w-2/3 sm:border-l-4 border-yellow-500">
                 <h1 className="pl-8 py-3 text-2xl font-normal text-gray-800 dark:text-gray-200">
                   Everything you need to know about monorepos, and the tools to
                   build them.
