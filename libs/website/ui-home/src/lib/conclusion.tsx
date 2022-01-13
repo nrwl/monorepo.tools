@@ -15,10 +15,8 @@ export function Conclusion() {
             A monorepo changes your organization
           </h2>
           <p className="mt-3 text-xl text-gray-700 dark:text-gray-300 sm:mt-4">
-            It is more than code & tools, a monorepo changes your organization &
-            the way you think about code. Creating new projects, sharing code, refactoring is so cheap. Con
-
-            , refactoring is so much easier. No API is ever hard to change, so you can developer your applications in a more agile fashion.
+            It is more than code & tools. A monorepo changes your organization &
+            the way you think about code. Creating new projects, sharing code, refactoring are much easier and faster: no API is ever hard to change. Developers can work in a more agile fashion.
           </p>
         </div>
       </div>

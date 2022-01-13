@@ -119,7 +119,7 @@ const fast: Item[] = [
       'Determine what might be affected by a change, to run only build/test affected projects.',
     features: [
       { title: 'Nx', value: 'supported' },
-      { title: 'Bazel', value: 'notSupported' },
+      { title: 'Bazel', value: 'manualImplementation' },
       { title: 'Lage', value: 'supported' },
       { title: 'Turborepo', value: 'supported' },
       { title: 'Lerna', value: 'supported' },
@@ -134,7 +134,7 @@ const understandable: Item[] = [
       'The ability to understand the understand the project graph of the workspace without extra configuration.',
     features: [
       { title: 'Nx', value: 'supported' },
-      { title: 'Bazel', value: 'notSupported' },
+      { title: 'Bazel', value: 'manualImplementation' },
       { title: 'Lage', value: 'supported' },
       { title: 'Turborepo', value: 'supported' },
       { title: 'Lerna', value: 'supported' },
@@ -148,9 +148,9 @@ const understandable: Item[] = [
     features: [
       { title: 'Nx', value: 'supported' },
       { title: 'Bazel', value: 'supported' },
-      { title: 'Lage', value: 'notSupported' },
+      { title: 'Lage', value: 'manualImplementation' },
       { title: 'Turborepo', value: 'supported' },
-      { title: 'Lerna', value: 'notSupported' },
+      { title: 'Lerna', value: 'manualImplementation' },
     ],
   },
 ];
@@ -186,10 +186,10 @@ const manageable: Item[] = [
     tooltip: 'Native support for generating code',
     features: [
       { title: 'Nx', value: 'supported' },
-      { title: 'Bazel', value: 'notSupported' },
-      { title: 'Lage', value: 'notSupported' },
-      { title: 'Turborepo', value: 'notSupported' },
-      { title: 'Lerna', value: 'notSupported' },
+      { title: 'Bazel', value: 'manualImplementation' },
+      { title: 'Lage', value: 'manualImplementation' },
+      { title: 'Turborepo', value: 'manualImplementation' },
+      { title: 'Lerna', value: 'manualImplementation' },
     ],
   },
   {
@@ -200,9 +200,9 @@ const manageable: Item[] = [
     features: [
       { title: 'Nx', value: 'supported' },
       { title: 'Bazel', value: 'supported' },
-      { title: 'Lage', value: 'notSupported' },
-      { title: 'Turborepo', value: 'notSupported' },
-      { title: 'Lerna', value: 'notSupported' },
+      { title: 'Lage', value: 'manualImplementation' },
+      { title: 'Turborepo', value: 'manualImplementation' },
+      { title: 'Lerna', value: 'manualImplementation' },
     ],
   },
 ];
