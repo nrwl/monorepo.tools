@@ -29,9 +29,9 @@ export function WhatIsAMonorepo() {
               .&rdquo;
             </h2>
             <p className="mt-3 text-lg text-gray-700 dark:text-gray-300">
-              We at Nrwl think this definition is the most consistent and
-              accurate statement of what a monorepo is among established
-              monorepo tools.
+              We at Nrwl think this is the most consistent and accurate
+              statement of what a monorepo is among all the established monorepo
+              tools.
             </p>
           </div>
 
@@ -54,10 +54,9 @@ export function WhatIsAMonorepo() {
                 Not just &ldquo;code collocation&rdquo;
               </h2>
               <p className="mt-3 text-lg text-gray-700 dark:text-gray-300">
-                If a repository has several projects in it, but the
-                relationships between those projects aren't clear, it would be
-                considered "code collocation" but not a monorepo for the sake of
-                this discussion.
+                Consider a repository with several projects in it. We definitely
+                have “code collocation”, but if there are no well defined
+                relationships among them, we would not call it a monorepo.
               </p>
               <p className="mt-3 text-lg text-gray-700 dark:text-gray-300">
                 Likewise, if a repository contains a massive application without
