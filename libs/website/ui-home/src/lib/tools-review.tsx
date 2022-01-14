@@ -1,8 +1,9 @@
 import { ReactComponentElement } from 'react';
 import {
   CheckCircleIcon,
-  MinusIcon,
+  ExclamationCircleIcon,
   QuestionMarkCircleIcon,
+  XCircleIcon,
 } from '@heroicons/react/solid';
 
 type Supports = 'supported' | 'notSupported' | 'manualImplementation';
@@ -221,20 +222,17 @@ const valuesDictionary: Record<Supports, () => ReactComponentElement<any>> = {
       title="not supported"
       className="inline-flex items-center px-2.5 py-0.5 rounded-full text-slate-400"
     >
-      <MinusIcon className="w-5 h-5" />
+      <XCircleIcon className="w-5 h-5" />
       <span className="sr-only">not supported</span>
     </span>
   ),
   manualImplementation: () => (
-    <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-slate-200 text-gray-800 dark:bg-slate-600 dark:text-slate-400">
-      <svg
-        className="mr-1.5 h-2 w-2 text-yellow-500"
-        fill="currentColor"
-        viewBox="0 0 8 8"
-      >
-        <circle cx="4" cy="4" r="3" />
-      </svg>
-      implement your own
+    <span
+      title="implement your own"
+      className="inline-flex items-center px-2.5 py-0.5 rounded-full text-slate-400"
+    >
+      <ExclamationCircleIcon className="w-5 h-5" />
+      <span className="sr-only">implement your own</span>
     </span>
   ),
 };

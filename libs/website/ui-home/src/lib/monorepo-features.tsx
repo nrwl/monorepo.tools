@@ -1,25 +1,46 @@
 import {
+  CheckCircleIcon,
   CloudDownloadIcon,
   CodeIcon,
   CogIcon,
   CollectionIcon,
   DocumentDownloadIcon,
+  ExclamationCircleIcon,
   LightBulbIcon,
   PresentationChartLineIcon,
   ServerIcon,
   StatusOnlineIcon,
   SwitchVerticalIcon,
   TerminalIcon,
+  XCircleIcon,
 } from '@heroicons/react/solid';
 
 const Supported = () => (
-  <span className="mr-3 w-2 h-2 bg-green-500 rounded-full" />
+  <span
+    title="natively supported"
+    className="inline-flex items-center mr-3 rounded-full text-green-600"
+  >
+    <CheckCircleIcon className="w-5 h-5" />
+    <span className="sr-only">natively supported</span>
+  </span>
 );
-const Unsupported = () => (
-  <span className="mr-3 w-2 h-2 bg-red-500 rounded-full" />
+const NotSupported = () => (
+  <span
+    title="not supported"
+    className="inline-flex items-center mr-3 rounded-full text-red-600"
+  >
+    <XCircleIcon className="w-5 h-5" />
+    <span className="sr-only">not supported</span>
+  </span>
 );
 const ManualImplementation = () => (
-  <span className="mr-3 w-2 h-2 bg-yellow-500 rounded-full" />
+  <span
+    title="implement your own"
+    className="inline-flex items-center mr-3 rounded-full text-yellow-600"
+  >
+    <ExclamationCircleIcon className="w-5 h-5" />
+    <span className="sr-only">implement your own</span>
+  </span>
 );
 
 export function MonorepoFeatures() {
@@ -120,7 +141,7 @@ export function MonorepoFeatures() {
             <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
               <dt>
                 <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
-                  <Unsupported /> Lerna
+                  <NotSupported /> Lerna
                 </p>
               </dt>
               <dd className="mt-4 text-gray-600 dark:text-gray-400">
@@ -290,7 +311,7 @@ export function MonorepoFeatures() {
             <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
               <dt>
                 <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
-                  <Unsupported /> Lerna
+                  <NotSupported /> Lerna
                 </p>
               </dt>
               <dd className="mt-4 text-base text-gray-600 dark:text-gray-400">
@@ -356,7 +377,7 @@ export function MonorepoFeatures() {
             <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
               <dt>
                 <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
-                  <Unsupported /> Lage
+                  <NotSupported /> Lage
                 </p>
               </dt>
               <dd className="mt-4 text-base text-gray-600 dark:text-gray-400">
@@ -366,7 +387,7 @@ export function MonorepoFeatures() {
             <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
               <dt>
                 <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
-                  <Unsupported /> Turborepo
+                  <NotSupported /> Turborepo
                 </p>
               </dt>
               <dd className="mt-4 text-base text-gray-600 dark:text-gray-400">
@@ -376,7 +397,7 @@ export function MonorepoFeatures() {
             <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
               <dt>
                 <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
-                  <Unsupported /> Lerna
+                  <NotSupported /> Lerna
                 </p>
               </dt>
               <dd className="mt-4 text-base text-gray-600 dark:text-gray-400">
@@ -409,7 +430,7 @@ export function MonorepoFeatures() {
             <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
               <dt>
                 <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
-                  <Unsupported /> Nx
+                  <NotSupported /> Nx
                 </p>
               </dt>
               <dd className="mt-4 text-base text-gray-600 dark:text-gray-400">
@@ -429,7 +450,7 @@ export function MonorepoFeatures() {
             <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
               <dt>
                 <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
-                  <Unsupported /> Lage
+                  <NotSupported /> Lage
                 </p>
               </dt>
               <dd className="mt-4 text-base text-gray-600 dark:text-gray-400">
@@ -439,7 +460,7 @@ export function MonorepoFeatures() {
             <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
               <dt>
                 <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
-                  <Unsupported /> Turborepo
+                  <NotSupported /> Turborepo
                 </p>
               </dt>
               <dd className="mt-4 text-base text-gray-600 dark:text-gray-400">
@@ -449,7 +470,7 @@ export function MonorepoFeatures() {
             <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
               <dt>
                 <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
-                  <Unsupported /> Lerna
+                  <NotSupported /> Lerna
                 </p>
               </dt>
               <dd className="mt-4 text-base text-gray-600 dark:text-gray-400">
@@ -483,7 +504,7 @@ export function MonorepoFeatures() {
                 className="relative mx-auto"
                 width={490}
                 src="/images/dependency-graph.svg"
-                alt="dependency-graph"
+                alt="dependency graph"
               />
             </div>
           </div>
@@ -567,20 +588,6 @@ export function MonorepoFeatures() {
               The ability to understand the understand the project graph of the
               workspace without extra configuration.
             </p>
-
-            <div className="mt-10" aria-hidden="true">
-              <iframe
-                loading="lazy"
-                className="relative mx-auto max-w-full rounded-md"
-                width="560"
-                height="315"
-                src="https://www.youtube.com/embed/v87Y8NgAYLo"
-                title="Interactive dependency graph visualization with Nx"
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              />
-            </div>
           </div>
 
           <dl className="mt-6 md:mt-0 space-y-6">
@@ -884,7 +891,7 @@ export function MonorepoFeatures() {
             <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
               <dt>
                 <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
-                  <Unsupported />
+                  <NotSupported />
                   Lage
                 </p>
               </dt>
@@ -895,7 +902,7 @@ export function MonorepoFeatures() {
             <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
               <dt>
                 <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
-                  <Unsupported />
+                  <NotSupported />
                   Turborepo
                 </p>
               </dt>
@@ -906,7 +913,7 @@ export function MonorepoFeatures() {
             <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
               <dt>
                 <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
-                  <Unsupported />
+                  <NotSupported />
                   Lerna
                 </p>
               </dt>
