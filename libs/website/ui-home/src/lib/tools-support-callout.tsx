@@ -10,8 +10,8 @@ export function ToolsSupportCallout() {
               </span>
             </h1>
             <p className="mt-4 text-xl leading-6 text-gray-700 dark:text-gray-300">
-              If you have a large monorepo, support for distributed task
-              execution can be a game changer, so features, of course, matter.
+              Features matter! Things like support for distributed task
+              execution can be a game changer, especially in large monorepos.
               But there are other extremely important things such as dev
               ergonomics, maturity, documentation, editor support etc. We don't
               cover them here because they are more subjective.

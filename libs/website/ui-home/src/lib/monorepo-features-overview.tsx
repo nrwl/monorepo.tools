@@ -113,7 +113,7 @@ export function MonorepoFeaturesOverview() {
           </h2>
           <p className="mt-4 max-w-3xl text-lg text-gray-800 dark:text-gray-200">
             Monorepos have a lot of advantages, but to make them work you need
-            to have the right tools. As your workspace growth, the tools has to
+            to have the right tools. As your workspace grows, the tools have to
             help you keep it fast, understandable and manageable.
           </p>
           <div className="mt-12 grid grid-cols-1 gap-x-6 gap-y-12 sm:grid-cols-2 lg:mt-16 lg:grid-cols-3 lg:gap-x-8 lg:gap-y-16">

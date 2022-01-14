@@ -19,10 +19,10 @@ export function WhyAMonorepo() {
           </h1>
           <p className="mt-3 text-xl text-gray-700 dark:text-gray-300 sm:mt-4">
             For the sake of this discussion, let's say the opposite of monorepo
-            is "polyrepo". Polyrepo is the current standard way of developing
-            applications: a repo for each team, application, or project. And
-            it's common that each repo has a single build artifact, and simple
-            build pipeline.
+            is a "polyrepo". A polyrepo is the current standard way of
+            developing applications: a repo for each team, application, or
+            project. And it's common that each repo has a single build artifact,
+            and simple build pipeline.
           </p>
           <img
             aria-hidden="true"
@@ -103,11 +103,11 @@ export function WhyAMonorepo() {
                 Costly cross-repo changes to shared libraries and consumers
               </h2>
               <p className="mt-3 text-base text-gray-400">
-                When a shared library in a separate repo need to be changed
-                together (new feature, regression, breaking change), the
-                developer has to set their environment up to work on two repos
-                at once, and then submit the change to two different
-                repositories, with disconnected revision histories.
+                Consider a critical bug or breaking change in a shared library:
+                the developer needs to set up their environment to apply the
+                changes across multiple repositories with disconnected revision
+                histories. Not to speak about the coordination effort of
+                versioning and releasing the packages.
               </p>
             </div>
           </section>
@@ -124,8 +124,8 @@ export function WhyAMonorepo() {
               <p className="mt-3 text-base text-gray-400">
                 Each project uses its own set of commands for running tests,
                 building, serving, linting, deploying, and so forth.
-                Inconsistency creates mental overhead remembering which commands
-                to use from project to project.
+                Inconsistency creates mental overhead of remembering which
+                commands to use from project to project.
               </p>
             </div>
           </section>
@@ -137,8 +137,8 @@ export function WhyAMonorepo() {
             A &ldquo;Monorepo&rdquo;
           </h1>
           <p className="mt-3 text-xl text-gray-700 dark:text-gray-300 sm:mt-4">
-            As we saw, we can end up in pretty tricky situation when working in
-            a polyrepo, but how a monorepo can help use solve all of them?
+            We can end up in pretty tricky situations when working in a
+            polyrepo. But how can a monorepo help solve all of them?
           </p>
         </div>
 
@@ -187,7 +187,7 @@ export function WhyAMonorepo() {
                 One version of everything
               </h2>
               <p className="mt-3 text-base text-gray-400">
-                No need to worry about incompatibility because of projects
+                No need to worry about incompatibilities because of projects
                 depending on conflicting versions of third party libraries.
               </p>
             </div>

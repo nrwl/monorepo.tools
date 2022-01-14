@@ -78,8 +78,8 @@ export function MonorepoFeatures() {
 
             <p className="mt-3 text-lg text-gray-700 dark:text-gray-300">
               The ability to store and replay file and process output of tasks.
-              This means that, at least on the same machine, you will never
-              build or test the same thing twice.
+              On the same machine, you will never build or test the same thing
+              twice.
             </p>
 
             {/*<div className="mt-10" aria-hidden="true">*/}
@@ -585,8 +585,8 @@ export function MonorepoFeatures() {
             </div>
 
             <p className="mt-3 text-lg text-gray-700 dark:text-gray-300">
-              The ability to understand the understand the project graph of the
-              workspace without extra configuration.
+              The ability to understand the project graph of the workspace
+              without extra configuration.
             </p>
           </div>
 
