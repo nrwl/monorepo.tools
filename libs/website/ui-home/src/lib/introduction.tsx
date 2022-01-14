@@ -35,14 +35,17 @@ export function Introduction() {
               </p>
               <p className="mt-6 max-w-3xl text-xl text-gray-700 dark:text-gray-300">
                 The tools we'll focus on are:&nbsp;
-                <a href="https://nx.dev" className="hover:underline">
+                <a
+                  href="https://nx.dev"
+                  className="border-b border-yellow-500 hover:bg-yellow-500 hover:text-gray-800 transition"
+                >
                   Nx (by Nrwl)
                 </a>
                 ,&nbsp;
                 <a
                   rel="nofollow"
                   href="https://turborepo.org"
-                  className="hover:underline"
+                  className="border-b border-yellow-500 hover:bg-yellow-500 hover:text-gray-800 transition"
                 >
                   Turborepo (by Vercel)
                 </a>
@@ -50,7 +53,7 @@ export function Introduction() {
                 <a
                   rel="nofollow"
                   href="https://lerna.js.org/"
-                  className="hover:underline"
+                  className="border-b border-yellow-500 hover:bg-yellow-500 hover:text-gray-800 transition"
                 >
                   Lerna
                 </a>
@@ -58,7 +61,7 @@ export function Introduction() {
                 <a
                   rel="nofollow"
                   href="https://rushjs.io/"
-                  className="hover:underline"
+                  className="border-b border-yellow-500 hover:bg-yellow-500 hover:text-gray-800 transition"
                 >
                   Lage (by Microsoft)
                 </a>
@@ -66,7 +69,7 @@ export function Introduction() {
                 <a
                   href="https://bazel.build"
                   rel="nofollow"
-                  className="hover:underline"
+                  className="border-b border-yellow-500 hover:bg-yellow-500 hover:text-gray-800 transition"
                 >
                   Bazel (by Google)
                 </a>
@@ -118,9 +121,10 @@ export function Introduction() {
             <div className="p-6 bg-slate-100 dark:bg-slate-900 rounded-bl-2xl rounded-br-2xl md:px-8">
               <a
                 href="#what-is-a-monorepo"
+                title="What is a monorepo?"
                 className="text-base font-medium text-gray-700 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-300"
               >
-                What's a monorepo<span aria-hidden="true"> &rarr;</span>
+                What is a monorepo<span aria-hidden="true"> &rarr;</span>
               </a>
             </div>
           </div>
@@ -136,6 +140,7 @@ export function Introduction() {
             <div className="p-6 bg-slate-100 dark:bg-slate-900 rounded-bl-2xl rounded-br-2xl md:px-8">
               <a
                 href="#why-a-monorepo"
+                title="Why using a monorepo?"
                 className="text-base font-medium text-gray-700 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-300"
               >
                 Why a monorepo?<span aria-hidden="true"> &rarr;</span>
@@ -154,6 +159,7 @@ export function Introduction() {
             <div className="p-6 bg-slate-100 dark:bg-slate-900 rounded-bl-2xl rounded-br-2xl md:px-8">
               <a
                 href="#monorepo-features"
+                title="What are monorepo features?"
                 className="text-base font-medium text-gray-700 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-300"
               >
                 Monorepo features<span aria-hidden="true"> &rarr;</span>

@@ -17,7 +17,7 @@ export function MonolithCallout() {
               <a
                 title="Misconceptions about Monorepos: Monorepo != Monolith"
                 rel="nofollow"
-                className="border-b border-yellow-500"
+                className="border-b border-yellow-500 hover:bg-yellow-500 hover:text-gray-800 transition"
                 href="https://blog.nrwl.io/misconceptions-about-monorepos-monorepo-monolith-df1250d4b03c"
               >
                 this blog post: &ldquo;Misconceptions about Monorepos: Monorepo

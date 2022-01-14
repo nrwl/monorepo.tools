@@ -7,7 +7,7 @@ export function WhatIsAMonorepo() {
       <div className="relative mx-auto px-4 sm:px-6 lg:px-8 lg:max-w-7xl">
         <header className="relative">
           <div className="text-center text-4xl font-extrabold tracking-tight text-gray-900 dark:text-white sm:text-5xl">
-            # What's a Monorepo?
+            # What is a Monorepo?
           </div>
           <p className="mt-4 max-w-3xl mx-auto text-center text-xl text-gray-700 dark:text-gray-300">
             Let's define what we and others typically mean when we talk about

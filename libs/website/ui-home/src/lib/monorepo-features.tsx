@@ -789,7 +789,7 @@ export function MonorepoFeatures() {
             <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
               <dt>
                 <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
-                  <span className="mr-3 w-2 h-2 bg-green-500 rounded-full" />
+                  <Supported />
                   Bazel
                 </p>
               </dt>
