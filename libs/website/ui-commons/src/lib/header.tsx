@@ -48,7 +48,21 @@ export function Header() {
                   build them.
                 </h1>
                 <p className="text-right text-xs italic text-gray-500">
-                  - Made with love by Nrwl (the company behind Nx)
+                  -{' '}
+                  <a
+                    href="https://nrwl.io"
+                    rel="nofollow"
+                    title="Nrwl - Monorepo expertise"
+                  >
+                    Made with love by Nrwl
+                  </a>{' '}
+                  <a
+                    href="https://nx.dev"
+                    rel="nofollow"
+                    title="Monorepo build tool"
+                  >
+                    (the company behind Nx)
+                  </a>
                 </p>
               </div>
             </div>

@@ -33,9 +33,10 @@ export function WhyAMonorepo() {
           />
           <p className="mt-3 text-xl text-gray-700 dark:text-gray-300 sm:mt-4">
             The industry has moved to the polyrepo way of doing things for one
-            big reason: team autonomy. Teams want to make their own decisions
-            about what libraries they'll use, when they'll deploy their apps or
-            libraries, and who can contribute to or use their code.
+            big reason: <b className="text-semibold">team autonomy</b>. Teams
+            want to make their own decisions about what libraries they'll use,
+            when they'll deploy their apps or libraries, and who can contribute
+            to or use their code.
           </p>
           <img
             aria-hidden="true"
@@ -63,7 +64,7 @@ export function WhyAMonorepo() {
               <h2 className="text-xl font-semibold text-gray-700 dark:text-gray-300">
                 Cumbersome code sharing
               </h2>
-              <p className="mt-3 text-base text-gray-400">
+              <p className="mt-3 text-base text-gray-600 dark:text-gray-400">
                 To share code across repositories, you'd likely create a
                 repository for the shared code. Now you have to set up the
                 tooling and CI environment, add committers to the repo, and set
@@ -83,7 +84,7 @@ export function WhyAMonorepo() {
               <h2 className="text-xl font-semibold text-gray-700 dark:text-gray-300">
                 Significant code duplication
               </h2>
-              <p className="mt-3 text-base text-gray-400">
+              <p className="mt-3 text-base text-gray-600 dark:text-gray-400">
                 No one wants to go through the hassle of setting up a shared
                 repo, so teams just write their own implementations of common
                 services and components in each repo. This wastes up-front time,
@@ -102,7 +103,7 @@ export function WhyAMonorepo() {
               <h2 className="text-xl font-semibold text-gray-700 dark:text-gray-300">
                 Costly cross-repo changes to shared libraries and consumers
               </h2>
-              <p className="mt-3 text-base text-gray-400">
+              <p className="mt-3 text-base text-gray-600 dark:text-gray-400">
                 Consider a critical bug or breaking change in a shared library:
                 the developer needs to set up their environment to apply the
                 changes across multiple repositories with disconnected revision
@@ -121,7 +122,7 @@ export function WhyAMonorepo() {
               <h2 className="text-xl font-semibold text-gray-700 dark:text-gray-300">
                 Inconsistent tooling
               </h2>
-              <p className="mt-3 text-base text-gray-400">
+              <p className="mt-3 text-base text-gray-600 dark:text-gray-400">
                 Each project uses its own set of commands for running tests,
                 building, serving, linting, deploying, and so forth.
                 Inconsistency creates mental overhead of remembering which
@@ -154,7 +155,7 @@ export function WhyAMonorepo() {
               <h2 className="text-xl font-semibold text-gray-700 dark:text-gray-300">
                 No overhead to create new projects
               </h2>
-              <p className="mt-3 text-base text-gray-400">
+              <p className="mt-3 text-base text-gray-600 dark:text-gray-400">
                 Use the existing CI setup, and no need to publish versioned
                 packages if all consumers are in the same repo.
               </p>
@@ -170,7 +171,7 @@ export function WhyAMonorepo() {
               <h2 className="text-xl font-semibold text-gray-700 dark:text-gray-300">
                 Atomic commits across projects
               </h2>
-              <p className="mt-3 text-base text-gray-400">
+              <p className="mt-3 text-base text-gray-600 dark:text-gray-400">
                 Everything works together at every commit. There's no such thing
                 as a breaking change when you fix everything in the same commit.
               </p>
@@ -186,7 +187,7 @@ export function WhyAMonorepo() {
               <h2 className="text-xl font-semibold text-gray-700 dark:text-gray-300">
                 One version of everything
               </h2>
-              <p className="mt-3 text-base text-gray-400">
+              <p className="mt-3 text-base text-gray-600 dark:text-gray-400">
                 No need to worry about incompatibilities because of projects
                 depending on conflicting versions of third party libraries.
               </p>
@@ -202,7 +203,7 @@ export function WhyAMonorepo() {
               <h2 className="text-xl font-semibold text-gray-700 dark:text-gray-300">
                 Developer mobility
               </h2>
-              <p className="mt-3 text-base text-gray-400">
+              <p className="mt-3 text-base text-gray-600 dark:text-gray-400">
                 Get a consistent way of building and testing applications
                 written using different tools and technologies. Developers can
                 confidently contribute to other teams’ applications and verify

@@ -18,7 +18,7 @@ export function WhatIsAMonorepo() {
         <article className="relative mt-12 lg:mt-24 lg:grid lg:grid-cols-2 lg:gap-8 lg:items-center">
           <div className="relative">
             <h2 className="text-2xl leading-loose font-bold text-gray-800 dark:text-gray-100 tracking-tight sm:text-3xl sm:leading-relaxed">
-              &ldquo;A monorepo is a single repository containing{' '}
+              A monorepo is a single repository containing{' '}
               <mark className="px-1 bg-yellow-500 rounded-md">
                 multiple distinct projects
               </mark>
@@ -26,7 +26,7 @@ export function WhatIsAMonorepo() {
               <mark className="px-1 bg-yellow-500 rounded-md">
                 well-defined relationships
               </mark>
-              .&rdquo;
+              .
             </h2>
             <p className="mt-3 text-lg text-gray-700 dark:text-gray-300">
               We at Nrwl think this is the most consistent and accurate
