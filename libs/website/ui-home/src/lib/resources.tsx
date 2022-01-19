@@ -20,13 +20,6 @@ const people: {
     githubLink: 'https://github.com/microsoft/lage',
   },
   {
-    name: 'Jared Palmer',
-    tool: 'Turborepo',
-    imageUrl: 'https://avatars.githubusercontent.com/u/4060187?s=150',
-    twitterLink: 'https://twitter.com/jaredpalmer',
-    githubLink: 'https://github.com/vercel/turborepo',
-  },
-  {
     name: 'Jeff Cross',
     tool: 'Nx',
     imageUrl: 'https://avatars.githubusercontent.com/u/463703?s=150',
@@ -55,11 +48,27 @@ const videosPodcasts: { name: string; link: string }[] = [
     name: 'Turborepo Demo and Walkthrough (High-Performance Monorepos)',
     link: 'https://www.youtube.com/watch?v=YX5yoApjI3M',
   },
+  {
+    name: 'BazelCon 2021 (Playlist)',
+    link: 'https://www.youtube.com/watch?v=7M9c6x3WgIQ&list=PLxNYxgaZ8Rsc3auKhtfIB4qXAYf7whEux',
+  },
+  {
+    name: 'NxConf 2021 (Playlist)',
+    link: 'https://www.youtube.com/watch?v=VKVTzVM0nVM&list=PLakNactNC1dG1CoyVWFppw3X8hnXRhFuy',
+  },
 ];
 const articles: { name: string; link: string }[] = [
   {
     name: 'Why TurboRepo Will Be The First Big Trend of 2022 ',
     link: 'https://dev.to/swyx/why-turborepo-will-be-the-first-big-trend-of-2022-4gfj',
+  },
+  {
+    name: 'Build Monorepos, not Monoliths',
+    link: 'https://dev.to/agentender/build-monorepos-not-monoliths-4gbc',
+  },
+  {
+    name: 'Lerna/Yarn -> Nx: Faster Build Times + Better Dev Ergonomics',
+    link: 'https://dev.to/nx/lerna-yarn-nx-faster-build-times-better-dev-ergonomics-32a6',
   },
 ];
 
