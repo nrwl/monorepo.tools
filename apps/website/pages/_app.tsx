@@ -47,7 +47,7 @@ function CustomApp({ Component, pageProps }: AppProps) {
           href="/images/browser/apple-touch-icon.png"
         />
       </Head>
-      <main className="monorepo.tools bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 font-display">
+      <main className="monorepo.tools antialiased bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 font-display">
         <Component {...pageProps} />
       </main>
     </>
