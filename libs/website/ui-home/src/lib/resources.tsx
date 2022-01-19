@@ -1,37 +1,44 @@
 const people: {
   name: string;
-  role: string;
+  tool: string;
   imageUrl: string;
   twitterLink: string;
   githubLink: string;
 }[] = [
   {
-    name: 'Jeff Cross',
-    role: 'Nx creator',
-    imageUrl: 'https://avatars.githubusercontent.com/u/463703?s=150',
-    twitterLink: 'https://twitter.com/jeffbcross',
-    githubLink: 'https://github.com/nrwl/nx',
-  },
-  {
-    name: 'Victor Savkin',
-    role: 'Nx creator',
-    imageUrl: 'https://avatars1.githubusercontent.com/u/35996?s=150',
-    twitterLink: 'https://twitter.com/victorsavkin',
-    githubLink: 'https://github.com/nrwl/nx',
+    name: 'Alex Eagle',
+    tool: 'Bazel',
+    imageUrl: 'https://avatars.githubusercontent.com/u/47395?s=150',
+    twitterLink: 'https://twitter.com/jakeherringbone',
+    githubLink: 'https://github.com/bazelbuild/bazel',
   },
   {
     name: 'Kenneth Chau',
-    role: 'Lage creator',
+    tool: 'Lage',
     imageUrl: 'https://avatars.githubusercontent.com/u/34725?s=150',
     twitterLink: 'https://twitter.com/kenneth_chau',
     githubLink: 'https://github.com/microsoft/lage',
   },
   {
     name: 'Jared Palmer',
-    role: 'Truborepo creator',
+    tool: 'Truborepo',
     imageUrl: 'https://avatars.githubusercontent.com/u/4060187?s=150',
     twitterLink: 'https://twitter.com/jaredpalmer',
     githubLink: 'https://github.com/vercel/turborepo',
+  },
+  {
+    name: 'Jeff Cross',
+    tool: 'Nx',
+    imageUrl: 'https://avatars.githubusercontent.com/u/463703?s=150',
+    twitterLink: 'https://twitter.com/jeffbcross',
+    githubLink: 'https://github.com/nrwl/nx',
+  },
+  {
+    name: 'Victor Savkin',
+    tool: 'Nx',
+    imageUrl: 'https://avatars1.githubusercontent.com/u/35996?s=150',
+    twitterLink: 'https://twitter.com/victorsavkin',
+    githubLink: 'https://github.com/nrwl/nx',
   },
 ];
 
@@ -172,7 +179,7 @@ export function Resources() {
                         rel="noreferrer"
                         className="px-1 hover:bg-yellow-500 hover:text-gray-800 transition"
                       >
-                        {person.role}
+                        {person.tool}
                       </a>
                     </p>
                   </div>
