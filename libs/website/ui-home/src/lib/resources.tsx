@@ -60,17 +60,23 @@ export function Resources() {
   return (
     <article className="bg-slate-50 dark:bg-slate-800 pt-16 pb-20 px-4 sm:px-6 lg:pt-24 lg:pb-28 lg:px-8">
       <div className="relative">
-        <h1 className="text-center text-4xl leading-8 font-extrabold tracking-tight text-gray-900 dark:text-white sm:text-5xl">
+        <h1
+          id="monorepo-resources"
+          className="text-center text-4xl leading-8 font-extrabold tracking-tight text-gray-900 dark:text-white sm:text-5xl"
+        >
           # Resources
         </h1>
         <p className="mt-4 max-w-3xl mx-auto text-center text-xl text-gray-700 dark:text-gray-300">
-          Here are some useful resources to go deeper or just see the
-          information in another way.
+          Here is a curated list of useful videos and podcasts to go deeper or
+          just see the information in another way.
         </p>
       </div>
       <div className="mt-24 lg:mt-36 relative max-w-lg mx-auto lg:max-w-7xl">
         <div className="max-w-2xl mx-auto">
-          <h2 className="text-3xl tracking-tight font-semiboldtext-gray-800 dark:text-gray-100sm:text-4xl">
+          <h2
+            id="monorepo-videos-podcasts"
+            className="text-3xl tracking-tight font-semiboldtext-gray-800 dark:text-gray-100sm:text-4xl"
+          >
             Monorepo Videos & Podcasts
           </h2>
           <p className="mt-3 text-xl text-gray-700 dark:text-gray-300 sm:mt-4">
@@ -98,12 +104,15 @@ export function Resources() {
       </div>
       <div className="mt-24 lg:mt-36 relative max-w-lg mx-auto lg:max-w-7xl">
         <div className="max-w-2xl mx-auto">
-          <h2 className="text-3xl tracking-tight font-semiboldtext-gray-800 dark:text-gray-100sm:text-4xl">
+          <h2
+            id="monorepo-articles"
+            className="text-3xl tracking-tight font-semiboldtext-gray-800 dark:text-gray-100sm:text-4xl"
+          >
             Monorepo articles
           </h2>
           <p className="mt-3 text-xl text-gray-700 dark:text-gray-300 sm:mt-4">
-            Here are some articles about monorepos that we think will greatly
-            support what you just learned.
+            Here is a curated list of articles about monorepos that we think
+            will greatly support what you just learned.
           </p>
           <ul className="mt-12 space-y-3 list-disc">
             {articles.map((item) => (
@@ -126,11 +135,14 @@ export function Resources() {
       </div>
       <div className="mt-24 lg:mt-36 relative max-w-lg mx-auto lg:max-w-7xl">
         <div className="max-w-2xl mx-auto">
-          <h2 className="text-3xl tracking-tight font-semiboldtext-gray-800 dark:text-gray-100sm:text-4xl">
+          <h2
+            id="monorepo-contributors"
+            className="text-3xl tracking-tight font-semiboldtext-gray-800 dark:text-gray-100sm:text-4xl"
+          >
             Contributors
           </h2>
           <p className="mt-3 text-xl text-gray-700 dark:text-gray-300 sm:mt-4">
-            All this content has been create, reviewed and validated by these
+            All this content has been created, reviewed and validated by these
             awesome folks.
           </p>
           <ul className="mt-12 space-y-12 sm:grid sm:grid-cols-2 sm:gap-12 sm:space-y-0 lg:gap-x-8">
