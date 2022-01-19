@@ -23,9 +23,19 @@ export function Introduction() {
               </h1>
               <p className="mt-6 max-w-3xl text-xl text-gray-700 dark:text-gray-300">
                 Monorepos are hot right now, especially among Web developers. We
-                created this resource to help developers understand what
-                monorepos are, what benefits they can bring, and the tools
-                available to make monorepo development delightful.
+                created this resource to help developers{' '}
+                <mark className="px-1 bg-yellow-500 rounded-md">
+                  understand what monorepos are
+                </mark>
+                ,{' '}
+                <mark className="px-1 bg-yellow-500 rounded-md">
+                  what benefits
+                </mark>
+                they can bring, and the{' '}
+                <mark className="px-1 bg-yellow-500 rounded-md">
+                  tools available
+                </mark>{' '}
+                to make monorepo development delightful.
               </p>
               <p className="mt-6 max-w-3xl text-xl text-gray-700 dark:text-gray-300">
                 There are many great monorepo tools, built by great teams, with
