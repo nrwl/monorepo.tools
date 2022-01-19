@@ -1,8 +1,26 @@
+import { useTheme } from 'next-themes';
 import cx from 'classnames';
-import { settings, useTheme } from './theme-toggle';
+import { DesktopComputerIcon, MoonIcon, SunIcon } from '@heroicons/react/solid';
 
 export function Header() {
-  const [setting, setSetting] = useTheme();
+  const settings = [
+    {
+      value: 'light',
+      label: 'Light',
+      icon: SunIcon,
+    },
+    {
+      value: 'dark',
+      label: 'Dark',
+      icon: MoonIcon,
+    },
+    {
+      value: 'system',
+      label: 'System',
+      icon: DesktopComputerIcon,
+    },
+  ];
+  const { theme, setTheme } = useTheme();
 
   return (
     <div className="w-full bg-slate-50 dark:bg-slate-800">
@@ -19,13 +37,13 @@ export function Header() {
               <button
                 key={variant.value}
                 className={cx(
-                  setting === variant.value
+                  theme === variant.value
                     ? 'text-gray-200 dark:text-gray-500'
                     : '',
                   'p-1 hover:text-gray-400 transition'
                 )}
                 title={variant.label}
-                onClick={() => setSetting(variant.value)}
+                onClick={() => setTheme(variant.value)}
               >
                 <variant.icon className="w-6 h-6" />
                 <span className="sr-only">{variant.label}</span>

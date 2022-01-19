@@ -1,8 +1,15 @@
 import { AppProps } from 'next/app';
 import Head from 'next/head';
 import './styles.css';
+import { ThemeProvider } from 'next-themes';
+import { useEffect, useState } from 'react';
 
 function CustomApp({ Component, pageProps }: AppProps) {
+  const [mounted, setMounted] = useState(false);
+  // When mounted on client, now we can show the UI
+  useEffect(() => setMounted(true), []);
+
+  if (!mounted) return null;
   return (
     <>
       <Head>
@@ -47,9 +54,11 @@ function CustomApp({ Component, pageProps }: AppProps) {
           href="/images/browser/apple-touch-icon.png"
         />
       </Head>
-      <main className="monorepo.tools antialiased bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 font-display">
-        <Component {...pageProps} />
-      </main>
+      <ThemeProvider attribute="class">
+        <main className="monorepo.tools antialiased bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 font-display">
+          <Component {...pageProps} />
+        </main>
+      </ThemeProvider>
     </>
   );
 }
