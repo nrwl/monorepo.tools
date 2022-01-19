@@ -1,16 +1,12 @@
 import {
-  ChevronDownIcon,
   CloudDownloadIcon,
   CodeIcon,
   CogIcon,
   CollectionIcon,
   DocumentDownloadIcon,
-  HandIcon,
   LightBulbIcon,
-  LightningBoltIcon,
   PresentationChartLineIcon,
   ServerIcon,
-  SortDescendingIcon,
   StatusOnlineIcon,
   SwitchVerticalIcon,
   TerminalIcon,
@@ -116,41 +112,24 @@ export function MonorepoFeaturesOverview() {
             to have the right tools. As your workspace grows, the tools have to
             help you keep it fast, understandable and manageable.
           </p>
-          <div className="mt-12 grid grid-cols-1 gap-x-6 gap-y-12 sm:grid-cols-2 lg:mt-16 lg:grid-cols-3 lg:gap-x-8 lg:gap-y-16">
+          <div className="mt-12 grid grid-cols-1 gap-x-6 gap-y-12 lg:grid-cols-2 lg:mt-16 lg:gap-8">
             {features.map((feature) => (
-              <div
+              <a
                 key={feature.anchor}
-                className="relative overflow-hidden bg-slate-100 dark:bg-slate-900 rounded-md px-4 py-5 group"
+                href={'#' + feature.anchor}
+                title={feature.name}
+                className="block px-4 py-5 relative overflow-hidden bg-slate-100 dark:bg-slate-900 text-gray-800 dark:text-gray-200 hover:text-gray-800 hover:dark:text-gray-800 hover:bg-yellow-500 hover:dark:bg-yellow-500 rounded-md transition group"
               >
-                <a href={'#' + feature.anchor} title={feature.name}>
-                  <div className="relative">
-                    <span
-                      aria-hidden="true"
-                      className="flex items-center justify-center h-12 w-12 rounded-md bg-slate-50 dark:bg-white bg-opacity-95 dark:bg-opacity-5"
-                    >
-                      <feature.icon
-                        className="h-6 w-6 text-gray-800 dark:text-gray-200"
-                        aria-hidden="true"
-                      />
-                    </span>
-
-                    <span className="absolute top-2.5 right-0 inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-slate-50 dark:bg-white bg-opacity-95 dark:bg-opacity-5 text-gray-700 dark:text-gray-300 capitalize">
-                      {feature.category}
-                    </span>
-                  </div>
-                  <div className="mt-6">
-                    <h3 className="text-lg font-medium text-gray-800 dark:text-gray-200">
-                      {feature.name}
-                    </h3>
-                  </div>
-                  <div className="absolute left-0 -bottom-full w-full h-full flex items-center bg-slate-50/70 dark:bg-slate-900/30 group-hover:bottom-0 transition-all ease-out">
-                    <div className="mx-auto p-4 bg-slate-50 dark:bg-slate-800 shadow rounded-full">
-                      <span className="sr-only">more details</span>
-                      <ChevronDownIcon className="h-6 w-6" />
-                    </div>
-                  </div>
-                </a>
-              </div>
+                <div className="relative flex items-center space-x-4">
+                  <feature.icon className="h-6 w-6" aria-hidden="true" />
+                  <h3 className="flex flex-grow text-lg font-medium">
+                    {feature.name}
+                  </h3>
+                  <span className="absolute bottom-2.5 right-0 inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-white bg-opacity-20 capitalize">
+                    {feature.category}
+                  </span>
+                </div>
+              </a>
             ))}
           </div>
         </nav>
