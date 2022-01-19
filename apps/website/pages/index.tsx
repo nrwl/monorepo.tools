@@ -5,6 +5,7 @@ import {
   MonolithCallout,
   MonorepoFeatures,
   MonorepoFeaturesOverview,
+  Resources,
   ToolsReview,
   ToolsSupportCallout,
   WhatIsAMonorepo,
@@ -36,6 +37,8 @@ export function Index() {
         <div>
           <ToolsReview />
         </div>
+
+        <Resources />
       </main>
 
       <Footer />

@@ -3,6 +3,7 @@ export * from './lib/introduction';
 export * from './lib/monolith-callout';
 export * from './lib/monorepo-features';
 export * from './lib/monorepo-features-overview';
+export * from './lib/resources';
 export * from './lib/tools-review';
 export * from './lib/tools-support-callout';
 export * from './lib/what-is-a-monorepo';
