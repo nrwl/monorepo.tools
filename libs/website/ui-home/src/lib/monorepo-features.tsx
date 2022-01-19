@@ -865,14 +865,14 @@ export function MonorepoFeatures() {
               Go, Java, etc.
             </p>
 
-            {/*<div className="mt-10" aria-hidden="true">*/}
-            {/*  <img*/}
-            {/*    className="relative mx-auto border border-slate-200 dark:border-black"*/}
-            {/*    width={490}*/}
-            {/*    src="https://place-hold.it/980x749/1e293b/fff"*/}
-            {/*    alt=""*/}
-            {/*  />*/}
-            {/*</div>*/}
+            <div className="mt-10" aria-hidden="true">
+              <img
+                className="relative mx-auto"
+                width={490}
+                src="/images/consistent-tooling.svg"
+                alt="consistent tooling schema"
+              />
+            </div>
           </div>
           <dl className="mt-6 md:mt-0 space-y-6">
             <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
