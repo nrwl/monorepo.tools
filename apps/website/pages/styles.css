@@ -2,12 +2,23 @@
 @tailwind components;
 @tailwind utilities;
 
-
 /**
  * Only used for animated background on really big definition
  */
 @media (min-width: 2400px) {
   div#animated-background {
     background-size: cover !important;
+  }
+}
+
+/* Remove flashing from dark/light theme */
+@media (prefers-color-scheme: light) {
+  body {
+    background-color: hsl(210, 40%, 98%);
+  }
+}
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: hsl(217.2, 32.6%, 17.5%);
   }
 }

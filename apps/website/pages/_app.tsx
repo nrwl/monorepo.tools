@@ -53,6 +53,7 @@ function CustomApp({ Component, pageProps }: AppProps) {
           rel="apple-touch-icon"
           href="/images/browser/apple-touch-icon.png"
         />
+        <link rel="favicon" href="/images/browser/favicon.ico" />
       </Head>
       <ThemeProvider attribute="class">
         <main className="monorepo.tools antialiased bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 font-display">

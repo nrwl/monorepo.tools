@@ -970,13 +970,13 @@ export function MonorepoFeatures() {
                   <Supported />
                   Nx
                 </p>
-                <dd className="mt-4 text-base text-gray-600 dark:text-gray-400">
-                  Nx comes with powerful code generation capabilities. It uses a
-                  virtual file system and provides editor integration. Nx
-                  plugins provided generators for popular frameworks. Other
-                  generators can be used as well.
-                </dd>
               </dt>
+              <dd className="mt-4 text-base text-gray-600 dark:text-gray-400">
+                Nx comes with powerful code generation capabilities. It uses a
+                virtual file system and provides editor integration. Nx plugins
+                provided generators for popular frameworks. Other generators can
+                be used as well.
+              </dd>
             </div>
             <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
               <dt>
