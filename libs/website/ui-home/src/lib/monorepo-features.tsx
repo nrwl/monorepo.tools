@@ -14,6 +14,7 @@ import {
   TerminalIcon,
   XCircleIcon,
 } from '@heroicons/react/solid';
+import MonorepoToolsLogos from './monorepo-tools-logos';
 
 const Supported = () => (
   <span
@@ -56,6 +57,8 @@ export function MonorepoFeatures() {
             features.
           </p>
         </div>
+
+        <MonorepoToolsLogos />
 
         {/*FAST*/}
         <div className="mt-24 lg:mt-32 text-2xl flex leading-loose font-boldtext-gray-800 dark:text-gray-100tracking-tight sm:text-3xl sm:leading-relaxed items-center">
