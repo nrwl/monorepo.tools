@@ -119,7 +119,7 @@ export function Introduction() {
       <section className="-mt-28 max-w-7xl mx-auto relative z-10 pb-32 px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 gap-y-20 lg:grid-cols-3 lg:gap-y-0 lg:gap-x-8">
           {/*LINKS*/}
-          <div className="flex flex-col bg-slate-50 dark:bg-slate-800 rounded-2xl shadow-xl">
+          <div className="flex flex-col bg-slate-80 dark:bg-slate-700 rounded-2xl shadow-xl">
             <div className="flex-1 relative pt-16 px-6 pb-8 md:px-8">
               <h2 className="text-xl font-medium text-gray-800 dark:text-gray-200">
                 What is a monorepo
@@ -138,7 +138,7 @@ export function Introduction() {
               </a>
             </div>
           </div>
-          <div className="flex flex-col bg-slate-50 dark:bg-slate-800 rounded-2xl shadow-xl">
+          <div className="flex flex-col bg-slate-50 dark:bg-slate-700 rounded-2xl shadow-xl">
             <div className="flex-1 relative pt-16 px-6 pb-8 md:px-8">
               <h2 className="text-xl font-medium text-gray-800 dark:text-gray-200">
                 Why a monorepo
@@ -157,7 +157,7 @@ export function Introduction() {
               </a>
             </div>
           </div>
-          <div className="flex flex-col bg-slate-50 dark:bg-slate-800 rounded-2xl shadow-xl">
+          <div className="flex flex-col bg-slate-50 dark:bg-slate-700 rounded-2xl shadow-xl">
             <div className="flex-1 relative pt-16 px-6 pb-8 md:px-8">
               <h2 className="text-xl font-medium text-gray-800 dark:text-gray-200">
                 Features of a monorepo
