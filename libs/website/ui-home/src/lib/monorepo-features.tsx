@@ -82,14 +82,14 @@ export function MonorepoFeatures() {
               twice.
             </p>
 
-            {/*<div className="mt-10" aria-hidden="true">*/}
-            {/*  <img*/}
-            {/*    className="relative mx-auto border border-slate-200 dark:border-black"*/}
-            {/*    width={490}*/}
-            {/*    src="https://place-hold.it/980x749/1e293b/fff"*/}
-            {/*    alt=""*/}
-            {/*  />*/}
-            {/*</div>*/}
+            <div className="mt-10" aria-hidden="true">
+              <img
+                className="relative mx-auto"
+                width={490}
+                src="/images/local-computation-caching.svg"
+                alt="local computation caching schema"
+              />
+            </div>
           </div>
 
           <dl className="mt-6 md:mt-0 space-y-6">
@@ -171,14 +171,14 @@ export function MonorepoFeatures() {
               which is more limited.
             </p>
 
-            {/*<div className="mt-10" aria-hidden="true">*/}
-            {/*  <img*/}
-            {/*    className="relative mx-auto border border-slate-200 dark:border-black"*/}
-            {/*    width={490}*/}
-            {/*    src="https://place-hold.it/980x749/1e293b/fff"*/}
-            {/*    alt=""*/}
-            {/*  />*/}
-            {/*</div>*/}
+            <div className="mt-10" aria-hidden="true">
+              <img
+                className="relative mx-auto"
+                width={490}
+                src="/images/local-task-orchestration.svg"
+                alt="local task orchestration schema"
+              />
+            </div>
           </div>
 
           <dl className="mt-6 md:mt-0 space-y-6">
@@ -257,14 +257,14 @@ export function MonorepoFeatures() {
               CI agents, will never build or test the same thing twice.
             </p>
 
-            {/*<div className="mt-10" aria-hidden="true">*/}
-            {/*  <img*/}
-            {/*    className="relative mx-auto border border-slate-200 dark:border-black"*/}
-            {/*    width={490}*/}
-            {/*    src="https://place-hold.it/980x749/1e293b/fff"*/}
-            {/*    alt=""*/}
-            {/*  />*/}
-            {/*</div>*/}
+            <div className="mt-10" aria-hidden="true">
+              <img
+                className="relative mx-auto"
+                width={490}
+                src="/images/distributed-computation-caching.svg"
+                alt="distributed computation caching schema"
+              />
+            </div>
           </div>
 
           <dl className="mt-6 md:mt-0 space-y-6">
