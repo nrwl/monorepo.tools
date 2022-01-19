@@ -21,7 +21,7 @@ const people: {
   },
   {
     name: 'Jared Palmer',
-    tool: 'Truborepo',
+    tool: 'Turborepo',
     imageUrl: 'https://avatars.githubusercontent.com/u/4060187?s=150',
     twitterLink: 'https://twitter.com/jaredpalmer',
     githubLink: 'https://github.com/vercel/turborepo',
