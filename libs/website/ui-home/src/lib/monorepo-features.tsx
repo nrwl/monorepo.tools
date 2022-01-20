@@ -779,14 +779,15 @@ export function MonorepoFeatures() {
               Facilitates sharing of discrete pieces source code.
             </p>
 
-            {/*<div className="mt-10" aria-hidden="true">*/}
-            {/*  <img*/}
-            {/*    className="relative mx-auto border border-slate-200 dark:border-black"*/}
-            {/*    width={490}*/}
-            {/*    src="https://place-hold.it/980x749/1e293b/fff"*/}
-            {/*    alt=""*/}
-            {/*  />*/}
-            {/*</div>*/}
+            <div className="mt-10" aria-hidden="true">
+              <img
+                loading="lazy"
+                className="relative mx-auto"
+                width={490}
+                src="/images/source-code-sharing.svg"
+                alt="source code sharing"
+              />
+            </div>
           </div>
           <dl className="mt-6 md:mt-0 space-y-6">
             <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
@@ -1059,7 +1060,7 @@ export function MonorepoFeatures() {
                 loading="lazy"
                 className="relative mx-auto"
                 width={490}
-                src="/images/project-constraints-and-visibility.svg"
+                src="/images/project-constrains-and-visibility.svg"
                 alt="explicit project constrains"
               />
             </div>
