@@ -69,6 +69,10 @@ const articles: { name: string; link: string }[] = [
     name: 'Lerna/Yarn -> Nx: Faster Build Times + Better Dev Ergonomics',
     link: 'https://dev.to/nx/lerna-yarn-nx-faster-build-times-better-dev-ergonomics-32a6',
   },
+  {
+    name: 'Nx monorepo documentation',
+    link: 'https://nx.dev/guides/why-monorepos#monorepos',
+  },
 ];
 const books: {
   name: string;
