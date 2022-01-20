@@ -119,26 +119,26 @@ export function Introduction() {
       <section className="-mt-28 max-w-7xl mx-auto relative z-10 pb-32 px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 gap-y-20 lg:grid-cols-3 lg:gap-y-0 lg:gap-x-8">
           {/*LINKS*/}
-          <div className="flex flex-col bg-slate-80 dark:bg-slate-700 rounded-2xl shadow-xl">
+          <div className="flex flex-col bg-slate-100 dark:bg-slate-700 rounded-2xl shadow-xl">
             <div className="flex-1 relative pt-16 px-6 pb-8 md:px-8">
-              <h2 className="text-xl font-medium text-gray-800 dark:text-gray-200">
+              <h2 className="text-xl font-semibold text-gray-800 dark:text-gray-200">
                 What is a monorepo
               </h2>
               <p className="mt-4 text-base text-gray-700 dark:text-gray-300">
                 Let's start with a common unsterstanding of what a Monorepo is.
               </p>
             </div>
-            <div className="p-6 bg-slate-100 dark:bg-slate-900 rounded-bl-2xl rounded-br-2xl md:px-8">
+            <div className="p-6 bg-slate-200 dark:bg-slate-900 rounded-bl-2xl rounded-br-2xl md:px-8">
               <a
                 href="#what-is-a-monorepo"
                 title="What is a monorepo?"
-                className="text-base font-medium text-gray-700 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-300"
+                className="text-sm font-medium uppercase text-gray-700 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300"
               >
                 What is a monorepo<span aria-hidden="true"> &rarr;</span>
               </a>
             </div>
           </div>
-          <div className="flex flex-col bg-slate-50 dark:bg-slate-700 rounded-2xl shadow-xl">
+          <div className="flex flex-col bg-slate-100 dark:bg-slate-700 rounded-2xl shadow-xl">
             <div className="flex-1 relative pt-16 px-6 pb-8 md:px-8">
               <h2 className="text-xl font-medium text-gray-800 dark:text-gray-200">
                 Why a monorepo
@@ -147,17 +147,17 @@ export function Introduction() {
                 What are the situations solved by monorepos.
               </p>
             </div>
-            <div className="p-6 bg-slate-100 dark:bg-slate-900 rounded-bl-2xl rounded-br-2xl md:px-8">
+            <div className="p-6 bg-slate-200 dark:bg-slate-900 rounded-bl-2xl rounded-br-2xl md:px-8">
               <a
                 href="#why-a-monorepo"
                 title="Why using a monorepo?"
-                className="text-base font-medium text-gray-700 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-300"
+                className="text-sm font-medium uppercase text-gray-700 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300"
               >
                 Why a monorepo?<span aria-hidden="true"> &rarr;</span>
               </a>
             </div>
           </div>
-          <div className="flex flex-col bg-slate-50 dark:bg-slate-700 rounded-2xl shadow-xl">
+          <div className="flex flex-col bg-slate-100 dark:bg-slate-700 rounded-2xl shadow-xl">
             <div className="flex-1 relative pt-16 px-6 pb-8 md:px-8">
               <h2 className="text-xl font-medium text-gray-800 dark:text-gray-200">
                 Features of a monorepo
@@ -166,11 +166,11 @@ export function Introduction() {
                 What to expect from a monorepo tool
               </p>
             </div>
-            <div className="p-6 bg-slate-100 dark:bg-slate-900 rounded-bl-2xl rounded-br-2xl md:px-8">
+            <div className="p-6 bg-slate-200 dark:bg-slate-900 rounded-bl-2xl rounded-br-2xl md:px-8">
               <a
                 href="#monorepo-features"
                 title="What are monorepo features?"
-                className="text-base font-medium text-gray-700 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-300"
+                className="text-sm font-medium uppercase text-gray-700 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300"
               >
                 Monorepo features<span aria-hidden="true"> &rarr;</span>
               </a>
