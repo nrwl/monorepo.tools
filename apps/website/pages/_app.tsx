@@ -4,6 +4,7 @@ import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { ThemeProvider } from 'next-themes';
 import Script from 'next/script';
+import { DefaultSeo } from 'next-seo';
 import { sendPageViewEvent } from '@monorepo-tools/website/feature-analytics';
 import './styles.css';
 
@@ -23,41 +24,34 @@ function CustomApp({ Component, pageProps }: AppProps) {
   if (!mounted) return null;
   return (
     <>
+      <DefaultSeo
+        title="Monorepo Explained"
+        description="Everything you need to know about monorepos, and the tools to build them."
+        openGraph={{
+          url: 'https://monorepo.tools' + router.asPath,
+          title: 'Monorepo Explained',
+          description:
+            'Everything you need to know about monorepos, and the tools to build them.',
+          images: [
+            {
+              url: 'https://monorepo.tools/images/monorepo.png',
+              width: 505,
+              height: 512,
+              alt: 'Everything you need to know about monorepos, and the tools to build them.',
+              type: 'image/jpeg',
+            },
+          ],
+          site_name: 'monorepo.tools',
+        }}
+        twitter={{
+          handle: '@nrwl_io',
+          site: '@monorepotools',
+          cardType: 'summary',
+        }}
+      />
       <Head>
         <meta name="robots" content="index,follow" />
         <meta name="googlebot" content="index,follow" />
-        <meta name="twitter:card" content="summary" />
-        <meta
-          name="twitter:image"
-          content="https://monorepo.tools/images/monorepo.png"
-        />
-        <meta name="twitter:site" content="@monorepotools" />
-        <meta name="twitter:creator" content="@nrwl_io" />
-        <meta
-          name="description"
-          content="Everything you need to know about monorepos, and the tools to build them."
-        />
-        <meta property="og:title" content="Monorepo explained" />
-        <meta
-          property="og:description"
-          content="Everything you need to know about monorepos, and the tools to build them."
-        />
-        <meta property="og:url" content="https://monorepo.tools" />
-        <meta property="og:type" content="website" />
-        <meta
-          property="og:image"
-          content="https://monorepo.tools/images/mono.png"
-        />
-        <meta property="og:image:alt" content="monorepo official logo" />
-        <meta property="og:image:type" content="image/png" />
-        <meta property="og:image:width" content="505" />
-        <meta property="og:image:height" content="512" />
-        <meta property="og:site_name" content="monorepo.tools" />
-        <title>Monorepo explained</title>
-        <meta
-          name="description"
-          content="Everything you need to know about monorepos, and the tools to build them."
-        />
         <link rel="icon" href="/images/browser/favicon-32x32.ico" sizes="32" />
         <link rel="icon" href="/images/browser/icon.svg" type="image/svg+xml" />
         <link
