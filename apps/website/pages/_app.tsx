@@ -34,9 +34,9 @@ function CustomApp({ Component, pageProps }: AppProps) {
             'Everything you need to know about monorepos, and the tools to build them.',
           images: [
             {
-              url: 'https://monorepo.tools/images/monorepo.png',
-              width: 505,
-              height: 512,
+              url: 'https://monorepo.tools/images/monorepo.tools.png',
+              width: 720,
+              height: 720,
               alt: 'Everything you need to know about monorepos, and the tools to build them.',
               type: 'image/jpeg',
             },
