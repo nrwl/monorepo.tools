@@ -40,8 +40,16 @@ export function Introduction() {
               <p className="mt-6 max-w-3xl text-xl text-gray-700 dark:text-gray-300">
                 There are many great monorepo tools, built by great teams, with
                 different philosophies. We do our best to represent each tool
-                objectively, and we welcome pull requests if we got something
-                wrong!
+                objectively, and{' '}
+                <a
+                  href="https://github.com/nrwl/monorepo.tools"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="px-1 hover:bg-yellow-500 hover:text-gray-800 transition"
+                  title="Contribute to monorepo.tools!"
+                >
+                  we welcome pull requests if we got something wrong!
+                </a>
               </p>
               <p className="mt-6 max-w-3xl text-xl text-gray-700 dark:text-gray-300">
                 The tools we'll focus on are:&nbsp;
