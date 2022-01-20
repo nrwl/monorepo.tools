@@ -67,9 +67,11 @@ function CustomApp({ Component, pageProps }: AppProps) {
         <link rel="favicon" href="/images/browser/favicon.ico" />
         {/* Global Site Tag (gtag.js) - Google Analytics */}
         <script
+          id="gtag-script-url"
           src={`https://www.googletagmanager.com/gtag/js?id=${gMeasurementId}`}
         />
         <script
+          id="gtag-script"
           dangerouslySetInnerHTML={{
             __html: `
             window.dataLayer = window.dataLayer || [];
@@ -83,6 +85,7 @@ function CustomApp({ Component, pageProps }: AppProps) {
         />
         {/* Hotjar Analytics */}
         <Script
+          id="hotjar-script"
           strategy="lazyOnload"
           dangerouslySetInnerHTML={{
             __html: `
