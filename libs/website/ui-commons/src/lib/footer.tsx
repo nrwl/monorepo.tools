@@ -12,7 +12,7 @@ export function Footer() {
               href="#what-is-a-monorepo"
               className="text-base text-gray-500 hover:text-gray-700 dark:text-gray-300"
             >
-              What's a monorepo?
+              What is a monorepo?
             </a>
           </div>
           <div className="px-5 py-2">
@@ -20,7 +20,7 @@ export function Footer() {
               href="#why-a-monorepo"
               className="text-base text-gray-500 hover:text-gray-700 dark:text-gray-300"
             >
-              Why monorepo?
+              Why a monorepo?
             </a>
           </div>
           <div className="px-5 py-2">
