@@ -15,6 +15,9 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@monorepo-tools/website/feature-analytics": [
+        "libs/website/feature-analytics/src/index.ts"
+      ],
       "@monorepo-tools/website/ui-commons": [
         "libs/website/ui-commons/src/index.ts"
       ],

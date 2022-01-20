@@ -1,13 +1,23 @@
+import { useEffect, useState } from 'react';
 import { AppProps } from 'next/app';
 import Head from 'next/head';
-import './styles.css';
+import { useRouter } from 'next/router';
 import { ThemeProvider } from 'next-themes';
-import { useEffect, useState } from 'react';
+import { sendPageViewEvent } from '@monorepo-tools/website/feature-analytics';
+import './styles.css';
 
 function CustomApp({ Component, pageProps }: AppProps) {
+  const router = useRouter();
+  const gMeasurementId = 'G-DQ2F7L3B1L';
   const [mounted, setMounted] = useState(false);
   // When mounted on client, now we can show the UI
   useEffect(() => setMounted(true), []);
+  useEffect(() => {
+    const handleRouteChange = (url: URL) =>
+      sendPageViewEvent({ id: gMeasurementId, path: url.toString() });
+    router.events.on('routeChangeStart', (url) => handleRouteChange(url));
+    return () => router.events.off('routeChangeStart', handleRouteChange);
+  }, [router]);
 
   if (!mounted) return null;
   return (
@@ -54,6 +64,22 @@ function CustomApp({ Component, pageProps }: AppProps) {
           href="/images/browser/apple-touch-icon.png"
         />
         <link rel="favicon" href="/images/browser/favicon.ico" />
+        {/* Global Site Tag (gtag.js) - Google Analytics */}
+        <script
+          src={`https://www.googletagmanager.com/gtag/js?id=${gMeasurementId}`}
+        />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){ dataLayer.push(arguments); }
+            gtag('js', new Date());
+            gtag('config', '${gMeasurementId}', {
+              page_path: window.location.pathname,
+            });
+          `,
+          }}
+        />
       </Head>
       <ThemeProvider attribute="class">
         <main className="monorepo.tools antialiased bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 font-display">
