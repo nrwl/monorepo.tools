@@ -45,7 +45,7 @@ export function Introduction() {
                   href="https://github.com/nrwl/monorepo.tools"
                   target="_blank"
                   rel="noreferrer"
-                  className="px-1 hover:bg-yellow-500 hover:text-gray-800 transition"
+                  className="px-1 border-b border-yellow-500 hover:bg-yellow-500 hover:text-gray-800 transition"
                   title="Contribute to monorepo.tools!"
                 >
                   we welcome pull requests if we got something wrong!
