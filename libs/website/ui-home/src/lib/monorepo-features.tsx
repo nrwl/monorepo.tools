@@ -87,6 +87,7 @@ export function MonorepoFeatures() {
 
             <div className="mt-10" aria-hidden="true">
               <img
+                loading="lazy"
                 className="relative mx-auto"
                 width={490}
                 src="/images/local-computation-caching.svg"
@@ -176,6 +177,7 @@ export function MonorepoFeatures() {
 
             <div className="mt-10" aria-hidden="true">
               <img
+                loading="lazy"
                 className="relative mx-auto"
                 width={490}
                 src="/images/local-task-orchestration.svg"
@@ -262,6 +264,7 @@ export function MonorepoFeatures() {
 
             <div className="mt-10" aria-hidden="true">
               <img
+                loading="lazy"
                 className="relative mx-auto"
                 width={490}
                 src="/images/distributed-computation-caching.svg"
@@ -870,6 +873,7 @@ export function MonorepoFeatures() {
 
             <div className="mt-10" aria-hidden="true">
               <img
+                loading="lazy"
                 className="relative mx-auto"
                 width={490}
                 src="/images/consistent-tooling.svg"
