@@ -65,15 +65,23 @@ function CustomApp({ Component, pageProps }: AppProps) {
           href="/images/browser/apple-touch-icon.png"
         />
         <link rel="favicon" href="/images/browser/favicon.ico" />
-        {/* Global Site Tag (gtag.js) - Google Analytics */}
-        <script
-          id="gtag-script-url"
-          src={`https://www.googletagmanager.com/gtag/js?id=${gMeasurementId}`}
-        />
-        <script
-          id="gtag-script"
-          dangerouslySetInnerHTML={{
-            __html: `
+      </Head>
+      <ThemeProvider attribute="class">
+        <main className="monorepo.tools antialiased bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 font-display">
+          <Component {...pageProps} />
+        </main>
+      </ThemeProvider>
+      {/* Global Site Tag (gtag.js) - Google Analytics */}
+      <Script
+        id="gtag-script-url"
+        strategy="afterInteractive"
+        src={`https://www.googletagmanager.com/gtag/js?id=${gMeasurementId}`}
+      />
+      <Script
+        id="gtag-script"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: `
             window.dataLayer = window.dataLayer || [];
             function gtag(){ dataLayer.push(arguments); }
             gtag('js', new Date());
@@ -81,14 +89,14 @@ function CustomApp({ Component, pageProps }: AppProps) {
               page_path: window.location.pathname,
             });
           `,
-          }}
-        />
-        {/* Hotjar Analytics */}
-        <Script
-          id="hotjar-script"
-          strategy="lazyOnload"
-          dangerouslySetInnerHTML={{
-            __html: `
+        }}
+      />
+      {/* Hotjar Analytics */}
+      <Script
+        id="hotjar-script"
+        strategy="lazyOnload"
+        dangerouslySetInnerHTML={{
+          __html: `
           (function(h,o,t,j,a,r){
         h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
         h._hjSettings={hjid:2793300,hjsv:6};
@@ -97,14 +105,8 @@ function CustomApp({ Component, pageProps }: AppProps) {
         r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
         a.appendChild(r);
     })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');`,
-          }}
-        />
-      </Head>
-      <ThemeProvider attribute="class">
-        <main className="monorepo.tools antialiased bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 font-display">
-          <Component {...pageProps} />
-        </main>
-      </ThemeProvider>
+        }}
+      />
     </>
   );
 }
