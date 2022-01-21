@@ -33,7 +33,7 @@ export function Footer() {
           </div>
         </nav>
         <p className="mt-8 text-center text-base text-gray-400">
-          &copy; 2022 monorepo.tools, Inc. All rights reserved.
+          &copy; 2022 Narwhal Technologies Inc.
         </p>
       </div>
     </footer>
