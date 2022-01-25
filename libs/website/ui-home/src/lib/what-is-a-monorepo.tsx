@@ -61,11 +61,11 @@ export function WhatIsAMonorepo() {
           <div className="lg:grid lg:grid-flow-row-dense lg:grid-cols-2 lg:gap-8 lg:items-center">
             <div className="lg:col-start-2">
               <h2 className="text-2xl leading-loose font-bold text-gray-800 dark:text-gray-100 tracking-tight sm:text-3xl sm:leading-relaxed">
-                Not just &ldquo;code collocation&rdquo;
+                Not just &ldquo;code colocation&rdquo;
               </h2>
               <p className="mt-3 text-lg text-gray-700 dark:text-gray-300">
                 Consider a repository with several projects in it. We definitely
-                have “code collocation”, but if there are no well defined
+                have “code colocation”, but if there are no well defined
                 relationships among them, we would not call it a monorepo.
               </p>
               <p className="mt-3 text-lg text-gray-700 dark:text-gray-300">
