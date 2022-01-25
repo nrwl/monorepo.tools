@@ -91,7 +91,7 @@ export function Introduction() {
                 ,&nbsp;
                 <a
                   rel="nofollow"
-                  href="https://rushjs.io/"
+                  href="https://microsoft.github.io/lage/"
                   className="border-b border-yellow-500 hover:bg-yellow-500 hover:text-gray-800 transition hover:rounded"
                 >
                   Lage (by Microsoft)
