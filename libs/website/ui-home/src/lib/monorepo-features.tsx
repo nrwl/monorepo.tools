@@ -264,8 +264,8 @@ export function MonorepoFeatures() {
               <dd className="mt-4 text-base text-gray-600 dark:text-gray-400">
                 Lerna's ability to do task coordination is more limited compared
                 to the rest of the tools. It is not able to mix and match
-                different targets (e.g., tests and buids), so it results in mode
-                idle time.
+                different targets (e.g., tests and builds), so it results in
+                more idle time.
               </dd>
             </div>
           </dl>
