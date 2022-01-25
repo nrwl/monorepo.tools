@@ -121,7 +121,7 @@ const fast: Item[] = [
       'Determine what might be affected by a change, to run only build/test affected projects.',
     features: [
       { title: 'Nx', value: 'supported' },
-      { title: 'Bazel', value: 'manualImplementation' },
+      { title: 'Bazel', value: 'supported' },
       { title: 'Lage', value: 'supported' },
       { title: 'Turborepo', value: 'supported' },
       { title: 'Lerna', value: 'supported' },

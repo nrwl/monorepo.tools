@@ -591,12 +591,12 @@ export function MonorepoFeatures() {
             <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
               <dt>
                 <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
-                  <ManualImplementation /> Bazel
+                  <Supported /> Bazel
                 </p>
               </dt>
               <dd className="mt-4 text-base text-gray-600 dark:text-gray-400">
-                Bazel doesn't support it, but it provides the required metadata
-                making it possible to write such functionality youself.
+                Bazel doesn't tell you what has changed upfront, but it provides the required metadata
+                making it possible to write such functionality yourself.
               </dd>
             </div>
             <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
