@@ -1186,7 +1186,7 @@ export function MonorepoFeatures() {
                 Developers can annotated projects in any way they seem fit,
                 establish invariants, and Nx will make sure they hold. It allows
                 developers to annotate what is private and what is not, what is
-                experimental and what is stable etc. Nx also allows you to
+                experimental and what is stable, etc. Nx also allows you to
                 define public API for each package, so other developers aren't
                 able to deep import into them.
               </dd>
@@ -1200,7 +1200,7 @@ export function MonorepoFeatures() {
               </dt>
               <dd className="mt-4 text-base text-gray-600 dark:text-gray-400">
                 Bazel supports visibility rules which help you separate what is
-                private from what is public, what can be shared etc.
+                private from what is public, what can be shared, etc.
               </dd>
             </div>
             <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
