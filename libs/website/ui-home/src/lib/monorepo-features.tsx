@@ -81,7 +81,7 @@ export function MonorepoFeatures() {
         {/*Local Computation Caching*/}
         <div
           id="local-computation-caching"
-          className="relative mt-12 lg:mt-16 lg:grid lg:grid-cols-2 lg:gap-12 lg:items-start"
+          className="relative mt-16 lg:grid lg:grid-cols-2 lg:gap-12 lg:items-start"
         >
           <div className="relative">
             <div className="absolute flex items-center justify-center h-10 w-10 rounded-md text-gray-800 dark:text-gray-200 rounded-md bg-slate-100 dark:bg-slate-900">
@@ -117,7 +117,7 @@ export function MonorepoFeatures() {
           </div>
 
           {/* (alphabetical order) */}
-          <dl className="mt-6 md:mt-0 space-y-6">
+          <dl className="mt-12 md:mt-0 space-y-6">
             <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
               <dt>
                 <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
@@ -191,7 +191,7 @@ export function MonorepoFeatures() {
         {/*Local task orchestration*/}
         <div
           id="local-task-orchestration"
-          className="relative mt-12 lg:mt-16 lg:grid lg:grid-cols-2 lg:gap-12 lg:items-start"
+          className="relative mt-16 lg:grid lg:grid-cols-2 lg:gap-12 lg:items-start"
         >
           <div className="relative">
             <div className="absolute flex items-center justify-center h-10 w-10 rounded-md text-gray-800 dark:text-gray-200 rounded-md bg-slate-100 dark:bg-slate-900">
@@ -226,7 +226,7 @@ export function MonorepoFeatures() {
             </div>
           </div>
 
-          <dl className="mt-6 md:mt-0 space-y-6">
+          <dl className="mt-12 md:mt-0 space-y-6">
             <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
               <dt>
                 <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
@@ -297,7 +297,7 @@ export function MonorepoFeatures() {
         {/*Distributed Computation Caching*/}
         <div
           id="distributed-computation-caching"
-          className="relative mt-12 lg:mt-16 lg:grid lg:grid-cols-2 lg:gap-12 lg:items-start"
+          className="relative mt-16 lg:grid lg:grid-cols-2 lg:gap-12 lg:items-start"
         >
           <div className="relative">
             <div className="absolute flex items-center justify-center h-10 w-10 rounded-md text-gray-800 dark:text-gray-200 rounded-md bg-slate-100 dark:bg-slate-900">
@@ -332,7 +332,7 @@ export function MonorepoFeatures() {
             </div>
           </div>
 
-          <dl className="mt-6 md:mt-0 space-y-6">
+          <dl className="mt-12 md:mt-0 space-y-6">
             <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
               <dt>
                 <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
@@ -400,7 +400,7 @@ export function MonorepoFeatures() {
         {/*Distributed Task Execution*/}
         <div
           id="distributed-task-execution"
-          className="relative mt-12 lg:mt-16 lg:grid lg:grid-cols-2 lg:gap-12 lg:items-start"
+          className="relative mt-16 lg:grid lg:grid-cols-2 lg:gap-12 lg:items-start"
         >
           <div className="relative">
             <div className="absolute flex items-center justify-center h-10 w-10 rounded-md text-gray-800 dark:text-gray-200 rounded-md bg-slate-100 dark:bg-slate-900">
@@ -435,7 +435,7 @@ export function MonorepoFeatures() {
             </div>
           </div>
 
-          <dl className="mt-6 md:mt-0 space-y-6">
+          <dl className="mt-12 md:mt-0 space-y-6">
             <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
               <dt>
                 <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
@@ -506,7 +506,7 @@ export function MonorepoFeatures() {
         {/*Transparent Remote Execution*/}
         <div
           id="transparent-remote-execution"
-          className="relative mt-12 lg:mt-16 lg:grid lg:grid-cols-2 lg:gap-12 lg:items-start"
+          className="relative mt-16 lg:grid lg:grid-cols-2 lg:gap-12 lg:items-start"
         >
           <div className="relative">
             <div className="absolute flex items-center justify-center h-10 w-10 rounded-md text-gray-800 dark:text-gray-200 rounded-md bg-slate-100 dark:bg-slate-900">
@@ -530,7 +530,7 @@ export function MonorepoFeatures() {
             </p>
           </div>
 
-          <dl className="mt-6 md:mt-0 space-y-6">
+          <dl className="mt-12 md:mt-0 space-y-6">
             <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
               <dt>
                 <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
@@ -597,7 +597,7 @@ export function MonorepoFeatures() {
         {/*Affected*/}
         <div
           id="detecting-affected-projects-packages"
-          className="relative mt-12 lg:mt-16 lg:grid lg:grid-cols-2 lg:gap-12 lg:items-start"
+          className="relative mt-16 lg:grid lg:grid-cols-2 lg:gap-12 lg:items-start"
         >
           <div className="relative">
             <div className="absolute flex items-center justify-center h-10 w-10 rounded-md text-gray-800 dark:text-gray-200 rounded-md bg-slate-100 dark:bg-slate-900">
@@ -631,7 +631,7 @@ export function MonorepoFeatures() {
             </div>
           </div>
 
-          <dl className="mt-6 md:mt-0 space-y-6">
+          <dl className="mt-12 md:mt-0 space-y-6">
             <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
               <dt>
                 <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
@@ -708,7 +708,7 @@ export function MonorepoFeatures() {
         {/*Workspace analysis*/}
         <div
           id="workspace-analysis"
-          className="relative mt-12 lg:mt-16 lg:grid lg:grid-cols-2 lg:gap-12 lg:items-start"
+          className="relative mt-16 lg:grid lg:grid-cols-2 lg:gap-12 lg:items-start"
         >
           <div className="relative">
             <div className="absolute flex items-center justify-center h-10 w-10 rounded-md text-gray-800 dark:text-gray-200 rounded-md bg-slate-100 dark:bg-slate-900">
@@ -742,7 +742,7 @@ export function MonorepoFeatures() {
             </div>
           </div>
 
-          <dl className="mt-6 md:mt-0 space-y-6">
+          <dl className="mt-12 md:mt-0 space-y-6">
             <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
               <dt>
                 <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
@@ -815,7 +815,7 @@ export function MonorepoFeatures() {
         {/*Dependency Graph Visualization*/}
         <div
           id="dependency-graph-visualization"
-          className="relative mt-12 lg:mt-16 lg:grid lg:grid-cols-2 lg:gap-12 lg:items-start"
+          className="relative mt-16 lg:grid lg:grid-cols-2 lg:gap-12 lg:items-start"
         >
           <div className="relative">
             <div className="absolute flex items-center justify-center h-10 w-10 rounded-md text-gray-800 dark:text-gray-200 rounded-md bg-slate-100 dark:bg-slate-900">
@@ -852,7 +852,7 @@ export function MonorepoFeatures() {
             </div>
           </div>
 
-          <dl className="mt-6 md:mt-0 space-y-6">
+          <dl className="mt-12 md:mt-0 space-y-6">
             <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
               <dt>
                 <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
@@ -931,7 +931,7 @@ export function MonorepoFeatures() {
         {/*Code Sharing*/}
         <div
           id="source-code-sharing"
-          className="relative mt-12 lg:mt-16 lg:grid lg:grid-cols-2 lg:gap-12 lg:items-start"
+          className="relative mt-16 lg:grid lg:grid-cols-2 lg:gap-12 lg:items-start"
         >
           <div className="relative">
             <div className="absolute flex items-center justify-center h-10 w-10 rounded-md text-gray-800 dark:text-gray-200 rounded-md bg-slate-100 dark:bg-slate-900">
@@ -963,7 +963,7 @@ export function MonorepoFeatures() {
               />
             </div>
           </div>
-          <dl className="mt-6 md:mt-0 space-y-6">
+          <dl className="mt-12 md:mt-0 space-y-6">
             <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
               <dt>
                 <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
@@ -1045,7 +1045,7 @@ export function MonorepoFeatures() {
         {/*Consistent Tooling*/}
         <div
           id="consistent-tooling"
-          className="relative mt-12 lg:mt-16 lg:grid lg:grid-cols-2 lg:gap-12 lg:items-start"
+          className="relative mt-16 lg:grid lg:grid-cols-2 lg:gap-12 lg:items-start"
         >
           <div className="relative">
             <div className="absolute flex items-center justify-center h-10 w-10 rounded-md text-gray-800 dark:text-gray-200 rounded-md bg-slate-100 dark:bg-slate-900">
@@ -1079,7 +1079,7 @@ export function MonorepoFeatures() {
               />
             </div>
           </div>
-          <dl className="mt-6 md:mt-0 space-y-6">
+          <dl className="mt-12 md:mt-0 space-y-6">
             <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
               <dt>
                 <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
@@ -1157,7 +1157,7 @@ export function MonorepoFeatures() {
         {/*Code Generation*/}
         <div
           id="code-generation"
-          className="relative mt-12 lg:mt-16 lg:grid lg:grid-cols-2 lg:gap-12 lg:items-start"
+          className="relative mt-16 lg:grid lg:grid-cols-2 lg:gap-12 lg:items-start"
         >
           <div className="relative">
             <div className="absolute flex items-center justify-center h-10 w-10 rounded-md text-gray-800 dark:text-gray-200 rounded-md bg-slate-100 dark:bg-slate-900">
@@ -1190,7 +1190,7 @@ export function MonorepoFeatures() {
             </div>
           </div>
 
-          <dl className="mt-6 md:mt-0 space-y-6">
+          <dl className="mt-12 md:mt-0 space-y-6">
             <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
               <dt>
                 <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
@@ -1269,7 +1269,7 @@ export function MonorepoFeatures() {
         {/*Explicit Project Constrains*/}
         <div
           id="explicit-project-constrains"
-          className="relative mt-12 lg:mt-16 lg:grid lg:grid-cols-2 lg:gap-12 lg:items-start"
+          className="relative mt-16 lg:grid lg:grid-cols-2 lg:gap-12 lg:items-start"
         >
           <div className="relative">
             <div className="absolute flex items-center justify-center h-10 w-10 rounded-md text-gray-800 dark:text-gray-200 rounded-md bg-slate-100 dark:bg-slate-900">
@@ -1307,7 +1307,7 @@ export function MonorepoFeatures() {
             </div>
           </div>
 
-          <dl className="mt-6 md:mt-0 space-y-6">
+          <dl className="mt-12 md:mt-0 space-y-6">
             <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
               <dt>
                 <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
