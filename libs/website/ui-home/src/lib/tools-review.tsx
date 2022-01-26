@@ -60,19 +60,6 @@ const tools = [
 ];
 const fast: Item[] = [
   {
-    title: 'Local task orchestration',
-    link: '#local-task-orchestration',
-    tooltip: 'The ability to run tasks in the correct order and in parallel.',
-    features: [
-      { title: 'Bazel', value: 'supported' },
-      { title: 'Lage', value: 'supported' },
-      { title: 'Lerna', value: 'supported' },
-      { title: 'Nx', value: 'supported' },
-      { title: 'Rush', value: 'supported' },
-      { title: 'Turborepo', value: 'supported' },
-    ],
-  },
-  {
     title: 'Local computation caching',
     link: '#local-computation-caching',
     tooltip:
@@ -81,6 +68,19 @@ const fast: Item[] = [
       { title: 'Bazel', value: 'supported' },
       { title: 'Lage', value: 'supported' },
       { title: 'Lerna', value: 'notSupported' },
+      { title: 'Nx', value: 'supported' },
+      { title: 'Rush', value: 'supported' },
+      { title: 'Turborepo', value: 'supported' },
+    ],
+  },
+  {
+    title: 'Local task orchestration',
+    link: '#local-task-orchestration',
+    tooltip: 'The ability to run tasks in the correct order and in parallel.',
+    features: [
+      { title: 'Bazel', value: 'supported' },
+      { title: 'Lage', value: 'supported' },
+      { title: 'Lerna', value: 'supported' },
       { title: 'Nx', value: 'supported' },
       { title: 'Rush', value: 'supported' },
       { title: 'Turborepo', value: 'supported' },
