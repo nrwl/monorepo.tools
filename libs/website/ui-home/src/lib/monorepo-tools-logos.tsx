@@ -1,4 +1,5 @@
 const tools: { name: string; link: string }[] = [
+  // Alphabetical order
   {
     name: 'Bazel',
     link: 'https://github.com/bazelbuild/bazel',
@@ -8,16 +9,16 @@ const tools: { name: string; link: string }[] = [
     link: 'https://github.com/microsoft/lage',
   },
   {
+    name: 'Lerna',
+    link: 'https://github.com/lerna/lerna',
+  },
+  {
     name: 'Nx',
     link: 'https://github.com/nrwl/nx',
   },
   {
     name: 'Turborepo',
     link: 'https://github.com/vercel/turborepo',
-  },
-  {
-    name: 'Lerna',
-    link: 'https://github.com/lerna/lerna',
   },
 ];
 

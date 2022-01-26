@@ -18,13 +18,6 @@ interface Item {
 
 const tools = [
   {
-    title: 'Nx',
-    organization: 'Nrwl',
-    organizationUrl: 'https://nrwl.io',
-    description:
-      'Next generation build system with first class monorepo support and powerful integrations.',
-  },
-  {
     title: 'Bazel',
     organization: 'Google',
     organizationUrl: 'https://google.com',
@@ -38,16 +31,23 @@ const tools = [
     description: 'Task runner in JS monorepos',
   },
   {
+    title: 'Lerna',
+    description:
+      'A tool for managing JavaScript projects with multiple packages.',
+  },
+  {
+    title: 'Nx',
+    organization: 'Nrwl',
+    organizationUrl: 'https://nrwl.io',
+    description:
+      'Next generation build system with first class monorepo support and powerful integrations.',
+  },
+  {
     title: 'Turborepo',
     organization: 'Vercel',
     organizationUrl: 'https://vercel.com',
     description:
       'The high-performance build system for JavaScript & TypeScript codebases.',
-  },
-  {
-    title: 'Lerna',
-    description:
-      'A tool for managing JavaScript projects with multiple packages.',
   },
 ];
 const fast: Item[] = [
@@ -56,11 +56,11 @@ const fast: Item[] = [
     link: '#local-task-orchestration',
     tooltip: 'The ability to run tasks in the correct order and in parallel.',
     features: [
-      { title: 'Nx', value: 'supported' },
       { title: 'Bazel', value: 'supported' },
       { title: 'Lage', value: 'supported' },
-      { title: 'Turborepo', value: 'supported' },
       { title: 'Lerna', value: 'supported' },
+      { title: 'Nx', value: 'supported' },
+      { title: 'Turborepo', value: 'supported' },
     ],
   },
   {
@@ -69,11 +69,11 @@ const fast: Item[] = [
     tooltip:
       'The ability to store and replay file and process output of tasks.',
     features: [
-      { title: 'Nx', value: 'supported' },
       { title: 'Bazel', value: 'supported' },
       { title: 'Lage', value: 'supported' },
-      { title: 'Turborepo', value: 'supported' },
       { title: 'Lerna', value: 'notSupported' },
+      { title: 'Nx', value: 'supported' },
+      { title: 'Turborepo', value: 'supported' },
     ],
   },
   {
@@ -82,11 +82,11 @@ const fast: Item[] = [
     tooltip:
       'The ability to share cache artifacts across different environments.',
     features: [
-      { title: 'Nx', value: 'supported' },
       { title: 'Bazel', value: 'supported' },
       { title: 'Lage', value: 'supported' },
-      { title: 'Turborepo', value: 'supported' },
       { title: 'Lerna', value: 'notSupported' },
+      { title: 'Nx', value: 'supported' },
+      { title: 'Turborepo', value: 'supported' },
     ],
   },
   {
@@ -94,11 +94,11 @@ const fast: Item[] = [
     link: '#distributed-task-execution',
     tooltip: 'The ability to distribute a command across many machines.',
     features: [
-      { title: 'Nx', value: 'supported' },
       { title: 'Bazel', value: 'supported' },
       { title: 'Lage', value: 'notSupported' },
-      { title: 'Turborepo', value: 'notSupported' },
       { title: 'Lerna', value: 'notSupported' },
+      { title: 'Nx', value: 'supported' },
+      { title: 'Turborepo', value: 'notSupported' },
     ],
   },
   {
@@ -107,11 +107,11 @@ const fast: Item[] = [
     tooltip:
       'The ability to execute any command on multiple machines while developing locally.',
     features: [
-      { title: 'Nx', value: 'notSupported' },
       { title: 'Bazel', value: 'supported' },
       { title: 'Lage', value: 'notSupported' },
-      { title: 'Turborepo', value: 'notSupported' },
       { title: 'Lerna', value: 'notSupported' },
+      { title: 'Nx', value: 'notSupported' },
+      { title: 'Turborepo', value: 'notSupported' },
     ],
   },
   {
@@ -120,11 +120,11 @@ const fast: Item[] = [
     tooltip:
       'Determine what might be affected by a change, to run only build/test affected projects.',
     features: [
-      { title: 'Nx', value: 'supported' },
       { title: 'Bazel', value: 'manualImplementation' },
       { title: 'Lage', value: 'supported' },
-      { title: 'Turborepo', value: 'supported' },
       { title: 'Lerna', value: 'supported' },
+      { title: 'Nx', value: 'supported' },
+      { title: 'Turborepo', value: 'supported' },
     ],
   },
 ];
@@ -135,11 +135,11 @@ const understandable: Item[] = [
     tooltip:
       'The ability to understand the understand the project graph of the workspace without extra configuration.',
     features: [
-      { title: 'Nx', value: 'supported' },
       { title: 'Bazel', value: 'manualImplementation' },
       { title: 'Lage', value: 'supported' },
-      { title: 'Turborepo', value: 'supported' },
+      { title: 'Nx', value: 'supported' },
       { title: 'Lerna', value: 'supported' },
+      { title: 'Turborepo', value: 'supported' },
     ],
   },
   {
@@ -148,11 +148,11 @@ const understandable: Item[] = [
     tooltip:
       'Visualize dependency relationships between projects and/or tasks.',
     features: [
-      { title: 'Nx', value: 'supported' },
       { title: 'Bazel', value: 'supported' },
       { title: 'Lage', value: 'manualImplementation' },
-      { title: 'Turborepo', value: 'supported' },
       { title: 'Lerna', value: 'manualImplementation' },
+      { title: 'Nx', value: 'supported' },
+      { title: 'Turborepo', value: 'supported' },
     ],
   },
 ];
@@ -162,11 +162,11 @@ const manageable: Item[] = [
     link: '#source-code-sharing',
     tooltip: 'Facilitates sharing of discrete pieces source code.',
     features: [
-      { title: 'Nx', value: 'supported' },
       { title: 'Bazel', value: 'supported' },
       { title: 'Lage', value: 'supported' },
-      { title: 'Turborepo', value: 'supported' },
       { title: 'Lerna', value: 'supported' },
+      { title: 'Nx', value: 'supported' },
+      { title: 'Turborepo', value: 'supported' },
     ],
   },
   {
@@ -175,11 +175,11 @@ const manageable: Item[] = [
     tooltip:
       'The tool helps you get a consistent experience regardless of what you use to develop your projects: different JavaScript frameworks, Go, Java, etc.',
     features: [
-      { title: 'Nx', value: 'supported' },
       { title: 'Bazel', value: 'supported' },
       { title: 'Lage', value: 'notSupported' },
-      { title: 'Turborepo', value: 'notSupported' },
       { title: 'Lerna', value: 'notSupported' },
+      { title: 'Nx', value: 'supported' },
+      { title: 'Turborepo', value: 'notSupported' },
     ],
   },
   {
@@ -187,11 +187,11 @@ const manageable: Item[] = [
     link: '#code-generation',
     tooltip: 'Native support for generating code',
     features: [
-      { title: 'Nx', value: 'supported' },
       { title: 'Bazel', value: 'manualImplementation' },
       { title: 'Lage', value: 'manualImplementation' },
-      { title: 'Turborepo', value: 'manualImplementation' },
+      { title: 'Nx', value: 'supported' },
       { title: 'Lerna', value: 'manualImplementation' },
+      { title: 'Turborepo', value: 'manualImplementation' },
     ],
   },
   {
@@ -200,11 +200,11 @@ const manageable: Item[] = [
     tooltip:
       'Supports definition of rules to constrain dependency relationships within the repo.',
     features: [
-      { title: 'Nx', value: 'supported' },
       { title: 'Bazel', value: 'supported' },
       { title: 'Lage', value: 'manualImplementation' },
-      { title: 'Turborepo', value: 'manualImplementation' },
       { title: 'Lerna', value: 'manualImplementation' },
+      { title: 'Nx', value: 'supported' },
+      { title: 'Turborepo', value: 'manualImplementation' },
     ],
   },
 ];
