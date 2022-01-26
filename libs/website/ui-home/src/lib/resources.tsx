@@ -45,6 +45,10 @@ const people: {
 ];
 const videosPodcasts: { name: string; link: string }[] = [
   {
+    name: 'SyntaxFM #426: Monorepos! Workspaces, pnpm, turborepo + more!',
+    link: 'https://syntax.fm/show/426/monorepos-workspaces-pnpm-turborepo-more',
+  },
+  {
     name: 'Monorepos - How the Pros Scale Huge Software Projects',
     link: 'https://www.youtube.com/watch?v=9iU_IE6vnJ8',
   },
