@@ -67,22 +67,26 @@ export function Introduction() {
               <p className="mt-6 max-w-3xl text-xl text-gray-700 dark:text-gray-300">
                 The tools we'll focus on are:&nbsp;
                 <a
-                  href="https://nx.dev"
+                  href="https://bazel.build"
+                  rel="noreferrer"
+                  target="_blank"
                   className="border-b border-yellow-500 hover:bg-yellow-500 hover:text-gray-800 transition hover:rounded"
                 >
-                  Nx (by Nrwl)
+                  Bazel (by Google)
                 </a>
-                ,&nbsp;
+                , &nbsp;
                 <a
-                  rel="nofollow"
-                  href="https://turborepo.org"
+                  rel="noreferrer"
+                  target="_blank"
+                  href="https://microsoft.github.io/lage/"
                   className="border-b border-yellow-500 hover:bg-yellow-500 hover:text-gray-800 transition hover:rounded"
                 >
-                  Turborepo (by Vercel)
+                  Lage (by Microsoft)
                 </a>
-                ,&nbsp;
+                , &nbsp;
                 <a
-                  rel="nofollow"
+                  rel="noreferrer"
+                  target="_blank"
                   href="https://lerna.js.org/"
                   className="border-b border-yellow-500 hover:bg-yellow-500 hover:text-gray-800 transition hover:rounded"
                 >
@@ -90,26 +94,37 @@ export function Introduction() {
                 </a>
                 ,&nbsp;
                 <a
-                  rel="nofollow"
-                  href="https://microsoft.github.io/lage/"
+                  href="https://nx.dev"
+                  rel="noreferrer"
+                  target="_blank"
                   className="border-b border-yellow-500 hover:bg-yellow-500 hover:text-gray-800 transition hover:rounded"
                 >
-                  Lage (by Microsoft)
+                  Nx (by Nrwl)
+                </a>
+                ,&nbsp;
+                <a
+                  rel="noreferrer"
+                  target="_blank"
+                  href="https://github.com/microsoft/rushstack"
+                  className="border-b border-yellow-500 hover:bg-yellow-500 hover:text-gray-800 transition hover:rounded"
+                >
+                  Rush (by Microsoft)
                 </a>
                 , and&nbsp;
                 <a
-                  href="https://bazel.build"
-                  rel="nofollow"
+                  rel="noreferrer"
+                  target="_blank"
+                  href="https://turborepo.org"
                   className="border-b border-yellow-500 hover:bg-yellow-500 hover:text-gray-800 transition hover:rounded"
                 >
-                  Bazel (by Google)
+                  Turborepo (by Vercel)
                 </a>
                 . We chose these tools because of their usage or recognition in
                 the Web development community.
               </p>
             </div>
             <svg
-              className="mx-auto w-2/3 h-auto antialiased text-slate-800 dark:text-white"
+              className="mt-16 mx-auto w-2/3 h-auto antialiased text-slate-800 dark:text-white"
               viewBox="0 0 340 340"
               fill="currentColor"
               xmlns="http://www.w3.org/2000/svg"
