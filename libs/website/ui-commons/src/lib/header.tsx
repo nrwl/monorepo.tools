@@ -92,6 +92,26 @@ export function Header() {
               </div>
             </div>
           </div>
+          <a
+            href="#understanding-monorepos"
+            aria-hidden="true"
+            className="absolute hidden lg:block left-1/2 bottom-2"
+          >
+            <svg
+              className="animate-pulse w-8 h-8 text-yellow-500"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M19 9l-7 7-7-7"
+              />
+            </svg>
+          </a>
         </header>
       </div>
     </div>
