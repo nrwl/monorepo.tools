@@ -116,6 +116,7 @@ export function MonorepoFeatures() {
             </div>
           </div>
 
+          {/* (alphabetical order) */}
           <dl className="mt-6 md:mt-0 space-y-6">
             <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
               <dt>
@@ -161,6 +162,17 @@ export function MonorepoFeatures() {
                   see this benchmark comparing Nx, Lage, and Turborepo
                 </a>
                 ).
+              </dd>
+            </div>
+            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
+              <dt>
+                <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
+                  <Supported /> Rush
+                </p>
+              </dt>
+              <dd className="mt-4 text-gray-600 dark:text-gray-400">
+                Rush supports it, and invokes the system tar command to restore
+                files more quickly.
               </dd>
             </div>
             <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
@@ -261,6 +273,17 @@ export function MonorepoFeatures() {
             <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
               <dt>
                 <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
+                  <Supported /> Rush
+                </p>
+              </dt>
+              <dd className="mt-4 text-gray-600 dark:text-gray-400">
+                Rush supports it. Commands can be modeled either as a simple
+                operation or as separate "phases" such as build, test, etc.
+              </dd>
+            </div>{' '}
+            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
+              <dt>
+                <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
                   <Supported /> Turborepo
                 </p>
               </dt>
@@ -348,6 +371,17 @@ export function MonorepoFeatures() {
               </dt>
               <dd className="mt-4 text-gray-600 dark:text-gray-400">
                 Nx supports it.
+              </dd>
+            </div>
+            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
+              <dt>
+                <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
+                  <Supported /> Rush
+                </p>
+              </dt>
+              <dd className="mt-4 text-gray-600 dark:text-gray-400">
+                Rush has built-in support for Azure and AWS storage, with a
+                plugin API allowing custom cache providers.
               </dd>
             </div>
             <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
@@ -448,6 +482,17 @@ export function MonorepoFeatures() {
             <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
               <dt>
                 <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
+                  <ManualImplementation /> Rush
+                </p>
+              </dt>
+              <dd className="mt-4 text-base text-gray-600 dark:text-gray-400">
+                Rush provides this feature by optionally integrating with
+                Microsoft's BuildXL accelerator.
+              </dd>
+            </div>
+            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
+              <dt>
+                <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
                   <NotSupported /> Turborepo
                 </p>
               </dt>
@@ -524,6 +569,16 @@ export function MonorepoFeatures() {
               </dt>
               <dd className="mt-4 text-base text-gray-600 dark:text-gray-400">
                 Nx doesn't support it.
+              </dd>
+            </div>
+            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
+              <dt>
+                <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
+                  <NotSupported /> Rush
+                </p>
+              </dt>
+              <dd className="mt-4 text-base text-gray-600 dark:text-gray-400">
+                Rush doesn't support it.
               </dd>
             </div>
             <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
@@ -617,6 +672,18 @@ export function MonorepoFeatures() {
               <dd className="mt-4 text-base text-gray-600 dark:text-gray-400">
                 Nx supports it. Its implementation doesn't just look at what
                 files changed but also at the nature of the change.
+              </dd>
+            </div>
+            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
+              <dt>
+                <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
+                  <Supported /> Rush
+                </p>
+              </dt>
+              <dd className="mt-4 text-base text-gray-600 dark:text-gray-400">
+                The command line parameters for project selection can detect
+                which projects are impacted by a Git diff. Rush also provides a
+                PackageChangeAnalyzer API for scripts.
               </dd>
             </div>
             <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
@@ -723,6 +790,18 @@ export function MonorepoFeatures() {
             <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
               <dt>
                 <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
+                  <Supported /> Rush
+                </p>
+              </dt>
+              <dd className="mt-4 text-gray-600 dark:text-gray-400">
+                Rush projects have the same package.json file and build scripts
+                as a single-repo project. Tooling/configuration is shared across
+                the monorepo by optionally creating "rig packages."
+              </dd>
+            </div>
+            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
+              <dt>
+                <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
                   <Supported /> Turborepo
                 </p>
               </dt>
@@ -816,6 +895,17 @@ export function MonorepoFeatures() {
               <dd className="mt-4 text-gray-600 dark:text-gray-400">
                 Nx comes ith an interactive visualizer that allows you to filter
                 and explore large workspaces.
+              </dd>
+            </div>
+            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
+              <dt>
+                <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
+                  <ManualImplementation /> Rush
+                </p>
+              </dt>
+              <dd className="mt-4 text-gray-600 dark:text-gray-400">
+                Rush doesn't come with a visualizer but it's possible to write
+                your own.
               </dd>
             </div>
             <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
@@ -927,6 +1017,21 @@ export function MonorepoFeatures() {
               <dt>
                 <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
                   <Supported />
+                  Rush
+                </p>
+              </dt>
+              <dd className="mt-4 text-gray-600 dark:text-gray-400">
+                Rush supports it, but discourages importing code from folders
+                that are not a declared npm dependency. This ensures that
+                projects can be easily moved between monorepos. For cases where
+                creating a library is too much overhead, "packlets" provide a
+                lightweight alternative.
+              </dd>
+            </div>
+            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
+              <dt>
+                <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
+                  <Supported />
                   Turborepo
                 </p>
               </dt>
@@ -1025,6 +1130,20 @@ export function MonorepoFeatures() {
               <dt>
                 <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
                   <NotSupported />
+                  Rush
+                </p>
+              </dt>
+              <dd className="mt-4 text-base text-gray-600 dark:text-gray-400">
+                Rush only builds TypeScript/JavaScript projects, recommending a
+                decoupled approach where native components are built separately
+                using their native toolchains or BuildXL. Ideally Node.js is the
+                only required prerequisite for monorepo developers.
+              </dd>
+            </div>
+            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
+              <dt>
+                <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
+                  <NotSupported />
                   Turborepo
                 </p>
               </dt>
@@ -1117,6 +1236,20 @@ export function MonorepoFeatures() {
                 virtual file system and provides editor integration. Nx plugins
                 provided generators for popular frameworks. Other generators can
                 be used as well.
+              </dd>
+            </div>
+            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
+              <dt>
+                <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
+                  <ManualImplementation />
+                  Rush
+                </p>
+              </dt>
+              <dd className="mt-4 text-base text-gray-600 dark:text-gray-400">
+                The Rush maintainers suggest to maintain project templates as
+                ordinary projects in the monorepo, to ensure they compile
+                without errors. A project scaffolding command is available via a
+                community plugin.
               </dd>
             </div>
             <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
@@ -1225,6 +1358,19 @@ export function MonorepoFeatures() {
                 experimental and what is stable, etc. Nx also allows you to
                 define public API for each package, so other developers aren't
                 able to deep import into them.
+              </dd>
+            </div>
+            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
+              <dt>
+                <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
+                  <Supported />
+                  Rush
+                </p>
+              </dt>
+              <dd className="mt-4 text-base text-gray-600 dark:text-gray-400">
+                Rush can optionally require approvals when introducing new NPM
+                dependencies (internal or external), based on project type. It
+                also supports version policies for NPM publishing.
               </dd>
             </div>
             <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
