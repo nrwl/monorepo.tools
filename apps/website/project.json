@@ -4,6 +4,26 @@
   "projectType": "application",
   "targets": {
     "build": {
+      "dependsOn": [
+        {
+          "target": "build-base",
+          "projects": "self"
+        }
+      ],
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "outputPath": "dist/apps/website",
+        "command": "nx run website:sitemap"
+      }
+    },
+    "sitemap": {
+      "executor": "@nrwl/workspace:run-commands",
+      "outputs": [],
+      "options": {
+        "command": "npx next-sitemap --config ./apps/website/next-sitemap.js"
+      }
+    },
+    "build-base": {
       "executor": "@nrwl/next:build",
       "outputs": ["{options.outputPath}"],
       "defaultConfiguration": "production",
@@ -18,12 +38,12 @@
     "serve": {
       "executor": "@nrwl/next:server",
       "options": {
-        "buildTarget": "website:build",
+        "buildTarget": "website:build-base",
         "dev": true
       },
       "configurations": {
         "production": {
-          "buildTarget": "website:build:production",
+          "buildTarget": "website:build-base:production",
           "dev": false
         }
       }
@@ -31,7 +51,7 @@
     "export": {
       "executor": "@nrwl/next:export",
       "options": {
-        "buildTarget": "website:build:production"
+        "buildTarget": "website:build-base:production"
       }
     },
     "test": {
