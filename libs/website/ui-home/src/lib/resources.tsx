@@ -35,6 +35,13 @@ const people: {
     twitterLink: 'https://twitter.com/victorsavkin',
     githubLink: 'https://github.com/nrwl/nx',
   },
+  {
+    name: 'Pete Gonzalez',
+    tool: 'Rush',
+    imageUrl: 'https://avatars.githubusercontent.com/u/4673363?s=150',
+    twitterLink: 'https://twitter.com/octogonz_',
+    githubLink: 'https://github.com/microsoft/rushstack',
+  },
 ];
 const videosPodcasts: { name: string; link: string }[] = [
   {

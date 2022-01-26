@@ -29,9 +29,9 @@ yarn
 To serve the website, run:
 
 ```bash
-yarn serve website
+yarn start
 # is the same as
-yarn run website:serve
+nx run website:serve
 ```
 
 ## Submission Guidelines

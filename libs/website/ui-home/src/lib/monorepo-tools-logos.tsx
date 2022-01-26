@@ -1,4 +1,5 @@
 const tools: { name: string; link: string }[] = [
+  // Alphabetical order
   {
     name: 'Bazel',
     link: 'https://github.com/bazelbuild/bazel',
@@ -8,22 +9,26 @@ const tools: { name: string; link: string }[] = [
     link: 'https://github.com/microsoft/lage',
   },
   {
+    name: 'Lerna',
+    link: 'https://github.com/lerna/lerna',
+  },
+  {
     name: 'Nx',
     link: 'https://github.com/nrwl/nx',
+  },
+  {
+    name: 'Rush',
+    link: 'https://github.com/microsoft/rushstack',
   },
   {
     name: 'Turborepo',
     link: 'https://github.com/vercel/turborepo',
   },
-  {
-    name: 'Lerna',
-    link: 'https://github.com/lerna/lerna',
-  },
 ];
 
 export function MonorepoToolsLogos() {
   return (
-    <div className="py-12 lg:py-16 mt-8 grid grid-cols-1 gap-0.5 md:grid-cols-5 lg:mt-16 text-3xl font-semibold">
+    <div className="py-12 lg:py-16 mt-8 grid grid-cols-1 gap-0.5 md:grid-cols-6 lg:mt-16 text-3xl font-semibold">
       {tools.map((tool) => (
         <a
           key={'tool-' + tool.name}

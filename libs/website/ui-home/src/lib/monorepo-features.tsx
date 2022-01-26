@@ -116,22 +116,8 @@ export function MonorepoFeatures() {
             </div>
           </div>
 
+          {/* (alphabetical order) */}
           <dl className="mt-6 md:mt-0 space-y-6">
-            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
-              <dt>
-                <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
-                  <Supported /> Nx
-                </p>
-              </dt>
-              <dd className="mt-4 text-gray-600 dark:text-gray-400">
-                Like React, Nx does tree diffing when restoring the results from
-                its cache, which, on average, makes it faster than other tools (
-                <a href="https://github.com/vsavkin/large-monorepo">
-                  see this benchmark comparing Nx, Lage, and Turborepo
-                </a>
-                ).
-              </dd>
-            </div>
             <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
               <dt>
                 <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
@@ -155,22 +141,48 @@ export function MonorepoFeatures() {
             <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
               <dt>
                 <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
-                  <Supported /> Turborepo
-                </p>
-              </dt>
-              <dd className="mt-4 text-gray-600 dark:text-gray-400">
-                Turborepo supports it.
-              </dd>
-            </div>
-            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
-              <dt>
-                <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
                   <NotSupported /> Lerna
                 </p>
               </dt>
               <dd className="mt-4 text-gray-600 dark:text-gray-400">
                 Lerna doesn't support it and will always rerun everything from
                 scratch.
+              </dd>
+            </div>
+            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
+              <dt>
+                <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
+                  <Supported /> Nx
+                </p>
+              </dt>
+              <dd className="mt-4 text-gray-600 dark:text-gray-400">
+                Like React, Nx does tree diffing when restoring the results from
+                its cache, which, on average, makes it faster than other tools (
+                <a href="https://github.com/vsavkin/large-monorepo">
+                  see this benchmark comparing Nx, Lage, and Turborepo
+                </a>
+                ).
+              </dd>
+            </div>
+            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
+              <dt>
+                <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
+                  <Supported /> Rush
+                </p>
+              </dt>
+              <dd className="mt-4 text-gray-600 dark:text-gray-400">
+                Rush supports it, leveraging the system tar command to restore
+                files more quickly.
+              </dd>
+            </div>
+            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
+              <dt>
+                <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
+                  <Supported /> Turborepo
+                </p>
+              </dt>
+              <dd className="mt-4 text-gray-600 dark:text-gray-400">
+                Turborepo supports it.
               </dd>
             </div>
           </dl>
@@ -218,16 +230,6 @@ export function MonorepoFeatures() {
             <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
               <dt>
                 <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
-                  <Supported /> Nx
-                </p>
-              </dt>
-              <dd className="mt-4 text-gray-600 dark:text-gray-400">
-                Nx supports it.
-              </dd>
-            </div>
-            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
-              <dt>
-                <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
                   <Supported /> Bazel
                 </p>
               </dt>
@@ -248,16 +250,6 @@ export function MonorepoFeatures() {
             <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
               <dt>
                 <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
-                  <Supported /> Turborepo
-                </p>
-              </dt>
-              <dd className="mt-4 text-gray-600 dark:text-gray-400">
-                Turborepo supports it.
-              </dd>
-            </div>
-            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
-              <dt>
-                <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
                   <Supported /> Lerna
                 </p>
               </dt>
@@ -266,6 +258,37 @@ export function MonorepoFeatures() {
                 to the rest of the tools. It is not able to mix and match
                 different targets (e.g., tests and builds), so it results in
                 more idle time.
+              </dd>
+            </div>
+            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
+              <dt>
+                <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
+                  <Supported /> Nx
+                </p>
+              </dt>
+              <dd className="mt-4 text-gray-600 dark:text-gray-400">
+                Nx supports it.
+              </dd>
+            </div>
+            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
+              <dt>
+                <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
+                  <Supported /> Rush
+                </p>
+              </dt>
+              <dd className="mt-4 text-gray-600 dark:text-gray-400">
+                Rush supports it. Commands can be modeled either as a simple
+                script or as separate "phases" such as build, test, etc.
+              </dd>
+            </div>{' '}
+            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
+              <dt>
+                <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
+                  <Supported /> Turborepo
+                </p>
+              </dt>
+              <dd className="mt-4 text-gray-600 dark:text-gray-400">
+                Turborepo supports it.
               </dd>
             </div>
           </dl>
@@ -313,16 +336,6 @@ export function MonorepoFeatures() {
             <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
               <dt>
                 <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
-                  <Supported /> Nx
-                </p>
-              </dt>
-              <dd className="mt-4 text-gray-600 dark:text-gray-400">
-                Nx supports it.
-              </dd>
-            </div>
-            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
-              <dt>
-                <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
                   <Supported /> Bazel
                 </p>
               </dt>
@@ -343,21 +356,42 @@ export function MonorepoFeatures() {
             <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
               <dt>
                 <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
-                  <Supported /> Turborepo
-                </p>
-              </dt>
-              <dd className="mt-4 text-gray-600 dark:text-gray-400">
-                Turborepo supports it.
-              </dd>
-            </div>
-            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
-              <dt>
-                <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
                   <NotSupported /> Lerna
                 </p>
               </dt>
               <dd className="mt-4 text-base text-gray-600 dark:text-gray-400">
                 Lerna cannot reuse computation across machines.
+              </dd>
+            </div>
+            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
+              <dt>
+                <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
+                  <Supported /> Nx
+                </p>
+              </dt>
+              <dd className="mt-4 text-gray-600 dark:text-gray-400">
+                Nx supports it.
+              </dd>
+            </div>
+            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
+              <dt>
+                <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
+                  <Supported /> Rush
+                </p>
+              </dt>
+              <dd className="mt-4 text-gray-600 dark:text-gray-400">
+                Rush has built-in support for Azure and AWS storage, with a
+                plugin API allowing custom cache providers.
+              </dd>
+            </div>
+            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
+              <dt>
+                <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
+                  <Supported /> Turborepo
+                </p>
+              </dt>
+              <dd className="mt-4 text-gray-600 dark:text-gray-400">
+                Turborepo supports it.
               </dd>
             </div>
           </dl>
@@ -405,17 +439,6 @@ export function MonorepoFeatures() {
             <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
               <dt>
                 <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
-                  <Supported /> Nx
-                </p>
-              </dt>
-              <dd className="mt-4 text-base text-gray-600 dark:text-gray-400">
-                Nx's implementation isn't as sophisticated as Bazel's but it can
-                be turned on with a small configuration change.
-              </dd>
-            </div>
-            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
-              <dt>
-                <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
                   <Supported /> Bazel
                 </p>
               </dt>
@@ -438,21 +461,43 @@ export function MonorepoFeatures() {
             <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
               <dt>
                 <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
-                  <NotSupported /> Turborepo
-                </p>
-              </dt>
-              <dd className="mt-4 text-base text-gray-600 dark:text-gray-400">
-                Turborepo doesn't support it.
-              </dd>
-            </div>
-            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
-              <dt>
-                <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
                   <NotSupported /> Lerna
                 </p>
               </dt>
               <dd className="mt-4 text-base text-gray-600 dark:text-gray-400">
                 Lerna doesn't support it.
+              </dd>
+            </div>
+            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
+              <dt>
+                <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
+                  <Supported /> Nx
+                </p>
+              </dt>
+              <dd className="mt-4 text-base text-gray-600 dark:text-gray-400">
+                Nx's implementation isn't as sophisticated as Bazel's but it can
+                be turned on with a small configuration change.
+              </dd>
+            </div>
+            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
+              <dt>
+                <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
+                  <ManualImplementation /> Rush
+                </p>
+              </dt>
+              <dd className="mt-4 text-base text-gray-600 dark:text-gray-400">
+                Rush provides this feature by optionally integrating with
+                Microsoft's BuildXL accelerator.
+              </dd>
+            </div>
+            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
+              <dt>
+                <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
+                  <NotSupported /> Turborepo
+                </p>
+              </dt>
+              <dd className="mt-4 text-base text-gray-600 dark:text-gray-400">
+                Turborepo doesn't support it.
               </dd>
             </div>
           </dl>
@@ -489,16 +534,6 @@ export function MonorepoFeatures() {
             <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
               <dt>
                 <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
-                  <NotSupported /> Nx
-                </p>
-              </dt>
-              <dd className="mt-4 text-base text-gray-600 dark:text-gray-400">
-                Nx doesn't support it.
-              </dd>
-            </div>
-            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
-              <dt>
-                <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
                   <Supported /> Bazel
                 </p>
               </dt>
@@ -519,21 +554,41 @@ export function MonorepoFeatures() {
             <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
               <dt>
                 <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
-                  <NotSupported /> Turborepo
-                </p>
-              </dt>
-              <dd className="mt-4 text-base text-gray-600 dark:text-gray-400">
-                Turborepo doesn't support it.
-              </dd>
-            </div>
-            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
-              <dt>
-                <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
                   <NotSupported /> Lerna
                 </p>
               </dt>
               <dd className="mt-4 text-base text-gray-600 dark:text-gray-400">
                 Lerna doesn't support it.
+              </dd>
+            </div>
+            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
+              <dt>
+                <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
+                  <NotSupported /> Nx
+                </p>
+              </dt>
+              <dd className="mt-4 text-base text-gray-600 dark:text-gray-400">
+                Nx doesn't support it.
+              </dd>
+            </div>
+            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
+              <dt>
+                <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
+                  <NotSupported /> Rush
+                </p>
+              </dt>
+              <dd className="mt-4 text-base text-gray-600 dark:text-gray-400">
+                Rush doesn't support it.
+              </dd>
+            </div>
+            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
+              <dt>
+                <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
+                  <NotSupported /> Turborepo
+                </p>
+              </dt>
+              <dd className="mt-4 text-base text-gray-600 dark:text-gray-400">
+                Turborepo doesn't support it.
               </dd>
             </div>
           </dl>
@@ -580,17 +635,6 @@ export function MonorepoFeatures() {
             <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
               <dt>
                 <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
-                  <Supported /> Nx
-                </p>
-              </dt>
-              <dd className="mt-4 text-base text-gray-600 dark:text-gray-400">
-                Nx supports it. Its implementation doesn't just look at what
-                files changed but also at the nature of the change.
-              </dd>
-            </div>
-            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
-              <dt>
-                <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
                   <ManualImplementation /> Bazel
                 </p>
               </dt>
@@ -612,21 +656,44 @@ export function MonorepoFeatures() {
             <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
               <dt>
                 <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
-                  <Supported /> Turborepo
-                </p>
-              </dt>
-              <dd className="mt-4 text-base text-gray-600 dark:text-gray-400">
-                Turborepo supports it.
-              </dd>
-            </div>
-            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
-              <dt>
-                <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
                   <Supported /> Lerna
                 </p>
               </dt>
               <dd className="mt-4 text-base text-gray-600 dark:text-gray-400">
                 Lerna supports it.
+              </dd>
+            </div>
+            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
+              <dt>
+                <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
+                  <Supported /> Nx
+                </p>
+              </dt>
+              <dd className="mt-4 text-base text-gray-600 dark:text-gray-400">
+                Nx supports it. Its implementation doesn't just look at what
+                files changed but also at the nature of the change.
+              </dd>
+            </div>
+            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
+              <dt>
+                <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
+                  <Supported /> Rush
+                </p>
+              </dt>
+              <dd className="mt-4 text-base text-gray-600 dark:text-gray-400">
+                The command line parameters for project selection can detect
+                which projects are impacted by a Git diff. Rush also provides a
+                PackageChangeAnalyzer API for automation scenarios.
+              </dd>
+            </div>
+            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
+              <dt>
+                <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
+                  <Supported /> Turborepo
+                </p>
+              </dt>
+              <dd className="mt-4 text-base text-gray-600 dark:text-gray-400">
+                Turborepo supports it.
               </dd>
             </div>
           </dl>
@@ -679,18 +746,6 @@ export function MonorepoFeatures() {
             <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
               <dt>
                 <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
-                  <Supported /> Nx
-                </p>
-              </dt>
-              <dd className="mt-4 text-gray-600 dark:text-gray-400">
-                By default, Nx analyses <code>package.json</code>, JavaScript,
-                and TypeScript files. It's pluggable and can be extended to
-                support other platforms (e.g, Go, Java, Rust).
-              </dd>
-            </div>
-            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
-              <dt>
-                <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
                   <ManualImplementation /> Bazel
                 </p>
               </dt>
@@ -713,21 +768,45 @@ export function MonorepoFeatures() {
             <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
               <dt>
                 <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
-                  <Supported /> Turborepo
-                </p>
-              </dt>
-              <dd className="mt-4 text-gray-600 dark:text-gray-400">
-                Turborepo analyses package.json files.
-              </dd>
-            </div>
-            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
-              <dt>
-                <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
                   <Supported /> Lerna
                 </p>
               </dt>
               <dd className="mt-4 text-gray-600 dark:text-gray-400">
                 Lerna analyses package.json files.
+              </dd>
+            </div>
+            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
+              <dt>
+                <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
+                  <Supported /> Nx
+                </p>
+              </dt>
+              <dd className="mt-4 text-gray-600 dark:text-gray-400">
+                By default, Nx analyses <code>package.json</code>, JavaScript,
+                and TypeScript files. It's pluggable and can be extended to
+                support other platforms (e.g, Go, Java, Rust).
+              </dd>
+            </div>
+            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
+              <dt>
+                <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
+                  <Supported /> Rush
+                </p>
+              </dt>
+              <dd className="mt-4 text-gray-600 dark:text-gray-400">
+                Rush projects have the same package.json file and build scripts
+                as a single-repo project. Tooling/configuration is shared across
+                the monorepo by optionally creating "rig packages."
+              </dd>
+            </div>
+            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
+              <dt>
+                <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
+                  <Supported /> Turborepo
+                </p>
+              </dt>
+              <dd className="mt-4 text-gray-600 dark:text-gray-400">
+                Turborepo analyses package.json files.
               </dd>
             </div>
           </dl>
@@ -777,17 +856,6 @@ export function MonorepoFeatures() {
             <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
               <dt>
                 <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
-                  <Supported /> Nx
-                </p>
-              </dt>
-              <dd className="mt-4 text-gray-600 dark:text-gray-400">
-                Nx comes ith an interactive visualizer that allows you to filter
-                and explore large workspaces.
-              </dd>
-            </div>
-            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
-              <dt>
-                <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
                   <Supported /> Bazel
                 </p>
               </dt>
@@ -810,23 +878,45 @@ export function MonorepoFeatures() {
             <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
               <dt>
                 <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
-                  <Supported /> Turborepo
-                </p>
-              </dt>
-              <dd className="mt-4 text-base text-gray-600 dark:text-gray-400">
-                Turborepo's implementation is not interactive and doesn't
-                provide any way to filter the graph, so works for small repos.
-              </dd>
-            </div>
-            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
-              <dt>
-                <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
                   <ManualImplementation /> Lerna
                 </p>
               </dt>
               <dd className="mt-4 text-gray-600 dark:text-gray-400">
                 Lerna doesn't come with a visualizer but it's possible to write
                 your own.
+              </dd>
+            </div>
+            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
+              <dt>
+                <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
+                  <Supported /> Nx
+                </p>
+              </dt>
+              <dd className="mt-4 text-gray-600 dark:text-gray-400">
+                Nx comes ith an interactive visualizer that allows you to filter
+                and explore large workspaces.
+              </dd>
+            </div>
+            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
+              <dt>
+                <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
+                  <ManualImplementation /> Rush
+                </p>
+              </dt>
+              <dd className="mt-4 text-gray-600 dark:text-gray-400">
+                Rush doesn't come with a visualizer but it's possible to write
+                your own.
+              </dd>
+            </div>
+            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
+              <dt>
+                <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
+                  <Supported /> Turborepo
+                </p>
+              </dt>
+              <dd className="mt-4 text-base text-gray-600 dark:text-gray-400">
+                Turborepo's implementation is not interactive and doesn't
+                provide any way to filter the graph, so works for small repos.
               </dd>
             </div>
           </dl>
@@ -878,20 +968,6 @@ export function MonorepoFeatures() {
               <dt>
                 <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
                   <Supported />
-                  Nx
-                </p>
-              </dt>
-              <dd className="mt-4 text-gray-600 dark:text-gray-400">
-                Nx supports it. Any folder of files can be marked as a project
-                and can be shared. Nx plugins help configure WebPack, Rollup,
-                TypeScript and other tools to enable sharing without hurting dev
-                ergonomics.
-              </dd>
-            </div>
-            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
-              <dt>
-                <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
-                  <Supported />
                   Bazel
                 </p>
               </dt>
@@ -916,22 +992,51 @@ export function MonorepoFeatures() {
               <dt>
                 <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
                   <Supported />
-                  Turborepo
+                  Lerna
                 </p>
               </dt>
               <dd className="mt-4 text-gray-600 dark:text-gray-400">
-                Turborepo supports it. Only npm packages can be shared.
+                Lerna supports it. Only npm packages can be shared.
               </dd>
             </div>
             <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
               <dt>
                 <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
                   <Supported />
-                  Lerna
+                  Nx
                 </p>
               </dt>
               <dd className="mt-4 text-gray-600 dark:text-gray-400">
-                Lerna supports it. Only npm packages can be shared.
+                Nx supports it. Any folder of files can be marked as a project
+                and can be shared. Nx plugins help configure WebPack, Rollup,
+                TypeScript and other tools to enable sharing without hurting dev
+                ergonomics.
+              </dd>
+            </div>
+            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
+              <dt>
+                <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
+                  <Supported />
+                  Rush
+                </p>
+              </dt>
+              <dd className="mt-4 text-gray-600 dark:text-gray-400">
+                Rush supports it, however discourages importing code from
+                folders that are not a declared npm dependency. This ensures
+                that projects can be easily moved between monorepos. For
+                situations where creating a package is too much overhead,
+                "packlets" offer a lightweight alternative.
+              </dd>
+            </div>
+            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
+              <dt>
+                <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
+                  <Supported />
+                  Turborepo
+                </p>
+              </dt>
+              <dd className="mt-4 text-gray-600 dark:text-gray-400">
+                Turborepo supports it. Only npm packages can be shared.
               </dd>
             </div>
           </dl>
@@ -979,18 +1084,6 @@ export function MonorepoFeatures() {
               <dt>
                 <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
                   <Supported />
-                  Nx
-                </p>
-              </dt>
-              <dd className="mt-4 text-gray-600 dark:text-gray-400">
-                Nx is pluggable. It is able to invoke npm scripts by default,
-                but can be extended to invoke other tools (e.g., Gradle).
-              </dd>
-            </div>
-            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
-              <dt>
-                <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
-                  <Supported />
                   Bazel
                 </p>
               </dt>
@@ -1014,22 +1107,48 @@ export function MonorepoFeatures() {
               <dt>
                 <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
                   <NotSupported />
-                  Turborepo
+                  Lerna
                 </p>
               </dt>
               <dd className="mt-4 text-base text-gray-600 dark:text-gray-400">
-                Turborepo can only run npm scripts.
+                Lerna can only run npm scripts.
+              </dd>
+            </div>
+            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
+              <dt>
+                <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
+                  <Supported />
+                  Nx
+                </p>
+              </dt>
+              <dd className="mt-4 text-gray-600 dark:text-gray-400">
+                Nx is pluggable. It is able to invoke npm scripts by default,
+                but can be extended to invoke other tools (e.g., Gradle).
               </dd>
             </div>
             <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
               <dt>
                 <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
                   <NotSupported />
-                  Lerna
+                  Rush
                 </p>
               </dt>
               <dd className="mt-4 text-base text-gray-600 dark:text-gray-400">
-                Lerna can only run npm scripts.
+                Rush only builds TypeScript/JavaScript projects, recommending a
+                decoupled approach where native components are built separately
+                using native toolchains or BuildXL. Ideally Node.js is the only
+                required prerequisite for monorepo developers.
+              </dd>
+            </div>
+            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
+              <dt>
+                <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
+                  <NotSupported />
+                  Turborepo
+                </p>
+              </dt>
+              <dd className="mt-4 text-base text-gray-600 dark:text-gray-400">
+                Turborepo can only run npm scripts.
               </dd>
             </div>
           </dl>
@@ -1075,20 +1194,6 @@ export function MonorepoFeatures() {
             <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
               <dt>
                 <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
-                  <Supported />
-                  Nx
-                </p>
-              </dt>
-              <dd className="mt-4 text-base text-gray-600 dark:text-gray-400">
-                Nx comes with powerful code generation capabilities. It uses a
-                virtual file system and provides editor integration. Nx plugins
-                provided generators for popular frameworks. Other generators can
-                be used as well.
-              </dd>
-            </div>
-            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
-              <dt>
-                <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
                   <ManualImplementation />
                   Bazel
                 </p>
@@ -1112,7 +1217,7 @@ export function MonorepoFeatures() {
               <dt>
                 <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
                   <ManualImplementation />
-                  Turborepo
+                  Lerna
                 </p>
               </dt>
               <dd className="mt-4 text-base text-gray-600 dark:text-gray-400">
@@ -1122,8 +1227,36 @@ export function MonorepoFeatures() {
             <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
               <dt>
                 <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
+                  <Supported />
+                  Nx
+                </p>
+              </dt>
+              <dd className="mt-4 text-base text-gray-600 dark:text-gray-400">
+                Nx comes with powerful code generation capabilities. It uses a
+                virtual file system and provides editor integration. Nx plugins
+                provided generators for popular frameworks. Other generators can
+                be used as well.
+              </dd>
+            </div>
+            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
+              <dt>
+                <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
                   <ManualImplementation />
-                  Lerna
+                  Rush
+                </p>
+              </dt>
+              <dd className="mt-4 text-base text-gray-600 dark:text-gray-400">
+                The Rush maintainers suggest to maintain project templates as
+                ordinary projects in the monorepo, to ensure they compile
+                without errors. A project scaffolding command is available via a
+                community plugin.
+              </dd>
+            </div>
+            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
+              <dt>
+                <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
+                  <ManualImplementation />
+                  Turborepo
                 </p>
               </dt>
               <dd className="mt-4 text-base text-gray-600 dark:text-gray-400">
@@ -1179,22 +1312,6 @@ export function MonorepoFeatures() {
               <dt>
                 <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
                   <Supported />
-                  Nx
-                </p>
-              </dt>
-              <dd className="mt-4 text-gray-600 dark:text-gray-400">
-                Developers can annotated projects in any way they seem fit,
-                establish invariants, and Nx will make sure they hold. It allows
-                developers to annotate what is private and what is not, what is
-                experimental and what is stable, etc. Nx also allows you to
-                define public API for each package, so other developers aren't
-                able to deep import into them.
-              </dd>
-            </div>
-            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
-              <dt>
-                <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
-                  <Supported />
                   Bazel
                 </p>
               </dt>
@@ -1219,7 +1336,7 @@ export function MonorepoFeatures() {
               <dt>
                 <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
                   <ManualImplementation />
-                  Turborepo
+                  Lerna
                 </p>
               </dt>
               <dd className="mt-4 text-base text-gray-600 dark:text-gray-400">
@@ -1230,8 +1347,37 @@ export function MonorepoFeatures() {
             <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
               <dt>
                 <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
+                  <Supported />
+                  Nx
+                </p>
+              </dt>
+              <dd className="mt-4 text-gray-600 dark:text-gray-400">
+                Developers can annotated projects in any way they seem fit,
+                establish invariants, and Nx will make sure they hold. It allows
+                developers to annotate what is private and what is not, what is
+                experimental and what is stable, etc. Nx also allows you to
+                define public API for each package, so other developers aren't
+                able to deep import into them.
+              </dd>
+            </div>
+            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
+              <dt>
+                <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
+                  <Supported />
+                  Rush
+                </p>
+              </dt>
+              <dd className="mt-4 text-base text-gray-600 dark:text-gray-400">
+                Rush can optionally require approvals when introducing new NPM
+                dependencies (internal or external), based on project type. It
+                also supports version policies for NPM publishing.
+              </dd>
+            </div>
+            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
+              <dt>
+                <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
                   <ManualImplementation />
-                  Lerna
+                  Turborepo
                 </p>
               </dt>
               <dd className="mt-4 text-base text-gray-600 dark:text-gray-400">
