@@ -207,8 +207,8 @@ const manageable: Item[] = [
     features: [
       { title: 'Bazel', value: 'manualImplementation' },
       { title: 'Lage', value: 'manualImplementation' },
-      { title: 'Nx', value: 'supported' },
       { title: 'Lerna', value: 'manualImplementation' },
+      { title: 'Nx', value: 'supported' },
       { title: 'Rush', value: 'manualImplementation' },
       { title: 'Turborepo', value: 'manualImplementation' },
     ],
