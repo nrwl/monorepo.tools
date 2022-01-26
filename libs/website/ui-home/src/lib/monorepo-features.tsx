@@ -750,7 +750,7 @@ export function MonorepoFeatures() {
                 </p>
               </dt>
               <dd className="mt-4 text-gray-600 dark:text-gray-400">
-                Bazel developers to author BUILD files. Some companies build
+                Bazel allows developers to author BUILD files. Some companies build
                 tools that analyse workspace sources and generate the BUILD
                 files.
               </dd>
