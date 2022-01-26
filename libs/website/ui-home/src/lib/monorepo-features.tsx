@@ -171,7 +171,7 @@ export function MonorepoFeatures() {
                 </p>
               </dt>
               <dd className="mt-4 text-gray-600 dark:text-gray-400">
-                Rush supports it, and invokes the system tar command to restore
+                Rush supports it, leveraging the system tar command to restore
                 files more quickly.
               </dd>
             </div>
@@ -278,7 +278,7 @@ export function MonorepoFeatures() {
               </dt>
               <dd className="mt-4 text-gray-600 dark:text-gray-400">
                 Rush supports it. Commands can be modeled either as a simple
-                operation or as separate "phases" such as build, test, etc.
+                script or as separate "phases" such as build, test, etc.
               </dd>
             </div>{' '}
             <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
@@ -683,7 +683,7 @@ export function MonorepoFeatures() {
               <dd className="mt-4 text-base text-gray-600 dark:text-gray-400">
                 The command line parameters for project selection can detect
                 which projects are impacted by a Git diff. Rush also provides a
-                PackageChangeAnalyzer API for scripts.
+                PackageChangeAnalyzer API for automation scenarios.
               </dd>
             </div>
             <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
@@ -1021,11 +1021,11 @@ export function MonorepoFeatures() {
                 </p>
               </dt>
               <dd className="mt-4 text-gray-600 dark:text-gray-400">
-                Rush supports it, but discourages importing code from folders
-                that are not a declared npm dependency. This ensures that
-                projects can be easily moved between monorepos. For cases where
-                creating a library is too much overhead, "packlets" provide a
-                lightweight alternative.
+                Rush supports it, however discourages importing code from
+                folders that are not a declared npm dependency. This ensures
+                that projects can be easily moved between monorepos. For
+                situations where creating a package is too much overhead,
+                "packlets" offer a lightweight alternative.
               </dd>
             </div>
             <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
@@ -1136,8 +1136,8 @@ export function MonorepoFeatures() {
               <dd className="mt-4 text-base text-gray-600 dark:text-gray-400">
                 Rush only builds TypeScript/JavaScript projects, recommending a
                 decoupled approach where native components are built separately
-                using their native toolchains or BuildXL. Ideally Node.js is the
-                only required prerequisite for monorepo developers.
+                using native toolchains or BuildXL. Ideally Node.js is the only
+                required prerequisite for monorepo developers.
               </dd>
             </div>
             <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
