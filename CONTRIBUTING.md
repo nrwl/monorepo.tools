@@ -23,13 +23,15 @@ Source code and documentation are included in the top-level folders listed below
 After cloning the project to your machine, to install the dependencies, run:
 
 ```bash
-yarn
+yarn install
 ```
 
 To serve the website, run:
 
 ```bash
 yarn start
+# is the same as 
+nx serve website
 # is the same as
 nx run website:serve
 ```
