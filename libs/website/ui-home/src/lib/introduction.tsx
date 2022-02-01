@@ -105,7 +105,7 @@ export function Introduction() {
                 <a
                   rel="noreferrer"
                   target="_blank"
-                  href="https://github.com/microsoft/rushstack"
+                  href="https://rushstack.io"
                   className="border-b border-yellow-500 hover:bg-yellow-500 hover:text-gray-800 transition hover:rounded"
                 >
                   Rush (by Microsoft)
