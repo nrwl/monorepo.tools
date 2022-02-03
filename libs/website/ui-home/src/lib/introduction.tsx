@@ -55,7 +55,7 @@ export function Introduction() {
                 different philosophies. We do our best to represent each tool
                 objectively, and{' '}
                 <a
-                  href="https://github.com/nrwl/monorepo.tools"
+                  href="https://github.com/nrwl/monorepo.tools?utm_source=monorepo.tools"
                   target="_blank"
                   rel="noreferrer"
                   className="px-1 border-b border-yellow-500 hover:bg-yellow-500 hover:text-gray-800 transition hover:rounded"
@@ -67,7 +67,7 @@ export function Introduction() {
               <p className="mt-6 max-w-3xl text-xl text-gray-700 dark:text-gray-300">
                 The tools we'll focus on are:&nbsp;
                 <a
-                  href="https://bazel.build"
+                  href="https://bazel.build/?utm_source=monorepo.tools"
                   rel="noreferrer"
                   target="_blank"
                   className="border-b border-yellow-500 hover:bg-yellow-500 hover:text-gray-800 transition hover:rounded"
@@ -78,7 +78,7 @@ export function Introduction() {
                 <a
                   rel="noreferrer"
                   target="_blank"
-                  href="https://microsoft.github.io/lage/"
+                  href="https://microsoft.github.io/lage/?utm_source=monorepo.tools"
                   className="border-b border-yellow-500 hover:bg-yellow-500 hover:text-gray-800 transition hover:rounded"
                 >
                   Lage (by Microsoft)
@@ -87,14 +87,14 @@ export function Introduction() {
                 <a
                   rel="noreferrer"
                   target="_blank"
-                  href="https://lerna.js.org/"
+                  href="https://lerna.js.org/?utm_source=monorepo.tools"
                   className="border-b border-yellow-500 hover:bg-yellow-500 hover:text-gray-800 transition hover:rounded"
                 >
                   Lerna
                 </a>
                 ,&nbsp;
                 <a
-                  href="https://nx.dev"
+                  href="https://nx.dev/?utm_source=monorepo.tools"
                   rel="noreferrer"
                   target="_blank"
                   className="border-b border-yellow-500 hover:bg-yellow-500 hover:text-gray-800 transition hover:rounded"
@@ -105,7 +105,7 @@ export function Introduction() {
                 <a
                   rel="noreferrer"
                   target="_blank"
-                  href="https://rushstack.io"
+                  href="https://rushstack.io/?utm_source=monorepo.tools"
                   className="border-b border-yellow-500 hover:bg-yellow-500 hover:text-gray-800 transition hover:rounded"
                 >
                   Rush (by Microsoft)
@@ -114,7 +114,7 @@ export function Introduction() {
                 <a
                   rel="noreferrer"
                   target="_blank"
-                  href="https://turborepo.org"
+                  href="https://turborepo.org/?utm_source=monorepo.tools"
                   className="border-b border-yellow-500 hover:bg-yellow-500 hover:text-gray-800 transition hover:rounded"
                 >
                   Turborepo (by Vercel)

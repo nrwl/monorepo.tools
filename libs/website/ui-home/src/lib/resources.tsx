@@ -46,53 +46,53 @@ const people: {
 const videosPodcasts: { name: string; link: string }[] = [
   {
     name: 'SyntaxFM #426: Monorepos! Workspaces, pnpm, turborepo + more!',
-    link: 'https://syntax.fm/show/426/monorepos-workspaces-pnpm-turborepo-more',
+    link: 'https://syntax.fm/show/426/monorepos-workspaces-pnpm-turborepo-more?utm_source=monorepo.tools',
   },
   {
     name: 'Monorepos - How the Pros Scale Huge Software Projects',
-    link: 'https://www.youtube.com/watch?v=9iU_IE6vnJ8',
+    link: 'https://www.youtube.com/watch?v=9iU_IE6vnJ8&utm_source=monorepo.tools',
   },
   {
     name: 'Nx: Google-level Monorepo Tools for Everyone - Jeff Cross and Victor Savkin',
-    link: 'https://www.youtube.com/watch?v=eZQ_jWaTCVM',
+    link: 'https://www.youtube.com/watch?v=eZQ_jWaTCVM&utm_source=monorepo.tools',
   },
   {
     name: 'Turborepo Demo and Walkthrough (High-Performance Monorepos)',
-    link: 'https://www.youtube.com/watch?v=YX5yoApjI3M',
+    link: 'https://www.youtube.com/watch?v=YX5yoApjI3M&utm_source=monorepo.tools',
   },
   {
     name: 'Monorepos: Any Size Fits All, by Altan Stalker',
-    link: 'https://www.youtube.com/watch?v=elKsZvowdok',
+    link: 'https://www.youtube.com/watch?v=elKsZvowdok&utm_source=monorepo.tools',
   },
   {
     name: 'BazelCon 2021 (Playlist)',
-    link: 'https://www.youtube.com/watch?v=7M9c6x3WgIQ&list=PLxNYxgaZ8Rsc3auKhtfIB4qXAYf7whEux',
+    link: 'https://www.youtube.com/watch?v=7M9c6x3WgIQ&list=PLxNYxgaZ8Rsc3auKhtfIB4qXAYf7whEux&utm_source=monorepo.tools',
   },
   {
     name: 'NxConf 2021 (Playlist)',
-    link: 'https://www.youtube.com/watch?v=VKVTzVM0nVM&list=PLakNactNC1dG1CoyVWFppw3X8hnXRhFuy',
+    link: 'https://www.youtube.com/watch?v=VKVTzVM0nVM&list=PLakNactNC1dG1CoyVWFppw3X8hnXRhFuy&utm_source=monorepo.tools',
   },
 ];
 const articles: { name: string; link: string }[] = [
   {
     name: 'The One Version Rule – opensource.google',
-    link: 'https://opensource.google/docs/thirdparty/oneversion/',
+    link: 'https://opensource.google/docs/thirdparty/oneversion?utm_source=monorepo.tools',
   },
   {
     name: 'Why TurboRepo Will Be The First Big Trend of 2022',
-    link: 'https://dev.to/swyx/why-turborepo-will-be-the-first-big-trend-of-2022-4gfj',
+    link: 'https://dev.to/swyx/why-turborepo-will-be-the-first-big-trend-of-2022-4gfj?utm_source=monorepo.tools',
   },
   {
     name: 'Build Monorepos, not Monoliths',
-    link: 'https://dev.to/agentender/build-monorepos-not-monoliths-4gbc',
+    link: 'https://dev.to/agentender/build-monorepos-not-monoliths-4gbc?utm_source=monorepo.tools',
   },
   {
     name: 'Lerna/Yarn -> Nx: Faster Build Times + Better Dev Ergonomics',
-    link: 'https://dev.to/nx/lerna-yarn-nx-faster-build-times-better-dev-ergonomics-32a6',
+    link: 'https://dev.to/nx/lerna-yarn-nx-faster-build-times-better-dev-ergonomics-32a6?utm_source=monorepo.tools',
   },
   {
     name: 'Nx monorepo documentation',
-    link: 'https://nx.dev/guides/why-monorepos#monorepos',
+    link: 'https://nx.dev/guides/why-monorepos#monorepos?utm_source=monorepo.tools',
   },
 ];
 const books: {

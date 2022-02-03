@@ -2,27 +2,27 @@ const tools: { name: string; link: string }[] = [
   // Alphabetical order
   {
     name: 'Bazel',
-    link: 'https://github.com/bazelbuild/bazel',
+    link: 'https://github.com/bazelbuild/bazel?utm_source=monorepo.tools',
   },
   {
     name: 'Lage',
-    link: 'https://github.com/microsoft/lage',
+    link: 'https://github.com/microsoft/lage?utm_source=monorepo.tools',
   },
   {
     name: 'Lerna',
-    link: 'https://github.com/lerna/lerna',
+    link: 'https://github.com/lerna/lerna?utm_source=monorepo.tools',
   },
   {
     name: 'Nx',
-    link: 'https://github.com/nrwl/nx',
+    link: 'https://github.com/nrwl/nx?utm_source=monorepo.tools',
   },
   {
     name: 'Rush',
-    link: 'https://github.com/microsoft/rushstack',
+    link: 'https://github.com/microsoft/rushstack?utm_source=monorepo.tools',
   },
   {
     name: 'Turborepo',
-    link: 'https://github.com/vercel/turborepo',
+    link: 'https://github.com/vercel/turborepo?utm_source=monorepo.tools',
   },
 ];
 
