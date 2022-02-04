@@ -31,6 +31,7 @@
     "@nrwl/eslint-plugin-nx": "13.7.3",
     "@nrwl/jest": "13.7.3",
     "@nrwl/linter": "13.7.3",
+    "@nrwl/nx-cloud": "^13.1.2",
     "@nrwl/react": "13.7.3",
     "@nrwl/tao": "13.7.3",
     "@nrwl/web": "13.7.3",
@@ -63,4 +64,3 @@
     "typescript": "~4.4.3"
   }
 }
-
