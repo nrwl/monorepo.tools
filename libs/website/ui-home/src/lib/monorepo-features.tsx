@@ -750,9 +750,9 @@ export function MonorepoFeatures() {
                 </p>
               </dt>
               <dd className="mt-4 text-gray-600 dark:text-gray-400">
-                Bazel allows developers to author BUILD files. Some companies build
-                tools that analyse workspace sources and generate the BUILD
-                files.
+                Bazel allows developers to author BUILD files. Some companies
+                build tools that analyse workspace sources and generate the
+                BUILD files.
               </dd>
             </div>
             <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
