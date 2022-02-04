@@ -30,26 +30,29 @@ executors:
     <<: *defaults
     docker:
       - image: cimg/node:16.13-browsers
+    resource_class: medium
 
 # -------------------------
 #        COMMANDS
 # -------------------------
 commands:
-  run-yarn-install:
+  setup:
     parameters:
       os:
         type: string
+        default: linux
     steps:
+      - checkout
       - restore_cache:
           name: Restore Yarn Package Cache
           keys:
-            - nrwl-nx-yarn-packages-<< parameters.os >>-{{ checksum "yarn.lock" }}
+            - monorepo-tools-yarn-packages-<< parameters.os >>-{{ checksum "yarn.lock" }}
       - run:
           name: Install dependencies
           command: yarn install --prefer-offline --frozen-lockfile --non-interactive --cache-folder ~/.cache/yarn
       - save_cache:
           name: Save Yarn Package Cache
-          key: nrwl-nx-yarn-packages-<< parameters.os >>-{{ checksum "yarn.lock" }}
+          key: monorepo-tools-yarn-packages-<< parameters.os >>-{{ checksum "yarn.lock" }}
           paths:
             - node_modules
             - ~/.cache/yarn
@@ -76,7 +79,7 @@ jobs:
           name: Set dynamic nx run variable
           command: |
             echo "export NX_RUN_GROUP=\"run-group-<< parameters.os >>-$CIRCLE_WORKFLOW_ID\";" >> $BASH_ENV
-      - run-yarn-install:
+      - setup:
           os: << parameters.os >>
       - run:
           name: Agent
@@ -110,7 +113,7 @@ jobs:
             pids+=($!)
             yarn nx affected --target=lint --base=$NX_BASE --head=$NX_HEAD --parallel=3 &
             pids+=($!)
-            yarn nx affected --target=e2e --base=$NX_BASE --head=$NX_HEAD --parallel=1 &
+            yarn nx affected --target=test --base=$NX_BASE --head=$NX_HEAD --parallel=1 &
             pids+=($!)
             yarn nx affected --target=build --base=$NX_BASE --head=$NX_HEAD --parallel=3 &
             pids+=($!)
