@@ -30,7 +30,7 @@ To serve the website, run:
 
 ```bash
 yarn start
-# is the same as 
+# is the same as
 nx serve website
 # is the same as
 nx run website:serve
