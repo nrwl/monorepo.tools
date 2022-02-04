@@ -46,7 +46,7 @@ function CustomApp({ Component, pageProps }: AppProps) {
         }}
       />
       <ThemeProvider attribute="class">
-        <main className="monorepo.tools antialiased bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 font-display">
+        <main className="monorepo.tools font-display bg-slate-50 text-gray-700 antialiased dark:bg-slate-800 dark:text-gray-300">
           <Component {...pageProps} />
         </main>
       </ThemeProvider>

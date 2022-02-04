@@ -4,32 +4,32 @@ export function Introduction() {
   return (
     <div className="mt-32 bg-slate-50 dark:bg-slate-800">
       {/* Header */}
-      <article className="relative md:pt-64 pb-32 bg-slate-50 dark:bg-slate-800">
+      <article className="relative bg-slate-50 pb-32 dark:bg-slate-800 md:pt-64">
         <div className="absolute inset-0">
           <img
             aria-hidden="true"
-            className="w-full h-full object-cover"
+            className="h-full w-full object-cover"
             src="https://images.unsplash.com/photo-1491895200222-0fc4a4c35e18?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1974&q=80"
             alt="cover"
           />
           <div
-            className="absolute inset-0 bg-slate-50 dark:bg-slate-800 mix-blend-lighten dark:mix-blend-multiply"
+            className="absolute inset-0 bg-slate-50 mix-blend-lighten dark:bg-slate-800 dark:mix-blend-multiply"
             aria-hidden="true"
           />
         </div>
-        <div className="relative max-w-7xl mx-auto py-24 px-4 sm:py-32 sm:px-6 lg:px-8">
-          <div className="lg:grid lg:grid-cols-2 lg:gap-16 lg:items-center">
+        <div className="relative mx-auto max-w-7xl py-24 px-4 sm:py-32 sm:px-6 lg:px-8">
+          <div className="lg:grid lg:grid-cols-2 lg:items-center lg:gap-16">
             <div>
               <h1
                 id="understanding-monorepos"
-                className="text-4xl font-extrabold tracking-tight text-gray-900 dark:text-white md:text-5xl lg:text-6xl group"
+                className="group text-4xl font-extrabold tracking-tight text-gray-900 dark:text-white md:text-5xl lg:text-6xl"
               >
                 Understanding Monorepos{' '}
                 <a
                   aria-hidden="true"
                   tabIndex={-1}
                   href="#understanding-monorepos"
-                  className="text-gray-900 dark:text-white flex inline-flex items-center"
+                  className="flex inline-flex items-center text-gray-900 dark:text-white"
                 >
                   <LinkIcon className="ml-2 h-6 w-6 opacity-0 group-hover:opacity-100" />
                 </a>
@@ -37,15 +37,15 @@ export function Introduction() {
               <p className="mt-6 max-w-3xl text-xl text-gray-700 dark:text-gray-300">
                 Monorepos are hot right now, especially among Web developers. We
                 created this resource to help developers{' '}
-                <mark className="px-1 bg-yellow-500 rounded-md">
+                <mark className="rounded-md bg-yellow-500 px-1">
                   understand what monorepos are
                 </mark>
                 ,{' '}
-                <mark className="px-1 bg-yellow-500 rounded-md">
+                <mark className="rounded-md bg-yellow-500 px-1">
                   what benefits
                 </mark>
                 they can bring, and the{' '}
-                <mark className="px-1 bg-yellow-500 rounded-md">
+                <mark className="rounded-md bg-yellow-500 px-1">
                   tools available
                 </mark>{' '}
                 to make monorepo development delightful.
@@ -58,7 +58,7 @@ export function Introduction() {
                   href="https://github.com/nrwl/monorepo.tools?utm_source=monorepo.tools"
                   target="_blank"
                   rel="noreferrer"
-                  className="px-1 border-b border-yellow-500 hover:bg-yellow-500 hover:text-gray-800 transition hover:rounded"
+                  className="border-b border-yellow-500 px-1 transition hover:rounded hover:bg-yellow-500 hover:text-gray-800"
                   title="Contribute to monorepo.tools!"
                 >
                   we welcome pull requests if we got something wrong!
@@ -70,7 +70,7 @@ export function Introduction() {
                   href="https://bazel.build/?utm_source=monorepo.tools"
                   rel="noreferrer"
                   target="_blank"
-                  className="border-b border-yellow-500 hover:bg-yellow-500 hover:text-gray-800 transition hover:rounded"
+                  className="border-b border-yellow-500 transition hover:rounded hover:bg-yellow-500 hover:text-gray-800"
                 >
                   Bazel (by Google)
                 </a>
@@ -79,7 +79,7 @@ export function Introduction() {
                   rel="noreferrer"
                   target="_blank"
                   href="https://microsoft.github.io/lage/?utm_source=monorepo.tools"
-                  className="border-b border-yellow-500 hover:bg-yellow-500 hover:text-gray-800 transition hover:rounded"
+                  className="border-b border-yellow-500 transition hover:rounded hover:bg-yellow-500 hover:text-gray-800"
                 >
                   Lage (by Microsoft)
                 </a>
@@ -88,7 +88,7 @@ export function Introduction() {
                   rel="noreferrer"
                   target="_blank"
                   href="https://lerna.js.org/?utm_source=monorepo.tools"
-                  className="border-b border-yellow-500 hover:bg-yellow-500 hover:text-gray-800 transition hover:rounded"
+                  className="border-b border-yellow-500 transition hover:rounded hover:bg-yellow-500 hover:text-gray-800"
                 >
                   Lerna
                 </a>
@@ -97,7 +97,7 @@ export function Introduction() {
                   href="https://nx.dev/?utm_source=monorepo.tools"
                   rel="noreferrer"
                   target="_blank"
-                  className="border-b border-yellow-500 hover:bg-yellow-500 hover:text-gray-800 transition hover:rounded"
+                  className="border-b border-yellow-500 transition hover:rounded hover:bg-yellow-500 hover:text-gray-800"
                 >
                   Nx (by Nrwl)
                 </a>
@@ -106,7 +106,7 @@ export function Introduction() {
                   rel="noreferrer"
                   target="_blank"
                   href="https://rushstack.io/?utm_source=monorepo.tools"
-                  className="border-b border-yellow-500 hover:bg-yellow-500 hover:text-gray-800 transition hover:rounded"
+                  className="border-b border-yellow-500 transition hover:rounded hover:bg-yellow-500 hover:text-gray-800"
                 >
                   Rush (by Microsoft)
                 </a>
@@ -115,7 +115,7 @@ export function Introduction() {
                   rel="noreferrer"
                   target="_blank"
                   href="https://turborepo.org/?utm_source=monorepo.tools"
-                  className="border-b border-yellow-500 hover:bg-yellow-500 hover:text-gray-800 transition hover:rounded"
+                  className="border-b border-yellow-500 transition hover:rounded hover:bg-yellow-500 hover:text-gray-800"
                 >
                   Turborepo (by Vercel)
                 </a>
@@ -124,7 +124,7 @@ export function Introduction() {
               </p>
             </div>
             <svg
-              className="mt-16 mx-auto w-2/3 h-auto antialiased text-slate-800 dark:text-white"
+              className="mx-auto mt-16 h-auto w-2/3 text-slate-800 antialiased dark:text-white"
               viewBox="0 0 340 340"
               fill="currentColor"
               xmlns="http://www.w3.org/2000/svg"
@@ -152,11 +152,11 @@ export function Introduction() {
       </article>
 
       {/* Overlapping cards */}
-      <section className="-mt-28 max-w-7xl mx-auto relative z-10 pb-32 px-4 sm:px-6 lg:px-8">
+      <section className="relative z-10 mx-auto -mt-28 max-w-7xl px-4 pb-32 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 gap-y-20 lg:grid-cols-3 lg:gap-y-0 lg:gap-x-8">
           {/*LINKS*/}
-          <div className="flex flex-col bg-slate-100 dark:bg-slate-700 rounded-2xl shadow-xl">
-            <div className="flex-1 relative pt-16 px-6 pb-8 md:px-8">
+          <div className="flex flex-col rounded-2xl bg-slate-100 shadow-xl dark:bg-slate-700">
+            <div className="relative flex-1 px-6 pt-16 pb-8 md:px-8">
               <h2 className="text-xl font-semibold text-gray-800 dark:text-gray-200">
                 What is a monorepo
               </h2>
@@ -164,7 +164,7 @@ export function Introduction() {
                 Let's start with a common unsterstanding of what a Monorepo is.
               </p>
             </div>
-            <div className="p-6 bg-slate-200 dark:bg-slate-900 rounded-bl-2xl rounded-br-2xl md:px-8">
+            <div className="rounded-bl-2xl rounded-br-2xl bg-slate-200 p-6 dark:bg-slate-900 md:px-8">
               <a
                 href="#what-is-a-monorepo"
                 title="What is a monorepo?"
@@ -174,8 +174,8 @@ export function Introduction() {
               </a>
             </div>
           </div>
-          <div className="flex flex-col bg-slate-100 dark:bg-slate-700 rounded-2xl shadow-xl">
-            <div className="flex-1 relative pt-16 px-6 pb-8 md:px-8">
+          <div className="flex flex-col rounded-2xl bg-slate-100 shadow-xl dark:bg-slate-700">
+            <div className="relative flex-1 px-6 pt-16 pb-8 md:px-8">
               <h2 className="text-xl font-medium text-gray-800 dark:text-gray-200">
                 Why a monorepo
               </h2>
@@ -183,7 +183,7 @@ export function Introduction() {
                 What are the situations solved by monorepos.
               </p>
             </div>
-            <div className="p-6 bg-slate-200 dark:bg-slate-900 rounded-bl-2xl rounded-br-2xl md:px-8">
+            <div className="rounded-bl-2xl rounded-br-2xl bg-slate-200 p-6 dark:bg-slate-900 md:px-8">
               <a
                 href="#why-a-monorepo"
                 title="Why using a monorepo?"
@@ -193,8 +193,8 @@ export function Introduction() {
               </a>
             </div>
           </div>
-          <div className="flex flex-col bg-slate-100 dark:bg-slate-700 rounded-2xl shadow-xl">
-            <div className="flex-1 relative pt-16 px-6 pb-8 md:px-8">
+          <div className="flex flex-col rounded-2xl bg-slate-100 shadow-xl dark:bg-slate-700">
+            <div className="relative flex-1 px-6 pt-16 pb-8 md:px-8">
               <h2 className="text-xl font-medium text-gray-800 dark:text-gray-200">
                 Features of a monorepo
               </h2>
@@ -202,7 +202,7 @@ export function Introduction() {
                 What to expect from a monorepo tool
               </p>
             </div>
-            <div className="p-6 bg-slate-200 dark:bg-slate-900 rounded-bl-2xl rounded-br-2xl md:px-8">
+            <div className="rounded-bl-2xl rounded-br-2xl bg-slate-200 p-6 dark:bg-slate-900 md:px-8">
               <a
                 href="#monorepo-features"
                 title="What are monorepo features?"

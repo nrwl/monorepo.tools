@@ -111,11 +111,11 @@ jobs:
             pids=()
             yarn nx workspace-lint &
             pids+=($!)
-            yarn nx affected --target=lint --base=$NX_BASE --head=$NX_HEAD --parallel=3 &
+            yarn nx affected --target=lint --base=$NX_BASE --head=$NX_HEAD --parallel=2 &
             pids+=($!)
             yarn nx affected --target=test --base=$NX_BASE --head=$NX_HEAD --parallel=1 &
             pids+=($!)
-            yarn nx affected --target=build --base=$NX_BASE --head=$NX_HEAD --parallel=3 &
+            yarn nx affected --target=build --base=$NX_BASE --head=$NX_HEAD --parallel=2 &
             pids+=($!)
             for pid in "${pids[@]}"; do
               wait "$pid"

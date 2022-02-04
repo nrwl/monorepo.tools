@@ -20,27 +20,27 @@ import MonorepoToolsLogos from './monorepo-tools-logos';
 const Supported = () => (
   <span
     title="natively supported"
-    className="inline-flex items-center mr-3 rounded-full text-green-600"
+    className="mr-3 inline-flex items-center rounded-full text-green-600"
   >
-    <CheckCircleIcon className="w-5 h-5" />
+    <CheckCircleIcon className="h-5 w-5" />
     <span className="sr-only">natively supported</span>
   </span>
 );
 const NotSupported = () => (
   <span
     title="not supported"
-    className="inline-flex items-center mr-3 rounded-full text-red-600"
+    className="mr-3 inline-flex items-center rounded-full text-red-600"
   >
-    <XCircleIcon className="w-5 h-5" />
+    <XCircleIcon className="h-5 w-5" />
     <span className="sr-only">not supported</span>
   </span>
 );
 const ManualImplementation = () => (
   <span
     title="implement your own"
-    className="inline-flex items-center mr-3 rounded-full text-yellow-600"
+    className="mr-3 inline-flex items-center rounded-full text-yellow-600"
   >
-    <ExclamationCircleIcon className="w-5 h-5" />
+    <ExclamationCircleIcon className="h-5 w-5" />
     <span className="sr-only">implement your own</span>
   </span>
 );
@@ -49,22 +49,22 @@ export function MonorepoFeatures() {
   return (
     <div
       id="monorepo-tools"
-      className="py-16 bg-slate-50 dark:bg-slate-800 overflow-hidden lg:py-24"
+      className="overflow-hidden bg-slate-50 py-16 dark:bg-slate-800 lg:py-24"
     >
-      <div className="relative max-w-xl mx-auto px-4 sm:px-6 lg:px-8 lg:max-w-7xl">
+      <div className="relative mx-auto max-w-xl px-4 sm:px-6 lg:max-w-7xl lg:px-8">
         <div className="relative">
-          <div className="text-center text-4xl leading-8 font-extrabold tracking-tight text-gray-900 dark:text-white sm:text-5xl group">
+          <div className="group text-center text-4xl font-extrabold leading-8 tracking-tight text-gray-900 dark:text-white sm:text-5xl">
             # Monorepo tools
             <a
               aria-hidden="true"
               tabIndex={-1}
               href="#monorepo-tools"
-              className="text-gray-900 dark:text-white flex inline-flex items-center"
+              className="flex inline-flex items-center text-gray-900 dark:text-white"
             >
               <LinkIcon className="ml-2 h-6 w-6 opacity-0 group-hover:opacity-100" />
             </a>
           </div>
-          <p className="mt-4 max-w-3xl mx-auto text-center text-xl text-gray-700 dark:text-gray-300">
+          <p className="mx-auto mt-4 max-w-3xl text-center text-xl text-gray-700 dark:text-gray-300">
             How do they compare? let's see how each tools answer to each
             features.
           </p>
@@ -73,27 +73,27 @@ export function MonorepoFeatures() {
         <MonorepoToolsLogos />
 
         {/*FAST*/}
-        <div className="mt-24 lg:mt-32 text-2xl flex leading-loose font-boldtext-gray-800 dark:text-gray-100tracking-tight sm:text-3xl sm:leading-relaxed items-center">
+        <div className="font-boldtext-gray-800 dark:text-gray-100tracking-tight mt-24 flex items-center text-2xl leading-loose sm:text-3xl sm:leading-relaxed lg:mt-32">
           Fast
-          <div className="ml-4 flex flex-grow h-1 w-full bg-slate-100 dark:bg-slate-900 rounded" />
+          <div className="ml-4 flex h-1 w-full flex-grow rounded bg-slate-100 dark:bg-slate-900" />
         </div>
 
         {/*Local Computation Caching*/}
         <div
           id="local-computation-caching"
-          className="relative mt-16 lg:grid lg:grid-cols-2 lg:gap-12 lg:items-start"
+          className="relative mt-16 lg:grid lg:grid-cols-2 lg:items-start lg:gap-12"
         >
           <div className="relative">
-            <div className="absolute flex items-center justify-center h-10 w-10 rounded-md text-gray-800 dark:text-gray-200 rounded-md bg-slate-100 dark:bg-slate-900">
-              <DocumentDownloadIcon className="w-6 h-6" />
+            <div className="absolute flex h-10 w-10 items-center justify-center rounded-md rounded-md bg-slate-100 text-gray-800 dark:bg-slate-900 dark:text-gray-200">
+              <DocumentDownloadIcon className="h-6 w-6" />
             </div>
-            <div className="ml-16 text-xl font-medium text-gray-800 dark:text-gray-200 sm:text-2xl sm:leading-relaxed group">
+            <div className="group ml-16 text-xl font-medium text-gray-800 dark:text-gray-200 sm:text-2xl sm:leading-relaxed">
               Local computation caching
               <a
                 aria-hidden="true"
                 tabIndex={-1}
                 href="#local-computation-caching"
-                className="text-gray-900 dark:text-white flex inline-flex items-center"
+                className="flex inline-flex items-center text-gray-900 dark:text-white"
               >
                 <LinkIcon className="ml-2 h-6 w-6 opacity-0 group-hover:opacity-100" />
               </a>
@@ -117,10 +117,10 @@ export function MonorepoFeatures() {
           </div>
 
           {/* (alphabetical order) */}
-          <dl className="mt-12 md:mt-0 space-y-6">
-            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
+          <dl className="mt-12 space-y-6 md:mt-0">
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
               <dt>
-                <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
                   <Supported /> Bazel
                 </p>
               </dt>
@@ -128,9 +128,9 @@ export function MonorepoFeatures() {
                 Bazel supports it.
               </dd>
             </div>
-            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
               <dt>
-                <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
                   <Supported /> Lage
                 </p>
               </dt>
@@ -138,9 +138,9 @@ export function MonorepoFeatures() {
                 Lage supports it.
               </dd>
             </div>
-            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
               <dt>
-                <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
                   <NotSupported /> Lerna
                 </p>
               </dt>
@@ -149,9 +149,9 @@ export function MonorepoFeatures() {
                 scratch.
               </dd>
             </div>
-            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
               <dt>
-                <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
                   <Supported /> Nx
                 </p>
               </dt>
@@ -164,9 +164,9 @@ export function MonorepoFeatures() {
                 ).
               </dd>
             </div>
-            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
               <dt>
-                <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
                   <Supported /> Rush
                 </p>
               </dt>
@@ -175,9 +175,9 @@ export function MonorepoFeatures() {
                 files more quickly.
               </dd>
             </div>
-            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
               <dt>
-                <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
                   <Supported /> Turborepo
                 </p>
               </dt>
@@ -191,19 +191,19 @@ export function MonorepoFeatures() {
         {/*Local task orchestration*/}
         <div
           id="local-task-orchestration"
-          className="relative mt-16 lg:grid lg:grid-cols-2 lg:gap-12 lg:items-start"
+          className="relative mt-16 lg:grid lg:grid-cols-2 lg:items-start lg:gap-12"
         >
           <div className="relative">
-            <div className="absolute flex items-center justify-center h-10 w-10 rounded-md text-gray-800 dark:text-gray-200 rounded-md bg-slate-100 dark:bg-slate-900">
-              <SwitchVerticalIcon className="w-6 h-6" />
+            <div className="absolute flex h-10 w-10 items-center justify-center rounded-md rounded-md bg-slate-100 text-gray-800 dark:bg-slate-900 dark:text-gray-200">
+              <SwitchVerticalIcon className="h-6 w-6" />
             </div>
-            <div className="ml-16 text-xl font-medium text-gray-800 dark:text-gray-200 sm:text-2xl sm:leading-relaxed group">
+            <div className="group ml-16 text-xl font-medium text-gray-800 dark:text-gray-200 sm:text-2xl sm:leading-relaxed">
               Local task orchestration
               <a
                 aria-hidden="true"
                 tabIndex={-1}
                 href="#local-task-orchestration"
-                className="text-gray-900 dark:text-white flex inline-flex items-center"
+                className="flex inline-flex items-center text-gray-900 dark:text-white"
               >
                 <LinkIcon className="ml-2 h-6 w-6 opacity-0 group-hover:opacity-100" />
               </a>
@@ -226,10 +226,10 @@ export function MonorepoFeatures() {
             </div>
           </div>
 
-          <dl className="mt-12 md:mt-0 space-y-6">
-            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
+          <dl className="mt-12 space-y-6 md:mt-0">
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
               <dt>
-                <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
                   <Supported /> Bazel
                 </p>
               </dt>
@@ -237,9 +237,9 @@ export function MonorepoFeatures() {
                 Bazel supports it.
               </dd>
             </div>
-            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
               <dt>
-                <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
                   <Supported /> Lage
                 </p>
               </dt>
@@ -247,9 +247,9 @@ export function MonorepoFeatures() {
                 Lage supports it.
               </dd>
             </div>
-            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
               <dt>
-                <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
                   <Supported /> Lerna
                 </p>
               </dt>
@@ -260,9 +260,9 @@ export function MonorepoFeatures() {
                 more idle time.
               </dd>
             </div>
-            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
               <dt>
-                <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
                   <Supported /> Nx
                 </p>
               </dt>
@@ -270,9 +270,9 @@ export function MonorepoFeatures() {
                 Nx supports it.
               </dd>
             </div>
-            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
               <dt>
-                <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
                   <Supported /> Rush
                 </p>
               </dt>
@@ -281,9 +281,9 @@ export function MonorepoFeatures() {
                 script or as separate "phases" such as build, test, etc.
               </dd>
             </div>{' '}
-            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
               <dt>
-                <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
                   <Supported /> Turborepo
                 </p>
               </dt>
@@ -297,19 +297,19 @@ export function MonorepoFeatures() {
         {/*Distributed Computation Caching*/}
         <div
           id="distributed-computation-caching"
-          className="relative mt-16 lg:grid lg:grid-cols-2 lg:gap-12 lg:items-start"
+          className="relative mt-16 lg:grid lg:grid-cols-2 lg:items-start lg:gap-12"
         >
           <div className="relative">
-            <div className="absolute flex items-center justify-center h-10 w-10 rounded-md text-gray-800 dark:text-gray-200 rounded-md bg-slate-100 dark:bg-slate-900">
-              <CloudDownloadIcon className="w-6 h-6" />
+            <div className="absolute flex h-10 w-10 items-center justify-center rounded-md rounded-md bg-slate-100 text-gray-800 dark:bg-slate-900 dark:text-gray-200">
+              <CloudDownloadIcon className="h-6 w-6" />
             </div>
-            <div className="ml-16 text-xl font-medium text-gray-800 dark:text-gray-200 sm:text-2xl sm:leading-relaxed group">
+            <div className="group ml-16 text-xl font-medium text-gray-800 dark:text-gray-200 sm:text-2xl sm:leading-relaxed">
               Distributed computation caching
               <a
                 aria-hidden="true"
                 tabIndex={-1}
                 href="#distributed-computation-caching"
-                className="text-gray-900 dark:text-white flex inline-flex items-center"
+                className="flex inline-flex items-center text-gray-900 dark:text-white"
               >
                 <LinkIcon className="ml-2 h-6 w-6 opacity-0 group-hover:opacity-100" />
               </a>
@@ -332,10 +332,10 @@ export function MonorepoFeatures() {
             </div>
           </div>
 
-          <dl className="mt-12 md:mt-0 space-y-6">
-            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
+          <dl className="mt-12 space-y-6 md:mt-0">
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
               <dt>
-                <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
                   <Supported /> Bazel
                 </p>
               </dt>
@@ -343,9 +343,9 @@ export function MonorepoFeatures() {
                 Bazel supports it.
               </dd>
             </div>
-            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
               <dt>
-                <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
                   <Supported /> Lage
                 </p>
               </dt>
@@ -353,9 +353,9 @@ export function MonorepoFeatures() {
                 Lage supports it.
               </dd>
             </div>
-            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
               <dt>
-                <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
                   <NotSupported /> Lerna
                 </p>
               </dt>
@@ -363,9 +363,9 @@ export function MonorepoFeatures() {
                 Lerna cannot reuse computation across machines.
               </dd>
             </div>
-            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
               <dt>
-                <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
                   <Supported /> Nx
                 </p>
               </dt>
@@ -373,9 +373,9 @@ export function MonorepoFeatures() {
                 Nx supports it.
               </dd>
             </div>
-            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
               <dt>
-                <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
                   <Supported /> Rush
                 </p>
               </dt>
@@ -384,9 +384,9 @@ export function MonorepoFeatures() {
                 plugin API allowing custom cache providers.
               </dd>
             </div>
-            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
               <dt>
-                <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
                   <Supported /> Turborepo
                 </p>
               </dt>
@@ -400,19 +400,19 @@ export function MonorepoFeatures() {
         {/*Distributed Task Execution*/}
         <div
           id="distributed-task-execution"
-          className="relative mt-16 lg:grid lg:grid-cols-2 lg:gap-12 lg:items-start"
+          className="relative mt-16 lg:grid lg:grid-cols-2 lg:items-start lg:gap-12"
         >
           <div className="relative">
-            <div className="absolute flex items-center justify-center h-10 w-10 rounded-md text-gray-800 dark:text-gray-200 rounded-md bg-slate-100 dark:bg-slate-900">
-              <CollectionIcon className="w-6 h-6" />
+            <div className="absolute flex h-10 w-10 items-center justify-center rounded-md rounded-md bg-slate-100 text-gray-800 dark:bg-slate-900 dark:text-gray-200">
+              <CollectionIcon className="h-6 w-6" />
             </div>
-            <div className="ml-16 text-xl font-medium text-gray-800 dark:text-gray-200 sm:text-2xl sm:leading-relaxed group">
+            <div className="group ml-16 text-xl font-medium text-gray-800 dark:text-gray-200 sm:text-2xl sm:leading-relaxed">
               Distributed task execution
               <a
                 aria-hidden="true"
                 tabIndex={-1}
                 href="#distributed-task-execution"
-                className="text-gray-900 dark:text-white flex inline-flex items-center"
+                className="flex inline-flex items-center text-gray-900 dark:text-white"
               >
                 <LinkIcon className="ml-2 h-6 w-6 opacity-0 group-hover:opacity-100" />
               </a>
@@ -435,10 +435,10 @@ export function MonorepoFeatures() {
             </div>
           </div>
 
-          <dl className="mt-12 md:mt-0 space-y-6">
-            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
+          <dl className="mt-12 space-y-6 md:mt-0">
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
               <dt>
-                <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
                   <Supported /> Bazel
                 </p>
               </dt>
@@ -448,9 +448,9 @@ export function MonorepoFeatures() {
                 difficult to set up.
               </dd>
             </div>
-            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
               <dt>
-                <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
                   <NotSupported /> Lage
                 </p>
               </dt>
@@ -458,9 +458,9 @@ export function MonorepoFeatures() {
                 Lage doesn't support it.
               </dd>
             </div>
-            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
               <dt>
-                <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
                   <NotSupported /> Lerna
                 </p>
               </dt>
@@ -468,9 +468,9 @@ export function MonorepoFeatures() {
                 Lerna doesn't support it.
               </dd>
             </div>
-            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
               <dt>
-                <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
                   <Supported /> Nx
                 </p>
               </dt>
@@ -479,9 +479,9 @@ export function MonorepoFeatures() {
                 be turned on with a small configuration change.
               </dd>
             </div>
-            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
               <dt>
-                <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
                   <ManualImplementation /> Rush
                 </p>
               </dt>
@@ -490,9 +490,9 @@ export function MonorepoFeatures() {
                 Microsoft's BuildXL accelerator.
               </dd>
             </div>
-            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
               <dt>
-                <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
                   <NotSupported /> Turborepo
                 </p>
               </dt>
@@ -506,19 +506,19 @@ export function MonorepoFeatures() {
         {/*Transparent Remote Execution*/}
         <div
           id="transparent-remote-execution"
-          className="relative mt-16 lg:grid lg:grid-cols-2 lg:gap-12 lg:items-start"
+          className="relative mt-16 lg:grid lg:grid-cols-2 lg:items-start lg:gap-12"
         >
           <div className="relative">
-            <div className="absolute flex items-center justify-center h-10 w-10 rounded-md text-gray-800 dark:text-gray-200 rounded-md bg-slate-100 dark:bg-slate-900">
-              <ServerIcon className="w-6 h-6" />
+            <div className="absolute flex h-10 w-10 items-center justify-center rounded-md rounded-md bg-slate-100 text-gray-800 dark:bg-slate-900 dark:text-gray-200">
+              <ServerIcon className="h-6 w-6" />
             </div>
-            <div className="ml-16 text-xl font-medium text-gray-800 dark:text-gray-200 sm:text-2xl sm:leading-relaxed group">
+            <div className="group ml-16 text-xl font-medium text-gray-800 dark:text-gray-200 sm:text-2xl sm:leading-relaxed">
               Transparent remote execution
               <a
                 aria-hidden="true"
                 tabIndex={-1}
                 href="#transparent-remote-execution"
-                className="text-gray-900 dark:text-white flex inline-flex items-center"
+                className="flex inline-flex items-center text-gray-900 dark:text-white"
               >
                 <LinkIcon className="ml-2 h-6 w-6 opacity-0 group-hover:opacity-100" />
               </a>
@@ -530,10 +530,10 @@ export function MonorepoFeatures() {
             </p>
           </div>
 
-          <dl className="mt-12 md:mt-0 space-y-6">
-            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
+          <dl className="mt-12 space-y-6 md:mt-0">
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
               <dt>
-                <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
                   <Supported /> Bazel
                 </p>
               </dt>
@@ -541,9 +541,9 @@ export function MonorepoFeatures() {
                 This is Bazel's biggest differentiator.
               </dd>
             </div>
-            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
               <dt>
-                <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
                   <NotSupported /> Lage
                 </p>
               </dt>
@@ -551,9 +551,9 @@ export function MonorepoFeatures() {
                 Lage doesn't support it.
               </dd>
             </div>
-            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
               <dt>
-                <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
                   <NotSupported /> Lerna
                 </p>
               </dt>
@@ -561,9 +561,9 @@ export function MonorepoFeatures() {
                 Lerna doesn't support it.
               </dd>
             </div>
-            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
               <dt>
-                <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
                   <NotSupported /> Nx
                 </p>
               </dt>
@@ -571,9 +571,9 @@ export function MonorepoFeatures() {
                 Nx doesn't support it.
               </dd>
             </div>
-            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
               <dt>
-                <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
                   <NotSupported /> Rush
                 </p>
               </dt>
@@ -581,9 +581,9 @@ export function MonorepoFeatures() {
                 Rush doesn't support it.
               </dd>
             </div>
-            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
               <dt>
-                <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
                   <NotSupported /> Turborepo
                 </p>
               </dt>
@@ -597,19 +597,19 @@ export function MonorepoFeatures() {
         {/*Affected*/}
         <div
           id="detecting-affected-projects-packages"
-          className="relative mt-16 lg:grid lg:grid-cols-2 lg:gap-12 lg:items-start"
+          className="relative mt-16 lg:grid lg:grid-cols-2 lg:items-start lg:gap-12"
         >
           <div className="relative">
-            <div className="absolute flex items-center justify-center h-10 w-10 rounded-md text-gray-800 dark:text-gray-200 rounded-md bg-slate-100 dark:bg-slate-900">
-              <LightBulbIcon className="w-6 h-6" />
+            <div className="absolute flex h-10 w-10 items-center justify-center rounded-md rounded-md bg-slate-100 text-gray-800 dark:bg-slate-900 dark:text-gray-200">
+              <LightBulbIcon className="h-6 w-6" />
             </div>
-            <div className="ml-16 text-xl font-medium text-gray-800 dark:text-gray-200 sm:text-2xl sm:leading-relaxed group">
+            <div className="group ml-16 text-xl font-medium text-gray-800 dark:text-gray-200 sm:text-2xl sm:leading-relaxed">
               Detecting affected projects/packages
               <a
                 aria-hidden="true"
                 tabIndex={-1}
                 href="#detecting-affected-projects-packages"
-                className="text-gray-900 dark:text-white flex inline-flex items-center"
+                className="flex inline-flex items-center text-gray-900 dark:text-white"
               >
                 <LinkIcon className="ml-2 h-6 w-6 opacity-0 group-hover:opacity-100" />
               </a>
@@ -631,10 +631,10 @@ export function MonorepoFeatures() {
             </div>
           </div>
 
-          <dl className="mt-12 md:mt-0 space-y-6">
-            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
+          <dl className="mt-12 space-y-6 md:mt-0">
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
               <dt>
-                <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
                   <ManualImplementation /> Bazel
                 </p>
               </dt>
@@ -643,9 +643,9 @@ export function MonorepoFeatures() {
                 making it possible to write such functionality youself.
               </dd>
             </div>
-            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
               <dt>
-                <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
                   <Supported /> Lage
                 </p>
               </dt>
@@ -653,9 +653,9 @@ export function MonorepoFeatures() {
                 Lage supports it.
               </dd>
             </div>
-            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
               <dt>
-                <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
                   <Supported /> Lerna
                 </p>
               </dt>
@@ -663,9 +663,9 @@ export function MonorepoFeatures() {
                 Lerna supports it.
               </dd>
             </div>
-            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
               <dt>
-                <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
                   <Supported /> Nx
                 </p>
               </dt>
@@ -674,9 +674,9 @@ export function MonorepoFeatures() {
                 files changed but also at the nature of the change.
               </dd>
             </div>
-            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
               <dt>
-                <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
                   <Supported /> Rush
                 </p>
               </dt>
@@ -686,9 +686,9 @@ export function MonorepoFeatures() {
                 PackageChangeAnalyzer API for automation scenarios.
               </dd>
             </div>
-            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
               <dt>
-                <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
                   <Supported /> Turborepo
                 </p>
               </dt>
@@ -700,27 +700,27 @@ export function MonorepoFeatures() {
         </div>
 
         {/*UNDERSTANDABLE*/}
-        <div className="mt-24 lg:mt-32 text-2xl flex leading-loose font-boldtext-gray-800 dark:text-gray-100tracking-tight sm:text-3xl sm:leading-relaxed items-center">
+        <div className="font-boldtext-gray-800 dark:text-gray-100tracking-tight mt-24 flex items-center text-2xl leading-loose sm:text-3xl sm:leading-relaxed lg:mt-32">
           Understandable
-          <div className="ml-4 flex flex-grow h-1 w-full bg-slate-100 dark:bg-slate-900 rounded" />
+          <div className="ml-4 flex h-1 w-full flex-grow rounded bg-slate-100 dark:bg-slate-900" />
         </div>
 
         {/*Workspace analysis*/}
         <div
           id="workspace-analysis"
-          className="relative mt-16 lg:grid lg:grid-cols-2 lg:gap-12 lg:items-start"
+          className="relative mt-16 lg:grid lg:grid-cols-2 lg:items-start lg:gap-12"
         >
           <div className="relative">
-            <div className="absolute flex items-center justify-center h-10 w-10 rounded-md text-gray-800 dark:text-gray-200 rounded-md bg-slate-100 dark:bg-slate-900">
-              <PresentationChartLineIcon className="w-6 h-6" />
+            <div className="absolute flex h-10 w-10 items-center justify-center rounded-md rounded-md bg-slate-100 text-gray-800 dark:bg-slate-900 dark:text-gray-200">
+              <PresentationChartLineIcon className="h-6 w-6" />
             </div>
-            <div className="ml-16 text-xl font-medium text-gray-800 dark:text-gray-200 sm:text-2xl sm:leading-relaxed group">
+            <div className="group ml-16 text-xl font-medium text-gray-800 dark:text-gray-200 sm:text-2xl sm:leading-relaxed">
               Workspace analysis
               <a
                 aria-hidden="true"
                 tabIndex={-1}
                 href="#workspace-analysis"
-                className="text-gray-900 dark:text-white flex inline-flex items-center"
+                className="flex inline-flex items-center text-gray-900 dark:text-white"
               >
                 <LinkIcon className="ml-2 h-6 w-6 opacity-0 group-hover:opacity-100" />
               </a>
@@ -742,10 +742,10 @@ export function MonorepoFeatures() {
             </div>
           </div>
 
-          <dl className="mt-12 md:mt-0 space-y-6">
-            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
+          <dl className="mt-12 space-y-6 md:mt-0">
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
               <dt>
-                <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
                   <ManualImplementation /> Bazel
                 </p>
               </dt>
@@ -755,9 +755,9 @@ export function MonorepoFeatures() {
                 BUILD files.
               </dd>
             </div>
-            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
               <dt>
-                <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
                   <Supported /> Lage
                 </p>
               </dt>
@@ -765,9 +765,9 @@ export function MonorepoFeatures() {
                 Lage analyses package.json files.
               </dd>
             </div>
-            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
               <dt>
-                <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
                   <Supported /> Lerna
                 </p>
               </dt>
@@ -775,9 +775,9 @@ export function MonorepoFeatures() {
                 Lerna analyses package.json files.
               </dd>
             </div>
-            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
               <dt>
-                <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
                   <Supported /> Nx
                 </p>
               </dt>
@@ -787,9 +787,9 @@ export function MonorepoFeatures() {
                 support other platforms (e.g, Go, Java, Rust).
               </dd>
             </div>
-            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
               <dt>
-                <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
                   <Supported /> Rush
                 </p>
               </dt>
@@ -799,9 +799,9 @@ export function MonorepoFeatures() {
                 the monorepo by optionally creating "rig packages."
               </dd>
             </div>
-            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
               <dt>
-                <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
                   <Supported /> Turborepo
                 </p>
               </dt>
@@ -815,19 +815,19 @@ export function MonorepoFeatures() {
         {/*Dependency Graph Visualization*/}
         <div
           id="dependency-graph-visualization"
-          className="relative mt-16 lg:grid lg:grid-cols-2 lg:gap-12 lg:items-start"
+          className="relative mt-16 lg:grid lg:grid-cols-2 lg:items-start lg:gap-12"
         >
           <div className="relative">
-            <div className="absolute flex items-center justify-center h-10 w-10 rounded-md text-gray-800 dark:text-gray-200 rounded-md bg-slate-100 dark:bg-slate-900">
-              <PresentationChartLineIcon className="w-6 h-6" />
+            <div className="absolute flex h-10 w-10 items-center justify-center rounded-md rounded-md bg-slate-100 text-gray-800 dark:bg-slate-900 dark:text-gray-200">
+              <PresentationChartLineIcon className="h-6 w-6" />
             </div>
-            <div className="ml-16 text-xl font-medium text-gray-800 dark:text-gray-200 sm:text-2xl sm:leading-relaxed group">
+            <div className="group ml-16 text-xl font-medium text-gray-800 dark:text-gray-200 sm:text-2xl sm:leading-relaxed">
               Dependency graph visualization
               <a
                 aria-hidden="true"
                 tabIndex={-1}
                 href="#dependency-graph-visualization"
-                className="text-gray-900 dark:text-white flex inline-flex items-center"
+                className="flex inline-flex items-center text-gray-900 dark:text-white"
               >
                 <LinkIcon className="ml-2 h-6 w-6 opacity-0 group-hover:opacity-100" />
               </a>
@@ -852,10 +852,10 @@ export function MonorepoFeatures() {
             </div>
           </div>
 
-          <dl className="mt-12 md:mt-0 space-y-6">
-            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
+          <dl className="mt-12 space-y-6 md:mt-0">
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
               <dt>
-                <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
                   <Supported /> Bazel
                 </p>
               </dt>
@@ -864,9 +864,9 @@ export function MonorepoFeatures() {
                 filter out node you are not interested in.
               </dd>
             </div>
-            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
               <dt>
-                <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
                   <ManualImplementation /> Lage
                 </p>
               </dt>
@@ -875,9 +875,9 @@ export function MonorepoFeatures() {
                 your own.
               </dd>
             </div>
-            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
               <dt>
-                <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
                   <ManualImplementation /> Lerna
                 </p>
               </dt>
@@ -886,9 +886,9 @@ export function MonorepoFeatures() {
                 your own.
               </dd>
             </div>
-            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
               <dt>
-                <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
                   <Supported /> Nx
                 </p>
               </dt>
@@ -897,9 +897,9 @@ export function MonorepoFeatures() {
                 and explore large workspaces.
               </dd>
             </div>
-            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
               <dt>
-                <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
                   <ManualImplementation /> Rush
                 </p>
               </dt>
@@ -908,9 +908,9 @@ export function MonorepoFeatures() {
                 your own.
               </dd>
             </div>
-            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
               <dt>
-                <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
                   <Supported /> Turborepo
                 </p>
               </dt>
@@ -923,27 +923,27 @@ export function MonorepoFeatures() {
         </div>
 
         {/*MANAGEMENT*/}
-        <div className="mt-24 lg:mt-32 text-2xl flex leading-loose font-boldtext-gray-800 dark:text-gray-100tracking-tight sm:text-3xl sm:leading-relaxed items-center">
+        <div className="font-boldtext-gray-800 dark:text-gray-100tracking-tight mt-24 flex items-center text-2xl leading-loose sm:text-3xl sm:leading-relaxed lg:mt-32">
           Managable
-          <div className="ml-4 flex flex-grow h-1 w-full bg-slate-100 dark:bg-slate-900 rounded" />
+          <div className="ml-4 flex h-1 w-full flex-grow rounded bg-slate-100 dark:bg-slate-900" />
         </div>
 
         {/*Code Sharing*/}
         <div
           id="source-code-sharing"
-          className="relative mt-16 lg:grid lg:grid-cols-2 lg:gap-12 lg:items-start"
+          className="relative mt-16 lg:grid lg:grid-cols-2 lg:items-start lg:gap-12"
         >
           <div className="relative">
-            <div className="absolute flex items-center justify-center h-10 w-10 rounded-md text-gray-800 dark:text-gray-200 rounded-md bg-slate-100 dark:bg-slate-900">
-              <CodeIcon className="w-6 h-6" />
+            <div className="absolute flex h-10 w-10 items-center justify-center rounded-md rounded-md bg-slate-100 text-gray-800 dark:bg-slate-900 dark:text-gray-200">
+              <CodeIcon className="h-6 w-6" />
             </div>
-            <div className="ml-16 text-xl font-medium text-gray-800 dark:text-gray-200 sm:text-2xl sm:leading-relaxed group">
+            <div className="group ml-16 text-xl font-medium text-gray-800 dark:text-gray-200 sm:text-2xl sm:leading-relaxed">
               Source code sharing
               <a
                 aria-hidden="true"
                 tabIndex={-1}
                 href="#source-code-sharing"
-                className="text-gray-900 dark:text-white flex inline-flex items-center"
+                className="flex inline-flex items-center text-gray-900 dark:text-white"
               >
                 <LinkIcon className="ml-2 h-6 w-6 opacity-0 group-hover:opacity-100" />
               </a>
@@ -963,10 +963,10 @@ export function MonorepoFeatures() {
               />
             </div>
           </div>
-          <dl className="mt-12 md:mt-0 space-y-6">
-            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
+          <dl className="mt-12 space-y-6 md:mt-0">
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
               <dt>
-                <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
                   <Supported />
                   Bazel
                 </p>
@@ -977,9 +977,9 @@ export function MonorepoFeatures() {
                 sharing without hurting dev ergonomics.
               </dd>
             </div>
-            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
               <dt>
-                <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
                   <Supported />
                   Lage
                 </p>
@@ -988,9 +988,9 @@ export function MonorepoFeatures() {
                 Lage supports it. Only npm packages can be shared.
               </dd>
             </div>
-            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
               <dt>
-                <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
                   <Supported />
                   Lerna
                 </p>
@@ -999,9 +999,9 @@ export function MonorepoFeatures() {
                 Lerna supports it. Only npm packages can be shared.
               </dd>
             </div>
-            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
               <dt>
-                <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
                   <Supported />
                   Nx
                 </p>
@@ -1013,9 +1013,9 @@ export function MonorepoFeatures() {
                 ergonomics.
               </dd>
             </div>
-            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
               <dt>
-                <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
                   <Supported />
                   Rush
                 </p>
@@ -1028,9 +1028,9 @@ export function MonorepoFeatures() {
                 "packlets" offer a lightweight alternative.
               </dd>
             </div>
-            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
               <dt>
-                <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
                   <Supported />
                   Turborepo
                 </p>
@@ -1045,19 +1045,19 @@ export function MonorepoFeatures() {
         {/*Consistent Tooling*/}
         <div
           id="consistent-tooling"
-          className="relative mt-16 lg:grid lg:grid-cols-2 lg:gap-12 lg:items-start"
+          className="relative mt-16 lg:grid lg:grid-cols-2 lg:items-start lg:gap-12"
         >
           <div className="relative">
-            <div className="absolute flex items-center justify-center h-10 w-10 rounded-md text-gray-800 dark:text-gray-200 rounded-md bg-slate-100 dark:bg-slate-900">
-              <TerminalIcon className="w-6 h-6" />
+            <div className="absolute flex h-10 w-10 items-center justify-center rounded-md rounded-md bg-slate-100 text-gray-800 dark:bg-slate-900 dark:text-gray-200">
+              <TerminalIcon className="h-6 w-6" />
             </div>
-            <div className="ml-16 text-xl font-medium text-gray-800 dark:text-gray-200 sm:text-2xl sm:leading-relaxed group">
+            <div className="group ml-16 text-xl font-medium text-gray-800 dark:text-gray-200 sm:text-2xl sm:leading-relaxed">
               Consistent tooling
               <a
                 aria-hidden="true"
                 tabIndex={-1}
                 href="#consistent-tooling"
-                className="text-gray-900 dark:text-white flex inline-flex items-center"
+                className="flex inline-flex items-center text-gray-900 dark:text-white"
               >
                 <LinkIcon className="ml-2 h-6 w-6 opacity-0 group-hover:opacity-100" />
               </a>
@@ -1079,10 +1079,10 @@ export function MonorepoFeatures() {
               />
             </div>
           </div>
-          <dl className="mt-12 md:mt-0 space-y-6">
-            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
+          <dl className="mt-12 space-y-6 md:mt-0">
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
               <dt>
-                <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
                   <Supported />
                   Bazel
                 </p>
@@ -1092,9 +1092,9 @@ export function MonorepoFeatures() {
                 and frameworks.
               </dd>
             </div>
-            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
               <dt>
-                <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
                   <NotSupported />
                   Lage
                 </p>
@@ -1103,9 +1103,9 @@ export function MonorepoFeatures() {
                 Lage can only run npm scripts.
               </dd>
             </div>
-            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
               <dt>
-                <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
                   <NotSupported />
                   Lerna
                 </p>
@@ -1114,9 +1114,9 @@ export function MonorepoFeatures() {
                 Lerna can only run npm scripts.
               </dd>
             </div>
-            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
               <dt>
-                <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
                   <Supported />
                   Nx
                 </p>
@@ -1126,9 +1126,9 @@ export function MonorepoFeatures() {
                 but can be extended to invoke other tools (e.g., Gradle).
               </dd>
             </div>
-            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
               <dt>
-                <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
                   <NotSupported />
                   Rush
                 </p>
@@ -1140,9 +1140,9 @@ export function MonorepoFeatures() {
                 required prerequisite for monorepo developers.
               </dd>
             </div>
-            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
               <dt>
-                <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
                   <NotSupported />
                   Turborepo
                 </p>
@@ -1157,19 +1157,19 @@ export function MonorepoFeatures() {
         {/*Code Generation*/}
         <div
           id="code-generation"
-          className="relative mt-16 lg:grid lg:grid-cols-2 lg:gap-12 lg:items-start"
+          className="relative mt-16 lg:grid lg:grid-cols-2 lg:items-start lg:gap-12"
         >
           <div className="relative">
-            <div className="absolute flex items-center justify-center h-10 w-10 rounded-md text-gray-800 dark:text-gray-200 rounded-md bg-slate-100 dark:bg-slate-900">
-              <CogIcon className="w-6 h-6" />
+            <div className="absolute flex h-10 w-10 items-center justify-center rounded-md rounded-md bg-slate-100 text-gray-800 dark:bg-slate-900 dark:text-gray-200">
+              <CogIcon className="h-6 w-6" />
             </div>
-            <div className="ml-16 text-xl font-medium text-gray-800 dark:text-gray-200 sm:text-2xl sm:leading-relaxed group">
+            <div className="group ml-16 text-xl font-medium text-gray-800 dark:text-gray-200 sm:text-2xl sm:leading-relaxed">
               Code generation
               <a
                 aria-hidden="true"
                 tabIndex={-1}
                 href="#code-generation"
-                className="text-gray-900 dark:text-white flex inline-flex items-center"
+                className="flex inline-flex items-center text-gray-900 dark:text-white"
               >
                 <LinkIcon className="ml-2 h-6 w-6 opacity-0 group-hover:opacity-100" />
               </a>
@@ -1190,10 +1190,10 @@ export function MonorepoFeatures() {
             </div>
           </div>
 
-          <dl className="mt-12 md:mt-0 space-y-6">
-            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
+          <dl className="mt-12 space-y-6 md:mt-0">
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
               <dt>
-                <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
                   <ManualImplementation />
                   Bazel
                 </p>
@@ -1202,9 +1202,9 @@ export function MonorepoFeatures() {
                 External generators can be used.
               </dd>
             </div>
-            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
               <dt>
-                <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
                   <ManualImplementation />
                   Lage
                 </p>
@@ -1213,9 +1213,9 @@ export function MonorepoFeatures() {
                 External generators can be used.
               </dd>
             </div>
-            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
               <dt>
-                <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
                   <ManualImplementation />
                   Lerna
                 </p>
@@ -1224,9 +1224,9 @@ export function MonorepoFeatures() {
                 External generators can be used.
               </dd>
             </div>
-            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
               <dt>
-                <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
                   <Supported />
                   Nx
                 </p>
@@ -1238,9 +1238,9 @@ export function MonorepoFeatures() {
                 be used as well.
               </dd>
             </div>
-            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
               <dt>
-                <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
                   <ManualImplementation />
                   Rush
                 </p>
@@ -1252,9 +1252,9 @@ export function MonorepoFeatures() {
                 community plugin.
               </dd>
             </div>
-            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
               <dt>
-                <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
                   <ManualImplementation />
                   Turborepo
                 </p>
@@ -1269,19 +1269,19 @@ export function MonorepoFeatures() {
         {/*Explicit Project Constrains*/}
         <div
           id="explicit-project-constrains"
-          className="relative mt-16 lg:grid lg:grid-cols-2 lg:gap-12 lg:items-start"
+          className="relative mt-16 lg:grid lg:grid-cols-2 lg:items-start lg:gap-12"
         >
           <div className="relative">
-            <div className="absolute flex items-center justify-center h-10 w-10 rounded-md text-gray-800 dark:text-gray-200 rounded-md bg-slate-100 dark:bg-slate-900">
-              <StatusOnlineIcon className="w-6 h-6" />
+            <div className="absolute flex h-10 w-10 items-center justify-center rounded-md rounded-md bg-slate-100 text-gray-800 dark:bg-slate-900 dark:text-gray-200">
+              <StatusOnlineIcon className="h-6 w-6" />
             </div>
-            <div className="ml-16 text-xl font-medium text-gray-800 dark:text-gray-200 sm:text-2xl sm:leading-relaxed group">
+            <div className="group ml-16 text-xl font-medium text-gray-800 dark:text-gray-200 sm:text-2xl sm:leading-relaxed">
               Project constraints and visibility
               <a
                 aria-hidden="true"
                 tabIndex={-1}
                 href="#explicit-project-constrains"
-                className="text-gray-900 dark:text-white flex inline-flex items-center"
+                className="flex inline-flex items-center text-gray-900 dark:text-white"
               >
                 <LinkIcon className="ml-2 h-6 w-6 opacity-0 group-hover:opacity-100" />
               </a>
@@ -1307,10 +1307,10 @@ export function MonorepoFeatures() {
             </div>
           </div>
 
-          <dl className="mt-12 md:mt-0 space-y-6">
-            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
+          <dl className="mt-12 space-y-6 md:mt-0">
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
               <dt>
-                <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
                   <Supported />
                   Bazel
                 </p>
@@ -1320,9 +1320,9 @@ export function MonorepoFeatures() {
                 private from what is public, what can be shared, etc.
               </dd>
             </div>
-            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
               <dt>
-                <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
                   <ManualImplementation />
                   Lage
                 </p>
@@ -1332,9 +1332,9 @@ export function MonorepoFeatures() {
                 be used to ensure that some constraints hold.
               </dd>
             </div>
-            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
               <dt>
-                <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
                   <ManualImplementation />
                   Lerna
                 </p>
@@ -1344,9 +1344,9 @@ export function MonorepoFeatures() {
                 be used to ensure that some constraints hold.
               </dd>
             </div>
-            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
               <dt>
-                <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
                   <Supported />
                   Nx
                 </p>
@@ -1360,9 +1360,9 @@ export function MonorepoFeatures() {
                 able to deep import into them.
               </dd>
             </div>
-            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
               <dt>
-                <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
                   <Supported />
                   Rush
                 </p>
@@ -1373,9 +1373,9 @@ export function MonorepoFeatures() {
                 also supports version policies for NPM publishing.
               </dd>
             </div>
-            <div className="p-4 bg-slate-100 dark:bg-slate-900 rounded-md border border-slate-200 dark:border-black">
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
               <dt>
-                <p className="px-3 py-2 inline-flex items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-gray-700 dark:text-gray-300 text-sm uppercase tracking-widest">
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
                   <ManualImplementation />
                   Turborepo
                 </p>

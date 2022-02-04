@@ -127,39 +127,39 @@ const books: {
 
 export function Resources() {
   return (
-    <article className="bg-slate-50 dark:bg-slate-800 pt-16 pb-20 px-4 sm:px-6 lg:pt-24 lg:pb-28 lg:px-8">
+    <article className="bg-slate-50 px-4 pt-16 pb-20 dark:bg-slate-800 sm:px-6 lg:px-8 lg:pt-24 lg:pb-28">
       <div className="relative">
         <h1
           id="monorepo-resources"
-          className="text-center text-4xl leading-8 font-extrabold tracking-tight text-gray-900 dark:text-white sm:text-5xl group"
+          className="group text-center text-4xl font-extrabold leading-8 tracking-tight text-gray-900 dark:text-white sm:text-5xl"
         >
           # Resources
           <a
             aria-hidden="true"
             tabIndex={-1}
             href="#monorepo-resources"
-            className="text-gray-900 dark:text-white flex inline-flex items-center"
+            className="flex inline-flex items-center text-gray-900 dark:text-white"
           >
             <LinkIcon className="ml-2 h-6 w-6 opacity-0 group-hover:opacity-100" />
           </a>
         </h1>
-        <p className="mt-4 max-w-3xl mx-auto text-center text-xl text-gray-700 dark:text-gray-300">
+        <p className="mx-auto mt-4 max-w-3xl text-center text-xl text-gray-700 dark:text-gray-300">
           Here is a curated list of useful videos and podcasts to go deeper or
           just see the information in another way.
         </p>
       </div>
-      <div className="mt-24 lg:mt-36 relative max-w-lg mx-auto lg:max-w-7xl">
-        <div className="max-w-2xl mx-auto">
+      <div className="relative mx-auto mt-24 max-w-lg lg:mt-36 lg:max-w-7xl">
+        <div className="mx-auto max-w-2xl">
           <h2
             id="monorepo-videos-podcasts"
-            className="text-3xl tracking-tight font-semibold text-gray-800 dark:text-gray-100 sm:text-4xl group"
+            className="group text-3xl font-semibold tracking-tight text-gray-800 dark:text-gray-100 sm:text-4xl"
           >
             Monorepo Videos & Podcasts
             <a
               aria-hidden="true"
               tabIndex={-1}
               href="#monorepo-videos-podcasts"
-              className="text-gray-900 dark:text-white flex inline-flex items-center"
+              className="flex inline-flex items-center text-gray-900 dark:text-white"
             >
               <LinkIcon className="ml-2 h-6 w-6 opacity-0 group-hover:opacity-100" />
             </a>
@@ -178,27 +178,27 @@ export function Resources() {
                   href={item.link}
                   target="_blank"
                   rel="noreferrer"
-                  className="px-1 flex items-center hover:bg-yellow-500 hover:text-gray-800 transition rounded"
+                  className="flex items-center rounded px-1 transition hover:bg-yellow-500 hover:text-gray-800"
                 >
-                  <ExternalLinkIcon className="w-5 h-5 mr-2" /> {item.name}
+                  <ExternalLinkIcon className="mr-2 h-5 w-5" /> {item.name}
                 </a>
               </li>
             ))}
           </ul>
         </div>
       </div>
-      <div className="mt-24 lg:mt-36 relative max-w-lg mx-auto lg:max-w-7xl">
-        <div className="max-w-2xl mx-auto">
+      <div className="relative mx-auto mt-24 max-w-lg lg:mt-36 lg:max-w-7xl">
+        <div className="mx-auto max-w-2xl">
           <h2
             id="monorepo-articles"
-            className="text-3xl tracking-tight font-semibold text-gray-800 dark:text-gray-100 sm:text-4xl group"
+            className="group text-3xl font-semibold tracking-tight text-gray-800 dark:text-gray-100 sm:text-4xl"
           >
             Monorepo articles
             <a
               aria-hidden="true"
               tabIndex={-1}
               href="#monorepo-articles"
-              className="text-gray-900 dark:text-white flex inline-flex items-center"
+              className="flex inline-flex items-center text-gray-900 dark:text-white"
             >
               <LinkIcon className="ml-2 h-6 w-6 opacity-0 group-hover:opacity-100" />
             </a>
@@ -217,27 +217,27 @@ export function Resources() {
                   href={item.link}
                   target="_blank"
                   rel="noreferrer"
-                  className="px-1 flex items-center hover:bg-yellow-500 hover:text-gray-800 transition rounded"
+                  className="flex items-center rounded px-1 transition hover:bg-yellow-500 hover:text-gray-800"
                 >
-                  <ExternalLinkIcon className="w-5 h-5 mr-2" /> {item.name}
+                  <ExternalLinkIcon className="mr-2 h-5 w-5" /> {item.name}
                 </a>
               </li>
             ))}
           </ul>
         </div>
       </div>
-      <div className="mt-24 lg:mt-36 relative max-w-lg mx-auto lg:max-w-7xl">
-        <div className="max-w-2xl mx-auto">
+      <div className="relative mx-auto mt-24 max-w-lg lg:mt-36 lg:max-w-7xl">
+        <div className="mx-auto max-w-2xl">
           <h2
             id="monorepo-books"
-            className="text-3xl tracking-tight font-semibold text-gray-800 dark:text-gray-100 sm:text-4xl group"
+            className="group text-3xl font-semibold tracking-tight text-gray-800 dark:text-gray-100 sm:text-4xl"
           >
             Monorepo books
             <a
               aria-hidden="true"
               tabIndex={-1}
               href="#monorepo-books"
-              className="text-gray-900 dark:text-white flex inline-flex items-center"
+              className="flex inline-flex items-center text-gray-900 dark:text-white"
             >
               <LinkIcon className="ml-2 h-6 w-6 opacity-0 group-hover:opacity-100" />
             </a>
@@ -253,23 +253,23 @@ export function Resources() {
                   href={book.link}
                   target="_blank"
                   rel="noreferrer"
-                  className="text-gray-700 dark:text-gray-300 flex p-2 hover:bg-yellow-500 hover:text-gray-800 hover:dark:text-gray-800 transition rounded-lg"
+                  className="flex rounded-lg p-2 text-gray-700 transition hover:bg-yellow-500 hover:text-gray-800 dark:text-gray-300 hover:dark:text-gray-800"
                   title={book.name}
                 >
                   <div className="space-y-4 sm:grid sm:grid-cols-3 sm:gap-6 sm:space-y-0 lg:gap-8">
-                    <div className="w-1/2 mx-auto sm:w-full sm:h-0 sm:aspect-w-3 sm:aspect-h-4">
+                    <div className="sm:aspect-w-3 sm:aspect-h-4 mx-auto w-1/2 sm:h-0 sm:w-full">
                       <img
                         loading="lazy"
-                        className="object-cover shadow-lg rounded-lg"
+                        className="rounded-lg object-cover shadow-lg"
                         src={book.imageUrl}
                         alt={book.name + ' book cover'}
                       />
                     </div>
-                    <div className="hidden sm:block sm:col-span-2">
+                    <div className="hidden sm:col-span-2 sm:block">
                       <div className="space-y-4">
-                        <div className="text-lg leading-6 font-medium space-y-1">
-                          <h3 className="block pr-6 relative">
-                            <ExternalLinkIcon className="w-5 h-5 absolute top-0 right-0" />{' '}
+                        <div className="space-y-1 text-lg font-medium leading-6">
+                          <h3 className="relative block pr-6">
+                            <ExternalLinkIcon className="absolute top-0 right-0 h-5 w-5" />{' '}
                             <span>{book.name}</span>
                           </h3>
                           <p className="text-base font-normal uppercase">
@@ -286,18 +286,18 @@ export function Resources() {
           </ul>
         </div>
       </div>
-      <div className="mt-24 lg:mt-36 relative max-w-lg mx-auto lg:max-w-7xl">
-        <div className="max-w-2xl mx-auto">
+      <div className="relative mx-auto mt-24 max-w-lg lg:mt-36 lg:max-w-7xl">
+        <div className="mx-auto max-w-2xl">
           <h2
             id="monorepo-contributors"
-            className="text-3xl tracking-tight font-semibold text-gray-800 dark:text-gray-100 sm:text-4xl group"
+            className="group text-3xl font-semibold tracking-tight text-gray-800 dark:text-gray-100 sm:text-4xl"
           >
             Contributors
             <a
               aria-hidden="true"
               tabIndex={-1}
               href="#monorepo-contributors"
-              className="text-gray-900 dark:text-white flex inline-flex items-center"
+              className="flex inline-flex items-center text-gray-900 dark:text-white"
             >
               <LinkIcon className="ml-2 h-6 w-6 opacity-0 group-hover:opacity-100" />
             </a>
@@ -311,21 +311,21 @@ export function Resources() {
               <li key={person.name}>
                 <div className="flex items-center space-x-4 lg:space-x-6">
                   <img
-                    className="w-16 h-16 rounded-full lg:w-20 lg:h-20"
+                    className="h-16 w-16 rounded-full lg:h-20 lg:w-20"
                     src={person.imageUrl}
                     alt={person.name + ' avatar'}
                   />
-                  <div className="font-medium text-lg leading-6 space-y-1">
+                  <div className="space-y-1 text-lg font-medium leading-6">
                     <h3>
                       <a
                         href={person.twitterLink}
                         target="_blank"
                         rel="noreferrer"
-                        className="px-1 flex items-center hover:bg-yellow-500 hover:text-gray-800 transition rounded"
+                        className="flex items-center rounded px-1 transition hover:bg-yellow-500 hover:text-gray-800"
                       >
                         <svg
                           aria-hidden="true"
-                          className="w-4 h-4 mr-2"
+                          className="mr-2 h-4 w-4"
                           fill="currentColor"
                           role="img"
                           viewBox="0 0 24 24"
@@ -342,11 +342,11 @@ export function Resources() {
                         href={person.githubLink}
                         target="_blank"
                         rel="noreferrer"
-                        className="px-1 flex inline-flex items-center hover:bg-yellow-500 hover:text-gray-800 transition rounded"
+                        className="flex inline-flex items-center rounded px-1 transition hover:bg-yellow-500 hover:text-gray-800"
                       >
                         <svg
                           aria-hidden="true"
-                          className="w-4 h-4 mr-2"
+                          className="mr-2 h-4 w-4"
                           fill="currentColor"
                           role="img"
                           viewBox="0 0 24 24"
