@@ -232,27 +232,27 @@ const valuesDictionary: Record<Supports, () => ReactComponentElement<any>> = {
   supported: () => (
     <span
       title="natively supported"
-      className="inline-flex items-center px-2.5 py-0.5 rounded-full text-green-600"
+      className="inline-flex items-center rounded-full px-2.5 py-0.5 text-green-600"
     >
-      <CheckCircleIcon className="w-5 h-5" />
+      <CheckCircleIcon className="h-5 w-5" />
       <span className="sr-only">natively supported</span>
     </span>
   ),
   notSupported: () => (
     <span
       title="not supported"
-      className="inline-flex items-center px-2.5 py-0.5 rounded-full text-slate-400"
+      className="inline-flex items-center rounded-full px-2.5 py-0.5 text-slate-400"
     >
-      <MinusIcon className="w-5 h-5" />
+      <MinusIcon className="h-5 w-5" />
       <span className="sr-only">not supported</span>
     </span>
   ),
   manualImplementation: () => (
     <span
       title="implement your own"
-      className="inline-flex items-center px-2.5 py-0.5 rounded-full text-yellow-600"
+      className="inline-flex items-center rounded-full px-2.5 py-0.5 text-yellow-600"
     >
-      <ExclamationCircleIcon className="w-5 h-5" />
+      <ExclamationCircleIcon className="h-5 w-5" />
       <span className="sr-only">implement your own</span>
     </span>
   ),
@@ -266,15 +266,15 @@ export function ToolsReview() {
   return (
     <div id="tools-review" className="bg-slate-50 dark:bg-slate-800">
       <div className="relative">
-        <div className="relative max-w-2xl mx-auto pt-16 px-4 text-center sm:pt-32 sm:px-6 lg:max-w-7xl lg:px-8">
-          <div className="text-4xl font-extrabold tracking-tight text-gray-900 dark:text-white sm:text-6xl group">
+        <div className="relative mx-auto max-w-2xl px-4 pt-16 text-center sm:px-6 sm:pt-32 lg:max-w-7xl lg:px-8">
+          <div className="group text-4xl font-extrabold tracking-tight text-gray-900 dark:text-white sm:text-6xl">
             <span className="block lg:inline">Many solutions,</span>
             <span className="block lg:inline"> for different goals</span>
             <a
               aria-hidden="true"
               tabIndex={-1}
               href="#tools-review"
-              className="text-gray-900 dark:text-white flex inline-flex items-center"
+              className="flex inline-flex items-center text-gray-900 dark:text-white"
             >
               <LinkIcon className="ml-2 h-6 w-6 opacity-0 group-hover:opacity-100" />
             </a>
@@ -290,14 +290,14 @@ export function ToolsReview() {
 
       {/* Feature comparison (up to lg) */}
       <section className="lg:hidden">
-        <div className="max-w-2xl mx-auto py-16 px-4 space-y-16 sm:px-6">
+        <div className="mx-auto max-w-2xl space-y-16 py-16 px-4 sm:px-6">
           {tools.map((tool, toolIndex) => (
             <div
               key={tool.title}
               className="border-t border-slate-100 dark:border-slate-900"
             >
-              <div className="-mt-px pt-6 border-t-2 sm:w-1/2">
-                <h3 className="text-gray-700 dark:text-gray-300 text-sm font-bold">
+              <div className="-mt-px border-t-2 pt-6 sm:w-1/2">
+                <h3 className="text-sm font-bold text-gray-700 dark:text-gray-300">
                   {tool.title}{' '}
                   {tool.organization ? (
                     <span className="ml-2 text-xs font-normal">
@@ -313,33 +313,33 @@ export function ToolsReview() {
                 Fast
               </div>
 
-              <div className="mt-6 relative">
+              <div className="relative mt-6">
                 {/* Fake card background */}
                 <div
                   aria-hidden="true"
-                  className="hidden absolute inset-0 pointer-events-none sm:block"
+                  className="pointer-events-none absolute inset-0 hidden sm:block"
                 >
-                  <div className="shadow absolute right-0 w-1/2 h-full bg-slate-100 dark:bg-slate-700 rounded-lg" />
+                  <div className="absolute right-0 h-full w-1/2 rounded-lg bg-slate-100 shadow dark:bg-slate-700" />
                 </div>
 
-                <div className="ring-1 ring-black ring-opacity-5 shadow relative py-3 px-4 bg-slate-100 dark:bg-slate-700 rounded-lg sm:p-0 sm:bg-transparent sm:rounded-none sm:ring-0 sm:shadow-none">
+                <div className="relative rounded-lg bg-slate-100 py-3 px-4 shadow ring-1 ring-black ring-opacity-5 dark:bg-slate-700 sm:rounded-none sm:bg-transparent sm:p-0 sm:shadow-none sm:ring-0">
                   <dl className="divide-y divide-slate-300 dark:divide-slate-600">
                     {fast.map((feature) => (
                       <div
                         key={feature.title}
-                        className="py-3 flex items-center justify-between sm:grid sm:grid-cols-2"
+                        className="flex items-center justify-between py-3 sm:grid sm:grid-cols-2"
                       >
                         <dt className="flex pr-4 text-sm font-medium text-gray-700 dark:text-gray-300">
                           <a
                             href={feature.link}
-                            className="inline-flex mr-1 px-2  text-slate-500"
+                            className="mr-1 inline-flex px-2  text-slate-500"
                           >
                             <span className="sr-only">More info</span>
-                            <QuestionMarkCircleIcon className="w-5 h-5" />
+                            <QuestionMarkCircleIcon className="h-5 w-5" />
                           </a>
                           {feature.title}
                         </dt>
-                        <dd className="flex items-center justify-end sm:px-4 sm:justify-center">
+                        <dd className="flex items-center justify-end sm:justify-center sm:px-4">
                           {valuesDictionary[
                             feature.features[toolIndex].value
                           ]()}
@@ -352,9 +352,9 @@ export function ToolsReview() {
                 {/* Fake card border */}
                 <div
                   aria-hidden="true"
-                  className="hidden absolute inset-0 pointer-events-none sm:block"
+                  className="pointer-events-none absolute inset-0 hidden sm:block"
                 >
-                  <div className="ring-1 ring-black ring-opacity-5 absolute right-0 w-1/2 h-full rounded-lg" />
+                  <div className="absolute right-0 h-full w-1/2 rounded-lg ring-1 ring-black ring-opacity-5" />
                 </div>
               </div>
 
@@ -362,29 +362,29 @@ export function ToolsReview() {
                 Understandable
               </div>
 
-              <div className="mt-6 relative">
+              <div className="relative mt-6">
                 {/* Fake card background */}
                 <div
                   aria-hidden="true"
-                  className="hidden absolute inset-0 pointer-events-none sm:block"
+                  className="pointer-events-none absolute inset-0 hidden sm:block"
                 >
-                  <div className="absolute right-0 w-1/2 h-full bg-slate-100 dark:bg-slate-700 rounded-lg" />
+                  <div className="absolute right-0 h-full w-1/2 rounded-lg bg-slate-100 dark:bg-slate-700" />
                 </div>
 
-                <div className="ring-1 ring-black ring-opacity-5 shadow relative py-3 px-4 bg-slate-100 dark:bg-slate-700 rounded-lg sm:p-0 sm:bg-transparent sm:rounded-none sm:ring-0 sm:shadow-none">
+                <div className="relative rounded-lg bg-slate-100 py-3 px-4 shadow ring-1 ring-black ring-opacity-5 dark:bg-slate-700 sm:rounded-none sm:bg-transparent sm:p-0 sm:shadow-none sm:ring-0">
                   <dl className="divide-y divide-slate-300 dark:divide-slate-600">
                     {understandable.map((feature) => (
                       <div
                         key={feature.title}
-                        className="py-3 flex justify-between sm:grid sm:grid-cols-2"
+                        className="flex justify-between py-3 sm:grid sm:grid-cols-2"
                       >
                         <dt className="flex text-sm font-medium text-gray-700 dark:text-gray-300 sm:pr-4">
                           <a
                             href={feature.link}
-                            className="inline-flex mr-1 px-2 text-slate-500"
+                            className="mr-1 inline-flex px-2 text-slate-500"
                           >
                             <span className="sr-only">More info</span>
-                            <QuestionMarkCircleIcon className="w-5 h-5" />
+                            <QuestionMarkCircleIcon className="h-5 w-5" />
                           </a>
                           {feature.title}
                         </dt>
@@ -401,9 +401,9 @@ export function ToolsReview() {
                 {/* Fake card border */}
                 <div
                   aria-hidden="true"
-                  className="hidden absolute inset-0 pointer-events-none sm:block"
+                  className="pointer-events-none absolute inset-0 hidden sm:block"
                 >
-                  <div className="ring-1 ring-black ring-opacity-5 absolute right-0 w-1/2 h-full rounded-lg" />
+                  <div className="absolute right-0 h-full w-1/2 rounded-lg ring-1 ring-black ring-opacity-5" />
                 </div>
               </div>
 
@@ -411,29 +411,29 @@ export function ToolsReview() {
                 Manageable
               </div>
 
-              <div className="mt-6 relative">
+              <div className="relative mt-6">
                 {/* Fake card background */}
                 <div
                   aria-hidden="true"
-                  className="hidden absolute inset-0 pointer-events-none sm:block"
+                  className="pointer-events-none absolute inset-0 hidden sm:block"
                 >
-                  <div className="shadow absolute right-0 w-1/2 h-full bg-slate-100 dark:bg-slate-700 rounded-lg" />
+                  <div className="absolute right-0 h-full w-1/2 rounded-lg bg-slate-100 shadow dark:bg-slate-700" />
                 </div>
 
-                <div className="ring-1 ring-black ring-opacity-5 shadow relative py-3 px-4 bg-slate-100 dark:bg-slate-700 rounded-lg sm:p-0 sm:bg-transparent sm:rounded-none sm:ring-0 sm:shadow-none">
+                <div className="relative rounded-lg bg-slate-100 py-3 px-4 shadow ring-1 ring-black ring-opacity-5 dark:bg-slate-700 sm:rounded-none sm:bg-transparent sm:p-0 sm:shadow-none sm:ring-0">
                   <dl className="divide-y divide-slate-300 dark:divide-slate-600">
                     {manageable.map((feature) => (
                       <div
                         key={feature.title}
-                        className="py-3 flex justify-between sm:grid sm:grid-cols-2"
+                        className="flex justify-between py-3 sm:grid sm:grid-cols-2"
                       >
                         <dt className="flex text-sm font-medium text-gray-700 dark:text-gray-300 sm:pr-4">
                           <a
                             href={feature.link}
-                            className="inline-flex mr-1 px-2  text-slate-500"
+                            className="mr-1 inline-flex px-2  text-slate-500"
                           >
                             <span className="sr-only">More info</span>
-                            <QuestionMarkCircleIcon className="w-5 h-5" />
+                            <QuestionMarkCircleIcon className="h-5 w-5" />
                           </a>
                           {feature.title}
                         </dt>
@@ -450,9 +450,9 @@ export function ToolsReview() {
                 {/* Fake card border */}
                 <div
                   aria-hidden="true"
-                  className="hidden absolute inset-0 pointer-events-none sm:block"
+                  className="pointer-events-none absolute inset-0 hidden sm:block"
                 >
-                  <div className="ring-1 ring-black ring-opacity-5 absolute right-0 w-1/2 h-full rounded-lg" />
+                  <div className="absolute right-0 h-full w-1/2 rounded-lg ring-1 ring-black ring-opacity-5" />
                 </div>
               </div>
             </div>
@@ -462,20 +462,20 @@ export function ToolsReview() {
 
       {/* Feature comparison (lg+) */}
       <section className="hidden lg:block">
-        <div className="max-w-7xl mx-auto py-24 px-8">
-          <div className="w-full border-t border-slate-100 dark:border-slate-900 flex items-stretch">
-            <div className="-mt-px w-[14.3%] py-6 pr-4 flex items-end" />
+        <div className="mx-auto max-w-7xl py-24 px-8">
+          <div className="flex w-full items-stretch border-t border-slate-100 dark:border-slate-900">
+            <div className="-mt-px flex w-[14.3%] items-end py-6 pr-4" />
             {tools.map((tool, toolIndex) => (
               <div
                 key={tool.title}
                 aria-hidden="true"
                 className={classNames(
                   toolIndex === tools.length - 1 ? '' : 'pr-4',
-                  '-mt-px pl-4 w-[14.3%]'
+                  '-mt-px w-[14.3%] pl-4'
                 )}
               >
-                <div className="border-transparent py-6 border-t-2">
-                  <p className="text-gray-700 dark:text-gray-300 text-md font-bold">
+                <div className="border-t-2 border-transparent py-6">
+                  <p className="text-md font-bold text-gray-700 dark:text-gray-300">
                     {tool.title}{' '}
                     {tool.organization ? (
                       <span className="ml-2 text-xs font-normal">
@@ -491,8 +491,8 @@ export function ToolsReview() {
             ))}
           </div>
 
-          <div className="w-full border-t border-slate-100 dark:border-slate-900 flex items-stretch">
-            <div className="-mt-px w-[14.3%] py-6 pr-4 flex items-end">
+          <div className="flex w-full items-stretch border-t border-slate-100 dark:border-slate-900">
+            <div className="-mt-px flex w-[14.3%] items-end py-6 pr-4">
               <h3 className="mt-auto text-sm font-bold text-gray-700 dark:text-gray-300">
                 Fast
               </h3>
@@ -501,27 +501,27 @@ export function ToolsReview() {
           <div className="relative">
             {/* Fake card backgrounds */}
             <div
-              className="absolute inset-0 flex items-stretch pointer-events-none"
+              className="pointer-events-none absolute inset-0 flex items-stretch"
               aria-hidden="true"
             >
               <div className="w-[14.3%] pr-5" />
               <div className="w-[14.3%] px-5">
-                <div className="w-full h-full bg-slate-100 dark:bg-slate-700 rounded-lg shadow" />
+                <div className="h-full w-full rounded-lg bg-slate-100 shadow dark:bg-slate-700" />
               </div>
               <div className="w-[14.3%] px-5">
-                <div className="w-full h-full bg-slate-100 dark:bg-slate-700 rounded-lg shadow-md" />
+                <div className="h-full w-full rounded-lg bg-slate-100 shadow-md dark:bg-slate-700" />
               </div>
               <div className="w-[14.3%] px-5">
-                <div className="w-full h-full bg-slate-100 dark:bg-slate-700 rounded-lg shadow-md" />
+                <div className="h-full w-full rounded-lg bg-slate-100 shadow-md dark:bg-slate-700" />
               </div>
               <div className="w-[14.3%] pl-5">
-                <div className="w-full h-full bg-slate-100 dark:bg-slate-700 rounded-lg shadow" />
+                <div className="h-full w-full rounded-lg bg-slate-100 shadow dark:bg-slate-700" />
               </div>
               <div className="w-[14.3%] pl-5">
-                <div className="w-full h-full bg-slate-100 dark:bg-slate-700 rounded-lg shadow" />
+                <div className="h-full w-full rounded-lg bg-slate-100 shadow dark:bg-slate-700" />
               </div>
               <div className="w-[14.3%] pl-5">
-                <div className="w-full h-full bg-slate-100 dark:bg-slate-700 rounded-lg shadow" />
+                <div className="h-full w-full rounded-lg bg-slate-100 shadow dark:bg-slate-700" />
               </div>
             </div>
 
@@ -564,7 +564,7 @@ export function ToolsReview() {
                           'relative w-[14.3%] py-0 text-center'
                         )}
                       >
-                        <span className="relative w-full h-full py-3">
+                        <span className="relative h-full w-full py-3">
                           {valuesDictionary[tier.value]()}
                         </span>
                       </td>
@@ -576,27 +576,27 @@ export function ToolsReview() {
 
             {/* Fake card borders */}
             <div
-              className="absolute inset-0 flex items-stretch pointer-events-none"
+              className="pointer-events-none absolute inset-0 flex items-stretch"
               aria-hidden="true"
             >
               <div className="w-[14.3%] pr-5" />
               <div className="w-[14.3%] px-5">
-                <div className="w-full h-full rounded-lg ring-1 ring-black ring-opacity-5" />
+                <div className="h-full w-full rounded-lg ring-1 ring-black ring-opacity-5" />
               </div>
               <div className="w-[14.3%] px-5">
-                <div className="w-full h-full rounded-lg ring-2 ring-black ring-opacity-5" />
+                <div className="h-full w-full rounded-lg ring-2 ring-black ring-opacity-5" />
               </div>
               <div className="w-[14.3%] px-5">
-                <div className="w-full h-full rounded-lg ring-2 ring-black ring-opacity-5" />
+                <div className="h-full w-full rounded-lg ring-2 ring-black ring-opacity-5" />
               </div>
               <div className="w-[14.3%] pl-5">
-                <div className="w-full h-full rounded-lg ring-1 ring-black ring-opacity-5" />
+                <div className="h-full w-full rounded-lg ring-1 ring-black ring-opacity-5" />
               </div>
               <div className="w-[14.3%] pl-5">
-                <div className="w-full h-full rounded-lg ring-1 ring-black ring-opacity-5" />
+                <div className="h-full w-full rounded-lg ring-1 ring-black ring-opacity-5" />
               </div>
               <div className="w-[14.3%] pl-5">
-                <div className="w-full h-full rounded-lg ring-1 ring-black ring-opacity-5" />
+                <div className="h-full w-full rounded-lg ring-1 ring-black ring-opacity-5" />
               </div>
             </div>
           </div>
@@ -604,30 +604,30 @@ export function ToolsReview() {
           <h3 className="mt-10 text-sm font-bold text-gray-700 dark:text-gray-300">
             Understandable
           </h3>
-          <div className="mt-6 relative">
+          <div className="relative mt-6">
             {/* Fake card backgrounds */}
             <div
-              className="absolute inset-0 flex items-stretch pointer-events-none"
+              className="pointer-events-none absolute inset-0 flex items-stretch"
               aria-hidden="true"
             >
               <div className="w-[14.3%] pr-4" />
               <div className="w-[14.3%] px-4">
-                <div className="w-full h-full bg-slate-100 dark:bg-slate-700 rounded-lg shadow" />
+                <div className="h-full w-full rounded-lg bg-slate-100 shadow dark:bg-slate-700" />
               </div>
               <div className="w-[14.3%] px-4">
-                <div className="w-full h-full bg-slate-100 dark:bg-slate-700 rounded-lg shadow-md" />
+                <div className="h-full w-full rounded-lg bg-slate-100 shadow-md dark:bg-slate-700" />
               </div>
               <div className="w-[14.3%] px-4">
-                <div className="w-full h-full bg-slate-100 dark:bg-slate-700 rounded-lg shadow-md" />
+                <div className="h-full w-full rounded-lg bg-slate-100 shadow-md dark:bg-slate-700" />
               </div>
               <div className="w-[14.3%] px-4">
-                <div className="w-full h-full bg-slate-100 dark:bg-slate-700 rounded-lg shadow-md" />
+                <div className="h-full w-full rounded-lg bg-slate-100 shadow-md dark:bg-slate-700" />
               </div>
               <div className="w-[14.3%] px-4">
-                <div className="w-full h-full bg-slate-100 dark:bg-slate-700 rounded-lg shadow-md" />
+                <div className="h-full w-full rounded-lg bg-slate-100 shadow-md dark:bg-slate-700" />
               </div>
               <div className="w-[14.3%] pl-4">
-                <div className="w-full h-full bg-slate-100 dark:bg-slate-700 rounded-lg shadow" />
+                <div className="h-full w-full rounded-lg bg-slate-100 shadow dark:bg-slate-700" />
               </div>
             </div>
 
@@ -690,27 +690,27 @@ export function ToolsReview() {
 
             {/* Fake card borders */}
             <div
-              className="absolute inset-0 flex items-stretch pointer-events-none"
+              className="pointer-events-none absolute inset-0 flex items-stretch"
               aria-hidden="true"
             >
               <div className="w-[14.3%] pr-4" />
               <div className="w-[14.3%] px-4">
-                <div className="w-full h-full rounded-lg ring-1 ring-black ring-opacity-5" />
+                <div className="h-full w-full rounded-lg ring-1 ring-black ring-opacity-5" />
               </div>
               <div className="w-[14.3%] px-4">
-                <div className="w-full h-full rounded-lg ring-2 ring-black ring-opacity-5" />
+                <div className="h-full w-full rounded-lg ring-2 ring-black ring-opacity-5" />
               </div>
               <div className="w-[14.3%] px-4">
-                <div className="w-full h-full rounded-lg ring-2 ring-black ring-opacity-5" />
+                <div className="h-full w-full rounded-lg ring-2 ring-black ring-opacity-5" />
               </div>
               <div className="w-[14.3%] px-4">
-                <div className="w-full h-full rounded-lg ring-2 ring-black ring-opacity-5" />
+                <div className="h-full w-full rounded-lg ring-2 ring-black ring-opacity-5" />
               </div>
               <div className="w-[14.3%] px-4">
-                <div className="w-full h-full rounded-lg ring-2 ring-black ring-opacity-5" />
+                <div className="h-full w-full rounded-lg ring-2 ring-black ring-opacity-5" />
               </div>
               <div className="w-[14.3%] pl-4">
-                <div className="w-full h-full rounded-lg ring-1 ring-black ring-opacity-5" />
+                <div className="h-full w-full rounded-lg ring-1 ring-black ring-opacity-5" />
               </div>
             </div>
           </div>
@@ -718,30 +718,30 @@ export function ToolsReview() {
           <h3 className="mt-10 text-sm font-bold text-gray-700 dark:text-gray-300">
             Manageable
           </h3>
-          <div className="mt-6 relative">
+          <div className="relative mt-6">
             {/* Fake card backgrounds */}
             <div
-              className="absolute inset-0 flex items-stretch pointer-events-none"
+              className="pointer-events-none absolute inset-0 flex items-stretch"
               aria-hidden="true"
             >
               <div className="w-[14.3%] pr-4" />
               <div className="w-[14.3%] px-4">
-                <div className="w-full h-full bg-slate-100 dark:bg-slate-700 rounded-lg shadow" />
+                <div className="h-full w-full rounded-lg bg-slate-100 shadow dark:bg-slate-700" />
               </div>
               <div className="w-[14.3%] px-4">
-                <div className="w-full h-full bg-slate-100 dark:bg-slate-700 rounded-lg shadow-md" />
+                <div className="h-full w-full rounded-lg bg-slate-100 shadow-md dark:bg-slate-700" />
               </div>
               <div className="w-[14.3%] px-4">
-                <div className="w-full h-full bg-slate-100 dark:bg-slate-700 rounded-lg shadow-md" />
+                <div className="h-full w-full rounded-lg bg-slate-100 shadow-md dark:bg-slate-700" />
               </div>
               <div className="w-[14.3%] px-4">
-                <div className="w-full h-full bg-slate-100 dark:bg-slate-700 rounded-lg shadow-md" />
+                <div className="h-full w-full rounded-lg bg-slate-100 shadow-md dark:bg-slate-700" />
               </div>
               <div className="w-[14.3%] px-4">
-                <div className="w-full h-full bg-slate-100 dark:bg-slate-700 rounded-lg shadow-md" />
+                <div className="h-full w-full rounded-lg bg-slate-100 shadow-md dark:bg-slate-700" />
               </div>
               <div className="w-[14.3%] pl-4">
-                <div className="w-full h-full bg-slate-100 dark:bg-slate-700 rounded-lg shadow" />
+                <div className="h-full w-full rounded-lg bg-slate-100 shadow dark:bg-slate-700" />
               </div>
             </div>
 
@@ -794,58 +794,58 @@ export function ToolsReview() {
 
             {/* Fake card borders */}
             <div
-              className="absolute inset-0 flex items-stretch pointer-events-none"
+              className="pointer-events-none absolute inset-0 flex items-stretch"
               aria-hidden="true"
             >
               <div className="w-[14.3%] pr-4" />
               <div className="w-[14.3%] px-4">
-                <div className="w-full h-full rounded-lg ring-1 ring-black ring-opacity-5" />
+                <div className="h-full w-full rounded-lg ring-1 ring-black ring-opacity-5" />
               </div>
               <div className="w-[14.3%] px-4">
-                <div className="w-full h-full rounded-lg ring-2 ring-black ring-opacity-5" />
+                <div className="h-full w-full rounded-lg ring-2 ring-black ring-opacity-5" />
               </div>
               <div className="w-[14.3%] px-4">
-                <div className="w-full h-full rounded-lg ring-2 ring-black ring-opacity-5" />
+                <div className="h-full w-full rounded-lg ring-2 ring-black ring-opacity-5" />
               </div>
               <div className="w-[14.3%] px-4">
-                <div className="w-full h-full rounded-lg ring-2 ring-black ring-opacity-5" />
+                <div className="h-full w-full rounded-lg ring-2 ring-black ring-opacity-5" />
               </div>
               <div className="w-[14.3%] px-4">
-                <div className="w-full h-full rounded-lg ring-2 ring-black ring-opacity-5" />
+                <div className="h-full w-full rounded-lg ring-2 ring-black ring-opacity-5" />
               </div>
               <div className="w-[14.3%] pl-4">
-                <div className="w-full h-full rounded-lg ring-1 ring-black ring-opacity-5" />
+                <div className="h-full w-full rounded-lg ring-1 ring-black ring-opacity-5" />
               </div>
             </div>
           </div>
         </div>
 
-        <div className="flex mt-2 mb-12 max-w-7xl mx-auto px-8 justify-end text-xs">
-          <div className="space-x-3 flex items-center">
+        <div className="mx-auto mt-2 mb-12 flex max-w-7xl justify-end px-8 text-xs">
+          <div className="flex items-center space-x-3">
             <div className="flex items-center">
               <span
                 title="natively supported"
-                className="inline-flex items-center px-2.5 py-0.5 rounded-full text-green-600"
+                className="inline-flex items-center rounded-full px-2.5 py-0.5 text-green-600"
               >
-                <CheckCircleIcon className="w-4 h-4" />
+                <CheckCircleIcon className="h-4 w-4" />
               </span>
               Natively supported
             </div>
             <div className="flex items-center">
               <span
                 title="natively supported"
-                className="inline-flex items-center px-2.5 py-0.5 rounded-full text-slate-400"
+                className="inline-flex items-center rounded-full px-2.5 py-0.5 text-slate-400"
               >
-                <MinusIcon className="w-4 h-4" />
+                <MinusIcon className="h-4 w-4" />
               </span>
               Not supported
             </div>
             <div className="flex items-center">
               <span
                 title="natively supported"
-                className="inline-flex items-center px-2.5 py-0.5 rounded-full text-yellow-600"
+                className="inline-flex items-center rounded-full px-2.5 py-0.5 text-yellow-600"
               >
-                <ExclamationCircleIcon className="w-4 h-4" />
+                <ExclamationCircleIcon className="h-4 w-4" />
               </span>
               Implement your own
             </div>

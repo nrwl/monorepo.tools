@@ -4,36 +4,36 @@ export function WhatIsAMonorepo() {
   return (
     <div
       id="what-is-a-monorepo"
-      className="py-16 bg-slate-50 dark:bg-slate-800 overflow-hidden lg:py-24"
+      className="overflow-hidden bg-slate-50 py-16 dark:bg-slate-800 lg:py-24"
     >
-      <div className="relative mx-auto px-4 sm:px-6 lg:px-8 lg:max-w-7xl">
+      <div className="relative mx-auto px-4 sm:px-6 lg:max-w-7xl lg:px-8">
         <header className="relative">
-          <div className="text-center text-4xl font-extrabold tracking-tight text-gray-900 dark:text-white sm:text-5xl group">
+          <div className="group text-center text-4xl font-extrabold tracking-tight text-gray-900 dark:text-white sm:text-5xl">
             # What is a Monorepo?
             <a
               aria-hidden="true"
               tabIndex={-1}
               href="#what-is-a-monorepo"
-              className="text-gray-900 dark:text-white flex inline-flex items-center"
+              className="flex inline-flex items-center text-gray-900 dark:text-white"
             >
               <LinkIcon className="ml-2 h-6 w-6 opacity-0 group-hover:opacity-100" />
             </a>
           </div>
-          <p className="mt-4 max-w-3xl mx-auto text-center text-xl text-gray-700 dark:text-gray-300">
+          <p className="mx-auto mt-4 max-w-3xl text-center text-xl text-gray-700 dark:text-gray-300">
             Let's define what we and others typically mean when we talk about
             Monorepos.
           </p>
         </header>
 
-        <article className="relative mt-12 lg:mt-24 lg:grid lg:grid-cols-2 lg:gap-8 lg:items-center">
+        <article className="relative mt-12 lg:mt-24 lg:grid lg:grid-cols-2 lg:items-center lg:gap-8">
           <div className="relative">
-            <h2 className="text-2xl leading-loose font-bold text-gray-800 dark:text-gray-100 tracking-tight sm:text-3xl sm:leading-relaxed">
+            <h2 className="text-2xl font-bold leading-loose tracking-tight text-gray-800 dark:text-gray-100 sm:text-3xl sm:leading-relaxed">
               A monorepo is a single repository containing{' '}
-              <mark className="px-1 bg-yellow-500 rounded-md">
+              <mark className="rounded-md bg-yellow-500 px-1">
                 multiple distinct projects
               </mark>
               , with{' '}
-              <mark className="px-1 bg-yellow-500 rounded-md">
+              <mark className="rounded-md bg-yellow-500 px-1">
                 well-defined relationships
               </mark>
               .
@@ -45,7 +45,7 @@ export function WhatIsAMonorepo() {
             </p>
           </div>
 
-          <div className="mt-10 -mx-4 relative lg:mt-0" aria-hidden="true">
+          <div className="relative -mx-4 mt-10 lg:mt-0" aria-hidden="true">
             <img
               aria-hidden="true"
               loading="lazy"
@@ -58,9 +58,9 @@ export function WhatIsAMonorepo() {
         </article>
 
         <article className="relative mt-12 sm:mt-16 lg:mt-24">
-          <div className="lg:grid lg:grid-flow-row-dense lg:grid-cols-2 lg:gap-8 lg:items-center">
+          <div className="lg:grid lg:grid-flow-row-dense lg:grid-cols-2 lg:items-center lg:gap-8">
             <div className="lg:col-start-2">
-              <h2 className="text-2xl leading-loose font-bold text-gray-800 dark:text-gray-100 tracking-tight sm:text-3xl sm:leading-relaxed">
+              <h2 className="text-2xl font-bold leading-loose tracking-tight text-gray-800 dark:text-gray-100 sm:text-3xl sm:leading-relaxed">
                 Not just &ldquo;code colocation&rdquo;
               </h2>
               <p className="mt-3 text-lg text-gray-700 dark:text-gray-300">
@@ -82,7 +82,7 @@ export function WhatIsAMonorepo() {
               </p>
             </div>
 
-            <div className="mt-10 -mx-4 relative lg:mt-0 lg:col-start-1">
+            <div className="relative -mx-4 mt-10 lg:col-start-1 lg:mt-0">
               <img
                 aria-hidden="true"
                 loading="lazy"

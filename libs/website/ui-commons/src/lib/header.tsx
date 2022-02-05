@@ -38,7 +38,7 @@ export function Header() {
           backgroundSize: '1200px 600px',
         }}
       >
-        <header className="relative md:min-h-screen px-4 py-24 sm:px-6 md:grid md:place-items-center lg:px-8">
+        <header className="relative px-4 py-24 sm:px-6 md:grid md:min-h-screen md:place-items-center lg:px-8">
           <div className="absolute right-4 top-5 space-x-4 text-gray-300 dark:text-gray-600">
             {!isMounted
               ? null
@@ -52,25 +52,25 @@ export function Header() {
                     title={variant.label}
                     onClick={() => setTheme(variant.value)}
                   >
-                    <variant.icon className="w-6 h-6" />
+                    <variant.icon className="h-6 w-6" />
                     <span className="sr-only">{variant.label}</span>
                   </button>
                 ))}
           </div>
-          <div className="max-w-max mx-auto">
+          <div className="mx-auto max-w-max">
             <div data-test-id="website-name" className="w-full">
-              <span className="text-5xl font-extrabold text-gray-900 dark:text-white tracking-tighter sm:text-8xl">
+              <span className="text-5xl font-extrabold tracking-tighter text-gray-900 dark:text-white sm:text-8xl">
                 monorepo
               </span>
-              <span className="text-3xl font-semibold text-yellow-500 tracking-tight sm:text-5xl">
+              <span className="text-3xl font-semibold tracking-tight text-yellow-500 sm:text-5xl">
                 .tools
               </span>
             </div>
             <div className="mt-14 flex justify-end">
-              <div className="sm:w-2/3 sm:border-l-4 border-yellow-500">
+              <div className="border-yellow-500 sm:w-2/3 sm:border-l-4">
                 <h1
                   data-test-id="website-slogan"
-                  className="pl-8 py-3 text-2xl font-normal text-gray-800 dark:text-gray-200"
+                  className="py-3 pl-8 text-2xl font-normal text-gray-800 dark:text-gray-200"
                 >
                   Everything you need to know about monorepos, and the tools to
                   build them.
@@ -99,10 +99,10 @@ export function Header() {
             title="Go to Understanding Monorepos"
             href="#understanding-monorepos"
             aria-hidden="true"
-            className="absolute hidden lg:block left-1/2 -ml-4 bottom-2"
+            className="absolute left-1/2 bottom-2 -ml-4 hidden lg:block"
           >
             <svg
-              className="animate-pulse w-14 h-14 text-yellow-500"
+              className="h-14 w-14 animate-pulse text-yellow-500"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
