@@ -3,7 +3,7 @@ export function ToolsSupportCallout() {
     <article className="bg-slate-50 dark:bg-slate-800">
       <div className="mx-auto max-w-7xl py-16 px-4 sm:px-6 lg:px-8">
         <div className="overflow-hidden rounded-lg bg-slate-100 shadow-xl dark:bg-slate-900">
-          <div className="px-6 pt-10 pb-12 sm:px-16 sm:pt-16 lg:py-16 lg:pr-0 xl:py-20 xl:px-20">
+          <div className="px-6 pt-10 pb-12 sm:px-16 sm:pt-16 lg:py-16 xl:py-20 xl:px-20">
             <h1 className="text-3xl font-extrabold text-gray-900 dark:text-white sm:text-4xl">
               <span className="block text-gray-900 dark:text-white">
                 It's not just about the features.
