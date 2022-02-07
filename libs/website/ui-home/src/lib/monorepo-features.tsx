@@ -893,8 +893,8 @@ export function MonorepoFeatures() {
                 </p>
               </dt>
               <dd className="mt-4 text-gray-600 dark:text-gray-400">
-                Nx comes ith an interactive visualizer that allows you to filter
-                and explore large workspaces.
+                Nx comes with an interactive visualizer that allows you to
+                filter and explore large workspaces.
               </dd>
             </div>
             <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
@@ -1352,7 +1352,7 @@ export function MonorepoFeatures() {
                 </p>
               </dt>
               <dd className="mt-4 text-gray-600 dark:text-gray-400">
-                Developers can annotated projects in any way they seem fit,
+                Developers can annotate projects in any way they seem fit,
                 establish invariants, and Nx will make sure they hold. It allows
                 developers to annotate what is private and what is not, what is
                 experimental and what is stable, etc. Nx also allows you to
