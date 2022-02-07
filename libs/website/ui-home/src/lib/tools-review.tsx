@@ -264,7 +264,11 @@ function classNames(...classes: string[]) {
 
 export function ToolsReview() {
   return (
-    <div id="tools-review" className="bg-slate-50 dark:bg-slate-800">
+    <div
+      data-test-id="tools-review"
+      id="tools-review"
+      className="bg-slate-50 dark:bg-slate-800"
+    >
       <div className="relative">
         <div className="relative mx-auto max-w-2xl px-4 pt-16 text-center sm:px-6 sm:pt-32 lg:max-w-7xl lg:px-8">
           <div className="group text-4xl font-extrabold tracking-tight text-gray-900 dark:text-white sm:text-6xl">

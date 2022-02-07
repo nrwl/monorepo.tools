@@ -3,6 +3,7 @@ import { LinkIcon } from '@heroicons/react/solid';
 export function Conclusion() {
   return (
     <article
+      data-test-id="perception-shift"
       id="perception-shift"
       className="bg-slate-50 px-4 pt-16 pb-20 dark:bg-slate-800 sm:px-6 lg:px-8 lg:pt-24 lg:pb-28"
     >

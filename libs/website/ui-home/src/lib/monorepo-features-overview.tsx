@@ -91,6 +91,7 @@ const features = [
 export function MonorepoFeaturesOverview() {
   return (
     <div
+      data-test-id="monorepo-features"
       id="monorepo-features"
       className="overflow-hidden bg-slate-50 py-16 dark:bg-slate-800 lg:py-24"
     >
