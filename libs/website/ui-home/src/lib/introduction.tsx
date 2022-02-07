@@ -2,7 +2,10 @@ import { LinkIcon } from '@heroicons/react/solid';
 
 export function Introduction() {
   return (
-    <div className="mt-32 bg-slate-50 dark:bg-slate-800">
+    <div
+      data-test-id="understanding-monorepos"
+      className="mt-32 bg-slate-50 dark:bg-slate-800"
+    >
       {/* Header */}
       <article className="relative bg-slate-50 pb-32 dark:bg-slate-800 md:pt-64">
         <div className="absolute inset-0">

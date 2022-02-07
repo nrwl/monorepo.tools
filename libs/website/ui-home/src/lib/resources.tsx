@@ -127,7 +127,10 @@ const books: {
 
 export function Resources() {
   return (
-    <article className="bg-slate-50 px-4 pt-16 pb-20 dark:bg-slate-800 sm:px-6 lg:px-8 lg:pt-24 lg:pb-28">
+    <article
+      data-test-id="monorepo-resources"
+      className="bg-slate-50 px-4 pt-16 pb-20 dark:bg-slate-800 sm:px-6 lg:px-8 lg:pt-24 lg:pb-28"
+    >
       <div className="relative">
         <h1
           id="monorepo-resources"

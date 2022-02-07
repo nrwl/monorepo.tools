@@ -48,6 +48,7 @@ const ManualImplementation = () => (
 export function MonorepoFeatures() {
   return (
     <div
+      data-test-id="monorepo-tools"
       id="monorepo-tools"
       className="overflow-hidden bg-slate-50 py-16 dark:bg-slate-800 lg:py-24"
     >

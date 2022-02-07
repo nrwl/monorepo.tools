@@ -3,6 +3,7 @@ import { LinkIcon } from '@heroicons/react/solid';
 export function WhyAMonorepo() {
   return (
     <div
+      data-test-id="why-a-monorepo"
       id="why-a-monorepo"
       className="bg-slate-50 px-4 pt-16 pb-20 dark:bg-slate-800 sm:px-6 lg:px-8 lg:pt-24 lg:pb-28"
     >
