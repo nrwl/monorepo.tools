@@ -6,7 +6,10 @@ export function MonolithCallout() {
           <div className="px-6 pt-10 pb-12 text-center sm:px-16 sm:pt-16 lg:py-16 lg:pr-0 xl:py-20 xl:px-20">
             <h1 className="text-3xl font-extrabold text-gray-900 dark:text-white sm:text-4xl">
               <span className="block text-gray-900 dark:text-white">
-                ✋ Monorepo <span aria-hidden="true">&#8800;</span>{' '}
+                <span role="img" aria-hidden="true">
+                  ✋
+                </span>{' '}
+                Monorepo <span aria-hidden="true">&#8800;</span>{' '}
                 <span className="sr-only">is different from</span> Monolith
               </span>
             </h1>
