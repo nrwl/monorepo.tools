@@ -2,7 +2,6 @@
   "root": "libs/website/ui-home",
   "sourceRoot": "libs/website/ui-home/src",
   "projectType": "library",
-  "tags": [],
   "targets": {
     "lint": {
       "executor": "@nrwl/linter:eslint",
@@ -19,5 +18,6 @@
         "passWithNoTests": true
       }
     }
-  }
+  },
+  "tags": ["scope:website", "type:ui"]
 }

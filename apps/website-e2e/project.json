@@ -23,6 +23,6 @@
       }
     }
   },
-  "tags": [],
+  "tags": ["scope:website"],
   "implicitDependencies": ["website"]
 }
