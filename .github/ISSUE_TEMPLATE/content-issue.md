@@ -1,11 +1,11 @@
 ---
 name: Content Issue
-about: You found something not right? Want to add extra information or just think
+about:
+  You found something not right? Want to add extra information or just think
   you can propose a better way to say it? Help us improve our content.
-title: "[CONTENT] "
+title: '[CONTENT] '
 labels: content
 assignees: ''
-
 ---
 
 <!-- Which section? -->
