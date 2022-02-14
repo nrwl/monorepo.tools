@@ -641,7 +641,7 @@ export function MonorepoFeatures() {
               </dt>
               <dd className="mt-4 text-base text-gray-600 dark:text-gray-400">
                 Bazel doesn't support it, but it provides the required metadata
-                making it possible to write such functionality youself.
+                making it possible to write such functionality yourself.
               </dd>
             </div>
             <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
@@ -925,7 +925,7 @@ export function MonorepoFeatures() {
 
         {/*MANAGEMENT*/}
         <div className="font-boldtext-gray-800 dark:text-gray-100tracking-tight mt-24 flex items-center text-2xl leading-loose sm:text-3xl sm:leading-relaxed lg:mt-32">
-          Managable
+          Manageable
           <div className="ml-4 flex h-1 w-full flex-grow rounded bg-slate-100 dark:bg-slate-900" />
         </div>
 

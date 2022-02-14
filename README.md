@@ -3,7 +3,7 @@ width="100%" alt="monorepo.tools" /></a></p>
 
 # Monorepo.tools
 
-Monorepos are hot right now, especially among Web developers. We created this resource to help developers understand what monorepos are, what benefitsthey can bring, and the tools available to make monorepo development delightful.
+Monorepos are hot right now, especially among Web developers. We created this resource to help developers understand what monorepos are, what benefits they can bring, and the tools available to make monorepo development delightful.
 
 There are many great monorepo tools, built by great teams, with different philosophies. We do our best to represent each tool objectively, and we welcome pull requests if we got something wrong!
 
