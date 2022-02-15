@@ -164,7 +164,7 @@ export function Introduction() {
                 What is a monorepo
               </h2>
               <p className="mt-4 text-base text-gray-700 dark:text-gray-300">
-                Let's start with a common unsterstanding of what a Monorepo is.
+                Let's start with a common understanding of what a Monorepo is.
               </p>
             </div>
             <div className="rounded-bl-2xl rounded-br-2xl bg-slate-200 p-6 dark:bg-slate-900 md:px-8">
