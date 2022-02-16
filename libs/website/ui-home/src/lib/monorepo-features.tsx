@@ -1067,7 +1067,17 @@ export function MonorepoFeatures() {
             <p className="mt-3 text-lg text-gray-700 dark:text-gray-300">
               The tool helps you get a consistent experience regardless of what
               you use to develop your projects: different JavaScript frameworks,
-              Go, Java, etc.
+              Go, Rust, Java, etc. <br />
+              In other words, the tool treats different technologies the same
+              way.
+            </p>
+
+            <p className="mt-3 text-lg text-gray-700 dark:text-gray-300">
+              For instance, the tool can analyze package.json and JS/TS files to
+              figure out JS project deps, and how to build and test them. But it
+              will analyze Cargo.toml files to do the same for Rust, or Gradle
+              files to do the same for Java. This requires the tool to be
+              pluggable.
             </p>
 
             <div className="mt-10" aria-hidden="true">
