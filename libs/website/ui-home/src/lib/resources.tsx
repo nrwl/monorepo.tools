@@ -42,6 +42,13 @@ const people: {
     twitterLink: 'https://twitter.com/octogonz_',
     githubLink: 'https://github.com/microsoft/rushstack',
   },
+  {
+    name: 'Justin Reock',
+    tool: 'Gradle',
+    imageUrl: 'https://avatars.githubusercontent.com/u/2613650?s=150',
+    twitterLink: 'https://twitter.com/JustinReock',
+    githubLink: 'https://github.com/gradle/gradle',
+  },
 ];
 const videosPodcasts: { name: string; link: string }[] = [
   {

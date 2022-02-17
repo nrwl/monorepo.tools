@@ -132,6 +132,17 @@ export function MonorepoFeatures() {
             <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
               <dt>
                 <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
+                  <Supported /> Gradle Build Tool
+                </p>
+              </dt>
+              <dd className="mt-4 text-gray-600 dark:text-gray-400">
+                Gradle Build Tool supplies a local build cache natively. Gradle
+                Enterprise adds support for replication and management.
+              </dd>
+            </div>
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
+              <dt>
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
                   <Supported /> Lage
                 </p>
               </dt>
@@ -236,6 +247,18 @@ export function MonorepoFeatures() {
               </dt>
               <dd className="mt-4 text-gray-600 dark:text-gray-400">
                 Bazel supports it.
+              </dd>
+            </div>
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
+              <dt>
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
+                  <Supported /> Gradle Build Tool
+                </p>
+              </dt>
+              <dd className="mt-4 text-gray-600 dark:text-gray-400">
+                Gradle Build Tool provides support for parallel tasks via
+                configuration, and task orchestration through its flexible
+                Groovy or Kotlin DSL.
               </dd>
             </div>
             <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
@@ -347,6 +370,17 @@ export function MonorepoFeatures() {
             <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
               <dt>
                 <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
+                  <Supported /> Gradle Build Tool
+                </p>
+              </dt>
+              <dd className="mt-4 text-gray-600 dark:text-gray-400">
+                Gradle Build Tool offers a remote distributed cache. Gradle
+                Enterprise adds support for replication and management.
+              </dd>
+            </div>
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
+              <dt>
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
                   <Supported /> Lage
                 </p>
               </dt>
@@ -452,6 +486,16 @@ export function MonorepoFeatures() {
             <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
               <dt>
                 <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
+                  <ManualImplementation /> Gradle Build Tool
+                </p>
+              </dt>
+              <dd className="mt-4 text-base text-gray-600 dark:text-gray-400">
+                Gradle Enterprise can distribute Test tasks.
+              </dd>
+            </div>
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
+              <dt>
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
                   <NotSupported /> Lage
                 </p>
               </dt>
@@ -540,6 +584,16 @@ export function MonorepoFeatures() {
               </dt>
               <dd className="mt-4 text-base text-gray-600 dark:text-gray-400">
                 This is Bazel's biggest differentiator.
+              </dd>
+            </div>
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
+              <dt>
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
+                  <NotSupported /> Gradle Build Tool
+                </p>
+              </dt>
+              <dd className="mt-4 text-base text-gray-600 dark:text-gray-400">
+                Gradle Build Tool doesn't support it.
               </dd>
             </div>
             <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
@@ -642,6 +696,17 @@ export function MonorepoFeatures() {
               <dd className="mt-4 text-base text-gray-600 dark:text-gray-400">
                 Bazel doesn't support it, but it provides the required metadata
                 making it possible to write such functionality yourself.
+              </dd>
+            </div>
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
+              <dt>
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
+                  <Supported /> Gradle Build Tool
+                </p>
+              </dt>
+              <dd className="mt-4 text-base text-gray-600 dark:text-gray-400">
+                Gradle Build Tool natively provides incremental building and
+                up-to-date detection.
               </dd>
             </div>
             <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
@@ -759,6 +824,17 @@ export function MonorepoFeatures() {
             <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
               <dt>
                 <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
+                  <Supported /> Gradle Build Tool
+                </p>
+              </dt>
+              <dd className="mt-4 text-gray-600 dark:text-gray-400">
+                Gradle Build Tool developers script build tasks in Groovy using
+                build.gradle, or Kotlin using build.gradle.kts
+              </dd>
+            </div>
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
+              <dt>
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
                   <Supported /> Lage
                 </p>
               </dt>
@@ -863,6 +939,17 @@ export function MonorepoFeatures() {
               <dd className="mt-4 text-gray-600 dark:text-gray-400">
                 Bazel's implementation supports a custom query language to
                 filter out node you are not interested in.
+              </dd>
+            </div>
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
+              <dt>
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
+                  <ManualImplementation /> Gradle Build Tool
+                </p>
+              </dt>
+              <dd className="mt-4 text-gray-600 dark:text-gray-400">
+                Gradle Build Scan provides rich dependency information, and
+                third party tools are available for project/task graphs.
               </dd>
             </div>
             <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
@@ -976,6 +1063,18 @@ export function MonorepoFeatures() {
                 Bazel supports it. Any folder of files can be marked as a
                 project and can be shared. Bazel build rules ere used to enable
                 sharing without hurting dev ergonomics.
+              </dd>
+            </div>
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
+              <dt>
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
+                  <Supported />
+                  Gradle Build Tool
+                </p>
+              </dt>
+              <dd className="mt-4 text-gray-600 dark:text-gray-400">
+                Gradle Build Tool can publish shareable artifacts and consume
+                dependencies from multiple repositories.
               </dd>
             </div>
             <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
@@ -1106,6 +1205,18 @@ export function MonorepoFeatures() {
             <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
               <dt>
                 <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
+                  <Supported /> Gradle Build Tool
+                </p>
+              </dt>
+              <dd className="mt-4 text-base text-gray-600 dark:text-gray-400">
+                Gradle Build Tool is extensible through an ecosystem of plugins
+                allowing it to, for instance, build native with CMake or package
+                with webpack.
+              </dd>
+            </div>
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
+              <dt>
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
                   <NotSupported />
                   Lage
                 </p>
@@ -1207,6 +1318,17 @@ export function MonorepoFeatures() {
                 <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
                   <ManualImplementation />
                   Bazel
+                </p>
+              </dt>
+              <dd className="mt-4 text-base text-gray-600 dark:text-gray-400">
+                External generators can be used.
+              </dd>
+            </div>
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
+              <dt>
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
+                  <ManualImplementation />
+                  Gradle Build Tool
                 </p>
               </dt>
               <dd className="mt-4 text-base text-gray-600 dark:text-gray-400">
@@ -1329,6 +1451,18 @@ export function MonorepoFeatures() {
               <dd className="mt-4 text-base text-gray-600 dark:text-gray-400">
                 Bazel supports visibility rules which help you separate what is
                 private from what is public, what can be shared, etc.
+              </dd>
+            </div>
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
+              <dt>
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
+                  <ManualImplementation />
+                  Gradle Build Tool
+                </p>
+              </dt>
+              <dd className="mt-4 text-base text-gray-600 dark:text-gray-400">
+                While not supported natively, Gradle Build Tool's rich plugin
+                possibilities allow rules like these to be developed.
               </dd>
             </div>
             <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">

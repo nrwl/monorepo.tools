@@ -26,6 +26,13 @@ const tools = [
       'A fast, scalable, multi-language and extensible build system.',
   },
   {
+    title: 'Gradle',
+    organization: 'Gradle, Inc',
+    organizationUrl: 'https://gradle.org',
+    description:
+      'A fast, flexible polyglot build system designed for multi-project builds.',
+  },
+  {
     title: 'Lage',
     organization: 'Microsoft',
     organizationUrl: 'https://microsoft.com',
@@ -66,6 +73,7 @@ const fast: Item[] = [
       'The ability to store and replay file and process output of tasks.',
     features: [
       { title: 'Bazel', value: 'supported' },
+      { title: 'Gradle', value: 'supported' },
       { title: 'Lage', value: 'supported' },
       { title: 'Lerna', value: 'notSupported' },
       { title: 'Nx', value: 'supported' },
@@ -79,6 +87,7 @@ const fast: Item[] = [
     tooltip: 'The ability to run tasks in the correct order and in parallel.',
     features: [
       { title: 'Bazel', value: 'supported' },
+      { title: 'Gradle', value: 'supported' },
       { title: 'Lage', value: 'supported' },
       { title: 'Lerna', value: 'supported' },
       { title: 'Nx', value: 'supported' },
@@ -93,6 +102,7 @@ const fast: Item[] = [
       'The ability to share cache artifacts across different environments.',
     features: [
       { title: 'Bazel', value: 'supported' },
+      { title: 'Gradle', value: 'supported' },
       { title: 'Lage', value: 'supported' },
       { title: 'Lerna', value: 'notSupported' },
       { title: 'Nx', value: 'supported' },
@@ -106,6 +116,7 @@ const fast: Item[] = [
     tooltip: 'The ability to distribute a command across many machines.',
     features: [
       { title: 'Bazel', value: 'supported' },
+      { title: 'Gradle', value: 'manualImplementation' },
       { title: 'Lage', value: 'notSupported' },
       { title: 'Lerna', value: 'notSupported' },
       { title: 'Nx', value: 'supported' },
@@ -120,6 +131,7 @@ const fast: Item[] = [
       'The ability to execute any command on multiple machines while developing locally.',
     features: [
       { title: 'Bazel', value: 'supported' },
+      { title: 'Gradle', value: 'notSupported' },
       { title: 'Lage', value: 'notSupported' },
       { title: 'Lerna', value: 'notSupported' },
       { title: 'Nx', value: 'notSupported' },
@@ -134,6 +146,7 @@ const fast: Item[] = [
       'Determine what might be affected by a change, to run only build/test affected projects.',
     features: [
       { title: 'Bazel', value: 'manualImplementation' },
+      { title: 'Gradle', value: 'supported' },
       { title: 'Lage', value: 'supported' },
       { title: 'Lerna', value: 'supported' },
       { title: 'Nx', value: 'supported' },
@@ -150,6 +163,7 @@ const understandable: Item[] = [
       'The ability to understand the understand the project graph of the workspace without extra configuration.',
     features: [
       { title: 'Bazel', value: 'manualImplementation' },
+      { title: 'Gradle', value: 'supported' },
       { title: 'Lage', value: 'supported' },
       { title: 'Nx', value: 'supported' },
       { title: 'Lerna', value: 'supported' },
@@ -164,6 +178,7 @@ const understandable: Item[] = [
       'Visualize dependency relationships between projects and/or tasks.',
     features: [
       { title: 'Bazel', value: 'supported' },
+      { title: 'Gradle', value: 'manualImplementation' },
       { title: 'Lage', value: 'manualImplementation' },
       { title: 'Lerna', value: 'manualImplementation' },
       { title: 'Nx', value: 'supported' },
@@ -179,6 +194,7 @@ const manageable: Item[] = [
     tooltip: 'Facilitates sharing of discrete pieces source code.',
     features: [
       { title: 'Bazel', value: 'supported' },
+      { title: 'Gradle', value: 'supported' },
       { title: 'Lage', value: 'supported' },
       { title: 'Lerna', value: 'supported' },
       { title: 'Nx', value: 'supported' },
@@ -193,6 +209,7 @@ const manageable: Item[] = [
       'The tool helps you get a consistent experience regardless of what you use to develop your projects: different JavaScript frameworks, Go, Java, etc.',
     features: [
       { title: 'Bazel', value: 'supported' },
+      { title: 'Gradle', value: 'supported' },
       { title: 'Lage', value: 'notSupported' },
       { title: 'Lerna', value: 'notSupported' },
       { title: 'Nx', value: 'supported' },
@@ -206,6 +223,7 @@ const manageable: Item[] = [
     tooltip: 'Native support for generating code',
     features: [
       { title: 'Bazel', value: 'manualImplementation' },
+      { title: 'Gradle', value: 'manualImplementation' },
       { title: 'Lage', value: 'manualImplementation' },
       { title: 'Lerna', value: 'manualImplementation' },
       { title: 'Nx', value: 'supported' },
@@ -220,6 +238,7 @@ const manageable: Item[] = [
       'Supports definition of rules to constrain dependency relationships within the repo.',
     features: [
       { title: 'Bazel', value: 'supported' },
+      { title: 'Gradle', value: 'manualImplementation' },
       { title: 'Lage', value: 'manualImplementation' },
       { title: 'Lerna', value: 'manualImplementation' },
       { title: 'Nx', value: 'supported' },
@@ -468,14 +487,16 @@ export function ToolsReview() {
       <section className="hidden lg:block">
         <div className="mx-auto max-w-7xl py-24 px-8">
           <div className="flex w-full items-stretch border-t border-slate-100 dark:border-slate-900">
-            <div className="-mt-px flex w-[14.3%] items-end py-6 pr-4" />
+            <div className="-mt-px flex w-[14%] items-end py-6 pr-4" />
             {tools.map((tool, toolIndex) => (
               <div
                 key={tool.title}
                 aria-hidden="true"
                 className={classNames(
-                  toolIndex === tools.length - 1 ? '' : 'pr-4',
-                  '-mt-px w-[14.3%] pl-4'
+                  toolIndex === tools.length - 1
+                    ? 'w-[11%] pl-4'
+                    : 'w-[12.5%] px-4',
+                  '-mt-px '
                 )}
               >
                 <div className="border-t-2 border-transparent py-6">
@@ -496,7 +517,7 @@ export function ToolsReview() {
           </div>
 
           <div className="flex w-full items-stretch border-t border-slate-100 dark:border-slate-900">
-            <div className="-mt-px flex w-[14.3%] items-end py-6 pr-4">
+            <div className="-mt-px flex w-[12.5%] items-end py-6 pr-4">
               <h3 className="mt-auto text-sm font-bold text-gray-700 dark:text-gray-300">
                 Fast
               </h3>
@@ -508,23 +529,26 @@ export function ToolsReview() {
               className="pointer-events-none absolute inset-0 flex items-stretch"
               aria-hidden="true"
             >
-              <div className="w-[14.3%] pr-5" />
-              <div className="w-[14.3%] px-5">
+              <div className="w-[14%] pr-4" />
+              <div className="w-[12.5%] px-4">
                 <div className="h-full w-full rounded-lg bg-slate-100 shadow dark:bg-slate-700" />
               </div>
-              <div className="w-[14.3%] px-5">
+              <div className="w-[12.5%] px-4">
                 <div className="h-full w-full rounded-lg bg-slate-100 shadow-md dark:bg-slate-700" />
               </div>
-              <div className="w-[14.3%] px-5">
+              <div className="w-[12.5%] px-4">
                 <div className="h-full w-full rounded-lg bg-slate-100 shadow-md dark:bg-slate-700" />
               </div>
-              <div className="w-[14.3%] pl-5">
+              <div className="w-[12.5%] px-4">
                 <div className="h-full w-full rounded-lg bg-slate-100 shadow dark:bg-slate-700" />
               </div>
-              <div className="w-[14.3%] pl-5">
+              <div className="w-[12.5%] px-4">
                 <div className="h-full w-full rounded-lg bg-slate-100 shadow dark:bg-slate-700" />
               </div>
-              <div className="w-[14.3%] pl-5">
+              <div className="w-[12.5%] px-4">
+                <div className="h-full w-full rounded-lg bg-slate-100 shadow dark:bg-slate-700" />
+              </div>
+              <div className="w-[11%] pl-4">
                 <div className="h-full w-full rounded-lg bg-slate-100 shadow dark:bg-slate-700" />
               </div>
             </div>
@@ -548,7 +572,7 @@ export function ToolsReview() {
                   <tr key={feature.title}>
                     <th
                       scope="row"
-                      className="w-[14.3%] py-3 pr-4 text-left text-sm font-medium text-gray-700 dark:text-gray-300"
+                      className="w-[14%] py-3 pr-4 text-left text-sm font-medium text-gray-700 dark:text-gray-300"
                     >
                       <a
                         href={feature.link}
@@ -563,9 +587,9 @@ export function ToolsReview() {
                         key={tier.title}
                         className={classNames(
                           tierIdx === feature.features.length - 1
-                            ? 'pl-4'
-                            : 'px-4',
-                          'relative w-[14.3%] py-0 text-center'
+                            ? 'w-[11%] pl-4'
+                            : 'w-[12.5%] px-4',
+                          'relative py-0 text-center'
                         )}
                       >
                         <span className="relative h-full w-full py-3">
@@ -583,23 +607,26 @@ export function ToolsReview() {
               className="pointer-events-none absolute inset-0 flex items-stretch"
               aria-hidden="true"
             >
-              <div className="w-[14.3%] pr-5" />
-              <div className="w-[14.3%] px-5">
+              <div className="w-[14%] pr-4" />
+              <div className="w-[12.5%] px-4">
                 <div className="h-full w-full rounded-lg ring-1 ring-black ring-opacity-5" />
               </div>
-              <div className="w-[14.3%] px-5">
+              <div className="w-[12.5%] px-4">
                 <div className="h-full w-full rounded-lg ring-2 ring-black ring-opacity-5" />
               </div>
-              <div className="w-[14.3%] px-5">
+              <div className="w-[12.5%] px-4">
                 <div className="h-full w-full rounded-lg ring-2 ring-black ring-opacity-5" />
               </div>
-              <div className="w-[14.3%] pl-5">
+              <div className="w-[12.5%] px-4">
                 <div className="h-full w-full rounded-lg ring-1 ring-black ring-opacity-5" />
               </div>
-              <div className="w-[14.3%] pl-5">
+              <div className="w-[12.5%] px-4">
                 <div className="h-full w-full rounded-lg ring-1 ring-black ring-opacity-5" />
               </div>
-              <div className="w-[14.3%] pl-5">
+              <div className="w-[12.5%] px-4">
+                <div className="h-full w-full rounded-lg ring-1 ring-black ring-opacity-5" />
+              </div>
+              <div className="w-[11%] pl-4">
                 <div className="h-full w-full rounded-lg ring-1 ring-black ring-opacity-5" />
               </div>
             </div>
@@ -614,23 +641,26 @@ export function ToolsReview() {
               className="pointer-events-none absolute inset-0 flex items-stretch"
               aria-hidden="true"
             >
-              <div className="w-[14.3%] pr-4" />
-              <div className="w-[14.3%] px-4">
+              <div className="w-[14%] pr-4" />
+              <div className="w-[12.5%] px-4">
                 <div className="h-full w-full rounded-lg bg-slate-100 shadow dark:bg-slate-700" />
               </div>
-              <div className="w-[14.3%] px-4">
+              <div className="w-[12.5%] px-4">
                 <div className="h-full w-full rounded-lg bg-slate-100 shadow-md dark:bg-slate-700" />
               </div>
-              <div className="w-[14.3%] px-4">
+              <div className="w-[12.5%] px-4">
                 <div className="h-full w-full rounded-lg bg-slate-100 shadow-md dark:bg-slate-700" />
               </div>
-              <div className="w-[14.3%] px-4">
+              <div className="w-[12.5%] px-4">
                 <div className="h-full w-full rounded-lg bg-slate-100 shadow-md dark:bg-slate-700" />
               </div>
-              <div className="w-[14.3%] px-4">
+              <div className="w-[12.5%] px-4">
                 <div className="h-full w-full rounded-lg bg-slate-100 shadow-md dark:bg-slate-700" />
               </div>
-              <div className="w-[14.3%] pl-4">
+              <div className="w-[12.5%] px-4">
+                <div className="h-full w-full rounded-lg bg-slate-100 shadow-md dark:bg-slate-700" />
+              </div>
+              <div className="w-[11%] pl-4">
                 <div className="h-full w-full rounded-lg bg-slate-100 shadow dark:bg-slate-700" />
               </div>
             </div>
@@ -664,7 +694,7 @@ export function ToolsReview() {
                   <tr key={feature.title}>
                     <th
                       scope="row"
-                      className="w-[14.3%] py-3 pr-4 text-left text-sm font-medium text-gray-700 dark:text-gray-300"
+                      className="w-[14%] py-3 pr-4 text-left text-sm font-medium text-gray-700 dark:text-gray-300"
                     >
                       <a
                         href={feature.link}
@@ -679,9 +709,9 @@ export function ToolsReview() {
                         key={tier.title}
                         className={classNames(
                           tierIdx === feature.features.length - 1
-                            ? 'pl-4'
-                            : 'px-4',
-                          'relative w-[14.3%] py-0 text-center'
+                            ? 'w-[11%] pl-4'
+                            : 'w-[12.5%] px-4',
+                          'relative py-0 text-center'
                         )}
                       >
                         {valuesDictionary[tier.value]()}
@@ -697,23 +727,26 @@ export function ToolsReview() {
               className="pointer-events-none absolute inset-0 flex items-stretch"
               aria-hidden="true"
             >
-              <div className="w-[14.3%] pr-4" />
-              <div className="w-[14.3%] px-4">
+              <div className="w-[14%] pr-4" />
+              <div className="w-[12.5%] px-4">
                 <div className="h-full w-full rounded-lg ring-1 ring-black ring-opacity-5" />
               </div>
-              <div className="w-[14.3%] px-4">
+              <div className="w-[12.5%] px-4">
                 <div className="h-full w-full rounded-lg ring-2 ring-black ring-opacity-5" />
               </div>
-              <div className="w-[14.3%] px-4">
+              <div className="w-[12.5%] px-4">
                 <div className="h-full w-full rounded-lg ring-2 ring-black ring-opacity-5" />
               </div>
-              <div className="w-[14.3%] px-4">
+              <div className="w-[12.5%] px-4">
                 <div className="h-full w-full rounded-lg ring-2 ring-black ring-opacity-5" />
               </div>
-              <div className="w-[14.3%] px-4">
+              <div className="w-[12.5%] px-4">
                 <div className="h-full w-full rounded-lg ring-2 ring-black ring-opacity-5" />
               </div>
-              <div className="w-[14.3%] pl-4">
+              <div className="w-[12.5%] px-4">
+                <div className="h-full w-full rounded-lg ring-1 ring-black ring-opacity-5" />
+              </div>
+              <div className="w-[11%] pl-4">
                 <div className="h-full w-full rounded-lg ring-1 ring-black ring-opacity-5" />
               </div>
             </div>
@@ -728,23 +761,26 @@ export function ToolsReview() {
               className="pointer-events-none absolute inset-0 flex items-stretch"
               aria-hidden="true"
             >
-              <div className="w-[14.3%] pr-4" />
-              <div className="w-[14.3%] px-4">
+              <div className="w-[14%] pr-4" />
+              <div className="w-[12.5%] px-4">
                 <div className="h-full w-full rounded-lg bg-slate-100 shadow dark:bg-slate-700" />
               </div>
-              <div className="w-[14.3%] px-4">
+              <div className="w-[12.5%] px-4">
                 <div className="h-full w-full rounded-lg bg-slate-100 shadow-md dark:bg-slate-700" />
               </div>
-              <div className="w-[14.3%] px-4">
+              <div className="w-[12.5%] px-4">
                 <div className="h-full w-full rounded-lg bg-slate-100 shadow-md dark:bg-slate-700" />
               </div>
-              <div className="w-[14.3%] px-4">
+              <div className="w-[12.5%] px-4">
                 <div className="h-full w-full rounded-lg bg-slate-100 shadow-md dark:bg-slate-700" />
               </div>
-              <div className="w-[14.3%] px-4">
+              <div className="w-[12.5%] px-4">
                 <div className="h-full w-full rounded-lg bg-slate-100 shadow-md dark:bg-slate-700" />
               </div>
-              <div className="w-[14.3%] pl-4">
+              <div className="w-[12.5%] px-4">
+                <div className="h-full w-full rounded-lg bg-slate-100 shadow-md dark:bg-slate-700" />
+              </div>
+              <div className="w-[11%] pl-4">
                 <div className="h-full w-full rounded-lg bg-slate-100 shadow dark:bg-slate-700" />
               </div>
             </div>
@@ -768,7 +804,7 @@ export function ToolsReview() {
                   <tr key={feature.title}>
                     <th
                       scope="row"
-                      className="w-[14.3%] py-3 pr-4 text-left text-sm font-medium text-gray-700 dark:text-gray-300"
+                      className="w-[14%] py-3 pr-4 text-left text-sm font-medium text-gray-700 dark:text-gray-300"
                     >
                       <a
                         href={feature.link}
@@ -783,9 +819,9 @@ export function ToolsReview() {
                         key={tier.title}
                         className={classNames(
                           tierIdx === feature.features.length - 1
-                            ? 'pl-4'
-                            : 'px-4',
-                          'relative w-[14.3%] py-0 text-center'
+                            ? 'w-[11%] pl-4'
+                            : 'w-[12.5%] px-4',
+                          'relative py-0 text-center'
                         )}
                       >
                         {valuesDictionary[tier.value]()}
@@ -801,23 +837,26 @@ export function ToolsReview() {
               className="pointer-events-none absolute inset-0 flex items-stretch"
               aria-hidden="true"
             >
-              <div className="w-[14.3%] pr-4" />
-              <div className="w-[14.3%] px-4">
+              <div className="w-[14%] pr-4" />
+              <div className="w-[12.5%] px-4">
                 <div className="h-full w-full rounded-lg ring-1 ring-black ring-opacity-5" />
               </div>
-              <div className="w-[14.3%] px-4">
+              <div className="w-[12.5%] px-4">
                 <div className="h-full w-full rounded-lg ring-2 ring-black ring-opacity-5" />
               </div>
-              <div className="w-[14.3%] px-4">
+              <div className="w-[12.5%] px-4">
                 <div className="h-full w-full rounded-lg ring-2 ring-black ring-opacity-5" />
               </div>
-              <div className="w-[14.3%] px-4">
+              <div className="w-[12.5%] px-4">
                 <div className="h-full w-full rounded-lg ring-2 ring-black ring-opacity-5" />
               </div>
-              <div className="w-[14.3%] px-4">
+              <div className="w-[12.5%] px-4">
                 <div className="h-full w-full rounded-lg ring-2 ring-black ring-opacity-5" />
               </div>
-              <div className="w-[14.3%] pl-4">
+              <div className="w-[12.5%] px-4">
+                <div className="h-full w-full rounded-lg ring-2 ring-black ring-opacity-5" />
+              </div>
+              <div className="w-[11%] pl-4">
                 <div className="h-full w-full rounded-lg ring-1 ring-black ring-opacity-5" />
               </div>
             </div>
