@@ -81,7 +81,7 @@ export function Introduction() {
                   target="_blank"
                   className="border-b border-yellow-500 hover:bg-yellow-500 hover:text-gray-800 transition hover:rounded"
                 >
-                  Gradle Build Tool
+                  Gradle Build Tool (by Gradle, Inc)
                 </a>
                 , &nbsp;
                 <a

@@ -30,7 +30,7 @@ const tools = [
     organization: 'Gradle, Inc',
     organizationUrl: 'https://gradle.org',
     description:
-      'Polyglot build system created with flexibilty and speed in mind.',
+      'A fast, flexible Polyglot build system designed for multi-project builds.',
   },
   {
     title: 'Lage',
