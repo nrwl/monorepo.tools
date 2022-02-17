@@ -76,6 +76,15 @@ export function Introduction() {
                 </a>
                 , &nbsp;
                 <a
+                  href="https://gradle.org"
+                  rel="noreferrer"
+                  target="_blank"
+                  className="border-b border-yellow-500 hover:bg-yellow-500 hover:text-gray-800 transition hover:rounded"
+                >
+                  Gradle Build Tool
+                </a>
+                , &nbsp;
+                <a
                   rel="noreferrer"
                   target="_blank"
                   href="https://microsoft.github.io/lage/"

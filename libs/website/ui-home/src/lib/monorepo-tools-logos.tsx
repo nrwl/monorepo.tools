@@ -5,6 +5,10 @@ const tools: { name: string; link: string }[] = [
     link: 'https://github.com/bazelbuild/bazel',
   },
   {
+    name: 'Gradle',
+    link: 'https://github.com/gradle/gradle',
+  },
+  {
     name: 'Lage',
     link: 'https://github.com/microsoft/lage',
   },
@@ -28,7 +32,7 @@ const tools: { name: string; link: string }[] = [
 
 export function MonorepoToolsLogos() {
   return (
-    <div className="py-12 lg:py-16 mt-8 grid grid-cols-1 gap-0.5 md:grid-cols-6 lg:mt-16 text-3xl font-semibold">
+    <div className="py-12 lg:py-16 mt-8 grid grid-cols-1 gap-0.5 md:grid-cols-7 lg:mt-16 text-3xl font-semibold">
       {tools.map((tool) => (
         <a
           key={'tool-' + tool.name}
