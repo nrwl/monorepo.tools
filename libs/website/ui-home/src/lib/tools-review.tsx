@@ -21,21 +21,21 @@ const tools = [
   {
     title: 'Bazel',
     organization: 'Google',
-    organizationUrl: 'https://google.com',
+    organizationUrl: 'https://google.com/?utm_source=monorepo.tools',
     description:
       'A fast, scalable, multi-language and extensible build system.',
   },
   {
     title: 'Gradle',
     organization: 'Gradle, Inc',
-    organizationUrl: 'https://gradle.org',
+    organizationUrl: 'https://gradle.org/?utm_source=monorepo.tools',
     description:
       'A fast, flexible polyglot build system designed for multi-project builds.',
   },
   {
     title: 'Lage',
     organization: 'Microsoft',
-    organizationUrl: 'https://microsoft.com',
+    organizationUrl: 'https://microsoft.com/?utm_source=monorepo.tools',
     description: 'Task runner in JS monorepos',
   },
   {
@@ -46,21 +46,21 @@ const tools = [
   {
     title: 'Nx',
     organization: 'Nrwl',
-    organizationUrl: 'https://nrwl.io',
+    organizationUrl: 'https://nrwl.io/?utm_source=monorepo.tools',
     description:
       'Next generation build system with first class monorepo support and powerful integrations.',
   },
   {
     title: 'Rush',
     organization: 'Microsoft',
-    organizationUrl: 'https://microsoft.com',
+    organizationUrl: 'https://microsoft.com/?utm_source=monorepo.tools',
     description:
       'Geared for large monorepos with lots of teams and projects. Part of the Rush Stack family of projects.',
   },
   {
     title: 'Turborepo',
     organization: 'Vercel',
-    organizationUrl: 'https://vercel.com',
+    organizationUrl: 'https://vercel.com/?utm_source=monorepo.tools',
     description:
       'The high-performance build system for JavaScript & TypeScript codebases.',
   },

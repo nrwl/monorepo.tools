@@ -6,7 +6,7 @@ const tools: { name: string; link: string }[] = [
   },
   {
     name: 'Gradle',
-    link: 'https://github.com/gradle/gradle',
+    link: 'https://github.com/gradle/gradle?utm_source=monorepo.tools',
   },
   {
     name: 'Lage',
