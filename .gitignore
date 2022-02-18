@@ -21,7 +21,6 @@
 .vscode/*
 !.vscode/settings.json
 !.vscode/tasks.json
-!.vscode/launch.json
 !.vscode/extensions.json
 
 # misc
@@ -37,3 +36,4 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+
