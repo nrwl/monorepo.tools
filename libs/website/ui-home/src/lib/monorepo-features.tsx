@@ -829,7 +829,7 @@ export function MonorepoFeatures() {
               </dt>
               <dd className="mt-4 text-gray-600 dark:text-gray-400">
                 Gradle Build Tool developers script build tasks in Groovy using
-                build.gradle, or Kotlin using build.gradle.kts
+                build.gradle, or Kotlin using build.gradle.kts.
               </dd>
             </div>
             <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
@@ -1003,8 +1003,8 @@ export function MonorepoFeatures() {
                 </p>
               </dt>
               <dd className="mt-4 text-base text-gray-600 dark:text-gray-400">
-                Turborepo's implementation is not interactive and doesn't
-                provide any way to filter the graph, so works for small repos.
+                Turborepo uses Graphviz to generate static images of the
+                execution plan. The implementation is not interactive.
               </dd>
             </div>
           </dl>
@@ -1270,7 +1270,8 @@ export function MonorepoFeatures() {
                 </p>
               </dt>
               <dd className="mt-4 text-base text-gray-600 dark:text-gray-400">
-                Turborepo can only run npm scripts.
+                Turborepo can only run npm scripts, but nodejs doesn’t have to
+                be installed.
               </dd>
             </div>
           </dl>
