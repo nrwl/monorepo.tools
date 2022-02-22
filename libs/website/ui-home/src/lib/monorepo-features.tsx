@@ -912,6 +912,8 @@ export function MonorepoFeatures() {
 
             <p className="mt-3 text-lg text-gray-700 dark:text-gray-300">
               Visualize dependency relationships between projects and/or tasks.
+              The visualization is interactive meaning you are able to search,
+              filter, hide, focus/highlight & query the nodes in the graph.
             </p>
 
             <div className="mt-10" aria-hidden="true">
