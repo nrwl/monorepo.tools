@@ -1003,8 +1003,8 @@ export function MonorepoFeatures() {
                 </p>
               </dt>
               <dd className="mt-4 text-base text-gray-600 dark:text-gray-400">
-                Turborepo uses Graphviz to generate static images of the
-                execution plan. The implementation is not interactive.
+                Turborepo uses Graphviz to generate static image and HTML file
+                of the execution plan. The implementation is not interactive.
               </dd>
             </div>
           </dl>
