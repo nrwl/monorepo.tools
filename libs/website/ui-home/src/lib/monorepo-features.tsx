@@ -1063,7 +1063,7 @@ export function MonorepoFeatures() {
               </dt>
               <dd className="mt-4 text-gray-600 dark:text-gray-400">
                 Bazel supports it. Any folder of files can be marked as a
-                project and can be shared. Bazel build rules ere used to enable
+                project and can be shared. Bazel build rules are used to enable
                 sharing without hurting dev ergonomics.
               </dd>
             </div>
