@@ -45,8 +45,13 @@
         "production": {
           "buildTarget": "website:build-base:production",
           "dev": false
+        },
+        "development": {
+          "buildTarget": "website:build-base:development",
+          "dev": true
         }
-      }
+      },
+      "defaultConfiguration": "development"
     },
     "export": {
       "executor": "@nrwl/next:export",
@@ -58,7 +63,7 @@
       "executor": "@nrwl/jest:jest",
       "outputs": ["coverage/apps/website"],
       "options": {
-        "jestConfig": "apps/website/jest.config.js",
+        "jestConfig": "apps/website/jest.config.ts",
         "passWithNoTests": true
       }
     },
@@ -70,7 +75,7 @@
       }
     },
     "deploy": {
-      "builder": "@netlify-builder/deploy:deploy",
+      "executor": "@netlify-builder/deploy:deploy",
       "options": {
         "outputPath": "dist/apps/website",
         "siteId": "661dca4c-fce8-4e2a-93fb-06b08822f698"
