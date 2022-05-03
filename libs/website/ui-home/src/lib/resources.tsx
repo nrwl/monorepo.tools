@@ -50,6 +50,13 @@ const people: {
     twitterLink: 'https://twitter.com/JustinReock',
     githubLink: 'https://github.com/gradle/gradle?utm_source=monorepo.tools',
   },
+  {
+    name: 'Brandon Schurman',
+    tool: 'Earthly',
+    imageUrl: 'https://avatars.githubusercontent.com/u/3247216?s=150',
+    twitterLink: 'https://twitter.com/BrSchurman',
+    githubLink: 'https://github.com/earthly/earthly?utm_source=monorepo.tools',
+  },
 ];
 const videosPodcasts: { name: string; link: string }[] = [
   {

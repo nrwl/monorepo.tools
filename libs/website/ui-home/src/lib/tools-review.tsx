@@ -26,6 +26,12 @@ const tools = [
       'A fast, scalable, multi-language and extensible build system.',
   },
   {
+    title: 'Earthly',
+    organization: 'Earthly Technologies',
+    organizationUrl: 'https://earthly.dev/?utm_source=monorepo.tools',
+    description: 'The effortless CI/CD framework that runs anywhere.',
+  },
+  {
     title: 'Gradle',
     organization: 'Gradle, Inc',
     organizationUrl: 'https://gradle.org/?utm_source=monorepo.tools',
@@ -73,6 +79,7 @@ const fast: Item[] = [
       'The ability to store and replay file and process output of tasks.',
     features: [
       { title: 'Bazel', value: 'supported' },
+      { title: 'Earthly', value: 'supported' },
       { title: 'Gradle', value: 'supported' },
       { title: 'Lage', value: 'supported' },
       { title: 'Lerna', value: 'notSupported' },
@@ -87,6 +94,7 @@ const fast: Item[] = [
     tooltip: 'The ability to run tasks in the correct order and in parallel.',
     features: [
       { title: 'Bazel', value: 'supported' },
+      { title: 'Earthly', value: 'supported' },
       { title: 'Gradle', value: 'supported' },
       { title: 'Lage', value: 'supported' },
       { title: 'Lerna', value: 'supported' },
@@ -102,6 +110,7 @@ const fast: Item[] = [
       'The ability to share cache artifacts across different environments.',
     features: [
       { title: 'Bazel', value: 'supported' },
+      { title: 'Earthly', value: 'notSupported' },
       { title: 'Gradle', value: 'supported' },
       { title: 'Lage', value: 'supported' },
       { title: 'Lerna', value: 'notSupported' },
@@ -116,6 +125,7 @@ const fast: Item[] = [
     tooltip: 'The ability to distribute a command across many machines.',
     features: [
       { title: 'Bazel', value: 'supported' },
+      { title: 'Earthly', value: 'notSupported' },
       { title: 'Gradle', value: 'manualImplementation' },
       { title: 'Lage', value: 'notSupported' },
       { title: 'Lerna', value: 'notSupported' },
@@ -131,6 +141,7 @@ const fast: Item[] = [
       'The ability to execute any command on multiple machines while developing locally.',
     features: [
       { title: 'Bazel', value: 'supported' },
+      { title: 'Earthly', value: 'supported' },
       { title: 'Gradle', value: 'notSupported' },
       { title: 'Lage', value: 'notSupported' },
       { title: 'Lerna', value: 'notSupported' },
@@ -146,6 +157,7 @@ const fast: Item[] = [
       'Determine what might be affected by a change, to run only build/test affected projects.',
     features: [
       { title: 'Bazel', value: 'manualImplementation' },
+      { title: 'Earthly', value: 'supported' },
       { title: 'Gradle', value: 'supported' },
       { title: 'Lage', value: 'supported' },
       { title: 'Lerna', value: 'supported' },
@@ -163,6 +175,7 @@ const understandable: Item[] = [
       'The ability to understand the understand the project graph of the workspace without extra configuration.',
     features: [
       { title: 'Bazel', value: 'manualImplementation' },
+      { title: 'Earthly', value: 'manualImplementation' },
       { title: 'Gradle', value: 'supported' },
       { title: 'Lage', value: 'supported' },
       { title: 'Nx', value: 'supported' },
@@ -178,6 +191,7 @@ const understandable: Item[] = [
       'Visualize dependency relationships between projects and/or tasks.',
     features: [
       { title: 'Bazel', value: 'supported' },
+      { title: 'Earthly', value: 'manualImplementation' },
       { title: 'Gradle', value: 'manualImplementation' },
       { title: 'Lage', value: 'manualImplementation' },
       { title: 'Lerna', value: 'manualImplementation' },
@@ -194,6 +208,7 @@ const manageable: Item[] = [
     tooltip: 'Facilitates sharing of discrete pieces source code.',
     features: [
       { title: 'Bazel', value: 'supported' },
+      { title: 'Earthly', value: 'supported' },
       { title: 'Gradle', value: 'supported' },
       { title: 'Lage', value: 'supported' },
       { title: 'Lerna', value: 'supported' },
@@ -209,6 +224,7 @@ const manageable: Item[] = [
       'The tool helps you get a consistent experience regardless of what you use to develop your projects: different JavaScript frameworks, Go, Java, etc.',
     features: [
       { title: 'Bazel', value: 'supported' },
+      { title: 'Earthly', value: 'supported' },
       { title: 'Gradle', value: 'supported' },
       { title: 'Lage', value: 'notSupported' },
       { title: 'Lerna', value: 'notSupported' },
@@ -223,6 +239,7 @@ const manageable: Item[] = [
     tooltip: 'Native support for generating code',
     features: [
       { title: 'Bazel', value: 'manualImplementation' },
+      { title: 'Earthly', value: 'manualImplementation' },
       { title: 'Gradle', value: 'manualImplementation' },
       { title: 'Lage', value: 'manualImplementation' },
       { title: 'Lerna', value: 'manualImplementation' },
@@ -238,6 +255,7 @@ const manageable: Item[] = [
       'Supports definition of rules to constrain dependency relationships within the repo.',
     features: [
       { title: 'Bazel', value: 'supported' },
+      { title: 'Earthly', value: 'manualImplementation' },
       { title: 'Gradle', value: 'manualImplementation' },
       { title: 'Lage', value: 'manualImplementation' },
       { title: 'Lerna', value: 'manualImplementation' },

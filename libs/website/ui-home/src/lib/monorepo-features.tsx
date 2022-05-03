@@ -132,6 +132,16 @@ export function MonorepoFeatures() {
             <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
               <dt>
                 <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
+                  <Supported /> Earthly
+                </p>
+              </dt>
+              <dd className="mt-4 text-gray-600 dark:text-gray-400">
+                Earthly supports it.
+              </dd>
+            </div>
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
+              <dt>
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
                   <Supported /> Gradle Build Tool
                 </p>
               </dt>
@@ -247,6 +257,16 @@ export function MonorepoFeatures() {
               </dt>
               <dd className="mt-4 text-gray-600 dark:text-gray-400">
                 Bazel supports it.
+              </dd>
+            </div>
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
+              <dt>
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
+                  <Supported /> Earthly
+                </p>
+              </dt>
+              <dd className="mt-4 text-gray-600 dark:text-gray-400">
+                Earthly supports it.
               </dd>
             </div>
             <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
@@ -370,6 +390,16 @@ export function MonorepoFeatures() {
             <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
               <dt>
                 <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
+                  <NotSupported /> Earthly
+                </p>
+              </dt>
+              <dd className="mt-4 text-gray-600 dark:text-gray-400">
+                Coming soon!
+              </dd>
+            </div>
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
+              <dt>
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
                   <Supported /> Gradle Build Tool
                 </p>
               </dt>
@@ -486,6 +516,16 @@ export function MonorepoFeatures() {
             <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
               <dt>
                 <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
+                  <NotSupported /> Earthly
+                </p>
+              </dt>
+              <dd className="mt-4 text-base text-gray-600 dark:text-gray-400">
+                Coming soon!
+              </dd>
+            </div>
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
+              <dt>
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
                   <ManualImplementation /> Gradle Build Tool
                 </p>
               </dt>
@@ -584,6 +624,20 @@ export function MonorepoFeatures() {
               </dt>
               <dd className="mt-4 text-base text-gray-600 dark:text-gray-400">
                 This is Bazel's biggest differentiator.
+              </dd>
+            </div>
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
+              <dt>
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
+                  <Supported /> Earthly
+                </p>
+              </dt>
+              <dd className="mt-4 text-base text-gray-600 dark:text-gray-400">
+                Earthly's Buildkit backend&nbsp; 
+                <a href="https://docs.earthly.dev/ci-integration/remote-buildkit">
+                  can be hosted remotely
+                </a>
+                &nbsp;and used locally or in CI builds.
               </dd>
             </div>
             <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
@@ -696,6 +750,17 @@ export function MonorepoFeatures() {
               <dd className="mt-4 text-base text-gray-600 dark:text-gray-400">
                 Bazel doesn't support it, but it provides the required metadata
                 making it possible to write such functionality yourself.
+              </dd>
+            </div>
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
+              <dt>
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
+                  <Supported /> Earthly
+                </p>
+              </dt>
+              <dd className="mt-4 text-base text-gray-600 dark:text-gray-400">
+                Earthly only rebuilds targets which are affected by a change 
+                to their inputs.
               </dd>
             </div>
             <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
@@ -824,6 +889,16 @@ export function MonorepoFeatures() {
             <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
               <dt>
                 <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
+                  <ManualImplementation /> Earthly
+                </p>
+              </dt>
+              <dd className="mt-4 text-gray-600 dark:text-gray-400">
+                Earthly allows you to script and use analysis tools of your choice within sandboxed containers.
+              </dd>
+            </div>
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
+              <dt>
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
                   <Supported /> Gradle Build Tool
                 </p>
               </dt>
@@ -941,6 +1016,16 @@ export function MonorepoFeatures() {
               <dd className="mt-4 text-gray-600 dark:text-gray-400">
                 Bazel's implementation supports a custom query language to
                 filter out node you are not interested in.
+              </dd>
+            </div>
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
+              <dt>
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
+                  <ManualImplementation /> Earthly
+                </p>
+              </dt>
+              <dd className="mt-4 text-gray-600 dark:text-gray-400">
+                Earthly doesn't come with a visualizer but it's possible to write your own or use an existing third-party tool.
               </dd>
             </div>
             <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
@@ -1065,6 +1150,19 @@ export function MonorepoFeatures() {
                 Bazel supports it. Any folder of files can be marked as a
                 project and can be shared. Bazel build rules are used to enable
                 sharing without hurting dev ergonomics.
+              </dd>
+            </div>
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
+              <dt>
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
+                  <Supported />
+                  Earthly
+                </p>
+              </dt>
+              <dd className="mt-4 text-gray-600 dark:text-gray-400">
+                Earthly allows you to share and reference build Targets, 
+                Artifacts, and even User-Defined Commands from multiple 
+                repositories.
               </dd>
             </div>
             <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
@@ -1207,6 +1305,17 @@ export function MonorepoFeatures() {
             <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
               <dt>
                 <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
+                  <Supported />
+                  Earthly
+                </p>
+              </dt>
+              <dd className="mt-4 text-base text-gray-600 dark:text-gray-400">
+                Earthly is language agnositic and gives you the freedom to build inside any container with the tooling of your choice.
+              </dd>
+            </div>
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
+              <dt>
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
                   <Supported /> Gradle Build Tool
                 </p>
               </dt>
@@ -1321,6 +1430,17 @@ export function MonorepoFeatures() {
                 <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
                   <ManualImplementation />
                   Bazel
+                </p>
+              </dt>
+              <dd className="mt-4 text-base text-gray-600 dark:text-gray-400">
+                External generators can be used.
+              </dd>
+            </div>
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
+              <dt>
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
+                  <ManualImplementation />
+                  Earthly
                 </p>
               </dt>
               <dd className="mt-4 text-base text-gray-600 dark:text-gray-400">
@@ -1454,6 +1574,18 @@ export function MonorepoFeatures() {
               <dd className="mt-4 text-base text-gray-600 dark:text-gray-400">
                 Bazel supports visibility rules which help you separate what is
                 private from what is public, what can be shared, etc.
+              </dd>
+            </div>
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
+              <dt>
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
+                  <ManualImplementation />
+                  Earthly
+                </p>
+              </dt>
+              <dd className="mt-4 text-base text-gray-600 dark:text-gray-400">
+                A linter with a set of custom rules and extra configuration can
+                be used to ensure that some constraints hold.
               </dd>
             </div>
             <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">

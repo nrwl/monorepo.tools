@@ -79,6 +79,15 @@ export function Introduction() {
                 </a>
                 , &nbsp;
                 <a
+                  href="https://earthly.dev/?utm_source=monorepo.tools"
+                  rel="noreferrer"
+                  target="_blank"
+                  className="border-b border-yellow-500 transition hover:rounded hover:bg-yellow-500 hover:text-gray-800"
+                >
+                  Earthly (by Earthly Technologies)
+                </a>
+                , &nbsp;
+                <a
                   href="https://gradle.org/?utm_source=monorepo.tools"
                   rel="noreferrer"
                   target="_blank"
