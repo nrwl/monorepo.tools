@@ -21,6 +21,10 @@ const tools: { name: string; link: string }[] = [
     link: 'https://github.com/nrwl/nx?utm_source=monorepo.tools',
   },
   {
+    name: 'Pants',
+    link: 'https://github.com/pantsbuild/pants?utm_source=monorepo.tools',
+  },
+  {
     name: 'Rush',
     link: 'https://github.com/microsoft/rushstack?utm_source=monorepo.tools',
   },
@@ -32,7 +36,7 @@ const tools: { name: string; link: string }[] = [
 
 export function MonorepoToolsLogos() {
   return (
-    <div className="mt-8 grid grid-cols-1 gap-0.5 py-12 text-2xl font-semibold md:grid-cols-7 lg:mt-16 lg:py-16">
+    <div className="mt-8 grid grid-cols-1 gap-0.5 py-12 text-2xl font-semibold md:grid-cols-8 lg:mt-16 lg:py-16">
       {tools.map((tool) => (
         <a
           key={'tool-' + tool.name}

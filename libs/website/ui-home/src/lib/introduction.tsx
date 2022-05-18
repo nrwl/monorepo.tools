@@ -115,6 +115,15 @@ export function Introduction() {
                 </a>
                 ,&nbsp;
                 <a
+                  href="https://pantsbuild.org/?utm_source=monorepo.tools"
+                  rel="noreferrer"
+                  target="_blank"
+                  className="border-b border-yellow-500 transition hover:rounded hover:bg-yellow-500 hover:text-gray-800"
+                >
+                  Pants (by the Pants Build community)
+                </a>
+                ,&nbsp;
+                <a
                   rel="noreferrer"
                   target="_blank"
                   href="https://rushstack.io/?utm_source=monorepo.tools"

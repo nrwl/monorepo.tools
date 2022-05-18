@@ -179,6 +179,16 @@ export function MonorepoFeatures() {
             <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
               <dt>
                 <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
+                  <Supported /> Pants
+                </p>
+              </dt>
+              <dd className="mt-4 text-gray-600 dark:text-gray-400">
+                Pants supports it.
+              </dd>
+            </div>
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
+              <dt>
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
                   <Supported /> Rush
                 </p>
               </dt>
@@ -292,6 +302,16 @@ export function MonorepoFeatures() {
               </dt>
               <dd className="mt-4 text-gray-600 dark:text-gray-400">
                 Nx supports it.
+              </dd>
+            </div>
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
+              <dt>
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
+                  <Supported /> Pants
+                </p>
+              </dt>
+              <dd className="mt-4 text-gray-600 dark:text-gray-400">
+                Pants supports it.
               </dd>
             </div>
             <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
@@ -411,6 +431,16 @@ export function MonorepoFeatures() {
             <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
               <dt>
                 <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
+                  <Supported /> Pants
+                </p>
+              </dt>
+              <dd className="mt-4 text-gray-600 dark:text-gray-400">
+                Pants supports it.
+              </dd>
+            </div>
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
+              <dt>
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
                   <Supported /> Rush
                 </p>
               </dt>
@@ -455,7 +485,7 @@ export function MonorepoFeatures() {
 
             <p className="mt-3 text-lg text-gray-700 dark:text-gray-300">
               The ability to distribute a command across many machines, while
-              largely preserving the dev ergonomics or running it on a single
+              largely preserving the dev ergonomics of running it on a single
               machine.
             </p>
 
@@ -522,6 +552,17 @@ export function MonorepoFeatures() {
               <dd className="mt-4 text-base text-gray-600 dark:text-gray-400">
                 Nx's implementation isn't as sophisticated as Bazel's but it can
                 be turned on with a small configuration change.
+              </dd>
+            </div>
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
+              <dt>
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
+                  <Supported /> Pants
+                </p>
+              </dt>
+              <dd className="mt-4 text-base text-gray-600 dark:text-gray-400">
+                Pant's implementation is similar to Bazel's and uses the same
+                Remote Execution API.
               </dd>
             </div>
             <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
@@ -624,6 +665,17 @@ export function MonorepoFeatures() {
               </dt>
               <dd className="mt-4 text-base text-gray-600 dark:text-gray-400">
                 Nx doesn't support it.
+              </dd>
+            </div>
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
+              <dt>
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
+                  <Supported /> Pants
+                </p>
+              </dt>
+              <dd className="mt-4 text-base text-gray-600 dark:text-gray-400">
+                Pant's implementation is similar to Bazel's and uses the same
+                Remote Execution API.
               </dd>
             </div>
             <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
@@ -738,6 +790,16 @@ export function MonorepoFeatures() {
               <dd className="mt-4 text-base text-gray-600 dark:text-gray-400">
                 Nx supports it. Its implementation doesn't just look at what
                 files changed but also at the nature of the change.
+              </dd>
+            </div>
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
+              <dt>
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
+                  <Supported /> Pants
+                </p>
+              </dt>
+              <dd className="mt-4 text-base text-gray-600 dark:text-gray-400">
+                Pants supports it.
               </dd>
             </div>
             <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
@@ -867,6 +929,18 @@ export function MonorepoFeatures() {
             <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
               <dt>
                 <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
+                  <Supported /> Pants
+                </p>
+              </dt>
+              <dd className="mt-4 text-gray-600 dark:text-gray-400">
+                This is Pants's biggest differentiator. It uses static analysis
+                to automatically infer file-level dependencies for all the
+                languages and frameworks it supports.
+              </dd>
+            </div>
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
+              <dt>
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
                   <Supported /> Rush
                 </p>
               </dt>
@@ -990,6 +1064,19 @@ export function MonorepoFeatures() {
             <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
               <dt>
                 <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
+                  <ManualImplementation /> Pants
+                </p>
+              </dt>
+              <dd className="mt-4 text-gray-600 dark:text-gray-400">
+                Pants doesn't come with a visualizer, but it can emit a JSON
+                file containing the fine-grained graph structure of your
+                codebase, which can be processed into input for visualization
+                tools.
+              </dd>
+            </div>
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
+              <dt>
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
                   <ManualImplementation /> Rush
                 </p>
               </dt>
@@ -1040,7 +1127,7 @@ export function MonorepoFeatures() {
             </div>
 
             <p className="mt-3 text-lg text-gray-700 dark:text-gray-300">
-              Facilitates sharing of discrete pieces source code.
+              Facilitates sharing of discrete pieces of source code.
             </p>
 
             <div className="mt-10" aria-hidden="true">
@@ -1113,6 +1200,19 @@ export function MonorepoFeatures() {
                 and can be shared. Nx plugins help configure WebPack, Rollup,
                 TypeScript and other tools to enable sharing without hurting dev
                 ergonomics.
+              </dd>
+            </div>
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
+              <dt>
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
+                  <Supported />
+                  Pants
+                </p>
+              </dt>
+              <dd className="mt-4 text-gray-600 dark:text-gray-400">
+                Pants supports packaging, publishing and consuming code
+                artifacts across repos, using the standard idioms of the
+                underlying languages and frameworks.
               </dd>
             </div>
             <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
@@ -1253,6 +1353,21 @@ export function MonorepoFeatures() {
             <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
               <dt>
                 <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
+                  <Supported />
+                  Pants
+                </p>
+              </dt>
+              <dd className="mt-4 text-gray-600 dark:text-gray-400">
+                Pants has a robust Plugin API that provides a uniform UX across
+                languages and frameworks. It provides multiple plugins out of
+                the box, including for Python, Java, Scala, Go, Shell and
+                Docker, with more on the way. You can also write your own custom
+                build rules using the same API.
+              </dd>
+            </div>
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
+              <dt>
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
                   <NotSupported />
                   Rush
                 </p>
@@ -1372,6 +1487,23 @@ export function MonorepoFeatures() {
                 virtual file system and provides editor integration. Nx plugins
                 provided generators for popular frameworks. Other generators can
                 be used as well.
+              </dd>
+            </div>
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
+              <dt>
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
+                  <Supported />
+                  Pants
+                </p>
+              </dt>
+              <dd className="mt-4 text-base text-gray-600 dark:text-gray-400">
+                Pants ships with plugins for popular code generation frameworks,
+                including Protobuf/gRPC, Thrift, Scrooge, Avro, and SOAP. There
+                is Plugin API support for easily adding new code generators. It
+                supports generating code in multiple languages from a single
+                codegen source. It is able to infer dependencies by static
+                analysis of codegen sources, and correctly invalidate generated
+                code when those sources change.
               </dd>
             </div>
             <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
@@ -1506,6 +1638,18 @@ export function MonorepoFeatures() {
                 experimental and what is stable, etc. Nx also allows you to
                 define public API for each package, so other developers aren't
                 able to deep import into them.
+              </dd>
+            </div>
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
+              <dt>
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
+                  <ManualImplementation />
+                  Pants
+                </p>
+              </dt>
+              <dd className="mt-4 text-base text-gray-600 dark:text-gray-400">
+                While not yet supported natively, a custom plugin could be
+                written to enforce such rules.
               </dd>
             </div>
             <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
