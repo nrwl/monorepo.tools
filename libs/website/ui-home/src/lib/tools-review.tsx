@@ -511,7 +511,7 @@ export function ToolsReview() {
               <div
                 key={tool.title}
                 aria-hidden="true"
-                className={classNames('w-[11%] px-4 -mt-px')}
+                className={classNames('-mt-px w-[11%] px-4')}
               >
                 <div className="border-t-2 border-transparent py-6">
                   <p className="text-md font-bold text-gray-700 dark:text-gray-300">
