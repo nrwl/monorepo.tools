@@ -50,6 +50,13 @@ const people: {
     twitterLink: 'https://twitter.com/JustinReock',
     githubLink: 'https://github.com/gradle/gradle?utm_source=monorepo.tools',
   },
+  {
+    name: 'Benjy Weinberger',
+    tool: 'Pants',
+    imageUrl: 'https://avatars.githubusercontent.com/u/512764?s=150',
+    twitterLink: 'https://twitter.com/benjyw',
+    githubLink: 'https://github.com/pantsbuild/pants?utm_source=monorepo.tools',
+  },
 ];
 const videosPodcasts: { name: string; link: string }[] = [
   {
@@ -80,6 +87,10 @@ const videosPodcasts: { name: string; link: string }[] = [
     name: 'NxConf 2021 (Playlist)',
     link: 'https://www.youtube.com/watch?v=VKVTzVM0nVM&list=PLakNactNC1dG1CoyVWFppw3X8hnXRhFuy&utm_source=monorepo.tools',
   },
+  {
+    name: 'Pants Podcasts',
+    link: 'https://www.pantsbuild.org/docs/media#podcasts&utm_source=monorepo.tools',
+  },
 ];
 const articles: { name: string; link: string }[] = [
   {
@@ -101,6 +112,10 @@ const articles: { name: string; link: string }[] = [
   {
     name: 'Nx monorepo documentation',
     link: 'https://nx.dev/guides/why-monorepos#monorepos?utm_source=monorepo.tools',
+  },
+  {
+    name: 'Pants Articles',
+    link: 'https://www.pantsbuild.org/docs/media#posts--articles?utm_source=monorepo.tools',
   },
 ];
 const books: {
