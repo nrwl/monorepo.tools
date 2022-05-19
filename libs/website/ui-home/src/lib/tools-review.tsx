@@ -384,7 +384,7 @@ export function ToolsReview() {
                         <dd className="flex items-center justify-end sm:justify-center sm:px-4">
                           {valuesDictionary[
                             feature.features[toolIndex].value
-                          ]()}
+                            ]()}
                         </dd>
                       </div>
                     ))}
@@ -433,7 +433,7 @@ export function ToolsReview() {
                         <dd className="text-center sm:px-4">
                           {valuesDictionary[
                             feature.features[toolIndex].value
-                          ]()}
+                            ]()}
                         </dd>
                       </div>
                     ))}
@@ -482,7 +482,7 @@ export function ToolsReview() {
                         <dd className="text-center sm:px-4">
                           {valuesDictionary[
                             feature.features[toolIndex].value
-                          ]()}
+                            ]()}
                         </dd>
                       </div>
                     ))}
@@ -506,20 +506,25 @@ export function ToolsReview() {
       <section className="hidden lg:block">
         <div className="mx-auto max-w-7xl py-24 px-8">
           <div className="flex w-full items-stretch border-t border-slate-100 dark:border-slate-900">
-            <div className="-mt-px flex w-[12%] items-end py-6 pr-4" />
+            <div className="-mt-px flex w-[14%] items-end py-6 pr-4" />
             {tools.map((tool, toolIndex) => (
               <div
                 key={tool.title}
                 aria-hidden="true"
-                className={classNames('-mt-px w-[11%] px-4')}
+                className={classNames(
+                  toolIndex === tools.length - 1
+                    ? 'pl-2'
+                    : 'px-2',
+                  '-mt-px w-[10.75%]'
+                )}
               >
                 <div className="border-t-2 border-transparent py-6">
                   <p className="text-md font-bold text-gray-700 dark:text-gray-300">
                     {tool.title}{' '}
                     {tool.organization ? (
-                      <div className="mr-2 text-xs font-normal">
+                      <span className="ml-2 text-xs font-normal">
                         (by {tool.organization})
-                      </div>
+                      </span>
                     ) : null}
                   </p>
                   <p className="mt-2 text-sm text-gray-500">
@@ -531,7 +536,7 @@ export function ToolsReview() {
           </div>
 
           <div className="flex w-full items-stretch border-t border-slate-100 dark:border-slate-900">
-            <div className="-mt-px flex w-[11%] items-end py-6 pr-4">
+            <div className="-mt-px flex w-[14%] items-end py-6 pr-4">
               <h3 className="mt-auto text-sm font-bold text-gray-700 dark:text-gray-300">
                 Fast
               </h3>
@@ -543,29 +548,29 @@ export function ToolsReview() {
               className="pointer-events-none absolute inset-0 flex items-stretch"
               aria-hidden="true"
             >
-              <div className="w-[12%] pr-4" />
-              <div className="w-[11%] px-4">
+              <div className="w-[14%] pr-4" />
+              <div className="w-[10.75%] px-2">
                 <div className="h-full w-full rounded-lg bg-slate-100 shadow dark:bg-slate-700" />
               </div>
-              <div className="w-[11%] px-4">
+              <div className="w-[10.75%] px-2">
+                <div className="h-full w-full rounded-lg bg-slate-100 shadow-md dark:bg-slate-700" />
+              </div>
+              <div className="w-[10.75%] px-2">
+                <div className="h-full w-full rounded-lg bg-slate-100 shadow-md dark:bg-slate-700" />
+              </div>
+              <div className="w-[10.75%] px-2">
                 <div className="h-full w-full rounded-lg bg-slate-100 shadow dark:bg-slate-700" />
               </div>
-              <div className="w-[11%] px-4">
+              <div className="w-[10.75%] px-2">
                 <div className="h-full w-full rounded-lg bg-slate-100 shadow dark:bg-slate-700" />
               </div>
-              <div className="w-[11%] px-4">
+              <div className="w-[10.75%] px-2">
                 <div className="h-full w-full rounded-lg bg-slate-100 shadow dark:bg-slate-700" />
               </div>
-              <div className="w-[11%] px-4">
+              <div className="w-[10.75%] px-2">
                 <div className="h-full w-full rounded-lg bg-slate-100 shadow dark:bg-slate-700" />
               </div>
-              <div className="w-[11%] px-4">
-                <div className="h-full w-full rounded-lg bg-slate-100 shadow dark:bg-slate-700" />
-              </div>
-              <div className="w-[11%] px-4">
-                <div className="h-full w-full rounded-lg bg-slate-100 shadow dark:bg-slate-700" />
-              </div>
-              <div className="w-[11%] px-4">
+              <div className="w-[10.75%] pl-2">
                 <div className="h-full w-full rounded-lg bg-slate-100 shadow dark:bg-slate-700" />
               </div>
             </div>
@@ -573,46 +578,49 @@ export function ToolsReview() {
             <table className="relative w-full">
               <caption className="sr-only">Business feature comparison</caption>
               <thead>
-                <tr className="text-left">
-                  <th scope="col">
-                    <span className="sr-only">Feature</span>
+              <tr className="text-left">
+                <th scope="col">
+                  <span className="sr-only">Feature</span>
+                </th>
+                {tools.map((tool) => (
+                  <th key={tool.title} scope="col">
+                    <span className="sr-only">{tool.title}</span>
                   </th>
-                  {tools.map((tool) => (
-                    <th key={tool.title} scope="col">
-                      <span className="sr-only">{tool.title}</span>
-                    </th>
-                  ))}
-                </tr>
+                ))}
+              </tr>
               </thead>
               <tbody className="divide-y divide-slate-300 dark:divide-slate-600">
-                {fast.map((feature) => (
-                  <tr key={feature.title}>
-                    <th
-                      scope="row"
-                      className="w-[12%] py-3 pr-4 text-left text-sm font-medium text-gray-700 dark:text-gray-300"
+              {fast.map((feature) => (
+                <tr key={feature.title}>
+                  <th
+                    scope="row"
+                    className="w-[14%] py-3 pr-4 text-left text-sm font-medium text-gray-700 dark:text-gray-300"
+                  >
+                    <a
+                      href={feature.link}
+                      title={'More on ' + feature.title}
+                      className="hover:underline"
                     >
-                      <a
-                        href={feature.link}
-                        title={'More on ' + feature.title}
-                        className="hover:underline"
-                      >
-                        {feature.title}
-                      </a>
-                    </th>
-                    {feature.features.map((tier, tierIdx) => (
-                      <td
-                        key={tier.title}
-                        className={classNames(
-                          'relative w-[11%] px-4 py-0 text-center'
-                        )}
-                      >
+                      {feature.title}
+                    </a>
+                  </th>
+                  {feature.features.map((tier, tierIdx) => (
+                    <td
+                      key={tier.title}
+                      className={classNames(
+                        tierIdx === feature.features.length - 1
+                          ? 'pl-2'
+                          : 'px-2',
+                        'relative w-[10.75%] py-0 text-center'
+                      )}
+                    >
                         <span className="relative h-full w-full py-3">
                           {valuesDictionary[tier.value]()}
                         </span>
-                      </td>
-                    ))}
-                  </tr>
-                ))}
+                    </td>
+                  ))}
+                </tr>
+              ))}
               </tbody>
             </table>
 
@@ -621,29 +629,29 @@ export function ToolsReview() {
               className="pointer-events-none absolute inset-0 flex items-stretch"
               aria-hidden="true"
             >
-              <div className="w-[12%] pr-4" />
-              <div className="w-[11%] px-4">
+              <div className="w-[14%] pr-4" />
+              <div className="w-[10.75%] px-2">
                 <div className="h-full w-full rounded-lg ring-1 ring-black ring-opacity-5" />
               </div>
-              <div className="w-[11%] px-4">
+              <div className="w-[10.75%] px-2">
                 <div className="h-full w-full rounded-lg ring-2 ring-black ring-opacity-5" />
               </div>
-              <div className="w-[11%] px-4">
+              <div className="w-[10.75%] px-2">
                 <div className="h-full w-full rounded-lg ring-2 ring-black ring-opacity-5" />
               </div>
-              <div className="w-[11%] px-4">
+              <div className="w-[10.75%] px-2">
                 <div className="h-full w-full rounded-lg ring-1 ring-black ring-opacity-5" />
               </div>
-              <div className="w-[11%] px-4">
+              <div className="w-[10.75%] px-2">
                 <div className="h-full w-full rounded-lg ring-1 ring-black ring-opacity-5" />
               </div>
-              <div className="w-[11%] px-4">
+              <div className="w-[10.75%] px-2">
                 <div className="h-full w-full rounded-lg ring-1 ring-black ring-opacity-5" />
               </div>
-              <div className="w-[11%] px-4">
+              <div className="w-[10.75%] px-2">
                 <div className="h-full w-full rounded-lg ring-1 ring-black ring-opacity-5" />
               </div>
-              <div className="w-[11%] px-4">
+              <div className="w-[10.75%] pl-2">
                 <div className="h-full w-full rounded-lg ring-1 ring-black ring-opacity-5" />
               </div>
             </div>
@@ -658,84 +666,87 @@ export function ToolsReview() {
               className="pointer-events-none absolute inset-0 flex items-stretch"
               aria-hidden="true"
             >
-              <div className="w-[12%] pr-4" />
-              <div className="w-[11%] px-4">
+              <div className="w-[14%] pr-4" />
+              <div className="w-[10.75%] px-2">
+                <div className="h-full w-full rounded-lg bg-slate-100 shadow dark:bg-slate-700" />
+              </div>
+              <div className="w-[10.75%] px-2">
                 <div className="h-full w-full rounded-lg bg-slate-100 shadow-md dark:bg-slate-700" />
               </div>
-              <div className="w-[11%] px-4">
+              <div className="w-[10.75%] px-2">
                 <div className="h-full w-full rounded-lg bg-slate-100 shadow-md dark:bg-slate-700" />
               </div>
-              <div className="w-[11%] px-4">
+              <div className="w-[10.75%] px-2">
                 <div className="h-full w-full rounded-lg bg-slate-100 shadow-md dark:bg-slate-700" />
               </div>
-              <div className="w-[11%] px-4">
+              <div className="w-[10.75%] px-2">
                 <div className="h-full w-full rounded-lg bg-slate-100 shadow-md dark:bg-slate-700" />
               </div>
-              <div className="w-[11%] px-4">
+              <div className="w-[10.75%] px-2">
                 <div className="h-full w-full rounded-lg bg-slate-100 shadow-md dark:bg-slate-700" />
               </div>
-              <div className="w-[11%] px-4">
+              <div className="w-[10.75%] px-2">
                 <div className="h-full w-full rounded-lg bg-slate-100 shadow-md dark:bg-slate-700" />
               </div>
-              <div className="w-[11%] px-4">
-                <div className="h-full w-full rounded-lg bg-slate-100 shadow-md dark:bg-slate-700" />
-              </div>
-              <div className="w-[11%] px-4">
-                <div className="h-full w-full rounded-lg bg-slate-100 shadow-md dark:bg-slate-700" />
+              <div className="w-[10.75%] pl-2">
+                <div className="h-full w-full rounded-lg bg-slate-100 shadow dark:bg-slate-700" />
               </div>
             </div>
 
             <table className="relative w-full">
               <caption className="sr-only">Tool comparison</caption>
               <thead>
-                <tr className="text-left">
-                  <th scope="col">
-                    <span className="sr-only">Tool</span>
+              <tr className="text-left">
+                <th scope="col">
+                  <span className="sr-only">Tool</span>
+                </th>
+                {tools.map((tool) => (
+                  <th key={tool.title} scope="col">
+                    <span className="sr-only">{tool.title}</span>
                   </th>
-                  {tools.map((tool) => (
-                    <th key={tool.title} scope="col">
-                      <span className="sr-only">{tool.title}</span>
-                    </th>
-                  ))}
-                </tr>
-                <tr className="text-left">
-                  <th scope="col">
-                    <span className="sr-only">Organization</span>
+                ))}
+              </tr>
+              <tr className="text-left">
+                <th scope="col">
+                  <span className="sr-only">Organization</span>
+                </th>
+                {tools.map((tool) => (
+                  <th key={tool.title} scope="col">
+                    <span className="sr-only">{tool.organization}</span>
                   </th>
-                  {tools.map((tool) => (
-                    <th key={tool.title} scope="col">
-                      <span className="sr-only">{tool.organization}</span>
-                    </th>
-                  ))}
-                </tr>
+                ))}
+              </tr>
               </thead>
               <tbody className="divide-y divide-slate-300 dark:divide-slate-600">
-                {understandable.map((feature) => (
-                  <tr key={feature.title}>
-                    <th
-                      scope="row"
-                      className="w-[12%] py-3 pr-4 text-left text-sm font-medium text-gray-700 dark:text-gray-300"
+              {understandable.map((feature) => (
+                <tr key={feature.title}>
+                  <th
+                    scope="row"
+                    className="w-[14%] py-3 pr-4 text-left text-sm font-medium text-gray-700 dark:text-gray-300"
+                  >
+                    <a
+                      href={feature.link}
+                      title={'More on ' + feature.title}
+                      className="hover:underline"
                     >
-                      <a
-                        href={feature.link}
-                        title={'More on ' + feature.title}
-                        className="hover:underline"
-                      >
-                        {feature.title}
-                      </a>
-                    </th>
-                    {feature.features.map((tier, tierIdx) => (
-                      <td
-                        key={tier.title}
-                        className={classNames(
-                          'relative w-[11%] px-4 py-0 text-center'
-                        )}
-                      >
-                        {valuesDictionary[tier.value]()}
-                      </td>
-                    ))}
-                  </tr>
-                ))}
+                      {feature.title}
+                    </a>
+                  </th>
+                  {feature.features.map((tier, tierIdx) => (
+                    <td
+                      key={tier.title}
+                      className={classNames(
+                        tierIdx === feature.features.length - 1
+                          ? 'pl-2'
+                          : 'px-2',
+                        'relative w-[10.75%] py-0 text-center'
+                      )}
+                    >
+                      {valuesDictionary[tier.value]()}
+                    </td>
+                  ))}
+                </tr>
+              ))}
               </tbody>
             </table>
 
@@ -744,29 +755,29 @@ export function ToolsReview() {
               className="pointer-events-none absolute inset-0 flex items-stretch"
               aria-hidden="true"
             >
-              <div className="w-[12%] pr-4" />
-              <div className="w-[11%] px-4">
+              <div className="w-[14%] pr-4" />
+              <div className="w-[10.75%] px-2">
                 <div className="h-full w-full rounded-lg ring-1 ring-black ring-opacity-5" />
               </div>
-              <div className="w-[11%] px-4">
+              <div className="w-[10.75%] px-2">
                 <div className="h-full w-full rounded-lg ring-2 ring-black ring-opacity-5" />
               </div>
-              <div className="w-[11%] px-4">
+              <div className="w-[10.75%] px-2">
                 <div className="h-full w-full rounded-lg ring-2 ring-black ring-opacity-5" />
               </div>
-              <div className="w-[11%] px-4">
+              <div className="w-[10.75%] px-2">
                 <div className="h-full w-full rounded-lg ring-2 ring-black ring-opacity-5" />
               </div>
-              <div className="w-[11%] px-4">
+              <div className="w-[10.75%] px-2">
                 <div className="h-full w-full rounded-lg ring-2 ring-black ring-opacity-5" />
               </div>
-              <div className="w-[11%] px-4">
+              <div className="w-[10.75%] px-2">
                 <div className="h-full w-full rounded-lg ring-1 ring-black ring-opacity-5" />
               </div>
-              <div className="w-[11%] px-4">
+              <div className="w-[10.75%] px-2">
                 <div className="h-full w-full rounded-lg ring-1 ring-black ring-opacity-5" />
               </div>
-              <div className="w-[11%] px-4">
+              <div className="w-[10.75%] pl-2">
                 <div className="h-full w-full rounded-lg ring-1 ring-black ring-opacity-5" />
               </div>
             </div>
@@ -781,29 +792,29 @@ export function ToolsReview() {
               className="pointer-events-none absolute inset-0 flex items-stretch"
               aria-hidden="true"
             >
-              <div className="w-[12%] pr-4" />
-              <div className="w-[11%] px-4">
+              <div className="w-[14%] pr-4" />
+              <div className="w-[10.75%] px-2">
                 <div className="h-full w-full rounded-lg bg-slate-100 shadow dark:bg-slate-700" />
               </div>
-              <div className="w-[11%] px-4">
+              <div className="w-[10.75%] px-2">
                 <div className="h-full w-full rounded-lg bg-slate-100 shadow-md dark:bg-slate-700" />
               </div>
-              <div className="w-[11%] px-4">
+              <div className="w-[10.75%] px-2">
                 <div className="h-full w-full rounded-lg bg-slate-100 shadow-md dark:bg-slate-700" />
               </div>
-              <div className="w-[11%] px-4">
+              <div className="w-[10.75%] px-2">
                 <div className="h-full w-full rounded-lg bg-slate-100 shadow-md dark:bg-slate-700" />
               </div>
-              <div className="w-[11%] px-4">
+              <div className="w-[10.75%] px-2">
                 <div className="h-full w-full rounded-lg bg-slate-100 shadow-md dark:bg-slate-700" />
               </div>
-              <div className="w-[11%] px-4">
+              <div className="w-[10.75%] px-2">
                 <div className="h-full w-full rounded-lg bg-slate-100 shadow-md dark:bg-slate-700" />
               </div>
-              <div className="w-[11%] px-4">
+              <div className="w-[10.75%] px-2">
                 <div className="h-full w-full rounded-lg bg-slate-100 shadow-md dark:bg-slate-700" />
               </div>
-              <div className="w-[11%] px-4">
+              <div className="w-[10.75%] pl-2">
                 <div className="h-full w-full rounded-lg bg-slate-100 shadow dark:bg-slate-700" />
               </div>
             </div>
@@ -811,44 +822,47 @@ export function ToolsReview() {
             <table className="relative w-full">
               <caption className="sr-only">Tool comparison</caption>
               <thead>
-                <tr className="text-left">
-                  <th scope="col">
-                    <span className="sr-only">Tool</span>
+              <tr className="text-left">
+                <th scope="col">
+                  <span className="sr-only">Tool</span>
+                </th>
+                {tools.map((plan) => (
+                  <th key={plan.title} scope="col">
+                    <span className="sr-only">{plan.title}</span>
                   </th>
-                  {tools.map((plan) => (
-                    <th key={plan.title} scope="col">
-                      <span className="sr-only">{plan.title}</span>
-                    </th>
-                  ))}
-                </tr>
+                ))}
+              </tr>
               </thead>
               <tbody className="divide-y divide-slate-300 dark:divide-slate-600">
-                {manageable.map((feature) => (
-                  <tr key={feature.title}>
-                    <th
-                      scope="row"
-                      className="w-[12%] py-3 pr-4 text-left text-sm font-medium text-gray-700 dark:text-gray-300"
+              {manageable.map((feature) => (
+                <tr key={feature.title}>
+                  <th
+                    scope="row"
+                    className="w-[14%] py-3 pr-4 text-left text-sm font-medium text-gray-700 dark:text-gray-300"
+                  >
+                    <a
+                      href={feature.link}
+                      title={'More on ' + feature.title}
+                      className="hover:underline"
                     >
-                      <a
-                        href={feature.link}
-                        title={'More on ' + feature.title}
-                        className="hover:underline"
-                      >
-                        {feature.title}
-                      </a>
-                    </th>
-                    {feature.features.map((tier, tierIdx) => (
-                      <td
-                        key={tier.title}
-                        className={classNames(
-                          'relative w-[11%] px-4 py-0 text-center'
-                        )}
-                      >
-                        {valuesDictionary[tier.value]()}
-                      </td>
-                    ))}
-                  </tr>
-                ))}
+                      {feature.title}
+                    </a>
+                  </th>
+                  {feature.features.map((tier, tierIdx) => (
+                    <td
+                      key={tier.title}
+                      className={classNames(
+                        tierIdx === feature.features.length - 1
+                          ? 'pl-2'
+                          : 'px-2',
+                        'relative py-0 text-center w-[10.75%]'
+                      )}
+                    >
+                      {valuesDictionary[tier.value]()}
+                    </td>
+                  ))}
+                </tr>
+              ))}
               </tbody>
             </table>
 
@@ -857,29 +871,29 @@ export function ToolsReview() {
               className="pointer-events-none absolute inset-0 flex items-stretch"
               aria-hidden="true"
             >
-              <div className="w-[12%] pr-4" />
-              <div className="w-[11%] px-4">
+              <div className="w-[14%] pr-4" />
+              <div className="w-[10.75%] px-2">
                 <div className="h-full w-full rounded-lg ring-1 ring-black ring-opacity-5" />
               </div>
-              <div className="w-[11%] px-4">
+              <div className="w-[10.75%] px-2">
                 <div className="h-full w-full rounded-lg ring-2 ring-black ring-opacity-5" />
               </div>
-              <div className="w-[11%] px-4">
+              <div className="w-[10.75%] px-2">
                 <div className="h-full w-full rounded-lg ring-2 ring-black ring-opacity-5" />
               </div>
-              <div className="w-[11%] px-4">
+              <div className="w-[10.75%] px-2">
                 <div className="h-full w-full rounded-lg ring-2 ring-black ring-opacity-5" />
               </div>
-              <div className="w-[11%] px-4">
+              <div className="w-[10.75%] px-2">
                 <div className="h-full w-full rounded-lg ring-2 ring-black ring-opacity-5" />
               </div>
-              <div className="w-[11%] px-4">
+              <div className="w-[10.75%] px-2">
                 <div className="h-full w-full rounded-lg ring-2 ring-black ring-opacity-5" />
               </div>
-              <div className="w-[11%] px-4">
+              <div className="w-[10.75%] px-2">
                 <div className="h-full w-full rounded-lg ring-2 ring-black ring-opacity-5" />
               </div>
-              <div className="w-[11%] px-4">
+              <div className="w-[10.75%] pl-2">
                 <div className="h-full w-full rounded-lg ring-1 ring-black ring-opacity-5" />
               </div>
             </div>
