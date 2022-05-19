@@ -1,5 +1,4 @@
 {
-  "root": "libs/website/feature-analytics",
   "sourceRoot": "libs/website/feature-analytics/src",
   "projectType": "library",
   "targets": {

@@ -1,5 +1,4 @@
 {
-  "root": "libs/website/ui-commons",
   "sourceRoot": "libs/website/ui-commons/src",
   "projectType": "library",
   "targets": {

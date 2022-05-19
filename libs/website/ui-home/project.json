@@ -1,5 +1,4 @@
 {
-  "root": "libs/website/ui-home",
   "sourceRoot": "libs/website/ui-home/src",
   "projectType": "library",
   "targets": {
