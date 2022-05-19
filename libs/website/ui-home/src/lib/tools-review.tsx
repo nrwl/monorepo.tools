@@ -384,7 +384,7 @@ export function ToolsReview() {
                         <dd className="flex items-center justify-end sm:justify-center sm:px-4">
                           {valuesDictionary[
                             feature.features[toolIndex].value
-                            ]()}
+                          ]()}
                         </dd>
                       </div>
                     ))}
@@ -433,7 +433,7 @@ export function ToolsReview() {
                         <dd className="text-center sm:px-4">
                           {valuesDictionary[
                             feature.features[toolIndex].value
-                            ]()}
+                          ]()}
                         </dd>
                       </div>
                     ))}
@@ -482,7 +482,7 @@ export function ToolsReview() {
                         <dd className="text-center sm:px-4">
                           {valuesDictionary[
                             feature.features[toolIndex].value
-                            ]()}
+                          ]()}
                         </dd>
                       </div>
                     ))}
@@ -512,9 +512,7 @@ export function ToolsReview() {
                 key={tool.title}
                 aria-hidden="true"
                 className={classNames(
-                  toolIndex === tools.length - 1
-                    ? 'pl-2'
-                    : 'px-2',
+                  toolIndex === tools.length - 1 ? 'pl-2' : 'px-2',
                   '-mt-px w-[10.75%]'
                 )}
               >
@@ -522,7 +520,7 @@ export function ToolsReview() {
                   <p className="text-md font-bold text-gray-700 dark:text-gray-300">
                     {tool.title}{' '}
                     {tool.organization ? (
-                      <span className="block my-2 text-xs font-normal">
+                      <span className="my-2 block text-xs font-normal">
                         (by {tool.organization})
                       </span>
                     ) : null}
@@ -578,49 +576,49 @@ export function ToolsReview() {
             <table className="relative w-full">
               <caption className="sr-only">Business feature comparison</caption>
               <thead>
-              <tr className="text-left">
-                <th scope="col">
-                  <span className="sr-only">Feature</span>
-                </th>
-                {tools.map((tool) => (
-                  <th key={tool.title} scope="col">
-                    <span className="sr-only">{tool.title}</span>
+                <tr className="text-left">
+                  <th scope="col">
+                    <span className="sr-only">Feature</span>
                   </th>
-                ))}
-              </tr>
+                  {tools.map((tool) => (
+                    <th key={tool.title} scope="col">
+                      <span className="sr-only">{tool.title}</span>
+                    </th>
+                  ))}
+                </tr>
               </thead>
               <tbody className="divide-y divide-slate-300 dark:divide-slate-600">
-              {fast.map((feature) => (
-                <tr key={feature.title}>
-                  <th
-                    scope="row"
-                    className="w-[14%] py-3 pr-4 text-left text-sm font-medium text-gray-700 dark:text-gray-300"
-                  >
-                    <a
-                      href={feature.link}
-                      title={'More on ' + feature.title}
-                      className="hover:underline"
+                {fast.map((feature) => (
+                  <tr key={feature.title}>
+                    <th
+                      scope="row"
+                      className="w-[14%] py-3 pr-4 text-left text-sm font-medium text-gray-700 dark:text-gray-300"
                     >
-                      {feature.title}
-                    </a>
-                  </th>
-                  {feature.features.map((tier, tierIdx) => (
-                    <td
-                      key={tier.title}
-                      className={classNames(
-                        tierIdx === feature.features.length - 1
-                          ? 'pl-2'
-                          : 'px-2',
-                        'relative w-[10.75%] py-0 text-center'
-                      )}
-                    >
+                      <a
+                        href={feature.link}
+                        title={'More on ' + feature.title}
+                        className="hover:underline"
+                      >
+                        {feature.title}
+                      </a>
+                    </th>
+                    {feature.features.map((tier, tierIdx) => (
+                      <td
+                        key={tier.title}
+                        className={classNames(
+                          tierIdx === feature.features.length - 1
+                            ? 'pl-2'
+                            : 'px-2',
+                          'relative w-[10.75%] py-0 text-center'
+                        )}
+                      >
                         <span className="relative h-full w-full py-3">
                           {valuesDictionary[tier.value]()}
                         </span>
-                    </td>
-                  ))}
-                </tr>
-              ))}
+                      </td>
+                    ))}
+                  </tr>
+                ))}
               </tbody>
             </table>
 
@@ -696,57 +694,57 @@ export function ToolsReview() {
             <table className="relative w-full">
               <caption className="sr-only">Tool comparison</caption>
               <thead>
-              <tr className="text-left">
-                <th scope="col">
-                  <span className="sr-only">Tool</span>
-                </th>
-                {tools.map((tool) => (
-                  <th key={tool.title} scope="col">
-                    <span className="sr-only">{tool.title}</span>
+                <tr className="text-left">
+                  <th scope="col">
+                    <span className="sr-only">Tool</span>
                   </th>
-                ))}
-              </tr>
-              <tr className="text-left">
-                <th scope="col">
-                  <span className="sr-only">Organization</span>
-                </th>
-                {tools.map((tool) => (
-                  <th key={tool.title} scope="col">
-                    <span className="sr-only">{tool.organization}</span>
-                  </th>
-                ))}
-              </tr>
-              </thead>
-              <tbody className="divide-y divide-slate-300 dark:divide-slate-600">
-              {understandable.map((feature) => (
-                <tr key={feature.title}>
-                  <th
-                    scope="row"
-                    className="w-[14%] py-3 pr-4 text-left text-sm font-medium text-gray-700 dark:text-gray-300"
-                  >
-                    <a
-                      href={feature.link}
-                      title={'More on ' + feature.title}
-                      className="hover:underline"
-                    >
-                      {feature.title}
-                    </a>
-                  </th>
-                  {feature.features.map((tier, tierIdx) => (
-                    <td
-                      key={tier.title}
-                      className={classNames(
-                        tierIdx === feature.features.length - 1
-                          ? 'pl-2'
-                          : 'px-2',
-                        'relative w-[10.75%] py-0 text-center'
-                      )}
-                    >
-                      {valuesDictionary[tier.value]()}
-                    </td>
+                  {tools.map((tool) => (
+                    <th key={tool.title} scope="col">
+                      <span className="sr-only">{tool.title}</span>
+                    </th>
                   ))}
                 </tr>
-              ))}
+                <tr className="text-left">
+                  <th scope="col">
+                    <span className="sr-only">Organization</span>
+                  </th>
+                  {tools.map((tool) => (
+                    <th key={tool.title} scope="col">
+                      <span className="sr-only">{tool.organization}</span>
+                    </th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-slate-300 dark:divide-slate-600">
+                {understandable.map((feature) => (
+                  <tr key={feature.title}>
+                    <th
+                      scope="row"
+                      className="w-[14%] py-3 pr-4 text-left text-sm font-medium text-gray-700 dark:text-gray-300"
+                    >
+                      <a
+                        href={feature.link}
+                        title={'More on ' + feature.title}
+                        className="hover:underline"
+                      >
+                        {feature.title}
+                      </a>
+                    </th>
+                    {feature.features.map((tier, tierIdx) => (
+                      <td
+                        key={tier.title}
+                        className={classNames(
+                          tierIdx === feature.features.length - 1
+                            ? 'pl-2'
+                            : 'px-2',
+                          'relative w-[10.75%] py-0 text-center'
+                        )}
+                      >
+                        {valuesDictionary[tier.value]()}
+                      </td>
+                    ))}
+                  </tr>
+                ))}
               </tbody>
             </table>
 
@@ -822,47 +820,47 @@ export function ToolsReview() {
             <table className="relative w-full">
               <caption className="sr-only">Tool comparison</caption>
               <thead>
-              <tr className="text-left">
-                <th scope="col">
-                  <span className="sr-only">Tool</span>
-                </th>
-                {tools.map((plan) => (
-                  <th key={plan.title} scope="col">
-                    <span className="sr-only">{plan.title}</span>
+                <tr className="text-left">
+                  <th scope="col">
+                    <span className="sr-only">Tool</span>
                   </th>
-                ))}
-              </tr>
-              </thead>
-              <tbody className="divide-y divide-slate-300 dark:divide-slate-600">
-              {manageable.map((feature) => (
-                <tr key={feature.title}>
-                  <th
-                    scope="row"
-                    className="w-[14%] py-3 pr-4 text-left text-sm font-medium text-gray-700 dark:text-gray-300"
-                  >
-                    <a
-                      href={feature.link}
-                      title={'More on ' + feature.title}
-                      className="hover:underline"
-                    >
-                      {feature.title}
-                    </a>
-                  </th>
-                  {feature.features.map((tier, tierIdx) => (
-                    <td
-                      key={tier.title}
-                      className={classNames(
-                        tierIdx === feature.features.length - 1
-                          ? 'pl-2'
-                          : 'px-2',
-                        'relative py-0 text-center w-[10.75%]'
-                      )}
-                    >
-                      {valuesDictionary[tier.value]()}
-                    </td>
+                  {tools.map((plan) => (
+                    <th key={plan.title} scope="col">
+                      <span className="sr-only">{plan.title}</span>
+                    </th>
                   ))}
                 </tr>
-              ))}
+              </thead>
+              <tbody className="divide-y divide-slate-300 dark:divide-slate-600">
+                {manageable.map((feature) => (
+                  <tr key={feature.title}>
+                    <th
+                      scope="row"
+                      className="w-[14%] py-3 pr-4 text-left text-sm font-medium text-gray-700 dark:text-gray-300"
+                    >
+                      <a
+                        href={feature.link}
+                        title={'More on ' + feature.title}
+                        className="hover:underline"
+                      >
+                        {feature.title}
+                      </a>
+                    </th>
+                    {feature.features.map((tier, tierIdx) => (
+                      <td
+                        key={tier.title}
+                        className={classNames(
+                          tierIdx === feature.features.length - 1
+                            ? 'pl-2'
+                            : 'px-2',
+                          'relative w-[10.75%] py-0 text-center'
+                        )}
+                      >
+                        {valuesDictionary[tier.value]()}
+                      </td>
+                    ))}
+                  </tr>
+                ))}
               </tbody>
             </table>
 
