@@ -522,7 +522,7 @@ export function ToolsReview() {
                   <p className="text-md font-bold text-gray-700 dark:text-gray-300">
                     {tool.title}{' '}
                     {tool.organization ? (
-                      <span className="ml-2 text-xs font-normal">
+                      <span className="block my-2 text-xs font-normal">
                         (by {tool.organization})
                       </span>
                     ) : null}
