@@ -1,5 +1,4 @@
 {
-  "root": "apps/website",
   "sourceRoot": "apps/website",
   "projectType": "application",
   "targets": {

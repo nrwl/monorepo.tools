@@ -1,6 +1,5 @@
-module.exports = {
+export default {
   displayName: 'website-feature-analytics',
-
   globals: {
     'ts-jest': {
       tsconfig: '<rootDir>/tsconfig.spec.json',
@@ -11,5 +10,5 @@ module.exports = {
   },
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
   coverageDirectory: '../../../coverage/libs/website/feature-analytics',
-  preset: '../../../jest.preset.ts',
+  preset: '../../../jest.preset.js',
 };
