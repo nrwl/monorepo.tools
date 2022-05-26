@@ -88,6 +88,10 @@ const videosPodcasts: { name: string; link: string }[] = [
     link: 'https://www.youtube.com/watch?v=VKVTzVM0nVM&list=PLakNactNC1dG1CoyVWFppw3X8hnXRhFuy&utm_source=monorepo.tools',
   },
   {
+    name: 'NxConf Lite 2022 (Playlist)',
+    link: 'https://youtube.com/playlist?list=PLakNactNC1dGmYYdDqWTMae5YiC_DRrTx',
+  },
+  {
     name: 'Pants Podcasts',
     link: 'https://www.pantsbuild.org/docs/media#podcasts&utm_source=monorepo.tools',
   },
