@@ -110,8 +110,8 @@ const articles: { name: string; link: string }[] = [
     link: 'https://dev.to/agentender/build-monorepos-not-monoliths-4gbc?utm_source=monorepo.tools',
   },
   {
-    name: 'Lerna/Yarn -> Nx: Faster Build Times + Better Dev Ergonomics',
-    link: 'https://dev.to/nx/lerna-yarn-nx-faster-build-times-better-dev-ergonomics-32a6?utm_source=monorepo.tools',
+    name: 'Lerna 5.1 - New website, new guides, new Lerna example repo, distributed caching support and speed!',
+    link: 'https://dev.to/nrwl/lerna-51-new-website-new-guides-new-lerna-example-repo-distributed-caching-support-and-speed-31oe?utm_source=monorepo.tools',
   },
   {
     name: 'Nx monorepo documentation',
