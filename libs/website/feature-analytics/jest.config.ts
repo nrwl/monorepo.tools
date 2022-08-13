@@ -1,3 +1,4 @@
+/* eslint-disable */
 export default {
   displayName: 'website-feature-analytics',
   globals: {
