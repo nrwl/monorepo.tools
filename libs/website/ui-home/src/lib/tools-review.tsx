@@ -40,6 +40,8 @@ const tools = [
   },
   {
     title: 'Lerna',
+    organization: 'Nrwl',
+    organizationUrl: 'https://nrwl.io/?utm_source=monorepo.tools',
     description:
       'A tool for managing JavaScript projects with multiple packages.',
   },
