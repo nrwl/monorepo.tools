@@ -746,8 +746,11 @@ export function MonorepoFeatures() {
                 </p>
               </dt>
               <dd className="mt-4 text-base text-gray-600 dark:text-gray-400">
-                Bazel doesn't support it, but it provides the required metadata
-                making it possible to write such functionality yourself.
+                Bazel doesn't have built-in support, however third-party tools such as
+                <a href="https://github.com/bazel-contrib/target-determinator">
+                  target-determinator
+                </a>
+                provide this feature by using Bazel's query language.
               </dd>
             </div>
             <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
