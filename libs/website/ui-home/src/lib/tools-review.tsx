@@ -20,53 +20,55 @@ interface Item {
 const tools = [
   {
     title: 'Bazel',
-    organization: 'Google',
+    organization: 'by Google',
     organizationUrl: 'https://google.com/?utm_source=monorepo.tools',
     description:
       'A fast, scalable, multi-language and extensible build system.',
   },
   {
     title: 'Gradle',
-    organization: 'Gradle, Inc',
+    organization: 'by Gradle, Inc',
     organizationUrl: 'https://gradle.org/?utm_source=monorepo.tools',
     description:
       'A fast, flexible polyglot build system designed for multi-project builds.',
   },
   {
     title: 'Lage',
-    organization: 'Microsoft',
+    organization: 'by Microsoft',
     organizationUrl: 'https://microsoft.com/?utm_source=monorepo.tools',
     description: 'Task runner in JS monorepos',
   },
   {
     title: 'Lerna',
+    organization: 'maintained by Nrwl',
+    organizationUrl: 'https://nrwl.io/?utm_source=monorepo.tools',
     description:
       'A tool for managing JavaScript projects with multiple packages.',
   },
   {
     title: 'Nx',
-    organization: 'Nrwl',
+    organization: 'by Nrwl',
     organizationUrl: 'https://nrwl.io/?utm_source=monorepo.tools',
     description:
       'Next generation build system with first class monorepo support and powerful integrations.',
   },
   {
     title: 'Pants',
-    organization: 'Pants Build',
+    organization: 'by Pants Build',
     organizationUrl: 'https://pantsbuild.org/?utm_source=monorepo.tools',
     description:
       'A fast, scalable, user-friendly build system for codebases of all sizes.',
   },
   {
     title: 'Rush',
-    organization: 'Microsoft',
+    organization: 'by Microsoft',
     organizationUrl: 'https://microsoft.com/?utm_source=monorepo.tools',
     description:
       'Geared for large monorepos with lots of teams and projects. Part of the Rush Stack family of projects.',
   },
   {
     title: 'Turborepo',
-    organization: 'Vercel',
+    organization: 'by Vercel',
     organizationUrl: 'https://vercel.com/?utm_source=monorepo.tools',
     description:
       'The high-performance build system for JavaScript & TypeScript codebases.',
@@ -521,7 +523,7 @@ export function ToolsReview() {
                     {tool.title}{' '}
                     {tool.organization ? (
                       <span className="my-2 block text-xs font-normal">
-                        (by {tool.organization})
+                        ({tool.organization})
                       </span>
                     ) : null}
                   </p>
