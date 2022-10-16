@@ -10,14 +10,14 @@
           "projects": "self"
         }
       ],
-      "executor": "@nrwl/workspace:run-commands",
+      "executor": "nx:run-commands",
       "options": {
         "outputPath": "dist/apps/website",
         "command": "nx run website:sitemap"
       }
     },
     "sitemap": {
-      "executor": "@nrwl/workspace:run-commands",
+      "executor": "nx:run-commands",
       "outputs": [],
       "options": {
         "command": "npx next-sitemap --config ./apps/website/next-sitemap.js"
