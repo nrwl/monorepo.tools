@@ -153,12 +153,12 @@ export function MonorepoFeatures() {
             <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
               <dt>
                 <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
-                  <NotSupported /> Lerna
+                  <Supported /> Lerna
                 </p>
               </dt>
               <dd className="mt-4 text-gray-600 dark:text-gray-400">
-                Lerna doesn't support it and will always rerun everything from
-                scratch.
+                Lerna v6 has built-in local computation caching powered by the
+                Nx.
               </dd>
             </div>
             <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
@@ -288,10 +288,8 @@ export function MonorepoFeatures() {
                 </p>
               </dt>
               <dd className="mt-4 text-base text-gray-600 dark:text-gray-400">
-                Lerna's ability to do task coordination is more limited compared
-                to the rest of the tools. It is not able to mix and match
-                different targets (e.g., tests and builds), so it results in
-                more idle time.
+                Lerna v6 leverages Nx to efficiently coordinate and parallelize
+                tasks.
               </dd>
             </div>
             <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
@@ -411,11 +409,12 @@ export function MonorepoFeatures() {
             <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
               <dt>
                 <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
-                  <NotSupported /> Lerna
+                  <Supported /> Lerna
                 </p>
               </dt>
               <dd className="mt-4 text-base text-gray-600 dark:text-gray-400">
-                Lerna cannot reuse computation across machines.
+                Lerna v6 can be connected to Nx Cloud to enable distributed
+                caching.
               </dd>
             </div>
             <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
@@ -536,11 +535,12 @@ export function MonorepoFeatures() {
             <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
               <dt>
                 <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
-                  <NotSupported /> Lerna
+                  <Supported /> Lerna
                 </p>
               </dt>
               <dd className="mt-4 text-base text-gray-600 dark:text-gray-400">
-                Lerna doesn't support it.
+                Lerna v6 can be connected to Nx Cloud for enabling distributed
+                task execution.
               </dd>
             </div>
             <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
