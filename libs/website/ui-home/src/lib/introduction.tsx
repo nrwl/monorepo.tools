@@ -124,6 +124,15 @@ export function Introduction() {
                 </a>
                 ,&nbsp;
                 <a
+                  href="https://please.build/?utm_source=monorepo.tools"
+                  rel="noreferrer"
+                  target="_blank"
+                  className="border-b border-yellow-500 transition hover:rounded hover:bg-yellow-500 hover:text-gray-800"
+                >
+                  Please (by Thought Machine)
+                </a>
+                ,&nbsp;
+                <a
                   rel="noreferrer"
                   target="_blank"
                   href="https://rushstack.io/?utm_source=monorepo.tools"

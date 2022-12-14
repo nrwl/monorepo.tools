@@ -57,6 +57,13 @@ const people: {
     twitterLink: 'https://twitter.com/benjyw',
     githubLink: 'https://github.com/pantsbuild/pants?utm_source=monorepo.tools',
   },
+  {
+    name: 'Jon Poole',
+    tool: 'Please',
+    imageUrl: 'https://avatars.githubusercontent.com/u/2906700?s=150',
+    twitterLink: 'https://twitter.com/jonfpoole',
+    githubLink: 'https://github.com/thought-machine/please?utm_source=monorepo.tools',
+  },
 ];
 const videosPodcasts: { name: string; link: string }[] = [
   {

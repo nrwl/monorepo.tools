@@ -73,6 +73,13 @@ const tools = [
     description:
       'The high-performance build system for JavaScript & TypeScript codebases.',
   },
+  {
+    title: 'Please',
+    organization: 'Please Build',
+    organizationUrl: 'https://please.build/?utm_source=monorepo.tools',
+    description:
+      'A cross-language build system with an emphasis on high performance, extensibility and correctness\n'
+  },
 ];
 const fast: Item[] = [
   {
@@ -89,6 +96,7 @@ const fast: Item[] = [
       { title: 'Pants', value: 'supported' },
       { title: 'Rush', value: 'supported' },
       { title: 'Turborepo', value: 'supported' },
+      { title: 'Please', value: 'supported' },
     ],
   },
   {
@@ -104,6 +112,7 @@ const fast: Item[] = [
       { title: 'Pants', value: 'supported' },
       { title: 'Rush', value: 'supported' },
       { title: 'Turborepo', value: 'supported' },
+      { title: 'Please', value: 'supported' },
     ],
   },
   {
@@ -120,6 +129,7 @@ const fast: Item[] = [
       { title: 'Pants', value: 'supported' },
       { title: 'Rush', value: 'supported' },
       { title: 'Turborepo', value: 'supported' },
+      { title: 'Please', value: 'supported' },
     ],
   },
   {
@@ -135,6 +145,7 @@ const fast: Item[] = [
       { title: 'Pants', value: 'supported' },
       { title: 'Rush', value: 'manualImplementation' },
       { title: 'Turborepo', value: 'notSupported' },
+      { title: 'Please', value: 'supported' },
     ],
   },
   {
@@ -151,6 +162,7 @@ const fast: Item[] = [
       { title: 'Pants', value: 'supported' },
       { title: 'Rush', value: 'notSupported' },
       { title: 'Turborepo', value: 'notSupported' },
+      { title: 'Please', value: 'supported' },
     ],
   },
   {
@@ -167,6 +179,8 @@ const fast: Item[] = [
       { title: 'Pants', value: 'supported' },
       { title: 'Rush', value: 'supported' },
       { title: 'Turborepo', value: 'supported' },
+      { title: 'Please', value: 'supported' },
+
     ],
   },
 ];
@@ -185,6 +199,8 @@ const understandable: Item[] = [
       { title: 'Pants', value: 'supported' },
       { title: 'Rush', value: 'supported' },
       { title: 'Turborepo', value: 'supported' },
+      { title: 'Please', value: 'supported' },
+
     ],
   },
   {
@@ -201,6 +217,8 @@ const understandable: Item[] = [
       { title: 'Pants', value: 'manualImplementation' },
       { title: 'Rush', value: 'manualImplementation' },
       { title: 'Turborepo', value: 'supported' },
+      { title: 'Please', value: 'manualImplementation' },
+
     ],
   },
 ];
@@ -218,6 +236,7 @@ const manageable: Item[] = [
       { title: 'Pants', value: 'supported' },
       { title: 'Rush', value: 'supported' },
       { title: 'Turborepo', value: 'supported' },
+      { title: 'Please', value: 'supported' },
     ],
   },
   {
@@ -234,6 +253,7 @@ const manageable: Item[] = [
       { title: 'Pants', value: 'supported' },
       { title: 'Rush', value: 'notSupported' },
       { title: 'Turborepo', value: 'notSupported' },
+      { title: 'Please', value: 'supported' },
     ],
   },
   {
@@ -249,6 +269,8 @@ const manageable: Item[] = [
       { title: 'Pants', value: 'supported' },
       { title: 'Rush', value: 'manualImplementation' },
       { title: 'Turborepo', value: 'manualImplementation' },
+      { title: 'Please', value: 'manualImplementation' },
+
     ],
   },
   {
@@ -265,6 +287,7 @@ const manageable: Item[] = [
       { title: 'Pants', value: 'manualImplementation' },
       { title: 'Rush', value: 'supported' },
       { title: 'Turborepo', value: 'manualImplementation' },
+      { title: 'Please', value: 'supported' },
     ],
   },
 ];
@@ -515,7 +538,7 @@ export function ToolsReview() {
                 aria-hidden="true"
                 className={classNames(
                   toolIndex === tools.length - 1 ? 'pl-2' : 'px-2',
-                  '-mt-px w-[10.75%]'
+                  '-mt-px w-[9.5%]'
                 )}
               >
                 <div className="border-t-2 border-transparent py-6">
@@ -549,28 +572,31 @@ export function ToolsReview() {
               aria-hidden="true"
             >
               <div className="w-[14%] pr-4" />
-              <div className="w-[10.75%] px-2">
+              <div className="w-[9.5%] px-2">
                 <div className="h-full w-full rounded-lg bg-slate-100 shadow dark:bg-slate-700" />
               </div>
-              <div className="w-[10.75%] px-2">
+              <div className="w-[9.5%] px-2">
                 <div className="h-full w-full rounded-lg bg-slate-100 shadow-md dark:bg-slate-700" />
               </div>
-              <div className="w-[10.75%] px-2">
+              <div className="w-[9.5%] px-2">
                 <div className="h-full w-full rounded-lg bg-slate-100 shadow-md dark:bg-slate-700" />
               </div>
-              <div className="w-[10.75%] px-2">
+              <div className="w-[9.5%] px-2">
                 <div className="h-full w-full rounded-lg bg-slate-100 shadow dark:bg-slate-700" />
               </div>
-              <div className="w-[10.75%] px-2">
+              <div className="w-[9.5%] px-2">
                 <div className="h-full w-full rounded-lg bg-slate-100 shadow dark:bg-slate-700" />
               </div>
-              <div className="w-[10.75%] px-2">
+              <div className="w-[9.5%] px-2">
                 <div className="h-full w-full rounded-lg bg-slate-100 shadow dark:bg-slate-700" />
               </div>
-              <div className="w-[10.75%] px-2">
+              <div className="w-[9.5%] px-2">
                 <div className="h-full w-full rounded-lg bg-slate-100 shadow dark:bg-slate-700" />
               </div>
-              <div className="w-[10.75%] pl-2">
+              <div className="w-[9.5%] px-2">
+                <div className="h-full w-full rounded-lg bg-slate-100 shadow dark:bg-slate-700" />
+              </div>
+              <div className="w-[9.5%] pl-2">
                 <div className="h-full w-full rounded-lg bg-slate-100 shadow dark:bg-slate-700" />
               </div>
             </div>
@@ -611,7 +637,7 @@ export function ToolsReview() {
                           tierIdx === feature.features.length - 1
                             ? 'pl-2'
                             : 'px-2',
-                          'relative w-[10.75%] py-0 text-center'
+                          'relative w-[9.5%] py-0 text-center'
                         )}
                       >
                         <span className="relative h-full w-full py-3">
@@ -630,28 +656,31 @@ export function ToolsReview() {
               aria-hidden="true"
             >
               <div className="w-[14%] pr-4" />
-              <div className="w-[10.75%] px-2">
+              <div className="w-[9.5%] px-2">
                 <div className="h-full w-full rounded-lg ring-1 ring-black ring-opacity-5" />
               </div>
-              <div className="w-[10.75%] px-2">
+              <div className="w-[9.5%] px-2">
                 <div className="h-full w-full rounded-lg ring-2 ring-black ring-opacity-5" />
               </div>
-              <div className="w-[10.75%] px-2">
+              <div className="w-[9.5%] px-2">
                 <div className="h-full w-full rounded-lg ring-2 ring-black ring-opacity-5" />
               </div>
-              <div className="w-[10.75%] px-2">
+              <div className="w-[9.5%] px-2">
                 <div className="h-full w-full rounded-lg ring-1 ring-black ring-opacity-5" />
               </div>
-              <div className="w-[10.75%] px-2">
+              <div className="w-[9.5%] px-2">
                 <div className="h-full w-full rounded-lg ring-1 ring-black ring-opacity-5" />
               </div>
-              <div className="w-[10.75%] px-2">
+              <div className="w-[9.5%] px-2">
                 <div className="h-full w-full rounded-lg ring-1 ring-black ring-opacity-5" />
               </div>
-              <div className="w-[10.75%] px-2">
+              <div className="w-[9.5%] px-2">
                 <div className="h-full w-full rounded-lg ring-1 ring-black ring-opacity-5" />
               </div>
-              <div className="w-[10.75%] pl-2">
+              <div className="w-[9.5%] px-2">
+                <div className="h-full w-full rounded-lg ring-1 ring-black ring-opacity-5" />
+              </div>
+              <div className="w-[9.5%] pl-2">
                 <div className="h-full w-full rounded-lg ring-1 ring-black ring-opacity-5" />
               </div>
             </div>
@@ -667,28 +696,31 @@ export function ToolsReview() {
               aria-hidden="true"
             >
               <div className="w-[14%] pr-4" />
-              <div className="w-[10.75%] px-2">
+              <div className="w-[9.5%] px-2">
                 <div className="h-full w-full rounded-lg bg-slate-100 shadow dark:bg-slate-700" />
               </div>
-              <div className="w-[10.75%] px-2">
+              <div className="w-[9.5%] px-2">
                 <div className="h-full w-full rounded-lg bg-slate-100 shadow-md dark:bg-slate-700" />
               </div>
-              <div className="w-[10.75%] px-2">
+              <div className="w-[9.5%] px-2">
                 <div className="h-full w-full rounded-lg bg-slate-100 shadow-md dark:bg-slate-700" />
               </div>
-              <div className="w-[10.75%] px-2">
+              <div className="w-[9.5%] px-2">
                 <div className="h-full w-full rounded-lg bg-slate-100 shadow-md dark:bg-slate-700" />
               </div>
-              <div className="w-[10.75%] px-2">
+              <div className="w-[9.5%] px-2">
                 <div className="h-full w-full rounded-lg bg-slate-100 shadow-md dark:bg-slate-700" />
               </div>
-              <div className="w-[10.75%] px-2">
+              <div className="w-[9.5%] px-2">
                 <div className="h-full w-full rounded-lg bg-slate-100 shadow-md dark:bg-slate-700" />
               </div>
-              <div className="w-[10.75%] px-2">
+              <div className="w-[9.5%] px-2">
                 <div className="h-full w-full rounded-lg bg-slate-100 shadow-md dark:bg-slate-700" />
               </div>
-              <div className="w-[10.75%] pl-2">
+              <div className="w-[9.5%] px-2">
+                <div className="h-full w-full rounded-lg bg-slate-100 shadow dark:bg-slate-700" />
+              </div>
+              <div className="w-[9.5%] pl-2">
                 <div className="h-full w-full rounded-lg bg-slate-100 shadow dark:bg-slate-700" />
               </div>
             </div>
@@ -739,7 +771,7 @@ export function ToolsReview() {
                           tierIdx === feature.features.length - 1
                             ? 'pl-2'
                             : 'px-2',
-                          'relative w-[10.75%] py-0 text-center'
+                          'relative w-[9.5%] py-0 text-center'
                         )}
                       >
                         {valuesDictionary[tier.value]()}
@@ -756,28 +788,31 @@ export function ToolsReview() {
               aria-hidden="true"
             >
               <div className="w-[14%] pr-4" />
-              <div className="w-[10.75%] px-2">
+              <div className="w-[9.5%] px-2">
                 <div className="h-full w-full rounded-lg ring-1 ring-black ring-opacity-5" />
               </div>
-              <div className="w-[10.75%] px-2">
+              <div className="w-[9.5%] px-2">
                 <div className="h-full w-full rounded-lg ring-2 ring-black ring-opacity-5" />
               </div>
-              <div className="w-[10.75%] px-2">
+              <div className="w-[9.5%] px-2">
                 <div className="h-full w-full rounded-lg ring-2 ring-black ring-opacity-5" />
               </div>
-              <div className="w-[10.75%] px-2">
+              <div className="w-[9.5%] px-2">
                 <div className="h-full w-full rounded-lg ring-2 ring-black ring-opacity-5" />
               </div>
-              <div className="w-[10.75%] px-2">
+              <div className="w-[9.5%] px-2">
                 <div className="h-full w-full rounded-lg ring-2 ring-black ring-opacity-5" />
               </div>
-              <div className="w-[10.75%] px-2">
+              <div className="w-[9.5%] px-2">
                 <div className="h-full w-full rounded-lg ring-1 ring-black ring-opacity-5" />
               </div>
-              <div className="w-[10.75%] px-2">
+              <div className="w-[9.5%] px-2">
                 <div className="h-full w-full rounded-lg ring-1 ring-black ring-opacity-5" />
               </div>
-              <div className="w-[10.75%] pl-2">
+              <div className="w-[9.5%] px-2">
+                <div className="h-full w-full rounded-lg ring-1 ring-black ring-opacity-5" />
+              </div>
+              <div className="w-[9.5%] pl-2">
                 <div className="h-full w-full rounded-lg ring-1 ring-black ring-opacity-5" />
               </div>
             </div>
@@ -793,28 +828,31 @@ export function ToolsReview() {
               aria-hidden="true"
             >
               <div className="w-[14%] pr-4" />
-              <div className="w-[10.75%] px-2">
+              <div className="w-[9.5%] px-2">
                 <div className="h-full w-full rounded-lg bg-slate-100 shadow dark:bg-slate-700" />
               </div>
-              <div className="w-[10.75%] px-2">
+              <div className="w-[9.5%] px-2">
                 <div className="h-full w-full rounded-lg bg-slate-100 shadow-md dark:bg-slate-700" />
               </div>
-              <div className="w-[10.75%] px-2">
+              <div className="w-[9.5%] px-2">
                 <div className="h-full w-full rounded-lg bg-slate-100 shadow-md dark:bg-slate-700" />
               </div>
-              <div className="w-[10.75%] px-2">
+              <div className="w-[9.5%] px-2">
                 <div className="h-full w-full rounded-lg bg-slate-100 shadow-md dark:bg-slate-700" />
               </div>
-              <div className="w-[10.75%] px-2">
+              <div className="w-[9.5%] px-2">
                 <div className="h-full w-full rounded-lg bg-slate-100 shadow-md dark:bg-slate-700" />
               </div>
-              <div className="w-[10.75%] px-2">
+              <div className="w-[9.5%] px-2">
                 <div className="h-full w-full rounded-lg bg-slate-100 shadow-md dark:bg-slate-700" />
               </div>
-              <div className="w-[10.75%] px-2">
+              <div className="w-[9.5%] px-2">
                 <div className="h-full w-full rounded-lg bg-slate-100 shadow-md dark:bg-slate-700" />
               </div>
-              <div className="w-[10.75%] pl-2">
+              <div className="w-[9.5%] px-2">
+                <div className="h-full w-full rounded-lg bg-slate-100 shadow dark:bg-slate-700" />
+              </div>
+              <div className="w-[9.5%] pl-2">
                 <div className="h-full w-full rounded-lg bg-slate-100 shadow dark:bg-slate-700" />
               </div>
             </div>
@@ -855,7 +893,7 @@ export function ToolsReview() {
                           tierIdx === feature.features.length - 1
                             ? 'pl-2'
                             : 'px-2',
-                          'relative w-[10.75%] py-0 text-center'
+                          'relative w-[9.5%] py-0 text-center'
                         )}
                       >
                         {valuesDictionary[tier.value]()}
@@ -872,28 +910,31 @@ export function ToolsReview() {
               aria-hidden="true"
             >
               <div className="w-[14%] pr-4" />
-              <div className="w-[10.75%] px-2">
+              <div className="w-[9.5%] px-2">
                 <div className="h-full w-full rounded-lg ring-1 ring-black ring-opacity-5" />
               </div>
-              <div className="w-[10.75%] px-2">
+              <div className="w-[9.5%] px-2">
                 <div className="h-full w-full rounded-lg ring-2 ring-black ring-opacity-5" />
               </div>
-              <div className="w-[10.75%] px-2">
+              <div className="w-[9.5%] px-2">
                 <div className="h-full w-full rounded-lg ring-2 ring-black ring-opacity-5" />
               </div>
-              <div className="w-[10.75%] px-2">
+              <div className="w-[9.5%] px-2">
                 <div className="h-full w-full rounded-lg ring-2 ring-black ring-opacity-5" />
               </div>
-              <div className="w-[10.75%] px-2">
+              <div className="w-[9.5%] px-2">
                 <div className="h-full w-full rounded-lg ring-2 ring-black ring-opacity-5" />
               </div>
-              <div className="w-[10.75%] px-2">
+              <div className="w-[9.5%] px-2">
                 <div className="h-full w-full rounded-lg ring-2 ring-black ring-opacity-5" />
               </div>
-              <div className="w-[10.75%] px-2">
+              <div className="w-[9.5%] px-2">
                 <div className="h-full w-full rounded-lg ring-2 ring-black ring-opacity-5" />
               </div>
-              <div className="w-[10.75%] pl-2">
+              <div className="w-[9.5%] px-2">
+                <div className="h-full w-full rounded-lg ring-1 ring-black ring-opacity-5" />
+              </div>
+              <div className="w-[9.5%] pl-2">
                 <div className="h-full w-full rounded-lg ring-1 ring-black ring-opacity-5" />
               </div>
             </div>
