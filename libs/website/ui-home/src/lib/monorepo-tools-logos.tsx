@@ -35,7 +35,6 @@ const tools2: { name: string; link: string }[] = [
     name: 'Rush',
     link: 'https://github.com/microsoft/rushstack?utm_source=monorepo.tools',
   },
-
 ];
 
 const tools3: { name: string; link: string }[] = [

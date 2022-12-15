@@ -62,7 +62,8 @@ const people: {
     tool: 'Please',
     imageUrl: 'https://avatars.githubusercontent.com/u/2906700?s=150',
     twitterLink: 'https://twitter.com/jonfpoole',
-    githubLink: 'https://github.com/thought-machine/please?utm_source=monorepo.tools',
+    githubLink:
+      'https://github.com/thought-machine/please?utm_source=monorepo.tools',
   },
 ];
 const videosPodcasts: { name: string; link: string }[] = [

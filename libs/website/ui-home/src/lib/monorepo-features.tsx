@@ -623,8 +623,9 @@ export function MonorepoFeatures() {
                 </p>
               </dt>
               <dd className="mt-4 text-base text-gray-600 dark:text-gray-400">
-                Please supports it through the same remote execution API as Bazel, however there are some compatibility
-                issues with many of the remote execution API providers.
+                Please supports it through the same remote execution API as
+                Bazel, however there are some compatibility issues with many of
+                the remote execution API providers.
               </dd>
             </div>
           </dl>
@@ -746,8 +747,9 @@ export function MonorepoFeatures() {
                 </p>
               </dt>
               <dd className="mt-4 text-base text-gray-600 dark:text-gray-400">
-                Please supports it similarly to Bazel and Pants, however, there are some compatibility issues with
-                many of the third party providers.
+                Please supports it similarly to Bazel and Pants, however, there
+                are some compatibility issues with many of the third party
+                providers.
               </dd>
             </div>
           </dl>
@@ -1039,8 +1041,9 @@ export function MonorepoFeatures() {
                 </p>
               </dt>
               <dd className="mt-4 text-gray-600 dark:text-gray-400">
-                The query sub-command can be used to query the build graph in a multitude of ways. The build graph
-                is computed statically, so the entire build can be analysed in this way.
+                The query sub-command can be used to query the build graph in a
+                multitude of ways. The build graph is computed statically, so
+                the entire build can be analysed in this way.
               </dd>
             </div>
           </dl>
@@ -1186,8 +1189,9 @@ export function MonorepoFeatures() {
                 </p>
               </dt>
               <dd className="mt-4 text-gray-600 dark:text-gray-400">
-                The build graph can be outputted as json, which could then be visualized by another tool. You can also
-                print a dependency tree for a given target in the terminal.
+                The build graph can be outputted as json, which could then be
+                visualized by another tool. You can also print a dependency tree
+                for a given target in the terminal.
               </dd>
             </div>
           </dl>
@@ -1343,9 +1347,11 @@ export function MonorepoFeatures() {
                 </p>
               </dt>
               <dd className="mt-4 text-gray-600 dark:text-gray-400">
-                Please supports building and packaging through the standard idioms of the language. It also supports
-                exporting targets from the codebase, including all dependencies and build configuration. Additionally,
-                other Please projects added to the project seamlessly through subrepos.
+                Please supports building and packaging through the standard
+                idioms of the language. It also supports exporting targets from
+                the codebase, including all dependencies and build
+                configuration. Additionally, other Please projects added to the
+                project seamlessly through subrepos.
               </dd>
             </div>
           </dl>
@@ -1506,8 +1512,9 @@ export function MonorepoFeatures() {
                 </p>
               </dt>
               <dd className="mt-4 text-base text-gray-600 dark:text-gray-400">
-                This is a key feature of Please. Not only can it be extended with other build targets, but the CLI can
-                be extended with new verbs, or even entire tools.
+                This is a key feature of Please. Not only can it be extended
+                with other build targets, but the CLI can be extended with new
+                verbs, or even entire tools.
               </dd>
             </div>
           </dl>
@@ -1658,8 +1665,9 @@ export function MonorepoFeatures() {
                 </p>
               </dt>
               <dd className="mt-4 text-base text-gray-600 dark:text-gray-400">
-                Please supports code generation for protobuf for go, Python, Java, Javascript, and C/C++. Otherwise,
-                Please can be extended to support other tools.
+                Please supports code generation for protobuf for go, Python,
+                Java, Javascript, and C/C++. Otherwise, Please can be extended
+                to support other tools.
               </dd>
             </div>
           </dl>

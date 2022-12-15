@@ -78,7 +78,7 @@ const tools = [
     organization: 'Please Build',
     organizationUrl: 'https://please.build/?utm_source=monorepo.tools',
     description:
-      'A cross-language build system with an emphasis on high performance, extensibility and correctness\n'
+      'A cross-language build system with an emphasis on high performance, extensibility and correctness\n',
   },
 ];
 const fast: Item[] = [
@@ -180,7 +180,6 @@ const fast: Item[] = [
       { title: 'Rush', value: 'supported' },
       { title: 'Turborepo', value: 'supported' },
       { title: 'Please', value: 'supported' },
-
     ],
   },
 ];
@@ -200,7 +199,6 @@ const understandable: Item[] = [
       { title: 'Rush', value: 'supported' },
       { title: 'Turborepo', value: 'supported' },
       { title: 'Please', value: 'supported' },
-
     ],
   },
   {
@@ -218,7 +216,6 @@ const understandable: Item[] = [
       { title: 'Rush', value: 'manualImplementation' },
       { title: 'Turborepo', value: 'supported' },
       { title: 'Please', value: 'manualImplementation' },
-
     ],
   },
 ];
@@ -270,7 +267,6 @@ const manageable: Item[] = [
       { title: 'Rush', value: 'manualImplementation' },
       { title: 'Turborepo', value: 'manualImplementation' },
       { title: 'Please', value: 'manualImplementation' },
-
     ],
   },
   {
