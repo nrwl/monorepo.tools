@@ -623,9 +623,9 @@ export function MonorepoFeatures() {
                 </p>
               </dt>
               <dd className="mt-4 text-base text-gray-600 dark:text-gray-400">
-                Please supports it through the same remote execution API as
-                Bazel, however there are some compatibility issues with many of
-                the remote execution API providers.
+                Please supports it, through the same remote execution API as
+                Bazel, although some server implementations may not support all
+                the needed features
               </dd>
             </div>
           </dl>
@@ -747,9 +747,9 @@ export function MonorepoFeatures() {
                 </p>
               </dt>
               <dd className="mt-4 text-base text-gray-600 dark:text-gray-400">
-                Please supports it similarly to Bazel and Pants, however, there
-                are some compatibility issues with many of the third party
-                providers.
+                Please supports it, through the same remote execution API as
+                Bazel, although some server implementations may not support all
+                the needed features
               </dd>
             </div>
           </dl>
@@ -895,7 +895,8 @@ export function MonorepoFeatures() {
                 </p>
               </dt>
               <dd className="mt-4 text-base text-gray-600 dark:text-gray-400">
-                Please supports querying changed packages based on the git diff.
+                Please supports querying changed build targets based on the scm
+                diff.
               </dd>
             </div>
           </dl>
@@ -1043,7 +1044,8 @@ export function MonorepoFeatures() {
               <dd className="mt-4 text-gray-600 dark:text-gray-400">
                 The query sub-command can be used to query the build graph in a
                 multitude of ways. The build graph is computed statically, so
-                the entire build can be analysed in this way.
+                the entire build can be analysed in this way. The graph can also
+                be exported as json for extra validation.
               </dd>
             </div>
           </dl>
@@ -1824,7 +1826,9 @@ export function MonorepoFeatures() {
                 </p>
               </dt>
               <dd className="mt-4 text-base text-gray-600 dark:text-gray-400">
-                Please support the same visibility rules as Bazel.
+                Please supports visibility rules, allowing you to mark code as
+                private or public, or make it visible to only certain paths in
+                the repo.
               </dd>
             </div>
           </dl>
