@@ -1,5 +1,9 @@
 import { useEffect, useState } from 'react';
-import { DesktopComputerIcon, MoonIcon, SunIcon } from '@heroicons/react/solid';
+import {
+  ComputerDesktopIcon,
+  MoonIcon,
+  SunIcon,
+} from '@heroicons/react/24/outline';
 import { useTheme } from 'next-themes';
 import cx from 'classnames';
 
@@ -18,7 +22,7 @@ export function Header() {
     {
       value: 'system',
       label: 'System',
-      icon: DesktopComputerIcon,
+      icon: ComputerDesktopIcon,
     },
   ];
   const { theme, setTheme } = useTheme();

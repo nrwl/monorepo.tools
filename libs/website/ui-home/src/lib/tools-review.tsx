@@ -5,7 +5,7 @@ import {
   LinkIcon,
   MinusIcon,
   QuestionMarkCircleIcon,
-} from '@heroicons/react/solid';
+} from '@heroicons/react/24/outline';
 
 type Supports = 'supported' | 'notSupported' | 'manualImplementation';
 
