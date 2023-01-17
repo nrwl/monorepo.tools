@@ -82,5 +82,6 @@
       }
     }
   },
-  "tags": ["scope:website", "type:app"]
+  "tags": ["scope:website", "type:app"],
+  "name": "website"
 }

@@ -1,6 +1,6 @@
 import { LinkIcon } from '@heroicons/react/solid';
 
-export function Introduction() {
+export function Introduction(): JSX.Element {
   return (
     <div
       data-test-id="understanding-monorepos"
@@ -238,5 +238,3 @@ export function Introduction() {
     </div>
   );
 }
-
-export default Introduction;

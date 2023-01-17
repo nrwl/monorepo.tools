@@ -1,6 +1,6 @@
 import { LinkIcon } from '@heroicons/react/solid';
 
-export function WhyAMonorepo() {
+export function WhyAMonorepo(): JSX.Element {
   return (
     <div
       data-test-id="why-a-monorepo"
@@ -249,5 +249,3 @@ export function WhyAMonorepo() {
     </div>
   );
 }
-
-export default WhyAMonorepo;

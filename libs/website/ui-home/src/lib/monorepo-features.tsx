@@ -15,7 +15,7 @@ import {
   TerminalIcon,
   XCircleIcon,
 } from '@heroicons/react/solid';
-import MonorepoToolsLogos from './monorepo-tools-logos';
+import { MonorepoToolsLogos } from './monorepo-tools-logos';
 
 const Supported = () => (
   <span
@@ -45,7 +45,7 @@ const ManualImplementation = () => (
   </span>
 );
 
-export function MonorepoFeatures() {
+export function MonorepoFeatures(): JSX.Element {
   return (
     <div
       data-test-id="monorepo-tools"
@@ -1693,5 +1693,3 @@ export function MonorepoFeatures() {
     </div>
   );
 }
-
-export default MonorepoFeatures;

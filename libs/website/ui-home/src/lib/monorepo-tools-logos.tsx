@@ -37,7 +37,7 @@ const tools2: { name: string; link: string }[] = [
   },
 ];
 
-export function MonorepoToolsLogos() {
+export function MonorepoToolsLogos(): JSX.Element {
   return (
     <>
       <div className="mt-8 grid  grid-cols-4 gap-0.5 pt-12 text-lg font-semibold lg:mt-16 lg:pt-16 lg:text-2xl">
@@ -71,5 +71,3 @@ export function MonorepoToolsLogos() {
     </>
   );
 }
-
-export default MonorepoToolsLogos;

@@ -1,6 +1,6 @@
 import { LinkIcon } from '@heroicons/react/solid';
 
-export function WhatIsAMonorepo() {
+export function WhatIsAMonorepo(): JSX.Element {
   return (
     <div
       data-test-id="what-is-a-monorepo"
@@ -99,5 +99,3 @@ export function WhatIsAMonorepo() {
     </div>
   );
 }
-
-export default WhatIsAMonorepo;

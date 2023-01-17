@@ -88,7 +88,7 @@ const features = [
   },
 ];
 
-export function MonorepoFeaturesOverview() {
+export function MonorepoFeaturesOverview(): JSX.Element {
   return (
     <div
       data-test-id="monorepo-features"
@@ -147,5 +147,3 @@ export function MonorepoFeaturesOverview() {
     </div>
   );
 }
-
-export default MonorepoFeaturesOverview;

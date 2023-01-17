@@ -1,4 +1,4 @@
-export function ToolsSupportCallout() {
+export function ToolsSupportCallout(): JSX.Element {
   return (
     <article className="bg-slate-50 dark:bg-slate-800">
       <div className="mx-auto max-w-7xl py-16 px-4 sm:px-6 lg:px-8">
@@ -31,5 +31,3 @@ export function ToolsSupportCallout() {
     </article>
   );
 }
-
-export default ToolsSupportCallout;
