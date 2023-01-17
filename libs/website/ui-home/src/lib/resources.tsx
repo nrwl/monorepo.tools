@@ -398,5 +398,3 @@ export function Resources() {
     </article>
   );
 }
-
-export default Resources;

@@ -19,5 +19,6 @@
       }
     }
   },
-  "tags": ["scope:website", "type:feature"]
+  "tags": ["scope:website", "type:feature"],
+  "name": "website-feature-analytics"
 }

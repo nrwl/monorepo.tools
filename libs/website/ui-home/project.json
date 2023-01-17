@@ -19,5 +19,6 @@
       }
     }
   },
-  "tags": ["scope:website", "type:ui"]
+  "tags": ["scope:website", "type:ui"],
+  "name": "website-ui-home"
 }

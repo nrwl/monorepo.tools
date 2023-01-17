@@ -302,7 +302,7 @@ function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(' ');
 }
 
-export function ToolsReview() {
+export function ToolsReview(): JSX.Element {
   return (
     <div
       data-test-id="tools-review"
@@ -935,5 +935,3 @@ export function ToolsReview() {
     </div>
   );
 }
-
-export default ToolsReview;

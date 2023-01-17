@@ -1,6 +1,6 @@
 import { LinkIcon } from '@heroicons/react/solid';
 
-export function Conclusion() {
+export function Conclusion(): JSX.Element {
   return (
     <article
       data-test-id="perception-shift"
@@ -55,5 +55,3 @@ export function Conclusion() {
     </article>
   );
 }
-
-export default Conclusion;
