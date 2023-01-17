@@ -345,7 +345,7 @@ export function ToolsReview() {
                   {tool.title}{' '}
                   {tool.organization ? (
                     <span className="ml-2 text-xs font-normal">
-                      (by {tool.organization})
+                      ({tool.organization})
                     </span>
                   ) : null}
                 </h3>
