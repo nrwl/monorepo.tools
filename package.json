@@ -9,7 +9,7 @@
   },
   "private": false,
   "dependencies": {
-    "@heroicons/react": "^1.0.5",
+    "@heroicons/react": "^2.0.13",
     "@netlify-builder/deploy": "^4.1.2",
     "@nrwl/next": "15.5.1",
     "@tailwindcss/aspect-ratio": "^0.4.0",

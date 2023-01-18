@@ -1,4 +1,4 @@
-import { LinkIcon } from '@heroicons/react/solid';
+import { LinkIcon } from '@heroicons/react/24/outline';
 
 export function WhyAMonorepo(): JSX.Element {
   return (

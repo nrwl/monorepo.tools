@@ -1,41 +1,41 @@
 import {
-  CloudDownloadIcon,
-  CodeIcon,
+  CloudArrowDownIcon,
+  CodeBracketIcon,
   CogIcon,
-  CollectionIcon,
-  DocumentDownloadIcon,
+  RectangleStackIcon,
+  DocumentArrowDownIcon,
   LightBulbIcon,
   LinkIcon,
   PresentationChartLineIcon,
   ServerIcon,
-  StatusOnlineIcon,
-  SwitchVerticalIcon,
-  TerminalIcon,
-} from '@heroicons/react/solid';
+  SignalIcon,
+  ArrowsUpDownIcon,
+  CommandLineIcon,
+} from '@heroicons/react/24/outline';
 
 const features = [
   {
     name: 'Local computation caching',
     category: 'Fast',
-    icon: DocumentDownloadIcon,
+    icon: DocumentArrowDownIcon,
     anchor: 'local-computation-caching',
   },
   {
     name: 'Local task orchestration',
     category: 'Fast',
-    icon: SwitchVerticalIcon,
+    icon: ArrowsUpDownIcon,
     anchor: 'local-task-orchestration',
   },
   {
     name: 'Distributed computation caching',
     category: 'Fast',
-    icon: CloudDownloadIcon,
+    icon: CloudArrowDownIcon,
     anchor: 'distributed-computation-caching',
   },
   {
     name: 'Distributed task execution',
     category: 'Fast',
-    icon: CollectionIcon,
+    icon: RectangleStackIcon,
     anchor: 'distributed-task-execution',
   },
   {
@@ -65,13 +65,13 @@ const features = [
   {
     name: 'Code sharing',
     category: 'Manageable',
-    icon: CodeIcon,
+    icon: CodeBracketIcon,
     anchor: 'source-code-sharing',
   },
   {
     name: 'Consistent tooling',
     category: 'Manageable',
-    icon: TerminalIcon,
+    icon: CommandLineIcon,
     anchor: 'consistent-tooling',
   },
   {
@@ -83,7 +83,7 @@ const features = [
   {
     name: 'Project constraints and visibility',
     category: 'Manageable',
-    icon: StatusOnlineIcon,
+    icon: SignalIcon,
     anchor: 'explicit-project-constrains',
   },
 ];

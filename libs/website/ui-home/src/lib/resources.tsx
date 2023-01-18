@@ -1,4 +1,7 @@
-import { ExternalLinkIcon, LinkIcon } from '@heroicons/react/solid';
+import {
+  ArrowTopRightOnSquareIcon,
+  LinkIcon,
+} from '@heroicons/react/24/outline';
 
 const people: {
   name: string;
@@ -210,7 +213,8 @@ export function Resources() {
                   rel="noreferrer"
                   className="flex items-center rounded px-1 transition hover:bg-yellow-500 hover:text-gray-800"
                 >
-                  <ExternalLinkIcon className="mr-2 h-5 w-5" /> {item.name}
+                  <ArrowTopRightOnSquareIcon className="mr-2 h-5 w-5" />{' '}
+                  {item.name}
                 </a>
               </li>
             ))}
@@ -249,7 +253,8 @@ export function Resources() {
                   rel="noreferrer"
                   className="flex items-center rounded px-1 transition hover:bg-yellow-500 hover:text-gray-800"
                 >
-                  <ExternalLinkIcon className="mr-2 h-5 w-5" /> {item.name}
+                  <ArrowTopRightOnSquareIcon className="mr-2 h-5 w-5" />{' '}
+                  {item.name}
                 </a>
               </li>
             ))}
@@ -299,7 +304,7 @@ export function Resources() {
                       <div className="space-y-4">
                         <div className="space-y-1 text-lg font-medium leading-6">
                           <h3 className="relative block pr-6">
-                            <ExternalLinkIcon className="absolute top-0 right-0 h-5 w-5" />{' '}
+                            <ArrowTopRightOnSquareIcon className="absolute top-0 right-0 h-5 w-5" />{' '}
                             <span>{book.name}</span>
                           </h3>
                           <p className="text-base font-normal uppercase">

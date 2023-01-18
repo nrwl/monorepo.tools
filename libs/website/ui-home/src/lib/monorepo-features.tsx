@@ -1,20 +1,20 @@
 import {
   CheckCircleIcon,
-  CloudDownloadIcon,
-  CodeIcon,
+  CloudArrowDownIcon,
+  CodeBracketIcon,
   CogIcon,
-  CollectionIcon,
-  DocumentDownloadIcon,
+  RectangleStackIcon,
+  DocumentArrowDownIcon,
   ExclamationCircleIcon,
   LightBulbIcon,
   LinkIcon,
   PresentationChartLineIcon,
   ServerIcon,
-  StatusOnlineIcon,
-  SwitchVerticalIcon,
-  TerminalIcon,
+  SignalIcon,
+  ArrowsUpDownIcon,
+  CommandLineIcon,
   XCircleIcon,
-} from '@heroicons/react/solid';
+} from '@heroicons/react/24/outline';
 import { MonorepoToolsLogos } from './monorepo-tools-logos';
 
 const Supported = () => (
@@ -86,7 +86,7 @@ export function MonorepoFeatures(): JSX.Element {
         >
           <div className="relative">
             <div className="absolute flex h-10 w-10 items-center justify-center rounded-md rounded-md bg-slate-100 text-gray-800 dark:bg-slate-900 dark:text-gray-200">
-              <DocumentDownloadIcon className="h-6 w-6" />
+              <DocumentArrowDownIcon className="h-6 w-6" />
             </div>
             <div className="group ml-16 text-xl font-medium text-gray-800 dark:text-gray-200 sm:text-2xl sm:leading-relaxed">
               Local computation caching
@@ -217,7 +217,7 @@ export function MonorepoFeatures(): JSX.Element {
         >
           <div className="relative">
             <div className="absolute flex h-10 w-10 items-center justify-center rounded-md rounded-md bg-slate-100 text-gray-800 dark:bg-slate-900 dark:text-gray-200">
-              <SwitchVerticalIcon className="h-6 w-6" />
+              <ArrowsUpDownIcon className="h-6 w-6" />
             </div>
             <div className="group ml-16 text-xl font-medium text-gray-800 dark:text-gray-200 sm:text-2xl sm:leading-relaxed">
               Local task orchestration
@@ -343,7 +343,7 @@ export function MonorepoFeatures(): JSX.Element {
         >
           <div className="relative">
             <div className="absolute flex h-10 w-10 items-center justify-center rounded-md rounded-md bg-slate-100 text-gray-800 dark:bg-slate-900 dark:text-gray-200">
-              <CloudDownloadIcon className="h-6 w-6" />
+              <CloudArrowDownIcon className="h-6 w-6" />
             </div>
             <div className="group ml-16 text-xl font-medium text-gray-800 dark:text-gray-200 sm:text-2xl sm:leading-relaxed">
               Distributed computation caching
@@ -468,7 +468,7 @@ export function MonorepoFeatures(): JSX.Element {
         >
           <div className="relative">
             <div className="absolute flex h-10 w-10 items-center justify-center rounded-md rounded-md bg-slate-100 text-gray-800 dark:bg-slate-900 dark:text-gray-200">
-              <CollectionIcon className="h-6 w-6" />
+              <RectangleStackIcon className="h-6 w-6" />
             </div>
             <div className="group ml-16 text-xl font-medium text-gray-800 dark:text-gray-200 sm:text-2xl sm:leading-relaxed">
               Distributed task execution
@@ -1122,7 +1122,7 @@ export function MonorepoFeatures(): JSX.Element {
         >
           <div className="relative">
             <div className="absolute flex h-10 w-10 items-center justify-center rounded-md rounded-md bg-slate-100 text-gray-800 dark:bg-slate-900 dark:text-gray-200">
-              <CodeIcon className="h-6 w-6" />
+              <CodeBracketIcon className="h-6 w-6" />
             </div>
             <div className="group ml-16 text-xl font-medium text-gray-800 dark:text-gray-200 sm:text-2xl sm:leading-relaxed">
               Source code sharing
@@ -1261,7 +1261,7 @@ export function MonorepoFeatures(): JSX.Element {
         >
           <div className="relative">
             <div className="absolute flex h-10 w-10 items-center justify-center rounded-md rounded-md bg-slate-100 text-gray-800 dark:bg-slate-900 dark:text-gray-200">
-              <TerminalIcon className="h-6 w-6" />
+              <CommandLineIcon className="h-6 w-6" />
             </div>
             <div className="group ml-16 text-xl font-medium text-gray-800 dark:text-gray-200 sm:text-2xl sm:leading-relaxed">
               Consistent tooling
@@ -1551,7 +1551,7 @@ export function MonorepoFeatures(): JSX.Element {
         >
           <div className="relative">
             <div className="absolute flex h-10 w-10 items-center justify-center rounded-md rounded-md bg-slate-100 text-gray-800 dark:bg-slate-900 dark:text-gray-200">
-              <StatusOnlineIcon className="h-6 w-6" />
+              <SignalIcon className="h-6 w-6" />
             </div>
             <div className="group ml-16 text-xl font-medium text-gray-800 dark:text-gray-200 sm:text-2xl sm:leading-relaxed">
               Project constraints and visibility
