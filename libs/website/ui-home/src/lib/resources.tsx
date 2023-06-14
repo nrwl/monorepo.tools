@@ -60,6 +60,13 @@ const people: {
     twitterLink: 'https://twitter.com/benjyw',
     githubLink: 'https://github.com/pantsbuild/pants?utm_source=monorepo.tools',
   },
+  {
+    name: 'Miles Johnson',
+    tool: 'moon',
+    imageUrl: 'https://avatars.githubusercontent.com/u/143744?s=150',
+    twitterLink: 'https://twitter.com/mileswjohnson',
+    githubLink: 'https://github.com/moonrepo/moon?utm_source=monorepo.tools',
+  },
 ];
 const videosPodcasts: { name: string; link: string }[] = [
   {
