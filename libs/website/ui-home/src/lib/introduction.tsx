@@ -106,6 +106,15 @@ export function Introduction(): JSX.Element {
                 </a>
                 ,&nbsp;
                 <a
+                  rel="noreferrer"
+                  target="_blank"
+                  href="https://moonrepo.dev/moon/?utm_source=monorepo.tools"
+                  className="border-b border-yellow-500 transition hover:rounded hover:bg-yellow-500 hover:text-gray-800"
+                >
+                  moon (by moonrepo)
+                </a>
+                ,&nbsp;
+                <a
                   href="https://nx.dev/?utm_source=monorepo.tools"
                   rel="noreferrer"
                   target="_blank"
