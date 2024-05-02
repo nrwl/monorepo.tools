@@ -5,6 +5,7 @@
     "website-e2e": "apps/website-e2e",
     "website-feature-analytics": "libs/website/feature-analytics",
     "website-ui-commons": "libs/website/ui-commons",
+    "website-ui-conf": "libs/website/ui-conf",
     "website-ui-home": "libs/website/ui-home"
   },
   "$schema": "./node_modules/nx/schemas/workspace-schema.json"
