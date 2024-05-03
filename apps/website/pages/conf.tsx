@@ -14,7 +14,7 @@ export function Index() {
   const router = useRouter();
 
   return (
-    <>
+    <div className="selection:bg-mw-green">
       <NextSeo
         title="Monorepo World 2024"
         description="Monorepo World is the ultimate conference where platform architects and tool builders come together to advance the state of software development. Join us and share ideas to make development faster, more scalable, and more collaborative."
@@ -42,7 +42,7 @@ export function Index() {
       />
       <Header />
 
-      <main role="main" className="selection:bg-mw-green">
+      <main role="main">
         <Intro />
 
         <Tickets />
@@ -55,7 +55,7 @@ export function Index() {
 
         <CodeOfConduct />
       </main>
-    </>
+    </div>
   );
 }
 

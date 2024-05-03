@@ -178,19 +178,19 @@ export function Header() {
             </svg>
             <a
               href="#"
-              className="hover:bg-mw-green h-8 transition hover:rounded hover:text-gray-800"
+              className="hover:bg-mw-green h-8 transition hover:rounded hover:text-gray-800 dark:text-gray-200"
             >
               Get Your Tickets
             </a>
             <a
               href="https://sessionize.com/monorepo-world"
-              className="hover:bg-mw-green transition hover:rounded hover:text-gray-800"
+              className="hover:bg-mw-green transition hover:rounded hover:text-gray-800 dark:text-gray-200"
             >
               Call for Proposals
             </a>
             <a
               href="#get-involved"
-              className="hover:bg-mw-green transition hover:rounded hover:text-gray-800"
+              className="hover:bg-mw-green transition hover:rounded hover:text-gray-800 dark:text-gray-200"
             >
               Become a Sponsor
             </a>
