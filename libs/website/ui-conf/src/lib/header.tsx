@@ -177,7 +177,7 @@ export function Header() {
               </g>
             </svg>
             <a
-              href="#"
+              href="https://ti.to/nx-conf/monorepoworld2024"
               className="hover:bg-mw-green hidden h-8 transition hover:rounded hover:text-gray-800 dark:text-gray-200 md:inline"
             >
               Get Your Tickets
