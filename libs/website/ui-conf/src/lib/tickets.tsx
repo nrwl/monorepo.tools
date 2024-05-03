@@ -37,7 +37,8 @@ export function Tickets() {
               title="Get livestream access"
               className="text-sm font-medium uppercase text-gray-700 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300"
             >
-              Register for livestream access<span aria-hidden="true"> &rarr;</span>
+              Register for livestream access
+              <span aria-hidden="true"> &rarr;</span>
             </a>
           </div>
         </div>

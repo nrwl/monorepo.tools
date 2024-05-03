@@ -26,7 +26,7 @@ export function Index() {
             'Monorepo World is the ultimate conference where platform architects and tool builders come together to advance the state of software development. Join us and share ideas to make development faster, more scalable, and more collaborative.',
           images: [
             {
-              url: 'https://monorepo.tools/images/og-monorepotools.jpg',
+              url: 'https://monorepo.tools/images/conf/og-monorepo-world-24.jpg',
               width: 1200,
               height: 630,
               alt: 'Everything you need to know about monorepos, and the tools to build them.',
