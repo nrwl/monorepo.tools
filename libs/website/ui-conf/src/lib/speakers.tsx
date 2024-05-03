@@ -8,13 +8,13 @@ const speakers: Array<{
   twitter?: string;
 }> = [
   {
-    description: 'Co-Founder/CEO of Nrwl, and collector of kunekune pigs.',
+    description: 'Co-Founder/CEO of Nx, and collector of kunekune pigs.',
     imageUrl: '/images/conf/speakers/jeff-cross.avif',
     name: 'Jeff Cross',
     twitter: 'jeffbcross',
   },
   {
-    description: 'Co-Founder/CTO of Nrwl',
+    description: 'Co-Founder/CTO of Nx',
     imageUrl: '/images/conf/speakers/victor-savkin.avif',
     name: 'Victor Savkin',
     twitter: 'victorsavkin',

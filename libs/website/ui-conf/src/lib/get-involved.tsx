@@ -9,7 +9,7 @@ export function GetInvolved() {
           Get Involved
           <a
             aria-hidden="true"
-            tabIndex="-1"
+            tabIndex={-1}
             href="#get-involved"
             className="flex inline-flex items-center text-gray-900 dark:text-white"
           >

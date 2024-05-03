@@ -39,7 +39,7 @@ export function Index() {
           site_name: 'monorepo.tools',
         }}
         twitter={{
-          handle: '@nrwl_io',
+          handle: '@NxDevTools',
           site: '@monorepotools',
           cardType: 'summary_large_image',
         }}

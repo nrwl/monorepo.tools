@@ -80,20 +80,13 @@ export function Header() {
                   build them.
                 </h1>
                 <p className="text-right text-xs italic text-gray-500">
-                  -{' '}
-                  <a
-                    href="https://nrwl.io"
-                    rel="nofollow"
-                    title="Nrwl - Monorepo expertise"
-                  >
-                    Made with love by Nrwl
-                  </a>{' '}
+                  - Made with love by{' '}
                   <a
                     href="https://nx.dev"
                     rel="nofollow"
                     title="Monorepo build tool"
                   >
-                    (the company behind Nx)
+                    Nx
                   </a>
                 </p>
               </div>
