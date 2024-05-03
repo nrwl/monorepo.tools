@@ -17,14 +17,14 @@ export function GetInvolved() {
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
-              stroke-width="1.5"
+              strokeWidth="1.5"
               stroke="currentColor"
               aria-hidden="true"
               className="ml-2 h-6 w-6 opacity-0 group-hover:opacity-100"
             >
               <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeLinecap="round"
+                strokeLinejoin="round"
                 d="M13.19 8.688a4.5 4.5 0 011.242 7.244l-4.5 4.5a4.5 4.5 0 01-6.364-6.364l1.757-1.757m13.35-.622l1.757-1.757a4.5 4.5 0 00-6.364-6.364l-4.5 4.5a4.5 4.5 0 001.242 7.244"
               ></path>
             </svg>
@@ -38,7 +38,7 @@ export function GetInvolved() {
             <h2 className="text-xl font-semibold text-gray-800 dark:text-gray-200">
               Become a sponsor
             </h2>
-            <ul className="mt-4 list-disc space-y-3">
+            <ul className="mt-4 list-disc space-y-3 px-4">
               <li className="space-y-1 text-gray-700 dark:text-gray-300">
                 Hundreds of platform architects, managers and engineers from the
                 world's top companies attending
@@ -62,7 +62,7 @@ export function GetInvolved() {
               title="What is a monorepo?"
               className="text-sm font-medium uppercase text-gray-700 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300"
             >
-              Email us for sponsorship opportunities
+              Email for sponsorship opportunities
               <span aria-hidden="true"> &rarr;</span>
             </a>
           </div>
@@ -74,7 +74,7 @@ export function GetInvolved() {
               Become a speaker
             </h2>
             <p className="mt-4 text-base text-gray-700 dark:text-gray-300">
-              Share your monorepo repo with the world as a speaker at Monorepo
+              Share your monorepo knowledge with the world as a speaker at Monorepo
               World! Speakers receive free admission to the event, as well as
               travel and accommodation.
             </p>

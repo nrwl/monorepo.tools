@@ -42,7 +42,7 @@ export function Location() {
             <img
               aria-hidden="true"
               loading="lazy"
-              className="relative mx-auto rounded-2xl shadow-xl"
+              className="relative mx-auto shadow-xl md:rounded-2xl"
               width={490}
               src="/images/conf/chm.webp"
               alt="monorepo vs polyrepo"
@@ -76,7 +76,7 @@ export function Location() {
               <img
                 aria-hidden="true"
                 loading="lazy"
-                className="relative mx-auto rounded-2xl shadow-xl"
+                className="relative mx-auto shadow-xl md:rounded-2xl"
                 width={490}
                 src="images/conf/shashi.webp"
                 alt="monolith vs modular"

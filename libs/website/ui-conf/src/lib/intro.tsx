@@ -4,7 +4,7 @@ export function Intro(): JSX.Element {
   return (
     <div
       data-test-id="understanding-monorepos"
-      className="mt-32 bg-slate-50 dark:bg-slate-800"
+      className="mt-4 bg-slate-50 dark:bg-slate-800 md:mt-32"
     >
       {/* Header */}
       <article className="relative bg-slate-50 pb-32 dark:bg-slate-800 md:pt-64">
@@ -67,8 +67,8 @@ export function Intro(): JSX.Element {
                   y2="165.92"
                   gradientUnits="userSpaceOnUse"
                 >
-                  <stop offset="0" stop-color="#fff" id="stop1" />
-                  <stop offset="1" stop-color="#223f99" id="stop2" />
+                  <stop offset="0" stopColor="#fff" id="stop1" />
+                  <stop offset="1" stopColor="#223f99" id="stop2" />
                 </linearGradient>
                 <linearGradient
                   id="linear-gradient-2"
@@ -78,8 +78,8 @@ export function Intro(): JSX.Element {
                   y2="118"
                   gradientUnits="userSpaceOnUse"
                 >
-                  <stop offset="0" stop-color="#00bf63" id="stop3" />
-                  <stop offset="1" stop-color="#004aad" id="stop4" />
+                  <stop offset="0" stopColor="#00bf63" id="stop3" />
+                  <stop offset="1" stopColor="#004aad" id="stop4" />
                 </linearGradient>
                 <style id="style4">
                   {

@@ -42,7 +42,7 @@ export function Header() {
           backgroundSize: '1200px 600px',
         }}
       >
-        <header className="relative md:grid md:min-h-screen lg:px-8">
+        <header className="relative px-8 md:grid md:min-h-screen">
           <div className="dark:text-gray-30 flex h-24 w-full items-center justify-between text-xl text-gray-700">
             <svg
               id="Layer_2"
@@ -60,8 +60,8 @@ export function Header() {
                   y2="165.92"
                   gradientUnits="userSpaceOnUse"
                 >
-                  <stop offset="0" stop-color="#fff" id="stop1" />
-                  <stop offset="1" stop-color="#223f99" id="stop2" />
+                  <stop offset="0" stopColor="#fff" id="stop1" />
+                  <stop offset="1" stopColor="#223f99" id="stop2" />
                 </linearGradient>
                 <linearGradient
                   id="linear-gradient-2"
@@ -71,8 +71,8 @@ export function Header() {
                   y2="118"
                   gradientUnits="userSpaceOnUse"
                 >
-                  <stop offset="0" stop-color="#00bf63" id="stop3" />
-                  <stop offset="1" stop-color="#004aad" id="stop4" />
+                  <stop offset="0" stopColor="#00bf63" id="stop3" />
+                  <stop offset="1" stopColor="#004aad" id="stop4" />
                 </linearGradient>
                 <style id="style4">
                   {
@@ -178,19 +178,19 @@ export function Header() {
             </svg>
             <a
               href="#"
-              className="hover:bg-mw-green h-8 transition hover:rounded hover:text-gray-800 dark:text-gray-200"
+              className="hover:bg-mw-green hidden h-8 transition hover:rounded hover:text-gray-800 dark:text-gray-200 md:inline"
             >
               Get Your Tickets
             </a>
             <a
               href="https://sessionize.com/monorepo-world"
-              className="hover:bg-mw-green transition hover:rounded hover:text-gray-800 dark:text-gray-200"
+              className="hover:bg-mw-green hidden transition hover:rounded hover:text-gray-800 dark:text-gray-200 md:inline"
             >
               Call for Proposals
             </a>
             <a
               href="#get-involved"
-              className="hover:bg-mw-green transition hover:rounded hover:text-gray-800 dark:text-gray-200"
+              className="hover:bg-mw-green hidden transition hover:rounded hover:text-gray-800 dark:text-gray-200 md:inline"
             >
               Become a Sponsor
             </a>
@@ -223,24 +223,25 @@ export function Header() {
                 world
               </span>
             </div>
-            <div className="mt-14 flex justify-end">
+
+            <div className="mt-14 flex justify-center md:justify-end">
               <div className="border-mw-green sm:w-2/3 sm:border-l-4">
                 <p
                   data-test-id="website-slogan"
-                  className="py-3 pl-8 text-2xl font-normal font-bold text-gray-800 dark:text-gray-200"
+                  className="py-3 text-2xl font-normal font-bold text-gray-800 dark:text-gray-200 md:pl-8"
                 >
                   <span className="">October 7, 2024</span> <br />
                 </p>
                 <p
                   data-test-id="website-slogan"
-                  className="text-l py-3 pl-8 font-normal text-gray-800 dark:text-gray-200"
+                  className="text-l py-3 font-normal text-gray-800 dark:text-gray-200 md:pl-8"
                 >
                   Computer History Museum <br />
                   Mountain View, CA
                   <br />
                 </p>
 
-                <p className="pl-8 text-sm italic text-gray-500">
+                <p className="text-sm italic text-gray-500 md:pl-8">
                   Hosted by{' '}
                   <a
                     href="https://nx.dev"
@@ -254,7 +255,7 @@ export function Header() {
             </div>
           </div>
           <a
-            title="Go to Understanding Monorepos"
+            title="Go to intro"
             href="#intro"
             aria-hidden="true"
             className="absolute left-1/2 bottom-2 -ml-4 hidden lg:block"

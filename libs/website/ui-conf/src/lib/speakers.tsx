@@ -122,7 +122,7 @@ export function Speakers() {
           While we gather this year's world-class speakers, check out our
           speakers from last year!
         </p>
-        <ul className="mt-12 space-y-12 sm:grid sm:grid-cols-2 sm:gap-12 sm:space-y-0 lg:gap-x-8">
+        <ul className="mt-12 space-y-12 px-4 md:px-0 lg:grid lg:grid-cols-2 lg:gap-8 lg:space-y-0">
           {speakers.map((speaker) => (
             <li key={speaker.name}>
               <div className="flex space-x-4 lg:space-x-6">
@@ -163,7 +163,7 @@ export function Speakers() {
 
           <li key="speaker-you" className="col-span-2 flex justify-center ">
             <div className="flex space-x-4 lg:max-w-[50%] lg:space-x-6">
-              <UserCircleIcon className="h-16 w-16 rounded-full lg:h-20 lg:w-20" />
+              <UserCircleIcon className="h-36 w-36 rounded-full md:h-24 md:w-24" />
               <div className="space-y-1 text-lg font-medium leading-6">
                 <h3>You!</h3>
                 <p className="text-gray-700 dark:text-gray-500">
