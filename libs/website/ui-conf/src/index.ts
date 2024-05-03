@@ -1,3 +1,4 @@
+export * from './lib/sponsors';
 export * from './lib/get-involved';
 export * from './lib/tickets';
 export * from './lib/location';

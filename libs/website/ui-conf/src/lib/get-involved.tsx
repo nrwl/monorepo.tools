@@ -74,9 +74,9 @@ export function GetInvolved() {
               Become a speaker
             </h2>
             <p className="mt-4 text-base text-gray-700 dark:text-gray-300">
-              Share your monorepo knowledge with the world as a speaker at Monorepo
-              World! Speakers receive free admission to the event, as well as
-              travel and accommodation.
+              Share your monorepo knowledge with the world as a speaker at
+              Monorepo World! Speakers receive free admission to the event, as
+              well as travel and accommodation.
             </p>
           </div>
           <div className="rounded-bl-2xl rounded-br-2xl bg-slate-200 p-6 dark:bg-slate-900 md:px-8">

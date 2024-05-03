@@ -6,6 +6,7 @@ import {
   Tickets,
   Speakers,
   Location,
+  Sponsors,
 } from '@monorepo-tools/website/ui-conf';
 import { NextSeo } from 'next-seo';
 import { useRouter } from 'next/router';
@@ -52,6 +53,8 @@ export function Index() {
         <Speakers />
 
         <GetInvolved />
+
+        <Sponsors />
 
         <CodeOfConduct />
       </main>
