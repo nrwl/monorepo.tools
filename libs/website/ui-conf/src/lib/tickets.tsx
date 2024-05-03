@@ -34,7 +34,7 @@ export function Tickets() {
           </div>
           <div className="rounded-bl-2xl rounded-br-2xl bg-slate-200 p-6 dark:bg-slate-900 md:px-8">
             <a
-              href="https://shashihotel.ihotelier.com/book/dates-of-stay?groupID=4296006"
+              href="#"
               title="Register for livestream"
               className="text-sm font-medium uppercase text-gray-700 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300"
             >

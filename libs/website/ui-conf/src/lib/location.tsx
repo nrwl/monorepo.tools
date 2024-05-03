@@ -63,7 +63,12 @@ export function Location() {
               </p>
 
               <p className="mt-3 text-lg text-gray-700 dark:text-gray-300">
-                <a>Reserve a room with special conference discount</a>
+                <a
+                  className="border-mw-green hover:bg-mw-green border-b transition hover:rounded hover:text-gray-800"
+                  href="https://shashihotel.ihotelier.com/book/dates-of-stay?groupID=4296006"
+                >
+                  Reserve a room with special conference discount
+                </a>
               </p>
             </div>
 
