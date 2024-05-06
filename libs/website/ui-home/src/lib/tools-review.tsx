@@ -40,7 +40,7 @@ const tools = [
   },
   {
     title: 'Lerna',
-    organization: 'maintained by Nrwl',
+    organization: 'maintained by Nx team',
     organizationUrl: 'https://nrwl.io/?utm_source=monorepo.tools',
     description:
       'A tool for managing JavaScript projects with multiple packages.',
@@ -54,7 +54,6 @@ const tools = [
   },
   {
     title: 'Nx',
-    organization: 'by Nrwl',
     organizationUrl: 'https://nrwl.io/?utm_source=monorepo.tools',
     description:
       'Next generation build system with first class monorepo support and powerful integrations.',

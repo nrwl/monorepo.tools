@@ -40,9 +40,8 @@ export function WhatIsAMonorepo(): JSX.Element {
               .
             </h2>
             <p className="mt-3 text-lg text-gray-700 dark:text-gray-300">
-              We at Nrwl think this is the most consistent and accurate
-              statement of what a monorepo is among all the established monorepo
-              tools.
+              We at Nx think this is the most consistent and accurate statement
+              of what a monorepo is among all the established monorepo tools.
             </p>
           </div>
 

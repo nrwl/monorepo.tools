@@ -120,7 +120,7 @@ export function Introduction(): JSX.Element {
                   target="_blank"
                   className="border-b border-yellow-500 transition hover:rounded hover:bg-yellow-500 hover:text-gray-800"
                 >
-                  Nx (by Nrwl)
+                  Nx
                 </a>
                 ,&nbsp;
                 <a

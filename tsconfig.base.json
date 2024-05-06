@@ -21,6 +21,7 @@
       "@monorepo-tools/website/ui-commons": [
         "libs/website/ui-commons/src/index.ts"
       ],
+      "@monorepo-tools/website/ui-conf": ["libs/website/ui-conf/src/index.ts"],
       "@monorepo-tools/website/ui-home": ["libs/website/ui-home/src/index.ts"]
     }
   },

@@ -13,6 +13,10 @@ module.exports = {
       fontFamily: {
         display: ['Open Sans', 'sans-serif'],
       },
+      colors: {
+        'mw-green': '#00BF63',
+        'mw-blue': '#004AAD',
+      },
     },
   },
   variants: {
