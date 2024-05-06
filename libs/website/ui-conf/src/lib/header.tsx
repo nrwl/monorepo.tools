@@ -194,7 +194,7 @@ export function Header() {
             >
               Become a Sponsor
             </a>
-            <div className="space-x-4 text-gray-300 dark:text-gray-600">
+            <div className="min-w-[128px] space-x-4 text-gray-300 dark:text-gray-600">
               {!isMounted
                 ? null
                 : settings.map((variant) => (
