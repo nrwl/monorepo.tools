@@ -9,7 +9,7 @@ export function Location() {
             id="location"
             className="group text-center text-4xl font-extrabold tracking-tight text-gray-900 dark:text-white sm:text-5xl"
           >
-            Where it's at
+            Where It's At
             <a
               aria-hidden="true"
               tabIndex={-1}
@@ -19,10 +19,6 @@ export function Location() {
               <LinkIcon className="ml-2 h-6 w-6 opacity-0 group-hover:opacity-100" />
             </a>
           </div>
-          {/*<p className="mx-auto mt-4 max-w-3xl text-center text-xl text-gray-700 dark:text-gray-300">*/}
-          {/*  Let's define what we and others typically mean when we talk about*/}
-          {/*  Monorepos.*/}
-          {/*</p>*/}
         </header>
 
         <article className="relative mt-12 lg:mt-24 lg:grid lg:grid-cols-2 lg:items-center lg:gap-8">
@@ -32,7 +28,7 @@ export function Location() {
             </h2>
             <h3>1401 N. Shoreline Blvd. Mountain View, CA</h3>
             <p className="mt-3 text-lg text-gray-700 dark:text-gray-300">
-              Spend a day exploring monorepos while surrounded by exibits and
+              Spend a day exploring monorepos while surrounded by exhibits and
               collections that illuminate the people and innovations that have
               transformed our world.
             </p>
