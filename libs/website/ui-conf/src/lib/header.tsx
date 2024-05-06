@@ -201,7 +201,7 @@ export function Header() {
                     <button
                       key={variant.value}
                       className={cx(
-                        theme === variant.value ? 'text-yellow-500' : '',
+                        theme === variant.value ? 'text-green-500' : '',
                         'p-1'
                       )}
                       title={variant.label}
@@ -216,7 +216,7 @@ export function Header() {
 
           <div className="mx-auto max-w-max">
             <div data-test-id="website-name" className="w-full">
-              <span className="text-mw-blue text-5xl font-extrabold tracking-tighter dark:text-white sm:text-8xl">
+              <span className="text-mw-blue text-5xl font-extrabold dark:text-white sm:text-8xl">
                 monorepo
               </span>
               <span className="text-mw-green ml-2 text-3xl font-semibold tracking-tight sm:text-5xl">
@@ -228,7 +228,7 @@ export function Header() {
               <div className="border-mw-green sm:w-2/3 sm:border-l-4">
                 <p
                   data-test-id="website-slogan"
-                  className="py-3 text-2xl font-normal font-bold text-gray-800 dark:text-gray-200 md:pl-8"
+                  className="py-3 text-2xl font-bold text-gray-800 dark:text-gray-200 md:pl-8"
                 >
                   <span className="">October 7, 2024</span> <br />
                 </p>

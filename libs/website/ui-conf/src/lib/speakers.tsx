@@ -131,13 +131,13 @@ export function Speakers() {
                   src={speaker.imageUrl}
                   alt={speaker.name + ' avatar'}
                 />
-                <div className="space-y-1 text-lg font-medium leading-6">
+                <div className="space-y-1 leading-6">
                   <h3>
                     <a
                       href={`https://twitter.com/${speaker.twitter}`}
                       target="_blank"
                       rel="noreferrer"
-                      className="flex items-center rounded px-1 transition hover:bg-yellow-500 hover:text-gray-800"
+                      className="flex items-center rounded px-1 text-lg font-medium transition  hover:bg-green-500 hover:text-gray-800"
                     >
                       <svg
                         aria-hidden="true"
@@ -164,8 +164,8 @@ export function Speakers() {
           <li key="speaker-you" className="col-span-2 flex justify-center ">
             <div className="flex space-x-4 lg:max-w-[50%] lg:space-x-6">
               <UserCircleIcon className="h-36 w-36 rounded-full md:h-24 md:w-24" />
-              <div className="space-y-1 text-lg font-medium leading-6">
-                <h3>You!</h3>
+              <div className="space-y-1 leading-6">
+                <h3 className="text-lg font-medium">You!</h3>
                 <p className="text-gray-700 dark:text-gray-500">
                   You could be one of our next speakers! Join us by{' '}
                   <a
