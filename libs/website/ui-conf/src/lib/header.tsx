@@ -194,23 +194,23 @@ export function Header() {
             >
               Become a Sponsor
             </a>
-            <div className="min-w-[128px] space-x-4 text-gray-300 dark:text-gray-600">
-              {!isMounted
-                ? null
-                : settings.map((variant) => (
-                    <button
-                      key={variant.value}
-                      className={cx(
-                        theme === variant.value ? 'text-green-500' : '',
-                        'p-1'
-                      )}
-                      title={variant.label}
-                      onClick={() => setTheme(variant.value)}
-                    >
-                      <variant.icon className="h-6 w-6" />
-                      <span className="sr-only">{variant.label}</span>
-                    </button>
-                  ))}
+            <div className="space-x-4 text-gray-300 dark:text-gray-600">
+              {settings.map((variant) => (
+                <button
+                  key={variant.value}
+                  className={cx(
+                    isMounted && theme === variant.value
+                      ? ' text-green-500 transition-colors delay-150 duration-300 ease-in'
+                      : '',
+                    'p-1 '
+                  )}
+                  title={variant.label}
+                  onClick={() => setTheme(variant.value)}
+                >
+                  <variant.icon className="h-6 w-6" />
+                  <span className="sr-only">{variant.label}</span>
+                </button>
+              ))}
             </div>
           </div>
 
