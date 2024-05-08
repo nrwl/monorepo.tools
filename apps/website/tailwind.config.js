@@ -10,12 +10,12 @@ module.exports = {
   darkMode: 'class', // or 'media'
   theme: {
     extend: {
-      fontFamily: {
-        display: ['Open Sans', 'sans-serif'],
-      },
       colors: {
         'mw-green': '#00BF63',
         'mw-blue': '#004AAD',
+      },
+      fontWeight: {
+        extrabold: '900',
       },
     },
   },
