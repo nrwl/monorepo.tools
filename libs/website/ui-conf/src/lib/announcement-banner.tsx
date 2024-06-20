@@ -7,7 +7,10 @@ export function AnnouncementBanner(): JSX.Element {
         <div className="text-center">
           <p className="text-sm font-medium">
             <span className="md:hidden">
-              <Link href="/conf" className="underline">
+              <Link
+                href="https://monorepo.world/?utm_source=monorepo.tools&utm_medium=top-banner&utm_campaign=monorepoworld"
+                className="underline"
+              >
                 Monorepo World: October 7, 2024
               </Link>
             </span>
@@ -18,7 +21,7 @@ export function AnnouncementBanner(): JSX.Element {
             </span>
             <span className="ml-2 inline-block">
               <Link
-                href="/conf"
+                href="https://monorepo.world/?utm_source=monorepo.tools&utm_medium=top-banner&utm_campaign=monorepoworld"
                 className="font-semibold text-blue-500 underline dark:text-sky-500"
               >
                 <span className="absolute inset-0" aria-hidden="true" />
