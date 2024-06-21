@@ -10,6 +10,16 @@ const nextConfig = {
     // See: https://github.com/gregberge/svgr
     svgr: false,
   },
+  redirects: async () => {
+    return [
+      {
+        source: '/conf',
+        destination:
+          'https://monorepo.world?utm_source=monorepo.tools&utm_medium=website&utm_campaign=monorepoworld',
+        permanent: true,
+      },
+    ];
+  },
 };
 
 module.exports = withNx(nextConfig);
