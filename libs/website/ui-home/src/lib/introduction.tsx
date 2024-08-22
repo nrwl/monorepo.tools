@@ -47,7 +47,7 @@ export function Introduction(): JSX.Element {
                 <mark className="rounded-md bg-yellow-500 px-1">
                   what benefits
                 </mark>
-                they can bring, and the{' '}
+                {' '}they can bring, and the{' '}
                 <mark className="rounded-md bg-yellow-500 px-1">
                   tools available
                 </mark>{' '}
