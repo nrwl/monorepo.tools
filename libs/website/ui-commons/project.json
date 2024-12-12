@@ -1,24 +1,20 @@
 {
+  "name": "website-ui-commons",
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/website/ui-commons/src",
   "projectType": "library",
   "targets": {
     "lint": {
-      "executor": "@nrwl/linter:eslint",
-      "outputs": ["{options.outputFile}"],
-      "options": {
-        "lintFilePatterns": ["libs/website/ui-commons/**/*.{ts,tsx,js,jsx}"]
-      }
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"]
     },
     "test": {
-      "executor": "@nrwl/jest:jest",
+      "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/libs/website/ui-commons"],
       "options": {
-        "jestConfig": "libs/website/ui-commons/jest.config.ts",
-        "passWithNoTests": true
+        "jestConfig": "libs/website/ui-commons/jest.config.ts"
       }
     }
   },
-  "tags": ["scope:website", "type:ui"],
-  "name": "website-ui-commons"
+  "tags": ["scope:website", "type:ui"]
 }

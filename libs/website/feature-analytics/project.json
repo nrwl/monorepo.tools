@@ -1,24 +1,20 @@
 {
+  "name": "website-feature-analytics",
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/website/feature-analytics/src",
   "projectType": "library",
   "targets": {
     "lint": {
-      "executor": "@nrwl/linter:eslint",
-      "outputs": ["{options.outputFile}"],
-      "options": {
-        "lintFilePatterns": ["libs/website/feature-analytics/**/*.ts"]
-      }
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"]
     },
     "test": {
-      "executor": "@nrwl/jest:jest",
+      "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/libs/website/feature-analytics"],
       "options": {
-        "jestConfig": "libs/website/feature-analytics/jest.config.ts",
-        "passWithNoTests": true
+        "jestConfig": "libs/website/feature-analytics/jest.config.ts"
       }
     }
   },
-  "tags": ["scope:website", "type:feature"],
-  "name": "website-feature-analytics"
+  "tags": ["scope:website", "type:feature"]
 }

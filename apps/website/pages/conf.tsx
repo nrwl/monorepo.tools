@@ -20,7 +20,7 @@ export function Index() {
         title="Monorepo World 2024"
         description="Monorepo World is the ultimate conference where platform architects and tool builders come together to advance the state of software development. Join us and share ideas to make development faster, more scalable, and more collaborative."
         openGraph={{
-          url: 'https://monorepo.tools' + router.asPath,
+          url: `https://monorepo.tools${router.asPath}`,
           title: 'Monorepo World 2024',
           description:
             'Monorepo World is the ultimate conference where platform architects and tool builders come together to advance the state of software development. Join us and share ideas to make development faster, more scalable, and more collaborative.',
@@ -43,7 +43,7 @@ export function Index() {
       />
       <Header />
 
-      <main role="main">
+      <main>
         <Intro />
 
         <Tickets />

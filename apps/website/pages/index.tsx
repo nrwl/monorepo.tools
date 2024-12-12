@@ -24,7 +24,7 @@ export function Index() {
         title="Monorepo Explained"
         description="Everything you need to know about monorepos, and the tools to build them."
         openGraph={{
-          url: 'https://monorepo.tools' + router.asPath,
+          url: `https://monorepo.tools${router.asPath}`,
           title: 'Monorepo Explained',
           description:
             'Everything you need to know about monorepos, and the tools to build them.',
@@ -48,7 +48,7 @@ export function Index() {
       <AnnouncementBanner />
       <Header />
 
-      <main role="main">
+      <main>
         <Introduction />
 
         <WhatIsAMonorepo />
