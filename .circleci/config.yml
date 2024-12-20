@@ -29,7 +29,7 @@ executors:
   linux:
     <<: *defaults
     docker:
-      - image: cimg/node:16.13-browsers
+      - image: cimg/node:lts-browsers
     resource_class: medium
 
 # -------------------------
@@ -109,8 +109,6 @@ jobs:
           name: Run Lint/Test/Build
           command: |
             pids=()
-            yarn nx workspace-lint &
-            pids+=($!)
             yarn nx affected --target=lint --base=$NX_BASE --head=$NX_HEAD --parallel=2 &
             pids+=($!)
             yarn nx affected --target=test --base=$NX_BASE --head=$NX_HEAD --parallel=1 &

@@ -1,4 +1,5 @@
 {
+  "name": "website",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "apps/website",
   "projectType": "application",
@@ -6,15 +7,14 @@
     "build": {
       "dependsOn": [
         {
-          "target": "build-base",
-          "projects": "self"
+          "target": "build-base"
         }
       ],
       "executor": "nx:run-commands",
       "options": {
-        "outputPath": "dist/apps/website",
         "command": "nx run website:sitemap"
-      }
+      },
+      "outputs": ["{workspaceRoot}/dist/apps/website"]
     },
     "sitemap": {
       "executor": "nx:run-commands",
@@ -24,11 +24,10 @@
       }
     },
     "build-base": {
-      "executor": "@nrwl/next:build",
+      "executor": "@nx/next:build",
       "outputs": ["{options.outputPath}"],
       "defaultConfiguration": "production",
       "options": {
-        "root": "apps/website",
         "outputPath": "dist/apps/website"
       },
       "configurations": {
@@ -36,7 +35,7 @@
       }
     },
     "serve": {
-      "executor": "@nrwl/next:server",
+      "executor": "@nx/next:server",
       "options": {
         "buildTarget": "website:build-base",
         "dev": true
@@ -54,25 +53,21 @@
       "defaultConfiguration": "development"
     },
     "export": {
-      "executor": "@nrwl/next:export",
+      "executor": "@nx/next:export",
       "options": {
         "buildTarget": "website:build-base:production"
       }
     },
     "test": {
-      "executor": "@nrwl/jest:jest",
+      "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/apps/website"],
       "options": {
-        "jestConfig": "apps/website/jest.config.ts",
-        "passWithNoTests": true
+        "jestConfig": "apps/website/jest.config.ts"
       }
     },
     "lint": {
-      "executor": "@nrwl/linter:eslint",
-      "outputs": ["{options.outputFile}"],
-      "options": {
-        "lintFilePatterns": ["apps/website/**/*.{ts,tsx,js,jsx}"]
-      }
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"]
     },
     "deploy": {
       "executor": "@netlify-builder/deploy:deploy",
@@ -82,6 +77,5 @@
       }
     }
   },
-  "tags": ["scope:website", "type:app"],
-  "name": "website"
+  "tags": ["scope:website", "type:app"]
 }

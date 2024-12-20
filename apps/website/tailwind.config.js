@@ -1,5 +1,5 @@
 const path = require('path');
-const { createGlobPatternsForDependencies } = require('@nrwl/next/tailwind');
+const { createGlobPatternsForDependencies } = require('@nx/next/tailwind');
 
 module.exports = {
   mode: 'jit',
