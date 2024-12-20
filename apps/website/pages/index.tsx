@@ -13,7 +13,6 @@ import {
 } from '@monorepo-tools/website/ui-home';
 import { NextSeo } from 'next-seo';
 import { useRouter } from 'next/router';
-import { AnnouncementBanner } from '@monorepo-tools/website/ui-conf';
 
 export function Index() {
   const router = useRouter();
@@ -45,7 +44,6 @@ export function Index() {
           cardType: 'summary_large_image',
         }}
       />
-      <AnnouncementBanner />
       <Header />
 
       <main>
