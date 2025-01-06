@@ -1,0 +1,29 @@
+{
+  "name": "website-ui-typescript",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/website/ui-typescript/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/js:swc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/website/ui-typescript",
+        "main": "libs/website/ui-typescript/src/index.ts",
+        "tsConfig": "libs/website/ui-typescript/tsconfig.lib.json",
+        "assets": ["libs/website/ui-typescript/*.md"]
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint"
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "libs/website/ui-typescript/jest.config.ts"
+      }
+    }
+  },
+  "tags": ["scope:website", "type:ui"]
+}
