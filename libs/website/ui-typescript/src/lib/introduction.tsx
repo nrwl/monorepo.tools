@@ -61,7 +61,7 @@ export function Introduction(): JSX.Element {
               </p>
             </div>
             <svg
-              className="mx-auto mt-16 h-auto w-2/3 text-slate-800 antialiased dark:text-white"
+              className="mx-auto mt-8 h-auto w-1/2 text-slate-800 antialiased dark:text-white"
               width="250"
               height="250"
               viewBox="0 0 512 512"
@@ -93,7 +93,7 @@ export function Introduction(): JSX.Element {
 
       {/* Overlapping cards */}
       <section className="relative z-10 mx-auto -mt-28 max-w-7xl px-4 pb-32 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 gap-y-20 lg:grid-cols-3 lg:gap-y-0 lg:gap-x-8">
+        <div className="grid grid-cols-1 gap-y-20 lg:grid-cols-4 lg:gap-y-0 lg:gap-x-8">
           {/*LINKS*/}
           <div className="flex flex-col rounded-2xl bg-slate-100 shadow-xl dark:bg-slate-700">
             <div className="relative flex-1 px-6 pt-16 pb-8 md:px-8">
@@ -101,7 +101,8 @@ export function Introduction(): JSX.Element {
                 Project Structure
               </h2>
               <p className="mt-4 text-base text-gray-700 dark:text-gray-300">
-                Let's look at strategies for how to best structure a TypeScript Monorepo
+                Let's look at strategies for how to best structure a TypeScript
+                Monorepo
               </p>
             </div>
             <div className="rounded-bl-2xl rounded-br-2xl bg-slate-200 p-6 dark:bg-slate-900 md:px-8">
@@ -116,39 +117,59 @@ export function Introduction(): JSX.Element {
           </div>
           <div className="flex flex-col rounded-2xl bg-slate-100 shadow-xl dark:bg-slate-700">
             <div className="relative flex-1 px-6 pt-16 pb-8 md:px-8">
-              <h2 className="text-xl font-medium text-gray-800 dark:text-gray-200">
-                Benchmark
+              <h2 className="text-xl font-semibold text-gray-800 dark:text-gray-200">
+                Path Aliases
               </h2>
               <p className="mt-4 text-base text-gray-700 dark:text-gray-300">
-                What are the situations solved by monorepos.
+                Move from long path imports to path aliases for your initial
+                step
               </p>
             </div>
             <div className="rounded-bl-2xl rounded-br-2xl bg-slate-200 p-6 dark:bg-slate-900 md:px-8">
               <a
-                href="#why-a-monorepo"
-                title="Why using a monorepo?"
+                href="#path-aliases"
+                title="Path Aliases"
                 className="text-sm font-medium uppercase text-gray-700 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300"
               >
-                Why a monorepo?<span aria-hidden="true"> &rarr;</span>
+                Path Aliases<span aria-hidden="true"> &rarr;</span>
               </a>
             </div>
           </div>
           <div className="flex flex-col rounded-2xl bg-slate-100 shadow-xl dark:bg-slate-700">
             <div className="relative flex-1 px-6 pt-16 pb-8 md:px-8">
               <h2 className="text-xl font-medium text-gray-800 dark:text-gray-200">
-                Features of a monorepo
+                Workspaces
               </h2>
               <p className="mt-4 text-base text-gray-700 dark:text-gray-300">
-                What to expect from a monorepo tool
+                Manage your monorepo using your package manager's workspace
               </p>
             </div>
             <div className="rounded-bl-2xl rounded-br-2xl bg-slate-200 p-6 dark:bg-slate-900 md:px-8">
               <a
-                href="#monorepo-features"
-                title="What are monorepo features?"
+                href="#workspaces"
+                title="Use package manager's workspace"
                 className="text-sm font-medium uppercase text-gray-700 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300"
               >
-                Monorepo features<span aria-hidden="true"> &rarr;</span>
+                Workspaces<span aria-hidden="true"> &rarr;</span>
+              </a>
+            </div>
+          </div>
+          <div className="flex flex-col rounded-2xl bg-slate-100 shadow-xl dark:bg-slate-700">
+            <div className="relative flex-1 px-6 pt-16 pb-8 md:px-8">
+              <h2 className="text-xl font-medium text-gray-800 dark:text-gray-200">
+                Project References
+              </h2>
+              <p className="mt-4 text-base text-gray-700 dark:text-gray-300">
+               How TypeScript can assit in optimizing your monorepo
+              </p>
+            </div>
+            <div className="rounded-bl-2xl rounded-br-2xl bg-slate-200 p-6 dark:bg-slate-900 md:px-8">
+              <a
+                href="#project-references"
+                title="Project References"
+                className="text-sm font-medium uppercase text-gray-700 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300"
+              >
+                Project References<span aria-hidden="true"> &rarr;</span>
               </a>
             </div>
           </div>

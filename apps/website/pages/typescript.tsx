@@ -1,5 +1,12 @@
-import { Footer, Header } from '@monorepo-tools/website/ui-commons';
-import { Introduction, PathAliases, ProjectStructure, TypeReferences, Workspaces } from '@monorepo-tools/website/ui-typescript';
+import { Footer } from '@monorepo-tools/website/ui-commons';
+import {
+  Introduction,
+  PathAliases,
+  PrebuildCallout,
+  ProjectStructure,
+  TypeReferences,
+  Workspaces,
+} from '@monorepo-tools/website/ui-typescript';
 import { NextSeo } from 'next-seo';
 import { useRouter } from 'next/router';
 
@@ -33,18 +40,14 @@ export function Index() {
           cardType: 'summary_large_image',
         }}
       />
-      {/* <Header /> */}
 
       <main>
         <Introduction />
-        <ProjectStructure/>
-        <PathAliases/>
-        <Workspaces/>
-        <TypeReferences/>
-
-
-        <div>{/* <ToolsReview /> */}</div>
-
+        <ProjectStructure />
+        <PathAliases />
+        <Workspaces />
+        <PrebuildCallout />
+        <TypeReferences />
       </main>
 
       <Footer />

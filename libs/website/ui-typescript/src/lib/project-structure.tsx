@@ -20,15 +20,16 @@ export function ProjectStructure(): JSX.Element {
             </a>
           </div>
           <p className="mx-auto mt-4 max-w-3xl text-center text-xl text-gray-700 dark:text-gray-300">
-            Let's see what approaches we can take for organizing our TypeScript
-            monorepo.
+            Starting off from collocated code and moving towards following best
+            practices
           </p>
         </header>
 
         <article className="relative mt-12 lg:mt-24 lg:grid lg:grid-cols-2 lg:items-center lg:gap-8">
           <div className="relative">
             <h2 className="text-2xl font-bold leading-loose tracking-tight text-gray-800 dark:text-gray-100 sm:text-3xl sm:leading-relaxed">
-              When setting up a monorepo for TypeScript, you can utilize
+              Take your monorepo from just a collection of directories, to well
+              defined modules using{' '}
               <mark className="rounded-md bg-yellow-500 px-1">
                 Path Aliases
               </mark>
@@ -41,8 +42,9 @@ export function ProjectStructure(): JSX.Element {
               .
             </h2>
             <p className="mt-3 text-lg text-gray-700 dark:text-gray-300">
-              Understanding how these approaches can impact your monorepo is
-              essential to help you succeed and keep your monorepo staying fast
+              By know how each of these concepts work in regards to you
+              TypeScript monorepo, you can better organize your codebase and
+              keep your builds fast.
             </p>
           </div>
 
@@ -94,6 +96,19 @@ export function ProjectStructure(): JSX.Element {
                 alt="code sharing in monorepos"
               />
             </div>
+          </div>
+        </article>
+        <article className="relative mt-12 sm:mt-16 lg:mt-24">
+          <div className="bg-slate-50 px-4 pt-16 pb-20 dark:bg-slate-800 sm:px-6 lg:px-8 lg:pt-24 lg:pb-28">
+            <p className="mt-3 text-xl text-gray-700 dark:text-gray-300">
+              With each of these approaches, what we're really trying to solve
+              is how the individual packages in your monorepo are made available
+              to each other. If your monorepo is rather new or small and the
+              relative connections across each package, you might feel confident
+              with using direct imports (directly importing modules using
+              relative paths), but as your monorepo eventually grows the need
+              for well-defined modules will increase.
+            </p>
           </div>
         </article>
       </div>

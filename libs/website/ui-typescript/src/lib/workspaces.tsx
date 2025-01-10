@@ -3,7 +3,7 @@ import { LinkIcon } from '@heroicons/react/24/outline';
 export function Workspaces(): React.JSX.Element {
   return (
     <div
-      id="typescript-path-aliases"
+      id="workspaces"
       className="bg-slate-50 px-4 pt-16 pb-20 dark:bg-slate-800 sm:px-6 lg:px-8 lg:pt-24 lg:pb-28"
     >
       <div className="relative">
@@ -19,8 +19,8 @@ export function Workspaces(): React.JSX.Element {
           </a>
         </div>
         <p className="mx-auto mt-4 max-w-3xl text-center text-xl text-gray-700 dark:text-gray-300">
-          While path aliases are way to shorten your import statements,
-          workspaces allow you to isolate your code in meaningful units
+          Workspaces are a mechanism to properly connect the packages in your
+          monorepo as modules.
         </p>
       </div>
       <article className="relative mx-auto mt-24 max-w-lg lg:mt-36 lg:max-w-7xl">
@@ -29,7 +29,7 @@ export function Workspaces(): React.JSX.Element {
             id="mapping-to-a-path"
             className="group text-3xl font-semibold tracking-tight text-gray-800 dark:text-gray-100 sm:text-4xl"
           >
-            Workspaces at a glance
+            At a glance
             <a
               aria-hidden="true"
               tabIndex={-1}
@@ -63,6 +63,7 @@ export function Workspaces(): React.JSX.Element {
             installed from a package registry. The benefit here is that there is
             no additional overhead that path aliases would introduce.
           </p>
+
           <p className="mt-3 text-xl text-gray-700 dark:text-gray-300 sm:mt-4">
             Workspaces however, do require an extra step before the packages can
             be used in your monorepo. Since most packages require some sort of

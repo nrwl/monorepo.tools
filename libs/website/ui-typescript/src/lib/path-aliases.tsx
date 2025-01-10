@@ -3,7 +3,7 @@ import { LinkIcon } from '@heroicons/react/24/outline';
 export function PathAliases(): React.JSX.Element {
   return (
     <div
-      id="typescript-path-aliases"
+      id="path-aliases"
       className="bg-slate-50 px-4 pt-16 pb-20 dark:bg-slate-800 sm:px-6 lg:px-8 lg:pt-24 lg:pb-28"
     >
       <div className="relative">
@@ -19,9 +19,8 @@ export function PathAliases(): React.JSX.Element {
           </a>
         </div>
         <p className="mx-auto mt-4 max-w-3xl text-center text-xl text-gray-700 dark:text-gray-300">
-          Path Aliases are a common approach developers can take to wire up
-          their TypeScript monorepo and make their code shareable across
-          projects.
+          Path Aliases allow you to replace long import paths with a user
+          supplied key for imports.
         </p>
       </div>
       <article className="relative mx-auto mt-24 max-w-lg lg:mt-36 lg:max-w-7xl">
@@ -71,13 +70,17 @@ export function PathAliases(): React.JSX.Element {
             alt="libraries in silos"
           />
           <p className="mt-3 text-xl text-gray-700 dark:text-gray-300 sm:mt-4">
-            Path Aliases don't actually connect our packages in any meaningful
-            way. It's really just addressing long import statements. Our code,
-            while collocated, is not isolated in any meaningful way. In fact,
-            the TypeScript team even stated that developers should avoid using
-            path aliases all together. If you are wanting to go full in on
-            monorepos, there are better solutions that can be found in your
-            package managers.
+            Path Aliases don't actually change how our monorepo is structured or
+            if we have well defined boundaries, they just address to visual of
+            long import statements. Our code, while collocated, is not isolated
+            in any meaningful way. With this in mind, the use of Path Aliases
+            should be considered a step towards something better.
+          </p>
+          <p className="mt-3 text-xl text-gray-700 dark:text-gray-300 sm:mt-4">
+            In fact, the TypeScript team even stated that developers should
+            avoid using path aliases all together. If you are wanting to go full
+            in on monorepos, there are better solutions that can be found in
+            your package managers.
           </p>
         </div>
       </article>
