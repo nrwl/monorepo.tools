@@ -1,6 +1,6 @@
 import { Footer } from '@monorepo-tools/website/ui-commons';
 import {
-    Benchmark,
+  Benchmark,
   Introduction,
   PathAliases,
   PrebuildCallout,

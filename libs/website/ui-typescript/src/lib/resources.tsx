@@ -49,12 +49,12 @@ export function Resources() {
   return (
     <article
       data-test-id="monorepo-resources"
-      className="bg-slate-50 px-4 pt-16 pb-20 dark:bg-slate-800 sm:px-6 lg:px-8 lg:pt-24 lg:pb-28"
+      className="bg-slate-50 px-4 pb-20 pt-16 sm:px-6 lg:px-8 lg:pb-28 lg:pt-24 dark:bg-slate-800"
     >
       <div className="relative">
         <h1
           id="monorepo-resources"
-          className="group text-center text-4xl font-extrabold leading-8 tracking-tight text-gray-900 dark:text-white sm:text-5xl"
+          className="group text-center text-4xl font-extrabold leading-8 tracking-tight text-gray-900 sm:text-5xl dark:text-white"
         >
           # Resources
           <a
@@ -76,7 +76,7 @@ export function Resources() {
         <div className="mx-auto max-w-2xl">
           <h2
             id="monorepo-videos-podcasts"
-            className="group text-3xl font-semibold tracking-tight text-gray-800 dark:text-gray-100 sm:text-4xl"
+            className="group text-3xl font-semibold tracking-tight text-gray-800 sm:text-4xl dark:text-gray-100"
           >
             Videos & Podcasts
             <a
@@ -88,7 +88,7 @@ export function Resources() {
               <LinkIcon className="ml-2 h-6 w-6 opacity-0 group-hover:opacity-100" />
             </a>
           </h2>
-          <p className="mt-3 text-xl text-gray-700 dark:text-gray-300 sm:mt-4">
+          <p className="mt-3 text-xl text-gray-700 sm:mt-4 dark:text-gray-300">
             Here are some video and podcast about monorepos that we think will
             greatly support what you just learned.
           </p>
@@ -117,7 +117,7 @@ export function Resources() {
         <div className="mx-auto max-w-2xl">
           <h2
             id="typescript-articles"
-            className="group text-3xl font-semibold tracking-tight text-gray-800 dark:text-gray-100 sm:text-4xl"
+            className="group text-3xl font-semibold tracking-tight text-gray-800 sm:text-4xl dark:text-gray-100"
           >
             Articles
             <a
@@ -129,7 +129,7 @@ export function Resources() {
               <LinkIcon className="ml-2 h-6 w-6 opacity-0 group-hover:opacity-100" />
             </a>
           </h2>
-          <p className="mt-3 text-xl text-gray-700 dark:text-gray-300 sm:mt-4">
+          <p className="mt-3 text-xl text-gray-700 sm:mt-4 dark:text-gray-300">
             Here is a curated list of articles about monorepos that we think
             will greatly support what you just learned.
           </p>
@@ -153,7 +153,6 @@ export function Resources() {
           </ul>
         </div>
       </div>
-
     </article>
   );
 }

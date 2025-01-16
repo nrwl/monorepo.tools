@@ -4,11 +4,11 @@ export function ProjectStructure(): JSX.Element {
   return (
     <div
       id="project-structure"
-      className="bg-slate-50 px-4 pt-16 pb-20 dark:bg-slate-800 sm:px-6 lg:px-8 lg:pt-24 lg:pb-28"
+      className="bg-slate-50 px-4 pb-20 pt-16 sm:px-6 lg:px-8 lg:pb-28 lg:pt-24 dark:bg-slate-800"
     >
       <div className="relative mx-auto px-4 sm:px-6 lg:max-w-7xl lg:px-8">
         <header className="relative">
-          <div className="group text-center text-4xl font-extrabold tracking-tight text-gray-900 dark:text-white sm:text-5xl">
+          <div className="group text-center text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl dark:text-white">
             # Project Structure
             <a
               aria-hidden="true"
@@ -27,7 +27,7 @@ export function ProjectStructure(): JSX.Element {
 
         <article className="relative mt-12 lg:mt-24 lg:grid lg:grid-cols-2 lg:items-center lg:gap-8">
           <div className="relative">
-            <h2 className="text-2xl font-bold leading-loose tracking-tight text-gray-800 dark:text-gray-100 sm:text-3xl sm:leading-relaxed">
+            <h2 className="text-2xl font-bold leading-loose tracking-tight text-gray-800 sm:text-3xl sm:leading-relaxed dark:text-gray-100">
               Take your monorepo from just a collection of directories, to well
               defined modules using{' '}
               <mark className="rounded-md bg-yellow-500 px-1">
@@ -63,7 +63,7 @@ export function ProjectStructure(): JSX.Element {
         <article className="relative mt-12 sm:mt-16 lg:mt-24">
           <div className="lg:grid lg:grid-flow-row-dense lg:grid-cols-2 lg:items-center lg:gap-8">
             <div className="lg:col-start-2">
-              <h2 className="text-2xl font-bold leading-loose tracking-tight text-gray-800 dark:text-gray-100 sm:text-3xl sm:leading-relaxed">
+              <h2 className="text-2xl font-bold leading-loose tracking-tight text-gray-800 sm:text-3xl sm:leading-relaxed dark:text-gray-100">
                 How your code is shared across a monorepo
               </h2>
               <p className="mt-3 text-lg text-gray-700 dark:text-gray-300">
@@ -99,7 +99,7 @@ export function ProjectStructure(): JSX.Element {
           </div>
         </article>
         <article className="relative mt-12 sm:mt-16 lg:mt-24">
-          <div className="bg-slate-50 px-4 pt-16 pb-20 dark:bg-slate-800 sm:px-6 lg:px-8 lg:pt-24 lg:pb-28">
+          <div className="bg-slate-50 px-4 pb-20 pt-16 sm:px-6 lg:px-8 lg:pb-28 lg:pt-24 dark:bg-slate-800">
             <p className="mt-3 text-xl text-gray-700 dark:text-gray-300">
               With each of these approaches, what we're really trying to solve
               is how the individual packages in your monorepo are made available

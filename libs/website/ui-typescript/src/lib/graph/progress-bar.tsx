@@ -1,5 +1,5 @@
 export function formatTime(time: number) {
- return time + 's '
+  return time + 's ';
 }
 
 export function ProgressBar({
@@ -11,16 +11,15 @@ export function ProgressBar({
   max: number;
   desc: string;
 }) {
-
   return (
-    <div className="w-full flex items-center justify-between h-7 rounded-lg content-box">
-      <div className="flex justify-stretch w-full h-2 bg-slate-500 rounded">
+    <div className="content-box flex h-7 w-full items-center justify-between rounded-lg">
+      <div className="flex h-2 w-full justify-stretch rounded bg-slate-500">
         <div
           className="h-full rounded bg-blue-300"
           style={{ width: `${(value / max) * 100}%` }}
         ></div>
       </div>
-      <div className="min-w-20 ml-4 text-xs w-52 text-gray-700 dark:text-gray-300 font-mono text-left">
+      <div className="ml-4 w-52 min-w-20 text-left font-mono text-xs text-gray-700 dark:text-gray-300">
         <span>{`${value}s `}</span> {desc}
       </div>
     </div>

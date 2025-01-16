@@ -5,10 +5,10 @@ export function Benchmark(): React.JSX.Element {
   return (
     <div
       id="benchmark"
-      className="bg-slate-50 px-4 pt-16 pb-20 dark:bg-slate-800 sm:px-6 lg:px-8 lg:pt-24 lg:pb-28"
+      className="bg-slate-50 px-4 pb-20 pt-16 sm:px-6 lg:px-8 lg:pb-28 lg:pt-24 dark:bg-slate-800"
     >
       <div className="relative">
-        <div className="group text-center text-4xl font-extrabold leading-8 tracking-tight text-gray-900 dark:text-white sm:text-5xl">
+        <div className="group text-center text-4xl font-extrabold leading-8 tracking-tight text-gray-900 sm:text-5xl dark:text-white">
           # Performance Benchmarks
           <a
             aria-hidden="true"
@@ -27,10 +27,10 @@ export function Benchmark(): React.JSX.Element {
 
       <article className="relative mx-auto  max-w-lg lg:mt-36 lg:max-w-7xl">
         <div className="mx-auto max-w-2xl">
-          <h2 className="text-2xl font-bold leading-loose tracking-tight text-gray-800 dark:text-gray-100 sm:text-3xl sm:leading-relaxed">
+          <h2 className="text-2xl font-bold leading-loose tracking-tight text-gray-800 sm:text-3xl sm:leading-relaxed dark:text-gray-100">
             Shipping code faster
           </h2>
-          <p className="mt-3 text-xl text-gray-700 dark:text-gray-300 sm:mt-4">
+          <p className="mt-3 text-xl text-gray-700 sm:mt-4 dark:text-gray-300">
             How you structure your TypeScript monorepo impacts more than your
             developer experience, it can also impact how fast changes in your
             repo are built and released to the world. With package linking and
@@ -48,7 +48,7 @@ export function Benchmark(): React.JSX.Element {
         </div>
       </article>
 
-      <article className="mx-auto max-w-6xl  relative mt-12 sm:mt-16 lg:mt-24">
+      <article className="relative mx-auto  mt-12 max-w-6xl sm:mt-16 lg:mt-24">
         <p className="mt-3 text-lg text-gray-700 dark:text-gray-300">
           In the{' '}
           <a
@@ -66,7 +66,7 @@ export function Benchmark(): React.JSX.Element {
         <Graph />
       </article>
 
-      <article className="mx-auto max-w-7xl  relative mt-12 sm:mt-16 lg:mt-24">
+      <article className="relative mx-auto  mt-12 max-w-7xl sm:mt-16 lg:mt-24">
         <div className="mx-auto max-w-2xl">
           <p className="mt-3 text-lg text-gray-700 dark:text-gray-300">
             What's worth mentioning here is that while the cold build between

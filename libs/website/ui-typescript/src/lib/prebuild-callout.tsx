@@ -2,13 +2,13 @@ export function PrebuildCallout(): React.JSX.Element {
   return (
     <div
       id="prebuild-or-direct"
-      className="bg-slate-50 px-4 pt-16 pb-20 dark:bg-slate-800 sm:px-6 lg:px-8 lg:pt-24 lg:pb-28"
+      className="bg-slate-50 px-4 pb-20 pt-16 sm:px-6 lg:px-8 lg:pb-28 lg:pt-24 dark:bg-slate-800"
     >
       <article className="bg-slate-50 dark:bg-slate-800">
-        <div className="mx-auto max-w-7xl py-16 px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
           <div className="overflow-hidden rounded-lg bg-slate-100 shadow-xl dark:bg-slate-900">
-            <div className="px-6 pt-10 pb-12 text-center sm:px-16 sm:pt-16 lg:py-16 lg:pr-0 xl:py-20 xl:px-20">
-              <h1 className="text-3xl font-extrabold text-gray-900 dark:text-white sm:text-4xl">
+            <div className="px-6 pb-12 pt-10 text-center sm:px-16 sm:pt-16 lg:py-16 lg:pr-0 xl:px-20 xl:py-20">
+              <h1 className="text-3xl font-extrabold text-gray-900 sm:text-4xl dark:text-white">
                 <span className="block text-gray-900 dark:text-white">
                   Direct Exports <span aria-hidden="true">⚔</span>
                   {'  '}
@@ -25,10 +25,10 @@ export function PrebuildCallout(): React.JSX.Element {
         </div>
       </article>
 
-      <article className="mx-auto max-w-7xl  relative mt-12 sm:mt-16 lg:mt-24">
+      <article className="relative mx-auto  mt-12 max-w-7xl sm:mt-16 lg:mt-24">
         <div className="lg:grid lg:grid-flow-row-dense lg:grid-cols-2 lg:items-center lg:gap-8">
           <div className="lg:col-start-2">
-            <h2 className="text-2xl font-bold leading-loose tracking-tight text-gray-800 dark:text-gray-100 sm:text-3xl sm:leading-relaxed">
+            <h2 className="text-2xl font-bold leading-loose tracking-tight text-gray-800 sm:text-3xl sm:leading-relaxed dark:text-gray-100">
               Direct Export
             </h2>
             <p className="mt-3 text-lg text-gray-700 dark:text-gray-300">
@@ -54,7 +54,7 @@ export function PrebuildCallout(): React.JSX.Element {
         </div>
         <div className="lg:grid lg:grid-flow-row-dense lg:grid-cols-2 lg:items-center lg:gap-8">
           <div className="lg:col-start-1">
-            <h2 className="text-2xl font-bold leading-loose tracking-tight text-gray-800 dark:text-gray-100 sm:text-3xl sm:leading-relaxed">
+            <h2 className="text-2xl font-bold leading-loose tracking-tight text-gray-800 sm:text-3xl sm:leading-relaxed dark:text-gray-100">
               Prebuild
             </h2>
             <p className="mt-3 text-lg text-gray-700 dark:text-gray-300">
@@ -87,7 +87,7 @@ export function PrebuildCallout(): React.JSX.Element {
 
       <article className="relative mx-auto mt-24 max-w-lg lg:mt-36 lg:max-w-7xl">
         <div className="mx-auto max-w-2xl">
-          <p className="mt-3 text-xl text-gray-700 dark:text-gray-300 sm:mt-4">
+          <p className="mt-3 text-xl text-gray-700 sm:mt-4 dark:text-gray-300">
             Either option can work, the major factor would be if you are
             publishing the libraries for others to use outside of your monorpeo.
           </p>

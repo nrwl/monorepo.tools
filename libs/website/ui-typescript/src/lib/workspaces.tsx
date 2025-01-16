@@ -4,10 +4,10 @@ export function Workspaces(): React.JSX.Element {
   return (
     <div
       id="workspaces"
-      className="bg-slate-50 px-4 pt-16 pb-20 dark:bg-slate-800 sm:px-6 lg:px-8 lg:pt-24 lg:pb-28"
+      className="bg-slate-50 px-4 pb-20 pt-16 sm:px-6 lg:px-8 lg:pb-28 lg:pt-24 dark:bg-slate-800"
     >
       <div className="relative">
-        <div className="group text-center text-4xl font-extrabold leading-8 tracking-tight text-gray-900 dark:text-white sm:text-5xl">
+        <div className="group text-center text-4xl font-extrabold leading-8 tracking-tight text-gray-900 sm:text-5xl dark:text-white">
           # Workspaces
           <a
             aria-hidden="true"
@@ -27,7 +27,7 @@ export function Workspaces(): React.JSX.Element {
         <div className="mx-auto max-w-2xl">
           <h1
             id="mapping-to-a-path"
-            className="group text-3xl font-semibold tracking-tight text-gray-800 dark:text-gray-100 sm:text-4xl"
+            className="group text-3xl font-semibold tracking-tight text-gray-800 sm:text-4xl dark:text-gray-100"
           >
             At a glance
             <a
@@ -39,7 +39,7 @@ export function Workspaces(): React.JSX.Element {
               <LinkIcon className="ml-2 h-6 w-6 opacity-0 group-hover:opacity-100" />
             </a>
           </h1>
-          <p className="mt-3 text-xl text-gray-700 dark:text-gray-300 sm:mt-4">
+          <p className="mt-3 text-xl text-gray-700 sm:mt-4 dark:text-gray-300">
             Workspaces are a built in feature of most JavaScript packages
             managers that allow you to tell the package manager that a certain
             directory contains subprojects. Taking inspiration from tools like{' '}
@@ -54,7 +54,7 @@ export function Workspaces(): React.JSX.Element {
             src="/images/typescript/workspaces.svg"
             alt="project workspaces"
           />
-          <p className="mt-3 text-xl text-gray-700 dark:text-gray-300 sm:mt-4">
+          <p className="mt-3 text-xl text-gray-700 sm:mt-4 dark:text-gray-300">
             With workspaces, when your packages manager reads the{' '}
             <code>package.json</code>, it will take any directory in that{' '}
             <code>workspaces</code> and link it to your root{' '}
@@ -64,7 +64,7 @@ export function Workspaces(): React.JSX.Element {
             no additional overhead that path aliases would introduce.
           </p>
 
-          <p className="mt-3 text-xl text-gray-700 dark:text-gray-300 sm:mt-4">
+          <p className="mt-3 text-xl text-gray-700 sm:mt-4 dark:text-gray-300">
             Workspaces however, do require an extra step before the packages can
             be used in your monorepo. Since most packages require some sort of
             build step before being able to consume the code, the monorepo tool

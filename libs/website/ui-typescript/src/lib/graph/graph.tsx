@@ -68,16 +68,16 @@ const BENCHMARK_DATA = {
 export function Graph(): React.JSX.Element {
   const maxTime = findMaxTime(BENCHMARK_DATA);
   return (
-    <div className="flex flex-col align-center justify-center self-stretch">
+    <div className="align-center flex flex-col justify-center self-stretch">
       {Object.values(BENCHMARK_DATA).map((item) => (
         <div
           key={item.label}
-          className="w-full flex flex-col align-center justify-center self-stretch my-4"
+          className="align-center my-4 flex w-full flex-col justify-center self-stretch"
         >
-          <p className="text-gray-700 dark:text-gray-300 text-lg font-semibold min-w-44">
+          <p className="min-w-44 text-lg font-semibold text-gray-700 dark:text-gray-300">
             {item.label}
           </p>
-          <div className="flex grow shrink-0 mt-3 flex-col align-center justify-center">
+          <div className="align-center mt-3 flex shrink-0 grow flex-col justify-center">
             {item.metrics.map((metric) => (
               <ProgressBar
                 key={metric.desc}

@@ -4,10 +4,10 @@ export function TypeReferences(): React.JSX.Element {
   return (
     <div
       id="project-references"
-      className="bg-slate-50 px-4 pt-16 pb-20 dark:bg-slate-800 sm:px-6 lg:px-8 lg:pt-24 lg:pb-28"
+      className="bg-slate-50 px-4 pb-20 pt-16 sm:px-6 lg:px-8 lg:pb-28 lg:pt-24 dark:bg-slate-800"
     >
       <div className="relative">
-        <div className="group text-center text-4xl font-extrabold leading-8 tracking-tight text-gray-900 dark:text-white sm:text-5xl">
+        <div className="group text-center text-4xl font-extrabold leading-8 tracking-tight text-gray-900 sm:text-5xl dark:text-white">
           # Project References
           <a
             aria-hidden="true"
@@ -25,10 +25,10 @@ export function TypeReferences(): React.JSX.Element {
       </div>
       <article className="relative mx-auto mt-24 max-w-lg lg:mt-36 lg:max-w-7xl">
         <div className="mx-auto max-w-2xl">
-          <h2 className="text-2xl font-bold leading-loose tracking-tight text-gray-800 dark:text-gray-100 sm:text-3xl sm:leading-relaxed">
+          <h2 className="text-2xl font-bold leading-loose tracking-tight text-gray-800 sm:text-3xl sm:leading-relaxed dark:text-gray-100">
             References Across Monorepos
           </h2>
-          <p className="mt-3 text-xl text-gray-700 dark:text-gray-300 sm:mt-4">
+          <p className="mt-3 text-xl text-gray-700 sm:mt-4 dark:text-gray-300">
             With the move to workspaces, one thing that gets left behind is the
             detailed type information that our projects can provide. Path
             Aliases also have this issue, as deeply nested imports might not
@@ -45,7 +45,7 @@ export function TypeReferences(): React.JSX.Element {
         </div>
       </article>
 
-      <article className="mx-auto max-w-7xl  relative mt-12 sm:mt-16 lg:mt-24">
+      <article className="relative mx-auto  mt-12 max-w-7xl sm:mt-16 lg:mt-24">
         <div className="lg:grid lg:grid-flow-row-dense lg:grid-cols-2 lg:items-center lg:gap-8">
           <div className="lg:col-start-2">
             <p className="mt-3 text-lg text-gray-700 dark:text-gray-300">
@@ -75,7 +75,7 @@ export function TypeReferences(): React.JSX.Element {
         </div>
       </article>
 
-      <article className="mx-auto max-w-7xl  relative mt-12 sm:mt-16 lg:mt-24">
+      <article className="relative mx-auto  mt-12 max-w-7xl sm:mt-16 lg:mt-24">
         <div className="mx-auto max-w-2xl">
           <p className="mt-3 text-lg text-gray-700 dark:text-gray-300">
             Project references can have some draw back in monorepos that include
