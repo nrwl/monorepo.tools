@@ -1,9 +1,11 @@
 import { Footer } from '@monorepo-tools/website/ui-commons';
 import {
+    Benchmark,
   Introduction,
   PathAliases,
   PrebuildCallout,
   ProjectStructure,
+  Resources,
   TypeReferences,
   Workspaces,
 } from '@monorepo-tools/website/ui-typescript';
@@ -48,6 +50,8 @@ export function Index() {
         <Workspaces />
         <PrebuildCallout />
         <TypeReferences />
+        <Benchmark />
+        <Resources />
       </main>
 
       <Footer />
