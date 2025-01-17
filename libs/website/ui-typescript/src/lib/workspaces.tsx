@@ -41,11 +41,10 @@ export function Workspaces(): React.JSX.Element {
           </h1>
           <p className="mt-3 text-xl text-gray-700 sm:mt-4 dark:text-gray-300">
             Workspaces are a built in feature of most JavaScript packages
-            managers that allow you to tell the package manager that a certain
-            directory contains subprojects. Taking inspiration from tools like{' '}
-            <code>lerna</code>, package managers like <code>npm</code>,{' '}
-            <code>yarn</code>, and <code>pnpm</code> all provide a way to setup
-            a workspace.
+            managers that allow you to tell the package manager a certain
+            directory contains subprojects. Package managers like{' '}
+            <code>npm</code>, <code>yarn</code>, and <code>pnpm</code> all
+            provide a way to setup a workspace.
           </p>
           <img
             aria-hidden="true"

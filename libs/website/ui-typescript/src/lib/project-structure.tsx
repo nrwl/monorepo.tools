@@ -55,7 +55,7 @@ export function ProjectStructure(): JSX.Element {
               className="relative mx-auto"
               width={490}
               src="/images/typescript/project-structure.svg"
-              alt="monorepo vs polyrepo"
+              alt="typescript monorepo project structure"
             />
           </div>
         </article>

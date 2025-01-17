@@ -40,7 +40,7 @@ export function PathAliases(): React.JSX.Element {
             </a>
           </h1>
           <p className="mt-3 text-xl text-gray-700 sm:mt-4 dark:text-gray-300">
-            In the simplest terms, path aliases are a typescript construct that
+            In the simplest terms, path aliases are a TypeScript construct that
             allow you to point to a directory somewhere in your codebase. When
             you import from <code>@my-org/lib-a</code> with path aliases, you
             actually aren't treating that package as a module.
@@ -56,11 +56,11 @@ export function PathAliases(): React.JSX.Element {
             Path aliases tell TypeScript to not treat the import statement as a
             module to be resolved, but rather use the key of{' '}
             <code>'@my-org/lib-a'</code> as a reference to where the module is
-            located. This means at compile time, TypeScript will need to add
-            some additional code to the generated output in order to make that
-            mapping work. While this could be minimal, depending on the scale of
-            your project, this could be a significant amount of extra that is
-            probably not needed.
+            located. However, if you build and try to run the compile output,
+            you will get an error as the TypeScript compiler doesn't actually
+            replace the import path with the correct path. For this, you'd need
+            an extra tool or build step to find and replace the aliased path
+            with the correct relative path.
           </p>
           <img
             aria-hidden="true"
@@ -70,11 +70,11 @@ export function PathAliases(): React.JSX.Element {
             alt="libraries in silos"
           />
           <p className="mt-3 text-xl text-gray-700 sm:mt-4 dark:text-gray-300">
-            Path Aliases don't actually change how our monorepo is structured or
-            if we have well defined boundaries, they just address to visual of
-            long import statements. Our code, while collocated, is not isolated
-            in any meaningful way. With this in mind, the use of Path Aliases
-            should be considered a step towards something better.
+            Path Aliases also don't actually change how our monorepo is
+            structured or if we have well defined boundaries, they just address
+            to visual of long import statements. Our code, while collocated, is
+            not isolated in any meaningful way. With this in mind, the use of
+            Path Aliases should be considered a step towards something better.
           </p>
           <p className="mt-3 text-xl text-gray-700 sm:mt-4 dark:text-gray-300">
             In fact, the TypeScript team even stated that developers should
