@@ -7,7 +7,7 @@ export function Introduction(): JSX.Element {
       className="bg-slate-50 dark:bg-slate-800"
     >
       {/* Header */}
-      <article className="relative bg-slate-50 pb-32 md:pt-64 dark:bg-slate-800">
+      <article className="relative bg-slate-50 pb-32 md:pt-32 dark:bg-slate-800">
         <div className="absolute inset-0">
           <img
             aria-hidden="true"

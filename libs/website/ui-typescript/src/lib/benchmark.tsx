@@ -52,8 +52,8 @@ export function Benchmark(): React.JSX.Element {
         <p className="mt-3 text-lg text-gray-700 dark:text-gray-300">
           In the{' '}
           <a
-            className="items-center rounded px-1 transition hover:bg-yellow-500 hover:text-gray-800"
-            href="https://github.com/jaysoo/typecheck-timings"
+            className="border-b border-yellow-500 px-1 transition hover:rounded hover:bg-yellow-500 hover:text-gray-800"
+            href="https://github.com/nrwl/typecheck-timings"
           >
             following example
           </a>
