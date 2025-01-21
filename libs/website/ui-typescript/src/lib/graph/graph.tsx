@@ -46,7 +46,7 @@ const BENCHMARK_DATA = {
     ],
   },
   projectRefCache: {
-    label: 'References + Workspace (nested updated)',
+    label: 'References + Workspace (incremental updates)',
     metrics: [
       {
         time: 36.33,

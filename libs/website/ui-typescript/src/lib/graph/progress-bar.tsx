@@ -19,7 +19,7 @@ export function ProgressBar({
           style={{ width: `${(value / max) * 100}%` }}
         ></div>
       </div>
-      <div className="ml-4 w-52 min-w-20 text-left font-mono text-xs text-gray-700 dark:text-gray-300">
+      <div className="ml-4 w-52 min-w-20 text-left font-mono text-xs text-gray-700 dark:text-slate-50">
         <span>{`${value}s `}</span> {desc}
       </div>
     </div>

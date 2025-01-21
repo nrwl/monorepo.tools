@@ -7,7 +7,7 @@ export function Introduction(): JSX.Element {
       className="mt-32 bg-slate-50 dark:bg-slate-800"
     >
       {/* Header */}
-      <article className="relative bg-slate-50 pb-32 dark:bg-slate-800 md:pt-64">
+      <article className="relative bg-slate-50 pb-32 md:pt-64 dark:bg-slate-800">
         <div className="absolute inset-0">
           <img
             aria-hidden="true"
@@ -20,12 +20,12 @@ export function Introduction(): JSX.Element {
             aria-hidden="true"
           />
         </div>
-        <div className="relative mx-auto max-w-7xl py-24 px-4 sm:py-32 sm:px-6 lg:px-8">
+        <div className="relative mx-auto max-w-7xl px-4 py-24 sm:px-6 sm:py-32 lg:px-8">
           <div className="lg:grid lg:grid-cols-2 lg:items-center lg:gap-16">
             <div>
               <h1
                 id="understanding-monorepos"
-                className="group text-4xl font-extrabold tracking-tight text-gray-900 dark:text-white md:text-5xl lg:text-6xl"
+                className="group text-4xl font-extrabold tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white"
               >
                 Understanding Monorepos{' '}
                 <a
@@ -183,10 +183,10 @@ export function Introduction(): JSX.Element {
 
       {/* Overlapping cards */}
       <section className="relative z-10 mx-auto -mt-28 max-w-7xl px-4 pb-32 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 gap-y-20 lg:grid-cols-4 lg:gap-y-0 lg:gap-x-8">
+        <div className="grid grid-cols-1 gap-y-20 lg:grid-cols-4 lg:gap-x-8 lg:gap-y-0">
           {/*LINKS*/}
           <div className="flex flex-col rounded-2xl bg-slate-100 shadow-xl dark:bg-slate-700">
-            <div className="relative flex-1 px-6 pt-16 pb-8 md:px-8">
+            <div className="relative flex-1 px-6 pb-8 pt-16 md:px-8">
               <h2 className="text-xl font-semibold text-gray-800 dark:text-gray-200">
                 What is a monorepo
               </h2>
@@ -194,7 +194,7 @@ export function Introduction(): JSX.Element {
                 Let's start with a common understanding of what a Monorepo is.
               </p>
             </div>
-            <div className="rounded-bl-2xl rounded-br-2xl bg-slate-200 p-6 dark:bg-slate-900 md:px-8">
+            <div className="rounded-bl-2xl rounded-br-2xl bg-slate-200 p-6 md:px-8 dark:bg-slate-900">
               <a
                 href="#what-is-a-monorepo"
                 title="What is a monorepo?"
@@ -205,7 +205,7 @@ export function Introduction(): JSX.Element {
             </div>
           </div>
           <div className="flex flex-col rounded-2xl bg-slate-100 shadow-xl dark:bg-slate-700">
-            <div className="relative flex-1 px-6 pt-16 pb-8 md:px-8">
+            <div className="relative flex-1 px-6 pb-8 pt-16 md:px-8">
               <h2 className="text-xl font-medium text-gray-800 dark:text-gray-200">
                 Why a monorepo
               </h2>
@@ -213,7 +213,7 @@ export function Introduction(): JSX.Element {
                 What are the situations solved by monorepos.
               </p>
             </div>
-            <div className="rounded-bl-2xl rounded-br-2xl bg-slate-200 p-6 dark:bg-slate-900 md:px-8">
+            <div className="rounded-bl-2xl rounded-br-2xl bg-slate-200 p-6 md:px-8 dark:bg-slate-900">
               <a
                 href="#why-a-monorepo"
                 title="Why using a monorepo?"
@@ -224,7 +224,7 @@ export function Introduction(): JSX.Element {
             </div>
           </div>
           <div className="flex flex-col rounded-2xl bg-slate-100 shadow-xl dark:bg-slate-700">
-            <div className="relative flex-1 px-6 pt-16 pb-8 md:px-8">
+            <div className="relative flex-1 px-6 pb-8 pt-16 md:px-8">
               <h2 className="text-xl font-medium text-gray-800 dark:text-gray-200">
                 Features of a monorepo
               </h2>
@@ -232,7 +232,7 @@ export function Introduction(): JSX.Element {
                 What to expect from a monorepo tool
               </p>
             </div>
-            <div className="rounded-bl-2xl rounded-br-2xl bg-slate-200 p-6 dark:bg-slate-900 md:px-8">
+            <div className="rounded-bl-2xl rounded-br-2xl bg-slate-200 p-6 md:px-8 dark:bg-slate-900">
               <a
                 href="#monorepo-features"
                 title="What are monorepo features?"
@@ -243,15 +243,15 @@ export function Introduction(): JSX.Element {
             </div>
           </div>
           <div className="flex flex-col rounded-2xl bg-slate-100 shadow-xl dark:bg-slate-700">
-            <div className="relative flex-1 px-6 pt-16 pb-8 md:px-8">
+            <div className="relative flex-1 px-6 pb-8 pt-16 md:px-8">
               <h2 className="text-xl font-medium text-gray-800 dark:text-gray-200">
                 TypeScript Monorepos
               </h2>
               <p className="mt-4 text-base text-gray-700 dark:text-gray-300">
-               Understand the best practices for TypeScript monorepos
+                Understand the best practices for TypeScript monorepos
               </p>
             </div>
-            <div className="rounded-bl-2xl rounded-br-2xl bg-slate-200 p-6 dark:bg-slate-900 md:px-8">
+            <div className="rounded-bl-2xl rounded-br-2xl bg-slate-200 p-6 md:px-8 dark:bg-slate-900">
               <a
                 href="/typescript"
                 title="TypeScript Monorepos"
