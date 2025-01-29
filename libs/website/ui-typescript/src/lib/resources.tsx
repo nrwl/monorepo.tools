@@ -21,12 +21,12 @@ const articles: { name: string; link: string }[] = [
     link: 'https://theartofdev.com/2024/11/07/sharing-code-in-typescript-and-project-references/',
   },
   {
-    name: 'Save For Nx Article',
-    link: '',
+    name: 'Everything you need to know about TypeScript Project Refernces',
+    link: 'https://nx.dev/blog/typescript-project-references',
   },
   {
-    name: 'Save For Nx Article',
-    link: '',
+    name: 'Managing TypeScript Packages in Monorepos',
+    link: 'https://nx.dev/blog/managing-ts-packages-in-monorepos',
   },
 ];
 
@@ -42,6 +42,14 @@ const videosPodcasts: { name: string; link: string }[] = [
   {
     name: 'No BS TS #32 - Monorepos with NX',
     link: 'https://www.youtube.com/watch?v=Bw_tmWEaaIU',
+  },
+  {
+    name: 'TypeScript Monorepos Done Right!',
+    link: 'https://www.youtube.com/watch?v=D9D8KNffyBk',
+  },
+  {
+    name: 'TypeScript Project References Demistified',
+    link: 'https://www.youtube.com/watch?v=SDE3cIq28s8',
   },
 ];
 
