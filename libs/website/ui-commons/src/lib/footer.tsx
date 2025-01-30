@@ -1,7 +1,7 @@
 export function Footer() {
   return (
-    <footer className="mt-24 bg-slate-50 dark:bg-slate-800 lg:mt-36">
-      <div className="mx-auto max-w-7xl overflow-hidden py-12 px-4 sm:px-6 lg:px-8">
+    <footer className="mt-24 bg-slate-50 lg:mt-36 dark:bg-slate-800">
+      <div className="mx-auto max-w-7xl overflow-hidden px-4 py-12 sm:px-6 lg:px-8">
         <nav
           className="-mx-5 -my-2 flex flex-wrap justify-center"
           aria-label="Footer"
@@ -33,7 +33,7 @@ export function Footer() {
           </div>
         </nav>
         <p className="mt-8 text-center text-base text-gray-400">
-          &copy; 2022 Narwhal Technologies Inc.
+          &copy; 2025 Nx
         </p>
       </div>
     </footer>
