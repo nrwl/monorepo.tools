@@ -58,7 +58,7 @@ export function Benchmark(): React.JSX.Element {
             following example
           </a>
           , we compare the build times for a TypeScript monorepo using path
-          aliases with a TypeScript monorepo using project refernces and
+          aliases with a TypeScript monorepo using project references and
           workspaces. This example uses Nx, but other monorepo tools may have
           similar results.
         </p>
@@ -69,11 +69,12 @@ export function Benchmark(): React.JSX.Element {
       <article className="relative mx-auto  mt-12 max-w-7xl sm:mt-16 lg:mt-24">
         <div className="mx-auto max-w-2xl">
           <p className="mt-3 text-lg text-gray-700 dark:text-gray-300">
-            What's worth mentioning here is that while the cold build between
-            the two different setups for their cold builds is not too drastic,
-            subsequent builds with project references start to show the bigger
-            picture. With project references in place, changes made to any
-            package in our monorepo reduces the amount of time spent building.
+            What's worth pointing out here is the difference in time when
+            dealing with incremental updates. With Path Aliases, TypeScript need
+            to perform full rebuild of every package. However, with project
+            references in place, TypeScript can understand what packages have
+            changed and skip a rebuild if possible, reducing the time needed to
+            rebuild.
           </p>
         </div>
       </article>
