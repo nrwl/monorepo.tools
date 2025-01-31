@@ -160,7 +160,7 @@ export function Introduction(): JSX.Element {
                 Project References
               </h2>
               <p className="mt-4 text-base text-gray-700 dark:text-gray-300">
-                How TypeScript can assit in optimizing your monorepo
+                How TypeScript can assist in optimizing your monorepo
               </p>
             </div>
             <div className="rounded-bl-2xl rounded-br-2xl bg-slate-200 p-6 md:px-8 dark:bg-slate-900">
