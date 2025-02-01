@@ -1792,13 +1792,13 @@ export function MonorepoFeatures(): JSX.Element {
             <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
               <dt>
                 <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
-                  <ManualImplementation />
+                  <Supported />
                   Pants
                 </p>
               </dt>
               <dd className="mt-4 text-base text-gray-600 dark:text-gray-400">
-                While not yet supported natively, a custom plugin could be
-                written to enforce such rules.
+                Pants has built in support for constraining allowed dependencies
+                and dependents with visibility rules.
               </dd>
             </div>
             <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
