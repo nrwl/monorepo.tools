@@ -70,11 +70,11 @@ export function Benchmark(): React.JSX.Element {
         <div className="mx-auto max-w-2xl">
           <p className="mt-3 text-lg text-gray-700 dark:text-gray-300">
             What's worth pointing out here is the difference in time when
-            dealing with incremental updates. With Path Aliases, TypeScript need
-            to perform full rebuild of every package. However, with project
-            references in place, TypeScript can understand what packages have
-            changed and skip a rebuild if possible, reducing the time needed to
-            rebuild.
+            dealing with incremental updates. With Path Aliases, TypeScript
+            needs to perform full rebuild of every package. However, with
+            project references in place, TypeScript can understand what packages
+            have changed and skip a rebuild if possible, reducing the time
+            needed to rebuild.
           </p>
         </div>
       </article>
