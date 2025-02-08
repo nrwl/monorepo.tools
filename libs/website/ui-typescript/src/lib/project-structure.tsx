@@ -42,7 +42,7 @@ export function ProjectStructure(): JSX.Element {
               .
             </h2>
             <p className="mt-3 text-lg text-gray-700 dark:text-gray-300">
-              By know how each of these concepts work in regards to you
+              By knowing how each of these concepts works in regards to you
               TypeScript monorepo, you can better organize your codebase and
               keep your builds fast.
             </p>
