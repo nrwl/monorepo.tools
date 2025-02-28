@@ -36,12 +36,8 @@ const videosPodcasts: { name: string; link: string }[] = [
     link: 'https://www.youtube.com/watch?v=RRsttfhg1sA',
   },
   {
-    name: 'Lots of small projects? You might be missing out on a MONOREPO',
-    link: 'https://www.youtube.com/watch?v=nw4KH0PkVsE',
-  },
-  {
-    name: 'No BS TS #32 - Monorepos with NX',
-    link: 'https://www.youtube.com/watch?v=Bw_tmWEaaIU',
+    name: 'Monorepos - What, Why, When and How | Full Stack React + Hono Example',
+    link: 'https://www.youtube.com/watch?v=KIgPJT806D0',
   },
   {
     name: 'TypeScript Monorepos Done Right!',
