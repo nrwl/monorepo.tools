@@ -19,7 +19,7 @@ export function TypeReferences(): React.JSX.Element {
           </a>
         </div>
         <p className="mx-auto mt-4 max-w-3xl text-center text-xl text-gray-700 dark:text-gray-300">
-          Provide deeper understanding of your monorepos types and speed up
+          Provide deeper understanding of your monorepo's types and speed up
           TypeScript compilation for large projects.
         </p>
       </div>
@@ -57,7 +57,7 @@ export function TypeReferences(): React.JSX.Element {
               can better optimize how it returns any type information for your
               editor. In addition to the type benefits, TypeScript can now
               compile pieces of your codebase in better isolation. In the
-              loosest sense, project references turns the TypeScript compiler
+              loosest sense, project references turn the TypeScript compiler
               into a monorepo tool.
             </p>
           </div>
@@ -79,12 +79,12 @@ export function TypeReferences(): React.JSX.Element {
         <div className="mx-auto max-w-2xl">
           <p className="mt-3 text-lg text-gray-700 dark:text-gray-300">
             Project references can have some draw back in monorepos that include
-            a lot of types. For instance, trcp can generate type information for
+            a lot of types. For instance, trpc can generate type information for
             every route in your API. Normally this is great, and project
             references can make sure that type information is available to you.
             But if you have a large API, you could be dealing with significant
             delays in your editor when you try to trigger auto-completion or get
-            a symbols type. This isn't only isolated to trpc, but any monorepo
+            a symbol's type. This isn't only isolated to trpc, but any monorepo
             that has a large and complex type setup.
           </p>
         </div>

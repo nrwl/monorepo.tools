@@ -37,7 +37,7 @@ export function PrebuildCallout(): React.JSX.Element {
             </p>
             <p className="mt-3 text-lg text-gray-700 dark:text-gray-300">
               If the modules in your monorepo are for internal use and will
-              never be published to a package registry, this is valid option.
+              never be published to a package registry, this is a valid option.
             </p>
           </div>
 
@@ -59,13 +59,13 @@ export function PrebuildCallout(): React.JSX.Element {
             </h2>
             <p className="mt-3 text-lg text-gray-700 dark:text-gray-300">
               With prebuilding, you're running the build tasks needed for any
-              module in the monorepo ahead of time. Your export the compiled and
+              module in the monorepo ahead of time. You export the compiled and
               generated code, and provide the generated types.
             </p>
             <p className="mt-3 text-lg text-gray-700 dark:text-gray-300">
               The benefit here is that everything can be done ahead of time, so
               you only have one task being run. However, if you need to change
-              of the modules being consumed, you need to rerun the build for the
+              the modules being consumed, you need to rerun the build for the
               affected module. Some monorepo tools, like{' '}
               <a href="https://nx.dev">Nx</a> provide a way to do this, but
               other tools might not.
@@ -89,7 +89,7 @@ export function PrebuildCallout(): React.JSX.Element {
         <div className="mx-auto max-w-2xl">
           <p className="mt-3 text-xl text-gray-700 sm:mt-4 dark:text-gray-300">
             Either option can work, the major factor would be if you are
-            publishing the libraries for others to use outside of your monorpeo.
+            publishing the libraries for others to use outside of your monorepo.
           </p>
         </div>
       </article>
