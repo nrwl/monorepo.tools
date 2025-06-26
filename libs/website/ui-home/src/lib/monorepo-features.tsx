@@ -50,11 +50,11 @@ export function MonorepoFeatures(): JSX.Element {
     <div
       data-test-id="monorepo-tools"
       id="monorepo-tools"
-      className="overflow-hidden bg-slate-50 py-16 dark:bg-slate-800 lg:py-24"
+      className="overflow-hidden bg-slate-50 py-16 lg:py-24 dark:bg-slate-800"
     >
       <div className="relative mx-auto max-w-xl px-4 sm:px-6 lg:max-w-7xl lg:px-8">
         <div className="relative">
-          <div className="group text-center text-4xl font-extrabold leading-8 tracking-tight text-gray-900 dark:text-white sm:text-5xl">
+          <div className="group text-center text-4xl font-extrabold leading-8 tracking-tight text-gray-900 sm:text-5xl dark:text-white">
             # Monorepo tools
             <a
               aria-hidden="true"
@@ -88,7 +88,7 @@ export function MonorepoFeatures(): JSX.Element {
             <div className="absolute flex h-10 w-10 items-center justify-center rounded-md rounded-md bg-slate-100 text-gray-800 dark:bg-slate-900 dark:text-gray-200">
               <DocumentArrowDownIcon className="h-6 w-6" />
             </div>
-            <div className="group ml-16 text-xl font-medium text-gray-800 dark:text-gray-200 sm:text-2xl sm:leading-relaxed">
+            <div className="group ml-16 text-xl font-medium text-gray-800 sm:text-2xl sm:leading-relaxed dark:text-gray-200">
               Local computation caching
               <a
                 aria-hidden="true"
@@ -230,7 +230,7 @@ export function MonorepoFeatures(): JSX.Element {
             <div className="absolute flex h-10 w-10 items-center justify-center rounded-md rounded-md bg-slate-100 text-gray-800 dark:bg-slate-900 dark:text-gray-200">
               <ArrowsUpDownIcon className="h-6 w-6" />
             </div>
-            <div className="group ml-16 text-xl font-medium text-gray-800 dark:text-gray-200 sm:text-2xl sm:leading-relaxed">
+            <div className="group ml-16 text-xl font-medium text-gray-800 sm:text-2xl sm:leading-relaxed dark:text-gray-200">
               Local task orchestration
               <a
                 aria-hidden="true"
@@ -366,7 +366,7 @@ export function MonorepoFeatures(): JSX.Element {
             <div className="absolute flex h-10 w-10 items-center justify-center rounded-md rounded-md bg-slate-100 text-gray-800 dark:bg-slate-900 dark:text-gray-200">
               <CloudArrowDownIcon className="h-6 w-6" />
             </div>
-            <div className="group ml-16 text-xl font-medium text-gray-800 dark:text-gray-200 sm:text-2xl sm:leading-relaxed">
+            <div className="group ml-16 text-xl font-medium text-gray-800 sm:text-2xl sm:leading-relaxed dark:text-gray-200">
               Distributed computation caching
               <a
                 aria-hidden="true"
@@ -381,7 +381,19 @@ export function MonorepoFeatures(): JSX.Element {
             <p className="mt-3 text-lg text-gray-700 dark:text-gray-300">
               The ability to share cache artifacts across different
               environments. This means that your whole organisation, including
-              CI agents, will never build or test the same thing twice.
+              CI agents, will never build or test the same thing twice.{' '}
+            </p>
+
+            <p className="mt-3 text-lg text-gray-700 dark:text-gray-300">
+              However, not all caching solutions are secure, and can be
+              vulnerable to cache poisoning. To learn more, see{' '}
+              <a
+                className="border-b border-yellow-500 transition hover:rounded hover:bg-yellow-500 hover:text-gray-800"
+                href="https://nx.dev/blog/cve-2025-36852-critical-cache-poisoning-vulnerability-creep"
+              >
+                this blog post
+              </a>{' '}
+              from the Nx team.
             </p>
 
             <div className="mt-10" aria-hidden="true">
@@ -502,7 +514,7 @@ export function MonorepoFeatures(): JSX.Element {
             <div className="absolute flex h-10 w-10 items-center justify-center rounded-md rounded-md bg-slate-100 text-gray-800 dark:bg-slate-900 dark:text-gray-200">
               <RectangleStackIcon className="h-6 w-6" />
             </div>
-            <div className="group ml-16 text-xl font-medium text-gray-800 dark:text-gray-200 sm:text-2xl sm:leading-relaxed">
+            <div className="group ml-16 text-xl font-medium text-gray-800 sm:text-2xl sm:leading-relaxed dark:text-gray-200">
               Distributed task execution
               <a
                 aria-hidden="true"
@@ -640,7 +652,7 @@ export function MonorepoFeatures(): JSX.Element {
             <div className="absolute flex h-10 w-10 items-center justify-center rounded-md rounded-md bg-slate-100 text-gray-800 dark:bg-slate-900 dark:text-gray-200">
               <ServerIcon className="h-6 w-6" />
             </div>
-            <div className="group ml-16 text-xl font-medium text-gray-800 dark:text-gray-200 sm:text-2xl sm:leading-relaxed">
+            <div className="group ml-16 text-xl font-medium text-gray-800 sm:text-2xl sm:leading-relaxed dark:text-gray-200">
               Transparent remote execution
               <a
                 aria-hidden="true"
@@ -762,7 +774,7 @@ export function MonorepoFeatures(): JSX.Element {
             <div className="absolute flex h-10 w-10 items-center justify-center rounded-md rounded-md bg-slate-100 text-gray-800 dark:bg-slate-900 dark:text-gray-200">
               <LightBulbIcon className="h-6 w-6" />
             </div>
-            <div className="group ml-16 text-xl font-medium text-gray-800 dark:text-gray-200 sm:text-2xl sm:leading-relaxed">
+            <div className="group ml-16 text-xl font-medium text-gray-800 sm:text-2xl sm:leading-relaxed dark:text-gray-200">
               Detecting affected projects/packages
               <a
                 aria-hidden="true"
@@ -915,7 +927,7 @@ export function MonorepoFeatures(): JSX.Element {
             <div className="absolute flex h-10 w-10 items-center justify-center rounded-md rounded-md bg-slate-100 text-gray-800 dark:bg-slate-900 dark:text-gray-200">
               <PresentationChartLineIcon className="h-6 w-6" />
             </div>
-            <div className="group ml-16 text-xl font-medium text-gray-800 dark:text-gray-200 sm:text-2xl sm:leading-relaxed">
+            <div className="group ml-16 text-xl font-medium text-gray-800 sm:text-2xl sm:leading-relaxed dark:text-gray-200">
               Workspace analysis
               <a
                 aria-hidden="true"
@@ -1060,7 +1072,7 @@ export function MonorepoFeatures(): JSX.Element {
             <div className="absolute flex h-10 w-10 items-center justify-center rounded-md rounded-md bg-slate-100 text-gray-800 dark:bg-slate-900 dark:text-gray-200">
               <PresentationChartLineIcon className="h-6 w-6" />
             </div>
-            <div className="group ml-16 text-xl font-medium text-gray-800 dark:text-gray-200 sm:text-2xl sm:leading-relaxed">
+            <div className="group ml-16 text-xl font-medium text-gray-800 sm:text-2xl sm:leading-relaxed dark:text-gray-200">
               Dependency graph visualization
               <a
                 aria-hidden="true"
@@ -1213,7 +1225,7 @@ export function MonorepoFeatures(): JSX.Element {
             <div className="absolute flex h-10 w-10 items-center justify-center rounded-md rounded-md bg-slate-100 text-gray-800 dark:bg-slate-900 dark:text-gray-200">
               <CodeBracketIcon className="h-6 w-6" />
             </div>
-            <div className="group ml-16 text-xl font-medium text-gray-800 dark:text-gray-200 sm:text-2xl sm:leading-relaxed">
+            <div className="group ml-16 text-xl font-medium text-gray-800 sm:text-2xl sm:leading-relaxed dark:text-gray-200">
               Source code sharing
               <a
                 aria-hidden="true"
@@ -1364,7 +1376,7 @@ export function MonorepoFeatures(): JSX.Element {
             <div className="absolute flex h-10 w-10 items-center justify-center rounded-md rounded-md bg-slate-100 text-gray-800 dark:bg-slate-900 dark:text-gray-200">
               <CommandLineIcon className="h-6 w-6" />
             </div>
-            <div className="group ml-16 text-xl font-medium text-gray-800 dark:text-gray-200 sm:text-2xl sm:leading-relaxed">
+            <div className="group ml-16 text-xl font-medium text-gray-800 sm:text-2xl sm:leading-relaxed dark:text-gray-200">
               Consistent tooling
               <a
                 aria-hidden="true"
@@ -1527,7 +1539,7 @@ export function MonorepoFeatures(): JSX.Element {
             <div className="absolute flex h-10 w-10 items-center justify-center rounded-md rounded-md bg-slate-100 text-gray-800 dark:bg-slate-900 dark:text-gray-200">
               <CogIcon className="h-6 w-6" />
             </div>
-            <div className="group ml-16 text-xl font-medium text-gray-800 dark:text-gray-200 sm:text-2xl sm:leading-relaxed">
+            <div className="group ml-16 text-xl font-medium text-gray-800 sm:text-2xl sm:leading-relaxed dark:text-gray-200">
               Code generation
               <a
                 aria-hidden="true"
@@ -1679,7 +1691,7 @@ export function MonorepoFeatures(): JSX.Element {
             <div className="absolute flex h-10 w-10 items-center justify-center rounded-md rounded-md bg-slate-100 text-gray-800 dark:bg-slate-900 dark:text-gray-200">
               <SignalIcon className="h-6 w-6" />
             </div>
-            <div className="group ml-16 text-xl font-medium text-gray-800 dark:text-gray-200 sm:text-2xl sm:leading-relaxed">
+            <div className="group ml-16 text-xl font-medium text-gray-800 sm:text-2xl sm:leading-relaxed dark:text-gray-200">
               Project constraints and visibility
               <a
                 aria-hidden="true"
