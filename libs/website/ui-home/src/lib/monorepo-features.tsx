@@ -381,7 +381,19 @@ export function MonorepoFeatures(): JSX.Element {
             <p className="mt-3 text-lg text-gray-700 dark:text-gray-300">
               The ability to share cache artifacts across different
               environments. This means that your whole organisation, including
-              CI agents, will never build or test the same thing twice.
+              CI agents, will never build or test the same thing twice.{' '}
+            </p>
+
+            <p className="mt-3 text-lg text-gray-700 dark:text-gray-300">
+              However, not all caching solutions are secure, and can be
+              vulnerable to cache poisoning. To learn more, see{' '}
+              <a
+                className="border-b border-yellow-500 transition hover:rounded hover:bg-yellow-500 hover:text-gray-800"
+                href="https://nx.dev/blog/cve-2025-36852-critical-cache-poisoning-vulnerability-creep"
+              >
+                this blog post
+              </a>{' '}
+              from the Nx team.
             </p>
 
             <div className="mt-10" aria-hidden="true">
