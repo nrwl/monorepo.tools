@@ -1,14 +1,13 @@
 import { Footer, Navigation } from '@monorepo-tools/website/ui-commons';
 import {
-  Benchmark,
   Introduction,
-  PathAliases,
-  PrebuildCallout,
-  ProjectStructure,
+  MonorepoAIAdvantages,
+  ContextChallenges,
+  SmartAISolutions,
+  CIPressure,
+  AIToolsComparison,
   Resources,
-  TypeReferences,
-  Workspaces,
-} from '@monorepo-tools/website/ui-typescript';
+} from '@monorepo-tools/website/ui-ai';
 import { NextSeo } from 'next-seo';
 import { useRouter } from 'next/router';
 
@@ -18,19 +17,19 @@ export function Index() {
   return (
     <>
       <NextSeo
-        title="Monorepo Explained | TypeScript"
-        description="Everything you need to know about TypeScript monorepos."
+        title="Monorepos & AI | Monorepo Tools"
+        description="Discover how AI and monorepos elevate each other: unified context enables powerful agentic workflows, while smart integration via project graphs and MCP makes AI more effective."
         openGraph={{
           url: `https://monorepo.tools${router.asPath}`,
-          title: 'Monorepo Explained',
+          title: 'Monorepos & AI',
           description:
-            'Everything you need to know about TypeScript monorepos.',
+            'Discover how AI and monorepos elevate each other: unified context enables powerful agentic workflows, while smart integration via project graphs and MCP makes AI more effective.',
           images: [
             {
               url: 'https://monorepo.tools/images/og-monorepotools.jpg',
               width: 1200,
               height: 630,
-              alt: 'Everything you need to know about TypeScript monorepos.',
+              alt: 'Monorepos & AI - How they work together for better development',
               type: 'image/jpg',
             },
           ],
@@ -46,12 +45,17 @@ export function Index() {
 
       <main>
         <Introduction />
-        <ProjectStructure />
-        <PathAliases />
-        <Workspaces />
-        <PrebuildCallout />
-        <TypeReferences />
-        <Benchmark />
+
+        <MonorepoAIAdvantages />
+
+        <ContextChallenges />
+
+        <SmartAISolutions />
+
+        <CIPressure />
+
+        <AIToolsComparison />
+
         <Resources />
       </main>
 

@@ -1,0 +1,17 @@
+---
+description:
+globs:
+alwaysApply: true
+---
+
+Here's technologies being used in this workspace:
+
+- Tailwind 3
+- yarn
+- Next.js 14
+- Nx
+
+The workspace is structured in a typical Nx setup
+
+- application in `apps/website`
+- logic for the app is split into `libs/website/...`

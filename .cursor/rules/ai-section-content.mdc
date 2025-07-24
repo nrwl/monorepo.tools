@@ -1,0 +1,66 @@
+---
+description: AI section component patterns and content guidelines
+globs: libs/website/ui-ai/src/lib/*.tsx
+---
+
+# AI Section Component Guidelines
+
+## Content Structure
+
+AI-related components should focus on explaining the relationship between monorepos and AI development workflows.
+
+### Key Content Areas
+
+1. **Context and Understanding**: How monorepos provide better context to AI tools
+2. **Development Workflows**: How AI assistants work better with unified codebases
+3. **Practical Benefits**: Concrete advantages for developers using AI in monorepos
+
+## Component Layout Patterns
+
+### Two-Column Layout with Content Positioning
+
+```tsx
+<div className="mt-16 lg:grid lg:grid-cols-2 lg:items-center lg:gap-8">
+  <div className="lg:order-2">{/* Content on the right */}</div>
+  <div className="mt-10 lg:order-1 lg:mt-0">
+    {/* Complementary content on the left */}
+  </div>
+</div>
+```
+
+### Standard Single Column Layout
+
+```tsx
+<div className="mt-16 lg:grid lg:grid-cols-2 lg:items-center lg:gap-8">
+  <div>{/* Main content */}</div>
+  <div className="mt-10 lg:mt-0">{/* Supporting content/images */}</div>
+</div>
+```
+
+## Content Sections Structure
+
+When creating feature lists, use the definition list pattern:
+
+```tsx
+<dl className="mt-10 space-y-10">
+  <div className="relative">
+    <dt>
+      <div className="absolute flex h-10 w-10 items-center justify-center rounded-md bg-slate-100 text-gray-800 dark:bg-slate-900 dark:text-gray-200">
+        <IconName className="h-6 w-6" aria-hidden="true" />
+      </div>
+      <p className="ml-16 text-lg font-medium leading-6 text-gray-900 dark:text-white">
+        Feature Title
+      </p>
+    </dt>
+    <dd className="ml-16 mt-2 text-base text-gray-700 dark:text-gray-300">
+      Feature description
+    </dd>
+  </div>
+</dl>
+```
+
+## References
+
+- [ai.tsx](mdc:apps/website/pages/ai.tsx) - Main AI page
+- [introduction.tsx](mdc:libs/website/ui-ai/src/lib/introduction.tsx) - AI introduction component
+- [monorepo-ai-advantages.tsx](mdc:libs/website/ui-ai/src/lib/monorepo-ai-advantages.tsx) - AI advantages component

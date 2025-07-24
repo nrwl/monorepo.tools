@@ -1,0 +1,20 @@
+{
+  "name": "website-ui-ai",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/website/ui-ai/src",
+  "projectType": "library",
+  "targets": {
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"]
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/libs/website/ui-ai"],
+      "options": {
+        "jestConfig": "libs/website/ui-ai/jest.config.ts"
+      }
+    }
+  },
+  "tags": ["scope:website", "type:ui"]
+}
