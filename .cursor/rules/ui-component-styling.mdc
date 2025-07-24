@@ -1,0 +1,53 @@
+---
+description: UI component styling patterns and conventions
+globs: libs/website/ui-*/src/lib/*.tsx
+---
+
+# UI Component Styling Guidelines
+
+## Icon Container Styling
+
+When creating components with icons, follow the consistent styling pattern used across the website:
+
+### Standard Icon Container
+
+```tsx
+<div className="absolute flex h-10 w-10 items-center justify-center rounded-md bg-slate-100 text-gray-800 dark:bg-slate-900 dark:text-gray-200">
+  <IconName className="h-6 w-6" aria-hidden="true" />
+</div>
+```
+
+**Key requirements:**
+
+- Container: `h-10 w-10` (not h-12 w-12)
+- Background: `bg-slate-100 text-gray-800 dark:bg-slate-900 dark:text-gray-200` (neutral colors, not colored backgrounds like bg-yellow-500)
+- Icon size: `h-6 w-6`
+- Always include `aria-hidden="true"` on decorative icons
+
+## Component Structure Patterns
+
+### Feature Section Layout
+
+Components should follow this consistent structure pattern seen in [monorepo-features.tsx](mdc:libs/website/ui-home/src/lib/monorepo-features.tsx):
+
+```tsx
+<div className="relative mt-16 lg:grid lg:grid-cols-2 lg:items-center lg:gap-8">
+  <div>
+    <h3 className="text-2xl font-extrabold text-gray-900 dark:text-white">
+      Section Title
+    </h3>
+    <p className="mt-3 text-lg text-gray-700 dark:text-gray-300">
+      Description text
+    </p>
+
+    <dl className="mt-10 space-y-10">{/* Feature items with icons */}</dl>
+  </div>
+
+  <div className="mt-10 lg:mt-0">{/* Image or complementary content */}</div>
+</div>
+```
+
+## References
+
+- See [monorepo-features.tsx](mdc:libs/website/ui-home/src/lib/monorepo-features.tsx) for consistent icon styling examples
+- See [monorepo-ai-advantages.tsx](mdc:libs/website/ui-ai/src/lib/monorepo-ai-advantages.tsx) for updated styling implementation

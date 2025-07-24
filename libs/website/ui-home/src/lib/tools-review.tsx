@@ -56,7 +56,7 @@ const tools = [
     title: 'Nx',
     organizationUrl: 'https://nrwl.io/?utm_source=monorepo.tools',
     description:
-      'Next generation build system with first class monorepo support and powerful integrations.',
+      'Nx optimizes your builds, scales your CI, and fixes failed PRs. Built for developers and AI agents.',
   },
   {
     title: 'Pants',
@@ -286,6 +286,25 @@ const manageable: Item[] = [
     ],
   },
 ];
+const aiSupport: Item[] = [
+  {
+    title: 'MCP Server Support',
+    link: '#ai-support',
+    tooltip:
+      'Model Context Protocol server implementation for AI assistant integration.',
+    features: [
+      { title: 'Bazel', value: 'manualImplementation' },
+      { title: 'Gradle', value: 'manualImplementation' },
+      { title: 'Lage', value: 'notSupported' },
+      { title: 'Lerna', value: 'notSupported' },
+      { title: 'moon', value: 'supported' },
+      { title: 'Nx', value: 'supported' },
+      { title: 'Pants', value: 'notSupported' },
+      { title: 'Rush', value: 'supported' },
+      { title: 'Turborepo', value: 'notSupported' },
+    ],
+  },
+];
 const valuesDictionary: Record<Supports, () => ReactComponentElement<any>> = {
   supported: () => (
     <span
@@ -329,14 +348,14 @@ export function ToolsReview(): JSX.Element {
     >
       <div className="relative">
         <div className="relative mx-auto max-w-2xl px-4 pt-16 text-center sm:px-6 sm:pt-32 lg:max-w-7xl lg:px-8">
-          <div className="group text-4xl font-extrabold tracking-tight text-gray-900 dark:text-white sm:text-6xl">
+          <div className="group text-4xl font-extrabold tracking-tight text-gray-900 sm:text-6xl dark:text-white">
             <span className="block lg:inline">Many solutions,</span>
             <span className="block lg:inline"> for different goals</span>
             <a
               aria-hidden="true"
               tabIndex={-1}
               href="#tools-review"
-              className="flex inline-flex items-center text-gray-900 dark:text-white"
+              className="inline-flex items-center text-gray-900 dark:text-white"
             >
               <LinkIcon className="ml-2 h-6 w-6 opacity-0 group-hover:opacity-100" />
             </a>
@@ -352,7 +371,7 @@ export function ToolsReview(): JSX.Element {
 
       {/* Feature comparison (up to lg) */}
       <section className="lg:hidden">
-        <div className="mx-auto max-w-2xl space-y-16 py-16 px-4 sm:px-6">
+        <div className="mx-auto max-w-2xl space-y-16 px-4 py-16 sm:px-6">
           {tools.map((tool, toolIndex) => (
             <div
               key={tool.title}
@@ -384,7 +403,7 @@ export function ToolsReview(): JSX.Element {
                   <div className="absolute right-0 h-full w-1/2 rounded-lg bg-slate-100 shadow dark:bg-slate-700" />
                 </div>
 
-                <div className="relative rounded-lg bg-slate-100 py-3 px-4 shadow ring-1 ring-black ring-opacity-5 dark:bg-slate-700 sm:rounded-none sm:bg-transparent sm:p-0 sm:shadow-none sm:ring-0">
+                <div className="relative rounded-lg bg-slate-100 px-4 py-3 shadow ring-1 ring-black ring-opacity-5 sm:rounded-none sm:bg-transparent sm:p-0 sm:shadow-none sm:ring-0 dark:bg-slate-700">
                   <dl className="divide-y divide-slate-300 dark:divide-slate-600">
                     {fast.map((feature) => (
                       <div
@@ -433,14 +452,14 @@ export function ToolsReview(): JSX.Element {
                   <div className="absolute right-0 h-full w-1/2 rounded-lg bg-slate-100 dark:bg-slate-700" />
                 </div>
 
-                <div className="relative rounded-lg bg-slate-100 py-3 px-4 shadow ring-1 ring-black ring-opacity-5 dark:bg-slate-700 sm:rounded-none sm:bg-transparent sm:p-0 sm:shadow-none sm:ring-0">
+                <div className="relative rounded-lg bg-slate-100 px-4 py-3 shadow ring-1 ring-black ring-opacity-5 sm:rounded-none sm:bg-transparent sm:p-0 sm:shadow-none sm:ring-0 dark:bg-slate-700">
                   <dl className="divide-y divide-slate-300 dark:divide-slate-600">
                     {understandable.map((feature) => (
                       <div
                         key={feature.title}
                         className="flex justify-between py-3 sm:grid sm:grid-cols-2"
                       >
-                        <dt className="flex text-sm font-medium text-gray-700 dark:text-gray-300 sm:pr-4">
+                        <dt className="flex text-sm font-medium text-gray-700 sm:pr-4 dark:text-gray-300">
                           <a
                             href={feature.link}
                             className="mr-1 inline-flex px-2 text-slate-500"
@@ -482,14 +501,71 @@ export function ToolsReview(): JSX.Element {
                   <div className="absolute right-0 h-full w-1/2 rounded-lg bg-slate-100 shadow dark:bg-slate-700" />
                 </div>
 
-                <div className="relative rounded-lg bg-slate-100 py-3 px-4 shadow ring-1 ring-black ring-opacity-5 dark:bg-slate-700 sm:rounded-none sm:bg-transparent sm:p-0 sm:shadow-none sm:ring-0">
+                <div className="relative rounded-lg bg-slate-100 px-4 py-3 shadow ring-1 ring-black ring-opacity-5 sm:rounded-none sm:bg-transparent sm:p-0 sm:shadow-none sm:ring-0 dark:bg-slate-700">
                   <dl className="divide-y divide-slate-300 dark:divide-slate-600">
                     {manageable.map((feature) => (
                       <div
                         key={feature.title}
                         className="flex justify-between py-3 sm:grid sm:grid-cols-2"
                       >
-                        <dt className="flex text-sm font-medium text-gray-700 dark:text-gray-300 sm:pr-4">
+                        <dt className="flex text-sm font-medium text-gray-700 sm:pr-4 dark:text-gray-300">
+                          <a
+                            href={feature.link}
+                            className="mr-1 inline-flex px-2  text-slate-500"
+                          >
+                            <span className="sr-only">More info</span>
+                            <QuestionMarkCircleIcon className="h-5 w-5" />
+                          </a>
+                          {feature.title}
+                        </dt>
+                        <dd className="text-center sm:px-4">
+                          {valuesDictionary[
+                            feature.features[toolIndex].value
+                          ]()}
+                        </dd>
+                      </div>
+                    ))}
+                  </dl>
+                </div>
+
+                {/* Fake card border */}
+                <div
+                  aria-hidden="true"
+                  className="pointer-events-none absolute inset-0 hidden sm:block"
+                >
+                  <div className="absolute right-0 h-full w-1/2 rounded-lg ring-1 ring-black ring-opacity-5" />
+                </div>
+              </div>
+
+              <div className="mt-10 flex items-center gap-2">
+                <span className="text-sm font-bold text-gray-700 dark:text-gray-300">
+                  AI Support
+                </span>
+                <a
+                  href="/ai"
+                  className="text-xs text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300"
+                >
+                  (Details)
+                </a>
+              </div>
+
+              <div className="relative mt-6">
+                {/* Fake card background */}
+                <div
+                  aria-hidden="true"
+                  className="pointer-events-none absolute inset-0 hidden sm:block"
+                >
+                  <div className="absolute right-0 h-full w-1/2 rounded-lg bg-slate-100 shadow dark:bg-slate-700" />
+                </div>
+
+                <div className="relative rounded-lg bg-slate-100 px-4 py-3 shadow ring-1 ring-black ring-opacity-5 sm:rounded-none sm:bg-transparent sm:p-0 sm:shadow-none sm:ring-0 dark:bg-slate-700">
+                  <dl className="divide-y divide-slate-300 dark:divide-slate-600">
+                    {aiSupport.map((feature) => (
+                      <div
+                        key={feature.title}
+                        className="flex justify-between py-3 sm:grid sm:grid-cols-2"
+                      >
+                        <dt className="flex text-sm font-medium text-gray-700 sm:pr-4 dark:text-gray-300">
                           <a
                             href={feature.link}
                             className="mr-1 inline-flex px-2  text-slate-500"
@@ -524,7 +600,7 @@ export function ToolsReview(): JSX.Element {
 
       {/* Feature comparison (lg+) */}
       <section className="hidden lg:block">
-        <div className="mx-auto max-w-7xl py-24 px-8">
+        <div className="mx-auto max-w-7xl px-8 py-24">
           <div className="flex w-full items-stretch border-t border-slate-100 dark:border-slate-900">
             <div className="-mt-px flex w-[14%] items-end py-6 pr-4" />
             {tools.map((tool, toolIndex) => (
@@ -934,9 +1010,139 @@ export function ToolsReview(): JSX.Element {
               </div>
             </div>
           </div>
+
+          <div className="mt-10 flex items-center gap-2">
+            <h3 className="text-sm font-bold text-gray-700 dark:text-gray-300">
+              AI Support
+            </h3>
+            <a
+              href="/ai"
+              className="text-xs text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300"
+            >
+              (Details)
+            </a>
+          </div>
+          <div className="relative mt-6">
+            {/* Fake card backgrounds */}
+            <div
+              className="pointer-events-none absolute inset-0 flex items-stretch"
+              aria-hidden="true"
+            >
+              <div className="w-[14%] pr-4" />
+              <div className="w-[9.55%] px-2">
+                <div className="h-full w-full rounded-lg bg-slate-100 shadow dark:bg-slate-700" />
+              </div>
+              <div className="w-[9.55%] px-2">
+                <div className="h-full w-full rounded-lg bg-slate-100 shadow dark:bg-slate-700" />
+              </div>
+              <div className="w-[9.55%] px-2">
+                <div className="h-full w-full rounded-lg bg-slate-100 shadow dark:bg-slate-700" />
+              </div>
+              <div className="w-[9.55%] px-2">
+                <div className="h-full w-full rounded-lg bg-slate-100 shadow dark:bg-slate-700" />
+              </div>
+              <div className="w-[9.55%] px-2">
+                <div className="h-full w-full rounded-lg bg-slate-100 shadow dark:bg-slate-700" />
+              </div>
+              <div className="w-[9.55%] px-2">
+                <div className="h-full w-full rounded-lg bg-slate-100 shadow dark:bg-slate-700" />
+              </div>
+              <div className="w-[9.55%] px-2">
+                <div className="h-full w-full rounded-lg bg-slate-100 shadow dark:bg-slate-700" />
+              </div>
+              <div className="w-[9.55%] px-2">
+                <div className="h-full w-full rounded-lg bg-slate-100 shadow dark:bg-slate-700" />
+              </div>
+              <div className="w-[9.55%] pl-2">
+                <div className="h-full w-full rounded-lg bg-slate-100 shadow dark:bg-slate-700" />
+              </div>
+            </div>
+
+            <table className="relative w-full">
+              <caption className="sr-only">AI Support comparison</caption>
+              <thead>
+                <tr className="text-left">
+                  <th scope="col">
+                    <span className="sr-only">Feature</span>
+                  </th>
+                  {tools.map((tool) => (
+                    <th key={tool.title} scope="col">
+                      <span className="sr-only">{tool.title}</span>
+                    </th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-slate-300 dark:divide-slate-600">
+                {aiSupport.map((feature) => (
+                  <tr key={feature.title}>
+                    <th
+                      scope="row"
+                      className="w-[14%] py-3 pr-4 text-left text-sm font-medium text-gray-700 dark:text-gray-300"
+                    >
+                      <a
+                        href={feature.link}
+                        title={'More on ' + feature.title}
+                        className="hover:underline"
+                      >
+                        {feature.title}
+                      </a>
+                    </th>
+                    {feature.features.map((tier, tierIdx) => (
+                      <td
+                        key={tier.title}
+                        className={classNames(
+                          tierIdx === feature.features.length - 1
+                            ? 'pl-2'
+                            : 'px-2',
+                          'relative w-[9.55%] py-0 text-center'
+                        )}
+                      >
+                        {valuesDictionary[tier.value]()}
+                      </td>
+                    ))}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+
+            {/* Fake card borders */}
+            <div
+              className="pointer-events-none absolute inset-0 flex items-stretch"
+              aria-hidden="true"
+            >
+              <div className="w-[14%] pr-4" />
+              <div className="w-[9.55%] px-2">
+                <div className="h-full w-full rounded-lg ring-1 ring-black ring-opacity-5" />
+              </div>
+              <div className="w-[9.55%] px-2">
+                <div className="h-full w-full rounded-lg ring-2 ring-black ring-opacity-5" />
+              </div>
+              <div className="w-[9.55%] px-2">
+                <div className="h-full w-full rounded-lg ring-2 ring-black ring-opacity-5" />
+              </div>
+              <div className="w-[9.55%] px-2">
+                <div className="h-full w-full rounded-lg ring-2 ring-black ring-opacity-5" />
+              </div>
+              <div className="w-[9.55%] px-2">
+                <div className="h-full w-full rounded-lg ring-2 ring-black ring-opacity-5" />
+              </div>
+              <div className="w-[9.55%] px-2">
+                <div className="h-full w-full rounded-lg ring-2 ring-black ring-opacity-5" />
+              </div>
+              <div className="w-[9.55%] px-2">
+                <div className="h-full w-full rounded-lg ring-2 ring-black ring-opacity-5" />
+              </div>
+              <div className="w-[9.55%] px-2">
+                <div className="h-full w-full rounded-lg ring-2 ring-black ring-opacity-5" />
+              </div>
+              <div className="w-[9.55%] pl-2">
+                <div className="h-full w-full rounded-lg ring-1 ring-black ring-opacity-5" />
+              </div>
+            </div>
+          </div>
         </div>
 
-        <div className="mx-auto mt-2 mb-12 flex max-w-7xl justify-end px-8 text-xs">
+        <div className="mx-auto mb-12 mt-2 flex max-w-7xl justify-end px-8 text-xs">
           <div className="flex items-center space-x-3">
             <div className="flex items-center">
               <span

@@ -4,6 +4,7 @@
 /dist
 /tmp
 /out-tsc
+.playwright-mcp/
 
 # dependencies
 /node_modules
@@ -16,7 +17,6 @@
 *.launch
 .settings/
 *.sublime-workspace
-.cursor
 
 # IDE - VSCode
 .vscode/*

@@ -18,6 +18,7 @@
       "@monorepo-tools/website/feature-analytics": [
         "libs/website/feature-analytics/src/index.ts"
       ],
+      "@monorepo-tools/website/ui-ai": ["libs/website/ui-ai/src/index.ts"],
       "@monorepo-tools/website/ui-commons": [
         "libs/website/ui-commons/src/index.ts"
       ],

@@ -1,4 +1,4 @@
-import { Footer, Header } from '@monorepo-tools/website/ui-commons';
+import { Footer, Hero, Navigation } from '@monorepo-tools/website/ui-commons';
 import {
   Conclusion,
   Introduction,
@@ -44,7 +44,8 @@ export function Index() {
           cardType: 'summary_large_image',
         }}
       />
-      <Header />
+      <Navigation />
+      <Hero />
 
       <main>
         <Introduction />
