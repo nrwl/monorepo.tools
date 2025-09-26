@@ -3,6 +3,7 @@
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/website/ui-typescript/src",
   "projectType": "library",
+  "tags": ["scope:website", "type:ui"],
   "targets": {
     "build": {
       "executor": "@nx/js:swc",
@@ -24,6 +25,5 @@
         "jestConfig": "libs/website/ui-typescript/jest.config.ts"
       }
     }
-  },
-  "tags": ["scope:website", "type:ui"]
+  }
 }
