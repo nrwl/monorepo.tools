@@ -3,6 +3,7 @@
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "apps/website",
   "projectType": "application",
+  "tags": ["scope:website", "type:app"],
   "targets": {
     "build": {
       "dependsOn": [
@@ -76,6 +77,5 @@
         "siteId": "661dca4c-fce8-4e2a-93fb-06b08822f698"
       }
     }
-  },
-  "tags": ["scope:website", "type:app"]
+  }
 }
