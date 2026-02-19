@@ -41,6 +41,7 @@ export function Navigation() {
 
   const navigationItems = [
     { href: '/', label: 'Home', exact: true },
+    { href: '/compare', label: 'Compare' },
     { href: '/typescript', label: 'TypeScript' },
     { href: '/ai', label: 'AI & Monorepos' },
   ];

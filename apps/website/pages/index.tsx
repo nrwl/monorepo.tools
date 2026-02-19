@@ -3,10 +3,8 @@ import {
   Conclusion,
   Introduction,
   MonolithCallout,
-  MonorepoFeatures,
   MonorepoFeaturesOverview,
   Resources,
-  ToolsReview,
   ToolsSupportCallout,
   WhatIsAMonorepo,
   WhyAMonorepo,
@@ -60,13 +58,7 @@ export function Index() {
 
         <ToolsSupportCallout />
 
-        <MonorepoFeatures />
-
         <Conclusion />
-
-        <div>
-          <ToolsReview />
-        </div>
 
         <Resources />
       </main>
