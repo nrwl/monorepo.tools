@@ -33,15 +33,16 @@ const points = [
   },
   {
     number: '03',
-    title: 'Cross-cutting work, finally',
+    title: 'Cross-cutting work',
     polyrepo:
       'Refactoring, migrations, dependency upgrades: the tedious, error-prone work that teams keep postponing. AI agents are perfect for it, but repo boundaries limit what they can see and change. Cross-repo changes stay manual, slow, and fragile.',
     monorepo: (
       <>
         The agent has full access to{' '}
         <strong>apply changes across projects</strong>, run affected tests,
-        and submit everything as <strong>one PR</strong>. The work that was
-        always delayed because it was cumbersome becomes routine.
+        and submit a <strong>consistent, atomic PR</strong>. Visibility and
+        context make this possible, and so do quick, immediate feedback
+        loops.
       </>
     ),
   },
@@ -288,14 +289,90 @@ export function MonorepoAI(): JSX.Element {
             <PointCard point={points[3]} />
           </div>
 
-          {/* Final arrow to video — tilted from right toward center */}
-          <ConnectingArrow direction="down-left" />
+          {/* Final arrow to summary — gentle tilt from right toward center */}
+          <div className="lg:col-span-2">
+            <div className="flex justify-center py-4 lg:hidden">
+              <svg
+                width="24"
+                height="48"
+                viewBox="0 0 24 48"
+                fill="none"
+                className="text-slate-300 dark:text-slate-600"
+              >
+                <path
+                  d="M12 0v40m0 0l-8-8m8 8l8-8"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </div>
+            <div className="hidden py-2 lg:flex justify-center">
+              <svg
+                width="120"
+                height="48"
+                viewBox="0 0 120 48"
+                fill="none"
+                className="text-slate-300 dark:text-slate-600"
+              >
+                <path
+                  d="M80 4 L60 40"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  markerEnd="url(#arrowhead-final)"
+                />
+                <defs>
+                  <marker
+                    id="arrowhead-final"
+                    markerWidth="8"
+                    markerHeight="6"
+                    refX="8"
+                    refY="3"
+                    orient="auto"
+                  >
+                    <path d="M0 0L8 3L0 6" fill="currentColor" />
+                  </marker>
+                </defs>
+              </svg>
+            </div>
+          </div>
+
+          {/* Summary box */}
+          <div className="lg:col-span-2">
+            <div className="mx-auto max-w-2xl rounded-lg border border-slate-200 bg-white/80 px-6 py-5 text-center shadow-sm dark:border-slate-700 dark:bg-slate-900/60">
+              <p className="text-lg leading-relaxed text-gray-800 dark:text-gray-200">
+                Full visibility, autonomously discoverable context, and
+                instant feedback loops: the ingredients to leverage AI
+                agents to their fullest.
+              </p>
+            </div>
+          </div>
+
+          {/* Arrow to video */}
+          <div className="lg:col-span-2">
+            <div className="flex justify-center py-4">
+              <svg
+                width="24"
+                height="48"
+                viewBox="0 0 24 48"
+                fill="none"
+                className="text-slate-300 dark:text-slate-600"
+              >
+                <path
+                  d="M12 0v40m0 0l-8-8m8 8l8-8"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </div>
+          </div>
 
           {/* Video embed - full width */}
           <div className="lg:col-span-2">
-            <p className="mb-6 text-center text-lg font-medium text-gray-700 dark:text-gray-300">
-              See it in action: monorepo vs polyrepo with AI agents
-            </p>
             <YouTubeEmbed
               videoId="alIto5fqrfk"
               thumbnailSrc="/images/ai/poly-vs-monorepo-ai.png"
