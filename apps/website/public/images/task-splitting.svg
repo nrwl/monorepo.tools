@@ -1,0 +1,21 @@
+<svg width="480" height="280" viewBox="0 0 480 280" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Large single block on the left -->
+  <rect x="40" y="60" width="120" height="160" rx="5" fill="#9CA3AF"/>
+
+  <!-- Arrow from block to split pieces -->
+  <path d="M180 140 L220 140" stroke="#FF6D74" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M214 134 L224 140 L214 146" stroke="#FF6D74" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Split fine-grained blocks on the right (3x3 grid) -->
+  <rect x="244" y="60" width="56" height="46" rx="5" fill="#FF6D74"/>
+  <rect x="308" y="60" width="56" height="46" rx="5" fill="#FF6D74"/>
+  <rect x="372" y="60" width="56" height="46" rx="5" fill="#FF6D74"/>
+
+  <rect x="244" y="117" width="56" height="46" rx="5" fill="#FF6D74"/>
+  <rect x="308" y="117" width="56" height="46" rx="5" fill="#FF6D74"/>
+  <rect x="372" y="117" width="56" height="46" rx="5" fill="#FF6D74"/>
+
+  <rect x="244" y="174" width="56" height="46" rx="5" fill="#FF6D74"/>
+  <rect x="308" y="174" width="56" height="46" rx="5" fill="#FF6D74"/>
+  <rect x="372" y="174" width="56" height="46" rx="5" fill="#FF6D74"/>
+</svg>

@@ -44,6 +44,7 @@ const categories: {
         name: 'Task splitting',
         description:
           'Break large tasks into fine-grained cacheable units. Each slice can be cached and distributed independently.',
+        image: '/images/task-splitting.svg',
       },
       {
         name: 'Deflaking',
