@@ -93,6 +93,9 @@ function TaxRow({
       >
         <PulsingDot color="red" />
         <div>
+          <span className="text-xs font-bold uppercase tracking-wider text-red-600 dark:text-red-400 lg:hidden">
+            Polyrepo
+          </span>
           <p className="cursor-default text-lg font-medium text-gray-800 dark:text-gray-200">
             {polyrepo.title}
           </p>
@@ -115,6 +118,9 @@ function TaxRow({
       >
         <PulsingDot color="green" />
         <div>
+          <span className="text-xs font-bold uppercase tracking-wider text-green-600 dark:text-green-400 lg:hidden">
+            Monorepo
+          </span>
           <p className="cursor-default text-lg font-medium text-gray-800 dark:text-gray-200">
             {monorepo.title}
           </p>
@@ -214,18 +220,18 @@ export function WhyAMonorepo(): JSX.Element {
 
         {/* Side-by-side comparison */}
         <div className="mx-auto mt-16 max-w-4xl">
-          {/* Column headers */}
-          <div className="mb-6 grid gap-x-8 lg:grid-cols-2">
+          {/* Column headers — hidden on mobile where inline labels are shown */}
+          <div className="mb-6 hidden gap-x-8 lg:grid lg:grid-cols-2">
             <h3 className="text-sm font-bold uppercase tracking-wider text-red-600 dark:text-red-400">
               Polyrepo
             </h3>
-            <h3 className="mt-4 text-sm font-bold uppercase tracking-wider text-green-600 dark:text-green-400 lg:mt-0">
+            <h3 className="text-sm font-bold uppercase tracking-wider text-green-600 dark:text-green-400">
               Monorepo
             </h3>
           </div>
 
           {/* Divider */}
-          <div className="mb-4 border-t border-slate-200 dark:border-slate-700" />
+          <div className="mb-4 hidden border-t border-slate-200 dark:border-slate-700 lg:block" />
 
           {/* Rows */}
           <div className="space-y-2">

@@ -252,7 +252,7 @@ export function MonorepoAI(): JSX.Element {
           </a>
         </div>
         <p className="mx-auto mt-4 max-w-3xl text-center text-xl text-gray-700 dark:text-gray-300">
-          The architecture your AI agents are missing.
+          The path to fully leveraging AI agent capabilities.
         </p>
       </div>
 
