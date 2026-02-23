@@ -107,15 +107,15 @@ const categories: {
     label: 'AI-Ready',
     features: [
       {
-        name: 'MCP & Skills',
+        name: 'AI Skills and MCP',
         description:
-          'AI agents connect to your workspace through the Model Context Protocol. They read the project graph, understand task dependencies, and execute builds — not just edit files.',
+          'Monorepo tooling can expose its capabilities to AI agents: project graph awareness, task execution, code generation, and more. Agents that understand your workspace structure make better decisions and produce higher-quality code.',
         image: '/images/mcp-skills.svg',
       },
       {
-        name: 'Self-healing CI',
+        name: 'Agentic CI',
         description:
-          'When a PR breaks CI, an AI agent diagnoses the failure, proposes a fix, and pushes a correction — automatically, without waiting for a human.',
+          'AI-powered CI that goes beyond just running tasks. Self-healing broken PRs by diagnosing failures and proposing fixes, automatically re-running flaky tasks, and providing intelligent feedback to developers.',
         image: '/images/self-healing-ci.svg',
       },
     ],

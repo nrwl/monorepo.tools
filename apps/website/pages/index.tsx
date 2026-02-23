@@ -5,7 +5,6 @@ import {
   MonolithCallout,
   MonorepoAI,
   SyntheticMonorepos,
-  MonorepoFeaturesOverview,
   BestInClassFeatures,
   Resources,
   ToolsSupportCallout,
@@ -62,8 +61,6 @@ export function Index() {
         <SyntheticMonorepos />
 
         <BestInClassFeatures />
-
-        <MonorepoFeaturesOverview />
 
         <ToolsSupportCallout />
 
