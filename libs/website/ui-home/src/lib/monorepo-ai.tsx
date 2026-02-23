@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { LinkIcon } from '@heroicons/react/24/outline';
-import { ArrowLongRightIcon, PlayIcon } from '@heroicons/react/24/solid';
+import { PlayIcon } from '@heroicons/react/24/solid';
 
 const points = [
   {
@@ -141,6 +141,8 @@ function PointCard({
 }: {
   point: (typeof points)[number];
 }): JSX.Element {
+  const [flipped, setFlipped] = useState(false);
+
   return (
     <section className="group relative">
       {/* Number + Title */}
@@ -153,10 +155,19 @@ function PointCard({
         </h2>
       </div>
 
-      {/* Polyrepo → Monorepo stacked */}
-      <div className="mt-6 space-y-3">
-        {/* Polyrepo - muted */}
-        <div className="rounded-lg border border-dashed border-slate-300 bg-slate-100/50 px-5 py-4 dark:border-slate-600 dark:bg-slate-900/30">
+      {/* Card stack — same-size cards, front shifted via translate */}
+      <div
+        className="relative mt-6 grid cursor-pointer pb-8 pr-2.5"
+        onClick={() => setFlipped(!flipped)}
+      >
+        {/* Polyrepo card */}
+        <div
+          className={`col-start-1 row-start-1 rounded-lg border border-dashed border-slate-300 bg-slate-50 px-5 py-4 transition-all duration-300 dark:border-slate-600 dark:bg-slate-800 ${
+            flipped
+              ? 'z-10 translate-x-2.5 translate-y-8 shadow-sm'
+              : 'z-0'
+          }`}
+        >
           <span className="text-xs font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500">
             Polyrepo
           </span>
@@ -165,12 +176,14 @@ function PointCard({
           </p>
         </div>
 
-        <div className="flex justify-center">
-          <ArrowLongRightIcon className="h-5 w-5 rotate-90 text-green-400 dark:text-green-500" />
-        </div>
-
-        {/* Monorepo - vibrant */}
-        <div className="rounded-lg border border-green-200 bg-green-50/50 px-5 py-4 dark:border-green-900/50 dark:bg-green-950/20">
+        {/* Monorepo card */}
+        <div
+          className={`col-start-1 row-start-1 rounded-lg border border-green-200/60 bg-green-50 px-5 py-4 transition-all duration-300 dark:border-green-800/40 dark:bg-slate-800 ${
+            flipped
+              ? 'z-0'
+              : 'z-10 translate-x-2.5 translate-y-8 shadow-sm'
+          }`}
+        >
           <span className="text-xs font-bold uppercase tracking-wider text-green-600 dark:text-green-400">
             Monorepo
           </span>
