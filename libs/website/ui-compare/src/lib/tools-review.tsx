@@ -361,10 +361,18 @@ export function ToolsReview(): JSX.Element {
             </a>
           </div>
           <p className="mt-4 text-xl text-gray-700 dark:text-gray-300">
-            Each tool fits a specific set of needs and gives you a precise set
-            of features. <br />
-            Depending on your needs and constraints, we&apos;ll help you decide
-            which tools best suit you.
+            There are many great monorepo tools, built by great teams, with
+            different philosophies. We do our best to represent each tool
+            objectively, and{' '}
+            <a
+              href="https://github.com/nrwl/monorepo.tools?utm_source=monorepo.tools"
+              target="_blank"
+              rel="noreferrer"
+              className="border-b border-yellow-500 px-1 transition hover:rounded hover:bg-yellow-500 hover:text-gray-800"
+              title="Contribute to monorepo.tools!"
+            >
+              we welcome pull requests if we got something wrong!
+            </a>
           </p>
         </div>
       </div>
