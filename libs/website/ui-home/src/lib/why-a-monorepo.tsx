@@ -87,7 +87,7 @@ function TaxRow({
           <span className="text-xs font-bold uppercase tracking-wider text-red-600 dark:text-red-400 lg:hidden">
             Polyrepo
           </span>
-          <p className="cursor-default text-lg font-medium text-gray-800 dark:text-gray-200">
+          <p className="cursor-pointer text-lg font-medium text-gray-800 dark:text-gray-200">
             {polyrepo.title}
           </p>
           {/* Popover — always in DOM for crawlers, shown on hover */}
@@ -106,7 +106,7 @@ function TaxRow({
           <span className="text-xs font-bold uppercase tracking-wider text-green-600 dark:text-green-400 lg:hidden">
             Monorepo
           </span>
-          <p className="cursor-default text-lg font-medium text-gray-800 dark:text-gray-200">
+          <p className="cursor-pointer text-lg font-medium text-gray-800 dark:text-gray-200">
             {monorepo.title}
           </p>
           {/* Popover — always in DOM for crawlers, shown on hover */}

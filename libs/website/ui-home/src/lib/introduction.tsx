@@ -93,65 +93,45 @@ export function Introduction(): JSX.Element {
 
       {/* Overlapping cards */}
       <section className="relative z-10 mx-auto -mt-28 max-w-7xl px-4 pb-32 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 gap-y-20 lg:grid-cols-3 lg:gap-x-8 lg:gap-y-0">
-          {/*LINKS*/}
-          <div className="flex flex-col rounded-2xl bg-slate-100 shadow-xl dark:bg-slate-700">
-            <div className="relative flex-1 px-6 pb-8 pt-16 md:px-8">
-              <h2 className="text-xl font-semibold text-gray-800 dark:text-gray-200">
-                What is a monorepo
-              </h2>
-              <p className="mt-4 text-base text-gray-700 dark:text-gray-300">
-                Let's start with a common understanding of what a Monorepo is.
-              </p>
-            </div>
-            <div className="rounded-bl-2xl rounded-br-2xl bg-slate-200 p-6 md:px-8 dark:bg-slate-900">
-              <a
-                href="#what-is-a-monorepo"
-                title="What is a monorepo?"
-                className="text-sm font-medium uppercase text-gray-700 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300"
+        <div className="grid grid-cols-2 gap-4 lg:grid-cols-5">
+          {[
+            {
+              label: 'What is a monorepo',
+              href: '#what-is-a-monorepo',
+            },
+            {
+              label: 'Why a monorepo',
+              href: '#why-a-monorepo',
+            },
+            {
+              label: 'AI & Monorepos',
+              href: '#monorepo-ai',
+            },
+            {
+              label: 'Synthetic Monorepos',
+              href: '#synthetic-monorepos',
+            },
+            {
+              label: 'Best-in-class tooling',
+              href: '#best-in-class',
+            },
+          ].map((card) => (
+            <a
+              key={card.href}
+              href={card.href}
+              className="group flex items-center justify-between rounded-xl bg-slate-100 px-5 py-4 shadow-lg transition hover:bg-yellow-500 hover:text-gray-800 dark:bg-slate-700 dark:hover:bg-yellow-500"
+            >
+              <span className="text-sm font-semibold text-gray-800 group-hover:text-gray-800 dark:text-gray-200 dark:group-hover:text-gray-800">
+                {card.label}
+              </span>
+              <span
+                aria-hidden="true"
+                className="ml-2 text-gray-400 group-hover:text-gray-800"
               >
-                What is a monorepo<span aria-hidden="true"> &rarr;</span>
-              </a>
-            </div>
-          </div>
-          <div className="flex flex-col rounded-2xl bg-slate-100 shadow-xl dark:bg-slate-700">
-            <div className="relative flex-1 px-6 pb-8 pt-16 md:px-8">
-              <h2 className="text-xl font-medium text-gray-800 dark:text-gray-200">
-                Why a monorepo
-              </h2>
-              <p className="mt-4 text-base text-gray-700 dark:text-gray-300">
-                What are the situations solved by monorepos.
-              </p>
-            </div>
-            <div className="rounded-bl-2xl rounded-br-2xl bg-slate-200 p-6 md:px-8 dark:bg-slate-900">
-              <a
-                href="#why-a-monorepo"
-                title="Why using a monorepo?"
-                className="text-sm font-medium uppercase text-gray-700 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300"
-              >
-                Why a monorepo?<span aria-hidden="true"> &rarr;</span>
-              </a>
-            </div>
-          </div>
-          <div className="flex flex-col rounded-2xl bg-slate-100 shadow-xl dark:bg-slate-700">
-            <div className="relative flex-1 px-6 pb-8 pt-16 md:px-8">
-              <h2 className="text-xl font-medium text-gray-800 dark:text-gray-200">
-                Features of a monorepo
-              </h2>
-              <p className="mt-4 text-base text-gray-700 dark:text-gray-300">
-                What to expect from a monorepo tool
-              </p>
-            </div>
-            <div className="rounded-bl-2xl rounded-br-2xl bg-slate-200 p-6 md:px-8 dark:bg-slate-900">
-              <a
-                href="#monorepo-features"
-                title="What are monorepo features?"
-                className="text-sm font-medium uppercase text-gray-700 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300"
-              >
-                Monorepo features<span aria-hidden="true"> &rarr;</span>
-              </a>
-            </div>
-          </div>
+                &rarr;
+              </span>
+            </a>
+          ))}
         </div>
       </section>
     </div>

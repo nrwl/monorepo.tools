@@ -1,5 +1,6 @@
 import { Footer, Navigation } from '@monorepo-tools/website/ui-commons';
 import {
+  Contributors,
   MonorepoFeatures,
   ToolsReview,
 } from '@monorepo-tools/website/ui-compare';
@@ -42,6 +43,8 @@ export function Compare() {
         <ToolsReview />
 
         <MonorepoFeatures />
+
+        <Contributors />
       </main>
 
       <Footer />

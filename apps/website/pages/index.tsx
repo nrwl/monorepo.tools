@@ -7,7 +7,6 @@ import {
   SyntheticMonorepos,
   BestInClassFeatures,
   Resources,
-  ToolsSupportCallout,
   WhatIsAMonorepo,
   WhyAMonorepo,
 } from '@monorepo-tools/website/ui-home';
@@ -61,8 +60,6 @@ export function Index() {
         <SyntheticMonorepos />
 
         <BestInClassFeatures />
-
-        <ToolsSupportCallout />
 
         <Conclusion />
 

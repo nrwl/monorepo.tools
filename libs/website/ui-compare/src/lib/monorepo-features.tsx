@@ -55,7 +55,7 @@ export function MonorepoFeatures(): JSX.Element {
       <div className="relative mx-auto max-w-xl px-4 sm:px-6 lg:max-w-7xl lg:px-8">
         <div className="relative">
           <div className="group text-center text-4xl font-extrabold leading-8 tracking-tight text-gray-900 sm:text-5xl dark:text-white">
-            # Monorepo tools
+            # Monorepo Tools
             <a
               aria-hidden="true"
               tabIndex={-1}
@@ -75,7 +75,7 @@ export function MonorepoFeatures(): JSX.Element {
 
         {/*FAST*/}
         <div className="font-boldtext-gray-800 dark:text-gray-100tracking-tight mt-24 flex items-center text-2xl leading-loose sm:text-3xl sm:leading-relaxed lg:mt-32">
-          Fast
+          # Fast
           <div className="ml-4 flex h-1 w-full flex-grow rounded bg-slate-100 dark:bg-slate-900" />
         </div>
 
@@ -89,7 +89,7 @@ export function MonorepoFeatures(): JSX.Element {
               <DocumentArrowDownIcon className="h-6 w-6" />
             </div>
             <div className="group ml-16 text-xl font-medium text-gray-800 sm:text-2xl sm:leading-relaxed dark:text-gray-200">
-              Local computation caching
+              Local Computation Caching
               <a
                 aria-hidden="true"
                 tabIndex={-1}
@@ -231,7 +231,7 @@ export function MonorepoFeatures(): JSX.Element {
               <ArrowsUpDownIcon className="h-6 w-6" />
             </div>
             <div className="group ml-16 text-xl font-medium text-gray-800 sm:text-2xl sm:leading-relaxed dark:text-gray-200">
-              Local task orchestration
+              Local Task Orchestration
               <a
                 aria-hidden="true"
                 tabIndex={-1}
@@ -367,7 +367,7 @@ export function MonorepoFeatures(): JSX.Element {
               <CloudArrowDownIcon className="h-6 w-6" />
             </div>
             <div className="group ml-16 text-xl font-medium text-gray-800 sm:text-2xl sm:leading-relaxed dark:text-gray-200">
-              Distributed computation caching
+              Distributed Computation Caching
               <a
                 aria-hidden="true"
                 tabIndex={-1}
@@ -515,7 +515,7 @@ export function MonorepoFeatures(): JSX.Element {
               <RectangleStackIcon className="h-6 w-6" />
             </div>
             <div className="group ml-16 text-xl font-medium text-gray-800 sm:text-2xl sm:leading-relaxed dark:text-gray-200">
-              Distributed task execution
+              Distributed Task Execution
               <a
                 aria-hidden="true"
                 tabIndex={-1}
@@ -653,7 +653,7 @@ export function MonorepoFeatures(): JSX.Element {
               <ServerIcon className="h-6 w-6" />
             </div>
             <div className="group ml-16 text-xl font-medium text-gray-800 sm:text-2xl sm:leading-relaxed dark:text-gray-200">
-              Transparent remote execution
+              Transparent Remote Execution
               <a
                 aria-hidden="true"
                 tabIndex={-1}
@@ -775,7 +775,7 @@ export function MonorepoFeatures(): JSX.Element {
               <LightBulbIcon className="h-6 w-6" />
             </div>
             <div className="group ml-16 text-xl font-medium text-gray-800 sm:text-2xl sm:leading-relaxed dark:text-gray-200">
-              Detecting affected projects/packages
+              Detecting Affected Projects/Packages
               <a
                 aria-hidden="true"
                 tabIndex={-1}
@@ -912,9 +912,235 @@ export function MonorepoFeatures(): JSX.Element {
           </dl>
         </div>
 
+        {/*Task Splitting*/}
+        <div
+          id="task-splitting"
+          className="relative mt-16 lg:grid lg:grid-cols-2 lg:items-start lg:gap-12"
+        >
+          <div className="relative">
+            <div className="absolute flex h-10 w-10 items-center justify-center rounded-md rounded-md bg-slate-100 text-gray-800 dark:bg-slate-900 dark:text-gray-200">
+              <RectangleStackIcon className="h-6 w-6" />
+            </div>
+            <div className="group ml-16 text-xl font-medium text-gray-800 sm:text-2xl sm:leading-relaxed dark:text-gray-200">
+              Task Splitting
+              <a
+                aria-hidden="true"
+                tabIndex={-1}
+                href="#task-splitting"
+                className="flex inline-flex items-center text-gray-900 dark:text-white"
+              >
+                <LinkIcon className="ml-2 h-6 w-6 opacity-0 group-hover:opacity-100" />
+              </a>
+            </div>
+
+            <p className="mt-3 text-lg text-gray-700 dark:text-gray-300">
+              Break large tasks into fine-grained cacheable units. Each slice
+              can be cached and distributed independently.
+            </p>
+
+            <div className="mt-10" aria-hidden="true">
+              <img
+                loading="lazy"
+                className="relative mx-auto"
+                width={490}
+                src="/images/task-splitting.svg"
+                alt="task splitting"
+              />
+            </div>
+          </div>
+
+          <dl className="mt-12 space-y-6 md:mt-0">
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
+              <dt>
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
+                  <ManualImplementation /> Bazel
+                </p>
+              </dt>
+              <dd className="mt-4 text-gray-600 dark:text-gray-400">???</dd>
+            </div>
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
+              <dt>
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
+                  <ManualImplementation /> Gradle Build Tool
+                </p>
+              </dt>
+              <dd className="mt-4 text-gray-600 dark:text-gray-400">???</dd>
+            </div>
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
+              <dt>
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
+                  <ManualImplementation /> Lage
+                </p>
+              </dt>
+              <dd className="mt-4 text-gray-600 dark:text-gray-400">???</dd>
+            </div>
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
+              <dt>
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
+                  <ManualImplementation /> Lerna
+                </p>
+              </dt>
+              <dd className="mt-4 text-gray-600 dark:text-gray-400">???</dd>
+            </div>
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
+              <dt>
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
+                  <ManualImplementation /> moon
+                </p>
+              </dt>
+              <dd className="mt-4 text-gray-600 dark:text-gray-400">???</dd>
+            </div>
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
+              <dt>
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
+                  <ManualImplementation /> Nx
+                </p>
+              </dt>
+              <dd className="mt-4 text-gray-600 dark:text-gray-400">???</dd>
+            </div>
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
+              <dt>
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
+                  <ManualImplementation /> Pants
+                </p>
+              </dt>
+              <dd className="mt-4 text-gray-600 dark:text-gray-400">???</dd>
+            </div>
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
+              <dt>
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
+                  <ManualImplementation /> Rush
+                </p>
+              </dt>
+              <dd className="mt-4 text-gray-600 dark:text-gray-400">???</dd>
+            </div>
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
+              <dt>
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
+                  <ManualImplementation /> Turborepo
+                </p>
+              </dt>
+              <dd className="mt-4 text-gray-600 dark:text-gray-400">???</dd>
+            </div>
+          </dl>
+        </div>
+
+        {/*Deflaking*/}
+        <div
+          id="deflaking"
+          className="relative mt-16 lg:grid lg:grid-cols-2 lg:items-start lg:gap-12"
+        >
+          <div className="relative">
+            <div className="absolute flex h-10 w-10 items-center justify-center rounded-md rounded-md bg-slate-100 text-gray-800 dark:bg-slate-900 dark:text-gray-200">
+              <ExclamationCircleIcon className="h-6 w-6" />
+            </div>
+            <div className="group ml-16 text-xl font-medium text-gray-800 sm:text-2xl sm:leading-relaxed dark:text-gray-200">
+              Deflaking
+              <a
+                aria-hidden="true"
+                tabIndex={-1}
+                href="#deflaking"
+                className="flex inline-flex items-center text-gray-900 dark:text-white"
+              >
+                <LinkIcon className="ml-2 h-6 w-6 opacity-0 group-hover:opacity-100" />
+              </a>
+            </div>
+
+            <p className="mt-3 text-lg text-gray-700 dark:text-gray-300">
+              Automatically detect flaky tests, quarantine them, and re-run only
+              what failed. Keep your CI signal clean.
+            </p>
+
+            <div className="mt-10" aria-hidden="true">
+              <img
+                loading="lazy"
+                className="relative mx-auto"
+                width={490}
+                src="/images/deflaking.svg"
+                alt="deflaking"
+              />
+            </div>
+          </div>
+
+          <dl className="mt-12 space-y-6 md:mt-0">
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
+              <dt>
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
+                  <ManualImplementation /> Bazel
+                </p>
+              </dt>
+              <dd className="mt-4 text-gray-600 dark:text-gray-400">???</dd>
+            </div>
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
+              <dt>
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
+                  <ManualImplementation /> Gradle Build Tool
+                </p>
+              </dt>
+              <dd className="mt-4 text-gray-600 dark:text-gray-400">???</dd>
+            </div>
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
+              <dt>
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
+                  <ManualImplementation /> Lage
+                </p>
+              </dt>
+              <dd className="mt-4 text-gray-600 dark:text-gray-400">???</dd>
+            </div>
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
+              <dt>
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
+                  <ManualImplementation /> Lerna
+                </p>
+              </dt>
+              <dd className="mt-4 text-gray-600 dark:text-gray-400">???</dd>
+            </div>
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
+              <dt>
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
+                  <ManualImplementation /> moon
+                </p>
+              </dt>
+              <dd className="mt-4 text-gray-600 dark:text-gray-400">???</dd>
+            </div>
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
+              <dt>
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
+                  <ManualImplementation /> Nx
+                </p>
+              </dt>
+              <dd className="mt-4 text-gray-600 dark:text-gray-400">???</dd>
+            </div>
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
+              <dt>
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
+                  <ManualImplementation /> Pants
+                </p>
+              </dt>
+              <dd className="mt-4 text-gray-600 dark:text-gray-400">???</dd>
+            </div>
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
+              <dt>
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
+                  <ManualImplementation /> Rush
+                </p>
+              </dt>
+              <dd className="mt-4 text-gray-600 dark:text-gray-400">???</dd>
+            </div>
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
+              <dt>
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
+                  <ManualImplementation /> Turborepo
+                </p>
+              </dt>
+              <dd className="mt-4 text-gray-600 dark:text-gray-400">???</dd>
+            </div>
+          </dl>
+        </div>
+
         {/*UNDERSTANDABLE*/}
         <div className="font-boldtext-gray-800 dark:text-gray-100tracking-tight mt-24 flex items-center text-2xl leading-loose sm:text-3xl sm:leading-relaxed lg:mt-32">
-          Understandable
+          # Understandable
           <div className="ml-4 flex h-1 w-full flex-grow rounded bg-slate-100 dark:bg-slate-900" />
         </div>
 
@@ -928,7 +1154,7 @@ export function MonorepoFeatures(): JSX.Element {
               <PresentationChartLineIcon className="h-6 w-6" />
             </div>
             <div className="group ml-16 text-xl font-medium text-gray-800 sm:text-2xl sm:leading-relaxed dark:text-gray-200">
-              Workspace analysis
+              Workspace Analysis
               <a
                 aria-hidden="true"
                 tabIndex={-1}
@@ -1073,7 +1299,7 @@ export function MonorepoFeatures(): JSX.Element {
               <PresentationChartLineIcon className="h-6 w-6" />
             </div>
             <div className="group ml-16 text-xl font-medium text-gray-800 sm:text-2xl sm:leading-relaxed dark:text-gray-200">
-              Project graph visualization
+              Project Graph Visualization
               <a
                 aria-hidden="true"
                 tabIndex={-1}
@@ -1212,7 +1438,7 @@ export function MonorepoFeatures(): JSX.Element {
 
         {/*MANAGEMENT*/}
         <div className="font-boldtext-gray-800 dark:text-gray-100tracking-tight mt-24 flex items-center text-2xl leading-loose sm:text-3xl sm:leading-relaxed lg:mt-32">
-          Manageable
+          # Manageable
           <div className="ml-4 flex h-1 w-full flex-grow rounded bg-slate-100 dark:bg-slate-900" />
         </div>
 
@@ -1226,7 +1452,7 @@ export function MonorepoFeatures(): JSX.Element {
               <CodeBracketIcon className="h-6 w-6" />
             </div>
             <div className="group ml-16 text-xl font-medium text-gray-800 sm:text-2xl sm:leading-relaxed dark:text-gray-200">
-              Source code sharing
+              Source Code Sharing
               <a
                 aria-hidden="true"
                 tabIndex={-1}
@@ -1377,7 +1603,7 @@ export function MonorepoFeatures(): JSX.Element {
               <CommandLineIcon className="h-6 w-6" />
             </div>
             <div className="group ml-16 text-xl font-medium text-gray-800 sm:text-2xl sm:leading-relaxed dark:text-gray-200">
-              Consistent tooling
+              Polyglot Support
               <a
                 aria-hidden="true"
                 tabIndex={-1}
@@ -1389,19 +1615,8 @@ export function MonorepoFeatures(): JSX.Element {
             </div>
 
             <p className="mt-3 text-lg text-gray-700 dark:text-gray-300">
-              The tool helps you get a consistent experience regardless of what
-              you use to develop your projects: different JavaScript frameworks,
-              Go, Rust, Java, etc. <br />
-              In other words, the tool treats different technologies the same
-              way.
-            </p>
-
-            <p className="mt-3 text-lg text-gray-700 dark:text-gray-300">
-              For instance, the tool can analyze package.json and JS/TS files to
-              figure out JS project deps, and how to build and test them. But it
-              will analyze Cargo.toml files to do the same for Rust, or Gradle
-              files to do the same for Java. This requires the tool to be
-              pluggable.
+              Same commands for building, testing, and serving regardless of
+              what language, framework, or tool a project uses.
             </p>
 
             <div className="mt-10" aria-hidden="true">
@@ -1540,7 +1755,7 @@ export function MonorepoFeatures(): JSX.Element {
               <CogIcon className="h-6 w-6" />
             </div>
             <div className="group ml-16 text-xl font-medium text-gray-800 sm:text-2xl sm:leading-relaxed dark:text-gray-200">
-              Code generation
+              Code Generation
               <a
                 aria-hidden="true"
                 tabIndex={-1}
@@ -1692,7 +1907,7 @@ export function MonorepoFeatures(): JSX.Element {
               <SignalIcon className="h-6 w-6" />
             </div>
             <div className="group ml-16 text-xl font-medium text-gray-800 sm:text-2xl sm:leading-relaxed dark:text-gray-200">
-              Project constraints and visibility
+              Project Constraints and Visibility
               <a
                 aria-hidden="true"
                 tabIndex={-1}
@@ -1837,6 +2052,242 @@ export function MonorepoFeatures(): JSX.Element {
                 A linter with a set of custom rules and extra configuration can
                 be used to ensure that some constraints hold.
               </dd>
+            </div>
+          </dl>
+        </div>
+
+        {/*AI-READY*/}
+        <div className="font-boldtext-gray-800 dark:text-gray-100tracking-tight mt-24 flex items-center text-2xl leading-loose sm:text-3xl sm:leading-relaxed lg:mt-32">
+          <span className="whitespace-nowrap"># AI-Ready</span>
+          <div className="ml-4 flex h-1 w-full flex-grow rounded bg-slate-100 dark:bg-slate-900" />
+        </div>
+
+        {/*AI Skills and MCP*/}
+        <div
+          id="ai-skills-and-mcp"
+          className="relative mt-16 lg:grid lg:grid-cols-2 lg:items-start lg:gap-12"
+        >
+          <div className="relative">
+            <div className="absolute flex h-10 w-10 items-center justify-center rounded-md rounded-md bg-slate-100 text-gray-800 dark:bg-slate-900 dark:text-gray-200">
+              <CommandLineIcon className="h-6 w-6" />
+            </div>
+            <div className="group ml-16 text-xl font-medium text-gray-800 sm:text-2xl sm:leading-relaxed dark:text-gray-200">
+              AI Skills and MCP
+              <a
+                aria-hidden="true"
+                tabIndex={-1}
+                href="#ai-skills-and-mcp"
+                className="flex inline-flex items-center text-gray-900 dark:text-white"
+              >
+                <LinkIcon className="ml-2 h-6 w-6 opacity-0 group-hover:opacity-100" />
+              </a>
+            </div>
+
+            <p className="mt-3 text-lg text-gray-700 dark:text-gray-300">
+              Monorepo tooling can expose its capabilities to AI agents: project
+              graph awareness, task execution, code generation, and more. Agents
+              that understand your workspace structure make better decisions and
+              produce higher-quality code.
+            </p>
+
+            <div className="mt-10" aria-hidden="true">
+              <img
+                loading="lazy"
+                className="relative mx-auto"
+                width={490}
+                src="/images/mcp-skills.svg"
+                alt="AI skills and MCP"
+              />
+            </div>
+          </div>
+
+          <dl className="mt-12 space-y-6 md:mt-0">
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
+              <dt>
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
+                  <ManualImplementation /> Bazel
+                </p>
+              </dt>
+              <dd className="mt-4 text-gray-600 dark:text-gray-400">???</dd>
+            </div>
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
+              <dt>
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
+                  <ManualImplementation /> Gradle Build Tool
+                </p>
+              </dt>
+              <dd className="mt-4 text-gray-600 dark:text-gray-400">???</dd>
+            </div>
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
+              <dt>
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
+                  <NotSupported /> Lage
+                </p>
+              </dt>
+              <dd className="mt-4 text-gray-600 dark:text-gray-400">???</dd>
+            </div>
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
+              <dt>
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
+                  <NotSupported /> Lerna
+                </p>
+              </dt>
+              <dd className="mt-4 text-gray-600 dark:text-gray-400">???</dd>
+            </div>
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
+              <dt>
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
+                  <Supported /> moon
+                </p>
+              </dt>
+              <dd className="mt-4 text-gray-600 dark:text-gray-400">???</dd>
+            </div>
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
+              <dt>
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
+                  <Supported /> Nx
+                </p>
+              </dt>
+              <dd className="mt-4 text-gray-600 dark:text-gray-400">???</dd>
+            </div>
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
+              <dt>
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
+                  <NotSupported /> Pants
+                </p>
+              </dt>
+              <dd className="mt-4 text-gray-600 dark:text-gray-400">???</dd>
+            </div>
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
+              <dt>
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
+                  <Supported /> Rush
+                </p>
+              </dt>
+              <dd className="mt-4 text-gray-600 dark:text-gray-400">???</dd>
+            </div>
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
+              <dt>
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
+                  <NotSupported /> Turborepo
+                </p>
+              </dt>
+              <dd className="mt-4 text-gray-600 dark:text-gray-400">???</dd>
+            </div>
+          </dl>
+        </div>
+
+        {/*Agentic CI*/}
+        <div
+          id="agentic-ci"
+          className="relative mt-16 lg:grid lg:grid-cols-2 lg:items-start lg:gap-12"
+        >
+          <div className="relative">
+            <div className="absolute flex h-10 w-10 items-center justify-center rounded-md rounded-md bg-slate-100 text-gray-800 dark:bg-slate-900 dark:text-gray-200">
+              <CogIcon className="h-6 w-6" />
+            </div>
+            <div className="group ml-16 text-xl font-medium text-gray-800 sm:text-2xl sm:leading-relaxed dark:text-gray-200">
+              Agentic CI
+              <a
+                aria-hidden="true"
+                tabIndex={-1}
+                href="#agentic-ci"
+                className="flex inline-flex items-center text-gray-900 dark:text-white"
+              >
+                <LinkIcon className="ml-2 h-6 w-6 opacity-0 group-hover:opacity-100" />
+              </a>
+            </div>
+
+            <p className="mt-3 text-lg text-gray-700 dark:text-gray-300">
+              AI-powered CI that goes beyond just running tasks. Self-healing
+              broken PRs by diagnosing failures and proposing fixes,
+              automatically re-running flaky tasks, and providing intelligent
+              feedback to developers.
+            </p>
+
+            <div className="mt-10" aria-hidden="true">
+              <img
+                loading="lazy"
+                className="relative mx-auto"
+                width={490}
+                src="/images/self-healing-ci.svg"
+                alt="agentic CI"
+              />
+            </div>
+          </div>
+
+          <dl className="mt-12 space-y-6 md:mt-0">
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
+              <dt>
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
+                  <ManualImplementation /> Bazel
+                </p>
+              </dt>
+              <dd className="mt-4 text-gray-600 dark:text-gray-400">???</dd>
+            </div>
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
+              <dt>
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
+                  <ManualImplementation /> Gradle Build Tool
+                </p>
+              </dt>
+              <dd className="mt-4 text-gray-600 dark:text-gray-400">???</dd>
+            </div>
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
+              <dt>
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
+                  <ManualImplementation /> Lage
+                </p>
+              </dt>
+              <dd className="mt-4 text-gray-600 dark:text-gray-400">???</dd>
+            </div>
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
+              <dt>
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
+                  <ManualImplementation /> Lerna
+                </p>
+              </dt>
+              <dd className="mt-4 text-gray-600 dark:text-gray-400">???</dd>
+            </div>
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
+              <dt>
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
+                  <ManualImplementation /> moon
+                </p>
+              </dt>
+              <dd className="mt-4 text-gray-600 dark:text-gray-400">???</dd>
+            </div>
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
+              <dt>
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
+                  <ManualImplementation /> Nx
+                </p>
+              </dt>
+              <dd className="mt-4 text-gray-600 dark:text-gray-400">???</dd>
+            </div>
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
+              <dt>
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
+                  <ManualImplementation /> Pants
+                </p>
+              </dt>
+              <dd className="mt-4 text-gray-600 dark:text-gray-400">???</dd>
+            </div>
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
+              <dt>
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
+                  <ManualImplementation /> Rush
+                </p>
+              </dt>
+              <dd className="mt-4 text-gray-600 dark:text-gray-400">???</dd>
+            </div>
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
+              <dt>
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
+                  <ManualImplementation /> Turborepo
+                </p>
+              </dt>
+              <dd className="mt-4 text-gray-600 dark:text-gray-400">???</dd>
             </div>
           </dl>
         </div>

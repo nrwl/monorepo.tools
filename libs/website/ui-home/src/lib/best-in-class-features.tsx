@@ -17,31 +17,31 @@ const categories: {
     label: 'Fast',
     features: [
       {
-        name: 'Local caching',
+        name: 'Local Caching',
         description:
           'Store and replay file and process output of tasks. On the same machine, you never build or test the same thing twice.',
         image: '/images/local-computation-caching.svg',
       },
       {
-        name: 'Remote caching',
+        name: 'Remote Caching',
         description:
           'Share computation results across your entire organization. If a teammate already built it, you get the result instantly.',
         image: '/images/distributed-computation-caching.svg',
       },
       {
-        name: 'Distributed task execution',
+        name: 'Distributed Task Execution',
         description:
           'Distribute work across multiple machines while preserving the developer experience of running everything locally.',
         image: '/images/distributed-tasks-execution.svg',
       },
       {
-        name: 'Affected detection',
+        name: 'Affected Detection',
         description:
           'Determine which projects are affected by a given change and only run the relevant tasks. Skip everything else.',
         image: '/images/affected-detection.svg',
       },
       {
-        name: 'Task splitting',
+        name: 'Task Splitting',
         description:
           'Break large tasks into fine-grained cacheable units. Each slice can be cached and distributed independently.',
         image: '/images/task-splitting.svg',
@@ -59,13 +59,13 @@ const categories: {
     label: 'Understandable',
     features: [
       {
-        name: 'Workspace analysis',
+        name: 'Workspace Analysis',
         description:
           'Automatically analyzes your workspace to understand how projects relate to each other, what each project contains, and what metadata is available.',
         image: '/images/workspace-analysis.svg',
       },
       {
-        name: 'Project graph visualization',
+        name: 'Project Graph Visualization',
         description:
           'Visualize dependency relationships between projects with an interactive, filterable graph. Understand your architecture at a glance.',
         image: '/images/dependency-graph.svg',
@@ -77,25 +77,25 @@ const categories: {
     label: 'Manageable',
     features: [
       {
-        name: 'Code sharing',
+        name: 'Code Sharing',
         description:
           'Share code between projects without publishing to a registry. Creating a shared library is as simple as creating a folder — existing CI handles everything.',
         image: '/images/source-code-sharing.svg',
       },
       {
-        name: 'Polyglot support',
+        name: 'Polyglot Support',
         description:
           'Same commands for building, testing, and serving regardless of what language, framework, or tool a project uses.',
         image: '/images/consistent-tooling.svg',
       },
       {
-        name: 'Code generation',
+        name: 'Code Generation',
         description:
           'Scaffold new projects, libraries, and components with a single command. Generators ensure consistency and encode organizational best practices.',
         image: '/images/code-generation.svg',
       },
       {
-        name: 'Project constraints',
+        name: 'Project Constraints',
         description:
           'Define and enforce rules about which projects can depend on each other. Prevent architectural drift and keep boundaries clean as the codebase scales.',
         image: '/images/project-constrains-and-visibility.svg',
@@ -135,7 +135,7 @@ export function BestInClassFeatures(): JSX.Element {
       <div className="relative mx-auto max-w-xl px-4 sm:px-6 lg:max-w-7xl lg:px-8">
         <div className="relative text-center">
           <div className="group text-4xl font-extrabold leading-8 tracking-tight text-gray-900 dark:text-white sm:text-5xl">
-            # What a best-in-class tool provides
+            # What a Best-in-Class Tool Provides
             <a
               aria-hidden="true"
               tabIndex={-1}

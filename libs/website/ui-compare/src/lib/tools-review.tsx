@@ -181,6 +181,40 @@ const fast: Item[] = [
       { title: 'Turborepo', value: 'supported' },
     ],
   },
+  {
+    title: 'Task splitting',
+    link: '#task-splitting',
+    tooltip:
+      'Break large tasks into fine-grained cacheable units that can be cached and distributed independently.',
+    features: [
+      { title: 'Bazel', value: 'notSupported' },
+      { title: 'Gradle', value: 'notSupported' },
+      { title: 'Lage', value: 'notSupported' },
+      { title: 'Lerna', value: 'notSupported' },
+      { title: 'moon', value: 'notSupported' },
+      { title: 'Nx', value: 'notSupported' },
+      { title: 'Pants', value: 'notSupported' },
+      { title: 'Rush', value: 'notSupported' },
+      { title: 'Turborepo', value: 'notSupported' },
+    ],
+  },
+  {
+    title: 'Deflaking',
+    link: '#deflaking',
+    tooltip:
+      'Automatically detect flaky tests, quarantine them, and re-run only what failed.',
+    features: [
+      { title: 'Bazel', value: 'notSupported' },
+      { title: 'Gradle', value: 'notSupported' },
+      { title: 'Lage', value: 'notSupported' },
+      { title: 'Lerna', value: 'notSupported' },
+      { title: 'moon', value: 'notSupported' },
+      { title: 'Nx', value: 'notSupported' },
+      { title: 'Pants', value: 'notSupported' },
+      { title: 'Rush', value: 'notSupported' },
+      { title: 'Turborepo', value: 'notSupported' },
+    ],
+  },
 ];
 const understandable: Item[] = [
   {
@@ -236,10 +270,10 @@ const manageable: Item[] = [
     ],
   },
   {
-    title: 'Consistent tooling',
+    title: 'Polyglot support',
     link: '#consistent-tooling',
     tooltip:
-      'The tool helps you get a consistent experience regardless of what you use to develop your projects: different JavaScript frameworks, Go, Java, etc.',
+      'Same commands for building, testing, and serving regardless of what language, framework, or tool a project uses.',
     features: [
       { title: 'Bazel', value: 'supported' },
       { title: 'Gradle', value: 'supported' },
@@ -288,10 +322,10 @@ const manageable: Item[] = [
 ];
 const aiSupport: Item[] = [
   {
-    title: 'MCP Server Support',
-    link: '#ai-support',
+    title: 'AI Skills and MCP',
+    link: '#ai-skills-and-mcp',
     tooltip:
-      'Model Context Protocol server implementation for AI assistant integration.',
+      'Monorepo tooling can expose its capabilities to AI agents: project graph awareness, task execution, code generation, and more.',
     features: [
       { title: 'Bazel', value: 'manualImplementation' },
       { title: 'Gradle', value: 'manualImplementation' },
@@ -301,6 +335,23 @@ const aiSupport: Item[] = [
       { title: 'Nx', value: 'supported' },
       { title: 'Pants', value: 'notSupported' },
       { title: 'Rush', value: 'supported' },
+      { title: 'Turborepo', value: 'notSupported' },
+    ],
+  },
+  {
+    title: 'Agentic CI',
+    link: '#agentic-ci',
+    tooltip:
+      'AI-powered CI that self-heals broken PRs, re-runs flaky tasks, and provides intelligent feedback.',
+    features: [
+      { title: 'Bazel', value: 'notSupported' },
+      { title: 'Gradle', value: 'notSupported' },
+      { title: 'Lage', value: 'notSupported' },
+      { title: 'Lerna', value: 'notSupported' },
+      { title: 'moon', value: 'notSupported' },
+      { title: 'Nx', value: 'notSupported' },
+      { title: 'Pants', value: 'notSupported' },
+      { title: 'Rush', value: 'notSupported' },
       { title: 'Turborepo', value: 'notSupported' },
     ],
   },
@@ -349,8 +400,8 @@ export function ToolsReview(): JSX.Element {
       <div className="relative">
         <div className="relative mx-auto max-w-2xl px-4 pt-16 text-center sm:px-6 sm:pt-32 lg:max-w-7xl lg:px-8">
           <div className="group text-4xl font-extrabold tracking-tight text-gray-900 sm:text-6xl dark:text-white">
-            <span className="block lg:inline">Many solutions,</span>
-            <span className="block lg:inline"> for different goals</span>
+            <span className="block lg:inline"># Many Solutions,</span>
+            <span className="block lg:inline"> for Different Goals</span>
             <a
               aria-hidden="true"
               tabIndex={-1}
