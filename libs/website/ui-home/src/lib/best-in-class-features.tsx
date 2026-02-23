@@ -172,17 +172,8 @@ export function BestInClassFeatures(): JSX.Element {
         <div className="mt-4 rounded-lg border border-slate-200/50 bg-white/50 p-6 dark:border-slate-700/50 dark:bg-slate-900/50 lg:p-8">
           <div className="grid gap-6 sm:grid-cols-2">
             {activeCategory.features.map((feature) => (
-              <div key={feature.name} className="relative overflow-hidden rounded-lg bg-white p-5 dark:bg-slate-800">
-                {feature.image && (
-                  <img
-                    loading="lazy"
-                    className="pointer-events-none absolute right-0 top-0 h-full w-auto opacity-[0.35] dark:opacity-[0.2]"
-                    src={feature.image}
-                    alt=""
-                    aria-hidden="true"
-                  />
-                )}
-                <div className="relative max-w-[70%]">
+              <div key={feature.name} className="flex items-stretch overflow-hidden rounded-lg bg-white dark:bg-slate-800">
+                <div className="flex flex-1 flex-col justify-center p-5">
                   <h3 className="text-lg font-bold text-gray-900 dark:text-white">
                     {feature.name}
                   </h3>
@@ -190,6 +181,16 @@ export function BestInClassFeatures(): JSX.Element {
                     {feature.description}
                   </p>
                 </div>
+                {feature.image && (
+                  <div className="flex w-[40%] shrink-0 items-center justify-center bg-slate-50 p-4 dark:bg-slate-700/50">
+                    <img
+                      loading="lazy"
+                      className="h-auto w-full"
+                      src={feature.image}
+                      alt={`${feature.name} illustration`}
+                    />
+                  </div>
+                )}
               </div>
             ))}
           </div>
