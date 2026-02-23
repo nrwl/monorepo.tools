@@ -83,7 +83,7 @@ const categories: {
         image: '/images/source-code-sharing.svg',
       },
       {
-        name: 'Consistent tooling',
+        name: 'Polyglot support',
         description:
           'Same commands for building, testing, and serving regardless of what language, framework, or tool a project uses.',
         image: '/images/consistent-tooling.svg',
@@ -110,16 +110,12 @@ const categories: {
         name: 'MCP & Skills',
         description:
           'AI agents connect to your workspace through the Model Context Protocol. They read the project graph, understand task dependencies, and execute builds — not just edit files.',
+        image: '/images/mcp-skills.svg',
       },
       {
         name: 'Self-healing CI',
         description:
           'When a PR breaks CI, an AI agent diagnoses the failure, proposes a fix, and pushes a correction — automatically, without waiting for a human.',
-      },
-      {
-        name: 'Polyglot support',
-        description:
-          'A uniform metadata layer regardless of language or framework. AI agents get the same structured context whether the project is TypeScript, Java, Go, or Python.',
       },
     ],
   },
