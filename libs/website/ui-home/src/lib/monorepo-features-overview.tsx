@@ -57,7 +57,7 @@ const features = [
     anchor: 'workspace-analysis',
   },
   {
-    name: 'Dependency graph visualization',
+    name: 'Project graph visualization',
     category: 'Understandable',
     icon: PresentationChartLineIcon,
     anchor: 'dependency-graph-visualization',

@@ -65,7 +65,7 @@ const categories: {
         image: '/images/workspace-analysis.svg',
       },
       {
-        name: 'Dependency graph visualization',
+        name: 'Project graph visualization',
         description:
           'Visualize dependency relationships between projects with an interactive, filterable graph. Understand your architecture at a glance.',
         image: '/images/dependency-graph.svg',
@@ -116,6 +116,7 @@ const categories: {
         name: 'Self-healing CI',
         description:
           'When a PR breaks CI, an AI agent diagnoses the failure, proposes a fix, and pushes a correction — automatically, without waiting for a human.',
+        image: '/images/self-healing-ci.svg',
       },
     ],
   },

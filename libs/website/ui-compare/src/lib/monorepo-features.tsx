@@ -1073,7 +1073,7 @@ export function MonorepoFeatures(): JSX.Element {
               <PresentationChartLineIcon className="h-6 w-6" />
             </div>
             <div className="group ml-16 text-xl font-medium text-gray-800 sm:text-2xl sm:leading-relaxed dark:text-gray-200">
-              Dependency graph visualization
+              Project graph visualization
               <a
                 aria-hidden="true"
                 tabIndex={-1}

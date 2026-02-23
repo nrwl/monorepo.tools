@@ -201,7 +201,7 @@ const understandable: Item[] = [
     ],
   },
   {
-    title: 'Dependency graph visualization',
+    title: 'Project graph visualization',
     link: '#dependency-graph-visualization',
     tooltip:
       'Visualize dependency relationships between projects and/or tasks.',
