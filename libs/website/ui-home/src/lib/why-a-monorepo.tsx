@@ -158,44 +158,58 @@ export function WhyAMonorepo(): JSX.Element {
 
       {/* Intro */}
       <article className="relative mx-auto mt-24 max-w-lg lg:mt-36 lg:max-w-7xl">
-        <div className="mx-auto max-w-2xl">
-          <h1
-            id="polyrepo-concept"
-            className="group text-3xl font-semibold tracking-tight text-gray-800 dark:text-gray-100 sm:text-4xl"
-          >
-            A &ldquo;Polyrepo&rdquo;
-            <a
-              aria-hidden="true"
-              tabIndex={-1}
-              href="#polyrepo-concept"
-              className="flex inline-flex items-center text-gray-900 dark:text-white"
+        <div className="grid items-center gap-12 lg:grid-cols-2">
+          <div>
+            <h1
+              id="polyrepo-concept"
+              className="group text-3xl font-semibold tracking-tight text-gray-800 dark:text-gray-100 sm:text-4xl"
             >
-              <LinkIcon className="ml-2 h-6 w-6 opacity-0 group-hover:opacity-100" />
-            </a>
-          </h1>
-          <p className="mt-3 text-xl text-gray-700 dark:text-gray-300 sm:mt-4">
-            The opposite of a monorepo is often called a
-            &ldquo;polyrepo&rdquo;: each team or application lives in its own
-            repository, with its own dependencies, tooling, build artifact, and
-            CI pipeline.
-          </p>
-          <img
-            aria-hidden="true"
-            loading="lazy"
-            className="mt-10 h-full w-full object-cover"
-            src="/images/polyrepo-practice.svg"
-            alt="polyrepo practice"
-          />
-          <p className="mt-3 text-xl text-gray-700 dark:text-gray-300 sm:mt-4">
-            Organizations adopt polyrepos to give teams autonomy: independent
-            choices about libraries, release cadence, and contribution rules.
-            But this autonomy comes through{' '}
-            <b className="text-semibold">isolation</b>, and isolation
-            doesn&apos;t eliminate the need for integration. It just delays it.
-            Shared contracts still need to align. Breaking changes still need
-            coordinating. The feedback just arrives later in the development
-            cycle, when it&apos;s harder and more expensive to act on.
-          </p>
+              A &ldquo;Polyrepo&rdquo;
+              <a
+                aria-hidden="true"
+                tabIndex={-1}
+                href="#polyrepo-concept"
+                className="flex inline-flex items-center text-gray-900 dark:text-white"
+              >
+                <LinkIcon className="ml-2 h-6 w-6 opacity-0 group-hover:opacity-100" />
+              </a>
+            </h1>
+            <p className="mt-3 text-xl text-gray-700 dark:text-gray-300 sm:mt-4">
+              The opposite of a monorepo is often called a
+              &ldquo;polyrepo&rdquo;: each team or application lives in{' '}
+              <b className="text-gray-900 dark:text-white">
+                its own repository
+              </b>
+              , with its own dependencies, tooling, build artifact, and CI
+              pipeline.
+            </p>
+            <p className="mt-3 text-xl text-gray-700 dark:text-gray-300 sm:mt-4">
+              Organizations adopt polyrepos to give teams{' '}
+              <b className="text-gray-900 dark:text-white">autonomy</b>:
+              independent choices about libraries, release cadence, and
+              contribution rules. But this autonomy comes through{' '}
+              <b className="text-gray-900 dark:text-white">isolation</b>, and
+              isolation doesn&apos;t eliminate the need for integration.{' '}
+              <b className="text-gray-900 dark:text-white">
+                It just delays it.
+              </b>{' '}
+              Shared contracts still need to align. Breaking changes still need
+              coordinating. The feedback just arrives{' '}
+              <b className="text-gray-900 dark:text-white">
+                later in the development cycle
+              </b>
+              , when it&apos;s harder and more expensive to act on.
+            </p>
+          </div>
+          <div>
+            <img
+              aria-hidden="true"
+              loading="lazy"
+              className="h-full w-full object-cover"
+              src="/images/polyrepo-practice.svg"
+              alt="polyrepo practice"
+            />
+          </div>
         </div>
 
         {/* Side-by-side comparison */}
