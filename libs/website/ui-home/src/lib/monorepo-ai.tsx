@@ -164,7 +164,7 @@ function PointCard({
         <div
           className={`col-start-1 row-start-1 rounded-lg border border-dashed border-slate-300 bg-slate-50 px-5 py-4 transition-all duration-300 dark:border-slate-600 dark:bg-slate-800 ${
             flipped
-              ? 'z-10 translate-x-2.5 translate-y-8 shadow-sm'
+              ? 'z-10 translate-x-2.5 translate-y-8 shadow-sm hover:translate-y-6 hover:shadow-md'
               : 'z-0'
           }`}
         >
@@ -181,7 +181,7 @@ function PointCard({
           className={`col-start-1 row-start-1 rounded-lg border border-green-200/60 bg-green-50 px-5 py-4 transition-all duration-300 dark:border-green-800/40 dark:bg-slate-800 ${
             flipped
               ? 'z-0'
-              : 'z-10 translate-x-2.5 translate-y-8 shadow-sm'
+              : 'z-10 translate-x-2.5 translate-y-8 shadow-sm hover:translate-y-6 hover:shadow-md'
           }`}
         >
           <span className="text-xs font-bold uppercase tracking-wider text-green-600 dark:text-green-400">
