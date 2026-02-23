@@ -1,5 +1,4 @@
 import { LinkIcon } from '@heroicons/react/24/outline';
-import { useState } from 'react';
 
 const taxItems = [
   {
@@ -79,18 +78,10 @@ function TaxRow({
   polyrepo: { title: string; detail: string };
   monorepo: { title: string; detail: string };
 }): JSX.Element {
-  const [activePopover, setActivePopover] = useState<
-    'polyrepo' | 'monorepo' | null
-  >(null);
-
   return (
     <div className="grid gap-x-8 gap-y-2 lg:grid-cols-2">
       {/* Polyrepo item */}
-      <div
-        className="group relative flex items-start gap-3 py-2"
-        onMouseEnter={() => setActivePopover('polyrepo')}
-        onMouseLeave={() => setActivePopover(null)}
-      >
+      <div className="group/poly relative flex items-start gap-3 py-2">
         <PulsingDot color="red" />
         <div>
           <span className="text-xs font-bold uppercase tracking-wider text-red-600 dark:text-red-400 lg:hidden">
@@ -99,23 +90,17 @@ function TaxRow({
           <p className="cursor-default text-lg font-medium text-gray-800 dark:text-gray-200">
             {polyrepo.title}
           </p>
-          {/* Popover */}
-          {activePopover === 'polyrepo' && (
-            <div className="absolute left-0 top-full z-10 mt-1 w-80 rounded-lg border border-slate-200 bg-white p-4 shadow-lg dark:border-slate-700 dark:bg-slate-800 sm:w-96">
-              <p className="text-sm leading-relaxed text-gray-600 dark:text-gray-400">
-                {polyrepo.detail}
-              </p>
-            </div>
-          )}
+          {/* Popover — always in DOM for crawlers, shown on hover */}
+          <div className="pointer-events-none absolute left-0 top-full z-10 mt-1 w-80 rounded-lg border border-slate-200 bg-white p-4 opacity-0 shadow-lg transition-opacity duration-150 group-hover/poly:pointer-events-auto group-hover/poly:opacity-100 dark:border-slate-700 dark:bg-slate-800 sm:w-96">
+            <p className="text-sm leading-relaxed text-gray-600 dark:text-gray-400">
+              {polyrepo.detail}
+            </p>
+          </div>
         </div>
       </div>
 
       {/* Monorepo item */}
-      <div
-        className="group relative flex items-start gap-3 py-2"
-        onMouseEnter={() => setActivePopover('monorepo')}
-        onMouseLeave={() => setActivePopover(null)}
-      >
+      <div className="group/mono relative flex items-start gap-3 py-2">
         <PulsingDot color="green" />
         <div>
           <span className="text-xs font-bold uppercase tracking-wider text-green-600 dark:text-green-400 lg:hidden">
@@ -124,14 +109,12 @@ function TaxRow({
           <p className="cursor-default text-lg font-medium text-gray-800 dark:text-gray-200">
             {monorepo.title}
           </p>
-          {/* Popover */}
-          {activePopover === 'monorepo' && (
-            <div className="absolute left-0 top-full z-10 mt-1 w-80 rounded-lg border border-slate-200 bg-white p-4 shadow-lg dark:border-slate-700 dark:bg-slate-800 sm:w-96">
-              <p className="text-sm leading-relaxed text-gray-600 dark:text-gray-400">
-                {monorepo.detail}
-              </p>
-            </div>
-          )}
+          {/* Popover — always in DOM for crawlers, shown on hover */}
+          <div className="pointer-events-none absolute left-0 top-full z-10 mt-1 w-80 rounded-lg border border-slate-200 bg-white p-4 opacity-0 shadow-lg transition-opacity duration-150 group-hover/mono:pointer-events-auto group-hover/mono:opacity-100 dark:border-slate-700 dark:bg-slate-800 sm:w-96">
+            <p className="text-sm leading-relaxed text-gray-600 dark:text-gray-400">
+              {monorepo.detail}
+            </p>
+          </div>
         </div>
       </div>
     </div>
