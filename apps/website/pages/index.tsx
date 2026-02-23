@@ -4,6 +4,7 @@ import {
   Introduction,
   MonolithCallout,
   MonorepoAI,
+  SyntheticMonorepos,
   MonorepoFeaturesOverview,
   Resources,
   ToolsSupportCallout,
@@ -56,6 +57,8 @@ export function Index() {
         <WhyAMonorepo />
 
         <MonorepoAI />
+
+        <SyntheticMonorepos />
 
         <MonorepoFeaturesOverview />
 

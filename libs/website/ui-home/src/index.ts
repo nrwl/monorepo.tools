@@ -7,3 +7,4 @@ export * from './lib/tools-support-callout';
 export * from './lib/what-is-a-monorepo';
 export * from './lib/why-a-monorepo';
 export * from './lib/monorepo-ai';
+export * from './lib/synthetic-monorepos';
