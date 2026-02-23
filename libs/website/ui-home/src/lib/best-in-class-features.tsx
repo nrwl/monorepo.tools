@@ -50,6 +50,7 @@ const categories: {
         name: 'Deflaking',
         description:
           'Automatically detect flaky tests, quarantine them, and re-run only what failed. Keep your CI signal clean.',
+        image: '/images/deflaking.svg',
       },
     ],
   },
