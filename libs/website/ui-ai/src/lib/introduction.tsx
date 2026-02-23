@@ -167,13 +167,13 @@ export function Introduction(): JSX.Element {
           <div className="flex flex-col rounded-2xl bg-slate-100 shadow-xl dark:bg-slate-700">
             <div className="relative flex-1 px-6 pb-8 pt-12 md:px-8">
               <h2 className="text-xl font-semibold text-gray-800 dark:text-gray-200">
-                Your AI Assistant Might Get Lost
+                Your AI Agent Might Get Lost
               </h2>
             </div>
             <div className="rounded-bl-2xl rounded-br-2xl bg-slate-200 p-4 md:px-6 dark:bg-slate-900">
               <a
                 href="#context-challenges"
-                title="Your AI Assistant Might Get Lost"
+                title="Your AI Agent Might Get Lost"
                 className="text-sm font-medium uppercase text-gray-700 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300"
               >
                 Learn more<span aria-hidden="true"> &rarr;</span>

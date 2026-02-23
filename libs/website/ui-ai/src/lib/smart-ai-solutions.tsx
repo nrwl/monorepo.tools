@@ -58,11 +58,11 @@ export function SmartAISolutions(): JSX.Element {
                   className="mx-auto rounded-lg shadow-lg"
                   width={400}
                   src="/images/ai/ai-only-seeing-files.avif"
-                  alt="Traditional AI assistant overwhelmed by scattered individual files, unable to understand project relationships and workspace structure"
+                  alt="Traditional AI agent overwhelmed by scattered individual files, unable to understand project relationships and workspace structure"
                 />
                 <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 transform">
                   <span className="inline-flex items-center rounded-full bg-slate-100 px-3 py-1 text-sm font-medium text-slate-800 dark:bg-slate-800 dark:text-slate-200">
-                    Basic AI Assistant
+                    Basic AI Agent
                   </span>
                 </div>
               </div>
@@ -74,7 +74,7 @@ export function SmartAISolutions(): JSX.Element {
                   className="mx-auto rounded-lg shadow-lg"
                   width={400}
                   src="/images/ai/ai-seeing-project-graph.avif"
-                  alt="Monorepo-aware AI assistant viewing a structured project graph with interconnected nodes, understanding workspace architecture and project dependencies"
+                  alt="Monorepo-aware AI agent viewing a structured project graph with interconnected nodes, understanding workspace architecture and project dependencies"
                 />
                 <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 transform">
                   <span className="inline-flex items-center rounded-full bg-slate-100 px-3 py-1 text-sm font-medium text-slate-800 dark:bg-slate-800 dark:text-slate-200">
@@ -190,7 +190,7 @@ export function SmartAISolutions(): JSX.Element {
                 className="mx-auto rounded-lg shadow-lg"
                 width={400}
                 src="/images/ai/ai-connecting-tooling.avif"
-                alt="AI assistant seamlessly integrating with monorepo tooling through structured protocols, accessing workspace intelligence and architectural insights"
+                alt="AI agent seamlessly integrating with monorepo tooling through structured protocols, accessing workspace intelligence and architectural insights"
               />
             </div>
 

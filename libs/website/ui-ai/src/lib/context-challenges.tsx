@@ -54,7 +54,7 @@ export function ContextChallenges(): JSX.Element {
               className="mx-auto w-full rounded-lg shadow-lg"
               width={500}
               src="/images/ai/ai-streetview.avif"
-              alt="AI assistant only seeing individual files without understanding the broader architectural context"
+              alt="AI agent only seeing individual files without understanding the broader architectural context"
             />
           </div>
         </div>

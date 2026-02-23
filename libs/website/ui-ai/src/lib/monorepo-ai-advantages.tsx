@@ -48,7 +48,7 @@ export function MonorepoAIAdvantages(): JSX.Element {
             </a>
           </h1>
           <p className="mt-3 text-xl text-gray-700 sm:mt-4 dark:text-gray-300">
-            Monorepos provide AI assistants with a{' '}
+            Monorepos provide AI agents with a{' '}
             <mark className="rounded-md bg-yellow-500 px-1">
               unified workspace view
             </mark>
