@@ -38,6 +38,7 @@ const categories: {
         name: 'Affected detection',
         description:
           'Determine which projects are affected by a given change and only run the relevant tasks. Skip everything else.',
+        image: '/images/affected-detection.svg',
       },
       {
         name: 'Task splitting',

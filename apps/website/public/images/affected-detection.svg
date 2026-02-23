@@ -1,0 +1,44 @@
+<svg width="480" height="360" viewBox="0 0 480 360" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Affected path lines -->
+  <line x1="240" y1="52" x2="145" y2="118" stroke="#FF6D74" stroke-width="2.5"/>
+  <line x1="240" y1="52" x2="335" y2="118" stroke="#9CA3AF" stroke-width="2"/>
+  <line x1="145" y1="52" x2="145" y2="118" stroke="#FF6D74" stroke-width="2.5"/>
+  <line x1="145" y1="148" x2="80" y2="214" stroke="#FF6D74" stroke-width="2.5"/>
+  <line x1="145" y1="148" x2="210" y2="214" stroke="#FF6D74" stroke-width="2.5"/>
+  <line x1="335" y1="148" x2="335" y2="214" stroke="#9CA3AF" stroke-width="2"/>
+  <line x1="335" y1="148" x2="405" y2="214" stroke="#9CA3AF" stroke-width="2"/>
+  <line x1="80" y1="244" x2="80" y2="310" stroke="#FF6D74" stroke-width="2.5"/>
+  <line x1="210" y1="244" x2="145" y2="310" stroke="#FF6D74" stroke-width="2.5"/>
+  <line x1="210" y1="244" x2="275" y2="310" stroke="#9CA3AF" stroke-width="2"/>
+  <line x1="335" y1="244" x2="335" y2="310" stroke="#9CA3AF" stroke-width="2"/>
+
+  <!-- Row 1: top -->
+  <rect x="105" y="24" width="80" height="36" rx="5" fill="#FF6D74"/>
+  <rect x="200" y="24" width="80" height="36" rx="5" fill="#FF6D74"/>
+
+  <!-- Row 2 -->
+  <rect x="105" y="120" width="80" height="36" rx="5" fill="#FF6D74"/>
+  <rect x="295" y="120" width="80" height="36" rx="5" fill="#9CA3AF"/>
+
+  <!-- Row 3 -->
+  <rect x="40" y="216" width="80" height="36" rx="5" fill="#FF6D74"/>
+  <rect x="170" y="216" width="80" height="36" rx="5" fill="#FF6D74"/>
+  <rect x="295" y="216" width="80" height="36" rx="5" fill="#9CA3AF"/>
+  <rect x="365" y="216" width="80" height="36" rx="5" fill="#9CA3AF"/>
+
+  <!-- Row 4: bottom -->
+  <rect x="40" y="312" width="80" height="36" rx="5" fill="#FF6D74"/>
+  <rect x="105" y="312" width="80" height="36" rx="5" fill="#FF6D74"/>
+  <rect x="235" y="312" width="80" height="36" rx="5" fill="#9CA3AF"/>
+  <rect x="295" y="312" width="80" height="36" rx="5" fill="#9CA3AF"/>
+
+  <!-- "changed" indicator on source node -->
+  <circle cx="280" cy="24" r="8" fill="#FF6D74" stroke="white" stroke-width="2"/>
+  <text x="280" y="28" text-anchor="middle" fill="white" font-size="10" font-weight="bold">!</text>
+
+  <!-- Legend -->
+  <rect x="365" y="28" width="12" height="12" rx="2" fill="#FF6D74"/>
+  <text x="382" y="38" fill="#9CA3AF" font-family="system-ui, sans-serif" font-size="11">Affected</text>
+  <rect x="365" y="48" width="12" height="12" rx="2" fill="#9CA3AF"/>
+  <text x="382" y="58" fill="#9CA3AF" font-family="system-ui, sans-serif" font-size="11">Skipped</text>
+</svg>
