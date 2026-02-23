@@ -34,15 +34,22 @@ export function SyntheticMonorepos(): JSX.Element {
                 <mark className="rounded-md bg-yellow-500 px-1">
                   connects separate repositories into a unified dependency graph
                 </mark>{' '}
-                without moving any code. Your monorepo tool discovers cross-repo
-                relationships and gives developers and AI agents the visibility
-                and context they need to work across repository boundaries.
+                without moving any code. Which repo depends on which, what a
+                change affects downstream, how projects relate across teams:
+                all of that becomes visible automatically.
               </p>
               <p className="mt-3 text-lg text-gray-700 dark:text-gray-300">
-                Which repo depends on which, what a change affects downstream,
-                how projects connect across teams. That information becomes
-                accessible in one place, so humans and AI agents can plan and
-                execute cross-repo work in a single session.
+                <strong>For platform engineers and architects</strong>, no more
+                manually cataloging and cross-referencing repos. Tooling on top
+                of the graph enables conformance checking, impact analysis, and
+                coordinated changes across boundaries.
+              </p>
+              <p className="mt-3 text-lg text-gray-700 dark:text-gray-300">
+                <strong>For AI agents</strong>, the graph exposes metadata that
+                lets them see beyond individual repo boundaries. Instead of
+                operating at a local maximum within a single repo, agents can
+                read cross-repo relationships and perform coordinated changes
+                across polyrepos.
               </p>
             </div>
             <div>
@@ -60,49 +67,30 @@ export function SyntheticMonorepos(): JSX.Element {
         {/* Pull quote */}
         <blockquote className="mx-auto mt-12 max-w-3xl border-l-4 border-yellow-500 py-2 pl-6 lg:mt-16">
           <p className="text-xl font-medium italic text-gray-800 dark:text-gray-200">
-            Repository boundaries create walls. A synthetic monorepo
-            doesn&rsquo;t tear them down as a monorepo would, but it provides
-            tunnels through them with tooling. That visibility is what humans
-            and AI agents need to work efficiently across projects.
+            A synthetic monorepo doesn&rsquo;t tear down the walls between
+            repos. It creates tunnels through them, giving humans and AI agents
+            the visibility to effectively work across boundaries.
           </p>
         </blockquote>
 
-        {/* Gradual adoption */}
-        <article className="relative mt-12 lg:mt-24">
-          <div className="mx-auto max-w-3xl">
-            <h2 className="text-2xl font-bold leading-loose tracking-tight text-gray-800 dark:text-gray-100 sm:text-3xl sm:leading-relaxed">
-              An entry point, not an endpoint
-            </h2>
-            <p className="mt-3 text-lg text-gray-700 dark:text-gray-300">
-              A synthetic monorepo gives you immediate cross-repo visibility
-              without requiring any team to change how they work. From there,
-              organizations can deepen integration where it makes sense: one
-              team, one repo at a time. Start synthetic, migrate gradually, move
-              at your own pace.
-            </p>
-          </div>
-        </article>
-
-        {/* Subtle Nx mention */}
-        <div className="mx-auto mt-16 max-w-3xl lg:mt-20">
+        {/* Gradual adoption callout */}
+        <div className="mx-auto mt-12 max-w-7xl lg:mt-20">
           <div className="overflow-hidden rounded-lg bg-slate-100 shadow-xl dark:bg-slate-900">
-            <div className="px-6 py-8 text-center sm:px-16">
-              <p className="text-lg text-gray-700 dark:text-gray-300">
+            <div className="px-6 pt-10 pb-12 text-center sm:px-16 sm:pt-16 lg:py-16 xl:py-20 xl:px-20">
+              <h2 className="text-3xl font-extrabold text-gray-900 dark:text-white sm:text-4xl">
+                An entry point, not an endpoint
+              </h2>
+              <p className="mt-4 text-xl leading-relaxed text-gray-700 dark:text-gray-300">
+                Start getting monorepo benefits without changing how teams work.
+                From there, deepen integration where it makes sense: start
+                synthetic, migrate gradually, move at your own pace.{' '}
                 <a
                   href="https://nx.dev/nx-cloud"
-                  className="border-b border-yellow-500 font-medium text-gray-800 transition hover:rounded hover:bg-yellow-500 hover:text-gray-800 dark:text-gray-200 dark:hover:text-gray-800"
+                  className="border-b border-yellow-500 transition hover:rounded hover:bg-yellow-500 hover:text-gray-800"
                 >
                   Nx
                 </a>{' '}
-                supports synthetic monorepos out of the box, connecting your
-                existing repositories through Nx Cloud. See{' '}
-                <a
-                  href="/compare"
-                  className="border-b border-yellow-500 font-medium text-gray-800 transition hover:rounded hover:bg-yellow-500 hover:text-gray-800 dark:text-gray-200 dark:hover:text-gray-800"
-                >
-                  /compare
-                </a>{' '}
-                for a detailed tool comparison.
+                supports synthetic monorepos out of the box.
               </p>
             </div>
           </div>
