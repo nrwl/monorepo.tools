@@ -61,6 +61,127 @@ const points = [
   },
 ];
 
+/* Diagonal connecting arrow between zigzag steps */
+function ConnectingArrow({
+  direction,
+}: {
+  direction: 'down-right' | 'down-left';
+}): JSX.Element {
+  return (
+    <div className="lg:col-span-2">
+      {/* Mobile: simple down arrow */}
+      <div className="flex justify-center py-4 lg:hidden">
+        <svg
+          width="24"
+          height="48"
+          viewBox="0 0 24 48"
+          fill="none"
+          className="text-slate-300 dark:text-slate-600"
+        >
+          <path
+            d="M12 0v40m0 0l-8-8m8 8l8-8"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </svg>
+      </div>
+      {/* Desktop: diagonal arrow */}
+      <div
+        className={`hidden py-2 lg:flex ${
+          direction === 'down-right' ? 'justify-center lg:pl-12' : 'justify-center lg:pr-12'
+        }`}
+      >
+        <svg
+          width="120"
+          height="48"
+          viewBox="0 0 120 48"
+          fill="none"
+          className="text-slate-300 dark:text-slate-600"
+        >
+          {direction === 'down-right' ? (
+            <path
+              d="M20 4 L100 40"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              markerEnd="url(#arrowhead)"
+            />
+          ) : (
+            <path
+              d="M100 4 L20 40"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              markerEnd="url(#arrowhead)"
+            />
+          )}
+          <defs>
+            <marker
+              id="arrowhead"
+              markerWidth="8"
+              markerHeight="6"
+              refX="8"
+              refY="3"
+              orient="auto"
+            >
+              <path d="M0 0L8 3L0 6" fill="currentColor" />
+            </marker>
+          </defs>
+        </svg>
+      </div>
+    </div>
+  );
+}
+
+function PointCard({
+  point,
+}: {
+  point: (typeof points)[number];
+}): JSX.Element {
+  return (
+    <section className="group relative">
+      {/* Number + Title */}
+      <div className="flex items-center gap-4">
+        <span className="shrink-0 text-5xl font-black tabular-nums text-slate-200 transition-colors group-hover:text-yellow-500 dark:text-slate-700 dark:group-hover:text-yellow-500 sm:text-6xl">
+          {point.number}
+        </span>
+        <h2 className="text-2xl font-semibold tracking-tight text-gray-900 dark:text-white sm:text-3xl">
+          {point.title}
+        </h2>
+      </div>
+
+      {/* Polyrepo → Monorepo stacked */}
+      <div className="mt-6 space-y-3">
+        {/* Polyrepo - muted */}
+        <div className="rounded-lg border border-dashed border-slate-300 bg-slate-100/50 px-5 py-4 dark:border-slate-600 dark:bg-slate-900/30">
+          <span className="text-xs font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500">
+            Polyrepo
+          </span>
+          <p className="mt-2 text-sm leading-relaxed text-gray-500 dark:text-gray-400">
+            {point.polyrepo}
+          </p>
+        </div>
+
+        <div className="flex justify-center">
+          <ArrowLongRightIcon className="h-5 w-5 rotate-90 text-green-400 dark:text-green-500" />
+        </div>
+
+        {/* Monorepo - vibrant */}
+        <div className="rounded-lg border border-green-200 bg-green-50/50 px-5 py-4 dark:border-green-900/50 dark:bg-green-950/20">
+          <span className="text-xs font-bold uppercase tracking-wider text-green-600 dark:text-green-400">
+            Monorepo
+          </span>
+          <p className="mt-2 text-base leading-relaxed text-gray-800 dark:text-gray-200">
+            {point.monorepo}
+          </p>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function YouTubeEmbed({
   videoId,
   thumbnailSrc,
@@ -136,59 +257,51 @@ export function MonorepoAI(): JSX.Element {
       </div>
 
       <article className="relative mx-auto mt-24 max-w-5xl lg:mt-36">
-        <div className="space-y-20">
-          {points.map((point) => (
-            <section key={point.number} className="group relative">
-              {/* Number + Title */}
-              <div className="flex items-center gap-4 sm:gap-6">
-                <span className="shrink-0 text-5xl font-black tabular-nums text-slate-200 transition-colors group-hover:text-yellow-500 dark:text-slate-700 dark:group-hover:text-yellow-500 sm:text-6xl">
-                  {point.number}
-                </span>
-                <h2 className="text-2xl font-semibold tracking-tight text-gray-900 dark:text-white sm:text-3xl">
-                  {point.title}
-                </h2>
-              </div>
+        {/* Zigzag grid: 2 columns on desktop */}
+        <div className="grid lg:grid-cols-2 lg:gap-x-12">
+          {/* 01 - Left */}
+          <div className="lg:col-start-1">
+            <PointCard point={points[0]} />
+          </div>
 
-              {/* Polyrepo → Monorepo transition */}
-              <div className="mt-8 grid items-stretch gap-4 lg:grid-cols-[1fr_auto_1fr]">
-                {/* Polyrepo - muted/faded */}
-                <div className="rounded-lg border border-dashed border-slate-300 bg-slate-100/50 px-5 py-4 dark:border-slate-600 dark:bg-slate-900/30">
-                  <span className="text-xs font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500">
-                    Polyrepo
-                  </span>
-                  <p className="mt-2 text-sm leading-relaxed text-gray-500 dark:text-gray-400">
-                    {point.polyrepo}
-                  </p>
-                </div>
+          {/* Arrow: down-right */}
+          <ConnectingArrow direction="down-right" />
 
-                <div className="hidden items-center self-center lg:flex">
-                  <ArrowLongRightIcon className="h-8 w-8 text-green-400 dark:text-green-500" />
-                </div>
+          {/* 02 - Right */}
+          <div className="lg:col-start-2">
+            <PointCard point={points[1]} />
+          </div>
 
-                {/* Monorepo - vibrant/bright */}
-                <div className="rounded-lg border border-green-200 bg-green-50/50 px-5 py-4 dark:border-green-900/50 dark:bg-green-950/20">
-                  <span className="text-xs font-bold uppercase tracking-wider text-green-600 dark:text-green-400">
-                    Monorepo
-                  </span>
-                  <p className="mt-2 text-base leading-relaxed text-gray-800 dark:text-gray-200">
-                    {point.monorepo}
-                  </p>
-                </div>
-              </div>
-            </section>
-          ))}
-        </div>
+          {/* Arrow: down-left */}
+          <ConnectingArrow direction="down-left" />
 
-        {/* Video embed */}
-        <div className="mt-24">
-          <p className="mb-6 text-center text-lg font-medium text-gray-700 dark:text-gray-300">
-            See it in action: monorepo vs polyrepo with AI agents
-          </p>
-          <YouTubeEmbed
-            videoId="alIto5fqrfk"
-            thumbnailSrc="/images/ai/poly-vs-monorepo-ai.png"
-            title="Monorepo vs Polyrepo with AI Agents"
-          />
+          {/* 03 - Left */}
+          <div className="lg:col-start-1">
+            <PointCard point={points[2]} />
+          </div>
+
+          {/* Arrow: down-right */}
+          <ConnectingArrow direction="down-right" />
+
+          {/* 04 - Right */}
+          <div className="lg:col-start-2">
+            <PointCard point={points[3]} />
+          </div>
+
+          {/* Final arrow to video — tilted from right toward center */}
+          <ConnectingArrow direction="down-left" />
+
+          {/* Video embed - full width */}
+          <div className="lg:col-span-2">
+            <p className="mb-6 text-center text-lg font-medium text-gray-700 dark:text-gray-300">
+              See it in action: monorepo vs polyrepo with AI agents
+            </p>
+            <YouTubeEmbed
+              videoId="alIto5fqrfk"
+              thumbnailSrc="/images/ai/poly-vs-monorepo-ai.png"
+              title="Monorepo vs Polyrepo with AI Agents"
+            />
+          </div>
         </div>
       </article>
     </div>
