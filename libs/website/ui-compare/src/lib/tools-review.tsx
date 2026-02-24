@@ -7,7 +7,11 @@ import {
   QuestionMarkCircleIcon,
 } from '@heroicons/react/24/outline';
 
-type Supports = 'supported' | 'notSupported' | 'manualImplementation';
+type Supports =
+  | 'supported'
+  | 'notSupported'
+  | 'manualImplementation'
+  | 'communityProvided';
 
 interface Item {
   title: string;
@@ -187,13 +191,13 @@ const fast: Item[] = [
     tooltip:
       'Break large tasks into fine-grained cacheable units that can be cached and distributed independently.',
     features: [
-      { title: 'Bazel', value: 'notSupported' },
-      { title: 'Gradle', value: 'notSupported' },
+      { title: 'Bazel', value: 'manualImplementation' },
+      { title: 'Gradle', value: 'supported' },
       { title: 'Lage', value: 'notSupported' },
-      { title: 'Lerna', value: 'notSupported' },
+      { title: 'Lerna', value: 'supported' },
       { title: 'moon', value: 'notSupported' },
-      { title: 'Nx', value: 'notSupported' },
-      { title: 'Pants', value: 'notSupported' },
+      { title: 'Nx', value: 'supported' },
+      { title: 'Pants', value: 'manualImplementation' },
       { title: 'Rush', value: 'notSupported' },
       { title: 'Turborepo', value: 'notSupported' },
     ],
@@ -204,13 +208,13 @@ const fast: Item[] = [
     tooltip:
       'Automatically detect flaky tests, quarantine them, and re-run only what failed.',
     features: [
-      { title: 'Bazel', value: 'notSupported' },
-      { title: 'Gradle', value: 'notSupported' },
+      { title: 'Bazel', value: 'manualImplementation' },
+      { title: 'Gradle', value: 'supported' },
       { title: 'Lage', value: 'notSupported' },
-      { title: 'Lerna', value: 'notSupported' },
+      { title: 'Lerna', value: 'supported' },
       { title: 'moon', value: 'notSupported' },
-      { title: 'Nx', value: 'notSupported' },
-      { title: 'Pants', value: 'notSupported' },
+      { title: 'Nx', value: 'supported' },
+      { title: 'Pants', value: 'manualImplementation' },
       { title: 'Rush', value: 'notSupported' },
       { title: 'Turborepo', value: 'notSupported' },
     ],
@@ -322,34 +326,51 @@ const manageable: Item[] = [
 ];
 const aiSupport: Item[] = [
   {
-    title: 'AI Skills and MCP',
-    link: '#ai-skills-and-mcp',
+    title: 'AI Skills',
+    link: '#ai-skills',
     tooltip:
-      'Monorepo tooling can expose its capabilities to AI agents: project graph awareness, task execution, code generation, and more.',
-    features: [
-      { title: 'Bazel', value: 'manualImplementation' },
-      { title: 'Gradle', value: 'manualImplementation' },
-      { title: 'Lage', value: 'notSupported' },
-      { title: 'Lerna', value: 'notSupported' },
-      { title: 'moon', value: 'supported' },
-      { title: 'Nx', value: 'supported' },
-      { title: 'Pants', value: 'notSupported' },
-      { title: 'Rush', value: 'supported' },
-      { title: 'Turborepo', value: 'notSupported' },
-    ],
-  },
-  {
-    title: 'Agentic CI',
-    link: '#agentic-ci',
-    tooltip:
-      'AI-powered CI that self-heals broken PRs, re-runs flaky tasks, and provides intelligent feedback.',
+      'Agent skills and rules files that help AI coding assistants understand the tool, generate correct commands, and follow best practices.',
     features: [
       { title: 'Bazel', value: 'notSupported' },
       { title: 'Gradle', value: 'notSupported' },
       { title: 'Lage', value: 'notSupported' },
       { title: 'Lerna', value: 'notSupported' },
       { title: 'moon', value: 'notSupported' },
-      { title: 'Nx', value: 'notSupported' },
+      { title: 'Nx', value: 'supported' },
+      { title: 'Pants', value: 'notSupported' },
+      { title: 'Rush', value: 'notSupported' },
+      { title: 'Turborepo', value: 'supported' },
+    ],
+  },
+  {
+    title: 'MCP Server',
+    link: '#mcp-server',
+    tooltip:
+      'An MCP server that exposes monorepo capabilities to AI agents: project graph, task execution, code generation, and more.',
+    features: [
+      { title: 'Bazel', value: 'communityProvided' },
+      { title: 'Gradle', value: 'supported' },
+      { title: 'Lage', value: 'notSupported' },
+      { title: 'Lerna', value: 'notSupported' },
+      { title: 'moon', value: 'supported' },
+      { title: 'Nx', value: 'supported' },
+      { title: 'Pants', value: 'notSupported' },
+      { title: 'Rush', value: 'supported' },
+      { title: 'Turborepo', value: 'communityProvided' },
+    ],
+  },
+  {
+    title: 'Agentic CI',
+    link: '#agentic-ci',
+    tooltip:
+      'AI-powered CI that self-heals broken PRs, diagnoses failures, and provides intelligent feedback.',
+    features: [
+      { title: 'Bazel', value: 'notSupported' },
+      { title: 'Gradle', value: 'manualImplementation' },
+      { title: 'Lage', value: 'notSupported' },
+      { title: 'Lerna', value: 'supported' },
+      { title: 'moon', value: 'notSupported' },
+      { title: 'Nx', value: 'supported' },
       { title: 'Pants', value: 'notSupported' },
       { title: 'Rush', value: 'notSupported' },
       { title: 'Turborepo', value: 'notSupported' },
@@ -382,6 +403,15 @@ const valuesDictionary: Record<Supports, () => ReactComponentElement<any>> = {
     >
       <ExclamationCircleIcon className="h-5 w-5" />
       <span className="sr-only">implement your own</span>
+    </span>
+  ),
+  communityProvided: () => (
+    <span
+      title="community provided"
+      className="inline-flex items-center rounded-full px-2.5 py-0.5 text-yellow-600"
+    >
+      <ExclamationCircleIcon className="h-5 w-5" />
+      <span className="sr-only">community provided</span>
     </span>
   ),
 };
@@ -1223,12 +1253,21 @@ export function ToolsReview(): JSX.Element {
             </div>
             <div className="flex items-center">
               <span
-                title="natively supported"
+                title="implement your own"
                 className="inline-flex items-center rounded-full px-2.5 py-0.5 text-yellow-600"
               >
                 <ExclamationCircleIcon className="h-4 w-4" />
               </span>
               Implement your own
+            </div>
+            <div className="flex items-center">
+              <span
+                title="community provided"
+                className="inline-flex items-center rounded-full px-2.5 py-0.5 text-yellow-600"
+              >
+                <ExclamationCircleIcon className="h-4 w-4" />
+              </span>
+              Community provided
             </div>
           </div>
         </div>
