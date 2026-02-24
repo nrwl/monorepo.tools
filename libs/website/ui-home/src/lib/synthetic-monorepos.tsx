@@ -90,7 +90,16 @@ export function SyntheticMonorepos(): JSX.Element {
                 >
                   Nx
                 </a>{' '}
-                supports synthetic monorepos out of the box.
+                supports{' '}
+                <a
+                  href="https://nx.dev/docs/concepts/synthetic-monorepos"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="border-b border-yellow-500 transition hover:rounded hover:bg-yellow-500 hover:text-gray-800"
+                >
+                  synthetic monorepos
+                </a>{' '}
+                out of the box.
               </p>
             </div>
           </div>
