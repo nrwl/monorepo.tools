@@ -7,7 +7,11 @@ import {
   QuestionMarkCircleIcon,
 } from '@heroicons/react/24/outline';
 
-type Supports = 'supported' | 'notSupported' | 'manualImplementation';
+type Supports =
+  | 'supported'
+  | 'notSupported'
+  | 'manualImplementation'
+  | 'communityProvided';
 
 interface Item {
   title: string;
@@ -181,6 +185,40 @@ const fast: Item[] = [
       { title: 'Turborepo', value: 'supported' },
     ],
   },
+  {
+    title: 'Task splitting',
+    link: '#task-splitting',
+    tooltip:
+      'Break large tasks into fine-grained cacheable units that can be cached and distributed independently.',
+    features: [
+      { title: 'Bazel', value: 'manualImplementation' },
+      { title: 'Gradle', value: 'supported' },
+      { title: 'Lage', value: 'notSupported' },
+      { title: 'Lerna', value: 'supported' },
+      { title: 'moon', value: 'notSupported' },
+      { title: 'Nx', value: 'supported' },
+      { title: 'Pants', value: 'manualImplementation' },
+      { title: 'Rush', value: 'notSupported' },
+      { title: 'Turborepo', value: 'notSupported' },
+    ],
+  },
+  {
+    title: 'Deflaking',
+    link: '#deflaking',
+    tooltip:
+      'Automatically detect flaky tests, quarantine them, and re-run only what failed.',
+    features: [
+      { title: 'Bazel', value: 'manualImplementation' },
+      { title: 'Gradle', value: 'supported' },
+      { title: 'Lage', value: 'notSupported' },
+      { title: 'Lerna', value: 'supported' },
+      { title: 'moon', value: 'notSupported' },
+      { title: 'Nx', value: 'supported' },
+      { title: 'Pants', value: 'manualImplementation' },
+      { title: 'Rush', value: 'notSupported' },
+      { title: 'Turborepo', value: 'notSupported' },
+    ],
+  },
 ];
 const understandable: Item[] = [
   {
@@ -236,10 +274,10 @@ const manageable: Item[] = [
     ],
   },
   {
-    title: 'Consistent tooling',
+    title: 'Polyglot support',
     link: '#consistent-tooling',
     tooltip:
-      'The tool helps you get a consistent experience regardless of what you use to develop your projects: different JavaScript frameworks, Go, Java, etc.',
+      'Same commands for building, testing, and serving regardless of what language, framework, or tool a project uses.',
     features: [
       { title: 'Bazel', value: 'supported' },
       { title: 'Gradle', value: 'supported' },
@@ -288,19 +326,53 @@ const manageable: Item[] = [
 ];
 const aiSupport: Item[] = [
   {
-    title: 'MCP Server Support',
-    link: '#ai-support',
+    title: 'AI Skills',
+    link: '#ai-skills',
     tooltip:
-      'Model Context Protocol server implementation for AI assistant integration.',
+      'Agent skills and rules files that help AI coding assistants understand the tool, generate correct commands, and follow best practices.',
     features: [
-      { title: 'Bazel', value: 'manualImplementation' },
-      { title: 'Gradle', value: 'manualImplementation' },
+      { title: 'Bazel', value: 'notSupported' },
+      { title: 'Gradle', value: 'notSupported' },
+      { title: 'Lage', value: 'notSupported' },
+      { title: 'Lerna', value: 'notSupported' },
+      { title: 'moon', value: 'notSupported' },
+      { title: 'Nx', value: 'supported' },
+      { title: 'Pants', value: 'notSupported' },
+      { title: 'Rush', value: 'notSupported' },
+      { title: 'Turborepo', value: 'supported' },
+    ],
+  },
+  {
+    title: 'MCP Server',
+    link: '#mcp-server',
+    tooltip:
+      'An MCP server that exposes monorepo capabilities to AI agents: project graph, task execution, code generation, and more.',
+    features: [
+      { title: 'Bazel', value: 'communityProvided' },
+      { title: 'Gradle', value: 'supported' },
       { title: 'Lage', value: 'notSupported' },
       { title: 'Lerna', value: 'notSupported' },
       { title: 'moon', value: 'supported' },
       { title: 'Nx', value: 'supported' },
       { title: 'Pants', value: 'notSupported' },
       { title: 'Rush', value: 'supported' },
+      { title: 'Turborepo', value: 'communityProvided' },
+    ],
+  },
+  {
+    title: 'Agentic CI',
+    link: '#agentic-ci',
+    tooltip:
+      'AI-powered CI that self-heals broken PRs, diagnoses failures, and provides intelligent feedback.',
+    features: [
+      { title: 'Bazel', value: 'notSupported' },
+      { title: 'Gradle', value: 'manualImplementation' },
+      { title: 'Lage', value: 'notSupported' },
+      { title: 'Lerna', value: 'supported' },
+      { title: 'moon', value: 'notSupported' },
+      { title: 'Nx', value: 'supported' },
+      { title: 'Pants', value: 'notSupported' },
+      { title: 'Rush', value: 'notSupported' },
       { title: 'Turborepo', value: 'notSupported' },
     ],
   },
@@ -333,6 +405,15 @@ const valuesDictionary: Record<Supports, () => ReactComponentElement<any>> = {
       <span className="sr-only">implement your own</span>
     </span>
   ),
+  communityProvided: () => (
+    <span
+      title="community provided"
+      className="inline-flex items-center rounded-full px-2.5 py-0.5 text-yellow-600"
+    >
+      <ExclamationCircleIcon className="h-5 w-5" />
+      <span className="sr-only">community provided</span>
+    </span>
+  ),
 };
 
 function classNames(...classes: string[]) {
@@ -349,8 +430,8 @@ export function ToolsReview(): JSX.Element {
       <div className="relative">
         <div className="relative mx-auto max-w-2xl px-4 pt-16 text-center sm:px-6 sm:pt-32 lg:max-w-7xl lg:px-8">
           <div className="group text-4xl font-extrabold tracking-tight text-gray-900 sm:text-6xl dark:text-white">
-            <span className="block lg:inline">Many solutions,</span>
-            <span className="block lg:inline"> for different goals</span>
+            <span className="block lg:inline"># Many Solutions,</span>
+            <span className="block lg:inline"> for Different Goals</span>
             <a
               aria-hidden="true"
               tabIndex={-1}
@@ -361,10 +442,18 @@ export function ToolsReview(): JSX.Element {
             </a>
           </div>
           <p className="mt-4 text-xl text-gray-700 dark:text-gray-300">
-            Each tool fits a specific set of needs and gives you a precise set
-            of features. <br />
-            Depending on your needs and constraints, we&apos;ll help you decide
-            which tools best suit you.
+            There are many great monorepo tools, built by great teams, with
+            different philosophies. We do our best to represent each tool
+            objectively, and{' '}
+            <a
+              href="https://github.com/nrwl/monorepo.tools?utm_source=monorepo.tools"
+              target="_blank"
+              rel="noreferrer"
+              className="border-b border-yellow-500 px-1 transition hover:rounded hover:bg-yellow-500 hover:text-gray-800"
+              title="Contribute to monorepo.tools!"
+            >
+              we welcome pull requests if we got something wrong!
+            </a>
           </p>
         </div>
       </div>
@@ -1164,12 +1253,21 @@ export function ToolsReview(): JSX.Element {
             </div>
             <div className="flex items-center">
               <span
-                title="natively supported"
+                title="implement your own"
                 className="inline-flex items-center rounded-full px-2.5 py-0.5 text-yellow-600"
               >
                 <ExclamationCircleIcon className="h-4 w-4" />
               </span>
               Implement your own
+            </div>
+            <div className="flex items-center">
+              <span
+                title="community provided"
+                className="inline-flex items-center rounded-full px-2.5 py-0.5 text-yellow-600"
+              >
+                <ExclamationCircleIcon className="h-4 w-4" />
+              </span>
+              Community provided
             </div>
           </div>
         </div>

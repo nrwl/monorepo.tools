@@ -1,0 +1,13 @@
+{
+  "name": "website-ui-compare",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/website/ui-compare/src",
+  "projectType": "library",
+  "tags": ["scope:website", "type:ui"],
+  "targets": {
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"]
+    }
+  }
+}

@@ -13,6 +13,8 @@ import {
   SignalIcon,
   ArrowsUpDownIcon,
   CommandLineIcon,
+  SparklesIcon,
+  ServerStackIcon,
   XCircleIcon,
 } from '@heroicons/react/24/outline';
 import { MonorepoToolsLogos } from './monorepo-tools-logos';
@@ -44,6 +46,15 @@ const ManualImplementation = () => (
     <span className="sr-only">implement your own</span>
   </span>
 );
+const CommunityProvided = () => (
+  <span
+    title="community provided"
+    className="mr-3 inline-flex items-center rounded-full text-yellow-600"
+  >
+    <ExclamationCircleIcon className="h-5 w-5" />
+    <span className="sr-only">community provided</span>
+  </span>
+);
 
 export function MonorepoFeatures(): JSX.Element {
   return (
@@ -55,7 +66,7 @@ export function MonorepoFeatures(): JSX.Element {
       <div className="relative mx-auto max-w-xl px-4 sm:px-6 lg:max-w-7xl lg:px-8">
         <div className="relative">
           <div className="group text-center text-4xl font-extrabold leading-8 tracking-tight text-gray-900 sm:text-5xl dark:text-white">
-            # Monorepo tools
+            # Monorepo Tools
             <a
               aria-hidden="true"
               tabIndex={-1}
@@ -75,7 +86,7 @@ export function MonorepoFeatures(): JSX.Element {
 
         {/*FAST*/}
         <div className="font-boldtext-gray-800 dark:text-gray-100tracking-tight mt-24 flex items-center text-2xl leading-loose sm:text-3xl sm:leading-relaxed lg:mt-32">
-          Fast
+          # Fast
           <div className="ml-4 flex h-1 w-full flex-grow rounded bg-slate-100 dark:bg-slate-900" />
         </div>
 
@@ -89,7 +100,7 @@ export function MonorepoFeatures(): JSX.Element {
               <DocumentArrowDownIcon className="h-6 w-6" />
             </div>
             <div className="group ml-16 text-xl font-medium text-gray-800 sm:text-2xl sm:leading-relaxed dark:text-gray-200">
-              Local computation caching
+              Local Computation Caching
               <a
                 aria-hidden="true"
                 tabIndex={-1}
@@ -231,7 +242,7 @@ export function MonorepoFeatures(): JSX.Element {
               <ArrowsUpDownIcon className="h-6 w-6" />
             </div>
             <div className="group ml-16 text-xl font-medium text-gray-800 sm:text-2xl sm:leading-relaxed dark:text-gray-200">
-              Local task orchestration
+              Local Task Orchestration
               <a
                 aria-hidden="true"
                 tabIndex={-1}
@@ -367,7 +378,7 @@ export function MonorepoFeatures(): JSX.Element {
               <CloudArrowDownIcon className="h-6 w-6" />
             </div>
             <div className="group ml-16 text-xl font-medium text-gray-800 sm:text-2xl sm:leading-relaxed dark:text-gray-200">
-              Distributed computation caching
+              Distributed Computation Caching
               <a
                 aria-hidden="true"
                 tabIndex={-1}
@@ -515,7 +526,7 @@ export function MonorepoFeatures(): JSX.Element {
               <RectangleStackIcon className="h-6 w-6" />
             </div>
             <div className="group ml-16 text-xl font-medium text-gray-800 sm:text-2xl sm:leading-relaxed dark:text-gray-200">
-              Distributed task execution
+              Distributed Task Execution
               <a
                 aria-hidden="true"
                 tabIndex={-1}
@@ -653,7 +664,7 @@ export function MonorepoFeatures(): JSX.Element {
               <ServerIcon className="h-6 w-6" />
             </div>
             <div className="group ml-16 text-xl font-medium text-gray-800 sm:text-2xl sm:leading-relaxed dark:text-gray-200">
-              Transparent remote execution
+              Transparent Remote Execution
               <a
                 aria-hidden="true"
                 tabIndex={-1}
@@ -775,7 +786,7 @@ export function MonorepoFeatures(): JSX.Element {
               <LightBulbIcon className="h-6 w-6" />
             </div>
             <div className="group ml-16 text-xl font-medium text-gray-800 sm:text-2xl sm:leading-relaxed dark:text-gray-200">
-              Detecting affected projects/packages
+              Detecting Affected Projects/Packages
               <a
                 aria-hidden="true"
                 tabIndex={-1}
@@ -912,9 +923,294 @@ export function MonorepoFeatures(): JSX.Element {
           </dl>
         </div>
 
+        {/*Task Splitting*/}
+        <div
+          id="task-splitting"
+          className="relative mt-16 lg:grid lg:grid-cols-2 lg:items-start lg:gap-12"
+        >
+          <div className="relative">
+            <div className="absolute flex h-10 w-10 items-center justify-center rounded-md rounded-md bg-slate-100 text-gray-800 dark:bg-slate-900 dark:text-gray-200">
+              <RectangleStackIcon className="h-6 w-6" />
+            </div>
+            <div className="group ml-16 text-xl font-medium text-gray-800 sm:text-2xl sm:leading-relaxed dark:text-gray-200">
+              Task Splitting
+              <a
+                aria-hidden="true"
+                tabIndex={-1}
+                href="#task-splitting"
+                className="flex inline-flex items-center text-gray-900 dark:text-white"
+              >
+                <LinkIcon className="ml-2 h-6 w-6 opacity-0 group-hover:opacity-100" />
+              </a>
+            </div>
+
+            <p className="mt-3 text-lg text-gray-700 dark:text-gray-300">
+              Break large tasks into fine-grained cacheable units. Each slice
+              can be cached and distributed independently.
+            </p>
+
+            <div className="mt-10" aria-hidden="true">
+              <img
+                loading="lazy"
+                className="relative mx-auto"
+                width={490}
+                src="/images/task-splitting.svg"
+                alt="task splitting"
+              />
+            </div>
+          </div>
+
+          <dl className="mt-12 space-y-6 md:mt-0">
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
+              <dt>
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
+                  <ManualImplementation /> Bazel
+                </p>
+              </dt>
+              <dd className="mt-4 text-gray-600 dark:text-gray-400">
+                Bazel supports static test sharding via the{' '}
+                <code>shard_count</code> attribute. Tests are split into N shards
+                deterministically, but sharding is manual and not
+                intelligence-driven.
+              </dd>
+            </div>
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
+              <dt>
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
+                  <Supported /> Gradle Build Tool
+                </p>
+              </dt>
+              <dd className="mt-4 text-gray-600 dark:text-gray-400">
+                Develocity Test Distribution splits tests across remote agents
+                using historical execution time data. It creates balanced
+                partitions and auto-utilizes new agents as they become available.
+              </dd>
+            </div>
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
+              <dt>
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
+                  <NotSupported /> Lage
+                </p>
+              </dt>
+              <dd className="mt-4 text-gray-600 dark:text-gray-400">
+                Lage doesn't support task splitting.
+              </dd>
+            </div>
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
+              <dt>
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
+                  <Supported /> Lerna
+                </p>
+              </dt>
+              <dd className="mt-4 text-gray-600 dark:text-gray-400">
+                Lerna supports task splitting via Nx Cloud. The Atomizer
+                automatically splits large e2e/test tasks into per-file
+                cacheable targets.
+              </dd>
+            </div>
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
+              <dt>
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
+                  <NotSupported /> moon
+                </p>
+              </dt>
+              <dd className="mt-4 text-gray-600 dark:text-gray-400">
+                moon doesn't support task splitting.
+              </dd>
+            </div>
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
+              <dt>
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
+                  <Supported /> Nx
+                </p>
+              </dt>
+              <dd className="mt-4 text-gray-600 dark:text-gray-400">
+                Nx Cloud&apos;s Atomizer automatically splits large e2e and test
+                tasks into per-file cacheable targets. Each slice can be cached
+                and distributed independently, with dynamic task assignment
+                balanced by historical run time.
+              </dd>
+            </div>
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
+              <dt>
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
+                  <ManualImplementation /> Pants
+                </p>
+              </dt>
+              <dd className="mt-4 text-gray-600 dark:text-gray-400">
+                Pants supports deterministic test sharding via{' '}
+                <code>--test-shard=k/N</code>, splitting the test suite by file
+                count. Each test file runs as a separate process, but sharding
+                is static and not intelligence-driven.
+              </dd>
+            </div>
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
+              <dt>
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
+                  <NotSupported /> Rush
+                </p>
+              </dt>
+              <dd className="mt-4 text-gray-600 dark:text-gray-400">
+                Rush doesn't support task splitting.
+              </dd>
+            </div>
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
+              <dt>
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
+                  <NotSupported /> Turborepo
+                </p>
+              </dt>
+              <dd className="mt-4 text-gray-600 dark:text-gray-400">
+                Turborepo doesn't support task splitting.
+              </dd>
+            </div>
+          </dl>
+        </div>
+
+        {/*Deflaking*/}
+        <div
+          id="deflaking"
+          className="relative mt-16 lg:grid lg:grid-cols-2 lg:items-start lg:gap-12"
+        >
+          <div className="relative">
+            <div className="absolute flex h-10 w-10 items-center justify-center rounded-md rounded-md bg-slate-100 text-gray-800 dark:bg-slate-900 dark:text-gray-200">
+              <ExclamationCircleIcon className="h-6 w-6" />
+            </div>
+            <div className="group ml-16 text-xl font-medium text-gray-800 sm:text-2xl sm:leading-relaxed dark:text-gray-200">
+              Deflaking
+              <a
+                aria-hidden="true"
+                tabIndex={-1}
+                href="#deflaking"
+                className="flex inline-flex items-center text-gray-900 dark:text-white"
+              >
+                <LinkIcon className="ml-2 h-6 w-6 opacity-0 group-hover:opacity-100" />
+              </a>
+            </div>
+
+            <p className="mt-3 text-lg text-gray-700 dark:text-gray-300">
+              Automatically detect flaky tests, quarantine them, and re-run only
+              what failed. Keep your CI signal clean.
+            </p>
+
+            <div className="mt-10" aria-hidden="true">
+              <img
+                loading="lazy"
+                className="relative mx-auto"
+                width={490}
+                src="/images/deflaking.svg"
+                alt="deflaking"
+              />
+            </div>
+          </div>
+
+          <dl className="mt-12 space-y-6 md:mt-0">
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
+              <dt>
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
+                  <ManualImplementation /> Bazel
+                </p>
+              </dt>
+              <dd className="mt-4 text-gray-600 dark:text-gray-400">
+                Bazel supports <code>--flaky_test_attempts</code> (up to 10
+                retries) and a <code>flaky</code> attribute for automatic
+                retries. Tests that fail then pass are marked as FLAKY. This is
+                rule-based, not automatic detection.
+              </dd>
+            </div>
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
+              <dt>
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
+                  <Supported /> Gradle Build Tool
+                </p>
+              </dt>
+              <dd className="mt-4 text-gray-600 dark:text-gray-400">
+                Develocity provides ML-powered flaky test detection, identifying
+                flaky tests within a single build and across builds. Integrates
+                with test retry plugins for automatic re-runs.
+              </dd>
+            </div>
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
+              <dt>
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
+                  <NotSupported /> Lage
+                </p>
+              </dt>
+              <dd className="mt-4 text-gray-600 dark:text-gray-400">
+                Lage doesn't support deflaking.
+              </dd>
+            </div>
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
+              <dt>
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
+                  <Supported /> Lerna
+                </p>
+              </dt>
+              <dd className="mt-4 text-gray-600 dark:text-gray-400">
+                Lerna supports deflaking via Nx Cloud, which automatically
+                detects flaky tests and re-runs only the failures.
+              </dd>
+            </div>
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
+              <dt>
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
+                  <NotSupported /> moon
+                </p>
+              </dt>
+              <dd className="mt-4 text-gray-600 dark:text-gray-400">
+                moon doesn't support deflaking.
+              </dd>
+            </div>
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
+              <dt>
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
+                  <Supported /> Nx
+                </p>
+              </dt>
+              <dd className="mt-4 text-gray-600 dark:text-gray-400">
+                Nx Cloud automatically detects flaky tests, quarantines them,
+                and re-runs only what failed. Combined with Atomizer, failed
+                tests are isolated at the file level for faster detection.
+              </dd>
+            </div>
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
+              <dt>
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
+                  <ManualImplementation /> Pants
+                </p>
+              </dt>
+              <dd className="mt-4 text-gray-600 dark:text-gray-400">
+                Pants can automatically retry failed tests, which helps with
+                flaky integration tests. This is a simple retry mechanism, not
+                automatic flaky test detection or quarantine.
+              </dd>
+            </div>
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
+              <dt>
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
+                  <NotSupported /> Rush
+                </p>
+              </dt>
+              <dd className="mt-4 text-gray-600 dark:text-gray-400">
+                Rush doesn't support deflaking.
+              </dd>
+            </div>
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
+              <dt>
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
+                  <NotSupported /> Turborepo
+                </p>
+              </dt>
+              <dd className="mt-4 text-gray-600 dark:text-gray-400">
+                Turborepo doesn't support deflaking.
+              </dd>
+            </div>
+          </dl>
+        </div>
+
         {/*UNDERSTANDABLE*/}
         <div className="font-boldtext-gray-800 dark:text-gray-100tracking-tight mt-24 flex items-center text-2xl leading-loose sm:text-3xl sm:leading-relaxed lg:mt-32">
-          Understandable
+          # Understandable
           <div className="ml-4 flex h-1 w-full flex-grow rounded bg-slate-100 dark:bg-slate-900" />
         </div>
 
@@ -928,7 +1224,7 @@ export function MonorepoFeatures(): JSX.Element {
               <PresentationChartLineIcon className="h-6 w-6" />
             </div>
             <div className="group ml-16 text-xl font-medium text-gray-800 sm:text-2xl sm:leading-relaxed dark:text-gray-200">
-              Workspace analysis
+              Workspace Analysis
               <a
                 aria-hidden="true"
                 tabIndex={-1}
@@ -1073,7 +1369,7 @@ export function MonorepoFeatures(): JSX.Element {
               <PresentationChartLineIcon className="h-6 w-6" />
             </div>
             <div className="group ml-16 text-xl font-medium text-gray-800 sm:text-2xl sm:leading-relaxed dark:text-gray-200">
-              Project graph visualization
+              Project Graph Visualization
               <a
                 aria-hidden="true"
                 tabIndex={-1}
@@ -1212,7 +1508,7 @@ export function MonorepoFeatures(): JSX.Element {
 
         {/*MANAGEMENT*/}
         <div className="font-boldtext-gray-800 dark:text-gray-100tracking-tight mt-24 flex items-center text-2xl leading-loose sm:text-3xl sm:leading-relaxed lg:mt-32">
-          Manageable
+          # Manageable
           <div className="ml-4 flex h-1 w-full flex-grow rounded bg-slate-100 dark:bg-slate-900" />
         </div>
 
@@ -1226,7 +1522,7 @@ export function MonorepoFeatures(): JSX.Element {
               <CodeBracketIcon className="h-6 w-6" />
             </div>
             <div className="group ml-16 text-xl font-medium text-gray-800 sm:text-2xl sm:leading-relaxed dark:text-gray-200">
-              Source code sharing
+              Source Code Sharing
               <a
                 aria-hidden="true"
                 tabIndex={-1}
@@ -1377,7 +1673,7 @@ export function MonorepoFeatures(): JSX.Element {
               <CommandLineIcon className="h-6 w-6" />
             </div>
             <div className="group ml-16 text-xl font-medium text-gray-800 sm:text-2xl sm:leading-relaxed dark:text-gray-200">
-              Consistent tooling
+              Polyglot Support
               <a
                 aria-hidden="true"
                 tabIndex={-1}
@@ -1389,19 +1685,8 @@ export function MonorepoFeatures(): JSX.Element {
             </div>
 
             <p className="mt-3 text-lg text-gray-700 dark:text-gray-300">
-              The tool helps you get a consistent experience regardless of what
-              you use to develop your projects: different JavaScript frameworks,
-              Go, Rust, Java, etc. <br />
-              In other words, the tool treats different technologies the same
-              way.
-            </p>
-
-            <p className="mt-3 text-lg text-gray-700 dark:text-gray-300">
-              For instance, the tool can analyze package.json and JS/TS files to
-              figure out JS project deps, and how to build and test them. But it
-              will analyze Cargo.toml files to do the same for Rust, or Gradle
-              files to do the same for Java. This requires the tool to be
-              pluggable.
+              Same commands for building, testing, and serving regardless of
+              what language, framework, or tool a project uses.
             </p>
 
             <div className="mt-10" aria-hidden="true">
@@ -1540,7 +1825,7 @@ export function MonorepoFeatures(): JSX.Element {
               <CogIcon className="h-6 w-6" />
             </div>
             <div className="group ml-16 text-xl font-medium text-gray-800 sm:text-2xl sm:leading-relaxed dark:text-gray-200">
-              Code generation
+              Code Generation
               <a
                 aria-hidden="true"
                 tabIndex={-1}
@@ -1692,7 +1977,7 @@ export function MonorepoFeatures(): JSX.Element {
               <SignalIcon className="h-6 w-6" />
             </div>
             <div className="group ml-16 text-xl font-medium text-gray-800 sm:text-2xl sm:leading-relaxed dark:text-gray-200">
-              Project constraints and visibility
+              Project Constraints and Visibility
               <a
                 aria-hidden="true"
                 tabIndex={-1}
@@ -1836,6 +2121,452 @@ export function MonorepoFeatures(): JSX.Element {
               <dd className="mt-4 text-base text-gray-600 dark:text-gray-400">
                 A linter with a set of custom rules and extra configuration can
                 be used to ensure that some constraints hold.
+              </dd>
+            </div>
+          </dl>
+        </div>
+
+        {/*AI-READY*/}
+        <div className="font-boldtext-gray-800 dark:text-gray-100tracking-tight mt-24 flex items-center text-2xl leading-loose sm:text-3xl sm:leading-relaxed lg:mt-32">
+          <span className="whitespace-nowrap"># AI-Ready</span>
+          <div className="ml-4 flex h-1 w-full flex-grow rounded bg-slate-100 dark:bg-slate-900" />
+        </div>
+
+        {/*AI Skills*/}
+        <div
+          id="ai-skills"
+          className="relative mt-16 lg:grid lg:grid-cols-2 lg:items-start lg:gap-12"
+        >
+          <div className="relative">
+            <div className="absolute flex h-10 w-10 items-center justify-center rounded-md rounded-md bg-slate-100 text-gray-800 dark:bg-slate-900 dark:text-gray-200">
+              <SparklesIcon className="h-6 w-6" />
+            </div>
+            <div className="group ml-16 text-xl font-medium text-gray-800 sm:text-2xl sm:leading-relaxed dark:text-gray-200">
+              AI Skills
+              <a
+                aria-hidden="true"
+                tabIndex={-1}
+                href="#ai-skills"
+                className="flex inline-flex items-center text-gray-900 dark:text-white"
+              >
+                <LinkIcon className="ml-2 h-6 w-6 opacity-0 group-hover:opacity-100" />
+              </a>
+            </div>
+
+            <p className="mt-3 text-lg text-gray-700 dark:text-gray-300">
+              Agent skills and rules files that help AI coding assistants
+              (Claude, Copilot, Cursor, etc.) understand the tool, generate
+              correct commands, and follow best practices. Skills teach agents
+              how to work effectively in your monorepo.
+            </p>
+
+            <div className="mt-10" aria-hidden="true">
+              <img
+                loading="lazy"
+                className="relative mx-auto"
+                width={490}
+                src="/images/mcp-skills.svg"
+                alt="AI skills"
+              />
+            </div>
+          </div>
+
+          <dl className="mt-12 space-y-6 md:mt-0">
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
+              <dt>
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
+                  <NotSupported /> Bazel
+                </p>
+              </dt>
+              <dd className="mt-4 text-gray-600 dark:text-gray-400">
+                No official or community AI agent skills available.
+              </dd>
+            </div>
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
+              <dt>
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
+                  <NotSupported /> Gradle Build Tool
+                </p>
+              </dt>
+              <dd className="mt-4 text-gray-600 dark:text-gray-400">
+                No official or community AI agent skills available.
+              </dd>
+            </div>
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
+              <dt>
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
+                  <NotSupported /> Lage
+                </p>
+              </dt>
+              <dd className="mt-4 text-gray-600 dark:text-gray-400">
+                Lage doesn&apos;t provide AI agent skills.
+              </dd>
+            </div>
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
+              <dt>
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
+                  <NotSupported /> Lerna
+                </p>
+              </dt>
+              <dd className="mt-4 text-gray-600 dark:text-gray-400">
+                No Lerna-specific AI skills. Lerna workspaces can partially
+                benefit from Nx&apos;s AI skills when Nx is used underneath.
+              </dd>
+            </div>
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
+              <dt>
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
+                  <NotSupported /> moon
+                </p>
+              </dt>
+              <dd className="mt-4 text-gray-600 dark:text-gray-400">
+                moon doesn&apos;t provide AI agent skills.
+              </dd>
+            </div>
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
+              <dt>
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
+                  <Supported /> Nx
+                </p>
+              </dt>
+              <dd className="mt-4 text-gray-600 dark:text-gray-400">
+                Nx provides the most comprehensive AI skills offering via the
+                official nx-ai-agents-config package. Skills for Claude Code,
+                GitHub Copilot, Cursor, Gemini, and OpenCode cover workspace
+                exploration, task execution, plugin management, CI monitoring,
+                and code generation.
+              </dd>
+            </div>
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
+              <dt>
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
+                  <NotSupported /> Pants
+                </p>
+              </dt>
+              <dd className="mt-4 text-gray-600 dark:text-gray-400">
+                Pants doesn&apos;t provide AI agent skills.
+              </dd>
+            </div>
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
+              <dt>
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
+                  <NotSupported /> Rush
+                </p>
+              </dt>
+              <dd className="mt-4 text-gray-600 dark:text-gray-400">
+                Rush doesn&apos;t provide separate AI agent skills. Its MCP
+                server includes documentation access via the{' '}
+                <code>rush_docs</code> tool.
+              </dd>
+            </div>
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
+              <dt>
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
+                  <Supported /> Turborepo
+                </p>
+              </dt>
+              <dd className="mt-4 text-gray-600 dark:text-gray-400">
+                Turborepo ships an official agent skill covering task pipeline
+                configuration, caching strategies, filter/affected usage, and
+                monorepo best practices. Also provides a{' '}
+                <code>turbo docs</code> command for AI-friendly documentation
+                access.
+              </dd>
+            </div>
+          </dl>
+        </div>
+
+        {/*MCP Server*/}
+        <div
+          id="mcp-server"
+          className="relative mt-16 lg:grid lg:grid-cols-2 lg:items-start lg:gap-12"
+        >
+          <div className="relative">
+            <div className="absolute flex h-10 w-10 items-center justify-center rounded-md rounded-md bg-slate-100 text-gray-800 dark:bg-slate-900 dark:text-gray-200">
+              <ServerStackIcon className="h-6 w-6" />
+            </div>
+            <div className="group ml-16 text-xl font-medium text-gray-800 sm:text-2xl sm:leading-relaxed dark:text-gray-200">
+              MCP Server
+              <a
+                aria-hidden="true"
+                tabIndex={-1}
+                href="#mcp-server"
+                className="flex inline-flex items-center text-gray-900 dark:text-white"
+              >
+                <LinkIcon className="ml-2 h-6 w-6 opacity-0 group-hover:opacity-100" />
+              </a>
+            </div>
+
+            <p className="mt-3 text-lg text-gray-700 dark:text-gray-300">
+              An MCP (Model Context Protocol) server that exposes monorepo
+              capabilities to AI agents: project graph awareness, task
+              execution, code generation, and more. Agents that understand your
+              workspace structure make better decisions.
+            </p>
+
+            <div className="mt-10" aria-hidden="true">
+              <img
+                loading="lazy"
+                className="relative mx-auto"
+                width={490}
+                src="/images/mcp-skills.svg"
+                alt="MCP server"
+              />
+            </div>
+          </div>
+
+          <dl className="mt-12 space-y-6 md:mt-0">
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
+              <dt>
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
+                  <CommunityProvided /> Bazel
+                </p>
+              </dt>
+              <dd className="mt-4 text-gray-600 dark:text-gray-400">
+                Multiple community-maintained MCP servers exist (e.g.,
+                bazel-mcp-server, mcp-bazel) exposing build, test, query, and
+                dependency analysis. No official MCP server from the Bazel team.
+              </dd>
+            </div>
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
+              <dt>
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
+                  <Supported /> Gradle Build Tool
+                </p>
+              </dt>
+              <dd className="mt-4 text-gray-600 dark:text-gray-400">
+                Develocity ships an official MCP server for build analytics:
+                failure investigation, test pattern analysis, and natural
+                language queries against build data. A community Gradle Tooling
+                API MCP server also exists.
+              </dd>
+            </div>
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
+              <dt>
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
+                  <NotSupported /> Lage
+                </p>
+              </dt>
+              <dd className="mt-4 text-gray-600 dark:text-gray-400">
+                Lage doesn&apos;t provide an MCP server.
+              </dd>
+            </div>
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
+              <dt>
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
+                  <NotSupported /> Lerna
+                </p>
+              </dt>
+              <dd className="mt-4 text-gray-600 dark:text-gray-400">
+                No Lerna-specific MCP server. The Nx MCP server can work with
+                Lerna monorepos since Nx powers Lerna under the hood.
+              </dd>
+            </div>
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
+              <dt>
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
+                  <Supported /> moon
+                </p>
+              </dt>
+              <dd className="mt-4 text-gray-600 dark:text-gray-400">
+                moon ships a built-in MCP server via <code>moon mcp</code>.
+                Exposes project and task queries, touched file detection, and
+                workspace syncing. Works with Claude Code, Cursor, VS Code, and
+                Zed.
+              </dd>
+            </div>
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
+              <dt>
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
+                  <Supported /> Nx
+                </p>
+              </dt>
+              <dd className="mt-4 text-gray-600 dark:text-gray-400">
+                The Nx MCP Server ships with Nx Console and is also available
+                standalone via <code>npx nx-mcp</code>. Provides workspace
+                analysis, generator tools, documentation, CI pipeline analysis,
+                and Nx Cloud analytics. The most feature-rich monorepo MCP
+                server available.
+              </dd>
+            </div>
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
+              <dt>
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
+                  <NotSupported /> Pants
+                </p>
+              </dt>
+              <dd className="mt-4 text-gray-600 dark:text-gray-400">
+                Pants doesn&apos;t provide an MCP server.
+              </dd>
+            </div>
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
+              <dt>
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
+                  <Supported /> Rush
+                </p>
+              </dt>
+              <dd className="mt-4 text-gray-600 dark:text-gray-400">
+                Rush has an official MCP server (@rushstack/mcp-server) built by
+                TikTok engineers. Provides workspace details, project analysis,
+                documentation, command validation, and migration tools.
+                Extensible via Rush MCP plugins.
+              </dd>
+            </div>
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
+              <dt>
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
+                  <CommunityProvided /> Turborepo
+                </p>
+              </dt>
+              <dd className="mt-4 text-gray-600 dark:text-gray-400">
+                No official MCP server from Vercel. Basic community
+                implementations exist but are not full workspace-aware MCP
+                servers. An active feature request is open.
+              </dd>
+            </div>
+          </dl>
+        </div>
+
+        {/*Agentic CI*/}
+        <div
+          id="agentic-ci"
+          className="relative mt-16 lg:grid lg:grid-cols-2 lg:items-start lg:gap-12"
+        >
+          <div className="relative">
+            <div className="absolute flex h-10 w-10 items-center justify-center rounded-md rounded-md bg-slate-100 text-gray-800 dark:bg-slate-900 dark:text-gray-200">
+              <CogIcon className="h-6 w-6" />
+            </div>
+            <div className="group ml-16 text-xl font-medium text-gray-800 sm:text-2xl sm:leading-relaxed dark:text-gray-200">
+              Agentic CI
+              <a
+                aria-hidden="true"
+                tabIndex={-1}
+                href="#agentic-ci"
+                className="flex inline-flex items-center text-gray-900 dark:text-white"
+              >
+                <LinkIcon className="ml-2 h-6 w-6 opacity-0 group-hover:opacity-100" />
+              </a>
+            </div>
+
+            <p className="mt-3 text-lg text-gray-700 dark:text-gray-300">
+              AI-powered CI that goes beyond just running tasks. Self-healing
+              broken PRs by diagnosing failures and proposing fixes,
+              automatically re-running flaky tasks, and providing intelligent
+              feedback to developers.
+            </p>
+
+            <div className="mt-10" aria-hidden="true">
+              <img
+                loading="lazy"
+                className="relative mx-auto"
+                width={490}
+                src="/images/self-healing-ci.svg"
+                alt="agentic CI"
+              />
+            </div>
+          </div>
+
+          <dl className="mt-12 space-y-6 md:mt-0">
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
+              <dt>
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
+                  <NotSupported /> Bazel
+                </p>
+              </dt>
+              <dd className="mt-4 text-gray-600 dark:text-gray-400">
+                Bazel doesn&apos;t provide agentic CI capabilities. Third-party
+                analytics (EngFlow, BuildBuddy) offer build event viewing but no
+                AI-driven analysis or self-healing.
+              </dd>
+            </div>
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
+              <dt>
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
+                  <ManualImplementation /> Gradle Build Tool
+                </p>
+              </dt>
+              <dd className="mt-4 text-gray-600 dark:text-gray-400">
+                Develocity provides AI-powered failure grouping across build
+                history and an analytics MCP server for natural language
+                investigation of CI failures. This is analysis and diagnosis
+                only — it does not auto-generate or push code fixes.
+              </dd>
+            </div>
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
+              <dt>
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
+                  <NotSupported /> Lage
+                </p>
+              </dt>
+              <dd className="mt-4 text-gray-600 dark:text-gray-400">
+                Lage doesn&apos;t provide agentic CI capabilities.
+              </dd>
+            </div>
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
+              <dt>
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
+                  <Supported /> Lerna
+                </p>
+              </dt>
+              <dd className="mt-4 text-gray-600 dark:text-gray-400">
+                When connected to Nx Cloud, Lerna workspaces benefit from
+                self-healing CI. No Lerna-specific agentic CI features.
+              </dd>
+            </div>
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
+              <dt>
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
+                  <NotSupported /> moon
+                </p>
+              </dt>
+              <dd className="mt-4 text-gray-600 dark:text-gray-400">
+                moon doesn&apos;t provide agentic CI capabilities. moonbase
+                offers basic CI insights but no AI analysis.
+              </dd>
+            </div>
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
+              <dt>
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
+                  <Supported /> Nx
+                </p>
+              </dt>
+              <dd className="mt-4 text-gray-600 dark:text-gray-400">
+                Nx Cloud&apos;s Self-Healing CI automatically diagnoses CI
+                failures using error logs, stack traces, and the project graph,
+                then generates and verifies code fixes. Developers review via PR
+                comments or the Nx Cloud dashboard. Available on all plans with
+                auto-apply mode for high-confidence fixes.
+              </dd>
+            </div>
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
+              <dt>
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
+                  <NotSupported /> Pants
+                </p>
+              </dt>
+              <dd className="mt-4 text-gray-600 dark:text-gray-400">
+                Pants doesn&apos;t provide agentic CI capabilities.
+              </dd>
+            </div>
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
+              <dt>
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
+                  <NotSupported /> Rush
+                </p>
+              </dt>
+              <dd className="mt-4 text-gray-600 dark:text-gray-400">
+                Rush doesn&apos;t provide agentic CI capabilities. Its MCP
+                server is for local development assistance only.
+              </dd>
+            </div>
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
+              <dt>
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
+                  <NotSupported /> Turborepo
+                </p>
+              </dt>
+              <dd className="mt-4 text-gray-600 dark:text-gray-400">
+                Turborepo doesn&apos;t provide agentic CI capabilities.
               </dd>
             </div>
           </dl>

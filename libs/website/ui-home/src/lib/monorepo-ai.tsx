@@ -1,0 +1,399 @@
+import { useState } from 'react';
+import { LinkIcon } from '@heroicons/react/24/outline';
+import { PlayIcon } from '@heroicons/react/24/solid';
+
+const points = [
+  {
+    number: '01',
+    title: 'Full visibility',
+    polyrepo:
+      'An AI agent can only see the code inside the current repository. Everything beyond that boundary has to come from documentation, published type definitions, or manual explanations that may be incomplete or out of date.',
+    monorepo: (
+      <>
+        The agent reads the <strong>actual implementation</strong>: real API
+        handlers, real data types, real shared libraries. Plans are higher
+        quality because they are{' '}
+        <strong>based on the code itself</strong>.
+      </>
+    ),
+  },
+  {
+    number: '02',
+    title: 'Context flows freely',
+    polyrepo:
+      'When work spans multiple repos, the human becomes the bridge. You describe the API shape, point the agent to docs, explain what the other service expects. Context gets lost at every repo boundary.',
+    monorepo: (
+      <>
+        No walls between projects. The agent navigates from{' '}
+        <strong>frontend to backend to shared libraries</strong> directly.
+        Context is discovered, not transferred.{' '}
+        <strong>No manual handoff</strong> needed.
+      </>
+    ),
+  },
+  {
+    number: '03',
+    title: 'Cross-cutting work',
+    polyrepo:
+      'Refactoring, migrations, dependency upgrades: the tedious, error-prone work that teams keep postponing. AI agents are perfect for it, but repo boundaries limit what they can see and change. Cross-repo changes stay manual, slow, and fragile.',
+    monorepo: (
+      <>
+        The agent has full access to{' '}
+        <strong>apply changes across projects</strong>, run affected tests,
+        and submit a <strong>consistent, atomic PR</strong>. Visibility and
+        context make this possible, and so do quick, immediate feedback
+        loops.
+      </>
+    ),
+  },
+  {
+    number: '04',
+    title: 'Instant feedback loops',
+    polyrepo:
+      'Breaking changes surface late. You publish to staging, wait for the downstream repo to update, and discover the failure in a new session with no context of what changed or why. The feedback cycle is slow and disconnected.',
+    monorepo: (
+      <>
+        Change the backend and <strong>frontend tests break immediately</strong>.
+        The agent knows why, because it made the change. It proposes a fix:{' '}
+        <strong>update the frontend or make the API non-breaking</strong>.
+        The whole loop happens in one session, with full context.
+      </>
+    ),
+  },
+];
+
+/* Diagonal connecting arrow between zigzag steps */
+function ConnectingArrow({
+  direction,
+}: {
+  direction: 'down-right' | 'down-left';
+}): JSX.Element {
+  return (
+    <div className="lg:col-span-2">
+      {/* Mobile: simple down arrow */}
+      <div className="flex justify-center py-4 lg:hidden">
+        <svg
+          width="24"
+          height="48"
+          viewBox="0 0 24 48"
+          fill="none"
+          className="text-slate-300 dark:text-slate-600"
+        >
+          <path
+            d="M12 0v40m0 0l-8-8m8 8l8-8"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </svg>
+      </div>
+      {/* Desktop: diagonal arrow */}
+      <div
+        className={`hidden py-2 lg:flex ${
+          direction === 'down-right' ? 'justify-center lg:pl-12' : 'justify-center lg:pr-12'
+        }`}
+      >
+        <svg
+          width="120"
+          height="48"
+          viewBox="0 0 120 48"
+          fill="none"
+          className="text-slate-300 dark:text-slate-600"
+        >
+          {direction === 'down-right' ? (
+            <path
+              d="M20 4 L100 40"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              markerEnd="url(#arrowhead)"
+            />
+          ) : (
+            <path
+              d="M100 4 L20 40"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              markerEnd="url(#arrowhead)"
+            />
+          )}
+          <defs>
+            <marker
+              id="arrowhead"
+              markerWidth="8"
+              markerHeight="6"
+              refX="8"
+              refY="3"
+              orient="auto"
+            >
+              <path d="M0 0L8 3L0 6" fill="currentColor" />
+            </marker>
+          </defs>
+        </svg>
+      </div>
+    </div>
+  );
+}
+
+function PointCard({
+  point,
+}: {
+  point: (typeof points)[number];
+}): JSX.Element {
+  const [flipped, setFlipped] = useState(false);
+
+  return (
+    <section className="group relative">
+      {/* Number + Title */}
+      <div className="flex items-center gap-4">
+        <span className="shrink-0 text-5xl font-black tabular-nums text-slate-200 transition-colors group-hover:text-yellow-500 dark:text-slate-700 dark:group-hover:text-yellow-500 sm:text-6xl">
+          {point.number}
+        </span>
+        <h2 className="text-2xl font-semibold tracking-tight text-gray-900 dark:text-white sm:text-3xl">
+          {point.title}
+        </h2>
+      </div>
+
+      {/* Card stack — same-size cards, front shifted via translate */}
+      <div
+        className="relative mt-6 grid cursor-pointer pb-8 pr-2.5"
+        onClick={() => setFlipped(!flipped)}
+      >
+        {/* Polyrepo card */}
+        <div
+          className={`col-start-1 row-start-1 rounded-lg border border-dashed border-slate-300 bg-slate-50 px-5 py-4 transition-all duration-300 dark:border-slate-600 dark:bg-slate-800 ${
+            flipped
+              ? 'z-10 translate-x-2.5 translate-y-8 shadow-sm hover:translate-y-6 hover:shadow-md'
+              : 'z-0'
+          }`}
+        >
+          <span className="text-xs font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500">
+            Polyrepo
+          </span>
+          <p className="mt-2 text-sm leading-relaxed text-gray-500 dark:text-gray-400">
+            {point.polyrepo}
+          </p>
+        </div>
+
+        {/* Monorepo card */}
+        <div
+          className={`col-start-1 row-start-1 rounded-lg border border-green-200/60 bg-green-50 px-5 py-4 transition-all duration-300 dark:border-green-800/40 dark:bg-slate-800 ${
+            flipped
+              ? 'z-0'
+              : 'z-10 translate-x-2.5 translate-y-8 shadow-sm hover:translate-y-6 hover:shadow-md'
+          }`}
+        >
+          <span className="text-xs font-bold uppercase tracking-wider text-green-600 dark:text-green-400">
+            Monorepo
+          </span>
+          <p className="mt-2 text-base leading-relaxed text-gray-800 dark:text-gray-200">
+            {point.monorepo}
+          </p>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function YouTubeEmbed({
+  videoId,
+  thumbnailSrc,
+  title,
+}: {
+  videoId: string;
+  thumbnailSrc: string;
+  title: string;
+}): JSX.Element {
+  const [playing, setPlaying] = useState(false);
+
+  if (playing) {
+    return (
+      <div
+        className="relative w-full overflow-hidden rounded-xl"
+        style={{ paddingBottom: '56.25%' }}
+      >
+        <iframe
+          className="absolute inset-0 h-full w-full"
+          src={`https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`}
+          title={title}
+          frameBorder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+        />
+      </div>
+    );
+  }
+
+  return (
+    <button
+      type="button"
+      onClick={() => setPlaying(true)}
+      className="group/play relative block aspect-video w-full cursor-pointer overflow-hidden rounded-xl"
+      aria-label={`Play video: ${title}`}
+    >
+      <img
+        src={thumbnailSrc}
+        alt={title}
+        className="h-full w-full object-cover transition-transform duration-300 group-hover/play:scale-105"
+        loading="lazy"
+      />
+      <div className="absolute inset-0 flex items-center justify-center bg-black/30 transition-colors duration-300 group-hover/play:bg-black/20">
+        <div className="flex h-16 w-16 items-center justify-center rounded-full bg-white/90 shadow-lg transition-transform duration-300 group-hover/play:scale-110 sm:h-20 sm:w-20">
+          <PlayIcon className="ml-1 h-8 w-8 text-gray-900 sm:h-10 sm:w-10" />
+        </div>
+      </div>
+    </button>
+  );
+}
+
+export function MonorepoAI(): JSX.Element {
+  return (
+    <div
+      id="monorepo-ai"
+      className="bg-slate-50 px-4 pt-16 pb-20 dark:bg-slate-800 sm:px-6 lg:px-8 lg:pt-24 lg:pb-28"
+    >
+      <div className="relative">
+        <div className="group text-center text-4xl font-extrabold leading-8 tracking-tight text-gray-900 dark:text-white sm:text-5xl">
+          Monorepos Amplify AI Agents
+          <a
+            aria-hidden="true"
+            tabIndex={-1}
+            href="#monorepo-ai"
+            className="flex inline-flex items-center text-gray-900 dark:text-white"
+          >
+            <LinkIcon className="ml-2 h-6 w-6 opacity-0 group-hover:opacity-100" />
+          </a>
+        </div>
+        <p className="mx-auto mt-4 max-w-3xl text-center text-xl text-gray-700 dark:text-gray-300">
+          The path to fully leveraging AI agent capabilities.
+        </p>
+      </div>
+
+      <article className="relative mx-auto mt-24 max-w-5xl lg:mt-36">
+        {/* Zigzag grid: 2 columns on desktop */}
+        <div className="grid lg:grid-cols-2 lg:gap-x-12">
+          {/* 01 - Left */}
+          <div className="lg:col-start-1">
+            <PointCard point={points[0]} />
+          </div>
+
+          {/* Arrow: down-right */}
+          <ConnectingArrow direction="down-right" />
+
+          {/* 02 - Right */}
+          <div className="lg:col-start-2">
+            <PointCard point={points[1]} />
+          </div>
+
+          {/* Arrow: down-left */}
+          <ConnectingArrow direction="down-left" />
+
+          {/* 03 - Left */}
+          <div className="lg:col-start-1">
+            <PointCard point={points[2]} />
+          </div>
+
+          {/* Arrow: down-right */}
+          <ConnectingArrow direction="down-right" />
+
+          {/* 04 - Right */}
+          <div className="lg:col-start-2">
+            <PointCard point={points[3]} />
+          </div>
+
+          {/* Final arrow to summary — gentle tilt from right toward center */}
+          <div className="lg:col-span-2">
+            <div className="flex justify-center py-4 lg:hidden">
+              <svg
+                width="24"
+                height="48"
+                viewBox="0 0 24 48"
+                fill="none"
+                className="text-slate-300 dark:text-slate-600"
+              >
+                <path
+                  d="M12 0v40m0 0l-8-8m8 8l8-8"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </div>
+            <div className="hidden py-2 lg:flex justify-center">
+              <svg
+                width="120"
+                height="48"
+                viewBox="0 0 120 48"
+                fill="none"
+                className="text-slate-300 dark:text-slate-600"
+              >
+                <path
+                  d="M80 4 L60 40"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  markerEnd="url(#arrowhead-final)"
+                />
+                <defs>
+                  <marker
+                    id="arrowhead-final"
+                    markerWidth="8"
+                    markerHeight="6"
+                    refX="8"
+                    refY="3"
+                    orient="auto"
+                  >
+                    <path d="M0 0L8 3L0 6" fill="currentColor" />
+                  </marker>
+                </defs>
+              </svg>
+            </div>
+          </div>
+
+          {/* Summary box */}
+          <div className="lg:col-span-2">
+            <div className="mx-auto max-w-2xl rounded-lg border border-slate-200 bg-white/80 px-6 py-5 text-center shadow-sm dark:border-slate-700 dark:bg-slate-900/60">
+              <p className="text-lg leading-relaxed text-gray-800 dark:text-gray-200">
+                Full visibility, autonomously discoverable context, and
+                instant feedback loops: the ingredients to leverage AI
+                agents to their fullest.
+              </p>
+            </div>
+          </div>
+
+          {/* Arrow to video */}
+          <div className="lg:col-span-2">
+            <div className="flex justify-center py-4">
+              <svg
+                width="24"
+                height="48"
+                viewBox="0 0 24 48"
+                fill="none"
+                className="text-slate-300 dark:text-slate-600"
+              >
+                <path
+                  d="M12 0v40m0 0l-8-8m8 8l8-8"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </div>
+          </div>
+
+          {/* Video embed - full width */}
+          <div className="lg:col-span-2">
+            <YouTubeEmbed
+              videoId="alIto5fqrfk"
+              thumbnailSrc="/images/ai/poly-vs-monorepo-ai.png"
+              title="Monorepo vs Polyrepo with AI Agents"
+            />
+          </div>
+        </div>
+      </article>
+    </div>
+  );
+}

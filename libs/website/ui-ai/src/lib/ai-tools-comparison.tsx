@@ -458,7 +458,7 @@ export function AIToolsComparison(): JSX.Element {
             </a>
           </div>
           <p className="mt-4 text-xl text-gray-700 dark:text-gray-300">
-            Current AI assistant integration capabilities across monorepo tools.
+            Current AI agent integration capabilities across monorepo tools.
           </p>
         </div>
       </div>
@@ -488,7 +488,7 @@ export function AIToolsComparison(): JSX.Element {
 
             <p className="mt-3 text-lg text-gray-700 dark:text-gray-300">
               Native support for Model Context Protocol (MCP) servers that
-              enable AI assistants to access structured workspace information
+              enable AI agents to access structured workspace information
               and execute tool-specific operations.
             </p>
           </div>
@@ -656,7 +656,7 @@ export function AIToolsComparison(): JSX.Element {
             </div>
 
             <p className="mt-3 text-lg text-gray-700 dark:text-gray-300">
-              The ability to provide AI assistants with structured workspace
+              The ability to provide AI agents with structured workspace
               understanding including project relationships, dependency graphs,
               and overall architecture insights.
             </p>
@@ -726,7 +726,7 @@ export function AIToolsComparison(): JSX.Element {
               <dd className="mt-4 text-gray-600 dark:text-gray-400">
                 Advanced workspace analysis with project graph visualization,
                 filtering capabilities, and real-time workspace monitoring for
-                AI assistants.
+                AI agents.
               </dd>
             </div>
             <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
@@ -915,7 +915,7 @@ export function AIToolsComparison(): JSX.Element {
             </div>
 
             <p className="mt-3 text-lg text-gray-700 dark:text-gray-300">
-              The ability for AI assistants to understand task definitions,
+              The ability for AI agents to understand task definitions,
               execute tasks, monitor progress, and provide intelligent workflow
               recommendations across the workspace.
             </p>
@@ -1419,7 +1419,7 @@ export function AIToolsComparison(): JSX.Element {
                   <div className="flex items-center">
                     <MinusIcon className="mr-1 h-4 w-4 text-slate-400" />
                     <span className="font-medium text-slate-400">None: </span>
-                    No AI assistant integration available
+                    No AI agent integration available
                   </div>
                 </div>
               </div>
