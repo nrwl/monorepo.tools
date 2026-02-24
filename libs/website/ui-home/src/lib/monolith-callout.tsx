@@ -20,7 +20,7 @@ export function MonolithCallout(): JSX.Element {
                 title="Misconceptions about Monorepos: Monorepo != Monolith"
                 rel="nofollow"
                 className="border-b border-yellow-500 transition hover:rounded hover:bg-yellow-500 hover:text-gray-800"
-                href="https://blog.nrwl.io/misconceptions-about-monorepos-monorepo-monolith-df1250d4b03c"
+                href="https://nx.dev/blog/monorepo-is-not-monolith"
               >
                 &ldquo;Misconceptions about Monorepos: Monorepo !=
                 Monolith&rdquo;
