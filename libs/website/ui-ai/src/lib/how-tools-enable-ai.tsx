@@ -1,10 +1,6 @@
 import { LinkIcon } from '@heroicons/react/24/outline';
 import {
-  MapIcon,
-  BoltIcon,
-  CubeTransparentIcon,
   CircleStackIcon,
-  DocumentMagnifyingGlassIcon,
   CommandLineIcon,
   PuzzlePieceIcon,
 } from '@heroicons/react/24/outline';
@@ -40,7 +36,7 @@ export function HowToolsEnableAI(): JSX.Element {
           <h1
             className="group text-center text-4xl font-extrabold leading-8 tracking-tight text-gray-900 sm:text-5xl dark:text-white"
           >
-            How Monorepo Tools Enable AI
+            # Teaching AI Agents to Navigate Your Monorepo
             <a
               aria-hidden="true"
               tabIndex={-1}
@@ -50,194 +46,58 @@ export function HowToolsEnableAI(): JSX.Element {
               <LinkIcon className="ml-2 h-6 w-6 opacity-0 group-hover:opacity-100" />
             </a>
           </h1>
-          <p className="mx-auto mt-4 max-w-3xl text-center text-xl text-gray-700 dark:text-gray-300">
-            From file-level scanning to architectural understanding
+        </div>
+
+        <div className="mx-auto mt-12 max-w-4xl">
+          <p className="text-xl text-gray-700 dark:text-gray-300">
+            Monorepos can be massive. AI agents are getting better and better
+            at grepping through codebases, but in a workspace with hundreds of
+            projects, that approach only gets you so far. You can{' '}
+            <mark className="rounded-md bg-yellow-500 px-1">
+              dramatically accelerate AI
+            </mark>{' '}
+            by giving it a higher-level understanding of how the workspace is
+            structured: <strong>what projects exist, how they relate to each
+            other, and what tasks can be run</strong>.
+          </p>
+          <p className="mt-4 text-xl text-gray-700 dark:text-gray-300">
+            The result: better understanding, faster discovery, and
+            significantly fewer tokens spent on exploration.
           </p>
         </div>
 
-        {/* The Problem: AI Without the Map */}
-        <div className="relative mt-12 lg:mt-24 lg:grid lg:grid-cols-2 lg:items-center lg:gap-8">
-          <div className="relative lg:order-2">
-            <h2
-              id="ai-without-the-map"
-              className="group text-2xl font-bold leading-loose tracking-tight text-gray-800 sm:text-3xl sm:leading-relaxed dark:text-gray-100"
-            >
-              AI Without the Map
-              <a
-                aria-hidden="true"
-                tabIndex={-1}
-                href="#ai-without-the-map"
-                className="inline-flex items-center text-gray-900 dark:text-white"
-              >
-                <LinkIcon className="ml-2 h-6 w-6 opacity-0 group-hover:opacity-100" />
-              </a>
-            </h2>
-            <p className="mt-3 text-lg text-gray-700 dark:text-gray-300">
-              LLMs rely entirely on provided context. Having all code in one
-              repository helps, but raw code access alone isn't enough. It's
-              analogous to{' '}
-              <mark className="rounded-md bg-yellow-500 px-1">
-                navigating a city using only street view
-              </mark>
-              . You can see individual files clearly, but without an aerial view
-              of the architecture, it's hard to pick optimal routes.
-            </p>
-            <p className="mt-4 text-lg text-gray-700 dark:text-gray-300">
-              Research on "context rot" shows that even million-token context
-              windows degrade in performance with longer inputs. Information
-              buried in the middle of large contexts becomes effectively
-              invisible. The solution isn't more context, it's{' '}
-              <mark className="rounded-md bg-yellow-500 px-1">
-                the right context at the right level of abstraction
-              </mark>
-              .
-            </p>
-          </div>
-
-          <div className="mt-10 lg:order-1 lg:mt-0">
-            <img
-              className="mx-auto w-full rounded-lg shadow-lg"
-              width={500}
-              src="/images/ai/ai-streetview.avif"
-              alt="AI agent only seeing individual files without understanding the broader architectural context"
-            />
-          </div>
-        </div>
-
-        {/* What AI Needs: Before/After */}
-        <div className="mt-24 lg:mt-36">
-          <div className="mx-auto max-w-2xl text-center">
-            <h2
-              id="what-ai-needs"
-              className="group text-3xl font-semibold tracking-tight text-gray-800 sm:text-4xl dark:text-gray-100"
-            >
-              What AI Needs from Monorepo Tooling
-              <a
-                aria-hidden="true"
-                tabIndex={-1}
-                href="#what-ai-needs"
-                className="inline-flex items-center text-gray-900 dark:text-white"
-              >
-                <LinkIcon className="ml-2 h-6 w-6 opacity-0 group-hover:opacity-100" />
-              </a>
-            </h2>
-            <p className="mt-4 text-lg text-gray-700 dark:text-gray-300">
-              Smart monorepo tooling elevates AI understanding from file-level to
-              architectural-level, giving agents the "map view" they need to
-              navigate complex codebases effectively.
-            </p>
-          </div>
-
-          {/* Before/After comparison */}
-          <div className="mt-12 lg:grid lg:grid-cols-2 lg:items-center lg:gap-16">
-            <div className="text-center">
-              <div className="relative">
-                <img
-                  className="mx-auto rounded-lg shadow-lg"
-                  width={400}
-                  src="/images/ai/ai-only-seeing-files.avif"
-                  alt="Traditional AI agent overwhelmed by scattered individual files"
-                />
-                <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 transform">
-                  <span className="inline-flex items-center rounded-full bg-slate-100 px-3 py-1 text-sm font-medium text-slate-800 dark:bg-slate-800 dark:text-slate-200">
-                    Basic AI Agent
-                  </span>
-                </div>
-              </div>
-            </div>
-
-            <div className="mt-12 text-center lg:mt-0">
-              <div className="relative">
-                <img
-                  className="mx-auto rounded-lg shadow-lg"
-                  width={400}
-                  src="/images/ai/ai-seeing-project-graph.avif"
-                  alt="Monorepo-aware AI agent viewing a structured project graph"
-                />
-                <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 transform">
-                  <span className="inline-flex items-center rounded-full bg-slate-100 px-3 py-1 text-sm font-medium text-slate-800 dark:bg-slate-800 dark:text-slate-200">
-                    Monorepo-Aware AI
-                  </span>
-                </div>
+        {/* Before/After comparison */}
+        <div className="mt-16 lg:grid lg:grid-cols-2 lg:items-center lg:gap-16">
+          <div className="text-center">
+            <div className="relative">
+              <img
+                className="mx-auto rounded-lg shadow-lg"
+                width={400}
+                src="/images/ai/ai-only-seeing-files.avif"
+                alt="Traditional AI agent grepping through individual files without architectural understanding"
+              />
+              <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 transform">
+                <span className="inline-flex items-center rounded-full bg-slate-100 px-3 py-1 text-sm font-medium text-slate-800 dark:bg-slate-800 dark:text-slate-200">
+                  Basic AI Agent
+                </span>
               </div>
             </div>
           </div>
 
-          {/* 3 Pillars */}
-          <div className="mx-auto mt-20 max-w-7xl">
-            <dl className="grid gap-8 lg:grid-cols-3 lg:gap-12">
-              <div className="relative">
-                <dt>
-                  <div className="flex h-10 w-10 items-center justify-center rounded-md bg-slate-100 text-gray-800 dark:bg-slate-900 dark:text-gray-200">
-                    <MapIcon className="h-6 w-6" aria-hidden="true" />
-                  </div>
-                  <p className="mt-4 text-lg font-medium leading-6 text-gray-900 dark:text-white">
-                    Project Graph & Workspace Structure
-                  </p>
-                </dt>
-                <dd className="mt-2 text-base text-gray-700 dark:text-gray-300">
-                  The "map view" of your workspace: projects, their
-                  relationships, and dependencies. AI gets a high-level
-                  understanding of what connects to what, instead of parsing
-                  individual config files across the repo.
-                </dd>
+          <div className="mt-12 text-center lg:mt-0">
+            <div className="relative">
+              <img
+                className="mx-auto rounded-lg shadow-lg"
+                width={400}
+                src="/images/ai/ai-seeing-project-graph.avif"
+                alt="Monorepo-aware AI agent with access to the project graph and workspace structure"
+              />
+              <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 transform">
+                <span className="inline-flex items-center rounded-full bg-slate-100 px-3 py-1 text-sm font-medium text-slate-800 dark:bg-slate-800 dark:text-slate-200">
+                  Monorepo-Aware AI
+                </span>
               </div>
-
-              <div className="relative">
-                <dt>
-                  <div className="flex h-10 w-10 items-center justify-center rounded-md bg-slate-100 text-gray-800 dark:bg-slate-900 dark:text-gray-200">
-                    <CubeTransparentIcon
-                      className="h-6 w-6"
-                      aria-hidden="true"
-                    />
-                  </div>
-                  <p className="mt-4 text-lg font-medium leading-6 text-gray-900 dark:text-white">
-                    Workspace & Project Metadata
-                  </p>
-                </dt>
-                <dd className="mt-2 text-base text-gray-700 dark:text-gray-300">
-                  Structured access to project-level information: dependencies,
-                  technology stacks, ownership details. This prevents context rot
-                  by avoiding the need to parse and correlate scattered
-                  configuration files across large monorepos.
-                </dd>
-              </div>
-
-              <div className="relative">
-                <dt>
-                  <div className="flex h-10 w-10 items-center justify-center rounded-md bg-slate-100 text-gray-800 dark:bg-slate-900 dark:text-gray-200">
-                    <BoltIcon className="h-6 w-6" aria-hidden="true" />
-                  </div>
-                  <p className="mt-4 text-lg font-medium leading-6 text-gray-900 dark:text-white">
-                    Task Intelligence & Monorepo Features
-                  </p>
-                </dt>
-                <dd className="mt-2 text-base text-gray-700 dark:text-gray-300">
-                  Understanding of available tasks, their dependencies, and
-                  caching behavior. AI can run builds and tests across the
-                  workspace using a single command, regardless of language or
-                  framework.
-                </dd>
-              </div>
-            </dl>
-          </div>
-
-          {/* Polyglot + Token Efficiency callout */}
-          <div className="mx-auto mt-16 max-w-4xl rounded-lg bg-slate-100 p-6 dark:bg-slate-900">
-            <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
-              Polyglot by Default, Token-Efficient by Design
-            </h3>
-            <p className="mt-3 text-base text-gray-700 dark:text-gray-300">
-              In a polyglot monorepo, AI doesn't need to parse Java build
-              files, TypeScript configs, and Go modules separately. Monorepo
-              tooling provides a{' '}
-              <mark className="rounded-md bg-yellow-500 px-1">
-                uniform interface
-              </mark>{' '}
-              : a single tool to query projects, understand relationships, and
-              execute tasks across all languages. This means fewer tokens spent
-              grepping through files and faster, more accurate responses.
-            </p>
+            </div>
           </div>
         </div>
 
@@ -321,41 +181,9 @@ export function HowToolsEnableAI(): JSX.Element {
             </div>
           </div>
 
-          {/* AI Config & Rules Files */}
-          <div className="mt-20 lg:grid lg:grid-cols-2 lg:items-start lg:gap-12">
-            <div>
-              <div className="flex items-center gap-3">
-                <div className="flex h-10 w-10 items-center justify-center rounded-md bg-slate-100 text-gray-800 dark:bg-slate-900 dark:text-gray-200">
-                  <DocumentMagnifyingGlassIcon
-                    className="h-6 w-6"
-                    aria-hidden="true"
-                  />
-                </div>
-                <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
-                  AI Configuration & Rules Files
-                </h3>
-              </div>
-              <p className="mt-4 text-base text-gray-700 dark:text-gray-300">
-                Configuration files that instruct AI how to work within a
-                monorepo. These include workspace-level rules (coding
-                conventions, architecture patterns, tooling preferences) and
-                project-level instructions that give AI the context it needs
-                without consuming tokens on discovery.
-              </p>
-              <p className="mt-3 text-base text-gray-700 dark:text-gray-300">
-                Monorepo tools can auto-generate these config files based on
-                workspace structure, keeping them in sync as the codebase
-                evolves.
-              </p>
-            </div>
-            <div className="mt-8 lg:mt-0">
-              <TerminalPlaceholder title="AI Config: Auto-generated rules" />
-            </div>
-          </div>
-
           {/* Agent Experience (Ax) */}
           <div className="mt-20 lg:grid lg:grid-cols-2 lg:items-start lg:gap-12">
-            <div className="lg:order-2">
+            <div>
               <div className="flex items-center gap-3">
                 <div className="flex h-10 w-10 items-center justify-center rounded-md bg-slate-100 text-gray-800 dark:bg-slate-900 dark:text-gray-200">
                   <CommandLineIcon className="h-6 w-6" aria-hidden="true" />
@@ -378,7 +206,7 @@ export function HowToolsEnableAI(): JSX.Element {
                 build system.
               </p>
             </div>
-            <div className="mt-8 lg:order-1 lg:mt-0">
+            <div className="mt-8 lg:mt-0">
               <TerminalPlaceholder title="Ax: CLI designed for AI agents" />
             </div>
           </div>
