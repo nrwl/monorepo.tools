@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  scroll-padding-top: 5rem; /* offset for sticky navbar (h-16 + breathing room) */
+}
+
 /* Remove flashing from dark/light theme */
 @media (prefers-color-scheme: light) {
   body {

@@ -4,6 +4,7 @@ import {
   CommandLineIcon,
   PuzzlePieceIcon,
 } from '@heroicons/react/24/outline';
+import { ProjectGraphTerminalAnimation } from './project-graph-terminal-animation';
 
 function TerminalPlaceholder({ title }: { title: string }) {
   return (
@@ -98,6 +99,46 @@ export function HowToolsEnableAI(): JSX.Element {
                 </span>
               </div>
             </div>
+          </div>
+        </div>
+
+        {/* Project Graph */}
+        <div className="mt-24 lg:mt-36 lg:grid lg:grid-cols-2 lg:items-start lg:gap-12">
+          <div>
+            <h2
+              id="project-graph"
+              className="group text-3xl font-semibold tracking-tight text-gray-800 sm:text-4xl dark:text-gray-100"
+            >
+              The Project Graph
+              <a
+                aria-hidden="true"
+                tabIndex={-1}
+                href="#project-graph"
+                className="inline-flex items-center text-gray-900 dark:text-white"
+              >
+                <LinkIcon className="ml-2 h-6 w-6 opacity-0 group-hover:opacity-100" />
+              </a>
+            </h2>
+            <p className="mt-4 text-base text-gray-700 dark:text-gray-300">
+              Most monorepo tools maintain a project graph: a structured map of
+              every project in the workspace and how they depend on each other.
+              When exposed to AI agents, it gives them{' '}
+              <mark className="rounded-md bg-yellow-500 px-1">
+                instant architectural understanding
+              </mark>{' '}
+              without reading a single file.
+            </p>
+            <p className="mt-3 text-base text-gray-700 dark:text-gray-300">
+              The agent can query this graph to discover which projects exist,
+              trace dependency chains, and understand blast radius: if{' '}
+              <code className="rounded bg-slate-200 px-1 text-sm dark:bg-slate-700">lib-api</code>{' '}
+              changes, what downstream apps and libraries are affected? Instead
+              of grepping through import statements, the agent gets the answer
+              in a single structured call.
+            </p>
+          </div>
+          <div className="mt-8 lg:mt-0">
+            <ProjectGraphTerminalAnimation />
           </div>
         </div>
 

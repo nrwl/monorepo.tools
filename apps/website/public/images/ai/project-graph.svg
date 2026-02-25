@@ -1,0 +1,55 @@
+<svg width="600" height="400" viewBox="0 0 600 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!--
+    Row 0 (e2e):    e2e (265, 50)
+    Row 1 (apps):   app-web (150, 140)     app-mobile (380, 140)
+    Row 2 (libs):   lib-ui (80, 250)       lib-api (230, 250)       lib-auth (380, 250)
+    Row 3 (shared): lib-shared (155, 350)  lib-utils (330, 350)
+  -->
+
+  <!-- Edges -->
+  <!-- e2e to apps -->
+  <line x1="150" y1="70" x2="150" y2="115" stroke="#4B5563" stroke-width="1.5"/>
+
+  <!-- app-web to libs -->
+  <line x1="150" y1="165" x2="80" y2="230" stroke="#4B5563" stroke-width="1.5"/>
+  <line x1="150" y1="165" x2="230" y2="230" stroke="#4B5563" stroke-width="1.5"/>
+
+  <!-- app-mobile to libs -->
+  <line x1="380" y1="165" x2="80" y2="230" stroke="#4B5563" stroke-width="1.5"/>
+  <line x1="380" y1="165" x2="230" y2="230" stroke="#4B5563" stroke-width="1.5"/>
+  <line x1="380" y1="165" x2="380" y2="230" stroke="#4B5563" stroke-width="1.5"/>
+
+  <!-- libs to shared -->
+  <line x1="80" y1="270" x2="155" y2="330" stroke="#4B5563" stroke-width="1.5"/>
+  <line x1="230" y1="270" x2="155" y2="330" stroke="#4B5563" stroke-width="1.5"/>
+  <line x1="230" y1="270" x2="330" y2="330" stroke="#4B5563" stroke-width="1.5"/>
+  <line x1="380" y1="270" x2="330" y2="330" stroke="#4B5563" stroke-width="1.5"/>
+
+  <!-- Row 0: E2E -->
+  <rect x="100" y="30" width="100" height="40" rx="8" fill="#1E293B"/>
+  <text x="150" y="55" text-anchor="middle" fill="white" font-family="system-ui, sans-serif" font-size="14" font-weight="600">e2e</text>
+
+  <!-- Row 1: Applications -->
+  <rect x="90" y="115" width="120" height="50" rx="8" fill="#1E293B"/>
+  <text x="150" y="145" text-anchor="middle" fill="white" font-family="system-ui, sans-serif" font-size="14" font-weight="600">app-web</text>
+
+  <rect x="320" y="115" width="120" height="50" rx="8" fill="#1E293B"/>
+  <text x="380" y="145" text-anchor="middle" fill="white" font-family="system-ui, sans-serif" font-size="14" font-weight="600">app-mobile</text>
+
+  <!-- Row 2: Libraries -->
+  <rect x="20" y="230" width="120" height="40" rx="6" fill="#1E293B"/>
+  <text x="80" y="255" text-anchor="middle" fill="white" font-family="system-ui, sans-serif" font-size="13" font-weight="500">lib-ui</text>
+
+  <rect x="170" y="230" width="120" height="40" rx="6" fill="#1E293B"/>
+  <text x="230" y="255" text-anchor="middle" fill="white" font-family="system-ui, sans-serif" font-size="13" font-weight="500">lib-api</text>
+
+  <rect x="320" y="230" width="120" height="40" rx="6" fill="#1E293B"/>
+  <text x="380" y="255" text-anchor="middle" fill="white" font-family="system-ui, sans-serif" font-size="13" font-weight="500">lib-auth</text>
+
+  <!-- Row 3: Shared -->
+  <rect x="95" y="330" width="120" height="40" rx="6" fill="#1E293B"/>
+  <text x="155" y="355" text-anchor="middle" fill="white" font-family="system-ui, sans-serif" font-size="13" font-weight="500">lib-shared</text>
+
+  <rect x="270" y="330" width="120" height="40" rx="6" fill="#1E293B"/>
+  <text x="330" y="355" text-anchor="middle" fill="white" font-family="system-ui, sans-serif" font-size="13" font-weight="500">lib-utils</text>
+</svg>
