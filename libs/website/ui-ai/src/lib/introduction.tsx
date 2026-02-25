@@ -167,30 +167,13 @@ export function Introduction(): JSX.Element {
           <div className="flex flex-col rounded-2xl bg-slate-100 shadow-xl dark:bg-slate-700">
             <div className="relative flex-1 px-6 pb-8 pt-12 md:px-8">
               <h2 className="text-xl font-semibold text-gray-800 dark:text-gray-200">
-                Your AI Agent Might Get Lost
+                How Monorepo Tools Enable AI
               </h2>
             </div>
             <div className="rounded-bl-2xl rounded-br-2xl bg-slate-200 p-4 md:px-6 dark:bg-slate-900">
               <a
-                href="#context-challenges"
-                title="Your AI Agent Might Get Lost"
-                className="text-sm font-medium uppercase text-gray-700 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300"
-              >
-                Learn more<span aria-hidden="true"> &rarr;</span>
-              </a>
-            </div>
-          </div>
-
-          <div className="flex flex-col rounded-2xl bg-slate-100 shadow-xl dark:bg-slate-700">
-            <div className="relative flex-1 px-6 pb-8 pt-12 md:px-8">
-              <h2 className="text-xl font-semibold text-gray-800 dark:text-gray-200">
-                The Missing Map
-              </h2>
-            </div>
-            <div className="rounded-bl-2xl rounded-br-2xl bg-slate-200 p-4 md:px-6 dark:bg-slate-900">
-              <a
-                href="#smart-ai-solutions"
-                title="The Missing Map"
+                href="#how-tools-enable-ai"
+                title="How Monorepo Tools Enable AI"
                 className="text-sm font-medium uppercase text-gray-700 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300"
               >
                 Learn more<span aria-hidden="true"> &rarr;</span>
@@ -208,6 +191,23 @@ export function Introduction(): JSX.Element {
               <a
                 href="#ai-agents-and-ci"
                 title="AI Agents and CI"
+                className="text-sm font-medium uppercase text-gray-700 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300"
+              >
+                Learn more<span aria-hidden="true"> &rarr;</span>
+              </a>
+            </div>
+          </div>
+
+          <div className="flex flex-col rounded-2xl bg-slate-100 shadow-xl dark:bg-slate-700">
+            <div className="relative flex-1 px-6 pb-8 pt-12 md:px-8">
+              <h2 className="text-xl font-semibold text-gray-800 dark:text-gray-200">
+                AI Tools Comparison
+              </h2>
+            </div>
+            <div className="rounded-bl-2xl rounded-br-2xl bg-slate-200 p-4 md:px-6 dark:bg-slate-900">
+              <a
+                href="#ai-tools-comparison"
+                title="AI Tools Comparison"
                 className="text-sm font-medium uppercase text-gray-700 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300"
               >
                 Learn more<span aria-hidden="true"> &rarr;</span>

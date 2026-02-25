@@ -2,8 +2,7 @@ import { Footer, Navigation } from '@monorepo-tools/website/ui-commons';
 import {
   Introduction,
   MonorepoAIAdvantages,
-  ContextChallenges,
-  SmartAISolutions,
+  HowToolsEnableAI,
   CIPressure,
   AIToolsComparison,
   Resources,
@@ -48,9 +47,7 @@ export function Index() {
 
         <MonorepoAIAdvantages />
 
-        <ContextChallenges />
-
-        <SmartAISolutions />
+        <HowToolsEnableAI />
 
         <CIPressure />
 
