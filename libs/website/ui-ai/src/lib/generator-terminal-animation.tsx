@@ -232,7 +232,7 @@ export function GeneratorTerminalAnimation() {
     if (phase !== 'source-tree') return;
     const timer = setTimeout(() => setPhase('encode'), PHASE1_DURATION);
     return () => clearTimeout(timer);
-  }, [phase]);
+  }, [started, phase]);
 
   // Phase 2: Encode — show arrow then box
   useEffect(() => {

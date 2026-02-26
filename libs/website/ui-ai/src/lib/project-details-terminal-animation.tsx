@@ -136,7 +136,7 @@ export function ProjectDetailsTerminalAnimation() {
       TYPING_SPEED + Math.random() * 30
     );
     return () => clearTimeout(timer);
-  }, [phase, typedChars]);
+  }, [started, phase, typedChars]);
 
   // Output phase
   useEffect(() => {

@@ -186,7 +186,7 @@ export function ProjectGraphTerminalAnimation() {
       TYPING_SPEED + Math.random() * 40
     );
     return () => clearTimeout(timer);
-  }, [phase, typedChars]);
+  }, [started, phase, typedChars]);
 
   // Output phase
   useEffect(() => {
