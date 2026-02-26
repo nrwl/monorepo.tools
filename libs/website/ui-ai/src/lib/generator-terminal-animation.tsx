@@ -1,6 +1,7 @@
 'use client';
 import { useState, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useInView } from './use-in-view';
 
 // Phase 1: Real file tree from an existing project (discord-cli-core)
 const SOURCE_FILES = [
@@ -205,11 +206,17 @@ function AnimatedArrow({ direction }: { direction: 'right' | 'down' }) {
 }
 
 export function GeneratorTerminalAnimation() {
+  const { ref, inView } = useInView(0.3);
+  const [started, setStarted] = useState(false);
   const [phase, setPhase] = useState<Phase>('source-tree');
   const [typedChars, setTypedChars] = useState(0);
   const [generatedCount, setGeneratedCount] = useState(0);
   const [showArrow, setShowArrow] = useState(false);
   const [showBox, setShowBox] = useState(false);
+
+  useEffect(() => {
+    if (inView && !started) setStarted(true);
+  }, [inView, started]);
 
   const resetCycle = useCallback(() => {
     setPhase('source-tree');
@@ -221,6 +228,7 @@ export function GeneratorTerminalAnimation() {
 
   // Phase 1: Show source tree, then transition to encode
   useEffect(() => {
+    if (!started) return;
     if (phase !== 'source-tree') return;
     const timer = setTimeout(() => setPhase('encode'), PHASE1_DURATION);
     return () => clearTimeout(timer);
@@ -291,7 +299,7 @@ export function GeneratorTerminalAnimation() {
   }, [phase, resetCycle]);
 
   return (
-    <div className="overflow-hidden rounded-lg border border-slate-200 bg-slate-900 shadow-lg dark:border-slate-700">
+    <div ref={ref} className="overflow-hidden rounded-lg border border-slate-200 bg-slate-900 shadow-lg dark:border-slate-700">
       {/* Terminal chrome */}
       <div className="flex items-center gap-2 border-b border-slate-700 bg-slate-800 px-4 py-2">
         <div className="flex gap-1.5">

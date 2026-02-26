@@ -1,6 +1,7 @@
 'use client';
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useInView } from './use-in-view';
 
 interface LoopNode {
   id: string;
@@ -257,11 +258,13 @@ function MobileList() {
 }
 
 export function FeedbackLoopAnimation() {
+  const { ref, inView } = useInView(0.3);
+
   return (
     <>
-      {/* Desktop: ellipse animation */}
-      <div className="hidden lg:block">
-        <DesktopAnimation />
+      {/* Desktop: ellipse animation — only mount when in view */}
+      <div ref={ref} className="hidden lg:block">
+        {inView && <DesktopAnimation />}
       </div>
       {/* Mobile: numbered list */}
       <div className="lg:hidden">

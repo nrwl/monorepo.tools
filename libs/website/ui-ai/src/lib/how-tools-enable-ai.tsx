@@ -200,28 +200,28 @@ export function HowToolsEnableAI(): JSX.Element {
               </a>
             </h2>
             <p className="mt-4 text-base text-gray-700 dark:text-gray-300">
-              A project graph shows relationships, but in a workspace with
-              hundreds of projects, agents still see a flat sea of nodes. What's
-              missing is the{' '}
+              By default, an agent sees individual files. The project graph
+              adds a second level: projects and their relationships. But
+              there's a third level that ties it all together:{' '}
               <mark className="rounded-md bg-yellow-500 px-1">
-                higher-level domain structure
-              </mark>{' '}
-              — which projects belong to "auth", which to "payments", which are
-              shared infrastructure.
+                domain classification
+              </mark>
+              . Projects grouped into higher-level concepts like "shop",
+              "auth", or "shared infrastructure".
             </p>
             <p className="mt-3 text-base text-gray-700 dark:text-gray-300">
-              Monorepo tools that support project classification let you group
-              projects into domains, layers, or teams. The agent reads this
-              structure first, narrows into the relevant domain, then explores
-              individual projects — progressive disclosure of complexity instead
-              of flat exploration.
+              Together, these three levels give the agent progressive
+              understanding. It starts at the domain level to identify the
+              relevant area, uses the project graph to find the right
+              projects within that domain, then drops into files only when
+              needed.
             </p>
             <p className="mt-3 text-base text-gray-700 dark:text-gray-300">
-              Nx, for example, provides a{' '}
-              <strong>tagging system</strong> that classifies projects and
-              enforces boundaries between domains via lint rules. The same
-              mechanism that keeps your architecture clean also gives AI agents
-              an architectural map to navigate by.
+              Nx provides a{' '}
+              <strong>tagging system</strong> for this: projects are
+              classified into domains, and lint rules enforce boundaries
+              between them. The same mechanism that keeps your architecture
+              clean gives AI agents an architectural map to navigate by.
             </p>
           </div>
           <div className="mt-8 lg:mt-0">

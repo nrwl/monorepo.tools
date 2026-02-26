@@ -5,7 +5,7 @@ import {
   EyeIcon,
   ServerStackIcon,
 } from '@heroicons/react/24/outline';
-import { CiBottleneckAnimation } from './ci-bottleneck-animation-standalone';
+import { CiPipelineAnimation } from './ci-pipeline-animation';
 
 export function CIPressure(): JSX.Element {
   return (
@@ -42,12 +42,10 @@ export function CIPressure(): JSX.Element {
           </p>
         </div>
 
-        {/* CI Bottleneck Animation */}
+        {/* CI Pipeline Bottleneck Animation */}
         <div className="mt-16 hidden md:block">
-          <div className="text-center">
-            <div className="relative mx-auto h-64 w-full max-w-4xl">
-              <CiBottleneckAnimation />
-            </div>
+          <div className="mx-auto max-w-4xl">
+            <CiPipelineAnimation />
           </div>
         </div>
 

@@ -1,6 +1,7 @@
 'use client';
 import { useState, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useInView } from './use-in-view';
 
 // Simplified graph output based on real nx graph --print output
 const GRAPH_OUTPUT = `{
@@ -150,6 +151,8 @@ function ProjectGraphSVG({ animatePath }: { animatePath: boolean }) {
 }
 
 export function ProjectGraphTerminalAnimation() {
+  const { ref, inView } = useInView(0.3);
+  const [started, setStarted] = useState(false);
   const [phase, setPhase] = useState<Phase>('typing');
   const [typedChars, setTypedChars] = useState(0);
   const [outputLines, setOutputLines] = useState(0);
@@ -157,6 +160,11 @@ export function ProjectGraphTerminalAnimation() {
 
   const outputLinesArray = GRAPH_OUTPUT.split('\n');
   const totalOutputLines = outputLinesArray.length;
+
+  // Start only once when scrolled into view
+  useEffect(() => {
+    if (inView && !started) setStarted(true);
+  }, [inView, started]);
 
   const resetCycle = useCallback(() => {
     setPhase('typing');
@@ -167,6 +175,7 @@ export function ProjectGraphTerminalAnimation() {
 
   // Typing phase
   useEffect(() => {
+    if (!started) return;
     if (phase !== 'typing') return;
     if (typedChars >= COMMAND.length) {
       const timer = setTimeout(() => setPhase('output'), POST_COMMAND_PAUSE);
@@ -204,7 +213,7 @@ export function ProjectGraphTerminalAnimation() {
   }, [phase, resetCycle]);
 
   return (
-    <div className="overflow-hidden rounded-lg border border-slate-200 bg-slate-900 shadow-lg dark:border-slate-700">
+    <div ref={ref} className="overflow-hidden rounded-lg border border-slate-200 bg-slate-900 shadow-lg dark:border-slate-700">
       {/* Terminal chrome */}
       <div className="flex items-center gap-2 border-b border-slate-700 bg-slate-800 px-4 py-2">
         <div className="flex gap-1.5">
