@@ -149,7 +149,7 @@ export function CiPipelineAnimation() {
           const minDist = a.radius + b.radius + 2;
           if (dist < minDist) {
             const overlap = (minDist - dist) * 0.4;
-            // Push apart vertically — earlier arrivals go higher
+            // Push apart vertically - earlier arrivals go higher
             a.y -= overlap * 0.5;
             b.y += overlap * 0.5;
           }
@@ -240,7 +240,7 @@ export function CiPipelineAnimation() {
       const codeX = getStageX(1, w);
       const reviewX = getStageX(3, w);
 
-      // Return pipe geometry — legs connect to actual tunnel walls
+      // Return pipe geometry - legs connect to actual tunnel walls
       const pipeRight = ciX + 15;
       const pipeLeft = codeX - 10;
       const pipeTopRight = mainY + getTunnelHeight(pipeRight, w, baseHeight, currentDte);
@@ -432,7 +432,7 @@ export function CiPipelineAnimation() {
               dot.route = 'main';
               dot.color = COLOR_NEUTRAL;
               dot.passedCi = false;
-              // Enter at the tunnel wall, not the center — drift inward naturally
+              // Enter at the tunnel wall, not the center - drift inward naturally
               dot.y = pipeTopLeft - dot.radius;
               dot.x = pipeLeft;
             }
@@ -543,42 +543,111 @@ export function CiPipelineAnimation() {
         style={{ display: 'block' }}
       />
 
-      <div className="mt-4 flex flex-wrap items-center justify-center gap-6">
-        <label className="flex cursor-pointer items-center gap-2.5 text-sm">
+      {/* Toggles close to animation */}
+      <div className="mt-4 flex flex-wrap items-center justify-center gap-8">
+        <label className="flex cursor-pointer items-center gap-2.5 text-[11px] uppercase tracking-[1.5px]">
           <button
             role="switch"
             aria-checked={dte}
             onClick={() => setDte(!dte)}
-            className={`relative inline-flex h-5 w-9 shrink-0 items-center rounded-full transition-colors ${
-              dte ? 'bg-blue-500' : 'bg-slate-600'
+            className={`relative inline-flex h-3.5 w-7 shrink-0 items-center rounded-full border transition-colors ${
+              dte
+                ? 'border-blue-400/50 bg-blue-500/20'
+                : 'border-slate-600 bg-slate-800'
             }`}
           >
             <span
-              className={`inline-block h-3.5 w-3.5 transform rounded-full bg-white shadow transition-transform ${
-                dte ? 'translate-x-4' : 'translate-x-0.5'
+              className={`inline-block h-2 w-2 rounded-full transition-all ${
+                dte
+                  ? 'translate-x-3.5 bg-blue-400'
+                  : 'translate-x-0.5 bg-slate-500'
               }`}
             />
           </button>
-          <span className="text-slate-300">Distributed Task Execution</span>
+          <span
+            className={`transition-colors ${
+              dte ? 'text-slate-200' : 'text-slate-500'
+            }`}
+          >
+            Distributed Task Execution
+          </span>
         </label>
 
-        <label className="flex cursor-pointer items-center gap-2.5 text-sm">
+        <label className="flex cursor-pointer items-center gap-2.5 text-[11px] uppercase tracking-[1.5px]">
           <button
             role="switch"
             aria-checked={selfHeal}
             onClick={() => setSelfHeal(!selfHeal)}
-            className={`relative inline-flex h-5 w-9 shrink-0 items-center rounded-full transition-colors ${
-              selfHeal ? 'bg-emerald-500' : 'bg-slate-600'
+            className={`relative inline-flex h-3.5 w-7 shrink-0 items-center rounded-full border transition-colors ${
+              selfHeal
+                ? 'border-emerald-400/50 bg-emerald-500/20'
+                : 'border-slate-600 bg-slate-800'
             }`}
           >
             <span
-              className={`inline-block h-3.5 w-3.5 transform rounded-full bg-white shadow transition-transform ${
-                selfHeal ? 'translate-x-4' : 'translate-x-0.5'
+              className={`inline-block h-2 w-2 rounded-full transition-all ${
+                selfHeal
+                  ? 'translate-x-3.5 bg-emerald-400'
+                  : 'translate-x-0.5 bg-slate-500'
               }`}
             />
           </button>
-          <span className="text-slate-300">Self-Healing CI</span>
+          <span
+            className={`transition-colors ${
+              selfHeal ? 'text-slate-200' : 'text-slate-500'
+            }`}
+          >
+            Self-Healing PRs
+          </span>
         </label>
+      </div>
+
+      {/* Description boxes */}
+      <div className="mt-10 grid grid-cols-2 gap-6">
+        <div className="flex min-h-[200px] flex-col rounded-md border border-slate-200 bg-slate-100 p-5 dark:border-black dark:bg-slate-900">
+          <p className="text-lg font-medium text-gray-900 dark:text-white">
+            Distributed Task Execution
+          </p>
+          <p className="mt-3 text-base text-gray-600 dark:text-gray-400">
+            Distribute tasks across machines automatically based on the
+            project graph, historical run data, and task dependencies.
+            No manual CI config. The system decides what runs where
+            and in what order, maximizing parallelism as agent-driven
+            CI load increases. See{' '}
+            <a
+              href="https://nx.dev/ci/features/distribute-task-execution"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-400 underline underline-offset-2 hover:text-blue-300"
+            >
+              Nx Agents
+            </a>{' '}
+            as an implementation example.
+          </p>
+        </div>
+
+        <div className="flex min-h-[200px] flex-col rounded-md border border-slate-200 bg-slate-100 p-5 dark:border-black dark:bg-slate-900">
+          <p className="text-lg font-medium text-gray-900 dark:text-white">
+            Self-Healing PRs
+          </p>
+          <p className="mt-3 text-base text-gray-600 dark:text-gray-400">
+            AI can be integrated at the CI level to detect broken tasks
+            and fix them automatically. Nx Cloud's{' '}
+            <a
+              href="https://nx.dev/ci/features/self-healing"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-emerald-400 underline underline-offset-2 hover:text-emerald-300"
+            >
+              Self-Healing CI
+            </a>{' '}
+            classifies failures, leverages full context about the error
+            and past runs to propose a fix, then re-runs the failing
+            task to verify it actually works. Verified fixes with high
+            confidence can even be auto-applied, no human intervention
+            needed.
+          </p>
+        </div>
       </div>
     </div>
   );
