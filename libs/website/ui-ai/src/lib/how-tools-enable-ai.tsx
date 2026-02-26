@@ -5,6 +5,7 @@ import {
   PuzzlePieceIcon,
 } from '@heroicons/react/24/outline';
 import { ProjectGraphTerminalAnimation } from './project-graph-terminal-animation';
+import { ProjectDetailsTerminalAnimation } from './project-details-terminal-animation';
 
 function TerminalPlaceholder({ title }: { title: string }) {
   return (
@@ -103,7 +104,7 @@ export function HowToolsEnableAI(): JSX.Element {
         </div>
 
         {/* Project Graph */}
-        <div className="mt-24 lg:mt-36 lg:grid lg:grid-cols-2 lg:items-start lg:gap-12">
+        <div className="mt-24 lg:mt-36 lg:grid lg:grid-cols-2 lg:items-center lg:gap-12">
           <div>
             <h2
               id="project-graph"
@@ -139,6 +140,44 @@ export function HowToolsEnableAI(): JSX.Element {
           </div>
           <div className="mt-8 lg:mt-0">
             <ProjectGraphTerminalAnimation />
+          </div>
+        </div>
+
+        {/* Project Metadata */}
+        <div className="mt-24 lg:mt-36 lg:grid lg:grid-cols-2 lg:items-center lg:gap-12">
+          <div className="lg:order-2">
+            <h2
+              id="project-metadata"
+              className="group text-3xl font-semibold tracking-tight text-gray-800 sm:text-4xl dark:text-gray-100"
+            >
+              Expose Project-Level Knowledge
+              <a
+                aria-hidden="true"
+                tabIndex={-1}
+                href="#project-metadata"
+                className="inline-flex items-center text-gray-900 dark:text-white"
+              >
+                <LinkIcon className="ml-2 h-6 w-6 opacity-0 group-hover:opacity-100" />
+              </a>
+            </h2>
+            <p className="mt-4 text-base text-gray-700 dark:text-gray-300">
+              AI agents should not have to parse Vite configs, Go Makefiles,
+              and Python pyproject.toml to understand what a project can do.
+              Monorepo tools like Nx expose{' '}
+              <mark className="rounded-md bg-yellow-500 px-1">
+                structured metadata per project
+              </mark>
+              : available tasks, cache inputs/outputs, and configuration, all
+              through dedicated commands like{' '}
+              <code className="rounded bg-slate-200 px-1 text-sm dark:bg-slate-700">nx show project</code>.
+            </p>
+            <p className="mt-3 text-base text-gray-700 dark:text-gray-300">
+              One interface, regardless of language or framework. The monorepo
+              tool normalizes the complexity.
+            </p>
+          </div>
+          <div className="mt-8 lg:order-1 lg:mt-0">
+            <ProjectDetailsTerminalAnimation />
           </div>
         </div>
 

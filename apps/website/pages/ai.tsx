@@ -3,6 +3,7 @@ import {
   Introduction,
   MonorepoAIAdvantages,
   HowToolsEnableAI,
+  FastFeedback,
   CIPressure,
   AIToolsComparison,
   Resources,
@@ -48,6 +49,8 @@ export function Index() {
         <MonorepoAIAdvantages />
 
         <HowToolsEnableAI />
+
+        <FastFeedback />
 
         <CIPressure />
 
