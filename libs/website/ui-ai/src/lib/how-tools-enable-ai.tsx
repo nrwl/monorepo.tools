@@ -6,6 +6,7 @@ import {
 } from '@heroicons/react/24/outline';
 import { ProjectGraphTerminalAnimation } from './project-graph-terminal-animation';
 import { ProjectDetailsTerminalAnimation } from './project-details-terminal-animation';
+import { DomainGridAnimation } from './domain-grid-animation';
 
 function TerminalPlaceholder({ title }: { title: string }) {
   return (
@@ -178,6 +179,53 @@ export function HowToolsEnableAI(): JSX.Element {
           </div>
           <div className="mt-8 lg:order-1 lg:mt-0">
             <ProjectDetailsTerminalAnimation />
+          </div>
+        </div>
+
+        {/* Architecture Map via Tags/Classification */}
+        <div className="mt-24 lg:mt-36 lg:grid lg:grid-cols-2 lg:items-center lg:gap-12">
+          <div>
+            <h2
+              id="architecture-map"
+              className="group text-3xl font-semibold tracking-tight text-gray-800 sm:text-4xl dark:text-gray-100"
+            >
+              Give AI the Architecture Map
+              <a
+                aria-hidden="true"
+                tabIndex={-1}
+                href="#architecture-map"
+                className="inline-flex items-center text-gray-900 dark:text-white"
+              >
+                <LinkIcon className="ml-2 h-6 w-6 opacity-0 group-hover:opacity-100" />
+              </a>
+            </h2>
+            <p className="mt-4 text-base text-gray-700 dark:text-gray-300">
+              A project graph shows relationships, but in a workspace with
+              hundreds of projects, agents still see a flat sea of nodes. What's
+              missing is the{' '}
+              <mark className="rounded-md bg-yellow-500 px-1">
+                higher-level domain structure
+              </mark>{' '}
+              — which projects belong to "auth", which to "payments", which are
+              shared infrastructure.
+            </p>
+            <p className="mt-3 text-base text-gray-700 dark:text-gray-300">
+              Monorepo tools that support project classification let you group
+              projects into domains, layers, or teams. The agent reads this
+              structure first, narrows into the relevant domain, then explores
+              individual projects — progressive disclosure of complexity instead
+              of flat exploration.
+            </p>
+            <p className="mt-3 text-base text-gray-700 dark:text-gray-300">
+              Nx, for example, provides a{' '}
+              <strong>tagging system</strong> that classifies projects and
+              enforces boundaries between domains via lint rules. The same
+              mechanism that keeps your architecture clean also gives AI agents
+              an architectural map to navigate by.
+            </p>
+          </div>
+          <div className="mt-8 lg:mt-0">
+            <DomainGridAnimation />
           </div>
         </div>
 

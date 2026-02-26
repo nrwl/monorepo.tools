@@ -12,6 +12,10 @@ const aiVideos: { name: string; link: string }[] = [
 
 const aiArticles: { name: string; link: string }[] = [
   {
+    name: 'How To Make Codebases AI Agents Love',
+    link: 'https://www.aihero.dev/how-to-make-codebases-ai-agents-love',
+  },
+  {
     name: 'Context Rot: How Increasing Input Tokens Impacts LLM Performance',
     link: 'https://research.trychroma.com/context-rot',
   },

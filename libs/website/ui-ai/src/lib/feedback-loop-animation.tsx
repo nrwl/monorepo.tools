@@ -1,61 +1,70 @@
 'use client';
-import { useState, useEffect, useRef } from 'react';
+import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 interface LoopNode {
   id: string;
   label: string;
   detail: string;
-  // Position on the elliptical path (angle in degrees, 0 = top)
-  angle: number;
+  angle: number; // degrees, 0 = right, 90 = bottom, etc.
+  labelSide: 'top' | 'bottom' | 'left' | 'right';
 }
 
 const NODES: LoopNode[] = [
   {
     id: 'change',
-    label: 'Agent Makes a Change',
+    label: 'AI Agent Makes Changes',
     detail:
       'The AI agent modifies code across one or more projects in the monorepo. Because everything lives in a single workspace, cross-project changes happen in one atomic operation.',
     angle: 270,
+    labelSide: 'top',
   },
   {
     id: 'affected',
-    label: 'Affected Detection',
+    label: 'Affected Projects Only',
     detail:
-      'The monorepo tool determines exactly which projects are impacted by the change — no need to run everything. This works uniformly across polyglot projects: TypeScript, Java, Go, Python — same command, same interface.',
+      'The monorepo tool analyzes the change and determines exactly which projects are impacted. Instead of running everything, only the affected subset is selected. This works uniformly across polyglot projects: TypeScript, Java, Go, Python, all through the same command.',
     angle: 342,
+    labelSide: 'right',
   },
   {
-    id: 'run',
-    label: 'Run Tasks',
+    id: 'pipeline',
+    label: 'Task Pipeline',
     detail:
-      'Run tests, builds, and lints only for affected projects using a single command like `nx run-many --target=test --affected`. Cacheable tasks resolve instantly if nothing changed. One uniform interface across all frameworks in the workspace.',
+      'The monorepo tool knows the dependency graph between projects. If you changed pkg-a, it knows pkg-b (which pkg-a depends on) needs to be built first. The agent does not have to figure out build ordering or debug mysterious failures from missing prerequisites. The tool handles it.',
     angle: 54,
+    labelSide: 'right',
+  },
+  {
+    id: 'caching',
+    label: 'Task Caching',
+    detail:
+      'Tasks that have already been computed with the same inputs are restored from cache instantly. In a monorepo with hundreds of projects, most tasks on any given change hit cache. This dramatically speeds up every iteration of the loop, giving the agent faster feedback.',
+    angle: 126,
+    labelSide: 'left',
   },
   {
     id: 'boundaries',
-    label: 'Module Boundary Check',
+    label: 'Boundary Check',
     detail:
-      'Architectural lint rules (like Nx module boundary rules) catch violations early — before deeper issues surface. If the AI imported from a project it shouldn\'t depend on, it gets immediate feedback and can course-correct without running the full test suite.',
-    angle: 126,
-  },
-  {
-    id: 'iterate',
-    label: 'Results & Iterate',
-    detail:
-      'Fast, targeted feedback means fewer tokens spent on exploration and more on fixes. The faster each loop completes, the more iterations the AI agent can do within budget — leading to higher quality outcomes.',
+      'Architectural lint rules (like Nx module boundary rules) catch violations early, before deeper issues surface. If the AI imported from a project it should not depend on, it gets immediate feedback and can course-correct without running the full test suite.',
     angle: 198,
+    labelSide: 'left',
   },
 ];
 
-// Ellipse parameters
-const CX = 200;
-const CY = 160;
-const RX = 160;
-const RY = 120;
+// SVG viewBox and ellipse
+const VB_W = 300;
+const VB_H = 300;
+const CX = 150;
+const CY = 150;
+const RX = 110;
+const RY = 110;
+const CIRCUMFERENCE = 2 * Math.PI * RX;
 
-// Dot travel speed
-const DOT_LOOP_DURATION = 4; // seconds per full loop
+function getEllipsePath(): string {
+  return `M ${CX - RX} ${CY} A ${RX} ${RY} 0 1 1 ${CX + RX} ${CY} A ${RX} ${RY} 0 1 1 ${CX - RX} ${CY}`;
+}
 
 function getPointOnEllipse(angleDeg: number): { x: number; y: number } {
   const rad = (angleDeg * Math.PI) / 180;
@@ -65,126 +74,70 @@ function getPointOnEllipse(angleDeg: number): { x: number; y: number } {
   };
 }
 
-// Build the ellipse path as SVG arc
-function getEllipsePath(): string {
-  return `M ${CX - RX} ${CY} A ${RX} ${RY} 0 1 1 ${CX + RX} ${CY} A ${RX} ${RY} 0 1 1 ${CX - RX} ${CY}`;
-}
-
 export function FeedbackLoopAnimation() {
   const [activeNode, setActiveNode] = useState<string | null>(null);
-  const [tooltipPos, setTooltipPos] = useState<{
-    x: number;
-    y: number;
-  } | null>(null);
-  const svgRef = useRef<SVGSVGElement>(null);
-
-  // Calculate tooltip position relative to viewport
-  const handleNodeHover = (node: LoopNode, enter: boolean) => {
-    if (!enter) {
-      setActiveNode(null);
-      setTooltipPos(null);
-      return;
-    }
-    setActiveNode(node.id);
-    const pt = getPointOnEllipse(node.angle);
-    setTooltipPos({ x: pt.x, y: pt.y });
-  };
 
   return (
-    <div className="relative mx-auto w-full max-w-lg">
+    <div className="relative mx-auto w-full max-w-md">
+      {/* SVG with the ellipse track and nodes */}
       <svg
-        ref={svgRef}
-        viewBox="0 0 400 320"
-        className="h-full w-full"
+        viewBox={`0 0 ${VB_W} ${VB_H}`}
+        className="h-auto w-full"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
-        {/* Elliptical track */}
-        <path
-          d={getEllipsePath()}
-          stroke="#334155"
-          strokeWidth="2"
-          fill="none"
-        />
+        <defs>
+          <linearGradient
+            id="loopPulse"
+            gradientUnits="userSpaceOnUse"
+            x1={CX - RX}
+            y1={CY}
+            x2={CX + RX}
+            y2={CY}
+          >
+            <stop offset="0%" stopColor="#334155" />
+            <stop offset="50%" stopColor="#3B82F6" />
+            <stop offset="100%" stopColor="#334155" />
+          </linearGradient>
+        </defs>
 
-        {/* Dashed directional hint on the track */}
-        <path
-          d={getEllipsePath()}
-          stroke="#475569"
-          strokeWidth="1"
-          strokeDasharray="6 4"
-          fill="none"
-          opacity="0.5"
-        />
+        {/* Static track */}
+        <path d={getEllipsePath()} stroke="#334155" strokeWidth="2" fill="none" />
 
-        {/* Traveling dot */}
-        <motion.circle
-          r="5"
-          fill="#3B82F6"
-          filter="url(#glow)"
+        {/* Animated pulse traveling the path */}
+        <motion.path
+          d={getEllipsePath()}
+          stroke="url(#loopPulse)"
+          strokeWidth="2.5"
+          fill="none"
+          strokeLinecap="round"
+          strokeDasharray={`${CIRCUMFERENCE * 0.15} ${CIRCUMFERENCE * 0.85}`}
           animate={{
-            offsetDistance: ['0%', '100%'],
+            strokeDashoffset: [0, -CIRCUMFERENCE],
           }}
           transition={{
-            duration: DOT_LOOP_DURATION,
+            duration: 4,
             repeat: Infinity,
             ease: 'linear',
           }}
-          style={{
-            offsetPath: `path('${getEllipsePath()}')`,
-          }}
         />
 
-        {/* Glow filter for the traveling dot */}
-        <defs>
-          <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
-            <feGaussianBlur stdDeviation="3" result="blur" />
-            <feComposite in="SourceGraphic" in2="blur" operator="over" />
-          </filter>
-        </defs>
-
-        {/* Node circles and labels */}
+        {/* Node circles on the ellipse */}
         {NODES.map((node) => {
           const pt = getPointOnEllipse(node.angle);
           const isActive = activeNode === node.id;
 
-          // Determine label position offset based on angle
-          let textAnchor: 'start' | 'middle' | 'end' = 'middle';
-          let labelDx = 0;
-          let labelDy = -18;
-
-          // Top area: label above
-          if (node.angle > 225 && node.angle <= 315) {
-            labelDy = -18;
-          }
-          // Right area: label to the right
-          else if (node.angle > 315 || node.angle <= 45) {
-            textAnchor = 'start';
-            labelDx = 18;
-            labelDy = 5;
-          }
-          // Bottom area: label below
-          else if (node.angle > 45 && node.angle <= 135) {
-            labelDy = 28;
-          }
-          // Left area: label to the left
-          else {
-            textAnchor = 'end';
-            labelDx = -18;
-            labelDy = 5;
-          }
-
           return (
             <g
               key={node.id}
-              onMouseEnter={() => handleNodeHover(node, true)}
-              onMouseLeave={() => handleNodeHover(node, false)}
+              onMouseEnter={() => setActiveNode(node.id)}
+              onMouseLeave={() => setActiveNode(null)}
               className="cursor-pointer"
             >
-              {/* Hit area (larger invisible circle) */}
-              <circle cx={pt.x} cy={pt.y} r="24" fill="transparent" />
+              {/* Larger invisible hit area */}
+              <circle cx={pt.x} cy={pt.y} r="20" fill="transparent" />
 
-              {/* Outer ring on hover */}
+              {/* Hover ring */}
               <motion.circle
                 cx={pt.x}
                 cy={pt.y}
@@ -197,13 +150,11 @@ export function FeedbackLoopAnimation() {
                 transition={{ duration: 0.2 }}
               />
 
-              {/* Node circle */}
+              {/* Node dot */}
               <motion.circle
                 cx={pt.x}
                 cy={pt.y}
-                r="10"
-                fill={isActive ? '#3B82F6' : '#1E293B'}
-                stroke={isActive ? '#60A5FA' : '#475569'}
+                r="9"
                 strokeWidth="2"
                 animate={{
                   fill: isActive ? '#3B82F6' : '#1E293B',
@@ -211,39 +162,65 @@ export function FeedbackLoopAnimation() {
                 }}
                 transition={{ duration: 0.2 }}
               />
-
-              {/* Node label */}
-              <text
-                x={pt.x + labelDx}
-                y={pt.y + labelDy}
-                textAnchor={textAnchor}
-                fill={isActive ? '#E2E8F0' : '#94A3B8'}
-                fontFamily="system-ui, sans-serif"
-                fontSize="11"
-                fontWeight={isActive ? '600' : '500'}
-              >
-                {node.label}
-              </text>
             </g>
           );
         })}
       </svg>
 
-      {/* Tooltip overlay */}
+      {/* HTML labels positioned absolutely outside the SVG circle */}
+      {NODES.map((node) => {
+        const pt = getPointOnEllipse(node.angle);
+        const isActive = activeNode === node.id;
+
+        // Convert SVG coords to percentage of the container
+        const pctX = (pt.x / VB_W) * 100;
+        const pctY = (pt.y / VB_H) * 100;
+
+        let posStyle: React.CSSProperties = {};
+        let alignClass = '';
+
+        switch (node.labelSide) {
+          case 'top':
+            posStyle = { left: `${pctX}%`, bottom: `${100 - pctY + 5}%` };
+            alignClass = '-translate-x-1/2 text-center';
+            break;
+          case 'bottom':
+            posStyle = { left: `${pctX}%`, top: `${pctY + 5}%` };
+            alignClass = '-translate-x-1/2 text-center';
+            break;
+          case 'right':
+            posStyle = { left: `${pctX + 5}%`, top: `${pctY}%` };
+            alignClass = '-translate-y-1/2';
+            break;
+          case 'left':
+            posStyle = { right: `${100 - pctX + 5}%`, top: `${pctY}%` };
+            alignClass = '-translate-y-1/2 text-right';
+            break;
+        }
+
+        return (
+          <div
+            key={`label-${node.id}`}
+            className={`pointer-events-none absolute whitespace-nowrap text-xs font-medium transition-colors duration-200 ${alignClass} ${
+              isActive ? 'text-slate-200' : 'text-slate-400'
+            }`}
+            style={posStyle}
+          >
+            {node.label}
+          </div>
+        );
+      })}
+
+      {/* Tooltip overlay centered */}
       <AnimatePresence>
-        {activeNode && tooltipPos && (
+        {activeNode && (
           <motion.div
             key={activeNode}
             initial={{ opacity: 0, y: 4 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 4 }}
             transition={{ duration: 0.15 }}
-            className="pointer-events-none absolute z-20 w-72 rounded-lg border border-slate-200 bg-white p-4 shadow-lg dark:border-slate-700 dark:bg-slate-800"
-            style={{
-              left: '50%',
-              top: '50%',
-              transform: 'translate(-50%, -50%)',
-            }}
+            className="pointer-events-none absolute left-1/2 top-1/2 z-20 w-72 -translate-x-1/2 -translate-y-1/2 rounded-lg border border-slate-200 bg-white p-4 shadow-lg dark:border-slate-700 dark:bg-slate-800"
           >
             <p className="text-sm font-semibold text-gray-900 dark:text-white">
               {NODES.find((n) => n.id === activeNode)?.label}
