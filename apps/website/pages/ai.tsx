@@ -5,6 +5,7 @@ import {
   HowToolsEnableAI,
   FastFeedback,
   CIPressure,
+  AINative,
   AIToolsComparison,
   Resources,
 } from '@monorepo-tools/website/ui-ai';
@@ -53,6 +54,8 @@ export function Index() {
         <FastFeedback />
 
         <CIPressure />
+
+        <AINative />
 
         <AIToolsComparison />
 
