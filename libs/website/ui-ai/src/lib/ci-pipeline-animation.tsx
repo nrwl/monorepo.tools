@@ -432,7 +432,8 @@ export function CiPipelineAnimation() {
               dot.route = 'main';
               dot.color = COLOR_NEUTRAL;
               dot.passedCi = false;
-              dot.y = mainY;
+              // Enter at the tunnel wall, not the center — drift inward naturally
+              dot.y = pipeTopLeft - dot.radius;
               dot.x = pipeLeft;
             }
             break;
@@ -466,7 +467,8 @@ export function CiPipelineAnimation() {
             dot.y -= 1.2;
             const healTopY = mainY + getTunnelHeight(healPipeEndX, w, baseHeight, currentDte);
             if (dot.y <= healTopY) {
-              dot.y = mainY;
+              // Enter at the tunnel wall, drift inward naturally
+              dot.y = healTopY - dot.radius;
               dot.route = 'healed';
               dot.passedCi = true;
             }
