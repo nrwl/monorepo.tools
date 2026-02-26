@@ -166,14 +166,22 @@ function getConnectionPoints(
   return { x1, y1, x2, y2 };
 }
 
+// The grid needs this much space (with max spread) to render without clipping
+const GRID_W = COLS * STEP - GAP;
+const GRID_H = ROWS * STEP - GAP;
+// Account for spread + borders + labels
+const RENDER_SIZE = Math.max(GRID_W, GRID_H) + 120;
+
 export function DomainGridAnimation() {
   const ref = useRef<HTMLDivElement>(null);
   const [activated, setActivated] = useState(false);
+  const [scale, setScale] = useState(1);
   const [phase, setPhase] = useState<
     'grey' | 'colorizing' | 'colored' | 'fading'
   >('grey');
   const cycleRef = useRef<ReturnType<typeof setTimeout>>();
 
+  // Intersection observer for activation
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
@@ -188,6 +196,18 @@ export function DomainGridAnimation() {
     );
     observer.observe(el);
     return () => observer.disconnect();
+  }, []);
+
+  // Resize observer to scale the grid to fit its container
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const ro = new ResizeObserver(([entry]) => {
+      const w = entry.contentRect.width;
+      setScale(Math.min(1, w / RENDER_SIZE));
+    });
+    ro.observe(el);
+    return () => ro.disconnect();
   }, []);
 
   const startCycle = useCallback(() => {
@@ -221,22 +241,21 @@ export function DomainGridAnimation() {
 
   const spreading = phase === 'colorizing' || phase === 'colored';
 
-  // Render squares using absolute-positioned divs so pixel offsets work
   return (
     <div
       ref={ref}
       className="relative overflow-hidden rounded-lg border border-slate-200 bg-slate-900 shadow-lg dark:border-slate-700"
       style={{ aspectRatio: '1 / 1' }}
     >
-      {/* Centering wrapper */}
+      {/* Inner grid at fixed size, scaled to fit container */}
       <div
-        className="absolute"
+        className="absolute origin-center"
         style={{
-          width: COLS * STEP - GAP,
-          height: ROWS * STEP - GAP,
+          width: GRID_W,
+          height: GRID_H,
           left: '50%',
           top: '50%',
-          transform: 'translate(-50%, -50%)',
+          transform: `translate(-50%, -50%) scale(${scale})`,
         }}
       >
         {/* Squares */}
@@ -378,8 +397,8 @@ export function DomainGridAnimation() {
         <svg
           className="pointer-events-none absolute inset-0"
           style={{
-            width: COLS * STEP - GAP,
-            height: ROWS * STEP - GAP,
+            width: GRID_W,
+            height: GRID_H,
             overflow: 'visible',
           }}
         >

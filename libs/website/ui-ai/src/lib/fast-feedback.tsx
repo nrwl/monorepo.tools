@@ -25,14 +25,16 @@ export function FastFeedback(): JSX.Element {
 
         <div className="mx-auto mt-12 max-w-4xl">
           <p className="text-xl text-gray-700 dark:text-gray-300">
-            AI agent quality correlates directly with iteration speed. The faster
-            an agent gets feedback, the more cycles it can run, and the{' '}
+            AI agents work by iterating: make a change, check the result,
+            adjust. Without feedback, agents accumulate errors with no
+            signal to{' '}
             <mark className="rounded-md bg-yellow-500 px-1">
-              better the outcome
+              course correct
             </mark>
-            . Monorepo tools provide two key ingredients: tight feedback loops
-            through targeted task execution, and predictable code scaffolding
-            that agents can rely on.
+            . The tighter the feedback loop, the earlier an agent catches
+            mistakes and the higher the quality of the final result. Speed
+            matters too: faster feedback means more iterations within the
+            same budget, compounding the quality advantage.
           </p>
         </div>
 
@@ -54,17 +56,19 @@ export function FastFeedback(): JSX.Element {
               </a>
             </h2>
             <p className="mt-4 text-base text-gray-700 dark:text-gray-300">
-              When an AI agent makes a change, it needs to know immediately
-              whether it worked. Monorepo tools enable this by running{' '}
+              Every change an agent makes needs a verdict: did it work, or
+              did it break something? That signal allows the agent to{' '}
               <mark className="rounded-md bg-yellow-500 px-1">
-                only affected tasks
+                self-correct before errors compound
               </mark>
-              , caching what hasn't changed, and enforcing architectural
-              constraints before the full test suite even runs.
+              . Without it, a wrong assumption in step 2 corrupts
+              steps 3 through 10.
             </p>
             <p className="mt-3 text-base text-gray-700 dark:text-gray-300">
-              Each loop is fast, targeted, and informative. Hover over the steps
-              to see how each one contributes.
+              Monorepo tools make each loop fast by running only affected
+              tasks, caching unchanged work, and enforcing architectural
+              constraints early. The result: more iterations, earlier
+              correction, better output.
             </p>
           </div>
           <div className="mt-8 lg:mt-0">

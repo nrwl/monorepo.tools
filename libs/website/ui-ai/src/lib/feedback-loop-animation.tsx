@@ -74,12 +74,12 @@ function getPointOnEllipse(angleDeg: number): { x: number; y: number } {
   };
 }
 
-export function FeedbackLoopAnimation() {
+// Desktop: SVG ellipse animation with hover tooltips
+function DesktopAnimation() {
   const [activeNode, setActiveNode] = useState<string | null>(null);
 
   return (
     <div className="relative mx-auto w-full max-w-md">
-      {/* SVG with the ellipse track and nodes */}
       <svg
         viewBox={`0 0 ${VB_W} ${VB_H}`}
         className="h-auto w-full"
@@ -102,7 +102,12 @@ export function FeedbackLoopAnimation() {
         </defs>
 
         {/* Static track */}
-        <path d={getEllipsePath()} stroke="#334155" strokeWidth="2" fill="none" />
+        <path
+          d={getEllipsePath()}
+          stroke="#334155"
+          strokeWidth="2"
+          fill="none"
+        />
 
         {/* Animated pulse traveling the path */}
         <motion.path
@@ -134,10 +139,7 @@ export function FeedbackLoopAnimation() {
               onMouseLeave={() => setActiveNode(null)}
               className="cursor-pointer"
             >
-              {/* Larger invisible hit area */}
               <circle cx={pt.x} cy={pt.y} r="20" fill="transparent" />
-
-              {/* Hover ring */}
               <motion.circle
                 cx={pt.x}
                 cy={pt.y}
@@ -149,8 +151,6 @@ export function FeedbackLoopAnimation() {
                 animate={{ opacity: isActive ? 0.5 : 0 }}
                 transition={{ duration: 0.2 }}
               />
-
-              {/* Node dot */}
               <motion.circle
                 cx={pt.x}
                 cy={pt.y}
@@ -171,8 +171,6 @@ export function FeedbackLoopAnimation() {
       {NODES.map((node) => {
         const pt = getPointOnEllipse(node.angle);
         const isActive = activeNode === node.id;
-
-        // Convert SVG coords to percentage of the container
         const pctX = (pt.x / VB_W) * 100;
         const pctY = (pt.y / VB_H) * 100;
 
@@ -232,5 +230,43 @@ export function FeedbackLoopAnimation() {
         )}
       </AnimatePresence>
     </div>
+  );
+}
+
+// Mobile: numbered list with descriptions
+function MobileList() {
+  return (
+    <ol className="space-y-4">
+      {NODES.map((node, i) => (
+        <li key={node.id} className="flex gap-3">
+          <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-slate-800 text-xs font-semibold text-blue-400 ring-1 ring-slate-700">
+            {i + 1}
+          </span>
+          <div>
+            <p className="text-sm font-semibold text-gray-900 dark:text-white">
+              {node.label}
+            </p>
+            <p className="mt-1 text-sm leading-relaxed text-gray-600 dark:text-gray-400">
+              {node.detail}
+            </p>
+          </div>
+        </li>
+      ))}
+    </ol>
+  );
+}
+
+export function FeedbackLoopAnimation() {
+  return (
+    <>
+      {/* Desktop: ellipse animation */}
+      <div className="hidden lg:block">
+        <DesktopAnimation />
+      </div>
+      {/* Mobile: numbered list */}
+      <div className="lg:hidden">
+        <MobileList />
+      </div>
+    </>
   );
 }
