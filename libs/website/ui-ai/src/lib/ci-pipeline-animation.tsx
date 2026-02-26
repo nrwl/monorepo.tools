@@ -2,7 +2,7 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
 import { useInView } from './use-in-view';
 
-const STAGES = ['PLAN', 'CODE', 'CI', 'REVIEW', 'DEPLOY'] as const;
+const STAGES = ['PLAN', 'CODE', 'CI', 'REVIEW', 'MERGE'] as const;
 const BOTTLENECK_STAGE = 2;
 
 const COLOR_NEUTRAL = '#64748b';
