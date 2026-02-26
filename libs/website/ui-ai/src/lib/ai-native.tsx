@@ -39,32 +39,26 @@ export function AINative(): JSX.Element {
 
         {/* Agentic Experience (Ax) */}
         <div className="mt-16 lg:mt-24">
-          <h2
-            id="agentic-experience"
-            className="group text-3xl font-semibold tracking-tight text-gray-800 sm:text-4xl dark:text-gray-100"
-          >
-            Agentic Experience (Ax)
-            <a
-              aria-hidden="true"
-              tabIndex={-1}
-              href="#agentic-experience"
-              className="inline-flex items-center text-gray-900 dark:text-white"
+          <div className="mx-auto max-w-3xl text-center">
+            <h2
+              id="agentic-experience"
+              className="group text-3xl font-semibold tracking-tight text-gray-800 sm:text-4xl dark:text-gray-100"
             >
-              <LinkIcon className="ml-2 h-6 w-6 opacity-0 group-hover:opacity-100" />
-            </a>
-          </h2>
-          <div className="mt-4 max-w-3xl">
-            <p className="text-base text-gray-700 dark:text-gray-300">
-              The CLI adapts its output depending on who is calling it. Humans
-              get readable, formatted listings. Agents get compressed JSON
-              they can parse in a single call. No interactive prompts that
-              would block an autonomous workflow. No ambiguous output that
-              requires guesswork.
-            </p>
-            <p className="mt-3 text-base text-gray-700 dark:text-gray-300">
-              The same command, two experiences. The agent does not have to
-              learn a separate API or scrape terminal output. It uses the same
-              CLI as a developer, and the tool meets it where it is.
+              Agentic Experience (Ax)
+              <a
+                aria-hidden="true"
+                tabIndex={-1}
+                href="#agentic-experience"
+                className="inline-flex items-center text-gray-900 dark:text-white"
+              >
+                <LinkIcon className="ml-2 h-6 w-6 opacity-0 group-hover:opacity-100" />
+              </a>
+            </h2>
+            <p className="mt-4 text-base text-gray-700 dark:text-gray-300">
+              For an agent to work autonomously, it needs a CLI it can drive
+              without getting stuck. The tool adapts its output depending on
+              who is calling it: humans get readable listings, agents get
+              structured JSON they can parse and act on in a single call.
             </p>
           </div>
           <div className="mt-8">
@@ -90,18 +84,21 @@ export function AINative(): JSX.Element {
               </a>
             </h2>
             <p className="mt-4 text-base text-gray-700 dark:text-gray-300">
-              AI agents do not know your monorepo conventions out of the box.{' '}
-              <strong>Skills</strong> are composable instructions that teach
-              agents specific workflows: how to create a library, run affected
-              tests, or scaffold code that matches your standards. They are
-              versioned and shared across a team so every agent behaves
-              consistently.
+              A good CLI gets agents part of the way. But for full autonomy
+              they also need to understand your conventions and connect to
+              your infrastructure.{' '}
+              <strong>Skills</strong> teach agents your team's workflows:
+              how to create a library, run affected tests, or scaffold code
+              that matches your standards. They are versioned and shared so
+              every agent behaves consistently.
             </p>
             <p className="mt-3 text-base text-gray-700 dark:text-gray-300">
-              <strong>MCP servers</strong> connect agents to external
-              services like an integrated CI system, letting them query the
-              project graph, trigger tasks, and read results through
-              structured tool calls instead of parsing CLI output.
+              <strong>MCP servers</strong> give agents structured access to
+              external services like CI, letting them query the project
+              graph, trigger tasks, and read results through tool calls.
+              Together, skills and MCP close the gap between "agent that
+              can run commands" and "agent that can operate the monorepo
+              end-to-end."
             </p>
             <p className="mt-3 text-base text-gray-700 dark:text-gray-300">
               A single command configures everything: installs the MCP
