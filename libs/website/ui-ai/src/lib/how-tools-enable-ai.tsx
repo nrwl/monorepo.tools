@@ -92,7 +92,7 @@ export function HowToolsEnableAI(): JSX.Element {
                 <LinkIcon className="ml-2 h-6 w-6 opacity-0 group-hover:opacity-100" />
               </a>
             </h2>
-            <p className="mt-4 text-base text-gray-700 dark:text-gray-300">
+            <p className="mt-4 text-lg text-gray-700 dark:text-gray-300">
               Most monorepo tools maintain a project graph: a structured map of
               every project in the workspace and how they depend on each other.
               When exposed to AI agents, it gives them{' '}
@@ -101,7 +101,7 @@ export function HowToolsEnableAI(): JSX.Element {
               </mark>{' '}
               without reading a single file.
             </p>
-            <p className="mt-3 text-base text-gray-700 dark:text-gray-300">
+            <p className="mt-3 text-lg text-gray-700 dark:text-gray-300">
               The agent can query this graph to discover which projects exist,
               trace dependency chains, and understand blast radius: if{' '}
               <code className="rounded bg-slate-200 px-1 text-sm dark:bg-slate-700">lib-api</code>{' '}
@@ -132,7 +132,7 @@ export function HowToolsEnableAI(): JSX.Element {
                 <LinkIcon className="ml-2 h-6 w-6 opacity-0 group-hover:opacity-100" />
               </a>
             </h2>
-            <p className="mt-4 text-base text-gray-700 dark:text-gray-300">
+            <p className="mt-4 text-lg text-gray-700 dark:text-gray-300">
               AI agents should not have to parse Vite configs, Go Makefiles,
               and Python pyproject.toml to understand what a project can do.
               Monorepo tools like Nx expose{' '}
@@ -143,7 +143,7 @@ export function HowToolsEnableAI(): JSX.Element {
               through dedicated commands like{' '}
               <code className="rounded bg-slate-200 px-1 text-sm dark:bg-slate-700">nx show project</code>.
             </p>
-            <p className="mt-3 text-base text-gray-700 dark:text-gray-300">
+            <p className="mt-3 text-lg text-gray-700 dark:text-gray-300">
               One interface, regardless of language or framework. The monorepo
               tool normalizes the complexity.
             </p>
@@ -170,7 +170,7 @@ export function HowToolsEnableAI(): JSX.Element {
                 <LinkIcon className="ml-2 h-6 w-6 opacity-0 group-hover:opacity-100" />
               </a>
             </h2>
-            <p className="mt-4 text-base text-gray-700 dark:text-gray-300">
+            <p className="mt-4 text-lg text-gray-700 dark:text-gray-300">
               By default, an agent sees individual files. The project graph
               adds a second level: projects and their relationships. But
               there's a third level that ties it all together:{' '}
@@ -180,14 +180,14 @@ export function HowToolsEnableAI(): JSX.Element {
               . Projects grouped into higher-level concepts like "shop",
               "auth", or "shared infrastructure".
             </p>
-            <p className="mt-3 text-base text-gray-700 dark:text-gray-300">
+            <p className="mt-3 text-lg text-gray-700 dark:text-gray-300">
               Together, these three levels give the agent progressive
               understanding. It starts at the domain level to identify the
               relevant area, uses the project graph to find the right
               projects within that domain, then drops into files only when
               needed.
             </p>
-            <p className="mt-3 text-base text-gray-700 dark:text-gray-300">
+            <p className="mt-3 text-lg text-gray-700 dark:text-gray-300">
               Nx provides a{' '}
               <strong>tagging system</strong> for this: projects are
               classified into domains, and lint rules enforce boundaries

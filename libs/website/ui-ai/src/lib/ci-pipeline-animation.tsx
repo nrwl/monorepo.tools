@@ -608,7 +608,7 @@ export function CiPipelineAnimation() {
           <p className="text-lg font-medium text-gray-900 dark:text-white">
             Distributed Task Execution
           </p>
-          <p className="mt-3 text-base text-gray-600 dark:text-gray-400">
+          <p className="mt-3 text-lg text-gray-600 dark:text-gray-400">
             Distribute tasks across machines automatically based on the
             project graph, historical run data, and task dependencies.
             No manual CI config. The system decides what runs where
@@ -630,7 +630,7 @@ export function CiPipelineAnimation() {
           <p className="text-lg font-medium text-gray-900 dark:text-white">
             Self-Healing PRs
           </p>
-          <p className="mt-3 text-base text-gray-600 dark:text-gray-400">
+          <p className="mt-3 text-lg text-gray-600 dark:text-gray-400">
             AI can be integrated at the CI level to detect broken tasks
             and fix them automatically. Nx Cloud's{' '}
             <a

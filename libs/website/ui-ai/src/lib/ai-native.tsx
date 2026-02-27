@@ -54,7 +54,7 @@ export function AINative(): JSX.Element {
                 <LinkIcon className="ml-2 h-6 w-6 opacity-0 group-hover:opacity-100" />
               </a>
             </h2>
-            <p className="mt-4 text-base text-gray-700 dark:text-gray-300">
+            <p className="mt-4 text-lg text-gray-700 dark:text-gray-300">
               For an agent to work autonomously, it needs a CLI it can drive
               without getting stuck. The tool adapts its output depending on
               who is calling it: humans get readable listings, agents get
@@ -83,7 +83,7 @@ export function AINative(): JSX.Element {
                 <LinkIcon className="ml-2 h-6 w-6 opacity-0 group-hover:opacity-100" />
               </a>
             </h2>
-            <p className="mt-4 text-base text-gray-700 dark:text-gray-300">
+            <p className="mt-4 text-lg text-gray-700 dark:text-gray-300">
               A good CLI gets agents part of the way. But for full autonomy
               they also need to understand your conventions and connect to
               your infrastructure.{' '}
@@ -92,7 +92,7 @@ export function AINative(): JSX.Element {
               that matches your standards. They are versioned and shared so
               every agent behaves consistently.
             </p>
-            <p className="mt-3 text-base text-gray-700 dark:text-gray-300">
+            <p className="mt-3 text-lg text-gray-700 dark:text-gray-300">
               <strong>MCP servers</strong> give agents structured access to
               external services like CI, letting them query the project
               graph, trigger tasks, and read results through tool calls.
@@ -100,7 +100,7 @@ export function AINative(): JSX.Element {
               can run commands" and "agent that can operate the monorepo
               end-to-end."
             </p>
-            <p className="mt-3 text-base text-gray-700 dark:text-gray-300">
+            <p className="mt-3 text-lg text-gray-700 dark:text-gray-300">
               A single command configures everything: installs the MCP
               server, provisions skills, and updates agent configuration
               files for whichever AI tools your team uses.

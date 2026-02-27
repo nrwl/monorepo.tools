@@ -55,7 +55,7 @@ export function FastFeedback(): JSX.Element {
                 <LinkIcon className="ml-2 h-6 w-6 opacity-0 group-hover:opacity-100" />
               </a>
             </h2>
-            <p className="mt-4 text-base text-gray-700 dark:text-gray-300">
+            <p className="mt-4 text-lg text-gray-700 dark:text-gray-300">
               Every change an agent makes needs a verdict: did it work, or
               did it break something? That signal allows the agent to{' '}
               <mark className="rounded-md bg-yellow-500 px-1">
@@ -64,7 +64,7 @@ export function FastFeedback(): JSX.Element {
               . Without it, a wrong assumption in step 2 corrupts
               steps 3 through 10.
             </p>
-            <p className="mt-3 text-base text-gray-700 dark:text-gray-300">
+            <p className="mt-3 text-lg text-gray-700 dark:text-gray-300">
               Monorepo tools make each loop fast by running only affected
               tasks, caching unchanged work, and enforcing architectural
               constraints early. The result: more iterations, earlier
@@ -93,7 +93,7 @@ export function FastFeedback(): JSX.Element {
                 <LinkIcon className="ml-2 h-6 w-6 opacity-0 group-hover:opacity-100" />
               </a>
             </h2>
-            <p className="mt-4 text-base text-gray-700 dark:text-gray-300">
+            <p className="mt-4 text-lg text-gray-700 dark:text-gray-300">
               The most powerful pattern combines{' '}
               <mark className="rounded-md bg-yellow-500 px-1">
                 AI for intelligence
@@ -107,7 +107,7 @@ export function FastFeedback(): JSX.Element {
               <strong>consistent, convention-matching results</strong> every
               time.
             </p>
-            <p className="mt-3 text-base text-gray-700 dark:text-gray-300">
+            <p className="mt-3 text-lg text-gray-700 dark:text-gray-300">
               Even better: AI agents can analyze your codebase, spot
               recurring patterns, and consolidate them into reusable
               generators on their own. Once extracted, every future scaffold
