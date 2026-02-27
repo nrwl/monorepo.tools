@@ -15,7 +15,7 @@ export function CIPressure(): JSX.Element {
       <div className="relative mx-auto max-w-xl px-4 sm:px-6 lg:max-w-7xl lg:px-8">
         <div className="relative">
           <h1 className="group text-center text-4xl font-extrabold leading-8 tracking-tight text-gray-900 sm:text-5xl dark:text-white">
-            AI Agents and CI
+            # AI Agents and CI
             <a
               aria-hidden="true"
               tabIndex={-1}

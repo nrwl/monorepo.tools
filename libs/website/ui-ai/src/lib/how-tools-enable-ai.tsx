@@ -171,28 +171,21 @@ export function HowToolsEnableAI(): JSX.Element {
               </a>
             </h2>
             <p className="mt-4 text-lg text-gray-700 dark:text-gray-300">
-              By default, an agent sees individual files. The project graph
-              adds a second level: projects and their relationships. But
-              there's a third level that ties it all together:{' '}
+              Developers reason about their codebase in domain areas like
+              &ldquo;shop&rdquo;, &ldquo;auth&rdquo;, or &ldquo;shared
+              infrastructure&rdquo;, but an AI agent only sees files. Tools
+              like Nx provide a{' '}
               <mark className="rounded-md bg-yellow-500 px-1">
-                domain classification
-              </mark>
-              . Projects grouped into higher-level concepts like "shop",
-              "auth", or "shared infrastructure".
+                tagging system
+              </mark>{' '}
+              that classifies groups of projects into these domain areas,
+              giving the agent the same high-level architecture map.
             </p>
             <p className="mt-3 text-lg text-gray-700 dark:text-gray-300">
-              Together, these three levels give the agent progressive
-              understanding. It starts at the domain level to identify the
-              relevant area, uses the project graph to find the right
-              projects within that domain, then drops into files only when
-              needed.
-            </p>
-            <p className="mt-3 text-lg text-gray-700 dark:text-gray-300">
-              Nx provides a{' '}
-              <strong>tagging system</strong> for this: projects are
-              classified into domains, and lint rules enforce boundaries
-              between them. The same mechanism that keeps your architecture
-              clean gives AI agents an architectural map to navigate by.
+              With this in place, the agent can progressively explore: start
+              from the domain level to identify the relevant area, use the
+              project graph to narrow down to the right projects, then drop
+              into the file system only when needed.
             </p>
           </div>
           <div className="mt-8 lg:mt-0">
