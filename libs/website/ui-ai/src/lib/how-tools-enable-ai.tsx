@@ -28,19 +28,15 @@ export function HowToolsEnableAI(): JSX.Element {
 
         <div className="mx-auto mt-12 max-w-4xl">
           <p className="text-xl text-gray-700 dark:text-gray-300">
-            Monorepos can be massive. AI agents are getting better and better
-            at grepping through codebases, but in a workspace with hundreds of
-            projects, that approach only gets you so far. You can{' '}
+            Monorepos can be massive. Rather than letting AI agents grep
+            through hundreds of projects, monorepo tools can{' '}
             <mark className="rounded-md bg-yellow-500 px-1">
-              dramatically accelerate AI
-            </mark>{' '}
-            by giving it a higher-level understanding of how the workspace is
-            structured: <strong>what projects exist, how they relate to each
-            other, and what tasks can be run</strong>.
-          </p>
-          <p className="mt-4 text-xl text-gray-700 dark:text-gray-300">
-            The result: better understanding, faster discovery, and
-            significantly fewer tokens spent on exploration.
+              expose the workspace structure directly
+            </mark>
+            : <strong>what projects exist, how they relate, and what tasks
+            can be run</strong>. The result is faster discovery, better
+            understanding, and significantly fewer tokens wasted on
+            exploration.
           </p>
         </div>
 

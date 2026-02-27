@@ -14,7 +14,7 @@ const aiHelpsItems = [
   {
     title: 'Understanding blast radius',
     detail:
-      'Affected detection tells you what is impacted by a change. AI goes further: it reasons about why each consumer is affected and how to adapt it, turning a list of broken projects into a concrete fix plan.',
+      'The project graph exposed by monorepo tools gives AI a map of every dependency relationship. An agent queries the graph to find impacted projects, crawls the corresponding source files to analyze why they break, and produces a concrete fix plan.',
   },
   {
     title: 'Cross-project debugging',
