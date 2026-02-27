@@ -115,8 +115,6 @@
   <!-- App 4 → Lib E (design): horizontal left -->
   <path d="M 728 505 C 660 510, 580 515, 522 518" stroke="#476088" stroke-width="2" fill="none" marker-end="url(#arrowBlue)"/>
 
-  <!-- Lib D → Lib C (cross-repo lib dependency): arc up-right -->
-  <path d="M 525 330 C 620 300, 740 260, 812 200" stroke="#70AF40" stroke-width="2" fill="none" marker-end="url(#arrowGreen)"/>
 
 
 </svg>

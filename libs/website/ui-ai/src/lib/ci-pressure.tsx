@@ -66,17 +66,15 @@ export function CIPressure(): JSX.Element {
               </h2>
               <p className="mt-3 text-lg text-gray-700 dark:text-gray-300">
                 The local AI agent and CI shouldn't be disconnected worlds. With
-                the right integration layer, a local agent can see what's
-                happening on CI, not just through GitHub Actions status checks,
-                but at the{' '}
+                the right integration layer, a{' '}
                 <mark className="rounded-md bg-yellow-500 px-1">
-                  task level
+                  local agent can see what's happening on CI
                 </mark>
-                .
+                , not just through GitHub Actions status checks,
+                but at the task level.
               </p>
               <p className="mt-4 text-lg text-gray-700 dark:text-gray-300">
-                In a monorepo, you don't run a single build. You run tasks
-                across hundreds of projects. Knowing which specific task failed,
+                Knowing which specific task failed,
                 seeing its logs, and understanding whether it's a code issue or
                 an environment problem makes the difference between a local
                 agent that can help and one that's flying blind.
