@@ -24,17 +24,14 @@ export function FastFeedback(): JSX.Element {
         </div>
 
         <div className="mx-auto mt-12 max-w-4xl">
-          <p className="text-xl text-gray-700 dark:text-gray-300">
-            AI agents work by iterating: make a change, check the result,
-            adjust. Without feedback, agents accumulate errors with no
-            signal to{' '}
+          <p className="text-center text-xl text-gray-700 dark:text-gray-300">
+            AI agents work by iterating: change, check, adjust. The quality
+            of the result depends on{' '}
             <mark className="rounded-md bg-yellow-500 px-1">
-              course correct
+              tight feedback loops
             </mark>
-            . The tighter the feedback loop, the earlier an agent catches
-            mistakes and the higher the quality of the final result. Speed
-            matters too: faster feedback means more iterations within the
-            same budget, compounding the quality advantage.
+            , proper guardrails, and how fast the agent can iterate.
+            Monorepo tools provide all three.
           </p>
         </div>
 
@@ -56,19 +53,18 @@ export function FastFeedback(): JSX.Element {
               </a>
             </h2>
             <p className="mt-4 text-lg text-gray-700 dark:text-gray-300">
-              Every change an agent makes needs a verdict: did it work, or
-              did it break something? That signal allows the agent to{' '}
+              Agents work faster, produce better results, and operate more
+              autonomously when they get{' '}
               <mark className="rounded-md bg-yellow-500 px-1">
-                self-correct before errors compound
-              </mark>
-              . Without it, a wrong assumption in step 2 corrupts
-              steps 3 through 10.
+                immediate feedback
+              </mark>{' '}
+              on every change. Without it, a wrong assumption in step 2
+              corrupts steps 3 through 10.
             </p>
             <p className="mt-3 text-lg text-gray-700 dark:text-gray-300">
-              Monorepo tools make each loop fast by running only affected
-              tasks, caching unchanged work, and enforcing architectural
-              constraints early. The result: more iterations, earlier
-              correction, better output.
+              Monorepo tools tighten this loop: only affected tasks run,
+              unchanged work is cached, and architectural constraints catch
+              violations early.
             </p>
           </div>
           <div className="mt-8 lg:mt-0">
@@ -94,24 +90,22 @@ export function FastFeedback(): JSX.Element {
               </a>
             </h2>
             <p className="mt-4 text-lg text-gray-700 dark:text-gray-300">
-              The most powerful pattern combines{' '}
+              Creating a new project shouldn&rsquo;t waste tokens generating
+              each file from scratch. Use a template and stamp it down in
+              one go, with{' '}
               <mark className="rounded-md bg-yellow-500 px-1">
-                AI for intelligence
+                predictable results
               </mark>{' '}
-              with{' '}
-              <mark className="rounded-md bg-yellow-500 px-1">
-                CLI tools for predictability
-              </mark>
-              . AI understands <em>when</em> to invoke which command. Tools
-              like codemods and Nx generators produce{' '}
-              <strong>consistent, convention-matching results</strong> every
+              that match your codebase conventions. Tools like codemods and
+              Nx generators produce{' '}
+              <strong>consistent, convention-matching output</strong> every
               time.
             </p>
             <p className="mt-3 text-lg text-gray-700 dark:text-gray-300">
-              Even better: AI agents can analyze your codebase, spot
-              recurring patterns, and consolidate them into reusable
-              generators on their own. Once extracted, every future scaffold
-              is deterministic and convention-matching.
+              Tools like Nx also let you create custom local generators
+              tailored to your workspace. Your AI agent can invoke these
+              directly, getting deterministic scaffolding without spending
+              tokens on boilerplate.
             </p>
           </div>
           <div className="mt-8 lg:order-1 lg:mt-0">

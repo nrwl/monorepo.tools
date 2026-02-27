@@ -64,7 +64,7 @@ export function CiPipelineAnimation() {
     (x: number, width: number, baseHeight: number, dteOn: boolean) => {
       const ciX = getStageX(BOTTLENECK_STAGE, width);
       const narrowWidth = width * 0.18;
-      const minRatio = dteOn ? 0.35 : 0.15;
+      const minRatio = dteOn ? 0.55 : 0.15;
       const minHeight = baseHeight * minRatio;
       const dist = Math.abs(x - ciX);
       if (dist > narrowWidth) return baseHeight;

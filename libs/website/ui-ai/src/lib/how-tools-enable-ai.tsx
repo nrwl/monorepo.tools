@@ -2,6 +2,7 @@ import { LinkIcon } from '@heroicons/react/24/outline';
 import { ProjectGraphTerminalAnimation } from './project-graph-terminal-animation';
 import { ProjectDetailsTerminalAnimation } from './project-details-terminal-animation';
 import { DomainGridAnimation } from './domain-grid-animation';
+import { WorkspaceStructureAnimation } from './workspace-structure-animation';
 
 export function HowToolsEnableAI(): JSX.Element {
   return (
@@ -38,40 +39,9 @@ export function HowToolsEnableAI(): JSX.Element {
             understanding, and significantly fewer tokens wasted on
             exploration.
           </p>
-        </div>
 
-        {/* Before/After comparison */}
-        <div className="mt-16 lg:grid lg:grid-cols-2 lg:items-center lg:gap-16">
-          <div className="text-center">
-            <div className="relative">
-              <img
-                className="mx-auto rounded-lg shadow-lg"
-                width={400}
-                src="/images/ai/ai-only-seeing-files.avif"
-                alt="Traditional AI agent grepping through individual files without architectural understanding"
-              />
-              <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 transform">
-                <span className="inline-flex items-center rounded-full bg-slate-100 px-3 py-1 text-sm font-medium text-slate-800 dark:bg-slate-800 dark:text-slate-200">
-                  Basic AI Agent
-                </span>
-              </div>
-            </div>
-          </div>
-
-          <div className="mt-12 text-center lg:mt-0">
-            <div className="relative">
-              <img
-                className="mx-auto rounded-lg shadow-lg"
-                width={400}
-                src="/images/ai/ai-seeing-project-graph.avif"
-                alt="Monorepo-aware AI agent with access to the project graph and workspace structure"
-              />
-              <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 transform">
-                <span className="inline-flex items-center rounded-full bg-slate-100 px-3 py-1 text-sm font-medium text-slate-800 dark:bg-slate-800 dark:text-slate-200">
-                  Monorepo-Aware AI
-                </span>
-              </div>
-            </div>
+          <div className="mx-auto mt-10 max-w-sm">
+            <WorkspaceStructureAnimation />
           </div>
         </div>
 

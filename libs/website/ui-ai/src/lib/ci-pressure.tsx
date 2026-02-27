@@ -29,15 +29,13 @@ export function CIPressure(): JSX.Element {
 
         {/* Intro */}
         <div className="relative mx-auto mt-8 max-w-xl lg:mt-8 lg:max-w-7xl">
-          <p className="mx-auto mt-8 max-w-4xl text-xl text-gray-700 dark:text-gray-300">
-            AI agents are becoming more autonomous. They don't just assist, they
-            submit PRs, run builds, and iterate on failures. This means they need
-            to effectively navigate{' '}
+          <p className="mx-auto mt-8 max-w-4xl text-center text-xl text-gray-700 dark:text-gray-300">
+            Autonomous agents submit more PRs, faster and more often. In a monorepo, each
+            one can trigger tasks across hundreds of projects.{' '}
             <mark className="rounded-md bg-yellow-500 px-1">
-              both local development and CI
+              CI becomes the bottleneck
             </mark>
-            . In monorepos, where tasks run across hundreds of projects, this
-            challenge is amplified.
+            , eroding the productivity gains that agentic engineering promises.
           </p>
         </div>
 
