@@ -7,7 +7,7 @@ import {
   CIPressure,
   AINative,
   AIToolsComparison,
-  Resources,
+  // Resources,
 } from '@monorepo-tools/website/ui-ai';
 import { NextSeo } from 'next-seo';
 import { useRouter } from 'next/router';
@@ -59,7 +59,7 @@ export function Index() {
 
         <AIToolsComparison />
 
-        <Resources />
+        {/* <Resources /> */}
       </main>
 
       <Footer />
