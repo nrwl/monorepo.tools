@@ -1,46 +1,38 @@
 import { LinkIcon } from '@heroicons/react/24/outline';
+import { PolyrepoMonorepoAnimation } from './polyrepo-monorepo-animation';
 
 const aiHelpsItems = [
   {
     title: 'Cross-cutting changes',
     detail:
-      'Updating an API used by 40 projects, migrating a pattern, replacing a deprecated library. Tedious, repetitive work across many projects that nobody wants to do. AI can grind through it, adapting each project to its specific usage.',
+      'Updating an API used by 40 projects, migrating a pattern, replacing a deprecated library. AI grinds through it, adapting each project to its specific usage.',
   },
   {
-    title: 'Navigating a codebase no one fully knows',
+    title: 'Navigating unknown codebases',
     detail:
-      'Large monorepos outgrow any individual\'s mental model. AI can explore, explain, and connect the dots across areas you\'ve never touched, making onboarding and cross-team work dramatically faster.',
+      'Large monorepos outgrow any individual\'s mental model. AI explores, explains, and connects the dots across areas you\'ve never touched.',
   },
   {
     title: 'Understanding blast radius',
     detail:
-      'The project graph exposed by monorepo tools gives AI a map of every dependency relationship. An agent queries the graph to find impacted projects, crawls the corresponding source files to analyze why they break, and produces a concrete fix plan.',
+      'The project graph gives AI a map of every dependency. An agent queries it to find impacted projects, analyzes why they break, and produces a fix plan.',
   },
   {
     title: 'Cross-project debugging',
     detail:
-      'A bug manifests in app A but the root cause is in shared lib B. AI traces through actual dependency chains to find it. In polyrepos, this requires manually jumping between repositories with no shared context.',
+      'A bug in app A, root cause in shared lib B. AI traces through actual dependency chains to find it. In polyrepos, this requires jumping between repos with no shared context.',
   },
   {
     title: 'Tech debt & tooling upgrades',
     detail:
-      'Deterministic migrations (like nx migrate) handle the predictable parts of upgrading. AI picks up where they leave off, fixing the edge cases that codemods can\'t handle.',
+      'Deterministic migrations handle the predictable parts. AI picks up where they leave off, fixing the edge cases that codemods can\'t handle.',
   },
   {
-    title: 'Consolidating projects into the monorepo',
+    title: 'Consolidating projects',
     detail:
-      'Importing existing repos means aligning build configs, resolving dependency conflicts, and adapting to workspace conventions. AI can automate the tedious adaptation work across each incoming project.',
+      'Importing existing repos means aligning build configs, resolving dependency conflicts, and adapting to workspace conventions. AI automates the tedious adaptation work.',
   },
 ];
-
-function PulsingDot(): JSX.Element {
-  return (
-    <span className="relative mt-2 flex h-2 w-2 shrink-0">
-      <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-50 dark:bg-green-500" />
-      <span className="relative inline-flex h-2 w-2 rounded-full bg-green-500" />
-    </span>
-  );
-}
 
 export function MonorepoAIAdvantages(): JSX.Element {
   return (
@@ -110,14 +102,8 @@ export function MonorepoAIAdvantages(): JSX.Element {
             </p>
           </div>
 
-          <div className="mt-8 lg:mt-0">
-            <img
-              aria-hidden="true"
-              loading="lazy"
-              className="mx-auto w-full rounded-lg shadow-lg"
-              src="/images/ai/ai-operating-efficiently.avif"
-              alt="AI operating efficiently in monorepos"
-            />
+          <div className="mt-8 hidden md:block lg:mt-0">
+            <PolyrepoMonorepoAnimation />
           </div>
         </div>
 
@@ -145,35 +131,20 @@ export function MonorepoAIAdvantages(): JSX.Element {
             </p>
           </div>
 
-          <div className="mt-12 lg:grid lg:grid-cols-2 lg:items-center lg:gap-12">
-            <div>
-              <img
-                className="mx-auto w-full rounded-lg shadow-lg"
-                src="/images/ai/ai-supporting-monorepos.avif"
-                alt="AI supporting and enhancing monorepo development workflows"
-              />
-            </div>
-
-            <div className="mt-12 space-y-2 lg:mt-0">
-              {aiHelpsItems.map((item, index) => (
-                <div
-                  key={index}
-                  className="group/item relative flex items-start gap-3 py-2"
-                >
-                  <PulsingDot />
-                  <div>
-                    <p className="cursor-pointer text-lg font-medium text-gray-800 dark:text-gray-200">
-                      {item.title}
-                    </p>
-                    <div className="pointer-events-none absolute left-0 top-full z-10 mt-1 w-80 rounded-lg border border-slate-200 bg-white p-4 opacity-0 shadow-lg transition-opacity duration-150 group-hover/item:pointer-events-auto group-hover/item:opacity-100 dark:border-slate-700 dark:bg-slate-800 sm:w-96">
-                      <p className="text-sm leading-relaxed text-gray-600 dark:text-gray-400">
-                        {item.detail}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
+          <div className="mt-12 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {aiHelpsItems.map((item, index) => (
+              <div
+                key={index}
+                className="rounded-md border border-slate-200 bg-slate-100 p-5 dark:border-black dark:bg-slate-900"
+              >
+                <p className="text-lg font-medium text-gray-900 dark:text-white">
+                  {item.title}
+                </p>
+                <p className="mt-2 text-sm leading-relaxed text-gray-600 dark:text-gray-400">
+                  {item.detail}
+                </p>
+              </div>
+            ))}
           </div>
         </article>
       </div>
