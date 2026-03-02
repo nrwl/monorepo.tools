@@ -2216,11 +2216,13 @@ export function MonorepoFeatures(): JSX.Element {
             <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
               <dt>
                 <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
-                  <NotSupported /> moon
+                  <CommunityProvided /> moon
                 </p>
               </dt>
               <dd className="mt-4 text-gray-600 dark:text-gray-400">
-                moon doesn&apos;t provide AI agent skills.
+                A community-maintained skill (hyperb1iss/moonrepo-skill) covers
+                moon workspace configuration, tasks, toolchain, CI/CD, and
+                proto setup. Not officially maintained by moonrepo.
               </dd>
             </div>
             <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">

@@ -352,7 +352,7 @@ const aiSupport: Item[] = [
       { title: 'Gradle', value: 'notSupported' },
       { title: 'Lage', value: 'notSupported' },
       { title: 'Lerna', value: 'notSupported' },
-      { title: 'moon', value: 'notSupported' },
+      { title: 'moon', value: 'communityProvided' },
       { title: 'Nx', value: 'supported' },
       { title: 'Pants', value: 'notSupported' },
       { title: 'Rush', value: 'notSupported' },
