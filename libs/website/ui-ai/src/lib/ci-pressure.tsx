@@ -65,19 +65,18 @@ export function CIPressure(): JSX.Element {
                 </a>
               </h2>
               <p className="mt-3 text-lg text-gray-700 dark:text-gray-300">
-                The local AI agent and CI shouldn't be disconnected worlds. With
-                the right integration layer, a{' '}
+                There are two distinct AI systems at play: a{' '}
                 <mark className="rounded-md bg-yellow-500 px-1">
-                  local agent can see what's happening on CI
-                </mark>
-                , not just through GitHub Actions status checks,
-                but at the task level.
+                  specialized remote agent on CI
+                </mark>{' '}
+                that diagnoses and fixes task failures, and the local
+                development agent. With the right integration layer, they
+                communicate directly so the local agent sees what's happening
+                on CI at the task level, not just a pass/fail status check.
               </p>
               <p className="mt-4 text-lg text-gray-700 dark:text-gray-300">
-                Knowing which specific task failed,
-                seeing its logs, and understanding whether it's a code issue or
-                an environment problem makes the difference between a local
-                agent that can help and one that's flying blind.
+                The entire cycle from failure detection to verified fix can
+                run autonomously, without human intervention.
               </p>
             </div>
 
@@ -86,12 +85,14 @@ export function CIPressure(): JSX.Element {
                 <dt className="flex items-center gap-2">
                   <ServerStackIcon className="h-5 w-5 text-gray-800 dark:text-gray-200" />
                   <p className="text-lg font-medium leading-6 text-gray-900 dark:text-white">
-                    Task-Level Visibility
+                    Remote CI Agent
                   </p>
                 </dt>
                 <dd className="mt-3 text-gray-600 dark:text-gray-400">
-                  See individual task status, logs, and timing across all
-                  projects, not just a pass/fail for the entire pipeline.
+                  A specialized agent on CI classifies failures (code bug,
+                  environment issue, flaky test) using error logs, the project
+                  graph, and historical run data. It proposes a fix and re-runs
+                  the failing task to verify it actually works.
                 </dd>
               </div>
 
@@ -99,12 +100,14 @@ export function CIPressure(): JSX.Element {
                 <dt className="flex items-center gap-2">
                   <SignalIcon className="h-5 w-5 text-gray-800 dark:text-gray-200" />
                   <p className="text-lg font-medium leading-6 text-gray-900 dark:text-white">
-                    Cross-Environment Context
+                    Local-Remote Communication
                   </p>
                 </dt>
                 <dd className="mt-3 text-gray-600 dark:text-gray-400">
-                  The local agent can compare its changes against what CI
-                  reports, correlating local behavior with remote failures.
+                  The local agent connects to the remote CI agent at the task
+                  level: which tasks failed, whether a fix is being attempted,
+                  and what the proposed changes are. It can wait for the remote
+                  agent to finish before deciding what to do next.
                 </dd>
               </div>
 
@@ -112,13 +115,14 @@ export function CIPressure(): JSX.Element {
                 <dt className="flex items-center gap-2">
                   <ArrowPathIcon className="h-5 w-5 text-gray-800 dark:text-gray-200" />
                   <p className="text-lg font-medium leading-6 text-gray-900 dark:text-white">
-                    Feedback Loop
+                    Autonomous Resolution
                   </p>
                 </dt>
                 <dd className="mt-3 text-gray-600 dark:text-gray-400">
-                  The local agent pushes a fix, CI verifies it, and the result
-                  flows back, creating a tight autonomous loop for resolving
-                  failures.
+                  When the remote agent's fix is verified, the local agent can
+                  tell it to apply directly. If the fix is incomplete, the local
+                  agent pulls the proposed changes, adjusts what's missing, and
+                  pushes again, closing the loop without human intervention.
                 </dd>
               </div>
             </dl>

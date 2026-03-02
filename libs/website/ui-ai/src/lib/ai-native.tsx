@@ -27,13 +27,15 @@ export function AINative(): JSX.Element {
 
         <div className="mx-auto mt-12 max-w-4xl">
           <p className="text-xl text-gray-700 dark:text-gray-300">
-            An AI agent should be able to{' '}
+            As AI agents grow more capable, the monorepo tool must not be
+            the bottleneck. It needs to be{' '}
             <mark className="rounded-md bg-yellow-500 px-1">
-              autonomously operate
-            </mark>{' '}
-            the monorepo tool. Not just tolerate it, but use its CLI as a
-            reliable control surface: query projects, run tasks, inspect
-            results, and act on failures without human intervention.
+              designed for agent autonomy
+            </mark>
+            : a CLI that gives structured, parseable information, that is
+            steerable by an agent just as naturally as by a human, and
+            that lets agents query projects, run tasks, and act on
+            failures without getting stuck.
           </p>
         </div>
 
@@ -55,10 +57,13 @@ export function AINative(): JSX.Element {
               </a>
             </h2>
             <p className="mt-4 text-lg text-gray-700 dark:text-gray-300">
-              For an agent to work autonomously, it needs a CLI it can drive
-              without getting stuck. The tool adapts its output depending on
-              who is calling it: humans get readable listings, agents get
-              structured JSON they can parse and act on in a single call.
+              An AI agent should be able to navigate and operate the CLI
+              just as effectively as a human. That often means adapting
+              output based on who is calling: humans get readable
+              listings, agents get structured JSON they can parse and act
+              on immediately. But it also means clear error messages,
+              composable commands, and predictable behavior that agents
+              can reason about without human hand-holding.
             </p>
           </div>
           <div className="mt-8">
@@ -89,8 +94,7 @@ export function AINative(): JSX.Element {
               your infrastructure.{' '}
               <strong>Skills</strong> teach agents your team's workflows:
               how to create a library, run affected tests, or scaffold code
-              that matches your standards. They are versioned and shared so
-              every agent behaves consistently.
+              that matches your standards.
             </p>
             <p className="mt-3 text-lg text-gray-700 dark:text-gray-300">
               <strong>MCP servers</strong> give agents structured access to
@@ -101,9 +105,11 @@ export function AINative(): JSX.Element {
               end-to-end."
             </p>
             <p className="mt-3 text-lg text-gray-700 dark:text-gray-300">
-              A single command configures everything: installs the MCP
-              server, provisions skills, and updates agent configuration
-              files for whichever AI tools your team uses.
+              Onboarding should be easy. A good monorepo tool helps
+              developers upgrade their workspace so AI agents can work
+              efficiently. For example, Nx provides a dedicated command
+              that configures MCP servers, provisions skills, and sets up
+              agent configuration files automatically.
             </p>
           </div>
           <div className="mt-8 lg:mt-0">

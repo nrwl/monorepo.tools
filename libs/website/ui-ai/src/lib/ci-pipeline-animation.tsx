@@ -632,7 +632,7 @@ export function CiPipelineAnimation() {
           </p>
           <p className="mt-3 text-lg text-gray-600 dark:text-gray-400">
             AI can be integrated at the CI level to detect broken tasks
-            and fix them automatically. Nx Cloud's{' '}
+            and fix them automatically. For example, Nx's{' '}
             <a
               href="https://nx.dev/ci/features/self-healing"
               target="_blank"

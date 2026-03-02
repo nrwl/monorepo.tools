@@ -146,7 +146,7 @@ export function Introduction(): JSX.Element {
 
       {/* Overlapping cards */}
       <section className="relative z-10 mx-auto -mt-28 max-w-7xl px-4 pb-32 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 gap-y-20 lg:grid-cols-3 lg:gap-x-8 lg:gap-y-0">
+        <div className="grid grid-cols-1 gap-y-20 lg:grid-cols-4 lg:gap-x-8 lg:gap-y-0">
           <div className="flex flex-col rounded-2xl bg-slate-100 shadow-xl dark:bg-slate-700">
             <div className="relative flex-1 px-6 pb-8 pt-12 md:px-8">
               <h2 className="text-xl font-semibold text-gray-800 dark:text-gray-200">
@@ -174,6 +174,23 @@ export function Introduction(): JSX.Element {
               <a
                 href="#fast-feedback"
                 title="Fast Feedback and Predictability"
+                className="text-sm font-medium uppercase text-gray-700 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300"
+              >
+                Learn more<span aria-hidden="true"> &rarr;</span>
+              </a>
+            </div>
+          </div>
+
+          <div className="flex flex-col rounded-2xl bg-slate-100 shadow-xl dark:bg-slate-700">
+            <div className="relative flex-1 px-6 pb-8 pt-12 md:px-8">
+              <h2 className="text-xl font-semibold text-gray-800 dark:text-gray-200">
+                AI-Native Tooling
+              </h2>
+            </div>
+            <div className="rounded-bl-2xl rounded-br-2xl bg-slate-200 p-4 md:px-6 dark:bg-slate-900">
+              <a
+                href="#ai-native"
+                title="AI-Native Tooling"
                 className="text-sm font-medium uppercase text-gray-700 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300"
               >
                 Learn more<span aria-hidden="true"> &rarr;</span>

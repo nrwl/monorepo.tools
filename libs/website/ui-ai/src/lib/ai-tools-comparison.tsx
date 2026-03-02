@@ -28,27 +28,14 @@ export function AIToolsComparison(): JSX.Element {
             Pants, Rush, and Turborepo stack up across six AI capability
             dimensions.
           </p>
-          <div className="mt-10">
+          <p className="mt-6 text-lg">
             <Link
               href="/compare#ai-support"
-              className="inline-flex items-center rounded-lg bg-blue-500 px-6 py-3 text-base font-medium text-white shadow-sm transition-colors hover:bg-blue-600"
+              className="font-medium text-blue-500 hover:text-blue-400"
             >
-              Compare AI Support
-              <svg
-                className="ml-2 h-5 w-5"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={2}
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"
-                />
-              </svg>
+              Compare AI Support &rarr;
             </Link>
-          </div>
+          </p>
         </div>
       </div>
     </div>

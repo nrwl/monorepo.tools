@@ -2531,10 +2531,10 @@ export function MonorepoFeatures(): JSX.Element {
                 </p>
               </dt>
               <dd className="mt-4 text-gray-600 dark:text-gray-400">
-                Nx Cloud&apos;s Self-Healing CI automatically diagnoses CI
+                Nx&apos;s Self-Healing CI automatically diagnoses CI
                 failures using error logs, stack traces, and the project graph,
                 then generates and verifies code fixes. Developers review via PR
-                comments or the Nx Cloud dashboard. Available on all plans with
+                comments or the Nx dashboard. Available on all plans with
                 auto-apply mode for high-confidence fixes.
               </dd>
             </div>
