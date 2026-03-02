@@ -1,5 +1,5 @@
 'use client';
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useInView } from './use-in-view';
 
@@ -150,21 +150,16 @@ function ProjectGraphSVG({ animatePath }: { animatePath: boolean }) {
   );
 }
 
+const graphOutputLines = GRAPH_OUTPUT.split('\n');
+const totalGraphOutputLines = graphOutputLines.length;
+
 export function ProjectGraphTerminalAnimation() {
   const { ref, inView } = useInView(0.3);
-  const [started, setStarted] = useState(false);
   const [phase, setPhase] = useState<Phase>('typing');
   const [typedChars, setTypedChars] = useState(0);
   const [outputLines, setOutputLines] = useState(0);
   const [animatePath, setAnimatePath] = useState(false);
-
-  const outputLinesArray = GRAPH_OUTPUT.split('\n');
-  const totalOutputLines = outputLinesArray.length;
-
-  // Start only once when scrolled into view
-  useEffect(() => {
-    if (inView && !started) setStarted(true);
-  }, [inView, started]);
+  const animatePathTimerRef = useRef<ReturnType<typeof setTimeout>>();
 
   const resetCycle = useCallback(() => {
     setPhase('typing');
@@ -175,7 +170,7 @@ export function ProjectGraphTerminalAnimation() {
 
   // Typing phase
   useEffect(() => {
-    if (!started) return;
+    if (!inView) return;
     if (phase !== 'typing') return;
     if (typedChars >= COMMAND.length) {
       const timer = setTimeout(() => setPhase('output'), POST_COMMAND_PAUSE);
@@ -186,16 +181,13 @@ export function ProjectGraphTerminalAnimation() {
       TYPING_SPEED + Math.random() * 40
     );
     return () => clearTimeout(timer);
-  }, [started, phase, typedChars]);
+  }, [inView, phase, typedChars]);
 
   // Output phase
   useEffect(() => {
     if (phase !== 'output') return;
-    if (outputLines >= totalOutputLines) {
-      const timer = setTimeout(() => {
-        setPhase('graph');
-        setTimeout(() => setAnimatePath(true), 300);
-      }, POST_OUTPUT_PAUSE);
+    if (outputLines >= totalGraphOutputLines) {
+      const timer = setTimeout(() => setPhase('graph'), POST_OUTPUT_PAUSE);
       return () => clearTimeout(timer);
     }
     const timer = setTimeout(
@@ -203,13 +195,17 @@ export function ProjectGraphTerminalAnimation() {
       OUTPUT_LINE_DELAY
     );
     return () => clearTimeout(timer);
-  }, [phase, outputLines, totalOutputLines]);
+  }, [phase, outputLines]);
 
-  // Graph phase -> restart
+  // Graph phase: animate path highlight, then restart
   useEffect(() => {
     if (phase !== 'graph') return;
+    animatePathTimerRef.current = setTimeout(() => setAnimatePath(true), 300);
     const timer = setTimeout(resetCycle, GRAPH_DISPLAY_DURATION);
-    return () => clearTimeout(timer);
+    return () => {
+      clearTimeout(timer);
+      if (animatePathTimerRef.current) clearTimeout(animatePathTimerRef.current);
+    };
   }, [phase, resetCycle]);
 
   return (
@@ -251,7 +247,7 @@ export function ProjectGraphTerminalAnimation() {
               {/* Output */}
               {phase === 'output' && outputLines > 0 && (
                 <div className="mt-2 text-slate-400">
-                  {outputLinesArray.slice(0, outputLines).map((line, i) => (
+                  {graphOutputLines.slice(0, outputLines).map((line, i) => (
                     <div key={i} className="leading-relaxed whitespace-pre">
                       {colorizeJson(line)}
                     </div>

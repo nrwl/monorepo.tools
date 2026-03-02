@@ -32,7 +32,7 @@ export function Introduction(): JSX.Element {
                   aria-hidden="true"
                   tabIndex={-1}
                   href="#ai-driven-monorepos"
-                  className="flex inline-flex items-center text-gray-900 dark:text-white"
+                  className="inline-flex items-center text-gray-900 dark:text-white"
                 >
                   <LinkIcon className="ml-2 h-6 w-6 opacity-0 group-hover:opacity-100" />
                 </a>

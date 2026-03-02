@@ -207,16 +207,11 @@ function AnimatedArrow({ direction }: { direction: 'right' | 'down' }) {
 
 export function GeneratorTerminalAnimation() {
   const { ref, inView } = useInView(0.3);
-  const [started, setStarted] = useState(false);
   const [phase, setPhase] = useState<Phase>('source-tree');
   const [typedChars, setTypedChars] = useState(0);
   const [generatedCount, setGeneratedCount] = useState(0);
   const [showArrow, setShowArrow] = useState(false);
   const [showBox, setShowBox] = useState(false);
-
-  useEffect(() => {
-    if (inView && !started) setStarted(true);
-  }, [inView, started]);
 
   const resetCycle = useCallback(() => {
     setPhase('source-tree');
@@ -228,11 +223,11 @@ export function GeneratorTerminalAnimation() {
 
   // Phase 1: Show source tree, then transition to encode
   useEffect(() => {
-    if (!started) return;
+    if (!inView) return;
     if (phase !== 'source-tree') return;
     const timer = setTimeout(() => setPhase('encode'), PHASE1_DURATION);
     return () => clearTimeout(timer);
-  }, [started, phase]);
+  }, [inView, phase]);
 
   // Phase 2: Encode — show arrow then box
   useEffect(() => {

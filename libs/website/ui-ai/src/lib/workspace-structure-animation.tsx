@@ -1,6 +1,7 @@
 'use client';
 import { useState, useEffect, useRef, useCallback } from 'react';
 import { motion } from 'framer-motion';
+import { useInView } from './use-in-view';
 
 /*
  * 8 blocks (one per project) start packed as a compact square,
@@ -79,28 +80,10 @@ const nodeMap = new Map<string, number>();
 NODES.forEach((n, i) => nodeMap.set(n.id, i));
 
 export function WorkspaceStructureAnimation() {
-  const ref = useRef<HTMLDivElement>(null);
-  const [activated, setActivated] = useState(false);
+  const { ref, inView } = useInView(0.3);
   const [phase, setPhase] = useState<'compact' | 'spreading' | 'spread' | 'collapsing'>('compact');
   const [scale, setScale] = useState(1);
   const cycleRef = useRef<ReturnType<typeof setTimeout>>();
-
-  // Intersection observer
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setActivated(true);
-          observer.disconnect();
-        }
-      },
-      { threshold: 0.3 }
-    );
-    observer.observe(el);
-    return () => observer.disconnect();
-  }, []);
 
   // Resize observer
   useEffect(() => {
@@ -112,7 +95,7 @@ export function WorkspaceStructureAnimation() {
     });
     ro.observe(el);
     return () => ro.disconnect();
-  }, []);
+  }, [ref]);
 
   const startCycle = useCallback(() => {
     setPhase('spreading');
@@ -135,13 +118,13 @@ export function WorkspaceStructureAnimation() {
   }, []);
 
   useEffect(() => {
-    if (!activated) return;
+    if (!inView) return;
     const t = setTimeout(() => startCycle(), HOLD_COMPACT * 1000);
     return () => {
       clearTimeout(t);
       if (cycleRef.current) clearTimeout(cycleRef.current);
     };
-  }, [activated, startCycle]);
+  }, [inView, startCycle]);
 
   const isSpread = phase === 'spreading' || phase === 'spread';
   const showEdges = phase === 'spread';

@@ -221,12 +221,19 @@ function DesktopAnimation() {
             transition={{ duration: 0.15 }}
             className="pointer-events-none absolute left-1/2 top-1/2 z-20 w-72 -translate-x-1/2 -translate-y-1/2 rounded-lg border border-slate-200 bg-white p-4 shadow-lg dark:border-slate-700 dark:bg-slate-800"
           >
-            <p className="text-sm font-semibold text-gray-900 dark:text-white">
-              {NODES.find((n) => n.id === activeNode)?.label}
-            </p>
-            <p className="mt-1.5 text-sm leading-relaxed text-gray-600 dark:text-gray-400">
-              {NODES.find((n) => n.id === activeNode)?.detail}
-            </p>
+            {(() => {
+              const node = NODES.find((n) => n.id === activeNode);
+              return node ? (
+                <>
+                  <p className="text-sm font-semibold text-gray-900 dark:text-white">
+                    {node.label}
+                  </p>
+                  <p className="mt-1.5 text-sm leading-relaxed text-gray-600 dark:text-gray-400">
+                    {node.detail}
+                  </p>
+                </>
+              ) : null;
+            })()}
           </motion.div>
         )}
       </AnimatePresence>

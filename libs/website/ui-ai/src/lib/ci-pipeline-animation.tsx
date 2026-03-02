@@ -8,7 +8,7 @@ const BOTTLENECK_STAGE = 2;
 const COLOR_NEUTRAL = '#64748b';
 const COLOR_PASS = '#22c55e';
 const COLOR_FAIL = '#ef4444';
-const COLOR_HEALED = '#22c55e';
+const COLOR_HEALED = COLOR_PASS;
 
 const PIPE_HALF = 7;
 const CORNER_R = 12;
@@ -37,19 +37,18 @@ interface Dot {
   passedCi?: boolean;
 }
 
-let nextDotId = 0;
-
 export function CiPipelineAnimation() {
   const { ref: viewRef, inView } = useInView(0.3);
-  const [started, setStarted] = useState(false);
   const [dte, setDte] = useState(false);
   const [selfHeal, setSelfHeal] = useState(false);
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const dotsRef = useRef<Dot[]>([]);
   const animFrameRef = useRef<number>(0);
   const lastSpawnRef = useRef(0);
+  const nextDotIdRef = useRef(0);
   const dteRef = useRef(false);
   const selfHealRef = useRef(false);
+  const sizeRef = useRef({ w: 0, h: 0 });
 
   useEffect(() => { dteRef.current = dte; }, [dte]);
   useEffect(() => { selfHealRef.current = selfHeal; }, [selfHeal]);
@@ -96,21 +95,20 @@ export function CiPipelineAnimation() {
   );
 
   useEffect(() => {
-    if (inView && !started) setStarted(true);
-  }, [inView, started]);
-
-  useEffect(() => {
-    if (!started) return;
+    if (!inView) return;
     const canvas = canvasRef.current;
     if (!canvas) return;
+
+    const ctx = canvas.getContext('2d');
+    if (!ctx) return;
 
     const resizeCanvas = () => {
       const rect = canvas.getBoundingClientRect();
       const dpr = window.devicePixelRatio || 1;
       canvas.width = rect.width * dpr;
       canvas.height = rect.height * dpr;
-      const ctx = canvas.getContext('2d');
-      if (ctx) ctx.scale(dpr, dpr);
+      ctx.scale(dpr, dpr);
+      sizeRef.current = { w: rect.width, h: rect.height };
     };
 
     resizeCanvas();
@@ -225,12 +223,11 @@ export function CiPipelineAnimation() {
     }
 
     const animate = (time: number) => {
-      const ctx = canvas.getContext('2d');
-      if (!ctx) return;
-
-      const rect = canvas.getBoundingClientRect();
-      const w = rect.width;
-      const h = rect.height;
+      const { w, h } = sizeRef.current;
+      if (w === 0 || h === 0) {
+        animFrameRef.current = requestAnimationFrame(animate);
+        return;
+      }
       const mainY = h * 0.38;
       const baseHeight = h * 0.18;
       const currentDte = dteRef.current;
@@ -342,7 +339,7 @@ export function CiPipelineAnimation() {
         const tunnelH = getTunnelHeight(0, w, baseHeight, currentDte);
         const yOffset = (Math.random() - 0.5) * tunnelH * 1.4;
         dotsRef.current.push({
-          id: nextDotId++,
+          id: nextDotIdRef.current++,
           x: -5,
           y: mainY + yOffset,
           color: COLOR_NEUTRAL,
@@ -533,7 +530,7 @@ export function CiPipelineAnimation() {
       cancelAnimationFrame(animFrameRef.current);
       window.removeEventListener('resize', resizeCanvas);
     };
-  }, [started, getStageX, getTunnelHeight, getDotSpeed]);
+  }, [inView, getStageX, getTunnelHeight, getDotSpeed]);
 
   return (
     <div ref={viewRef}>

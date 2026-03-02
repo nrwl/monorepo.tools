@@ -22,18 +22,23 @@ export function AIToolsComparison(): JSX.Element {
             </a>
           </h2>
           <p className="mx-auto mt-6 max-w-2xl text-lg text-gray-500 dark:text-gray-400">
-            Monorepo tools vary widely in AI support — from no integration at
+            Monorepo tools vary widely in AI support, from no integration at
             all to full MCP servers, agent skills, workspace analysis, and
-            self-healing CI. See how Bazel, Gradle, Lage, Lerna, moon, Nx,
-            Pants, Rush, and Turborepo stack up across six AI capability
-            dimensions.
+            self-healing CI.
           </p>
-          <p className="mt-6 text-lg">
+          <p className="mt-6 text-lg text-gray-700 dark:text-gray-300">
+            <Link
+              href="https://nx.dev"
+              className="font-semibold text-blue-600 underline decoration-blue-600/30 underline-offset-4 transition hover:decoration-blue-600 dark:text-blue-400 dark:decoration-blue-400/30 dark:hover:decoration-blue-400"
+            >
+              Nx
+            </Link>{' '}
+            checks all the boxes.{' '}
             <Link
               href="/compare#ai-support"
-              className="font-medium text-blue-500 hover:text-blue-400"
+              className="font-semibold text-blue-600 underline decoration-blue-600/30 underline-offset-4 transition hover:decoration-blue-600 dark:text-blue-400 dark:decoration-blue-400/30 dark:hover:decoration-blue-400"
             >
-              Compare AI Support &rarr;
+              Compare tools &rarr;
             </Link>
           </p>
         </div>

@@ -39,19 +39,14 @@ const HOLD_DURATION = 4000;
 
 type Phase = 'typing' | 'output' | 'hold';
 
+const humanLines = HUMAN_OUTPUT.split('\n');
+const totalOutputLines = humanLines.length;
+
 export function AxTerminalAnimation() {
   const { ref, inView } = useInView(0.3);
-  const [started, setStarted] = useState(false);
   const [phase, setPhase] = useState<Phase>('typing');
   const [typedChars, setTypedChars] = useState(0);
   const [outputLines, setOutputLines] = useState(0);
-
-  const humanLines = HUMAN_OUTPUT.split('\n');
-  const totalOutputLines = humanLines.length;
-
-  useEffect(() => {
-    if (inView && !started) setStarted(true);
-  }, [inView, started]);
 
   const resetCycle = () => {
     setPhase('typing');
@@ -61,7 +56,7 @@ export function AxTerminalAnimation() {
 
   // Typing — use the longer command length
   useEffect(() => {
-    if (!started) return;
+    if (!inView) return;
     if (phase !== 'typing') return;
     if (typedChars >= COMMAND.length) {
       const timer = setTimeout(() => setPhase('output'), POST_COMMAND_PAUSE);
@@ -72,7 +67,7 @@ export function AxTerminalAnimation() {
       TYPING_SPEED + Math.random() * 30
     );
     return () => clearTimeout(timer);
-  }, [started, phase, typedChars]);
+  }, [inView, phase, typedChars]);
 
   // Output
   useEffect(() => {

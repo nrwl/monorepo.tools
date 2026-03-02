@@ -103,19 +103,14 @@ function ProjectDetailUI() {
   );
 }
 
+const jsonOutputLines = JSON_OUTPUT.split('\n');
+const totalJsonOutputLines = jsonOutputLines.length;
+
 export function ProjectDetailsTerminalAnimation() {
   const { ref, inView } = useInView(0.3);
-  const [started, setStarted] = useState(false);
   const [phase, setPhase] = useState<Phase>('typing');
   const [typedChars, setTypedChars] = useState(0);
   const [outputLines, setOutputLines] = useState(0);
-
-  const outputLinesArray = JSON_OUTPUT.split('\n');
-  const totalOutputLines = outputLinesArray.length;
-
-  useEffect(() => {
-    if (inView && !started) setStarted(true);
-  }, [inView, started]);
 
   const resetCycle = useCallback(() => {
     setPhase('typing');
@@ -125,7 +120,7 @@ export function ProjectDetailsTerminalAnimation() {
 
   // Typing phase
   useEffect(() => {
-    if (!started) return;
+    if (!inView) return;
     if (phase !== 'typing') return;
     if (typedChars >= COMMAND.length) {
       const timer = setTimeout(() => setPhase('output'), POST_COMMAND_PAUSE);
@@ -136,12 +131,12 @@ export function ProjectDetailsTerminalAnimation() {
       TYPING_SPEED + Math.random() * 30
     );
     return () => clearTimeout(timer);
-  }, [started, phase, typedChars]);
+  }, [inView, phase, typedChars]);
 
   // Output phase
   useEffect(() => {
     if (phase !== 'output') return;
-    if (outputLines >= totalOutputLines) {
+    if (outputLines >= totalJsonOutputLines) {
       const timer = setTimeout(() => setPhase('ui'), POST_OUTPUT_PAUSE);
       return () => clearTimeout(timer);
     }
@@ -150,7 +145,7 @@ export function ProjectDetailsTerminalAnimation() {
       OUTPUT_LINE_DELAY
     );
     return () => clearTimeout(timer);
-  }, [phase, outputLines, totalOutputLines]);
+  }, [phase, outputLines]);
 
   // UI phase -> restart
   useEffect(() => {
@@ -198,7 +193,7 @@ export function ProjectDetailsTerminalAnimation() {
               {/* Output */}
               {phase === 'output' && outputLines > 0 && (
                 <div className="mt-2 text-slate-400">
-                  {outputLinesArray.slice(0, outputLines).map((line, i) => (
+                  {jsonOutputLines.slice(0, outputLines).map((line, i) => (
                     <div key={i} className="whitespace-pre leading-relaxed">
                       {colorizeJson(line)}
                     </div>

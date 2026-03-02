@@ -1,5 +1,5 @@
 'use client';
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from './use-in-view';
 
@@ -29,7 +29,6 @@ type Phase =
 
 export function ConfigureAiTerminalAnimation() {
   const { ref, inView } = useInView(0.3);
-  const [started, setStarted] = useState(false);
   const [phase, setPhase] = useState<Phase>('typing');
   const [typedChars, setTypedChars] = useState(0);
   const [visibleItems, setVisibleItems] = useState(0);
@@ -38,10 +37,7 @@ export function ConfigureAiTerminalAnimation() {
   const [showDescription, setShowDescription] = useState(false);
   const [showSuccess, setShowSuccess] = useState(false);
   const [flashIndex, setFlashIndex] = useState(-1);
-
-  useEffect(() => {
-    if (inView && !started) setStarted(true);
-  }, [inView, started]);
+  const flashTimerRef = useRef<ReturnType<typeof setTimeout>>();
 
   const resetCycle = useCallback(() => {
     setPhase('typing');
@@ -56,7 +52,7 @@ export function ConfigureAiTerminalAnimation() {
 
   // Typing
   useEffect(() => {
-    if (!started) return;
+    if (!inView) return;
     if (phase !== 'typing') return;
     if (typedChars >= COMMAND.length) {
       const timer = setTimeout(() => {
@@ -70,7 +66,7 @@ export function ConfigureAiTerminalAnimation() {
       TYPING_SPEED + Math.random() * 20
     );
     return () => clearTimeout(timer);
-  }, [started, phase, typedChars]);
+  }, [inView, phase, typedChars]);
 
   // Fetching
   useEffect(() => {
@@ -109,10 +105,13 @@ export function ConfigureAiTerminalAnimation() {
     }
     const timer = setTimeout(() => {
       setFlashIndex(checkedItems);
-      setTimeout(() => setFlashIndex(-1), 150);
+      flashTimerRef.current = setTimeout(() => setFlashIndex(-1), 150);
       setCheckedItems((c) => c + 1);
     }, CHECK_DELAY);
-    return () => clearTimeout(timer);
+    return () => {
+      clearTimeout(timer);
+      if (flashTimerRef.current) clearTimeout(flashTimerRef.current);
+    };
   }, [phase, checkedItems]);
 
   // Done -> hold -> restart

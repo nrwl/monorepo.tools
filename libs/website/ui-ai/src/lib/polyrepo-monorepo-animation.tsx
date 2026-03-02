@@ -1,6 +1,7 @@
 'use client';
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useInView } from './use-in-view';
 
 /*
  * Split visualization: polyrepo (isolated repos, broken context) vs
@@ -146,27 +147,9 @@ function AgentScanLine({ active }: { active: boolean }) {
 }
 
 export function PolyrepoMonorepoAnimation() {
-  const ref = useRef<HTMLDivElement>(null);
-  const [activated, setActivated] = useState(false);
+  const { ref, inView } = useInView(0.3);
   const [view, setView] = useState<'polyrepo' | 'monorepo'>('polyrepo');
   const [scale, setScale] = useState(1);
-
-  // Intersection observer
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setActivated(true);
-          observer.disconnect();
-        }
-      },
-      { threshold: 0.3 }
-    );
-    observer.observe(el);
-    return () => observer.disconnect();
-  }, []);
 
   // Resize
   useEffect(() => {
@@ -178,16 +161,16 @@ export function PolyrepoMonorepoAnimation() {
     });
     ro.observe(el);
     return () => ro.disconnect();
-  }, []);
+  }, [ref]);
 
   // Auto-cycle
   useEffect(() => {
-    if (!activated) return;
+    if (!inView) return;
     const interval = setInterval(() => {
       setView((v) => (v === 'polyrepo' ? 'monorepo' : 'polyrepo'));
     }, 4000);
     return () => clearInterval(interval);
-  }, [activated]);
+  }, [inView]);
 
   return (
     <div

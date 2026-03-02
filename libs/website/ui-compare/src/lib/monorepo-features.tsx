@@ -71,7 +71,7 @@ export function MonorepoFeatures(): JSX.Element {
               aria-hidden="true"
               tabIndex={-1}
               href="#monorepo-tools"
-              className="flex inline-flex items-center text-gray-900 dark:text-white"
+              className="inline-flex items-center text-gray-900 dark:text-white"
             >
               <LinkIcon className="ml-2 h-6 w-6 opacity-0 group-hover:opacity-100" />
             </a>
@@ -105,7 +105,7 @@ export function MonorepoFeatures(): JSX.Element {
                 aria-hidden="true"
                 tabIndex={-1}
                 href="#local-computation-caching"
-                className="flex inline-flex items-center text-gray-900 dark:text-white"
+                className="inline-flex items-center text-gray-900 dark:text-white"
               >
                 <LinkIcon className="ml-2 h-6 w-6 opacity-0 group-hover:opacity-100" />
               </a>
@@ -247,7 +247,7 @@ export function MonorepoFeatures(): JSX.Element {
                 aria-hidden="true"
                 tabIndex={-1}
                 href="#local-task-orchestration"
-                className="flex inline-flex items-center text-gray-900 dark:text-white"
+                className="inline-flex items-center text-gray-900 dark:text-white"
               >
                 <LinkIcon className="ml-2 h-6 w-6 opacity-0 group-hover:opacity-100" />
               </a>
@@ -383,7 +383,7 @@ export function MonorepoFeatures(): JSX.Element {
                 aria-hidden="true"
                 tabIndex={-1}
                 href="#distributed-computation-caching"
-                className="flex inline-flex items-center text-gray-900 dark:text-white"
+                className="inline-flex items-center text-gray-900 dark:text-white"
               >
                 <LinkIcon className="ml-2 h-6 w-6 opacity-0 group-hover:opacity-100" />
               </a>
@@ -531,7 +531,7 @@ export function MonorepoFeatures(): JSX.Element {
                 aria-hidden="true"
                 tabIndex={-1}
                 href="#distributed-task-execution"
-                className="flex inline-flex items-center text-gray-900 dark:text-white"
+                className="inline-flex items-center text-gray-900 dark:text-white"
               >
                 <LinkIcon className="ml-2 h-6 w-6 opacity-0 group-hover:opacity-100" />
               </a>
@@ -669,7 +669,7 @@ export function MonorepoFeatures(): JSX.Element {
                 aria-hidden="true"
                 tabIndex={-1}
                 href="#transparent-remote-execution"
-                className="flex inline-flex items-center text-gray-900 dark:text-white"
+                className="inline-flex items-center text-gray-900 dark:text-white"
               >
                 <LinkIcon className="ml-2 h-6 w-6 opacity-0 group-hover:opacity-100" />
               </a>
@@ -791,7 +791,7 @@ export function MonorepoFeatures(): JSX.Element {
                 aria-hidden="true"
                 tabIndex={-1}
                 href="#detecting-affected-projects-packages"
-                className="flex inline-flex items-center text-gray-900 dark:text-white"
+                className="inline-flex items-center text-gray-900 dark:text-white"
               >
                 <LinkIcon className="ml-2 h-6 w-6 opacity-0 group-hover:opacity-100" />
               </a>
@@ -938,7 +938,7 @@ export function MonorepoFeatures(): JSX.Element {
                 aria-hidden="true"
                 tabIndex={-1}
                 href="#task-splitting"
-                className="flex inline-flex items-center text-gray-900 dark:text-white"
+                className="inline-flex items-center text-gray-900 dark:text-white"
               >
                 <LinkIcon className="ml-2 h-6 w-6 opacity-0 group-hover:opacity-100" />
               </a>
@@ -1082,7 +1082,7 @@ export function MonorepoFeatures(): JSX.Element {
                 aria-hidden="true"
                 tabIndex={-1}
                 href="#deflaking"
-                className="flex inline-flex items-center text-gray-900 dark:text-white"
+                className="inline-flex items-center text-gray-900 dark:text-white"
               >
                 <LinkIcon className="ml-2 h-6 w-6 opacity-0 group-hover:opacity-100" />
               </a>
@@ -1229,7 +1229,7 @@ export function MonorepoFeatures(): JSX.Element {
                 aria-hidden="true"
                 tabIndex={-1}
                 href="#workspace-analysis"
-                className="flex inline-flex items-center text-gray-900 dark:text-white"
+                className="inline-flex items-center text-gray-900 dark:text-white"
               >
                 <LinkIcon className="ml-2 h-6 w-6 opacity-0 group-hover:opacity-100" />
               </a>
@@ -1374,7 +1374,7 @@ export function MonorepoFeatures(): JSX.Element {
                 aria-hidden="true"
                 tabIndex={-1}
                 href="#dependency-graph-visualization"
-                className="flex inline-flex items-center text-gray-900 dark:text-white"
+                className="inline-flex items-center text-gray-900 dark:text-white"
               >
                 <LinkIcon className="ml-2 h-6 w-6 opacity-0 group-hover:opacity-100" />
               </a>
@@ -1527,7 +1527,7 @@ export function MonorepoFeatures(): JSX.Element {
                 aria-hidden="true"
                 tabIndex={-1}
                 href="#source-code-sharing"
-                className="flex inline-flex items-center text-gray-900 dark:text-white"
+                className="inline-flex items-center text-gray-900 dark:text-white"
               >
                 <LinkIcon className="ml-2 h-6 w-6 opacity-0 group-hover:opacity-100" />
               </a>
@@ -1678,7 +1678,7 @@ export function MonorepoFeatures(): JSX.Element {
                 aria-hidden="true"
                 tabIndex={-1}
                 href="#consistent-tooling"
-                className="flex inline-flex items-center text-gray-900 dark:text-white"
+                className="inline-flex items-center text-gray-900 dark:text-white"
               >
                 <LinkIcon className="ml-2 h-6 w-6 opacity-0 group-hover:opacity-100" />
               </a>
@@ -1830,7 +1830,7 @@ export function MonorepoFeatures(): JSX.Element {
                 aria-hidden="true"
                 tabIndex={-1}
                 href="#code-generation"
-                className="flex inline-flex items-center text-gray-900 dark:text-white"
+                className="inline-flex items-center text-gray-900 dark:text-white"
               >
                 <LinkIcon className="ml-2 h-6 w-6 opacity-0 group-hover:opacity-100" />
               </a>
@@ -1982,7 +1982,7 @@ export function MonorepoFeatures(): JSX.Element {
                 aria-hidden="true"
                 tabIndex={-1}
                 href="#explicit-project-constrains"
-                className="flex inline-flex items-center text-gray-900 dark:text-white"
+                className="inline-flex items-center text-gray-900 dark:text-white"
               >
                 <LinkIcon className="ml-2 h-6 w-6 opacity-0 group-hover:opacity-100" />
               </a>
@@ -2147,7 +2147,7 @@ export function MonorepoFeatures(): JSX.Element {
                 aria-hidden="true"
                 tabIndex={-1}
                 href="#ai-skills"
-                className="flex inline-flex items-center text-gray-900 dark:text-white"
+                className="inline-flex items-center text-gray-900 dark:text-white"
               >
                 <LinkIcon className="ml-2 h-6 w-6 opacity-0 group-hover:opacity-100" />
               </a>
@@ -2293,7 +2293,7 @@ export function MonorepoFeatures(): JSX.Element {
                 aria-hidden="true"
                 tabIndex={-1}
                 href="#mcp-server"
-                className="flex inline-flex items-center text-gray-900 dark:text-white"
+                className="inline-flex items-center text-gray-900 dark:text-white"
               >
                 <LinkIcon className="ml-2 h-6 w-6 opacity-0 group-hover:opacity-100" />
               </a>
@@ -2444,7 +2444,7 @@ export function MonorepoFeatures(): JSX.Element {
                 aria-hidden="true"
                 tabIndex={-1}
                 href="#agentic-ci"
-                className="flex inline-flex items-center text-gray-900 dark:text-white"
+                className="inline-flex items-center text-gray-900 dark:text-white"
               >
                 <LinkIcon className="ml-2 h-6 w-6 opacity-0 group-hover:opacity-100" />
               </a>
@@ -2589,7 +2589,7 @@ export function MonorepoFeatures(): JSX.Element {
                 aria-hidden="true"
                 tabIndex={-1}
                 href="#ai-workspace-analysis"
-                className="flex inline-flex items-center text-gray-900 dark:text-white"
+                className="inline-flex items-center text-gray-900 dark:text-white"
               >
                 <LinkIcon className="ml-2 h-6 w-6 opacity-0 group-hover:opacity-100" />
               </a>
@@ -2724,7 +2724,7 @@ export function MonorepoFeatures(): JSX.Element {
                 aria-hidden="true"
                 tabIndex={-1}
                 href="#task-execution-via-ai"
-                className="flex inline-flex items-center text-gray-900 dark:text-white"
+                className="inline-flex items-center text-gray-900 dark:text-white"
               >
                 <LinkIcon className="ml-2 h-6 w-6 opacity-0 group-hover:opacity-100" />
               </a>

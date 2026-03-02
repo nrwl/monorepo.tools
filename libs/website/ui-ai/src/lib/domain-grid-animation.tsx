@@ -1,6 +1,7 @@
 'use client';
 import { useState, useEffect, useRef, useCallback } from 'react';
 import { motion } from 'framer-motion';
+import { useInView } from './use-in-view';
 
 const COLS = 11;
 const ROWS = 11;
@@ -173,30 +174,12 @@ const GRID_H = ROWS * STEP - GAP;
 const RENDER_SIZE = Math.max(GRID_W, GRID_H) + 120;
 
 export function DomainGridAnimation() {
-  const ref = useRef<HTMLDivElement>(null);
-  const [activated, setActivated] = useState(false);
+  const { ref, inView } = useInView(0.3);
   const [scale, setScale] = useState(1);
   const [phase, setPhase] = useState<
     'grey' | 'colorizing' | 'colored' | 'fading'
   >('grey');
   const cycleRef = useRef<ReturnType<typeof setTimeout>>();
-
-  // Intersection observer for activation
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setActivated(true);
-          observer.disconnect();
-        }
-      },
-      { threshold: 0.3 }
-    );
-    observer.observe(el);
-    return () => observer.disconnect();
-  }, []);
 
   // Resize observer to scale the grid to fit its container
   useEffect(() => {
@@ -232,12 +215,12 @@ export function DomainGridAnimation() {
   }, []);
 
   useEffect(() => {
-    if (!activated) return;
+    if (!inView) return;
     startCycle();
     return () => {
       if (cycleRef.current) clearTimeout(cycleRef.current);
     };
-  }, [activated, startCycle]);
+  }, [inView, startCycle]);
 
   const spreading = phase === 'colorizing' || phase === 'colored';
 

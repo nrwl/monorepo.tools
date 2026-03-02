@@ -1,4 +1,4 @@
-import { ReactComponentElement } from 'react';
+import { type ReactElement } from 'react';
 import {
   CheckCircleIcon,
   ExclamationCircleIcon,
@@ -411,7 +411,7 @@ const aiSupport: Item[] = [
     ],
   },
 ];
-const valuesDictionary: Record<Supports, () => ReactComponentElement<any>> = {
+const valuesDictionary: Record<Supports, () => ReactElement> = {
   supported: () => (
     <span
       title="natively supported"
