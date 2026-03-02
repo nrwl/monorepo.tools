@@ -1,0 +1,169 @@
+import { LinkIcon } from '@heroicons/react/24/outline';
+import { ProjectGraphTerminalAnimation } from './project-graph-terminal-animation';
+import { ProjectDetailsTerminalAnimation } from './project-details-terminal-animation';
+import { DomainGridAnimation } from './domain-grid-animation';
+import { WorkspaceStructureAnimation } from './workspace-structure-animation';
+
+export function HowToolsEnableAI(): JSX.Element {
+  return (
+    <div
+      id="how-tools-enable-ai"
+      className="overflow-hidden bg-slate-50 py-16 lg:py-24 dark:bg-slate-800"
+    >
+      <div className="relative mx-auto max-w-xl px-4 sm:px-6 lg:max-w-7xl lg:px-8">
+        <div className="relative">
+          <h1
+            className="group text-center text-4xl font-extrabold leading-8 tracking-tight text-gray-900 sm:text-5xl dark:text-white"
+          >
+            # Teaching AI Agents to Navigate Your Monorepo
+            <a
+              aria-hidden="true"
+              tabIndex={-1}
+              href="#how-tools-enable-ai"
+              className="inline-flex items-center text-gray-900 dark:text-white"
+            >
+              <LinkIcon className="ml-2 h-6 w-6 opacity-0 group-hover:opacity-100" />
+            </a>
+          </h1>
+        </div>
+
+        <div className="mx-auto mt-12 max-w-4xl">
+          <p className="text-xl text-gray-700 dark:text-gray-300">
+            Monorepos can be massive. Rather than letting AI agents grep
+            through hundreds of projects, monorepo tools can{' '}
+            <mark className="rounded-md bg-yellow-500 px-1">
+              expose the workspace structure directly
+            </mark>
+            : <strong>what projects exist, how they relate, and what tasks
+            can be run</strong>. The result is faster discovery, better
+            understanding, and significantly fewer tokens wasted on
+            exploration.
+          </p>
+
+          <div className="mx-auto mt-10 max-w-sm">
+            <WorkspaceStructureAnimation />
+          </div>
+        </div>
+
+        {/* Project Graph */}
+        <div className="mt-24 lg:mt-36 lg:grid lg:grid-cols-2 lg:items-center lg:gap-12">
+          <div>
+            <h2
+              id="project-graph"
+              className="group text-3xl font-semibold tracking-tight text-gray-800 sm:text-4xl dark:text-gray-100"
+            >
+              The Project Graph
+              <a
+                aria-hidden="true"
+                tabIndex={-1}
+                href="#project-graph"
+                className="inline-flex items-center text-gray-900 dark:text-white"
+              >
+                <LinkIcon className="ml-2 h-6 w-6 opacity-0 group-hover:opacity-100" />
+              </a>
+            </h2>
+            <p className="mt-4 text-lg text-gray-700 dark:text-gray-300">
+              Most monorepo tools maintain a project graph: a structured map of
+              every project in the workspace and how they depend on each other.
+              When exposed to AI agents, it gives them{' '}
+              <mark className="rounded-md bg-yellow-500 px-1">
+                instant architectural understanding
+              </mark>{' '}
+              without reading a single file.
+            </p>
+            <p className="mt-3 text-lg text-gray-700 dark:text-gray-300">
+              The agent can query this graph to discover which projects exist,
+              trace dependency chains, and understand blast radius: if{' '}
+              <code className="rounded bg-slate-200 px-1 text-sm dark:bg-slate-700">lib-api</code>{' '}
+              changes, what downstream apps and libraries are affected? Instead
+              of grepping through import statements, the agent gets the answer
+              in a single structured call.
+            </p>
+          </div>
+          <div className="mt-8 lg:mt-0">
+            <ProjectGraphTerminalAnimation />
+          </div>
+        </div>
+
+        {/* Project Metadata */}
+        <div className="mt-24 lg:mt-36 lg:grid lg:grid-cols-2 lg:items-center lg:gap-12">
+          <div className="lg:order-2">
+            <h2
+              id="project-metadata"
+              className="group text-3xl font-semibold tracking-tight text-gray-800 sm:text-4xl dark:text-gray-100"
+            >
+              Expose Project-Level Knowledge
+              <a
+                aria-hidden="true"
+                tabIndex={-1}
+                href="#project-metadata"
+                className="inline-flex items-center text-gray-900 dark:text-white"
+              >
+                <LinkIcon className="ml-2 h-6 w-6 opacity-0 group-hover:opacity-100" />
+              </a>
+            </h2>
+            <p className="mt-4 text-lg text-gray-700 dark:text-gray-300">
+              AI agents should not have to parse Vite configs, Go Makefiles,
+              and Python pyproject.toml to understand what a project can do.
+              Monorepo tools like Nx expose{' '}
+              <mark className="rounded-md bg-yellow-500 px-1">
+                structured metadata per project
+              </mark>
+              : available tasks, cache inputs/outputs, and configuration, all
+              through dedicated commands like{' '}
+              <code className="rounded bg-slate-200 px-1 text-sm dark:bg-slate-700">nx show project</code>.
+            </p>
+            <p className="mt-3 text-lg text-gray-700 dark:text-gray-300">
+              One interface, regardless of language or framework. The monorepo
+              tool normalizes the complexity.
+            </p>
+          </div>
+          <div className="mt-8 lg:order-1 lg:mt-0">
+            <ProjectDetailsTerminalAnimation />
+          </div>
+        </div>
+
+        {/* Architecture Map via Tags/Classification */}
+        <div className="mt-24 lg:mt-36 lg:grid lg:grid-cols-2 lg:items-center lg:gap-12">
+          <div>
+            <h2
+              id="architecture-map"
+              className="group text-3xl font-semibold tracking-tight text-gray-800 sm:text-4xl dark:text-gray-100"
+            >
+              Give AI the Architecture Map
+              <a
+                aria-hidden="true"
+                tabIndex={-1}
+                href="#architecture-map"
+                className="inline-flex items-center text-gray-900 dark:text-white"
+              >
+                <LinkIcon className="ml-2 h-6 w-6 opacity-0 group-hover:opacity-100" />
+              </a>
+            </h2>
+            <p className="mt-4 text-lg text-gray-700 dark:text-gray-300">
+              Developers reason about their codebase in domain areas like
+              &ldquo;shop&rdquo;, &ldquo;auth&rdquo;, or &ldquo;shared
+              infrastructure&rdquo;, but an AI agent only sees files. Tools
+              like Nx provide a{' '}
+              <mark className="rounded-md bg-yellow-500 px-1">
+                tagging system
+              </mark>{' '}
+              that classifies groups of projects into these domain areas,
+              giving the agent the same high-level architecture map.
+            </p>
+            <p className="mt-3 text-lg text-gray-700 dark:text-gray-300">
+              With this in place, the agent can progressively explore: start
+              from the domain level to identify the relevant area, use the
+              project graph to narrow down to the right projects, then drop
+              into the file system only when needed.
+            </p>
+          </div>
+          <div className="mt-8 lg:mt-0">
+            <DomainGridAnimation />
+          </div>
+        </div>
+
+      </div>
+    </div>
+  );
+}

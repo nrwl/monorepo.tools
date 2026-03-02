@@ -71,7 +71,7 @@ export function MonorepoFeatures(): JSX.Element {
               aria-hidden="true"
               tabIndex={-1}
               href="#monorepo-tools"
-              className="flex inline-flex items-center text-gray-900 dark:text-white"
+              className="inline-flex items-center text-gray-900 dark:text-white"
             >
               <LinkIcon className="ml-2 h-6 w-6 opacity-0 group-hover:opacity-100" />
             </a>
@@ -105,7 +105,7 @@ export function MonorepoFeatures(): JSX.Element {
                 aria-hidden="true"
                 tabIndex={-1}
                 href="#local-computation-caching"
-                className="flex inline-flex items-center text-gray-900 dark:text-white"
+                className="inline-flex items-center text-gray-900 dark:text-white"
               >
                 <LinkIcon className="ml-2 h-6 w-6 opacity-0 group-hover:opacity-100" />
               </a>
@@ -247,7 +247,7 @@ export function MonorepoFeatures(): JSX.Element {
                 aria-hidden="true"
                 tabIndex={-1}
                 href="#local-task-orchestration"
-                className="flex inline-flex items-center text-gray-900 dark:text-white"
+                className="inline-flex items-center text-gray-900 dark:text-white"
               >
                 <LinkIcon className="ml-2 h-6 w-6 opacity-0 group-hover:opacity-100" />
               </a>
@@ -383,7 +383,7 @@ export function MonorepoFeatures(): JSX.Element {
                 aria-hidden="true"
                 tabIndex={-1}
                 href="#distributed-computation-caching"
-                className="flex inline-flex items-center text-gray-900 dark:text-white"
+                className="inline-flex items-center text-gray-900 dark:text-white"
               >
                 <LinkIcon className="ml-2 h-6 w-6 opacity-0 group-hover:opacity-100" />
               </a>
@@ -531,7 +531,7 @@ export function MonorepoFeatures(): JSX.Element {
                 aria-hidden="true"
                 tabIndex={-1}
                 href="#distributed-task-execution"
-                className="flex inline-flex items-center text-gray-900 dark:text-white"
+                className="inline-flex items-center text-gray-900 dark:text-white"
               >
                 <LinkIcon className="ml-2 h-6 w-6 opacity-0 group-hover:opacity-100" />
               </a>
@@ -669,7 +669,7 @@ export function MonorepoFeatures(): JSX.Element {
                 aria-hidden="true"
                 tabIndex={-1}
                 href="#transparent-remote-execution"
-                className="flex inline-flex items-center text-gray-900 dark:text-white"
+                className="inline-flex items-center text-gray-900 dark:text-white"
               >
                 <LinkIcon className="ml-2 h-6 w-6 opacity-0 group-hover:opacity-100" />
               </a>
@@ -791,7 +791,7 @@ export function MonorepoFeatures(): JSX.Element {
                 aria-hidden="true"
                 tabIndex={-1}
                 href="#detecting-affected-projects-packages"
-                className="flex inline-flex items-center text-gray-900 dark:text-white"
+                className="inline-flex items-center text-gray-900 dark:text-white"
               >
                 <LinkIcon className="ml-2 h-6 w-6 opacity-0 group-hover:opacity-100" />
               </a>
@@ -938,7 +938,7 @@ export function MonorepoFeatures(): JSX.Element {
                 aria-hidden="true"
                 tabIndex={-1}
                 href="#task-splitting"
-                className="flex inline-flex items-center text-gray-900 dark:text-white"
+                className="inline-flex items-center text-gray-900 dark:text-white"
               >
                 <LinkIcon className="ml-2 h-6 w-6 opacity-0 group-hover:opacity-100" />
               </a>
@@ -1082,7 +1082,7 @@ export function MonorepoFeatures(): JSX.Element {
                 aria-hidden="true"
                 tabIndex={-1}
                 href="#deflaking"
-                className="flex inline-flex items-center text-gray-900 dark:text-white"
+                className="inline-flex items-center text-gray-900 dark:text-white"
               >
                 <LinkIcon className="ml-2 h-6 w-6 opacity-0 group-hover:opacity-100" />
               </a>
@@ -1229,7 +1229,7 @@ export function MonorepoFeatures(): JSX.Element {
                 aria-hidden="true"
                 tabIndex={-1}
                 href="#workspace-analysis"
-                className="flex inline-flex items-center text-gray-900 dark:text-white"
+                className="inline-flex items-center text-gray-900 dark:text-white"
               >
                 <LinkIcon className="ml-2 h-6 w-6 opacity-0 group-hover:opacity-100" />
               </a>
@@ -1374,7 +1374,7 @@ export function MonorepoFeatures(): JSX.Element {
                 aria-hidden="true"
                 tabIndex={-1}
                 href="#dependency-graph-visualization"
-                className="flex inline-flex items-center text-gray-900 dark:text-white"
+                className="inline-flex items-center text-gray-900 dark:text-white"
               >
                 <LinkIcon className="ml-2 h-6 w-6 opacity-0 group-hover:opacity-100" />
               </a>
@@ -1527,7 +1527,7 @@ export function MonorepoFeatures(): JSX.Element {
                 aria-hidden="true"
                 tabIndex={-1}
                 href="#source-code-sharing"
-                className="flex inline-flex items-center text-gray-900 dark:text-white"
+                className="inline-flex items-center text-gray-900 dark:text-white"
               >
                 <LinkIcon className="ml-2 h-6 w-6 opacity-0 group-hover:opacity-100" />
               </a>
@@ -1678,7 +1678,7 @@ export function MonorepoFeatures(): JSX.Element {
                 aria-hidden="true"
                 tabIndex={-1}
                 href="#consistent-tooling"
-                className="flex inline-flex items-center text-gray-900 dark:text-white"
+                className="inline-flex items-center text-gray-900 dark:text-white"
               >
                 <LinkIcon className="ml-2 h-6 w-6 opacity-0 group-hover:opacity-100" />
               </a>
@@ -1830,7 +1830,7 @@ export function MonorepoFeatures(): JSX.Element {
                 aria-hidden="true"
                 tabIndex={-1}
                 href="#code-generation"
-                className="flex inline-flex items-center text-gray-900 dark:text-white"
+                className="inline-flex items-center text-gray-900 dark:text-white"
               >
                 <LinkIcon className="ml-2 h-6 w-6 opacity-0 group-hover:opacity-100" />
               </a>
@@ -1982,7 +1982,7 @@ export function MonorepoFeatures(): JSX.Element {
                 aria-hidden="true"
                 tabIndex={-1}
                 href="#explicit-project-constrains"
-                className="flex inline-flex items-center text-gray-900 dark:text-white"
+                className="inline-flex items-center text-gray-900 dark:text-white"
               >
                 <LinkIcon className="ml-2 h-6 w-6 opacity-0 group-hover:opacity-100" />
               </a>
@@ -2147,7 +2147,7 @@ export function MonorepoFeatures(): JSX.Element {
                 aria-hidden="true"
                 tabIndex={-1}
                 href="#ai-skills"
-                className="flex inline-flex items-center text-gray-900 dark:text-white"
+                className="inline-flex items-center text-gray-900 dark:text-white"
               >
                 <LinkIcon className="ml-2 h-6 w-6 opacity-0 group-hover:opacity-100" />
               </a>
@@ -2216,11 +2216,13 @@ export function MonorepoFeatures(): JSX.Element {
             <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
               <dt>
                 <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
-                  <NotSupported /> moon
+                  <CommunityProvided /> moon
                 </p>
               </dt>
               <dd className="mt-4 text-gray-600 dark:text-gray-400">
-                moon doesn&apos;t provide AI agent skills.
+                A community-maintained skill (hyperb1iss/moonrepo-skill) covers
+                moon workspace configuration, tasks, toolchain, CI/CD, and
+                proto setup. Not officially maintained by moonrepo.
               </dd>
             </div>
             <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
@@ -2291,7 +2293,7 @@ export function MonorepoFeatures(): JSX.Element {
                 aria-hidden="true"
                 tabIndex={-1}
                 href="#mcp-server"
-                className="flex inline-flex items-center text-gray-900 dark:text-white"
+                className="inline-flex items-center text-gray-900 dark:text-white"
               >
                 <LinkIcon className="ml-2 h-6 w-6 opacity-0 group-hover:opacity-100" />
               </a>
@@ -2392,11 +2394,11 @@ export function MonorepoFeatures(): JSX.Element {
             <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
               <dt>
                 <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
-                  <NotSupported /> Pants
+                  <CommunityProvided /> Pants
                 </p>
               </dt>
               <dd className="mt-4 text-gray-600 dark:text-gray-400">
-                Pants doesn&apos;t provide an MCP server.
+                An experimental community MCP plugin (shoalsoft-pants-mcp-plugin) exists but is not widely adopted.
               </dd>
             </div>
             <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
@@ -2442,7 +2444,7 @@ export function MonorepoFeatures(): JSX.Element {
                 aria-hidden="true"
                 tabIndex={-1}
                 href="#agentic-ci"
-                className="flex inline-flex items-center text-gray-900 dark:text-white"
+                className="inline-flex items-center text-gray-900 dark:text-white"
               >
                 <LinkIcon className="ml-2 h-6 w-6 opacity-0 group-hover:opacity-100" />
               </a>
@@ -2531,10 +2533,10 @@ export function MonorepoFeatures(): JSX.Element {
                 </p>
               </dt>
               <dd className="mt-4 text-gray-600 dark:text-gray-400">
-                Nx Cloud&apos;s Self-Healing CI automatically diagnoses CI
+                Nx&apos;s Self-Healing CI automatically diagnoses CI
                 failures using error logs, stack traces, and the project graph,
                 then generates and verifies code fixes. Developers review via PR
-                comments or the Nx Cloud dashboard. Available on all plans with
+                comments or the Nx dashboard. Available on all plans with
                 auto-apply mode for high-confidence fixes.
               </dd>
             </div>
@@ -2571,6 +2573,276 @@ export function MonorepoFeatures(): JSX.Element {
             </div>
           </dl>
         </div>
+
+        {/*AI Workspace Analysis*/}
+        <div
+          id="ai-workspace-analysis"
+          className="relative mt-16 lg:grid lg:grid-cols-2 lg:items-start lg:gap-12"
+        >
+          <div className="relative">
+            <div className="absolute flex h-10 w-10 items-center justify-center rounded-md rounded-md bg-slate-100 text-gray-800 dark:bg-slate-900 dark:text-gray-200">
+              <PresentationChartLineIcon className="h-6 w-6" />
+            </div>
+            <div className="group ml-16 text-xl font-medium text-gray-800 sm:text-2xl sm:leading-relaxed dark:text-gray-200">
+              Workspace Analysis for AI
+              <a
+                aria-hidden="true"
+                tabIndex={-1}
+                href="#ai-workspace-analysis"
+                className="inline-flex items-center text-gray-900 dark:text-white"
+              >
+                <LinkIcon className="ml-2 h-6 w-6 opacity-0 group-hover:opacity-100" />
+              </a>
+            </div>
+
+            <p className="mt-3 text-lg text-gray-700 dark:text-gray-300">
+              AI agents can query the project graph, understand dependency
+              relationships, and navigate workspace structure through MCP tools
+              or CLI commands. This gives agents a &ldquo;map&rdquo; of the
+              codebase rather than relying on raw file exploration.
+            </p>
+          </div>
+
+          <dl className="mt-12 space-y-6 md:mt-0">
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
+              <dt>
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
+                  <CommunityProvided /> Bazel
+                </p>
+              </dt>
+              <dd className="mt-4 text-gray-600 dark:text-gray-400">
+                Community MCP servers expose target querying and dependency graph
+                analysis, but workspace structure visibility is limited.
+              </dd>
+            </div>
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
+              <dt>
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
+                  <CommunityProvided /> Gradle Build Tool
+                </p>
+              </dt>
+              <dd className="mt-4 text-gray-600 dark:text-gray-400">
+                The community Gradle Tooling API MCP server provides project
+                structure metadata and task enumeration.
+              </dd>
+            </div>
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
+              <dt>
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
+                  <NotSupported /> Lage
+                </p>
+              </dt>
+              <dd className="mt-4 text-gray-600 dark:text-gray-400">
+                Lage doesn&apos;t expose workspace analysis to AI agents.
+              </dd>
+            </div>
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
+              <dt>
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
+                  <NotSupported /> Lerna
+                </p>
+              </dt>
+              <dd className="mt-4 text-gray-600 dark:text-gray-400">
+                No Lerna-specific workspace analysis for AI. Can partially
+                benefit from Nx MCP when Nx powers Lerna underneath.
+              </dd>
+            </div>
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
+              <dt>
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
+                  <Supported /> moon
+                </p>
+              </dt>
+              <dd className="mt-4 text-gray-600 dark:text-gray-400">
+                moon&apos;s MCP server provides project details, task
+                enumeration, and changed file tracking via{' '}
+                <code>get_project</code>, <code>get_projects</code>, and{' '}
+                <code>get_touched_files</code> tools.
+              </dd>
+            </div>
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
+              <dt>
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
+                  <Supported /> Nx
+                </p>
+              </dt>
+              <dd className="mt-4 text-gray-600 dark:text-gray-400">
+                The Nx MCP server provides full project graph visualization,
+                dependency filtering, real-time monitoring, and detailed
+                workspace structure analysis. Agents get a complete map of
+                projects, their relationships, tags, and owners.
+              </dd>
+            </div>
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
+              <dt>
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
+                  <NotSupported /> Pants
+                </p>
+              </dt>
+              <dd className="mt-4 text-gray-600 dark:text-gray-400">
+                Pants doesn&apos;t expose structured workspace analysis to AI
+                agents.
+              </dd>
+            </div>
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
+              <dt>
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
+                  <Supported /> Rush
+                </p>
+              </dt>
+              <dd className="mt-4 text-gray-600 dark:text-gray-400">
+                Rush&apos;s MCP server exposes workspace topology analysis and
+                dependency mapping via <code>rush_workspace_details</code> and{' '}
+                <code>rush_project_details</code> tools.
+              </dd>
+            </div>
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
+              <dt>
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
+                  <NotSupported /> Turborepo
+                </p>
+              </dt>
+              <dd className="mt-4 text-gray-600 dark:text-gray-400">
+                Turborepo doesn&apos;t expose workspace analysis to AI agents.
+              </dd>
+            </div>
+          </dl>
+        </div>
+
+        {/*Task Execution via AI*/}
+        <div
+          id="task-execution-via-ai"
+          className="relative mt-16 lg:grid lg:grid-cols-2 lg:items-start lg:gap-12"
+        >
+          <div className="relative">
+            <div className="absolute flex h-10 w-10 items-center justify-center rounded-md rounded-md bg-slate-100 text-gray-800 dark:bg-slate-900 dark:text-gray-200">
+              <CommandLineIcon className="h-6 w-6" />
+            </div>
+            <div className="group ml-16 text-xl font-medium text-gray-800 sm:text-2xl sm:leading-relaxed dark:text-gray-200">
+              Task Execution via AI
+              <a
+                aria-hidden="true"
+                tabIndex={-1}
+                href="#task-execution-via-ai"
+                className="inline-flex items-center text-gray-900 dark:text-white"
+              >
+                <LinkIcon className="ml-2 h-6 w-6 opacity-0 group-hover:opacity-100" />
+              </a>
+            </div>
+
+            <p className="mt-3 text-lg text-gray-700 dark:text-gray-300">
+              AI agents can run and monitor build, test, and lint tasks through
+              MCP tools or agent-friendly CLI commands. This enables agents to
+              verify their changes, iterate on failures, and complete tasks
+              autonomously.
+            </p>
+          </div>
+
+          <dl className="mt-12 space-y-6 md:mt-0">
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
+              <dt>
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
+                  <CommunityProvided /> Bazel
+                </p>
+              </dt>
+              <dd className="mt-4 text-gray-600 dark:text-gray-400">
+                Community MCP servers can trigger builds and tests, but
+                integration is not standardized.
+              </dd>
+            </div>
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
+              <dt>
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
+                  <CommunityProvided /> Gradle Build Tool
+                </p>
+              </dt>
+              <dd className="mt-4 text-gray-600 dark:text-gray-400">
+                The community Gradle Tooling API MCP server supports task
+                execution and test result reporting with hierarchical output.
+              </dd>
+            </div>
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
+              <dt>
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
+                  <NotSupported /> Lage
+                </p>
+              </dt>
+              <dd className="mt-4 text-gray-600 dark:text-gray-400">
+                Lage doesn&apos;t provide AI-integrated task execution.
+              </dd>
+            </div>
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
+              <dt>
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
+                  <NotSupported /> Lerna
+                </p>
+              </dt>
+              <dd className="mt-4 text-gray-600 dark:text-gray-400">
+                No Lerna-specific AI task execution. Standard CLI commands can be
+                invoked by agents directly.
+              </dd>
+            </div>
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
+              <dt>
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
+                  <Supported /> moon
+                </p>
+              </dt>
+              <dd className="mt-4 text-gray-600 dark:text-gray-400">
+                moon&apos;s MCP server supports task execution with dependency
+                management and workspace synchronization via{' '}
+                <code>get_task</code>, <code>get_tasks</code>, and{' '}
+                <code>sync_projects</code> tools.
+              </dd>
+            </div>
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
+              <dt>
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
+                  <Supported /> Nx
+                </p>
+              </dt>
+              <dd className="mt-4 text-gray-600 dark:text-gray-400">
+                Nx provides comprehensive AI-driven task execution with
+                real-time monitoring, IDE integration, and task analysis.
+                Agents can run targeted tasks, inspect results, and iterate
+                based on structured output.
+              </dd>
+            </div>
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
+              <dt>
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
+                  <NotSupported /> Pants
+                </p>
+              </dt>
+              <dd className="mt-4 text-gray-600 dark:text-gray-400">
+                Pants doesn&apos;t provide AI-integrated task execution.
+              </dd>
+            </div>
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
+              <dt>
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
+                  <Supported /> Rush
+                </p>
+              </dt>
+              <dd className="mt-4 text-gray-600 dark:text-gray-400">
+                Rush&apos;s MCP server includes command validation, conflict
+                resolution, lockfile management, and project migration tools
+                that agents can invoke directly.
+              </dd>
+            </div>
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
+              <dt>
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
+                  <NotSupported /> Turborepo
+                </p>
+              </dt>
+              <dd className="mt-4 text-gray-600 dark:text-gray-400">
+                Turborepo doesn&apos;t provide AI-integrated task execution.
+              </dd>
+            </div>
+          </dl>
+        </div>
+
       </div>
     </div>
   );

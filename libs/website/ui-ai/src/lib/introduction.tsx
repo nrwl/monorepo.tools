@@ -32,7 +32,7 @@ export function Introduction(): JSX.Element {
                   aria-hidden="true"
                   tabIndex={-1}
                   href="#ai-driven-monorepos"
-                  className="flex inline-flex items-center text-gray-900 dark:text-white"
+                  className="inline-flex items-center text-gray-900 dark:text-white"
                 >
                   <LinkIcon className="ml-2 h-6 w-6 opacity-0 group-hover:opacity-100" />
                 </a>
@@ -150,13 +150,13 @@ export function Introduction(): JSX.Element {
           <div className="flex flex-col rounded-2xl bg-slate-100 shadow-xl dark:bg-slate-700">
             <div className="relative flex-1 px-6 pb-8 pt-12 md:px-8">
               <h2 className="text-xl font-semibold text-gray-800 dark:text-gray-200">
-                AI and Monorepos Elevate Each Other
+                Teaching AI Agents Your Monorepo
               </h2>
             </div>
             <div className="rounded-bl-2xl rounded-br-2xl bg-slate-200 p-4 md:px-6 dark:bg-slate-900">
               <a
-                href="#monorepo-ai-advantages"
-                title="AI and Monorepos Elevate Each Other"
+                href="#how-tools-enable-ai"
+                title="Teaching AI Agents Your Monorepo"
                 className="text-sm font-medium uppercase text-gray-700 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300"
               >
                 Learn more<span aria-hidden="true"> &rarr;</span>
@@ -167,30 +167,13 @@ export function Introduction(): JSX.Element {
           <div className="flex flex-col rounded-2xl bg-slate-100 shadow-xl dark:bg-slate-700">
             <div className="relative flex-1 px-6 pb-8 pt-12 md:px-8">
               <h2 className="text-xl font-semibold text-gray-800 dark:text-gray-200">
-                Your AI Agent Might Get Lost
+                Fast Feedback and Predictability
               </h2>
             </div>
             <div className="rounded-bl-2xl rounded-br-2xl bg-slate-200 p-4 md:px-6 dark:bg-slate-900">
               <a
-                href="#context-challenges"
-                title="Your AI Agent Might Get Lost"
-                className="text-sm font-medium uppercase text-gray-700 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300"
-              >
-                Learn more<span aria-hidden="true"> &rarr;</span>
-              </a>
-            </div>
-          </div>
-
-          <div className="flex flex-col rounded-2xl bg-slate-100 shadow-xl dark:bg-slate-700">
-            <div className="relative flex-1 px-6 pb-8 pt-12 md:px-8">
-              <h2 className="text-xl font-semibold text-gray-800 dark:text-gray-200">
-                The Missing Map
-              </h2>
-            </div>
-            <div className="rounded-bl-2xl rounded-br-2xl bg-slate-200 p-4 md:px-6 dark:bg-slate-900">
-              <a
-                href="#smart-ai-solutions"
-                title="The Missing Map"
+                href="#fast-feedback"
+                title="Fast Feedback and Predictability"
                 className="text-sm font-medium uppercase text-gray-700 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300"
               >
                 Learn more<span aria-hidden="true"> &rarr;</span>
@@ -208,6 +191,23 @@ export function Introduction(): JSX.Element {
               <a
                 href="#ai-agents-and-ci"
                 title="AI Agents and CI"
+                className="text-sm font-medium uppercase text-gray-700 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300"
+              >
+                Learn more<span aria-hidden="true"> &rarr;</span>
+              </a>
+            </div>
+          </div>
+
+          <div className="flex flex-col rounded-2xl bg-slate-100 shadow-xl dark:bg-slate-700">
+            <div className="relative flex-1 px-6 pb-8 pt-12 md:px-8">
+              <h2 className="text-xl font-semibold text-gray-800 dark:text-gray-200">
+                AI-Native Tooling
+              </h2>
+            </div>
+            <div className="rounded-bl-2xl rounded-br-2xl bg-slate-200 p-4 md:px-6 dark:bg-slate-900">
+              <a
+                href="#ai-native"
+                title="AI-Native Tooling"
                 className="text-sm font-medium uppercase text-gray-700 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-300"
               >
                 Learn more<span aria-hidden="true"> &rarr;</span>

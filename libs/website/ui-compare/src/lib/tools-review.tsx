@@ -1,4 +1,4 @@
-import { ReactComponentElement } from 'react';
+import { type ReactElement } from 'react';
 import {
   CheckCircleIcon,
   ExclamationCircleIcon,
@@ -326,27 +326,10 @@ const manageable: Item[] = [
 ];
 const aiSupport: Item[] = [
   {
-    title: 'AI Skills',
-    link: '#ai-skills',
-    tooltip:
-      'Agent skills and rules files that help AI coding assistants understand the tool, generate correct commands, and follow best practices.',
-    features: [
-      { title: 'Bazel', value: 'notSupported' },
-      { title: 'Gradle', value: 'notSupported' },
-      { title: 'Lage', value: 'notSupported' },
-      { title: 'Lerna', value: 'notSupported' },
-      { title: 'moon', value: 'notSupported' },
-      { title: 'Nx', value: 'supported' },
-      { title: 'Pants', value: 'notSupported' },
-      { title: 'Rush', value: 'notSupported' },
-      { title: 'Turborepo', value: 'supported' },
-    ],
-  },
-  {
     title: 'MCP Server',
     link: '#mcp-server',
     tooltip:
-      'An MCP server that exposes monorepo capabilities to AI agents: project graph, task execution, code generation, and more.',
+      'An MCP server exposing monorepo capabilities to AI agents: project graph, task execution, and more.',
     features: [
       { title: 'Bazel', value: 'communityProvided' },
       { title: 'Gradle', value: 'supported' },
@@ -354,9 +337,60 @@ const aiSupport: Item[] = [
       { title: 'Lerna', value: 'notSupported' },
       { title: 'moon', value: 'supported' },
       { title: 'Nx', value: 'supported' },
-      { title: 'Pants', value: 'notSupported' },
+      { title: 'Pants', value: 'communityProvided' },
       { title: 'Rush', value: 'supported' },
       { title: 'Turborepo', value: 'communityProvided' },
+    ],
+  },
+  {
+    title: 'AI Skills',
+    link: '#ai-skills',
+    tooltip:
+      'Agent skills and rules files that help AI coding assistants understand the tool and follow best practices.',
+    features: [
+      { title: 'Bazel', value: 'notSupported' },
+      { title: 'Gradle', value: 'notSupported' },
+      { title: 'Lage', value: 'notSupported' },
+      { title: 'Lerna', value: 'notSupported' },
+      { title: 'moon', value: 'communityProvided' },
+      { title: 'Nx', value: 'supported' },
+      { title: 'Pants', value: 'notSupported' },
+      { title: 'Rush', value: 'notSupported' },
+      { title: 'Turborepo', value: 'supported' },
+    ],
+  },
+  {
+    title: 'Workspace Analysis',
+    link: '#ai-workspace-analysis',
+    tooltip:
+      'AI can query the project graph, dependencies, and workspace structure via MCP or CLI.',
+    features: [
+      { title: 'Bazel', value: 'communityProvided' },
+      { title: 'Gradle', value: 'communityProvided' },
+      { title: 'Lage', value: 'notSupported' },
+      { title: 'Lerna', value: 'notSupported' },
+      { title: 'moon', value: 'supported' },
+      { title: 'Nx', value: 'supported' },
+      { title: 'Pants', value: 'notSupported' },
+      { title: 'Rush', value: 'supported' },
+      { title: 'Turborepo', value: 'notSupported' },
+    ],
+  },
+  {
+    title: 'Task Execution via AI',
+    link: '#task-execution-via-ai',
+    tooltip:
+      'AI agents can run and monitor build/test tasks through MCP or agent-friendly CLI.',
+    features: [
+      { title: 'Bazel', value: 'communityProvided' },
+      { title: 'Gradle', value: 'communityProvided' },
+      { title: 'Lage', value: 'notSupported' },
+      { title: 'Lerna', value: 'notSupported' },
+      { title: 'moon', value: 'supported' },
+      { title: 'Nx', value: 'supported' },
+      { title: 'Pants', value: 'notSupported' },
+      { title: 'Rush', value: 'supported' },
+      { title: 'Turborepo', value: 'notSupported' },
     ],
   },
   {
@@ -377,7 +411,7 @@ const aiSupport: Item[] = [
     ],
   },
 ];
-const valuesDictionary: Record<Supports, () => ReactComponentElement<any>> = {
+const valuesDictionary: Record<Supports, () => ReactElement> = {
   supported: () => (
     <span
       title="natively supported"
@@ -626,15 +660,15 @@ export function ToolsReview(): JSX.Element {
                 </div>
               </div>
 
-              <div className="mt-10 flex items-center gap-2">
+              <div id="ai-support" className="mt-10 flex items-center gap-2">
                 <span className="text-sm font-bold text-gray-700 dark:text-gray-300">
                   AI Support
                 </span>
                 <a
-                  href="/ai"
+                  href="/ai#ai-tools-comparison"
                   className="text-xs text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300"
                 >
-                  (Details)
+                  (Learn more)
                 </a>
               </div>
 
@@ -1100,15 +1134,15 @@ export function ToolsReview(): JSX.Element {
             </div>
           </div>
 
-          <div className="mt-10 flex items-center gap-2">
+          <div id="ai-support-desktop" className="mt-10 flex items-center gap-2">
             <h3 className="text-sm font-bold text-gray-700 dark:text-gray-300">
               AI Support
             </h3>
             <a
-              href="/ai"
+              href="/ai#ai-tools-comparison"
               className="text-xs text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300"
             >
-              (Details)
+              (Learn more)
             </a>
           </div>
           <div className="relative mt-6">
