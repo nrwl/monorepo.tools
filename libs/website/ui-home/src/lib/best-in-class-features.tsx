@@ -152,7 +152,7 @@ export function BestInClassFeatures(): JSX.Element {
         </div>
 
         {/* Category tabs */}
-        <div className="mt-12 grid grid-cols-2 gap-3 text-base font-semibold sm:grid-cols-4 sm:text-lg lg:mt-16 lg:text-2xl">
+        <div className="mt-12 grid grid-cols-2 gap-3 text-base font-semibold lg:mt-16 lg:grid-cols-4 lg:text-2xl">
           {categories.map((cat) => (
             <button
               key={cat.id}
