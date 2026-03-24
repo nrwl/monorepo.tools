@@ -134,7 +134,7 @@ export function BestInClassFeatures(): JSX.Element {
     >
       <div className="relative mx-auto max-w-xl px-4 sm:px-6 lg:max-w-7xl lg:px-8">
         <div className="relative text-center">
-          <div className="group text-4xl font-extrabold leading-8 tracking-tight text-gray-900 dark:text-white sm:text-5xl">
+          <div className="group text-2xl font-extrabold leading-tight tracking-tight text-gray-900 dark:text-white sm:text-4xl lg:text-5xl">
             # What a Best-in-Class Tool Provides
             <a
               aria-hidden="true"
@@ -145,14 +145,14 @@ export function BestInClassFeatures(): JSX.Element {
               <LinkIcon className="ml-2 h-6 w-6 opacity-0 group-hover:opacity-100" />
             </a>
           </div>
-          <p className="mx-auto mt-4 max-w-3xl text-xl text-gray-700 dark:text-gray-300">
+          <p className="mx-auto mt-4 max-w-3xl text-base text-gray-700 dark:text-gray-300 sm:text-lg lg:text-xl">
             A monorepo is only as good as the tool that powers it. Here&rsquo;s
             what you should expect.
           </p>
         </div>
 
         {/* Category tabs */}
-        <div className="mt-12 grid grid-cols-2 gap-3 text-lg font-semibold sm:grid-cols-4 lg:mt-16 lg:text-2xl">
+        <div className="mt-12 grid grid-cols-2 gap-3 text-base font-semibold sm:grid-cols-4 sm:text-lg lg:mt-16 lg:text-2xl">
           {categories.map((cat) => (
             <button
               key={cat.id}
