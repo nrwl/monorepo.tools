@@ -170,9 +170,9 @@ export function BestInClassFeatures(): JSX.Element {
 
         {/* Features for active tab */}
         <div className="mt-4 rounded-lg border border-slate-200/50 bg-white/50 p-6 dark:border-slate-700/50 dark:bg-slate-900/50 lg:p-8">
-          <div className="grid gap-6 sm:grid-cols-2">
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
             {activeCategory.features.map((feature) => (
-              <div key={feature.name} className="flex items-stretch overflow-hidden rounded-lg bg-white dark:bg-slate-800">
+              <div key={feature.name} className="flex flex-col overflow-hidden rounded-lg bg-white dark:bg-slate-800 sm:flex-row sm:items-stretch">
                 <div className="flex flex-1 flex-col justify-center p-5">
                   <h3 className="text-lg font-bold text-gray-900 dark:text-white">
                     {feature.name}
@@ -182,10 +182,10 @@ export function BestInClassFeatures(): JSX.Element {
                   </p>
                 </div>
                 {feature.image && (
-                  <div className="flex w-[40%] shrink-0 items-center justify-center bg-slate-50 p-4 dark:bg-slate-700/50">
+                  <div className="flex items-center justify-center bg-slate-50 p-4 dark:bg-slate-700/50 sm:w-[40%] sm:shrink-0">
                     <img
                       loading="lazy"
-                      className="h-auto w-full"
+                      className="h-auto w-full max-w-[200px] sm:max-w-none"
                       src={feature.image}
                       alt={`${feature.name} illustration`}
                     />
