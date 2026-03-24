@@ -157,7 +157,7 @@ export function BestInClassFeatures(): JSX.Element {
             <button
               key={cat.id}
               onClick={() => setActiveId(cat.id)}
-              className={`col-span-1 flex justify-center rounded px-8 py-8 transition ${
+              className={`col-span-1 flex items-center justify-center rounded px-4 py-5 transition lg:px-8 lg:py-8 ${
                 activeId === cat.id
                   ? 'bg-yellow-500 text-gray-800'
                   : 'bg-slate-100 text-gray-700 hover:bg-yellow-500 hover:text-gray-800 dark:bg-slate-900 dark:text-gray-300 hover:dark:bg-yellow-500 hover:dark:text-gray-800'
