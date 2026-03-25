@@ -134,7 +134,7 @@ export function BestInClassFeatures(): JSX.Element {
     >
       <div className="relative mx-auto max-w-xl px-4 sm:px-6 lg:max-w-7xl lg:px-8">
         <div className="relative text-center">
-          <div className="group text-4xl font-extrabold leading-8 tracking-tight text-gray-900 dark:text-white sm:text-5xl">
+          <div className="group text-2xl font-extrabold leading-tight tracking-tight text-gray-900 dark:text-white sm:text-4xl lg:text-5xl">
             # What a Best-in-Class Tool Provides
             <a
               aria-hidden="true"
@@ -145,19 +145,19 @@ export function BestInClassFeatures(): JSX.Element {
               <LinkIcon className="ml-2 h-6 w-6 opacity-0 group-hover:opacity-100" />
             </a>
           </div>
-          <p className="mx-auto mt-4 max-w-3xl text-xl text-gray-700 dark:text-gray-300">
+          <p className="mx-auto mt-4 max-w-3xl text-base text-gray-700 dark:text-gray-300 sm:text-lg lg:text-xl">
             A monorepo is only as good as the tool that powers it. Here&rsquo;s
             what you should expect.
           </p>
         </div>
 
         {/* Category tabs */}
-        <div className="mt-12 grid grid-cols-2 gap-3 text-lg font-semibold sm:grid-cols-4 lg:mt-16 lg:text-2xl">
+        <div className="mt-12 grid grid-cols-2 gap-3 text-base font-semibold lg:mt-16 lg:grid-cols-4 lg:text-2xl">
           {categories.map((cat) => (
             <button
               key={cat.id}
               onClick={() => setActiveId(cat.id)}
-              className={`col-span-1 flex justify-center rounded px-8 py-8 transition ${
+              className={`col-span-1 flex items-center justify-center rounded px-4 py-5 transition lg:px-8 lg:py-8 ${
                 activeId === cat.id
                   ? 'bg-yellow-500 text-gray-800'
                   : 'bg-slate-100 text-gray-700 hover:bg-yellow-500 hover:text-gray-800 dark:bg-slate-900 dark:text-gray-300 hover:dark:bg-yellow-500 hover:dark:text-gray-800'
@@ -170,9 +170,9 @@ export function BestInClassFeatures(): JSX.Element {
 
         {/* Features for active tab */}
         <div className="mt-4 rounded-lg border border-slate-200/50 bg-white/50 p-6 dark:border-slate-700/50 dark:bg-slate-900/50 lg:p-8">
-          <div className="grid gap-6 sm:grid-cols-2">
+          <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
             {activeCategory.features.map((feature) => (
-              <div key={feature.name} className="flex items-stretch overflow-hidden rounded-lg bg-white dark:bg-slate-800">
+              <div key={feature.name} className="flex flex-col overflow-hidden rounded-lg bg-white dark:bg-slate-800 lg:flex-row lg:items-stretch">
                 <div className="flex flex-1 flex-col justify-center p-5">
                   <h3 className="text-lg font-bold text-gray-900 dark:text-white">
                     {feature.name}
@@ -182,10 +182,10 @@ export function BestInClassFeatures(): JSX.Element {
                   </p>
                 </div>
                 {feature.image && (
-                  <div className="flex w-[40%] shrink-0 items-center justify-center bg-slate-50 p-4 dark:bg-slate-700/50">
+                  <div className="flex items-center justify-center bg-slate-50 p-4 dark:bg-slate-700/50 lg:w-[40%] lg:shrink-0">
                     <img
                       loading="lazy"
-                      className="h-auto w-full"
+                      className="h-auto w-full max-w-[200px] lg:max-w-none"
                       src={feature.image}
                       alt={`${feature.name} illustration`}
                     />
