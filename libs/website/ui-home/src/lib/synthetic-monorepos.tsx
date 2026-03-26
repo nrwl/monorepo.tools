@@ -99,7 +99,13 @@ export function SyntheticMonorepos(): JSX.Element {
                 >
                   synthetic monorepos
                 </a>{' '}
-                out of the box.
+                out of the box.{' '}
+                <a
+                  href="/synthetic-monorepos"
+                  className="border-b border-yellow-500 transition hover:rounded hover:bg-yellow-500 hover:text-gray-800"
+                >
+                  Learn more &rarr;
+                </a>
               </p>
             </div>
           </div>

@@ -44,6 +44,7 @@ export function Navigation() {
     { href: '/compare', label: 'Compare' },
     { href: '/typescript', label: 'TypeScript' },
     { href: '/ai', label: 'AI & Monorepos' },
+    { href: '/synthetic-monorepos', label: 'Synthetic Monorepos' },
   ];
 
   const isActivePath = (href: string, exact?: boolean) => {
