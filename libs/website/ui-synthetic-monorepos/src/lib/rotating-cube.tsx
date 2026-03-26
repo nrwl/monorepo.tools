@@ -17,6 +17,11 @@ interface RotatingCubeProps {
   speed: number;
   opacity?: number;
   angleOffset?: number;
+  /** Controls how solid the face fills are. 0 = wireframe only, 1 = fully opaque faces. Default ~0.08/0.18 */
+  outerFillOpacity?: number;
+  innerFillOpacity?: number;
+  /** Override the fill color for outer cube faces (defaults to stroke color) */
+  outerFaceFillColor?: string;
   canvasWidth: number;
   canvasHeight: number;
 }
@@ -135,7 +140,7 @@ export function drawRotatingCube(
   time: number,
   props: RotatingCubeProps
 ) {
-  const { cx, cy, size, innerSize, color, innerColor, speed, opacity = 1, angleOffset = 0 } = props;
+  const { cx, cy, size, innerSize, color, innerColor, speed, opacity = 1, angleOffset = 0, outerFillOpacity, innerFillOpacity, outerFaceFillColor } = props;
   const perspective = 300;
   const angleY = time * speed + angleOffset;
   const tiltX = 0.25; // subtle top-down viewing angle
@@ -148,44 +153,81 @@ export function drawRotatingCube(
     projectPoint(v, cx, cy, perspective)
   );
 
-  // Outer cube: filled faces (subtle)
-  drawFilledFaces(ctx, outerProjected, outerVerts, color, opacity * 0.08);
+  const opaqueMode = (outerFillOpacity ?? 0) >= 0.9;
 
-  // Outer cube: wireframe
-  ctx.strokeStyle = color;
-  ctx.lineWidth = 1;
-  ctx.globalAlpha = opacity * 0.5;
-  for (const [a, b] of CUBE_EDGES) {
-    ctx.beginPath();
-    ctx.moveTo(outerProjected[a].x, outerProjected[a].y);
-    ctx.lineTo(outerProjected[b].x, outerProjected[b].y);
-    ctx.stroke();
+  if (opaqueMode) {
+    // Opaque mode: draw filled faces sorted back-to-front, then front-facing edges on top
+    const sortedFaces = CUBE_FACES.map((face) => ({
+      face,
+      avgZ: face.reduce((s, vi) => s + outerVerts[vi].z, 0) / face.length,
+    })).sort((a, b) => b.avgZ - a.avgZ);
+
+    for (const { face } of sortedFaces) {
+      // Fill face
+      ctx.beginPath();
+      ctx.moveTo(outerProjected[face[0]].x, outerProjected[face[0]].y);
+      for (let i = 1; i < face.length; i++) {
+        ctx.lineTo(outerProjected[face[i]].x, outerProjected[face[i]].y);
+      }
+      ctx.closePath();
+      ctx.fillStyle = outerFaceFillColor ?? color;
+      ctx.globalAlpha = outerFillOpacity!;
+      ctx.fill();
+
+      // Draw edges of this face on top
+      ctx.strokeStyle = color;
+      ctx.lineWidth = 1;
+      ctx.globalAlpha = opacity * 0.6;
+      ctx.beginPath();
+      ctx.moveTo(outerProjected[face[0]].x, outerProjected[face[0]].y);
+      for (let i = 1; i < face.length; i++) {
+        ctx.lineTo(outerProjected[face[i]].x, outerProjected[face[i]].y);
+      }
+      ctx.closePath();
+      ctx.stroke();
+    }
+    ctx.globalAlpha = 1;
+  } else {
+    // Transparent mode: filled faces then all wireframe edges
+    drawFilledFaces(ctx, outerProjected, outerVerts, outerFaceFillColor ?? color, outerFillOpacity ?? opacity * 0.08);
+
+    ctx.strokeStyle = color;
+    ctx.lineWidth = 1;
+    ctx.globalAlpha = opacity * 0.5;
+    for (const [a, b] of CUBE_EDGES) {
+      ctx.beginPath();
+      ctx.moveTo(outerProjected[a].x, outerProjected[a].y);
+      ctx.lineTo(outerProjected[b].x, outerProjected[b].y);
+      ctx.stroke();
+    }
+    ctx.globalAlpha = 1;
   }
-  ctx.globalAlpha = 1;
 
-  // Inner cube: same spin then tilt
-  const innerVerts = getCubeVertices(innerSize / 2).map((v) =>
-    rotateX(rotateY(v, angleY), tiltX)
-  );
-  const innerProjected = innerVerts.map((v) =>
-    projectPoint(v, cx, cy, perspective)
-  );
+  // Inner cube: skip entirely if fill opacity is explicitly 0 (black-box mode)
+  if (innerFillOpacity !== 0) {
+    const innerVerts = getCubeVertices(innerSize / 2).map((v) =>
+      rotateX(rotateY(v, angleY), tiltX)
+    );
+    const innerProjected = innerVerts.map((v) =>
+      projectPoint(v, cx, cy, perspective)
+    );
 
-  // Inner cube: filled faces (more opaque)
-  drawFilledFaces(ctx, innerProjected, innerVerts, innerColor, opacity * 0.18);
+    // Inner cube: filled faces
+    drawFilledFaces(ctx, innerProjected, innerVerts, innerColor, innerFillOpacity ?? opacity * 0.18);
 
-  // Inner cube: wireframe
-  ctx.strokeStyle = innerColor;
-  ctx.lineWidth = 1.5;
-  ctx.globalAlpha = opacity * 0.8;
-  for (const [a, b] of CUBE_EDGES) {
-    ctx.beginPath();
-    ctx.moveTo(innerProjected[a].x, innerProjected[a].y);
-    ctx.lineTo(innerProjected[b].x, innerProjected[b].y);
-    ctx.stroke();
+    // Inner cube: wireframe
+    ctx.strokeStyle = innerColor;
+    ctx.lineWidth = 1.5;
+    ctx.globalAlpha = opacity * 0.8;
+    for (const [a, b] of CUBE_EDGES) {
+      ctx.beginPath();
+      ctx.moveTo(innerProjected[a].x, innerProjected[a].y);
+      ctx.lineTo(innerProjected[b].x, innerProjected[b].y);
+      ctx.stroke();
+    }
+
+    ctx.globalAlpha = 1;
   }
-
-  ctx.globalAlpha = 1;
 }
 
 /**

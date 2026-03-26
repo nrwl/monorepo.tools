@@ -1,20 +1,13 @@
 'use client';
-import { useEffect, useRef, useCallback } from 'react';
+import { useEffect, useRef, useCallback, useState } from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from './use-in-view';
 import { drawRotatingCube } from './rotating-cube';
 
-/*
- * Synthetic monorepo visualization based on the reference diagram:
- * - Two monorepo boundary boxes at top (Monorepo A with frontend+utils+ui,
- *   Monorepo B with backend+auth)
- * - Standalone repo cubes scattered below (mobile, shared, design, API)
- * - Green connection lines between all of them with data flow pulses
- * - Dashed outer boundary representing the synthetic monorepo
- */
-
-const CUBE_COLOR = 'rgba(52,211,153,0.45)';
+const CUBE_COLOR_OFF = 'rgba(148,163,184,0.55)';
+const CUBE_COLOR_ON = 'rgba(52,211,153,0.45)';
 const INNER_COLOR = 'rgba(148,163,184,0.8)';
+const INNER_COLOR_OPAQUE = 'rgba(148,163,184,0.95)';
 const CONNECTION_COLOR = 'rgba(100,160,200,0.45)';
 const PULSE_COLOR = 'rgba(251,191,36,0.9)';
 const MONO_BORDER_COLOR = 'rgba(148,163,184,0.3)';
@@ -33,20 +26,19 @@ interface CubeConfig {
 const CANVAS_W = 580;
 const CANVAS_H = 460;
 
-// Monorepo A contents (top-left box)
+// --- "ON" state: expanded monorepo internals ---
+
 const MONO_A_CUBES: CubeConfig[] = [
   { cx: 80, cy: 80, outerSize: 50, innerSize: 20, label: 'App 1', sublabel: 'frontend', angleOffset: 0 },
   { cx: 175, cy: 60, outerSize: 42, innerSize: 17, label: 'Lib A', sublabel: 'utils', angleOffset: 1.4 },
   { cx: 175, cy: 120, outerSize: 42, innerSize: 17, label: 'Lib B', sublabel: 'ui', angleOffset: 3.2 },
 ];
 
-// Monorepo B contents (top-right box)
 const MONO_B_CUBES: CubeConfig[] = [
   { cx: 400, cy: 80, outerSize: 50, innerSize: 20, label: 'App 2', sublabel: 'backend', angleOffset: 2.1 },
   { cx: 500, cy: 80, outerSize: 42, innerSize: 17, label: 'Lib C', sublabel: 'auth', angleOffset: 4.6 },
 ];
 
-// Standalone repos (scattered below)
 const STANDALONE_CUBES: CubeConfig[] = [
   { cx: 100, cy: 340, outerSize: 55, innerSize: 22, label: 'App 3', sublabel: 'mobile', angleOffset: 0.8 },
   { cx: 300, cy: 230, outerSize: 48, innerSize: 19, label: 'Lib D', sublabel: 'shared', angleOffset: 3.9 },
@@ -56,17 +48,35 @@ const STANDALONE_CUBES: CubeConfig[] = [
 
 const ALL_CUBES = [...MONO_A_CUBES, ...MONO_B_CUBES, ...STANDALONE_CUBES];
 
-// Cross-repo connections (indices into ALL_CUBES)
-// 0=App1, 1=LibA, 2=LibB, 3=App2, 4=LibC, 5=App3, 6=LibD, 7=LibE, 8=App4
-const CONNECTIONS = [
-  { from: 1, to: 6 },  // Lib A (utils) -> Lib D (shared)
-  { from: 2, to: 6 },  // Lib B (ui) -> Lib D (shared)
-  { from: 3, to: 6 },  // App 2 (backend) -> Lib D (shared)
-  { from: 4, to: 8 },  // Lib C (auth) -> App 4 (API)
-  { from: 5, to: 7 },  // App 3 (mobile) -> Lib E (design)
-  { from: 5, to: 6 },  // App 3 (mobile) -> Lib D (shared)
-  { from: 8, to: 6 },  // App 4 (API) -> Lib D (shared)
-  { from: 8, to: 7 },  // App 4 (API) -> Lib E (design)
+// --- "OFF" state: collapsed black-box cubes ---
+
+const COLLAPSED_CUBES: CubeConfig[] = [
+  // Monorepo A as single large cube (centered in its boundary area)
+  { cx: 140, cy: 95, outerSize: 85, innerSize: 40, label: 'Monorepo A', angleOffset: 0.5 },
+  // Monorepo B as single large cube
+  { cx: 455, cy: 85, outerSize: 80, innerSize: 38, label: 'Monorepo B', angleOffset: 2.8 },
+  // Standalone repos (same positions, slightly larger/more opaque)
+  { cx: 100, cy: 340, outerSize: 60, innerSize: 28, label: 'App 3', sublabel: 'mobile', angleOffset: 0.8 },
+  { cx: 300, cy: 230, outerSize: 55, innerSize: 26, label: 'Lib D', sublabel: 'shared', angleOffset: 3.9 },
+  { cx: 300, cy: 370, outerSize: 55, innerSize: 26, label: 'Lib E', sublabel: 'design', angleOffset: 5.2 },
+  { cx: 490, cy: 330, outerSize: 60, innerSize: 28, label: 'App 4', sublabel: 'API', angleOffset: 1.7 },
+];
+
+const INTRA_EDGES = [
+  { from: 0, to: 1 },
+  { from: 0, to: 2 },
+  { from: 3, to: 4 },
+];
+
+const CROSS_CONNECTIONS = [
+  { from: 1, to: 6 },
+  { from: 2, to: 6 },
+  { from: 3, to: 6 },
+  { from: 4, to: 8 },
+  { from: 5, to: 7 },
+  { from: 5, to: 6 },
+  { from: 8, to: 6 },
+  { from: 8, to: 7 },
 ];
 
 const SPEED = 0.4;
@@ -95,8 +105,14 @@ export function SyntheticMonorepoAnimation() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const animRef = useRef<number>(0);
   const hoveredRef = useRef<number>(-1);
-  const pauseStartRef = useRef<(number | null)[]>(ALL_CUBES.map(() => null));
-  const pauseAccumRef = useRef<number[]>(ALL_CUBES.map(() => 0));
+  // Use max length for pause tracking (covers both states)
+  const maxCubes = Math.max(ALL_CUBES.length, COLLAPSED_CUBES.length);
+  const pauseStartRef = useRef<(number | null)[]>(Array(maxCubes).fill(null));
+  const pauseAccumRef = useRef<number[]>(Array(maxCubes).fill(0));
+  const [synthetic, setSynthetic] = useState(false);
+  const syntheticRef = useRef(false);
+
+  useEffect(() => { syntheticRef.current = synthetic; }, [synthetic]);
 
   const handleMouseMove = useCallback((e: MouseEvent) => {
     const canvas = canvasRef.current;
@@ -107,10 +123,11 @@ export function SyntheticMonorepoAnimation() {
     const mx = (e.clientX - rect.left) * scaleX;
     const my = (e.clientY - rect.top) * scaleY;
 
+    const cubes = syntheticRef.current ? ALL_CUBES : COLLAPSED_CUBES;
     let found = -1;
-    for (let i = 0; i < ALL_CUBES.length; i++) {
-      const dx = mx - ALL_CUBES[i].cx;
-      const dy = my - ALL_CUBES[i].cy;
+    for (let i = 0; i < cubes.length; i++) {
+      const dx = mx - cubes[i].cx;
+      const dy = my - cubes[i].cy;
       if (Math.sqrt(dx * dx + dy * dy) < HIT_RADIUS) { found = i; break; }
     }
 
@@ -150,128 +167,157 @@ export function SyntheticMonorepoAnimation() {
     canvas.addEventListener('mousemove', handleMouseMove);
     canvas.addEventListener('mouseleave', handleMouseLeave);
 
+    function drawCubeWithPause(
+      ctx: CanvasRenderingContext2D,
+      t: number,
+      i: number,
+      cube: CubeConfig,
+      color: string,
+      innerCol: string,
+      outerFill?: number,
+      innerFill?: number,
+      outerFaceFill?: string
+    ) {
+      const isHovered = hoveredRef.current === i;
+      let pauseTotal = pauseAccumRef.current[i];
+      if (isHovered && pauseStartRef.current[i] !== null) {
+        pauseTotal += t - pauseStartRef.current[i]!;
+      }
+      drawRotatingCube(ctx, t - pauseTotal, {
+        cx: cube.cx, cy: cube.cy,
+        size: cube.outerSize, innerSize: cube.innerSize,
+        color, innerColor: innerCol,
+        speed: SPEED, angleOffset: cube.angleOffset,
+        outerFillOpacity: outerFill,
+        innerFillOpacity: innerFill,
+        outerFaceFillColor: outerFaceFill,
+        canvasWidth: CANVAS_W, canvasHeight: CANVAS_H,
+      });
+    }
+
     function draw(time: number) {
       if (!ctx) return;
       const t = time / 1000;
+      const isSynthetic = syntheticRef.current;
+
       ctx.clearRect(0, 0, CANVAS_W, CANVAS_H);
 
-      // Outer dashed boundary (synthetic monorepo)
-      ctx.strokeStyle = OUTER_BORDER_COLOR;
-      ctx.lineWidth = 2;
-      ctx.setLineDash([8, 6]);
-      const pad = 14;
-      ctx.beginPath();
-      ctx.roundRect(pad, pad, CANVAS_W - pad * 2, CANVAS_H - pad * 2, 12);
-      ctx.stroke();
-      ctx.setLineDash([]);
+      if (isSynthetic) {
+        // === SYNTHETIC ON: expanded view ===
 
-      // Monorepo A boundary box
-      ctx.strokeStyle = MONO_BORDER_COLOR;
-      ctx.lineWidth = 1.5;
-      ctx.setLineDash([4, 3]);
-      ctx.beginPath();
-      ctx.roundRect(30, 30, 220, 130, 8);
-      ctx.stroke();
-      ctx.setLineDash([]);
-
-      // Monorepo A label
-      ctx.font = '10px system-ui, sans-serif';
-      ctx.textAlign = 'left';
-      ctx.fillStyle = 'rgba(148,163,184,0.5)';
-      ctx.fillText('Monorepo A', 40, 46);
-
-      // Monorepo B boundary box
-      ctx.setLineDash([4, 3]);
-      ctx.strokeStyle = MONO_BORDER_COLOR;
-      ctx.beginPath();
-      ctx.roundRect(350, 30, 210, 120, 8);
-      ctx.stroke();
-      ctx.setLineDash([]);
-
-      // Monorepo B label
-      ctx.textAlign = 'left';
-      ctx.fillText('Monorepo B', 360, 46);
-
-      // Standalone repo labels
-      ctx.font = '8px system-ui, sans-serif';
-      ctx.textAlign = 'center';
-      ctx.fillStyle = 'rgba(148,163,184,0.4)';
-      for (const cube of STANDALONE_CUBES) {
-        ctx.fillText('standalone repo', cube.cx, cube.cy + cube.outerSize / 2 + 28);
-      }
-
-      // Intra-monorepo connections (solid, subtle)
-      const INTRA_EDGES = [
-        // Monorepo A: App 1 -> Lib A, App 1 -> Lib B
-        { from: 0, to: 1 },
-        { from: 0, to: 2 },
-        // Monorepo B: App 2 -> Lib C
-        { from: 3, to: 4 },
-      ];
-      ctx.strokeStyle = 'rgba(148,163,184,0.3)';
-      ctx.lineWidth = 1;
-      for (const edge of INTRA_EDGES) {
-        const f = ALL_CUBES[edge.from];
-        const tgt = ALL_CUBES[edge.to];
+        // Outer dashed boundary
+        ctx.strokeStyle = OUTER_BORDER_COLOR;
+        ctx.lineWidth = 2;
+        ctx.setLineDash([8, 6]);
         ctx.beginPath();
-        ctx.moveTo(f.cx, f.cy);
-        ctx.lineTo(tgt.cx, tgt.cy);
+        ctx.roundRect(14, 14, CANVAS_W - 28, CANVAS_H - 28, 12);
         ctx.stroke();
-      }
+        ctx.setLineDash([]);
 
-      // Cross-repo connections
-      for (let i = 0; i < CONNECTIONS.length; i++) {
-        const conn = CONNECTIONS[i];
-        const f = ALL_CUBES[conn.from];
-        const tgt = ALL_CUBES[conn.to];
-
-        ctx.strokeStyle = CONNECTION_COLOR;
+        // Monorepo A boundary
+        ctx.strokeStyle = MONO_BORDER_COLOR;
         ctx.lineWidth = 1.5;
+        ctx.setLineDash([4, 3]);
         ctx.beginPath();
-        ctx.moveTo(f.cx, f.cy);
-        ctx.lineTo(tgt.cx, tgt.cy);
+        ctx.roundRect(30, 30, 220, 130, 8);
         ctx.stroke();
+        ctx.setLineDash([]);
+        ctx.font = '10px system-ui, sans-serif';
+        ctx.textAlign = 'left';
+        ctx.fillStyle = 'rgba(148,163,184,0.5)';
+        ctx.fillText('Monorepo A', 40, 46);
 
-        drawPulse(ctx, f.cx, f.cy, tgt.cx, tgt.cy, t, i * 0.5);
-      }
+        // Monorepo B boundary
+        ctx.setLineDash([4, 3]);
+        ctx.strokeStyle = MONO_BORDER_COLOR;
+        ctx.beginPath();
+        ctx.roundRect(350, 30, 210, 120, 8);
+        ctx.stroke();
+        ctx.setLineDash([]);
+        ctx.textAlign = 'left';
+        ctx.fillText('Monorepo B', 360, 46);
 
-      // Draw all cubes
-      for (let i = 0; i < ALL_CUBES.length; i++) {
-        const cube = ALL_CUBES[i];
-        const isHovered = hoveredRef.current === i;
-        let pauseTotal = pauseAccumRef.current[i];
-        if (isHovered && pauseStartRef.current[i] !== null) {
-          pauseTotal += t - pauseStartRef.current[i]!;
+        // Standalone repo sublabels
+        ctx.font = '8px system-ui, sans-serif';
+        ctx.textAlign = 'center';
+        ctx.fillStyle = 'rgba(148,163,184,0.4)';
+        for (const cube of STANDALONE_CUBES) {
+          ctx.fillText('standalone repo', cube.cx, cube.cy + cube.outerSize / 2 + 28);
         }
 
-        drawRotatingCube(ctx, t - pauseTotal, {
-          cx: cube.cx, cy: cube.cy,
-          size: cube.outerSize, innerSize: cube.innerSize,
-          color: CUBE_COLOR, innerColor: INNER_COLOR,
-          speed: SPEED, angleOffset: cube.angleOffset,
-          canvasWidth: CANVAS_W, canvasHeight: CANVAS_H,
-        });
-      }
+        // Intra-monorepo connections
+        ctx.strokeStyle = 'rgba(148,163,184,0.3)';
+        ctx.lineWidth = 1;
+        for (const edge of INTRA_EDGES) {
+          const f = ALL_CUBES[edge.from];
+          const tgt = ALL_CUBES[edge.to];
+          ctx.beginPath();
+          ctx.moveTo(f.cx, f.cy);
+          ctx.lineTo(tgt.cx, tgt.cy);
+          ctx.stroke();
+        }
 
-      // Cube labels (two-line: name + sublabel)
-      ctx.textAlign = 'center';
-      for (const cube of ALL_CUBES) {
-        const baseY = cube.cy + cube.outerSize / 2 + 12;
-        ctx.font = 'bold 9px system-ui, sans-serif';
-        ctx.fillStyle = 'rgba(148,163,184,0.8)';
-        ctx.fillText(cube.label, cube.cx, baseY);
-        if (cube.sublabel) {
-          ctx.font = '8px system-ui, sans-serif';
-          ctx.fillStyle = 'rgba(148,163,184,0.5)';
-          ctx.fillText(cube.sublabel, cube.cx, baseY + 11);
+        // Cross-repo connections + pulses
+        for (let i = 0; i < CROSS_CONNECTIONS.length; i++) {
+          const conn = CROSS_CONNECTIONS[i];
+          const f = ALL_CUBES[conn.from];
+          const tgt = ALL_CUBES[conn.to];
+          ctx.strokeStyle = CONNECTION_COLOR;
+          ctx.lineWidth = 1.5;
+          ctx.beginPath();
+          ctx.moveTo(f.cx, f.cy);
+          ctx.lineTo(tgt.cx, tgt.cy);
+          ctx.stroke();
+          drawPulse(ctx, f.cx, f.cy, tgt.cx, tgt.cy, t, i * 0.5);
+        }
+
+        // All expanded cubes
+        for (let i = 0; i < ALL_CUBES.length; i++) {
+          drawCubeWithPause(ctx, t, i, ALL_CUBES[i], CUBE_COLOR_ON, INNER_COLOR);
+        }
+
+        // Cube labels (two-line)
+        ctx.textAlign = 'center';
+        for (const cube of ALL_CUBES) {
+          const baseY = cube.cy + cube.outerSize / 2 + 12;
+          ctx.font = 'bold 9px system-ui, sans-serif';
+          ctx.fillStyle = 'rgba(148,163,184,0.8)';
+          ctx.fillText(cube.label, cube.cx, baseY);
+          if (cube.sublabel) {
+            ctx.font = '8px system-ui, sans-serif';
+            ctx.fillStyle = 'rgba(148,163,184,0.5)';
+            ctx.fillText(cube.sublabel, cube.cx, baseY + 11);
+          }
+        }
+
+        // Bottom label
+        ctx.font = 'bold 13px system-ui, sans-serif';
+        ctx.textAlign = 'center';
+        ctx.fillStyle = 'rgba(148,163,184,0.4)';
+        ctx.fillText('Synthetic Monorepo', CANVAS_W / 2, CANVAS_H - 22);
+
+      } else {
+        // === SYNTHETIC OFF: black-box view ===
+
+        // Draw collapsed cubes (fully opaque dark faces, no inner cube, subtle edge highlight)
+        for (let i = 0; i < COLLAPSED_CUBES.length; i++) {
+          drawCubeWithPause(ctx, t, i, COLLAPSED_CUBES[i], 'rgba(51,65,85,0.9)', INNER_COLOR_OPAQUE, 1.0, 0, '#1e293b');
+        }
+
+        // Labels (extra offset for large black-box cubes)
+        ctx.textAlign = 'center';
+        for (const cube of COLLAPSED_CUBES) {
+          const baseY = cube.cy + cube.outerSize / 2 + 22;
+          ctx.font = 'bold 10px system-ui, sans-serif';
+          ctx.fillStyle = 'rgba(148,163,184,0.8)';
+          ctx.fillText(cube.label, cube.cx, baseY);
+          if (cube.sublabel) {
+            ctx.font = '9px system-ui, sans-serif';
+            ctx.fillStyle = 'rgba(148,163,184,0.5)';
+            ctx.fillText(cube.sublabel, cube.cx, baseY + 12);
+          }
         }
       }
-
-      // "Synthetic Monorepo" label at bottom
-      ctx.font = 'bold 13px system-ui, sans-serif';
-      ctx.textAlign = 'center';
-      ctx.fillStyle = 'rgba(148,163,184,0.4)';
-      ctx.fillText('Synthetic Monorepo', CANVAS_W / 2, CANVAS_H - 22);
 
       animRef.current = requestAnimationFrame(draw);
     }
@@ -290,9 +336,43 @@ export function SyntheticMonorepoAnimation() {
       initial={{ opacity: 0, y: 20 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.6 }}
-      className="flex items-center justify-center overflow-hidden rounded-lg border border-slate-200 bg-slate-900 shadow-lg dark:border-slate-700"
     >
-      <canvas ref={canvasRef} className="block cursor-pointer" />
+      <div className="overflow-hidden rounded-lg border border-slate-200 bg-slate-900 shadow-lg dark:border-slate-700">
+        <div className="flex items-center justify-center">
+          <canvas ref={canvasRef} className="block cursor-pointer" />
+        </div>
+      </div>
+
+      {/* Toggle */}
+      <div className="mt-4 flex items-center justify-center">
+        <label className="flex cursor-pointer items-center gap-2.5 text-[11px] uppercase tracking-[1.5px]">
+          <button
+            role="switch"
+            aria-checked={synthetic}
+            onClick={() => setSynthetic(!synthetic)}
+            className={`relative inline-flex h-3.5 w-7 shrink-0 items-center rounded-full border transition-colors ${
+              synthetic
+                ? 'border-emerald-400/50 bg-emerald-500/20'
+                : 'border-slate-600 bg-slate-800'
+            }`}
+          >
+            <span
+              className={`inline-block h-2 w-2 rounded-full transition-all ${
+                synthetic
+                  ? 'translate-x-3.5 bg-emerald-400'
+                  : 'translate-x-0.5 bg-slate-500'
+              }`}
+            />
+          </button>
+          <span
+            className={`transition-colors ${
+              synthetic ? 'text-slate-200' : 'text-slate-500'
+            }`}
+          >
+            Synthetic Monorepo
+          </span>
+        </label>
+      </div>
     </motion.div>
   );
 }
