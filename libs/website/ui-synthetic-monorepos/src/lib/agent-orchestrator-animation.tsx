@@ -195,7 +195,7 @@ export function AgentOrchestratorAnimation() {
       ctx.fillStyle = 'rgba(148,163,184,0.7)';
       for (const sat of SATELLITES) {
         const pos = getSatellitePos(sat);
-        ctx.fillText(sat.label, pos.x, pos.y + sat.cubeSize / 2 + 16);
+        ctx.fillText(sat.label, pos.x, pos.y + sat.cubeSize / 2 + 22);
       }
 
       // Central AI agent: outer glow

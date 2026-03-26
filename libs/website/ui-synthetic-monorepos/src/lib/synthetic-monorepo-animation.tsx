@@ -24,7 +24,7 @@ interface CubeConfig {
 }
 
 const CANVAS_W = 580;
-const CANVAS_H = 460;
+const CANVAS_H = 480;
 
 // --- "ON" state: expanded monorepo internals ---
 
@@ -40,10 +40,10 @@ const MONO_B_CUBES: CubeConfig[] = [
 ];
 
 const STANDALONE_CUBES: CubeConfig[] = [
-  { cx: 100, cy: 340, outerSize: 55, innerSize: 22, label: 'App 3', sublabel: 'mobile', angleOffset: 0.8 },
-  { cx: 300, cy: 230, outerSize: 48, innerSize: 19, label: 'Lib D', sublabel: 'shared', angleOffset: 3.9 },
-  { cx: 300, cy: 370, outerSize: 48, innerSize: 19, label: 'Lib E', sublabel: 'design', angleOffset: 5.2 },
-  { cx: 490, cy: 330, outerSize: 55, innerSize: 22, label: 'App 4', sublabel: 'API', angleOffset: 1.7 },
+  { cx: 100, cy: 340, outerSize: 55, innerSize: 22, label: 'Mobile App', angleOffset: 0.8 },
+  { cx: 300, cy: 230, outerSize: 48, innerSize: 19, label: 'Shared Utilities', angleOffset: 3.9 },
+  { cx: 300, cy: 370, outerSize: 48, innerSize: 19, label: 'Design System', angleOffset: 5.2 },
+  { cx: 490, cy: 330, outerSize: 55, innerSize: 22, label: 'API', angleOffset: 1.7 },
 ];
 
 const ALL_CUBES = [...MONO_A_CUBES, ...MONO_B_CUBES, ...STANDALONE_CUBES];
@@ -56,10 +56,10 @@ const COLLAPSED_CUBES: CubeConfig[] = [
   // Monorepo B as single large cube
   { cx: 455, cy: 85, outerSize: 80, innerSize: 38, label: 'Monorepo B', angleOffset: 2.8 },
   // Standalone repos (same positions, slightly larger/more opaque)
-  { cx: 100, cy: 340, outerSize: 60, innerSize: 28, label: 'App 3', sublabel: 'mobile', angleOffset: 0.8 },
-  { cx: 300, cy: 230, outerSize: 55, innerSize: 26, label: 'Lib D', sublabel: 'shared', angleOffset: 3.9 },
-  { cx: 300, cy: 370, outerSize: 55, innerSize: 26, label: 'Lib E', sublabel: 'design', angleOffset: 5.2 },
-  { cx: 490, cy: 330, outerSize: 60, innerSize: 28, label: 'App 4', sublabel: 'API', angleOffset: 1.7 },
+  { cx: 100, cy: 340, outerSize: 60, innerSize: 28, label: 'Mobile App', angleOffset: 0.8 },
+  { cx: 300, cy: 230, outerSize: 55, innerSize: 26, label: 'Shared Utilities', angleOffset: 3.9 },
+  { cx: 300, cy: 370, outerSize: 55, innerSize: 26, label: 'Design System', angleOffset: 5.2 },
+  { cx: 490, cy: 330, outerSize: 60, innerSize: 28, label: 'API', angleOffset: 1.7 },
 ];
 
 const INTRA_EDGES = [
@@ -242,7 +242,7 @@ export function SyntheticMonorepoAnimation() {
         ctx.textAlign = 'center';
         ctx.fillStyle = 'rgba(148,163,184,0.4)';
         for (const cube of STANDALONE_CUBES) {
-          ctx.fillText('standalone repo', cube.cx, cube.cy + cube.outerSize / 2 + 28);
+          ctx.fillText('standalone repo', cube.cx, cube.cy + cube.outerSize / 2 + 36);
         }
 
         // Intra-monorepo connections
@@ -279,7 +279,7 @@ export function SyntheticMonorepoAnimation() {
         // Cube labels (two-line)
         ctx.textAlign = 'center';
         for (const cube of ALL_CUBES) {
-          const baseY = cube.cy + cube.outerSize / 2 + 12;
+          const baseY = cube.cy + cube.outerSize / 2 + 20;
           ctx.font = 'bold 9px system-ui, sans-serif';
           ctx.fillStyle = 'rgba(148,163,184,0.8)';
           ctx.fillText(cube.label, cube.cx, baseY);
@@ -307,7 +307,7 @@ export function SyntheticMonorepoAnimation() {
         // Labels (extra offset for large black-box cubes)
         ctx.textAlign = 'center';
         for (const cube of COLLAPSED_CUBES) {
-          const baseY = cube.cy + cube.outerSize / 2 + 22;
+          const baseY = cube.cy + cube.outerSize / 2 + 28;
           ctx.font = 'bold 10px system-ui, sans-serif';
           ctx.fillStyle = 'rgba(148,163,184,0.8)';
           ctx.fillText(cube.label, cube.cx, baseY);

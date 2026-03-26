@@ -155,7 +155,7 @@ export function PolyrepoIslandsAnimation() {
       ctx.textAlign = 'center';
       ctx.fillStyle = 'rgba(148,163,184,0.7)';
       for (const cube of CUBES) {
-        ctx.fillText(cube.label, cube.cx, cube.cy + cube.outerSize / 2 + 16);
+        ctx.fillText(cube.label, cube.cx, cube.cy + cube.outerSize / 2 + 22);
       }
 
       animRef.current = requestAnimationFrame(draw);
