@@ -305,6 +305,7 @@ export function SyntheticMonorepoAnimation({ alwaysSynthetic = false }: { always
   const [synthetic, setSynthetic] = useState(alwaysSynthetic);
   const syntheticRef = useRef(false);
   const alwaysSyntheticRef = useRef(alwaysSynthetic);
+  const fleetStartRef = useRef<number | null>(null);
 
   useEffect(() => { syntheticRef.current = synthetic; }, [synthetic]);
 
@@ -479,7 +480,8 @@ export function SyntheticMonorepoAnimation({ alwaysSynthetic = false }: { always
 
         // Agent fleet overlay (only in alwaysSynthetic mode)
         if (alwaysSyntheticRef.current) {
-          drawAgentFleet(ctx, t);
+          if (fleetStartRef.current === null) fleetStartRef.current = t;
+          drawAgentFleet(ctx, t - fleetStartRef.current);
         }
 
       } else {
@@ -523,15 +525,9 @@ export function SyntheticMonorepoAnimation({ alwaysSynthetic = false }: { always
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.6 }}
     >
-      <div className={`overflow-hidden rounded-lg bg-slate-900 ${synthetic ? 'border border-dashed border-slate-400/40 dark:border-slate-500/30' : ''}`}>
-        <div className="flex items-center justify-center">
-          <canvas ref={canvasRef} className="block cursor-pointer" />
-        </div>
-      </div>
-
       {/* Toggle */}
       {!alwaysSynthetic && (
-        <div className="mt-4 flex items-center justify-center">
+        <div className="mb-4 flex items-center justify-center">
           <label className="flex cursor-pointer items-center gap-2.5 text-[11px] uppercase tracking-[1.5px]">
             <button
               role="switch"
@@ -561,6 +557,12 @@ export function SyntheticMonorepoAnimation({ alwaysSynthetic = false }: { always
           </label>
         </div>
       )}
+
+      <div className={`overflow-hidden bg-slate-900 ${synthetic ? 'rounded-lg border border-dashed border-slate-400/40 dark:border-slate-500/30' : 'rounded-lg'}`}>
+        <div className="flex items-center justify-center">
+          <canvas ref={canvasRef} className="block cursor-pointer" />
+        </div>
+      </div>
     </motion.div>
   );
 }
