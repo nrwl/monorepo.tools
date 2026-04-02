@@ -4,8 +4,8 @@ import { motion } from 'framer-motion';
 import { useInView } from './use-in-view';
 import { drawRotatingCube } from './rotating-cube';
 
-const CUBE_COLOR = 'rgba(239,68,68,0.5)';
-const INNER_COLOR = 'rgba(148,163,184,0.8)';
+const CUBE_COLOR = 'rgba(71,85,105,0.95)';
+const INNER_COLOR = 'rgba(148,163,184,0.95)';
 
 interface CubeConfig {
   cx: number;
@@ -17,19 +17,18 @@ interface CubeConfig {
 }
 
 const COLS = 3;
-const ROWS = 3;
-const CANVAS_W = 480;
+const ROWS = 2;
+const CANVAS_W = 560;
 const CANVAS_H = 420;
 const SPACING_X = CANVAS_W / (COLS + 1);
 const SPACING_Y = CANVAS_H / (ROWS + 1);
 
 const LABELS = [
-  'frontend', 'design-system', 'gateway',
-  'services', 'shared-types', 'data',
-  'infra', 'auth', 'analytics',
+  'Monorepo A', 'Monorepo B', 'Mobile App',
+  'Shared Utilities', 'Design System', 'API',
 ];
 
-const OFFSETS = [0, 1.8, 0.7, 3.1, 2.4, 4.5, 1.2, 5.0, 3.8];
+const OFFSETS = [0.5, 2.8, 0.8, 3.9, 5.2, 1.7];
 
 function buildCubes(): CubeConfig[] {
   const cubes: CubeConfig[] = [];
@@ -39,7 +38,7 @@ function buildCubes(): CubeConfig[] {
       cubes.push({
         cx: SPACING_X * (c + 1),
         cy: SPACING_Y * (r + 1),
-        outerSize: 75,
+        outerSize: 70,
         innerSize: 30,
         label: LABELS[idx],
         angleOffset: OFFSETS[idx],
@@ -146,6 +145,9 @@ export function PolyrepoIslandsAnimation() {
           innerColor: INNER_COLOR,
           speed: SPEED,
           angleOffset: cube.angleOffset,
+          outerFillOpacity: 1.0,
+          innerFillOpacity: 0,
+          outerFaceFillColor: '#1e293b',
           canvasWidth: CANVAS_W,
           canvasHeight: CANVAS_H,
         });
@@ -153,7 +155,7 @@ export function PolyrepoIslandsAnimation() {
 
       ctx.font = '10px system-ui, sans-serif';
       ctx.textAlign = 'center';
-      ctx.fillStyle = 'rgba(148,163,184,0.7)';
+      ctx.fillStyle = 'rgba(148,163,184,0.85)';
       for (const cube of CUBES) {
         ctx.fillText(cube.label, cube.cx, cube.cy + cube.outerSize / 2 + 22);
       }

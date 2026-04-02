@@ -51,11 +51,8 @@ const ALL_CUBES = [...MONO_A_CUBES, ...MONO_B_CUBES, ...STANDALONE_CUBES];
 // --- "OFF" state: collapsed black-box cubes ---
 
 const COLLAPSED_CUBES: CubeConfig[] = [
-  // Monorepo A as single large cube (centered in its boundary area)
   { cx: 175, cy: 110, outerSize: 85, innerSize: 40, label: 'Monorepo A', angleOffset: 0.5 },
-  // Monorepo B as single large cube
   { cx: 455, cy: 85, outerSize: 80, innerSize: 38, label: 'Monorepo B', angleOffset: 2.8 },
-  // Standalone repos (same positions, slightly larger/more opaque)
   { cx: 100, cy: 380, outerSize: 60, innerSize: 28, label: 'Mobile App', angleOffset: 0.8 },
   { cx: 300, cy: 270, outerSize: 55, innerSize: 26, label: 'Shared Utilities', angleOffset: 3.9 },
   { cx: 300, cy: 410, outerSize: 55, innerSize: 26, label: 'Design System', angleOffset: 5.2 },
@@ -493,7 +490,7 @@ export function SyntheticMonorepoAnimation({ alwaysSynthetic = false }: { always
           drawCubeWithPause(ctx, t, i, COLLAPSED_CUBES[i], 'rgba(71,85,105,0.95)', INNER_COLOR_OPAQUE, 1.0, 0, '#1e293b');
         }
 
-        // Labels (extra offset for large black-box cubes)
+        // Labels
         ctx.textAlign = 'center';
         for (const cube of COLLAPSED_CUBES) {
           const baseY = cube.cy + cube.outerSize / 2 + 28;
