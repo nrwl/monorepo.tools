@@ -1,6 +1,6 @@
 'use client';
 import { LinkIcon } from '@heroicons/react/24/outline';
-import { AgentOrchestratorAnimation } from './agent-orchestrator-animation';
+import { SyntheticMonorepoAnimation } from './synthetic-monorepo-animation';
 
 export function AIAgentsAcrossBoundaries(): JSX.Element {
   return (
@@ -33,8 +33,12 @@ export function AIAgentsAcrossBoundaries(): JSX.Element {
           </p>
         </div>
 
-        <div className="relative mt-12 lg:mt-16 lg:grid lg:grid-cols-2 lg:items-center lg:gap-12">
-          <div>
+        <div className="relative mt-12 lg:mt-16">
+          <div className="mx-auto hidden max-w-2xl md:block">
+            <SyntheticMonorepoAnimation alwaysSynthetic />
+          </div>
+
+          <div className="mx-auto mt-12 max-w-3xl">
             <h3 className="text-2xl font-semibold text-gray-800 dark:text-gray-100">
               From islands to orchestration
             </h3>
@@ -63,10 +67,6 @@ export function AIAgentsAcrossBoundaries(): JSX.Element {
               This is what breaks the island ceiling. AI agents that reason and
               act across your entire organization, not just one repo at a time.
             </p>
-          </div>
-
-          <div className="mt-8 hidden md:block lg:mt-0">
-            <AgentOrchestratorAnimation />
           </div>
         </div>
       </div>
