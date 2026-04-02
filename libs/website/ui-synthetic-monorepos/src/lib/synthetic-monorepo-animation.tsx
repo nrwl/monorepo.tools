@@ -23,15 +23,15 @@ interface CubeConfig {
   angleOffset: number;
 }
 
-const CANVAS_W = 580;
-const CANVAS_H = 520;
+const CANVAS_W = 620;
+const CANVAS_H = 500;
 
 // --- "ON" state: expanded monorepo internals ---
 
 const MONO_A_CUBES: CubeConfig[] = [
-  { cx: 80, cy: 80, outerSize: 48, innerSize: 19, label: 'App 1', sublabel: 'frontend', angleOffset: 0 },
-  { cx: 215, cy: 60, outerSize: 40, innerSize: 16, label: 'Lib A', sublabel: 'utils', angleOffset: 1.4 },
-  { cx: 155, cy: 155, outerSize: 40, innerSize: 16, label: 'Lib B', sublabel: 'ui', angleOffset: 3.2 },
+  { cx: 115, cy: 80, outerSize: 48, innerSize: 19, label: 'App 1', sublabel: 'frontend', angleOffset: 0 },
+  { cx: 240, cy: 60, outerSize: 40, innerSize: 16, label: 'Lib A', sublabel: 'utils', angleOffset: 1.4 },
+  { cx: 180, cy: 155, outerSize: 40, innerSize: 16, label: 'Lib B', sublabel: 'ui', angleOffset: 3.2 },
 ];
 
 const MONO_B_CUBES: CubeConfig[] = [
@@ -52,7 +52,7 @@ const ALL_CUBES = [...MONO_A_CUBES, ...MONO_B_CUBES, ...STANDALONE_CUBES];
 
 const COLLAPSED_CUBES: CubeConfig[] = [
   // Monorepo A as single large cube (centered in its boundary area)
-  { cx: 140, cy: 110, outerSize: 85, innerSize: 40, label: 'Monorepo A', angleOffset: 0.5 },
+  { cx: 175, cy: 110, outerSize: 85, innerSize: 40, label: 'Monorepo A', angleOffset: 0.5 },
   // Monorepo B as single large cube
   { cx: 455, cy: 85, outerSize: 80, innerSize: 38, label: 'Monorepo B', angleOffset: 2.8 },
   // Standalone repos (same positions, slightly larger/more opaque)
@@ -81,7 +81,7 @@ const CROSS_CONNECTIONS = [
 
 // --- Agent fleet (only for alwaysSynthetic mode) ---
 
-const COORDINATOR = { cx: 50, cy: 275 };
+const COORDINATOR = { cx: 55, cy: 275 };
 const AGENT_TARGETS = [
   ALL_CUBES[7],  // Design System
   ALL_CUBES[8],  // API
@@ -89,122 +89,189 @@ const AGENT_TARGETS = [
   ALL_CUBES[2],  // Lib B
   ALL_CUBES[4],  // Lib C
 ];
-const AGENT_CYCLE = 10; // seconds per full cycle
-// Phase timings within cycle
-const ORBIT_END = 3.5;
-const FLY_OUT_END = 5;
-const AT_TARGET_END = 8;
-const FLY_BACK_END = 9.5;
+// Phase timings within cycle (total ~12s)
+const EMERGE_END = 1.2;      // dots emerge from coordinator
+const CONNECT_END = 2.5;     // lines appear, dots get halo
+const SPREAD_END = 4.5;      // fly out to targets + ring pulse
+const AT_TARGET_END = 8;     // pulsing at targets
+const RETURN_END = 9.8;      // fly back toward coordinator
+const ABSORB_END = 10.5;     // shrink into coordinator
+const AGENT_CYCLE = 11.5;    // pause before restart
 
-const COORDINATOR_COLOR = 'rgba(251,146,60,0.9)';   // orange-400
+const COORDINATOR_COLOR = 'rgba(251,146,60,0.9)';
 const COORDINATOR_GLOW = 'rgba(251,146,60,0.15)';
 const AGENT_COLOR = 'rgba(251,146,60,0.85)';
-const AGENT_TRAIL_COLOR = 'rgba(251,146,60,0.12)';
+const AGENT_LINE_COLOR = 'rgba(251,146,60,0.3)';
+const AGENT_LINE_ACTIVE_COLOR = 'rgba(251,146,60,0.45)';
 
 function easeInOutCubic(t: number): number {
   return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+}
+function easeOutCubic(t: number): number {
+  return 1 - Math.pow(1 - t, 3);
+}
+
+// Resting positions: tight half-circle arc in front of (to the right of) coordinator
+function getRestPos(i: number): { x: number; y: number } {
+  const arcR = 30;
+  // Narrower arc: -70deg to +70deg, biased to the right
+  const angleStart = -Math.PI * 0.39;
+  const angleEnd = Math.PI * 0.39;
+  const angle = angleStart + (i / (AGENT_TARGETS.length - 1)) * (angleEnd - angleStart);
+  return {
+    x: COORDINATOR.cx + 18 + Math.cos(angle) * arcR,
+    y: COORDINATOR.cy + Math.sin(angle) * arcR,
+  };
 }
 
 function drawAgentFleet(ctx: CanvasRenderingContext2D, t: number) {
   const phase = t % AGENT_CYCLE;
 
-  // Draw coordinator
-  // Outer glow
+  // Draw coordinator (always visible)
   ctx.beginPath();
-  ctx.arc(COORDINATOR.cx, COORDINATOR.cy, 22, 0, Math.PI * 2);
+  ctx.arc(COORDINATOR.cx, COORDINATOR.cy, 28, 0, Math.PI * 2);
   ctx.fillStyle = COORDINATOR_GLOW;
   ctx.fill();
-  // Mid ring
   ctx.beginPath();
-  ctx.arc(COORDINATOR.cx, COORDINATOR.cy, 14, 0, Math.PI * 2);
+  ctx.arc(COORDINATOR.cx, COORDINATOR.cy, 18, 0, Math.PI * 2);
   ctx.fillStyle = 'rgba(251,146,60,0.08)';
   ctx.fill();
-  // Core
   ctx.beginPath();
-  ctx.arc(COORDINATOR.cx, COORDINATOR.cy, 6, 0, Math.PI * 2);
+  ctx.arc(COORDINATOR.cx, COORDINATOR.cy, 8, 0, Math.PI * 2);
   ctx.fillStyle = COORDINATOR_COLOR;
   ctx.fill();
-  // Label
-  ctx.font = 'bold 8px system-ui, sans-serif';
+  ctx.font = 'bold 9px system-ui, sans-serif';
   ctx.textAlign = 'center';
   ctx.fillStyle = 'rgba(251,146,60,0.8)';
-  ctx.fillText('Coordinator', COORDINATOR.cx, COORDINATOR.cy + 32);
+  ctx.fillText('Polygraph AI', COORDINATOR.cx, COORDINATOR.cy + 38);
 
-  // Draw each agent
+  // Expanding ring during spread phase
+  if (phase >= CONNECT_END && phase < SPREAD_END + 1.0) {
+    const ringP = (phase - CONNECT_END) / (SPREAD_END - CONNECT_END + 1.0);
+    const ringR = 20 + ringP * 35;
+    const ringAlpha = Math.max(0, 0.25 * (1 - ringP));
+    ctx.beginPath();
+    ctx.arc(COORDINATOR.cx, COORDINATOR.cy, ringR, 0, Math.PI * 2);
+    ctx.strokeStyle = `rgba(251,146,60,${ringAlpha})`;
+    ctx.lineWidth = 1.5;
+    ctx.stroke();
+  }
+
+  // Draw agents per phase
   for (let i = 0; i < AGENT_TARGETS.length; i++) {
     const target = AGENT_TARGETS[i];
-    const orbitAngle = (t * 0.8) + (i * Math.PI * 2) / AGENT_TARGETS.length;
-    const orbitR = 30;
-    const orbitX = COORDINATOR.cx + Math.cos(orbitAngle) * orbitR;
-    const orbitY = COORDINATOR.cy + Math.sin(orbitAngle) * orbitR * 0.6; // elliptical
+    const rest = getRestPos(i);
 
-    let ax: number, ay: number, agentAlpha: number;
+    let ax: number, ay: number;
+    let dotR = 4.5;
+    let showHalo = false;
+    let showLine = false;
+    let dotAlpha = 1;
+    let dotPulse = 1;
 
-    if (phase < ORBIT_END) {
-      // Orbiting
-      ax = orbitX;
-      ay = orbitY;
-      agentAlpha = 0.85;
-    } else if (phase < FLY_OUT_END) {
-      // Flying out
-      const p = easeInOutCubic((phase - ORBIT_END) / (FLY_OUT_END - ORBIT_END));
-      ax = orbitX + (target.cx - orbitX) * p;
-      ay = orbitY + (target.cy - orbitY) * p;
-      agentAlpha = 0.85;
-
-      // Trail line from coordinator to current position
+    if (phase < EMERGE_END) {
+      // Emerge: dots move from coordinator center to rest positions
+      const p = easeOutCubic(phase / EMERGE_END);
+      ax = COORDINATOR.cx + (rest.x - COORDINATOR.cx) * p;
+      ay = COORDINATOR.cy + (rest.y - COORDINATOR.cy) * p;
+      dotR = 3 + p * 2;
+      dotAlpha = p;
+    } else if (phase < CONNECT_END) {
+      // Connect: lines appear, halos fade in
+      ax = rest.x;
+      ay = rest.y;
+      const p = (phase - EMERGE_END) / (CONNECT_END - EMERGE_END);
+      showLine = true;
+      showHalo = true;
+      dotR = 5;
+      dotAlpha = 1;
+      // Lines fade in
       ctx.beginPath();
       ctx.moveTo(COORDINATOR.cx, COORDINATOR.cy);
       ctx.lineTo(ax, ay);
-      ctx.strokeStyle = AGENT_TRAIL_COLOR;
-      ctx.lineWidth = 1;
+      ctx.strokeStyle = `rgba(251,146,60,${0.3 * p})`;
+      ctx.lineWidth = 1.5;
       ctx.stroke();
+      // Halo fades in
+      ctx.beginPath();
+      ctx.arc(ax, ay, 12, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(251,146,60,${0.1 * p})`;
+      ctx.fill();
+    } else if (phase < SPREAD_END) {
+      // Spread: fly from rest to target
+      const p = easeInOutCubic((phase - CONNECT_END) / (SPREAD_END - CONNECT_END));
+      ax = rest.x + (target.cx - rest.x) * p;
+      ay = rest.y + (target.cy - rest.y) * p;
+      showHalo = true;
+      showLine = true;
+      dotR = 6;
     } else if (phase < AT_TARGET_END) {
-      // At target, pulsing
+      // At target: pulse dots
       ax = target.cx;
       ay = target.cy;
-      const pulse = 0.6 + 0.4 * Math.sin((phase - AT_TARGET_END) * 3);
-      agentAlpha = pulse;
-
-      // Faint line back to coordinator
-      ctx.beginPath();
-      ctx.moveTo(COORDINATOR.cx, COORDINATOR.cy);
-      ctx.lineTo(ax, ay);
-      ctx.strokeStyle = 'rgba(251,146,60,0.06)';
-      ctx.lineWidth = 1;
-      ctx.stroke();
-    } else if (phase < FLY_BACK_END) {
-      // Flying back
-      const p = easeInOutCubic((phase - AT_TARGET_END) / (FLY_BACK_END - AT_TARGET_END));
-      ax = target.cx + (orbitX - target.cx) * p;
-      ay = target.cy + (orbitY - target.cy) * p;
-      agentAlpha = 0.85;
-
-      ctx.beginPath();
-      ctx.moveTo(COORDINATOR.cx, COORDINATOR.cy);
-      ctx.lineTo(ax, ay);
-      ctx.strokeStyle = AGENT_TRAIL_COLOR;
-      ctx.lineWidth = 1;
-      ctx.stroke();
+      dotPulse = 0.5 + 0.5 * Math.sin((phase - SPREAD_END) * 4);
+      showHalo = true;
+      showLine = true;
+      dotR = 6 + (1 - dotPulse) * 4;
+    } else if (phase < RETURN_END) {
+      // Return: fly back to coordinator
+      const p = easeInOutCubic((phase - AT_TARGET_END) / (RETURN_END - AT_TARGET_END));
+      ax = target.cx + (COORDINATOR.cx - target.cx) * p;
+      ay = target.cy + (COORDINATOR.cy - target.cy) * p;
+      showLine = false;
+      showHalo = true;
+      dotR = 6 * (1 - p * 0.3);
+      // Fade line out
+      const lineAlpha = 0.3 * (1 - p);
+      if (lineAlpha > 0.01) {
+        ctx.beginPath();
+        ctx.moveTo(COORDINATOR.cx, COORDINATOR.cy);
+        ctx.lineTo(ax, ay);
+        ctx.strokeStyle = `rgba(251,146,60,${lineAlpha})`;
+        ctx.lineWidth = 1.5;
+        ctx.stroke();
+      }
+    } else if (phase < ABSORB_END) {
+      // Absorb: shrink into coordinator center
+      const p = (phase - RETURN_END) / (ABSORB_END - RETURN_END);
+      ax = COORDINATOR.cx;
+      ay = COORDINATOR.cy;
+      dotR = 4.5 * (1 - p);
+      dotAlpha = 1 - p;
+      showHalo = false;
     } else {
-      // Settling back into orbit
-      ax = orbitX;
-      ay = orbitY;
-      agentAlpha = 0.85;
+      // Hidden until next cycle
+      continue;
+    }
+
+    // Draw line (for spread + at-target phases not handled above)
+    if (showLine && phase >= CONNECT_END && phase < AT_TARGET_END) {
+      ctx.beginPath();
+      ctx.moveTo(COORDINATOR.cx, COORDINATOR.cy);
+      ctx.lineTo(ax, ay);
+      ctx.strokeStyle = phase >= SPREAD_END ? AGENT_LINE_ACTIVE_COLOR : AGENT_LINE_COLOR;
+      ctx.lineWidth = 1.5;
+      ctx.stroke();
     }
 
     // Agent dot
-    ctx.beginPath();
-    ctx.arc(ax, ay, 4, 0, Math.PI * 2);
-    ctx.fillStyle = AGENT_COLOR;
-    ctx.globalAlpha = agentAlpha;
-    ctx.fill();
-    // Small glow
-    ctx.beginPath();
-    ctx.arc(ax, ay, 8, 0, Math.PI * 2);
-    ctx.fillStyle = 'rgba(251,146,60,0.1)';
-    ctx.fill();
-    ctx.globalAlpha = 1;
+    if (dotR > 0.2) {
+      ctx.globalAlpha = dotAlpha;
+      ctx.beginPath();
+      ctx.arc(ax, ay, dotR, 0, Math.PI * 2);
+      ctx.fillStyle = AGENT_COLOR;
+      ctx.fill();
+
+      // Halo
+      if (showHalo) {
+        const glowR = 14 + (1 - dotPulse) * 8;
+        ctx.beginPath();
+        ctx.arc(ax, ay, glowR, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(251,146,60,${0.08 + (1 - dotPulse) * 0.08})`;
+        ctx.fill();
+      }
+      ctx.globalAlpha = 1;
+    }
   }
 }
 
@@ -340,13 +407,13 @@ export function SyntheticMonorepoAnimation({ alwaysSynthetic = false }: { always
         ctx.lineWidth = 1.5;
         ctx.setLineDash([4, 3]);
         ctx.beginPath();
-        ctx.roundRect(25, 25, 260, 185, 8);
+        ctx.roundRect(70, 25, 220, 185, 8);
         ctx.stroke();
         ctx.setLineDash([]);
         ctx.font = '10px system-ui, sans-serif';
         ctx.textAlign = 'left';
         ctx.fillStyle = 'rgba(148,163,184,0.65)';
-        ctx.fillText('Monorepo A', 35, 42);
+        ctx.fillText('Monorepo A', 80, 42);
 
         // Monorepo B boundary
         ctx.setLineDash([4, 3]);
@@ -357,14 +424,6 @@ export function SyntheticMonorepoAnimation({ alwaysSynthetic = false }: { always
         ctx.setLineDash([]);
         ctx.textAlign = 'left';
         ctx.fillText('Monorepo B', 360, 46);
-
-        // Standalone repo sublabels
-        ctx.font = '8px system-ui, sans-serif';
-        ctx.textAlign = 'center';
-        ctx.fillStyle = 'rgba(148,163,184,0.55)';
-        for (const cube of STANDALONE_CUBES) {
-          ctx.fillText('standalone repo', cube.cx, cube.cy + cube.outerSize / 2 + 36);
-        }
 
         // Intra-monorepo connections
         ctx.strokeStyle = 'rgba(148,163,184,0.3)';
@@ -389,7 +448,9 @@ export function SyntheticMonorepoAnimation({ alwaysSynthetic = false }: { always
           ctx.moveTo(f.cx, f.cy);
           ctx.lineTo(tgt.cx, tgt.cy);
           ctx.stroke();
-          drawPulse(ctx, f.cx, f.cy, tgt.cx, tgt.cy, t, i * 0.5);
+          if (!alwaysSyntheticRef.current) {
+            drawPulse(ctx, f.cx, f.cy, tgt.cx, tgt.cy, t, i * 0.5);
+          }
         }
 
         // All expanded cubes
@@ -411,11 +472,13 @@ export function SyntheticMonorepoAnimation({ alwaysSynthetic = false }: { always
           }
         }
 
-        // Bottom label
-        ctx.font = 'bold 13px system-ui, sans-serif';
-        ctx.textAlign = 'center';
-        ctx.fillStyle = 'rgba(148,163,184,0.55)';
-        ctx.fillText('Synthetic Monorepo', CANVAS_W / 2, CANVAS_H - 22);
+        // Bottom label (outside boundary, only for alwaysSynthetic since toggle version has the toggle label)
+        if (alwaysSyntheticRef.current) {
+          ctx.font = 'bold 13px system-ui, sans-serif';
+          ctx.textAlign = 'center';
+          ctx.fillStyle = 'rgba(148,163,184,0.55)';
+          ctx.fillText('Synthetic Monorepo', CANVAS_W / 2, CANVAS_H - 10);
+        }
 
         // Agent fleet overlay (only in alwaysSynthetic mode)
         if (alwaysSyntheticRef.current) {
@@ -463,7 +526,7 @@ export function SyntheticMonorepoAnimation({ alwaysSynthetic = false }: { always
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.6 }}
     >
-      <div className="overflow-hidden rounded-lg border border-slate-200 bg-slate-900 shadow-lg dark:border-slate-700">
+      <div className={`overflow-hidden rounded-lg bg-slate-900 ${synthetic ? 'border border-dashed border-slate-400/40 dark:border-slate-500/30' : ''}`}>
         <div className="flex items-center justify-center">
           <canvas ref={canvasRef} className="block cursor-pointer" />
         </div>
