@@ -12,11 +12,11 @@ import { drawRotatingCube } from './rotating-cube';
 
 const AGENT_COLOR = '#FBBF24';
 const AGENT_GLOW = 'rgba(251,191,36,0.25)';
-const CONNECTION_COLOR = 'rgba(148,163,184,0.35)';
+const CONNECTION_COLOR = 'rgba(148,163,184,0.45)';
 const PULSE_OUT_COLOR = 'rgba(251,191,36,0.85)';
 const PULSE_IN_COLOR = 'rgba(52,211,153,0.85)';
-const CUBE_COLOR = 'rgba(148,163,184,0.45)';
-const INNER_COLOR = 'rgba(148,163,184,0.8)';
+const CUBE_COLOR = 'rgba(148,163,184,0.55)';
+const INNER_COLOR = 'rgba(148,163,184,0.9)';
 
 const CANVAS_W = 440;
 const CANVAS_H = 400;
@@ -192,10 +192,10 @@ export function AgentOrchestratorAnimation() {
       // Satellite labels
       ctx.font = '10px system-ui, sans-serif';
       ctx.textAlign = 'center';
-      ctx.fillStyle = 'rgba(148,163,184,0.7)';
+      ctx.fillStyle = 'rgba(148,163,184,0.85)';
       for (const sat of SATELLITES) {
         const pos = getSatellitePos(sat);
-        ctx.fillText(sat.label, pos.x, pos.y + sat.cubeSize / 2 + 22);
+        ctx.fillText(sat.label, pos.x, pos.y + sat.cubeSize / 2 + 32);
       }
 
       // Central AI agent: outer glow

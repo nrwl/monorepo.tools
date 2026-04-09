@@ -534,70 +534,70 @@ export function CiPipelineAnimation() {
 
   return (
     <div ref={viewRef}>
-      <canvas
-        ref={canvasRef}
-        className="h-72 w-full md:h-80"
-        style={{ display: 'block' }}
-      />
-
-      {/* Toggles close to animation */}
-      <div className="mt-4 flex flex-wrap items-center justify-center gap-8">
-        <label className="flex cursor-pointer items-center gap-2.5 text-[11px] uppercase tracking-[1.5px]">
+      {/* Toggles above animation */}
+      <div className="mb-4 flex flex-wrap items-center justify-center gap-8">
+        <label className="flex cursor-pointer items-center gap-3 text-xs uppercase tracking-[1.5px]">
           <button
             role="switch"
             aria-checked={dte}
             onClick={() => setDte(!dte)}
-            className={`relative inline-flex h-3.5 w-7 shrink-0 items-center rounded-full border transition-colors ${
+            className={`relative inline-flex h-5 w-10 shrink-0 items-center rounded-full border transition-colors ${
               dte
-                ? 'border-blue-400/50 bg-blue-500/20'
-                : 'border-slate-600 bg-slate-800'
+                ? 'border-blue-500 bg-blue-500/20 dark:border-blue-400/50'
+                : 'border-slate-300 bg-slate-200 dark:border-slate-600 dark:bg-slate-800'
             }`}
           >
             <span
-              className={`inline-block h-2 w-2 rounded-full transition-all ${
+              className={`inline-block h-3.5 w-3.5 rounded-full transition-all ${
                 dte
-                  ? 'translate-x-3.5 bg-blue-400'
-                  : 'translate-x-0.5 bg-slate-500'
+                  ? 'translate-x-5 bg-blue-500 dark:bg-blue-400'
+                  : 'translate-x-0.5 bg-slate-400 dark:bg-slate-500'
               }`}
             />
           </button>
           <span
             className={`transition-colors ${
-              dte ? 'text-slate-200' : 'text-slate-500'
+              dte ? 'text-slate-700 dark:text-slate-200' : 'text-slate-400 dark:text-slate-500'
             }`}
           >
             Distributed Task Execution
           </span>
         </label>
 
-        <label className="flex cursor-pointer items-center gap-2.5 text-[11px] uppercase tracking-[1.5px]">
+        <label className="flex cursor-pointer items-center gap-3 text-xs uppercase tracking-[1.5px]">
           <button
             role="switch"
             aria-checked={selfHeal}
             onClick={() => setSelfHeal(!selfHeal)}
-            className={`relative inline-flex h-3.5 w-7 shrink-0 items-center rounded-full border transition-colors ${
+            className={`relative inline-flex h-5 w-10 shrink-0 items-center rounded-full border transition-colors ${
               selfHeal
-                ? 'border-emerald-400/50 bg-emerald-500/20'
-                : 'border-slate-600 bg-slate-800'
+                ? 'border-emerald-500 bg-emerald-500/20 dark:border-emerald-400/50'
+                : 'border-slate-300 bg-slate-200 dark:border-slate-600 dark:bg-slate-800'
             }`}
           >
             <span
-              className={`inline-block h-2 w-2 rounded-full transition-all ${
+              className={`inline-block h-3.5 w-3.5 rounded-full transition-all ${
                 selfHeal
-                  ? 'translate-x-3.5 bg-emerald-400'
-                  : 'translate-x-0.5 bg-slate-500'
+                  ? 'translate-x-5 bg-emerald-500 dark:bg-emerald-400'
+                  : 'translate-x-0.5 bg-slate-400 dark:bg-slate-500'
               }`}
             />
           </button>
           <span
             className={`transition-colors ${
-              selfHeal ? 'text-slate-200' : 'text-slate-500'
+              selfHeal ? 'text-slate-700 dark:text-slate-200' : 'text-slate-400 dark:text-slate-500'
             }`}
           >
             Self-Healing PRs
           </span>
         </label>
       </div>
+
+      <canvas
+        ref={canvasRef}
+        className="h-72 w-full md:h-80"
+        style={{ display: 'block' }}
+      />
 
       {/* Description boxes */}
       <div className="mt-10 grid grid-cols-2 gap-6">

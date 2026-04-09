@@ -459,7 +459,7 @@ export function SyntheticMonorepoAnimation({ alwaysSynthetic = false }: { always
         // Cube labels (two-line)
         ctx.textAlign = 'center';
         for (const cube of ALL_CUBES) {
-          const baseY = cube.cy + cube.outerSize / 2 + 20;
+          const baseY = cube.cy + cube.outerSize / 2 + 30;
           ctx.font = 'bold 9px system-ui, sans-serif';
           ctx.fillStyle = 'rgba(148,163,184,0.9)';
           ctx.fillText(cube.label, cube.cx, baseY);
@@ -495,7 +495,7 @@ export function SyntheticMonorepoAnimation({ alwaysSynthetic = false }: { always
         // Labels
         ctx.textAlign = 'center';
         for (const cube of COLLAPSED_CUBES) {
-          const baseY = cube.cy + cube.outerSize / 2 + 28;
+          const baseY = cube.cy + cube.outerSize / 2 + 38;
           ctx.font = 'bold 10px system-ui, sans-serif';
           ctx.fillStyle = 'rgba(148,163,184,0.9)';
           ctx.fillText(cube.label, cube.cx, baseY);
@@ -528,28 +528,28 @@ export function SyntheticMonorepoAnimation({ alwaysSynthetic = false }: { always
       {/* Toggle */}
       {!alwaysSynthetic && (
         <div className="mb-4 flex items-center justify-center">
-          <label className="flex cursor-pointer items-center gap-2.5 text-[11px] uppercase tracking-[1.5px]">
+          <label className="flex cursor-pointer items-center gap-3 text-xs uppercase tracking-[1.5px]">
             <button
               role="switch"
               aria-checked={synthetic}
               onClick={() => setSynthetic(!synthetic)}
-              className={`relative inline-flex h-3.5 w-7 shrink-0 items-center rounded-full border transition-colors ${
+              className={`relative inline-flex h-5 w-10 shrink-0 items-center rounded-full border transition-colors ${
                 synthetic
-                  ? 'border-emerald-400/50 bg-emerald-500/20'
-                  : 'border-slate-600 bg-slate-800'
+                  ? 'border-emerald-500 bg-emerald-500/20 dark:border-emerald-400/50'
+                  : 'border-slate-300 bg-slate-200 dark:border-slate-600 dark:bg-slate-800'
               }`}
             >
               <span
-                className={`inline-block h-2 w-2 rounded-full transition-all ${
+                className={`inline-block h-3.5 w-3.5 rounded-full transition-all ${
                   synthetic
-                    ? 'translate-x-3.5 bg-emerald-400'
-                    : 'translate-x-0.5 bg-slate-500'
+                    ? 'translate-x-5 bg-emerald-500 dark:bg-emerald-400'
+                    : 'translate-x-0.5 bg-slate-400 dark:bg-slate-500'
                 }`}
               />
             </button>
             <span
               className={`transition-colors ${
-                synthetic ? 'text-slate-200' : 'text-slate-500'
+                synthetic ? 'text-slate-700 dark:text-slate-200' : 'text-slate-400 dark:text-slate-500'
               }`}
             >
               Synthetic Monorepo

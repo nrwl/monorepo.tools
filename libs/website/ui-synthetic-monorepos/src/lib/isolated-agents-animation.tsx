@@ -6,6 +6,8 @@ import { drawRotatingCube } from './rotating-cube';
 
 const CUBE_COLOR = 'rgba(71,85,105,0.95)';
 const INNER_COLOR = 'rgba(148,163,184,0.95)';
+const AGENT_COLOR = 'rgba(251,146,60,0.85)';
+const AGENT_GLOW = 'rgba(251,146,60,0.15)';
 
 interface CubeConfig {
   cx: number;
@@ -16,50 +18,28 @@ interface CubeConfig {
   angleOffset: number;
 }
 
-const COLS = 3;
-const ROWS = 2;
-const CANVAS_W = 560;
-const CANVAS_H = 420;
-const SPACING_X = CANVAS_W / (COLS + 1);
-const SPACING_Y = CANVAS_H / (ROWS + 1);
+const CANVAS_W = 620;
+const CANVAS_H = 500;
 
-const LABELS = [
-  'Monorepo A', 'Monorepo B', 'Mobile App',
-  'Shared Utilities', 'Design System', 'API',
+const CUBES: CubeConfig[] = [
+  { cx: 175, cy: 110, outerSize: 85, innerSize: 40, label: 'Monorepo A', angleOffset: 0.5 },
+  { cx: 455, cy: 85, outerSize: 80, innerSize: 38, label: 'Monorepo B', angleOffset: 2.8 },
+  { cx: 100, cy: 380, outerSize: 60, innerSize: 28, label: 'Mobile App', angleOffset: 0.8 },
+  { cx: 300, cy: 270, outerSize: 55, innerSize: 26, label: 'Shared Utilities', angleOffset: 3.9 },
+  { cx: 300, cy: 410, outerSize: 55, innerSize: 26, label: 'Design System', angleOffset: 5.2 },
+  { cx: 490, cy: 370, outerSize: 60, innerSize: 28, label: 'API', angleOffset: 1.7 },
 ];
 
-const OFFSETS = [0.5, 2.8, 0.8, 3.9, 5.2, 1.7];
-
-function buildCubes(): CubeConfig[] {
-  const cubes: CubeConfig[] = [];
-  for (let r = 0; r < ROWS; r++) {
-    for (let c = 0; c < COLS; c++) {
-      const idx = r * COLS + c;
-      cubes.push({
-        cx: SPACING_X * (c + 1),
-        cy: SPACING_Y * (r + 1),
-        outerSize: 70,
-        innerSize: 30,
-        label: LABELS[idx],
-        angleOffset: OFFSETS[idx],
-      });
-    }
-  }
-  return cubes;
-}
-
-const CUBES = buildCubes();
 const SPEED = 0.4;
-const HIT_RADIUS = 45;
+const HIT_RADIUS = 30;
 
-export function PolyrepoIslandsAnimation() {
+export function IsolatedAgentsAnimation() {
   const { ref, inView } = useInView(0.2);
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const animRef = useRef<number>(0);
   const hoveredRef = useRef<number>(-1);
-  // Track when each cube was paused and accumulated pause time
-  const pauseStartRef = useRef<(number | null)[]>(CUBES.map(() => null));
-  const pauseAccumRef = useRef<number[]>(CUBES.map(() => 0));
+  const pauseStartRef = useRef<(number | null)[]>(Array(CUBES.length).fill(null));
+  const pauseAccumRef = useRef<number[]>(Array(CUBES.length).fill(0));
 
   const handleMouseMove = useCallback((e: MouseEvent) => {
     const canvas = canvasRef.current;
@@ -74,23 +54,16 @@ export function PolyrepoIslandsAnimation() {
     for (let i = 0; i < CUBES.length; i++) {
       const dx = mx - CUBES[i].cx;
       const dy = my - CUBES[i].cy;
-      if (Math.sqrt(dx * dx + dy * dy) < HIT_RADIUS) {
-        found = i;
-        break;
-      }
+      if (Math.sqrt(dx * dx + dy * dy) < HIT_RADIUS) { found = i; break; }
     }
 
     const prev = hoveredRef.current;
     hoveredRef.current = found;
-
-    // Cube just became hovered: record pause start time
     if (found !== -1 && found !== prev) {
       pauseStartRef.current[found] = performance.now() / 1000;
     }
-    // Cube just became unhovered: accumulate paused duration
     if (prev !== -1 && prev !== found && pauseStartRef.current[prev] !== null) {
-      const now = performance.now() / 1000;
-      pauseAccumRef.current[prev] += now - pauseStartRef.current[prev]!;
+      pauseAccumRef.current[prev] += performance.now() / 1000 - pauseStartRef.current[prev]!;
       pauseStartRef.current[prev] = null;
     }
   }, []);
@@ -98,8 +71,7 @@ export function PolyrepoIslandsAnimation() {
   const handleMouseLeave = useCallback(() => {
     const prev = hoveredRef.current;
     if (prev !== -1 && pauseStartRef.current[prev] !== null) {
-      const now = performance.now() / 1000;
-      pauseAccumRef.current[prev] += now - pauseStartRef.current[prev]!;
+      pauseAccumRef.current[prev] += performance.now() / 1000 - pauseStartRef.current[prev]!;
       pauseStartRef.current[prev] = null;
     }
     hoveredRef.current = -1;
@@ -126,38 +98,65 @@ export function PolyrepoIslandsAnimation() {
       const t = time / 1000;
       ctx.clearRect(0, 0, CANVAS_W, CANVAS_H);
 
+      // Draw cubes
       for (let i = 0; i < CUBES.length; i++) {
         const cube = CUBES[i];
         const isHovered = hoveredRef.current === i;
-
-        // Subtract accumulated pause time (and current pause if hovered)
         let pauseTotal = pauseAccumRef.current[i];
         if (isHovered && pauseStartRef.current[i] !== null) {
           pauseTotal += t - pauseStartRef.current[i]!;
         }
-
         drawRotatingCube(ctx, t - pauseTotal, {
-          cx: cube.cx,
-          cy: cube.cy,
-          size: cube.outerSize,
-          innerSize: cube.innerSize,
-          color: CUBE_COLOR,
-          innerColor: INNER_COLOR,
-          speed: SPEED,
-          angleOffset: cube.angleOffset,
-          outerFillOpacity: 1.0,
-          innerFillOpacity: 0,
+          cx: cube.cx, cy: cube.cy,
+          size: cube.outerSize, innerSize: cube.innerSize,
+          color: CUBE_COLOR, innerColor: INNER_COLOR,
+          speed: SPEED, angleOffset: cube.angleOffset,
+          outerFillOpacity: 1.0, innerFillOpacity: 0,
           outerFaceFillColor: '#1e293b',
-          canvasWidth: CANVAS_W,
-          canvasHeight: CANVAS_H,
+          canvasWidth: CANVAS_W, canvasHeight: CANVAS_H,
         });
       }
 
-      ctx.font = '10px system-ui, sans-serif';
+      // Draw AI agent dot inside each cube
+      for (let i = 0; i < CUBES.length; i++) {
+        const cube = CUBES[i];
+        // Subtle floating motion per agent
+        const floatX = Math.sin(t * 0.8 + i * 1.3) * 3;
+        const floatY = Math.cos(t * 0.6 + i * 1.7) * 3;
+        const ax = cube.cx + floatX;
+        const ay = cube.cy + floatY;
+
+        // Pulsing glow
+        const pulse = 0.7 + 0.3 * Math.sin(t * 2 + i * 1.1);
+
+        // Outer glow
+        ctx.beginPath();
+        ctx.arc(ax, ay, 14, 0, Math.PI * 2);
+        ctx.fillStyle = AGENT_GLOW;
+        ctx.globalAlpha = pulse;
+        ctx.fill();
+
+        // Mid ring
+        ctx.beginPath();
+        ctx.arc(ax, ay, 9, 0, Math.PI * 2);
+        ctx.fillStyle = 'rgba(251,146,60,0.08)';
+        ctx.fill();
+
+        // Core dot
+        ctx.beginPath();
+        ctx.arc(ax, ay, 4, 0, Math.PI * 2);
+        ctx.fillStyle = AGENT_COLOR;
+        ctx.fill();
+        ctx.globalAlpha = 1;
+      }
+
+      // Labels
       ctx.textAlign = 'center';
-      ctx.fillStyle = 'rgba(148,163,184,0.85)';
       for (const cube of CUBES) {
-        ctx.fillText(cube.label, cube.cx, cube.cy + cube.outerSize / 2 + 32);
+        const baseY = cube.cy + cube.outerSize / 2 + 38;
+        ctx.font = 'bold 10px system-ui, sans-serif';
+        ctx.fillStyle = 'rgba(148,163,184,0.9)';
+        ctx.fillText(cube.label, cube.cx, baseY);
       }
 
       animRef.current = requestAnimationFrame(draw);
@@ -177,9 +176,12 @@ export function PolyrepoIslandsAnimation() {
       initial={{ opacity: 0, y: 20 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.6 }}
-      className="flex items-center justify-center overflow-hidden rounded-lg border border-slate-200 bg-slate-900 shadow-lg dark:border-slate-700"
     >
-      <canvas ref={canvasRef} className="block cursor-pointer" />
+      <div className="overflow-hidden rounded-lg bg-slate-900">
+        <div className="flex items-center justify-center">
+          <canvas ref={canvasRef} className="block cursor-pointer" />
+        </div>
+      </div>
     </motion.div>
   );
 }

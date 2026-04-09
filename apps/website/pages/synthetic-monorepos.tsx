@@ -4,6 +4,7 @@ import {
   PolyrepoReality,
   WhatSyntheticMonoreposProvide,
   HowItWorks,
+  AILocalOptimization,
   AIAgentsAcrossBoundaries,
   ClosingCTA,
 } from '@monorepo-tools/website/ui-synthetic-monorepos';
@@ -50,6 +51,8 @@ export function SyntheticMonoreposPage() {
         <WhatSyntheticMonoreposProvide />
 
         <HowItWorks />
+
+        <AILocalOptimization />
 
         <AIAgentsAcrossBoundaries />
 

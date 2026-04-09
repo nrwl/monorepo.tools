@@ -193,7 +193,7 @@ export function drawRotatingCube(
 
     ctx.strokeStyle = color;
     ctx.lineWidth = 1;
-    ctx.globalAlpha = opacity * 0.5;
+    ctx.globalAlpha = opacity * 0.65;
     for (const [a, b] of CUBE_EDGES) {
       ctx.beginPath();
       ctx.moveTo(outerProjected[a].x, outerProjected[a].y);
@@ -218,7 +218,7 @@ export function drawRotatingCube(
     // Inner cube: wireframe
     ctx.strokeStyle = innerColor;
     ctx.lineWidth = 1.5;
-    ctx.globalAlpha = opacity * 0.8;
+    ctx.globalAlpha = opacity * 0.9;
     for (const [a, b] of CUBE_EDGES) {
       ctx.beginPath();
       ctx.moveTo(innerProjected[a].x, innerProjected[a].y);

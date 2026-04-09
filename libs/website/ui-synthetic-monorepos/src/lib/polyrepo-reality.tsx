@@ -47,16 +47,6 @@ export function PolyrepoReality(): JSX.Element {
               become the &ldquo;human context bridge,&rdquo; manually
               transferring knowledge between sessions.
             </p>
-            <p className="mt-4 text-lg text-gray-700 dark:text-gray-300">
-              Agents operate at a{' '}
-              <mark className="rounded-md bg-yellow-500 px-1">
-                local maximum
-              </mark>{' '}
-              based on the information available in a single repo, missing
-              downstream impacts, shared types, and cross-project relationships.
-              Optimization stays within each island, never across your
-              organization as a whole.
-            </p>
           </div>
 
           <div className="mt-8 hidden md:block lg:mt-0">

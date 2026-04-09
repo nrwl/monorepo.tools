@@ -25,7 +25,7 @@ export function Introduction(): JSX.Element {
             <div>
               <h1
                 id="synthetic-monorepos"
-                className="group text-4xl font-extrabold tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white"
+                className="group whitespace-nowrap text-4xl font-extrabold tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white"
               >
                 Synthetic Monorepos
                 <a
@@ -39,18 +39,17 @@ export function Introduction(): JSX.Element {
               </h1>
               <p className="mt-6 max-w-3xl text-xl text-gray-700 dark:text-gray-300">
                 Sometimes migrating to a single monorepo isn&rsquo;t feasible.
-                Sometimes you already have multiple monorepos per team or
-                domain. Synthetic monorepos give you{' '}
+                You already have multiple repos per team or domain. Synthetic
+                monorepos give you{' '}
                 <mark className="rounded-md bg-yellow-500 px-1">
                   monorepo-level intelligence across existing repositories
                 </mark>{' '}
                 without moving code.
               </p>
-              <p className="mt-4 max-w-3xl text-lg text-gray-700 dark:text-gray-300">
-                For AI agents, every repository boundary is a wall they
-                can&rsquo;t see past. As long as your codebase is split into
-                islands, agents optimize locally within each one but never
-                across your organization as a whole.
+              <p className="mt-4 max-w-3xl text-xl text-gray-700 dark:text-gray-300">
+                For AI agents, that changes everything. Every repository
+                boundary is a wall they can&rsquo;t see past. Synthetic
+                monorepos tear down those walls.
               </p>
             </div>
             <div className="mt-16 lg:mt-0">
