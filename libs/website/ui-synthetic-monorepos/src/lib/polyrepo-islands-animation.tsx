@@ -2,10 +2,25 @@
 import { useEffect, useRef, useCallback } from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from './use-in-view';
+import { useIsDark } from './use-is-dark';
 import { drawRotatingCube } from './rotating-cube';
 
-const CUBE_COLOR = 'rgba(71,85,105,0.95)';
-const INNER_COLOR = 'rgba(148,163,184,0.95)';
+const COLORS = {
+  dark: {
+    cube: 'rgba(71,85,105,0.95)',
+    inner: 'rgba(148,163,184,0.95)',
+    faceFill: '#1e293b',
+    label: 'rgba(148,163,184,0.85)',
+    bg: 'bg-slate-900',
+  },
+  light: {
+    cube: 'rgba(71,85,105,0.5)',
+    inner: 'rgba(71,85,105,0.6)',
+    faceFill: '#e2e8f0',
+    label: 'rgba(51,65,85,0.8)',
+    bg: 'bg-slate-100',
+  },
+};
 
 interface CubeConfig {
   cx: number;
@@ -54,6 +69,7 @@ const HIT_RADIUS = 45;
 
 export function PolyrepoIslandsAnimation() {
   const { ref, inView } = useInView(0.2);
+  const isDark = useIsDark();
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const animRef = useRef<number>(0);
   const hoveredRef = useRef<number>(-1);
@@ -121,6 +137,8 @@ export function PolyrepoIslandsAnimation() {
     canvas.addEventListener('mousemove', handleMouseMove);
     canvas.addEventListener('mouseleave', handleMouseLeave);
 
+    const c = isDark ? COLORS.dark : COLORS.light;
+
     function draw(time: number) {
       if (!ctx) return;
       const t = time / 1000;
@@ -141,13 +159,13 @@ export function PolyrepoIslandsAnimation() {
           cy: cube.cy,
           size: cube.outerSize,
           innerSize: cube.innerSize,
-          color: CUBE_COLOR,
-          innerColor: INNER_COLOR,
+          color: c.cube,
+          innerColor: c.inner,
           speed: SPEED,
           angleOffset: cube.angleOffset,
           outerFillOpacity: 1.0,
           innerFillOpacity: 0,
-          outerFaceFillColor: '#1e293b',
+          outerFaceFillColor: c.faceFill,
           canvasWidth: CANVAS_W,
           canvasHeight: CANVAS_H,
         });
@@ -155,7 +173,7 @@ export function PolyrepoIslandsAnimation() {
 
       ctx.font = '10px system-ui, sans-serif';
       ctx.textAlign = 'center';
-      ctx.fillStyle = 'rgba(148,163,184,0.85)';
+      ctx.fillStyle = c.label;
       for (const cube of CUBES) {
         ctx.fillText(cube.label, cube.cx, cube.cy + cube.outerSize / 2 + 32);
       }
@@ -169,7 +187,7 @@ export function PolyrepoIslandsAnimation() {
       canvas.removeEventListener('mousemove', handleMouseMove);
       canvas.removeEventListener('mouseleave', handleMouseLeave);
     };
-  }, [inView, handleMouseMove, handleMouseLeave]);
+  }, [inView, isDark, handleMouseMove, handleMouseLeave]);
 
   return (
     <motion.div
@@ -177,7 +195,7 @@ export function PolyrepoIslandsAnimation() {
       initial={{ opacity: 0, y: 20 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.6 }}
-      className="flex items-center justify-center overflow-hidden rounded-lg border border-slate-200 bg-slate-900 shadow-lg dark:border-slate-700"
+      className="flex items-center justify-center overflow-hidden rounded-lg border border-slate-200 bg-slate-100 shadow-lg dark:border-slate-700 dark:bg-slate-900"
     >
       <canvas ref={canvasRef} className="block cursor-pointer" />
     </motion.div>

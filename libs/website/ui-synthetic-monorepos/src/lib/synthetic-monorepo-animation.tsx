@@ -2,16 +2,57 @@
 import { useEffect, useRef, useCallback, useState } from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from './use-in-view';
+import { useIsDark } from './use-is-dark';
 import { drawRotatingCube } from './rotating-cube';
 
-const CUBE_COLOR_OFF = 'rgba(148,163,184,0.55)';
-const CUBE_COLOR_ON = 'rgba(52,211,153,0.45)';
-const INNER_COLOR = 'rgba(148,163,184,0.9)';
-const INNER_COLOR_OPAQUE = 'rgba(148,163,184,0.95)';
-const CONNECTION_COLOR = 'rgba(100,160,200,0.55)';
-const PULSE_COLOR = 'rgba(251,191,36,0.9)';
-const MONO_BORDER_COLOR = 'rgba(148,163,184,0.4)';
-const OUTER_BORDER_COLOR = 'rgba(148,163,184,0.3)';
+const THEME = {
+  dark: {
+    cubeOff: 'rgba(148,163,184,0.55)',
+    cubeOn: 'rgba(52,211,153,0.45)',
+    inner: 'rgba(148,163,184,0.9)',
+    innerOpaque: 'rgba(148,163,184,0.95)',
+    faceFill: '#1e293b',
+    connection: 'rgba(100,160,200,0.55)',
+    pulse: 'rgba(251,191,36,0.9)',
+    monoBorder: 'rgba(148,163,184,0.4)',
+    outerBorder: 'rgba(148,163,184,0.3)',
+    label: 'rgba(148,163,184,0.9)',
+    sublabel: 'rgba(148,163,184,0.65)',
+    monoLabel: 'rgba(148,163,184,0.6)',
+    syntheticLabel: 'rgba(148,163,184,0.7)',
+    coordinator: 'rgba(251,146,60,0.9)',
+    coordinatorGlow: 'rgba(251,146,60,0.15)',
+    coordinatorMid: 'rgba(251,146,60,0.08)',
+    coordinatorLabel: 'rgba(251,146,60,0.8)',
+    agent: 'rgba(251,146,60,0.85)',
+    agentRgb: '251,146,60',
+    agentLine: 'rgba(251,146,60,0.3)',
+    agentLineActive: 'rgba(251,146,60,0.45)',
+  },
+  light: {
+    cubeOff: 'rgba(71,85,105,0.5)',
+    cubeOn: 'rgba(16,185,129,0.5)',
+    inner: 'rgba(71,85,105,0.6)',
+    innerOpaque: 'rgba(71,85,105,0.7)',
+    faceFill: '#e2e8f0',
+    connection: 'rgba(59,130,246,0.45)',
+    pulse: 'rgba(217,119,6,0.9)',
+    monoBorder: 'rgba(71,85,105,0.35)',
+    outerBorder: 'rgba(71,85,105,0.25)',
+    label: 'rgba(51,65,85,0.8)',
+    sublabel: 'rgba(51,65,85,0.55)',
+    monoLabel: 'rgba(51,65,85,0.6)',
+    syntheticLabel: 'rgba(51,65,85,0.7)',
+    coordinator: 'rgba(234,88,12,0.9)',
+    coordinatorGlow: 'rgba(234,88,12,0.2)',
+    coordinatorMid: 'rgba(234,88,12,0.1)',
+    coordinatorLabel: 'rgba(146,64,14,0.9)',
+    agent: 'rgba(234,88,12,0.85)',
+    agentRgb: '234,88,12',
+    agentLine: 'rgba(234,88,12,0.3)',
+    agentLineActive: 'rgba(234,88,12,0.45)',
+  },
+};
 
 interface CubeConfig {
   cx: number;
@@ -95,11 +136,7 @@ const RETURN_END = 9.8;      // fly back toward coordinator
 const ABSORB_END = 10.5;     // shrink into coordinator
 const AGENT_CYCLE = 11.5;    // pause before restart
 
-const COORDINATOR_COLOR = 'rgba(251,146,60,0.9)';
-const COORDINATOR_GLOW = 'rgba(251,146,60,0.15)';
-const AGENT_COLOR = 'rgba(251,146,60,0.85)';
-const AGENT_LINE_COLOR = 'rgba(251,146,60,0.3)';
-const AGENT_LINE_ACTIVE_COLOR = 'rgba(251,146,60,0.45)';
+type ThemeColors = typeof THEME.dark;
 
 function easeInOutCubic(t: number): number {
   return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
@@ -121,25 +158,25 @@ function getRestPos(i: number): { x: number; y: number } {
   };
 }
 
-function drawAgentFleet(ctx: CanvasRenderingContext2D, t: number) {
+function drawAgentFleet(ctx: CanvasRenderingContext2D, t: number, c: ThemeColors) {
   const phase = t % AGENT_CYCLE;
 
   // Draw coordinator (always visible)
   ctx.beginPath();
   ctx.arc(COORDINATOR.cx, COORDINATOR.cy, 28, 0, Math.PI * 2);
-  ctx.fillStyle = COORDINATOR_GLOW;
+  ctx.fillStyle = c.coordinatorGlow;
   ctx.fill();
   ctx.beginPath();
   ctx.arc(COORDINATOR.cx, COORDINATOR.cy, 18, 0, Math.PI * 2);
-  ctx.fillStyle = 'rgba(251,146,60,0.08)';
+  ctx.fillStyle = c.coordinatorMid;
   ctx.fill();
   ctx.beginPath();
   ctx.arc(COORDINATOR.cx, COORDINATOR.cy, 8, 0, Math.PI * 2);
-  ctx.fillStyle = COORDINATOR_COLOR;
+  ctx.fillStyle = c.coordinator;
   ctx.fill();
   ctx.font = 'bold 9px system-ui, sans-serif';
   ctx.textAlign = 'center';
-  ctx.fillStyle = 'rgba(251,146,60,0.8)';
+  ctx.fillStyle = c.coordinatorLabel;
   ctx.fillText('Polygraph AI', COORDINATOR.cx, COORDINATOR.cy + 38);
 
   // Expanding ring during spread phase
@@ -149,7 +186,7 @@ function drawAgentFleet(ctx: CanvasRenderingContext2D, t: number) {
     const ringAlpha = Math.max(0, 0.25 * (1 - ringP));
     ctx.beginPath();
     ctx.arc(COORDINATOR.cx, COORDINATOR.cy, ringR, 0, Math.PI * 2);
-    ctx.strokeStyle = `rgba(251,146,60,${ringAlpha})`;
+    ctx.strokeStyle = `rgba(${c.agentRgb},${ringAlpha})`;
     ctx.lineWidth = 1.5;
     ctx.stroke();
   }
@@ -186,13 +223,13 @@ function drawAgentFleet(ctx: CanvasRenderingContext2D, t: number) {
       ctx.beginPath();
       ctx.moveTo(COORDINATOR.cx, COORDINATOR.cy);
       ctx.lineTo(ax, ay);
-      ctx.strokeStyle = `rgba(251,146,60,${0.3 * p})`;
+      ctx.strokeStyle = `rgba(${c.agentRgb},${0.3 * p})`;
       ctx.lineWidth = 1.5;
       ctx.stroke();
       // Halo fades in
       ctx.beginPath();
       ctx.arc(ax, ay, 12, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(251,146,60,${0.1 * p})`;
+      ctx.fillStyle = `rgba(${c.agentRgb},${0.1 * p})`;
       ctx.fill();
     } else if (phase < SPREAD_END) {
       // Spread: fly from rest to target
@@ -224,7 +261,7 @@ function drawAgentFleet(ctx: CanvasRenderingContext2D, t: number) {
         ctx.beginPath();
         ctx.moveTo(COORDINATOR.cx, COORDINATOR.cy);
         ctx.lineTo(ax, ay);
-        ctx.strokeStyle = `rgba(251,146,60,${lineAlpha})`;
+        ctx.strokeStyle = `rgba(${c.agentRgb},${lineAlpha})`;
         ctx.lineWidth = 1.5;
         ctx.stroke();
       }
@@ -246,7 +283,7 @@ function drawAgentFleet(ctx: CanvasRenderingContext2D, t: number) {
       ctx.beginPath();
       ctx.moveTo(COORDINATOR.cx, COORDINATOR.cy);
       ctx.lineTo(ax, ay);
-      ctx.strokeStyle = phase >= SPREAD_END ? AGENT_LINE_ACTIVE_COLOR : AGENT_LINE_COLOR;
+      ctx.strokeStyle = phase >= SPREAD_END ? c.agentLineActive : c.agentLine;
       ctx.lineWidth = 1.5;
       ctx.stroke();
     }
@@ -256,7 +293,7 @@ function drawAgentFleet(ctx: CanvasRenderingContext2D, t: number) {
       ctx.globalAlpha = dotAlpha;
       ctx.beginPath();
       ctx.arc(ax, ay, dotR, 0, Math.PI * 2);
-      ctx.fillStyle = AGENT_COLOR;
+      ctx.fillStyle = c.agent;
       ctx.fill();
 
       // Halo
@@ -264,7 +301,7 @@ function drawAgentFleet(ctx: CanvasRenderingContext2D, t: number) {
         const glowR = 14 + (1 - dotPulse) * 8;
         ctx.beginPath();
         ctx.arc(ax, ay, glowR, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(251,146,60,${0.08 + (1 - dotPulse) * 0.08})`;
+        ctx.fillStyle = `rgba(${c.agentRgb},${0.08 + (1 - dotPulse) * 0.08})`;
         ctx.fill();
       }
       ctx.globalAlpha = 1;
@@ -278,7 +315,7 @@ const HIT_RADIUS = 30;
 function drawPulse(
   ctx: CanvasRenderingContext2D,
   x1: number, y1: number, x2: number, y2: number,
-  t: number, offset: number
+  t: number, offset: number, pulseColor: string
 ) {
   const progress = ((t * 0.25 + offset) % 1.8) - 0.4;
   if (progress < 0 || progress > 1) return;
@@ -287,7 +324,7 @@ function drawPulse(
   const alpha = progress < 0.15 ? progress / 0.15 : progress > 0.85 ? (1 - progress) / 0.15 : 1;
   ctx.beginPath();
   ctx.arc(px, py, 3, 0, Math.PI * 2);
-  ctx.fillStyle = PULSE_COLOR;
+  ctx.fillStyle = pulseColor;
   ctx.globalAlpha = alpha * 0.8;
   ctx.fill();
   ctx.globalAlpha = 1;
@@ -295,6 +332,7 @@ function drawPulse(
 
 export function SyntheticMonorepoAnimation({ alwaysSynthetic = false }: { alwaysSynthetic?: boolean } = {}) {
   const { ref, inView } = useInView(0.2);
+  const isDark = useIsDark();
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const animRef = useRef<number>(0);
   const hoveredRef = useRef<number>(-1);
@@ -362,6 +400,8 @@ export function SyntheticMonorepoAnimation({ alwaysSynthetic = false }: { always
     canvas.addEventListener('mousemove', handleMouseMove);
     canvas.addEventListener('mouseleave', handleMouseLeave);
 
+    const c = isDark ? THEME.dark : THEME.light;
+
     function drawCubeWithPause(
       ctx: CanvasRenderingContext2D,
       t: number,
@@ -401,7 +441,7 @@ export function SyntheticMonorepoAnimation({ alwaysSynthetic = false }: { always
         // === SYNTHETIC ON: expanded view ===
 
         // Monorepo A boundary
-        ctx.strokeStyle = MONO_BORDER_COLOR;
+        ctx.strokeStyle = c.monoBorder;
         ctx.lineWidth = 1.5;
         ctx.setLineDash([4, 3]);
         ctx.beginPath();
@@ -410,12 +450,12 @@ export function SyntheticMonorepoAnimation({ alwaysSynthetic = false }: { always
         ctx.setLineDash([]);
         ctx.font = '10px system-ui, sans-serif';
         ctx.textAlign = 'left';
-        ctx.fillStyle = 'rgba(148,163,184,0.65)';
+        ctx.fillStyle = c.monoLabel;
         ctx.fillText('Monorepo A', 80, 42);
 
         // Monorepo B boundary
         ctx.setLineDash([4, 3]);
-        ctx.strokeStyle = MONO_BORDER_COLOR;
+        ctx.strokeStyle = c.monoBorder;
         ctx.beginPath();
         ctx.roundRect(350, 30, 210, 120, 8);
         ctx.stroke();
@@ -424,7 +464,7 @@ export function SyntheticMonorepoAnimation({ alwaysSynthetic = false }: { always
         ctx.fillText('Monorepo B', 360, 46);
 
         // Intra-monorepo connections
-        ctx.strokeStyle = 'rgba(148,163,184,0.3)';
+        ctx.strokeStyle = c.outerBorder;
         ctx.lineWidth = 1;
         for (const edge of INTRA_EDGES) {
           const f = ALL_CUBES[edge.from];
@@ -440,20 +480,20 @@ export function SyntheticMonorepoAnimation({ alwaysSynthetic = false }: { always
           const conn = CROSS_CONNECTIONS[i];
           const f = ALL_CUBES[conn.from];
           const tgt = ALL_CUBES[conn.to];
-          ctx.strokeStyle = CONNECTION_COLOR;
+          ctx.strokeStyle = c.connection;
           ctx.lineWidth = 1.5;
           ctx.beginPath();
           ctx.moveTo(f.cx, f.cy);
           ctx.lineTo(tgt.cx, tgt.cy);
           ctx.stroke();
           if (!alwaysSyntheticRef.current) {
-            drawPulse(ctx, f.cx, f.cy, tgt.cx, tgt.cy, t, i * 0.5);
+            drawPulse(ctx, f.cx, f.cy, tgt.cx, tgt.cy, t, i * 0.5, c.pulse);
           }
         }
 
         // All expanded cubes
         for (let i = 0; i < ALL_CUBES.length; i++) {
-          drawCubeWithPause(ctx, t, i, ALL_CUBES[i], CUBE_COLOR_ON, INNER_COLOR);
+          drawCubeWithPause(ctx, t, i, ALL_CUBES[i], c.cubeOn, c.inner);
         }
 
         // Cube labels (two-line)
@@ -461,11 +501,11 @@ export function SyntheticMonorepoAnimation({ alwaysSynthetic = false }: { always
         for (const cube of ALL_CUBES) {
           const baseY = cube.cy + cube.outerSize / 2 + 30;
           ctx.font = 'bold 9px system-ui, sans-serif';
-          ctx.fillStyle = 'rgba(148,163,184,0.9)';
+          ctx.fillStyle = c.label;
           ctx.fillText(cube.label, cube.cx, baseY);
           if (cube.sublabel) {
             ctx.font = '8px system-ui, sans-serif';
-            ctx.fillStyle = 'rgba(148,163,184,0.65)';
+            ctx.fillStyle = c.sublabel;
             ctx.fillText(cube.sublabel, cube.cx, baseY + 11);
           }
         }
@@ -474,14 +514,14 @@ export function SyntheticMonorepoAnimation({ alwaysSynthetic = false }: { always
         if (alwaysSyntheticRef.current) {
           ctx.font = 'bold 13px system-ui, sans-serif';
           ctx.textAlign = 'center';
-          ctx.fillStyle = 'rgba(148,163,184,0.55)';
+          ctx.fillStyle = c.syntheticLabel;
           ctx.fillText('Synthetic Monorepo', CANVAS_W / 2, CANVAS_H - 10);
         }
 
         // Agent fleet overlay (only in alwaysSynthetic mode)
         if (alwaysSyntheticRef.current) {
           if (fleetStartRef.current === null) fleetStartRef.current = t;
-          drawAgentFleet(ctx, t - fleetStartRef.current);
+          drawAgentFleet(ctx, t - fleetStartRef.current, c);
         }
 
       } else {
@@ -489,7 +529,7 @@ export function SyntheticMonorepoAnimation({ alwaysSynthetic = false }: { always
 
         // Draw collapsed cubes (fully opaque dark faces, no inner cube, subtle edge highlight)
         for (let i = 0; i < COLLAPSED_CUBES.length; i++) {
-          drawCubeWithPause(ctx, t, i, COLLAPSED_CUBES[i], 'rgba(71,85,105,0.95)', INNER_COLOR_OPAQUE, 1.0, 0, '#1e293b');
+          drawCubeWithPause(ctx, t, i, COLLAPSED_CUBES[i], c.cubeOff, c.innerOpaque, 1.0, 0, c.faceFill);
         }
 
         // Labels
@@ -497,11 +537,11 @@ export function SyntheticMonorepoAnimation({ alwaysSynthetic = false }: { always
         for (const cube of COLLAPSED_CUBES) {
           const baseY = cube.cy + cube.outerSize / 2 + 38;
           ctx.font = 'bold 10px system-ui, sans-serif';
-          ctx.fillStyle = 'rgba(148,163,184,0.9)';
+          ctx.fillStyle = c.label;
           ctx.fillText(cube.label, cube.cx, baseY);
           if (cube.sublabel) {
             ctx.font = '9px system-ui, sans-serif';
-            ctx.fillStyle = 'rgba(148,163,184,0.65)';
+            ctx.fillStyle = c.sublabel;
             ctx.fillText(cube.sublabel, cube.cx, baseY + 12);
           }
         }
@@ -516,7 +556,7 @@ export function SyntheticMonorepoAnimation({ alwaysSynthetic = false }: { always
       canvas.removeEventListener('mousemove', handleMouseMove);
       canvas.removeEventListener('mouseleave', handleMouseLeave);
     };
-  }, [inView, handleMouseMove, handleMouseLeave]);
+  }, [inView, isDark, handleMouseMove, handleMouseLeave]);
 
   return (
     <motion.div
@@ -558,7 +598,7 @@ export function SyntheticMonorepoAnimation({ alwaysSynthetic = false }: { always
         </div>
       )}
 
-      <div className={`overflow-hidden bg-slate-900 ${synthetic ? 'rounded-lg border border-dashed border-slate-400/40 dark:border-slate-500/30' : 'rounded-lg'}`}>
+      <div className={`overflow-hidden bg-slate-100 dark:bg-slate-900 ${synthetic ? 'rounded-lg border border-dashed border-slate-400/40 dark:border-slate-500/30' : 'rounded-lg'}`}>
         <div className="flex items-center justify-center">
           <canvas ref={canvasRef} className="block cursor-pointer" />
         </div>

@@ -2,6 +2,7 @@
 import { useEffect, useRef, useCallback } from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from './use-in-view';
+import { useIsDark } from './use-is-dark';
 import { drawRotatingCube } from './rotating-cube';
 
 /*
@@ -10,13 +11,32 @@ import { drawRotatingCube } from './rotating-cube';
  * the lines representing context flowing between coordinator and per-repo agents.
  */
 
-const AGENT_COLOR = '#FBBF24';
-const AGENT_GLOW = 'rgba(251,191,36,0.25)';
-const CONNECTION_COLOR = 'rgba(148,163,184,0.45)';
-const PULSE_OUT_COLOR = 'rgba(251,191,36,0.85)';
-const PULSE_IN_COLOR = 'rgba(52,211,153,0.85)';
-const CUBE_COLOR = 'rgba(148,163,184,0.55)';
-const INNER_COLOR = 'rgba(148,163,184,0.9)';
+const COLORS = {
+  dark: {
+    agent: '#FBBF24',
+    agentGlow: 'rgba(251,191,36,0.25)',
+    agentInner: '#92400E',
+    agentLabel: 'rgba(251,191,36,0.9)',
+    connection: 'rgba(148,163,184,0.45)',
+    pulseOut: 'rgba(251,191,36,0.85)',
+    pulseIn: 'rgba(52,211,153,0.85)',
+    cube: 'rgba(148,163,184,0.55)',
+    inner: 'rgba(148,163,184,0.9)',
+    label: 'rgba(148,163,184,0.85)',
+  },
+  light: {
+    agent: '#D97706',
+    agentGlow: 'rgba(217,119,6,0.2)',
+    agentInner: '#92400E',
+    agentLabel: 'rgba(146,64,14,0.9)',
+    connection: 'rgba(71,85,105,0.35)',
+    pulseOut: 'rgba(217,119,6,0.85)',
+    pulseIn: 'rgba(16,185,129,0.85)',
+    cube: 'rgba(71,85,105,0.5)',
+    inner: 'rgba(71,85,105,0.6)',
+    label: 'rgba(51,65,85,0.8)',
+  },
+};
 
 const CANVAS_W = 440;
 const CANVAS_H = 400;
@@ -86,6 +106,7 @@ const HIT_RADIUS = 38;
 
 export function AgentOrchestratorAnimation() {
   const { ref, inView } = useInView(0.2);
+  const isDark = useIsDark();
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const animRef = useRef<number>(0);
   const hoveredRef = useRef<number>(-1);
@@ -145,13 +166,15 @@ export function AgentOrchestratorAnimation() {
     canvas.addEventListener('mousemove', handleMouseMove);
     canvas.addEventListener('mouseleave', handleMouseLeave);
 
+    const c = isDark ? COLORS.dark : COLORS.light;
+
     function draw(time: number) {
       if (!ctx) return;
       const t = time / 1000;
       ctx.clearRect(0, 0, CANVAS_W, CANVAS_H);
 
       // Connection lines
-      ctx.strokeStyle = CONNECTION_COLOR;
+      ctx.strokeStyle = c.connection;
       ctx.lineWidth = 1.5;
       ctx.setLineDash([6, 4]);
       for (const sat of SATELLITES) {
@@ -166,8 +189,8 @@ export function AgentOrchestratorAnimation() {
       // Pulses
       for (let i = 0; i < SATELLITES.length; i++) {
         const pos = getSatellitePos(SATELLITES[i]);
-        drawPulseAlongLine(ctx, CENTER_X, CENTER_Y, pos.x, pos.y, t, i * 0.36, PULSE_OUT_COLOR, false);
-        drawPulseAlongLine(ctx, CENTER_X, CENTER_Y, pos.x, pos.y, t, i * 0.36 + 0.9, PULSE_IN_COLOR, true);
+        drawPulseAlongLine(ctx, CENTER_X, CENTER_Y, pos.x, pos.y, t, i * 0.36, c.pulseOut, false);
+        drawPulseAlongLine(ctx, CENTER_X, CENTER_Y, pos.x, pos.y, t, i * 0.36 + 0.9, c.pulseIn, true);
       }
 
       // Satellite cubes
@@ -183,7 +206,7 @@ export function AgentOrchestratorAnimation() {
         drawRotatingCube(ctx, t - pauseTotal, {
           cx: pos.x, cy: pos.y,
           size: sat.cubeSize, innerSize: sat.innerSize,
-          color: CUBE_COLOR, innerColor: INNER_COLOR,
+          color: c.cube, innerColor: c.inner,
           speed: SPEED, angleOffset: sat.angleOffset,
           canvasWidth: CANVAS_W, canvasHeight: CANVAS_H,
         });
@@ -192,7 +215,7 @@ export function AgentOrchestratorAnimation() {
       // Satellite labels
       ctx.font = '10px system-ui, sans-serif';
       ctx.textAlign = 'center';
-      ctx.fillStyle = 'rgba(148,163,184,0.85)';
+      ctx.fillStyle = c.label;
       for (const sat of SATELLITES) {
         const pos = getSatellitePos(sat);
         ctx.fillText(sat.label, pos.x, pos.y + sat.cubeSize / 2 + 32);
@@ -202,7 +225,7 @@ export function AgentOrchestratorAnimation() {
       const glowR = 30 + Math.sin(t * 1.5) * 4;
       ctx.beginPath();
       ctx.arc(CENTER_X, CENTER_Y, glowR, 0, Math.PI * 2);
-      ctx.fillStyle = AGENT_GLOW;
+      ctx.fillStyle = c.agentGlow;
       ctx.globalAlpha = 0.3 + Math.sin(t * 1.5) * 0.1;
       ctx.fill();
       ctx.globalAlpha = 1;
@@ -211,7 +234,7 @@ export function AgentOrchestratorAnimation() {
       const mainR = 19 + Math.sin(t * 2) * 2;
       ctx.beginPath();
       ctx.arc(CENTER_X, CENTER_Y, mainR, 0, Math.PI * 2);
-      ctx.fillStyle = AGENT_COLOR;
+      ctx.fillStyle = c.agent;
       ctx.globalAlpha = 0.9;
       ctx.fill();
       ctx.globalAlpha = 1;
@@ -219,13 +242,13 @@ export function AgentOrchestratorAnimation() {
       // Inner dot
       ctx.beginPath();
       ctx.arc(CENTER_X, CENTER_Y, 7, 0, Math.PI * 2);
-      ctx.fillStyle = '#92400E';
+      ctx.fillStyle = c.agentInner;
       ctx.fill();
 
       // Label
       ctx.font = 'bold 11px system-ui, sans-serif';
       ctx.textAlign = 'center';
-      ctx.fillStyle = 'rgba(251,191,36,0.9)';
+      ctx.fillStyle = c.agentLabel;
       ctx.fillText('AI Coordinator', CENTER_X, CENTER_Y + glowR + 16);
 
       animRef.current = requestAnimationFrame(draw);
@@ -237,7 +260,7 @@ export function AgentOrchestratorAnimation() {
       canvas.removeEventListener('mousemove', handleMouseMove);
       canvas.removeEventListener('mouseleave', handleMouseLeave);
     };
-  }, [inView, handleMouseMove, handleMouseLeave]);
+  }, [inView, isDark, handleMouseMove, handleMouseLeave]);
 
   return (
     <motion.div
@@ -245,7 +268,7 @@ export function AgentOrchestratorAnimation() {
       initial={{ opacity: 0, y: 20 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.6 }}
-      className="flex items-center justify-center overflow-hidden rounded-lg border border-slate-200 bg-slate-900 shadow-lg dark:border-slate-700"
+      className="flex items-center justify-center overflow-hidden rounded-lg border border-slate-200 bg-slate-100 shadow-lg dark:border-slate-700 dark:bg-slate-900"
     >
       <canvas ref={canvasRef} className="block cursor-pointer" />
     </motion.div>

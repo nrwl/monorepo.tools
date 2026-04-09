@@ -2,12 +2,29 @@
 import { useEffect, useRef, useCallback } from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from './use-in-view';
+import { useIsDark } from './use-is-dark';
 import { drawRotatingCube } from './rotating-cube';
 
-const CUBE_COLOR = 'rgba(71,85,105,0.95)';
-const INNER_COLOR = 'rgba(148,163,184,0.95)';
-const AGENT_COLOR = 'rgba(251,146,60,0.85)';
-const AGENT_GLOW = 'rgba(251,146,60,0.15)';
+const COLORS = {
+  dark: {
+    cube: 'rgba(71,85,105,0.95)',
+    inner: 'rgba(148,163,184,0.95)',
+    faceFill: '#1e293b',
+    label: 'rgba(148,163,184,0.9)',
+    agent: 'rgba(251,146,60,0.85)',
+    agentGlow: 'rgba(251,146,60,0.15)',
+    agentMid: 'rgba(251,146,60,0.08)',
+  },
+  light: {
+    cube: 'rgba(71,85,105,0.5)',
+    inner: 'rgba(71,85,105,0.6)',
+    faceFill: '#e2e8f0',
+    label: 'rgba(51,65,85,0.8)',
+    agent: 'rgba(234,88,12,0.9)',
+    agentGlow: 'rgba(234,88,12,0.2)',
+    agentMid: 'rgba(234,88,12,0.1)',
+  },
+};
 
 interface CubeConfig {
   cx: number;
@@ -35,6 +52,7 @@ const HIT_RADIUS = 30;
 
 export function IsolatedAgentsAnimation() {
   const { ref, inView } = useInView(0.2);
+  const isDark = useIsDark();
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const animRef = useRef<number>(0);
   const hoveredRef = useRef<number>(-1);
@@ -93,6 +111,8 @@ export function IsolatedAgentsAnimation() {
     canvas.addEventListener('mousemove', handleMouseMove);
     canvas.addEventListener('mouseleave', handleMouseLeave);
 
+    const c = isDark ? COLORS.dark : COLORS.light;
+
     function draw(time: number) {
       if (!ctx) return;
       const t = time / 1000;
@@ -109,10 +129,10 @@ export function IsolatedAgentsAnimation() {
         drawRotatingCube(ctx, t - pauseTotal, {
           cx: cube.cx, cy: cube.cy,
           size: cube.outerSize, innerSize: cube.innerSize,
-          color: CUBE_COLOR, innerColor: INNER_COLOR,
+          color: c.cube, innerColor: c.inner,
           speed: SPEED, angleOffset: cube.angleOffset,
           outerFillOpacity: 1.0, innerFillOpacity: 0,
-          outerFaceFillColor: '#1e293b',
+          outerFaceFillColor: c.faceFill,
           canvasWidth: CANVAS_W, canvasHeight: CANVAS_H,
         });
       }
@@ -120,32 +140,27 @@ export function IsolatedAgentsAnimation() {
       // Draw AI agent dot inside each cube
       for (let i = 0; i < CUBES.length; i++) {
         const cube = CUBES[i];
-        // Subtle floating motion per agent
         const floatX = Math.sin(t * 0.8 + i * 1.3) * 3;
         const floatY = Math.cos(t * 0.6 + i * 1.7) * 3;
         const ax = cube.cx + floatX;
         const ay = cube.cy + floatY;
 
-        // Pulsing glow
         const pulse = 0.7 + 0.3 * Math.sin(t * 2 + i * 1.1);
 
-        // Outer glow
         ctx.beginPath();
         ctx.arc(ax, ay, 14, 0, Math.PI * 2);
-        ctx.fillStyle = AGENT_GLOW;
+        ctx.fillStyle = c.agentGlow;
         ctx.globalAlpha = pulse;
         ctx.fill();
 
-        // Mid ring
         ctx.beginPath();
         ctx.arc(ax, ay, 9, 0, Math.PI * 2);
-        ctx.fillStyle = 'rgba(251,146,60,0.08)';
+        ctx.fillStyle = c.agentMid;
         ctx.fill();
 
-        // Core dot
         ctx.beginPath();
         ctx.arc(ax, ay, 4, 0, Math.PI * 2);
-        ctx.fillStyle = AGENT_COLOR;
+        ctx.fillStyle = c.agent;
         ctx.fill();
         ctx.globalAlpha = 1;
       }
@@ -155,7 +170,7 @@ export function IsolatedAgentsAnimation() {
       for (const cube of CUBES) {
         const baseY = cube.cy + cube.outerSize / 2 + 38;
         ctx.font = 'bold 10px system-ui, sans-serif';
-        ctx.fillStyle = 'rgba(148,163,184,0.9)';
+        ctx.fillStyle = c.label;
         ctx.fillText(cube.label, cube.cx, baseY);
       }
 
@@ -168,7 +183,7 @@ export function IsolatedAgentsAnimation() {
       canvas.removeEventListener('mousemove', handleMouseMove);
       canvas.removeEventListener('mouseleave', handleMouseLeave);
     };
-  }, [inView, handleMouseMove, handleMouseLeave]);
+  }, [inView, isDark, handleMouseMove, handleMouseLeave]);
 
   return (
     <motion.div
@@ -177,7 +192,7 @@ export function IsolatedAgentsAnimation() {
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.6 }}
     >
-      <div className="overflow-hidden rounded-lg bg-slate-900">
+      <div className="overflow-hidden rounded-lg bg-slate-100 dark:bg-slate-900">
         <div className="flex items-center justify-center">
           <canvas ref={canvasRef} className="block cursor-pointer" />
         </div>
