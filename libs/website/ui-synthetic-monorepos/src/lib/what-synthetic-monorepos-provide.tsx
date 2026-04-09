@@ -6,12 +6,12 @@ const pillars = [
   {
     title: 'Cross-repo dependency graph',
     detail:
-      'Automatically maps how repositories connect. Which repo depends on which, what a change affects downstream, how projects relate across teams. AI agents get a "map" instead of tunnel vision.',
+      'The backbone of a synthetic monorepo. Automatically maps how repositories connect: which repo depends on which, what a change affects downstream, and how projects relate across teams.',
   },
   {
     title: 'Governance across boundaries',
     detail:
-      'Conformance rules, impact analysis, and coordinated changes that work across all your repos. Platform teams no longer have to manually catalog and cross-reference dozens of repositories to enforce standards.',
+      'With the graph in place, platform teams can assess the state of any repo in context: run impact analysis before a change and enforce conformance rules across boundaries.',
   },
   {
     title: 'AI agent enablement',
