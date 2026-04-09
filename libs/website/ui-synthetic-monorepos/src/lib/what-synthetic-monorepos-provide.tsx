@@ -13,11 +13,6 @@ const pillars = [
     detail:
       'With the graph in place, platform teams can assess the state of any repo in context: run impact analysis before a change and enforce conformance rules across boundaries.',
   },
-  {
-    title: 'AI agent enablement',
-    detail:
-      'The graph exposes metadata that lets agents see beyond individual repo boundaries. Instead of operating at a local maximum within a single repo, agents read cross-repo relationships and perform coordinated changes.',
-  },
 ];
 
 export function WhatSyntheticMonoreposProvide(): JSX.Element {
@@ -55,7 +50,7 @@ export function WhatSyntheticMonoreposProvide(): JSX.Element {
         </div>
 
         {/* Three pillars */}
-        <div className="mt-12 grid grid-cols-1 gap-4 sm:grid-cols-3 lg:mt-16">
+        <div className="mt-12 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:mt-16">
           {pillars.map((item, index) => (
             <div
               key={index}

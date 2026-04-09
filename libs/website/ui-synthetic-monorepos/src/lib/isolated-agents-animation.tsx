@@ -163,6 +163,12 @@ export function IsolatedAgentsAnimation() {
         ctx.fillStyle = c.agent;
         ctx.fill();
         ctx.globalAlpha = 1;
+
+        // "AI agent" label below dot
+        ctx.font = '8px system-ui, sans-serif';
+        ctx.textAlign = 'center';
+        ctx.fillStyle = c.agent;
+        ctx.fillText('AI agent', ax, ay + 20);
       }
 
       // Labels

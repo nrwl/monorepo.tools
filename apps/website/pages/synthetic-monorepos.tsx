@@ -3,6 +3,7 @@ import {
   Introduction,
   PolyrepoReality,
   WhatSyntheticMonoreposProvide,
+  AIEnablement,
   AILocalOptimization,
   AIAgentsAcrossBoundaries,
   ClosingCTA,
@@ -48,6 +49,8 @@ export function SyntheticMonoreposPage() {
         <PolyrepoReality />
 
         <WhatSyntheticMonoreposProvide />
+
+        <AIEnablement />
 
         <AILocalOptimization />
 
