@@ -1,7 +1,6 @@
 export * from './lib/introduction';
 export * from './lib/polyrepo-reality';
 export * from './lib/what-synthetic-monorepos-provide';
-export * from './lib/how-it-works';
 export * from './lib/ai-local-optimization';
 export * from './lib/ai-agents-across-boundaries';
 export * from './lib/closing-cta';

@@ -11,7 +11,7 @@ export function AILocalOptimization(): JSX.Element {
       <div className="relative mx-auto max-w-xl px-4 sm:px-6 lg:max-w-7xl lg:px-8">
         <div className="relative">
           <div className="group text-center text-4xl font-extrabold leading-8 tracking-tight text-gray-900 sm:text-5xl dark:text-white">
-            # AI Without the Bigger Picture
+            # Local Optimizations Make Global Throughput Worse
             <a
               aria-hidden="true"
               tabIndex={-1}
@@ -22,12 +22,12 @@ export function AILocalOptimization(): JSX.Element {
             </a>
           </div>
           <p className="mx-auto mt-4 max-w-3xl text-center text-xl text-gray-700 dark:text-gray-300">
-            Today, each repository gets its own AI agent session. Every agent
-            operates in isolation,{' '}
+            A well-known principle from manufacturing:{' '}
             <mark className="rounded-md bg-yellow-500 px-1">
-              optimizing locally
-            </mark>{' '}
-            without any awareness of what exists beyond its repo boundary.
+              local optimizations make global throughput worse
+            </mark>
+            . When one part of the pipeline runs fast, work piles up at the
+            boundaries. The same applies to AI agents working across polyrepos.
           </p>
         </div>
 
@@ -38,20 +38,26 @@ export function AILocalOptimization(): JSX.Element {
 
           <div className="mx-auto mt-12 max-w-3xl">
             <p className="text-lg text-gray-700 dark:text-gray-300">
-              Each agent sees only its own repo. It doesn&apos;t know about
-              shared types in another repo, downstream consumers that depend on
-              its API, or the platform team&apos;s standards that apply across
-              all repos.
+              Applying AI as a productivity multiplier per repository is a local
+              optimization. Each agent speeds up work inside its own repo, but
+              has zero visibility into what exists beyond its boundary: shared
+              types, downstream consumers, or the platform team&apos;s standards
+              that apply across all repos.
+            </p>
+            <p className="mt-4 text-lg text-gray-700 dark:text-gray-300">
+              In between these fast, isolated agents sit{' '}
+              <span className="font-semibold text-gray-900 dark:text-white">
+                humans carrying context
+              </span>
+              . You use an agent to implement an API in one repo, then manually
+              communicate the contract to someone in another repo who uses their
+              own agent. Information gets lost, documentation goes stale, and the
+              integration bottleneck is you.
             </p>
             <p className="mt-4 text-lg text-gray-700 dark:text-gray-300">
               The result: agents duplicate work, introduce inconsistencies, and
               miss cross-repo impacts. A change in one repo breaks consumers in
-              another, and no agent sees it coming.
-            </p>
-            <p className="mt-4 text-lg text-gray-700 dark:text-gray-300">
-              Agents operate at a local maximum based on the information
-              available in a single repo, missing downstream impacts, shared
-              types, and cross-project relationships. Optimization stays within
+              another, and no agent sees it coming. Optimization stays within
               each island, never across your organization as a whole.
             </p>
           </div>
