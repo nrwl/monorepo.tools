@@ -7,7 +7,7 @@ export function AIAgentsAcrossBoundaries(): JSX.Element {
     <div className="overflow-hidden bg-white py-16 lg:py-24 dark:bg-slate-900">
       <div className="relative mx-auto max-w-xl px-4 sm:px-6 lg:max-w-7xl lg:px-8">
         <div className="lg:grid lg:grid-cols-2 lg:items-center lg:gap-12">
-          <div id="ai-agents-across-boundaries" className="scroll-mt-20">
+          <div id="ai-agents-across-boundaries">
             <h2
               id="agents-across-boundaries"
               className="group text-3xl font-semibold tracking-tight text-gray-800 sm:text-4xl dark:text-gray-100"

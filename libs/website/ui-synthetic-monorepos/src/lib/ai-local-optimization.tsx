@@ -11,7 +11,7 @@ export function AILocalOptimization(): JSX.Element {
             <IsolatedAgentsAnimation />
           </div>
 
-          <div id="ai-local-optimization" className="scroll-mt-20">
+          <div id="ai-local-optimization">
             <h2
               id="local-optimizations"
               className="group text-3xl font-semibold tracking-tight text-gray-800 sm:text-4xl dark:text-gray-100"
