@@ -6,6 +6,18 @@ html {
   scroll-padding-top: 5rem; /* offset for sticky navbar (h-16 + breathing room) */
 }
 
+/* Cancel out top padding of anchored sections so heading lands right under nav */
+main > div[id].py-16,
+main > div[id].pt-16 {
+  scroll-margin-top: -4rem;
+}
+@media (min-width: 1024px) {
+  main > div[id].lg\:py-24,
+  main > div[id].lg\:pt-24 {
+    scroll-margin-top: -6rem;
+  }
+}
+
 /* Remove flashing from dark/light theme */
 @media (prefers-color-scheme: light) {
   body {

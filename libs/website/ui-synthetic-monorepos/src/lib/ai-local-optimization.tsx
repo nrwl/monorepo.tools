@@ -9,7 +9,7 @@ export function AILocalOptimization(): JSX.Element {
       className="overflow-hidden bg-white py-16 lg:py-24 dark:bg-slate-900"
     >
       <div className="relative mx-auto max-w-xl px-4 sm:px-6 lg:max-w-7xl lg:px-8">
-        <div className="lg:grid lg:grid-cols-2 lg:items-center lg:gap-12">
+        <div className="lg:grid lg:grid-cols-2 lg:items-start lg:gap-12">
           <div className="hidden md:block">
             <IsolatedAgentsAnimation />
           </div>

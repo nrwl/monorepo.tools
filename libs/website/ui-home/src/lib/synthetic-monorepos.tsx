@@ -1,4 +1,5 @@
 import { LinkIcon } from '@heroicons/react/24/outline';
+import { SyntheticMonorepoAnimation } from '@monorepo-tools/website/ui-synthetic-monorepos';
 
 export function SyntheticMonorepos(): JSX.Element {
   return (
@@ -39,27 +40,23 @@ export function SyntheticMonorepos(): JSX.Element {
                 all of that becomes visible automatically.
               </p>
               <p className="mt-3 text-lg text-gray-700 dark:text-gray-300">
-                <strong>For platform engineers and architects</strong>, no more
-                manually cataloging and cross-referencing repos. Tooling on top
-                of the graph enables conformance checking, impact analysis, and
-                coordinated changes across boundaries.
+                <strong>Platform engineers</strong> get conformance checking and
+                impact analysis across boundaries.{' '}
+                <strong>AI agents</strong> get a map of how repos relate, so
+                they can reason and coordinate changes across the whole org
+                instead of one repo at a time.
               </p>
               <p className="mt-3 text-lg text-gray-700 dark:text-gray-300">
-                <strong>For AI agents</strong>, the graph exposes metadata that
-                lets them see beyond individual repo boundaries. Instead of
-                operating at a local maximum within a single repo, agents can
-                read cross-repo relationships and perform coordinated changes
-                across polyrepos.
+                <a
+                  href="/synthetic-monorepos"
+                  className="border-b border-yellow-500 transition hover:rounded hover:bg-yellow-500 hover:text-gray-800"
+                >
+                  Read the deep dive &rarr;
+                </a>
               </p>
             </div>
-            <div>
-              <img
-                aria-hidden="true"
-                loading="lazy"
-                className="h-full w-full object-cover"
-                src="/images/synthetic-monorepo.svg"
-                alt="synthetic monorepo diagram showing multiple repositories connected into a unified dependency graph"
-              />
+            <div className="hidden md:block">
+              <SyntheticMonorepoAnimation />
             </div>
           </div>
         </article>
@@ -73,43 +70,6 @@ export function SyntheticMonorepos(): JSX.Element {
           </p>
         </blockquote>
 
-        {/* Gradual adoption callout */}
-        <div className="mx-auto mt-12 max-w-7xl lg:mt-20">
-          <div className="overflow-hidden rounded-lg bg-slate-100 shadow-xl dark:bg-slate-900">
-            <div className="px-6 pt-10 pb-12 text-center sm:px-16 sm:pt-16 lg:py-16 xl:py-20 xl:px-20">
-              <h2 className="text-3xl font-extrabold text-gray-900 dark:text-white sm:text-4xl">
-                An entry point, not an endpoint
-              </h2>
-              <p className="mt-4 text-xl leading-relaxed text-gray-700 dark:text-gray-300">
-                Start getting monorepo benefits without changing how teams work.
-                From there, deepen integration where it makes sense: start
-                synthetic, migrate gradually, move at your own pace.{' '}
-                <a
-                  href="https://nx.dev/nx-cloud"
-                  className="border-b border-yellow-500 transition hover:rounded hover:bg-yellow-500 hover:text-gray-800"
-                >
-                  Nx
-                </a>{' '}
-                supports{' '}
-                <a
-                  href="https://nx.dev/docs/concepts/synthetic-monorepos"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="border-b border-yellow-500 transition hover:rounded hover:bg-yellow-500 hover:text-gray-800"
-                >
-                  synthetic monorepos
-                </a>{' '}
-                out of the box.{' '}
-                <a
-                  href="/synthetic-monorepos"
-                  className="border-b border-yellow-500 transition hover:rounded hover:bg-yellow-500 hover:text-gray-800"
-                >
-                  Learn more &rarr;
-                </a>
-              </p>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   );

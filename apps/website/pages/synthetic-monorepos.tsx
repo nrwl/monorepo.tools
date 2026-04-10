@@ -6,7 +6,7 @@ import {
   AIEnablement,
   AILocalOptimization,
   AIAgentsAcrossBoundaries,
-  ClosingCTA,
+  UseCases,
 } from '@monorepo-tools/website/ui-synthetic-monorepos';
 import { NextSeo } from 'next-seo';
 import { useRouter } from 'next/router';
@@ -56,7 +56,7 @@ export function SyntheticMonoreposPage() {
 
         <AIAgentsAcrossBoundaries />
 
-        <ClosingCTA />
+        <UseCases />
       </main>
 
       <Footer />

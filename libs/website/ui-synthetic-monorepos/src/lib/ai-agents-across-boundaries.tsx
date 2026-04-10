@@ -9,13 +9,13 @@ export function AIAgentsAcrossBoundaries(): JSX.Element {
       className="overflow-hidden bg-white py-16 lg:py-24 dark:bg-slate-900"
     >
       <div className="relative mx-auto max-w-xl px-4 sm:px-6 lg:max-w-7xl lg:px-8">
-        <div className="lg:grid lg:grid-cols-2 lg:items-center lg:gap-12">
+        <div className="lg:grid lg:grid-cols-2 lg:items-start lg:gap-12">
           <div>
             <h2
               id="agents-across-boundaries"
               className="group text-3xl font-semibold tracking-tight text-gray-800 sm:text-4xl dark:text-gray-100"
             >
-              AI Agents Across Repo Boundaries
+              AI Agents Without Walls
               <a
                 aria-hidden="true"
                 tabIndex={-1}
@@ -31,18 +31,19 @@ export function AIAgentsAcrossBoundaries(): JSX.Element {
                 coordinator agent reads the cross-repo graph
               </mark>
               , spawns per-repo agents, and funnels context between them
-              automatically. When the backend agent defines a new DTO structure,
-              that information flows to the frontend agent, which updates the UI
-              to match. No human required as the context bridge.
+              automatically. It walks the upstream and downstream dependencies
+              to figure out which repos are actually affected by a change and
+              spawns agents only where they need to operate.
             </p>
             <p className="mt-4 text-lg text-gray-700 dark:text-gray-300">
-              The coordinator manages the{' '}
+              This unlocks the{' '}
               <mark className="rounded-md bg-yellow-500 px-1">
                 full PR lifecycle across repos
               </mark>
-              : submitting changes, monitoring CI in each repo, applying
-              self-healing fixes when CI fails, and notifying the developer only
-              when everything is green and ready for review.
+              : submitting changes as coordinated PRs, monitoring CI in each
+              repo, and running with full autonomy until everything is green.
+              It is as close as you can get to the atomic commits of a true
+              monorepo, without moving any code.
             </p>
           </div>
 

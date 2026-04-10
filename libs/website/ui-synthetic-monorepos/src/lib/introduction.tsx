@@ -131,16 +131,16 @@ export function Introduction(): JSX.Element {
               href: '#polyrepo-reality',
             },
             {
-              title: 'What Synthetic Monorepos Provide',
+              title: 'What a Synthetic Monorepo Provides',
               href: '#what-synthetic-monorepos-provide',
             },
             {
-              title: 'How It Works',
-              href: '#how-it-works',
+              title: 'AI Agent Enablement',
+              href: '#ai-enablement',
             },
             {
-              title: 'AI Agents Across Boundaries',
-              href: '#ai-agents-across-boundaries',
+              title: 'Where Synthetic Monorepos Fit',
+              href: '#use-cases',
             },
           ].map((card) => (
             <div
