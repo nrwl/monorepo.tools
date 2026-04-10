@@ -96,15 +96,15 @@ export function Introduction(): JSX.Element {
         <div className="grid grid-cols-2 gap-4 lg:grid-cols-5">
           {[
             {
-              label: 'What is a monorepo',
+              label: 'What is a Monorepo?',
               href: '#what-is-a-monorepo',
             },
             {
-              label: 'Why a monorepo',
+              label: 'The Polyrepo Tax',
               href: '#why-a-monorepo',
             },
             {
-              label: 'AI & Monorepos',
+              label: 'Monorepos Amplify AI Agents',
               href: '#monorepo-ai',
             },
             {
@@ -112,7 +112,7 @@ export function Introduction(): JSX.Element {
               href: '#synthetic-monorepos',
             },
             {
-              label: 'Best-in-class tooling',
+              label: 'What a Best-in-Class Tool Provides',
               href: '#best-in-class',
             },
           ].map((card) => (
