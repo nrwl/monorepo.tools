@@ -177,7 +177,7 @@ function drawAgentFleet(ctx: CanvasRenderingContext2D, t: number, c: ThemeColors
   ctx.font = 'bold 9px system-ui, sans-serif';
   ctx.textAlign = 'center';
   ctx.fillStyle = c.coordinatorLabel;
-  ctx.fillText('Polygraph AI', COORDINATOR.cx, COORDINATOR.cy + 38);
+  ctx.fillText('Polygraph', COORDINATOR.cx, COORDINATOR.cy + 38);
 
   // Expanding ring during spread phase
   if (phase >= CONNECT_END && phase < SPREAD_END + 1.0) {
