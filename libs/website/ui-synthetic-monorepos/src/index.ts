@@ -6,4 +6,5 @@ export * from './lib/ai-enablement';
 export * from './lib/ai-local-optimization';
 export * from './lib/ai-agents-across-boundaries';
 export * from './lib/use-cases';
+export * from './lib/featured-webinar';
 export * from './lib/closing-cta';
