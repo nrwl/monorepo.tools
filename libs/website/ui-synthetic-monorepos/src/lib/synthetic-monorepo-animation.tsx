@@ -341,11 +341,18 @@ export function SyntheticMonorepoAnimation({ alwaysSynthetic = false }: { always
   const pauseStartRef = useRef<(number | null)[]>(Array(maxCubes).fill(null));
   const pauseAccumRef = useRef<number[]>(Array(maxCubes).fill(0));
   const [synthetic, setSynthetic] = useState(alwaysSynthetic);
+  const [userInteracted, setUserInteracted] = useState(false);
   const syntheticRef = useRef(false);
   const alwaysSyntheticRef = useRef(alwaysSynthetic);
   const fleetStartRef = useRef<number | null>(null);
 
   useEffect(() => { syntheticRef.current = synthetic; }, [synthetic]);
+
+  useEffect(() => {
+    if (alwaysSynthetic || userInteracted || !inView) return;
+    const id = setInterval(() => setSynthetic((s) => !s), 3500);
+    return () => clearInterval(id);
+  }, [alwaysSynthetic, userInteracted, inView]);
 
   const handleMouseMove = useCallback((e: MouseEvent) => {
     const canvas = canvasRef.current;
@@ -572,7 +579,7 @@ export function SyntheticMonorepoAnimation({ alwaysSynthetic = false }: { always
             <button
               role="switch"
               aria-checked={synthetic}
-              onClick={() => setSynthetic(!synthetic)}
+              onClick={() => { setUserInteracted(true); setSynthetic(!synthetic); }}
               className={`relative inline-flex h-5 w-10 shrink-0 items-center rounded-full border transition-colors ${
                 synthetic
                   ? 'border-emerald-500 bg-emerald-500/20 dark:border-emerald-400/50'
