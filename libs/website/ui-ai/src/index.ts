@@ -5,4 +5,5 @@ export * from './lib/fast-feedback';
 export * from './lib/ci-pressure';
 export * from './lib/ai-native';
 export * from './lib/ai-tools-comparison';
+export * from './lib/no-monorepo-fallback';
 export * from './lib/resources';

@@ -459,7 +459,7 @@ export function ToolsReview(): JSX.Element {
     <div
       data-test-id="tools-review"
       id="tools-review"
-      className="bg-slate-50 dark:bg-slate-800"
+      className="-scroll-mt-16 bg-slate-50 sm:-scroll-mt-32 dark:bg-slate-800"
     >
       <div className="relative">
         <div className="relative mx-auto max-w-2xl px-4 pt-16 text-center sm:px-6 sm:pt-32 lg:max-w-7xl lg:px-8">

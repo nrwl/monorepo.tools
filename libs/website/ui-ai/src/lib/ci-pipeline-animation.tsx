@@ -1,14 +1,43 @@
 'use client';
 import { useState, useEffect, useRef, useCallback } from 'react';
 import { useInView } from './use-in-view';
+import { useIsDark } from './use-is-dark';
 
 const STAGES = ['PLAN', 'CODE', 'CI', 'REVIEW', 'MERGE'] as const;
 const BOTTLENECK_STAGE = 2;
 
-const COLOR_NEUTRAL = '#64748b';
-const COLOR_PASS = '#22c55e';
-const COLOR_FAIL = '#ef4444';
-const COLOR_HEALED = COLOR_PASS;
+const CI_THEME = {
+  dark: {
+    neutral: '#64748b',
+    pass: '#22c55e',
+    fail: '#ef4444',
+    stageLabel: '#64748b',
+    stageLabelFail: '#ef4444',
+    dashedLine: 'rgba(100, 116, 139, 0.15)',
+    dashedLineFail: 'rgba(239, 68, 68, 0.3)',
+    tunnelWall: 'rgba(100, 116, 139, 0.3)',
+    returnPipe: 'rgba(239, 68, 68, 0.25)',
+    healBoxFill: 'rgba(16, 185, 129, 0.15)',
+    healBoxStroke: 'rgba(16, 185, 129, 0.5)',
+    healBoxText: 'rgba(16, 185, 129, 0.8)',
+    healPipe: 'rgba(16, 185, 129, 0.25)',
+  },
+  light: {
+    neutral: '#94a3b8',
+    pass: '#16a34a',
+    fail: '#dc2626',
+    stageLabel: '#64748b',
+    stageLabelFail: '#dc2626',
+    dashedLine: 'rgba(100, 116, 139, 0.2)',
+    dashedLineFail: 'rgba(220, 38, 38, 0.3)',
+    tunnelWall: 'rgba(71, 85, 105, 0.3)',
+    returnPipe: 'rgba(220, 38, 38, 0.25)',
+    healBoxFill: 'rgba(16, 185, 129, 0.15)',
+    healBoxStroke: 'rgba(16, 185, 129, 0.5)',
+    healBoxText: 'rgba(5, 150, 105, 0.9)',
+    healPipe: 'rgba(16, 185, 129, 0.25)',
+  },
+};
 
 const PIPE_HALF = 7;
 const CORNER_R = 12;
@@ -39,6 +68,7 @@ interface Dot {
 
 export function CiPipelineAnimation() {
   const { ref: viewRef, inView } = useInView(0.3);
+  const isDark = useIsDark();
   const [dte, setDte] = useState(false);
   const [selfHeal, setSelfHeal] = useState(false);
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -113,6 +143,8 @@ export function CiPipelineAnimation() {
 
     resizeCanvas();
     window.addEventListener('resize', resizeCanvas);
+
+    const tc = isDark ? CI_THEME.dark : CI_THEME.light;
 
     function pushApart(dots: Dot[]) {
       for (let i = 0; i < dots.length; i++) {
@@ -264,7 +296,7 @@ export function CiPipelineAnimation() {
       STAGES.forEach((stage, i) => {
         const sx = getStageX(i, w);
         const isBottleneck = i === BOTTLENECK_STAGE;
-        ctx.fillStyle = isBottleneck ? '#ef4444' : '#64748b';
+        ctx.fillStyle = isBottleneck ? tc.stageLabelFail : tc.stageLabel;
         ctx.textAlign = 'center';
         ctx.font = isBottleneck
           ? 'bold 11px system-ui, sans-serif'
@@ -273,8 +305,8 @@ export function CiPipelineAnimation() {
         ctx.fillText(stage, sx, 16);
 
         ctx.strokeStyle = isBottleneck
-          ? 'rgba(239, 68, 68, 0.3)'
-          : 'rgba(100, 116, 139, 0.15)';
+          ? tc.dashedLineFail
+          : tc.dashedLine;
         ctx.lineWidth = 1;
         ctx.setLineDash([4, 4]);
         ctx.beginPath();
@@ -285,7 +317,7 @@ export function CiPipelineAnimation() {
       });
 
       // Main tunnel walls
-      ctx.strokeStyle = 'rgba(100, 116, 139, 0.3)';
+      ctx.strokeStyle = tc.tunnelWall;
       ctx.lineWidth = 1.5;
       ctx.beginPath();
       for (let x = 0; x < w; x += 2) {
@@ -303,13 +335,13 @@ export function CiPipelineAnimation() {
       ctx.stroke();
 
       // Return pipe (U-shape, legs touch tunnel walls)
-      drawUPipe(ctx, pipeLeft, pipeTopLeft, pipeRight, pipeTopRight, pipeBottom, 'rgba(239, 68, 68, 0.25)');
+      drawUPipe(ctx, pipeLeft, pipeTopLeft, pipeRight, pipeTopRight, pipeBottom, tc.returnPipe);
 
       // Self-heal box + exit pipe
       if (currentSelfHeal) {
         // Box at the intersection (bottom-right corner of return pipe)
-        ctx.fillStyle = 'rgba(16, 185, 129, 0.15)';
-        ctx.strokeStyle = 'rgba(16, 185, 129, 0.5)';
+        ctx.fillStyle = tc.healBoxFill;
+        ctx.strokeStyle = tc.healBoxStroke;
         ctx.lineWidth = 1.5;
         ctx.beginPath();
         ctx.roundRect(
@@ -322,7 +354,7 @@ export function CiPipelineAnimation() {
         ctx.fill();
         ctx.stroke();
 
-        ctx.fillStyle = 'rgba(16, 185, 129, 0.8)';
+        ctx.fillStyle = tc.healBoxText;
         ctx.font = 'bold 9px system-ui, sans-serif';
         ctx.textAlign = 'center';
         ctx.letterSpacing = '0.5px';
@@ -330,7 +362,7 @@ export function CiPipelineAnimation() {
 
         // L-shaped exit pipe: rightward from box to REVIEW, then up to tunnel wall
         const healPipeTopRight = mainY + getTunnelHeight(healPipeEndX, w, baseHeight, currentDte);
-        drawLPipe(ctx, healPipeStartX, pipeBottom, healPipeEndX, healPipeTopRight, 'rgba(16, 185, 129, 0.25)');
+        drawLPipe(ctx, healPipeStartX, pipeBottom, healPipeEndX, healPipeTopRight, tc.healPipe);
       }
 
       // Spawn
@@ -342,7 +374,7 @@ export function CiPipelineAnimation() {
           id: nextDotIdRef.current++,
           x: -5,
           y: mainY + yOffset,
-          color: COLOR_NEUTRAL,
+          color: tc.neutral,
           speed: 0.8 + Math.random() * 0.4,
           radius: 4 + Math.random() * 1.5,
           route: 'main',
@@ -368,12 +400,12 @@ export function CiPipelineAnimation() {
 
             if (!dot.passedCi && dot.x > ciX + 20) {
               if (Math.random() < 0.18) {
-                dot.color = COLOR_FAIL;
+                dot.color = tc.fail;
                 dot.route = 'return-down';
                 dot.x = pipeRight;
               } else {
                 dot.passedCi = true;
-                dot.color = COLOR_PASS;
+                dot.color = tc.pass;
               }
             }
 
@@ -427,7 +459,7 @@ export function CiPipelineAnimation() {
             dot.queueTimer = (dot.queueTimer || 0) - 1;
             if (dot.queueTimer! <= 0) {
               dot.route = 'main';
-              dot.color = COLOR_NEUTRAL;
+              dot.color = tc.neutral;
               dot.passedCi = false;
               // Enter at the tunnel wall, not the center - drift inward naturally
               dot.y = pipeTopLeft - dot.radius;
@@ -442,7 +474,7 @@ export function CiPipelineAnimation() {
             dot.y = healBoxY + (Math.random() - 0.5) * 3;
             if (dot.healTimer! <= 0) {
               dot.route = 'heal-right';
-              dot.color = COLOR_HEALED;
+              dot.color = tc.pass;
               dot.x = healPipeStartX;
               dot.y = pipeBottom;
             }
@@ -530,74 +562,74 @@ export function CiPipelineAnimation() {
       cancelAnimationFrame(animFrameRef.current);
       window.removeEventListener('resize', resizeCanvas);
     };
-  }, [inView, getStageX, getTunnelHeight, getDotSpeed]);
+  }, [inView, isDark, getStageX, getTunnelHeight, getDotSpeed]);
 
   return (
     <div ref={viewRef}>
-      <canvas
-        ref={canvasRef}
-        className="h-72 w-full md:h-80"
-        style={{ display: 'block' }}
-      />
-
-      {/* Toggles close to animation */}
-      <div className="mt-4 flex flex-wrap items-center justify-center gap-8">
-        <label className="flex cursor-pointer items-center gap-2.5 text-[11px] uppercase tracking-[1.5px]">
+      {/* Toggles above animation */}
+      <div className="mb-4 flex flex-wrap items-center justify-center gap-8">
+        <label className="flex cursor-pointer items-center gap-3 text-xs uppercase tracking-[1.5px]">
           <button
             role="switch"
             aria-checked={dte}
             onClick={() => setDte(!dte)}
-            className={`relative inline-flex h-3.5 w-7 shrink-0 items-center rounded-full border transition-colors ${
+            className={`relative inline-flex h-5 w-10 shrink-0 items-center rounded-full border transition-colors ${
               dte
-                ? 'border-blue-400/50 bg-blue-500/20'
-                : 'border-slate-600 bg-slate-800'
+                ? 'border-blue-500 bg-blue-500/20 dark:border-blue-400/50'
+                : 'border-slate-300 bg-slate-200 dark:border-slate-600 dark:bg-slate-800'
             }`}
           >
             <span
-              className={`inline-block h-2 w-2 rounded-full transition-all ${
+              className={`inline-block h-3.5 w-3.5 rounded-full transition-all ${
                 dte
-                  ? 'translate-x-3.5 bg-blue-400'
-                  : 'translate-x-0.5 bg-slate-500'
+                  ? 'translate-x-5 bg-blue-500 dark:bg-blue-400'
+                  : 'translate-x-0.5 bg-slate-400 dark:bg-slate-500'
               }`}
             />
           </button>
           <span
             className={`transition-colors ${
-              dte ? 'text-slate-200' : 'text-slate-500'
+              dte ? 'text-slate-700 dark:text-slate-200' : 'text-slate-400 dark:text-slate-500'
             }`}
           >
             Distributed Task Execution
           </span>
         </label>
 
-        <label className="flex cursor-pointer items-center gap-2.5 text-[11px] uppercase tracking-[1.5px]">
+        <label className="flex cursor-pointer items-center gap-3 text-xs uppercase tracking-[1.5px]">
           <button
             role="switch"
             aria-checked={selfHeal}
             onClick={() => setSelfHeal(!selfHeal)}
-            className={`relative inline-flex h-3.5 w-7 shrink-0 items-center rounded-full border transition-colors ${
+            className={`relative inline-flex h-5 w-10 shrink-0 items-center rounded-full border transition-colors ${
               selfHeal
-                ? 'border-emerald-400/50 bg-emerald-500/20'
-                : 'border-slate-600 bg-slate-800'
+                ? 'border-emerald-500 bg-emerald-500/20 dark:border-emerald-400/50'
+                : 'border-slate-300 bg-slate-200 dark:border-slate-600 dark:bg-slate-800'
             }`}
           >
             <span
-              className={`inline-block h-2 w-2 rounded-full transition-all ${
+              className={`inline-block h-3.5 w-3.5 rounded-full transition-all ${
                 selfHeal
-                  ? 'translate-x-3.5 bg-emerald-400'
-                  : 'translate-x-0.5 bg-slate-500'
+                  ? 'translate-x-5 bg-emerald-500 dark:bg-emerald-400'
+                  : 'translate-x-0.5 bg-slate-400 dark:bg-slate-500'
               }`}
             />
           </button>
           <span
             className={`transition-colors ${
-              selfHeal ? 'text-slate-200' : 'text-slate-500'
+              selfHeal ? 'text-slate-700 dark:text-slate-200' : 'text-slate-400 dark:text-slate-500'
             }`}
           >
             Self-Healing PRs
           </span>
         </label>
       </div>
+
+      <canvas
+        ref={canvasRef}
+        className="h-72 w-full md:h-80"
+        style={{ display: 'block' }}
+      />
 
       {/* Description boxes */}
       <div className="mt-10 grid grid-cols-2 gap-6">

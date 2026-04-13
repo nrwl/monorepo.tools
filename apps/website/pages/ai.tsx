@@ -7,6 +7,7 @@ import {
   CIPressure,
   AINative,
   AIToolsComparison,
+  NoMonorepoFallback,
   // Resources,
 } from '@monorepo-tools/website/ui-ai';
 import { NextSeo } from 'next-seo';
@@ -58,6 +59,8 @@ export function Index() {
         <AINative />
 
         <AIToolsComparison />
+
+        <NoMonorepoFallback />
 
         {/* <Resources /> */}
       </main>

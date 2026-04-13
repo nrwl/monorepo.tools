@@ -27,6 +27,9 @@
       ],
       "@monorepo-tools/website/ui-conf": ["libs/website/ui-conf/src/index.ts"],
       "@monorepo-tools/website/ui-home": ["libs/website/ui-home/src/index.ts"],
+      "@monorepo-tools/website/ui-synthetic-monorepos": [
+        "libs/website/ui-synthetic-monorepos/src/index.ts"
+      ],
       "@monorepo-tools/website/ui-typescript": [
         "libs/website/ui-typescript/src/index.ts"
       ]
