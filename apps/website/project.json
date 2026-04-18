@@ -10,7 +10,11 @@
       "executor": "nx:run-commands",
       "outputs": ["{workspaceRoot}/dist/apps/website"],
       "options": {
-        "command": "node tools/markdown-export.js"
+        "commands": [
+          "node tools/markdown-export.js",
+          "nx run website:build-base --skip-nx-cache"
+        ],
+        "parallel": false
       }
     },
     "build-base": {

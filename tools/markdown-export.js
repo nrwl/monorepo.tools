@@ -6,9 +6,10 @@ const TurndownService = require('turndown');
 const { gfm } = require('turndown-plugin-gfm');
 const { encode } = require('gpt-tokenizer');
 
+const APP_DIR = path.resolve(__dirname, '../apps/website');
 const DIST = path.resolve(__dirname, '../dist/apps/website');
 const PAGES_HTML = path.join(DIST, '.next/server/pages');
-const PUBLIC = path.join(DIST, 'public');
+const PUBLIC = path.join(APP_DIR, 'public');
 
 const EXPORT_PAGES = [
   { slug: 'index', route: '/' },
