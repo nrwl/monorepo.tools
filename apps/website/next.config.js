@@ -46,11 +46,18 @@ ${urls}
     'Meta-ExternalAgent',
   ];
 
+  const contentSignal =
+    'Content-Signal: search=yes, ai-input=yes, ai-train=yes';
+
   const aiBlocks = aiBots
-    .map((ua) => `User-agent: ${ua}\nAllow: /\nDisallow: /api/\n`)
+    .map(
+      (ua) =>
+        `User-agent: ${ua}\n${contentSignal}\nAllow: /\nDisallow: /api/\n`,
+    )
     .join('\n');
 
   const robots = `User-agent: *
+${contentSignal}
 Allow: /
 Disallow: /api/
 
