@@ -6,14 +6,11 @@
   "tags": ["scope:website", "type:app"],
   "targets": {
     "build": {
-      "executor": "@nx/next:build",
-      "outputs": ["{options.outputPath}"],
-      "defaultConfiguration": "production",
+      "dependsOn": [{ "target": "build-base" }],
+      "executor": "nx:run-commands",
+      "outputs": ["{workspaceRoot}/dist/apps/website"],
       "options": {
-        "outputPath": "dist/apps/website"
-      },
-      "configurations": {
-        "production": {}
+        "command": "node tools/markdown-export.js"
       }
     },
     "build-base": {
