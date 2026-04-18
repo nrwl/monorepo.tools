@@ -30,10 +30,31 @@ ${urls}
 </urlset>
 `;
 
+  const aiBots = [
+    'GPTBot',
+    'OAI-SearchBot',
+    'ChatGPT-User',
+    'Claude-Web',
+    'ClaudeBot',
+    'anthropic-ai',
+    'Google-Extended',
+    'Applebot-Extended',
+    'Amazonbot',
+    'Bytespider',
+    'CCBot',
+    'PerplexityBot',
+    'Meta-ExternalAgent',
+  ];
+
+  const aiBlocks = aiBots
+    .map((ua) => `User-agent: ${ua}\nAllow: /\nDisallow: /api/\n`)
+    .join('\n');
+
   const robots = `User-agent: *
 Allow: /
 Disallow: /api/
 
+${aiBlocks}
 Sitemap: ${SITE_URL}/sitemap.xml
 `;
 
