@@ -4,7 +4,7 @@ const fs = require('fs');
 const path = require('path');
 
 const SITE_URL = process.env.SITE_URL || 'https://monorepo.tools';
-const REDIRECT_PATHS = new Set(['conf']);
+const REDIRECT_PATHS = ['conf'];
 
 function generateSitemapAndRobots() {
   const pagesDir = path.join(__dirname, 'pages');
@@ -14,7 +14,7 @@ function generateSitemapAndRobots() {
     .readdirSync(pagesDir)
     .filter((f) => /\.tsx?$/.test(f))
     .map((f) => f.replace(/\.tsx?$/, ''))
-    .filter((name) => !name.startsWith('_') && !REDIRECT_PATHS.has(name));
+    .filter((name) => !name.startsWith('_') && !REDIRECT_PATHS.includes(name));
 
   const urls = routes
     .map((name) => {
