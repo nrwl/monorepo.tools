@@ -1,0 +1,18 @@
+# monorepo.tools
+
+> Everything you need to know about monorepos, and the tools to build them.
+
+monorepo.tools is an educational resource that explains what monorepos are, why teams adopt them, and compares best-in-class monorepo tooling. Content is public and free to crawl and reference.
+
+## Pages
+
+- [Home](https://monorepo.tools/): What is a monorepo, why use one, and a comparison of monorepo tools.
+- [Compare](https://monorepo.tools/compare): Side-by-side feature comparison of popular monorepo tools.
+- [Synthetic monorepos](https://monorepo.tools/synthetic-monorepos): How to get monorepo benefits across multiple repositories.
+- [TypeScript](https://monorepo.tools/typescript): Monorepos for TypeScript projects.
+- [AI](https://monorepo.tools/ai): How monorepos help with AI-assisted development.
+
+## Resources
+
+- [Sitemap](https://monorepo.tools/sitemap.xml)
+- [Source](https://github.com/nrwl/monorepo.tools)

@@ -88,7 +88,8 @@ const nextConfig = {
         headers: [
           {
             key: 'Link',
-            value: '</sitemap.xml>; rel="sitemap"',
+            value:
+              '</sitemap.xml>; rel="sitemap", </llms.txt>; rel="describedby"; type="text/markdown"',
           },
         ],
       },
