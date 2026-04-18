@@ -6,22 +6,15 @@
   "tags": ["scope:website", "type:app"],
   "targets": {
     "build": {
-      "dependsOn": [
-        {
-          "target": "build-base"
-        }
-      ],
+      "dependsOn": [{ "target": "build-base" }],
       "executor": "nx:run-commands",
+      "outputs": ["{workspaceRoot}/dist/apps/website"],
       "options": {
-        "command": "nx run website:sitemap"
-      },
-      "outputs": ["{workspaceRoot}/dist/apps/website"]
-    },
-    "sitemap": {
-      "executor": "nx:run-commands",
-      "outputs": [],
-      "options": {
-        "command": "npx next-sitemap --config ./apps/website/next-sitemap.js"
+        "commands": [
+          "node tools/markdown-export.js",
+          "nx run website:build-base --skip-nx-cache"
+        ],
+        "parallel": false
       }
     },
     "build-base": {
