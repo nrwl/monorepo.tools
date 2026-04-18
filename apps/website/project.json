@@ -6,22 +6,14 @@
   "tags": ["scope:website", "type:app"],
   "targets": {
     "build": {
-      "dependsOn": [
-        {
-          "target": "build-base"
-        }
-      ],
-      "executor": "nx:run-commands",
+      "executor": "@nx/next:build",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
       "options": {
-        "command": "nx run website:sitemap"
+        "outputPath": "dist/apps/website"
       },
-      "outputs": ["{workspaceRoot}/dist/apps/website"]
-    },
-    "sitemap": {
-      "executor": "nx:run-commands",
-      "outputs": [],
-      "options": {
-        "command": "npx next-sitemap --config ./apps/website/next-sitemap.js"
+      "configurations": {
+        "production": {}
       }
     },
     "build-base": {
