@@ -41,10 +41,6 @@ Sitemap: ${SITE_URL}/sitemap.xml
   fs.writeFileSync(path.join(publicDir, 'robots.txt'), robots);
 }
 
-if (process.env.NEXT_PHASE === 'phase-production-build') {
-  generateSitemapAndRobots();
-}
-
 /**
  * @type {import('@nx/next/plugins/with-nx').WithNxOptions}
  **/
@@ -79,4 +75,11 @@ const nextConfig = {
   },
 };
 
-module.exports = withNx(nextConfig);
+const wrapped = withNx(nextConfig);
+
+module.exports = (phase, opts) => {
+  if (phase === 'phase-production-build') {
+    generateSitemapAndRobots();
+  }
+  return typeof wrapped === 'function' ? wrapped(phase, opts) : wrapped;
+};
