@@ -632,7 +632,7 @@ export function CiPipelineAnimation() {
       />
 
       {/* Description boxes */}
-      <div className="mt-10 grid grid-cols-2 gap-6">
+      <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-2">
         <div className="flex min-h-[200px] flex-col rounded-md border border-slate-200 bg-slate-100 p-5 dark:border-black dark:bg-slate-900">
           <p className="text-lg font-medium text-gray-900 dark:text-white">
             Distributed Task Execution

@@ -49,7 +49,7 @@ export function PolyrepoReality(): JSX.Element {
             </p>
           </div>
 
-          <div className="mt-8 hidden md:block lg:mt-0">
+          <div className="mt-8 lg:mt-0">
             <PolyrepoIslandsAnimation />
           </div>
         </div>

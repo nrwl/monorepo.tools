@@ -44,7 +44,7 @@ export function AIAgentsAcrossBoundaries(): JSX.Element {
             </p>
           </div>
 
-          <div className="mt-8 hidden md:block lg:mt-0">
+          <div className="mt-8 lg:mt-0">
             <SyntheticMonorepoAnimation alwaysSynthetic />
           </div>
         </div>

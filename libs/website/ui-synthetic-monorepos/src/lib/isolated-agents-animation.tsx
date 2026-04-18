@@ -104,8 +104,9 @@ export function IsolatedAgentsAnimation() {
     const dpr = window.devicePixelRatio || 1;
     canvas.width = CANVAS_W * dpr;
     canvas.height = CANVAS_H * dpr;
-    canvas.style.width = `${CANVAS_W}px`;
-    canvas.style.height = `${CANVAS_H}px`;
+    canvas.style.width = '100%';
+    canvas.style.height = 'auto';
+    canvas.style.maxWidth = `${CANVAS_W}px`;
     ctx.scale(dpr, dpr);
 
     canvas.addEventListener('mousemove', handleMouseMove);
