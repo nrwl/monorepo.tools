@@ -64,6 +64,19 @@ const nextConfig = {
       },
     ];
   },
+  headers: async () => {
+    return [
+      {
+        source: '/',
+        headers: [
+          {
+            key: 'Link',
+            value: '</sitemap.xml>; rel="sitemap"',
+          },
+        ],
+      },
+    ];
+  },
 };
 
 module.exports = withNx(nextConfig);
