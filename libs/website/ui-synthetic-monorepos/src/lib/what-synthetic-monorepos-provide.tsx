@@ -45,7 +45,7 @@ export function WhatSyntheticMonoreposProvide(): JSX.Element {
         </div>
 
         {/* Connected animation */}
-        <div className="mx-auto mt-12 hidden max-w-2xl md:block lg:mt-16">
+        <div className="mx-auto mt-12 max-w-2xl lg:mt-16">
           <SyntheticMonorepoAnimation />
         </div>
 

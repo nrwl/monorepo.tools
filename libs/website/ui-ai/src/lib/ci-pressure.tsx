@@ -40,7 +40,7 @@ export function CIPressure(): JSX.Element {
         </div>
 
         {/* CI Pipeline Bottleneck Animation */}
-        <div className="mt-16 hidden md:block">
+        <div className="mt-16">
           <div className="mx-auto max-w-4xl">
             <CiPipelineAnimation />
           </div>
