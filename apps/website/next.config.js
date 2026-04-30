@@ -1,5 +1,73 @@
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const withNx = require('@nx/next/plugins/with-nx');
+const fs = require('fs');
+const path = require('path');
+
+const SITE_URL = process.env.SITE_URL || 'https://monorepo.tools';
+const REDIRECT_PATHS = ['conf'];
+
+function generateSitemapAndRobots() {
+  const pagesDir = path.join(__dirname, 'pages');
+  const publicDir = path.join(__dirname, 'public');
+
+  const routes = fs
+    .readdirSync(pagesDir)
+    .filter((f) => /\.tsx?$/.test(f))
+    .map((f) => f.replace(/\.tsx?$/, ''))
+    .filter((name) => !name.startsWith('_') && !REDIRECT_PATHS.includes(name));
+
+  const urls = routes
+    .map((name) => {
+      const loc = name === 'index' ? `${SITE_URL}/` : `${SITE_URL}/${name}`;
+      const priority = name === 'index' ? '1.0' : '0.8';
+      return `  <url><loc>${loc}</loc><changefreq>weekly</changefreq><priority>${priority}</priority></url>`;
+    })
+    .join('\n');
+
+  const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${urls}
+</urlset>
+`;
+
+  const aiBots = [
+    'GPTBot',
+    'OAI-SearchBot',
+    'ChatGPT-User',
+    'Claude-Web',
+    'ClaudeBot',
+    'anthropic-ai',
+    'Google-Extended',
+    'Applebot-Extended',
+    'Amazonbot',
+    'Bytespider',
+    'CCBot',
+    'PerplexityBot',
+    'Meta-ExternalAgent',
+  ];
+
+  const contentSignal =
+    'Content-Signal: search=yes, ai-input=yes, ai-train=yes';
+
+  const aiBlocks = aiBots
+    .map(
+      (ua) =>
+        `User-agent: ${ua}\n${contentSignal}\nAllow: /\nDisallow: /api/\n`,
+    )
+    .join('\n');
+
+  const robots = `User-agent: *
+${contentSignal}
+Allow: /
+Disallow: /api/
+
+${aiBlocks}
+Sitemap: ${SITE_URL}/sitemap.xml
+`;
+
+  fs.writeFileSync(path.join(publicDir, 'sitemap.xml'), sitemap);
+  fs.writeFileSync(path.join(publicDir, 'robots.txt'), robots);
+}
 
 /**
  * @type {import('@nx/next/plugins/with-nx').WithNxOptions}
@@ -20,6 +88,27 @@ const nextConfig = {
       },
     ];
   },
+  headers: async () => {
+    return [
+      {
+        source: '/',
+        headers: [
+          {
+            key: 'Link',
+            value:
+              '</sitemap.xml>; rel="sitemap", </llms.txt>; rel="describedby"; type="text/markdown"',
+          },
+        ],
+      },
+    ];
+  },
 };
 
-module.exports = withNx(nextConfig);
+const wrapped = withNx(nextConfig);
+
+module.exports = (phase, opts) => {
+  if (phase === 'phase-production-build') {
+    generateSitemapAndRobots();
+  }
+  return typeof wrapped === 'function' ? wrapped(phase, opts) : wrapped;
+};

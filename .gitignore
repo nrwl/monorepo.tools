@@ -41,6 +41,12 @@ Thumbs.db
 # Next.js
 .next
 
+# generated at build time
+apps/website/public/sitemap.xml
+apps/website/public/robots.txt
+apps/website/public/*.md
+apps/website/public/.markdown-manifest.json
+
 .nx/cache
 .nx/workspace-data
 .cursor/rules/nx-rules.mdc

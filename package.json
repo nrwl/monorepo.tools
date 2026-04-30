@@ -62,9 +62,12 @@
     "eslint-plugin-jsx-a11y": "6.10.1",
     "eslint-plugin-react": "7.32.2",
     "eslint-plugin-react-hooks": "5.0.0",
+    "gpt-tokenizer": "^3.4.0",
     "jest": "30.0.5",
     "jest-environment-jsdom": "30.0.5",
     "jest-environment-node": "^29.7.0",
+    "jest-util": "30.0.5",
+    "jsdom": "^29.0.2",
     "nx": "21.5.3",
     "postcss": "8.4.38",
     "prettier": "2.6.2",
@@ -72,7 +75,8 @@
     "tailwindcss": "3.4.3",
     "ts-jest": "29.4.4",
     "ts-node": "10.9.1",
-    "typescript": "5.9.2",
-    "jest-util": "30.0.5"
+    "turndown": "^7.2.4",
+    "turndown-plugin-gfm": "^1.0.2",
+    "typescript": "5.9.2"
   }
 }
