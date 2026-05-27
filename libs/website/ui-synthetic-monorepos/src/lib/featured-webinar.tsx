@@ -10,10 +10,12 @@ export function FeaturedWebinar(): JSX.Element {
             <p className="text-xs font-semibold uppercase tracking-[1.5px] text-yellow-600 dark:text-yellow-500">
               Featured Webinar
             </p>
-            <h2 className="mt-3 text-xl font-bold tracking-tight text-gray-900 sm:text-2xl dark:text-white">
-              Synthetic Monorepos: the Solution for Agentic Development Across
-              Repository Boundaries
-            </h2>
+            <div className="mt-3 lg:min-h-[7rem]">
+              <h2 className="text-xl font-bold tracking-tight text-gray-900 sm:text-2xl dark:text-white">
+                Synthetic Monorepos: The Solution for Agentic Development
+                Across Repository Boundaries
+              </h2>
+            </div>
             <p className="mt-4 text-base text-gray-700 dark:text-gray-300">
               A walkthrough of how AI development tools amplify coordination
               overhead in multi-repo setups, and how synthetic monorepos
@@ -61,14 +63,14 @@ export function FeaturedWebinar(): JSX.Element {
             <p className="text-xs font-semibold uppercase tracking-[1.5px] text-yellow-600 dark:text-yellow-500">
               Early Access
             </p>
-            <div className="mt-3 flex items-start gap-4">
+            <div className="mt-3 flex items-start gap-4 lg:min-h-[7rem]">
               <img
                 src="/images/polygraph-logo.svg"
                 alt="Polygraph"
                 className="h-10 w-10 shrink-0 sm:h-12 sm:w-12"
               />
               <h2 className="text-xl font-bold tracking-tight text-gray-900 sm:text-2xl dark:text-white">
-                Polygraph implements synthetic monorepos
+                Polygraph Implements Synthetic Monorepos
               </h2>
             </div>
             <p className="mt-4 text-base text-gray-700 dark:text-gray-300">
