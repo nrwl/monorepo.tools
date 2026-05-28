@@ -12,7 +12,6 @@
     "@heroicons/react": "^2.1.4",
     "@netlify-builder/deploy": "^4.1.2",
     "@tailwindcss/aspect-ratio": "^0.4.0",
-    "@types/three": "^0.184.1",
     "classnames": "^2.5.1",
     "core-js": "^3.6.5",
     "framer-motion": "^11.3.0",
@@ -26,7 +25,6 @@
     "react-is": "18.3.1",
     "regenerator-runtime": "0.13.7",
     "tailwind-merge": "^2.4.0",
-    "three": "^0.184.0",
     "tslib": "^2.3.0"
   },
   "devDependencies": {

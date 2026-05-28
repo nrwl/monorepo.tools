@@ -1,36 +1,61 @@
-import dynamic from 'next/dynamic';
 import { PALETTE, FONTS } from './data';
 
-const ConfCard3D = dynamic(
-  () => import('./conf-card-3d').then((m) => m.ConfCard3D),
-  { ssr: false },
-);
+const W = 1280;
+const H = 700;
+
+type Node = {
+  label: string;
+  r: number;
+  angle: number;
+  dist: number;
+  color: string;
+};
+
+const nodes: Node[] = [
+  { label: 'CI', r: 36, angle: -90, dist: 230, color: PALETTE.pink },
+  { label: 'Agents', r: 32, angle: -40, dist: 280, color: PALETTE.cyan },
+  { label: 'Build Graph', r: 28, angle: 10, dist: 330, color: PALETTE.pink },
+  { label: 'Testing', r: 30, angle: 60, dist: 240, color: PALETTE.cyan },
+  { label: 'MCP', r: 26, angle: 110, dist: 300, color: PALETTE.lime },
+  { label: 'Polyrepo', r: 24, angle: 160, dist: 360, color: PALETTE.textDim },
+  { label: 'Reliability', r: 28, angle: 200, dist: 250, color: PALETTE.pink },
+  { label: 'Caching', r: 26, angle: 240, dist: 320, color: PALETTE.cyan },
+  { label: 'Affected', r: 24, angle: -130, dist: 290, color: PALETTE.cyan },
+];
 
 export function NodeGraphHero() {
+  const cx = W / 2;
+  const cy = H / 2 + 20;
+  const pts = nodes.map((n) => {
+    const rad = (n.angle * Math.PI) / 180;
+    return {
+      ...n,
+      x: cx + Math.cos(rad) * n.dist,
+      y: cy + Math.sin(rad) * n.dist,
+    };
+  });
+
   return (
     <div
       style={{
         position: 'relative',
         width: '100%',
+        height: H,
         overflow: 'hidden',
         background: PALETTE.bg,
-        padding: '64px 56px 96px',
       }}
     >
-      {/* Grid bg */}
       <svg
         style={{
           position: 'absolute',
           inset: 0,
           width: '100%',
           height: '100%',
-          pointerEvents: 'none',
         }}
-        aria-hidden
       >
         <defs>
           <pattern
-            id="heroGrid"
+            id="varAGrid"
             width="40"
             height="40"
             patternUnits="userSpaceOnUse"
@@ -42,24 +67,136 @@ export function NodeGraphHero() {
               strokeWidth="1"
             />
           </pattern>
-          <radialGradient id="heroFade" cx="50%" cy="55%" r="60%">
+          <radialGradient id="varAFade" cx="50%" cy="55%" r="50%">
             <stop offset="0%" stopColor="rgba(10,22,40,0)" />
             <stop offset="100%" stopColor={PALETTE.bg} />
           </radialGradient>
         </defs>
-        <rect width="100%" height="100%" fill="url(#heroGrid)" />
-        <rect width="100%" height="100%" fill="url(#heroFade)" />
+        <rect width="100%" height="100%" fill="url(#varAGrid)" />
+        <rect width="100%" height="100%" fill="url(#varAFade)" />
+      </svg>
+
+      <svg
+        viewBox={`0 0 ${W} ${H}`}
+        preserveAspectRatio="xMidYMid slice"
+        style={{
+          position: 'absolute',
+          inset: 0,
+          width: '100%',
+          height: '100%',
+        }}
+      >
+        {pts.map((p, i) => (
+          <line
+            key={i}
+            x1={cx}
+            y1={cy}
+            x2={p.x}
+            y2={p.y}
+            stroke={p.color}
+            strokeOpacity="0.4"
+            strokeWidth="1"
+            strokeDasharray="3 4"
+          >
+            <animate
+              attributeName="stroke-dashoffset"
+              from="0"
+              to="-14"
+              dur={`${1.6 + (i % 4) * 0.3}s`}
+              repeatCount="indefinite"
+            />
+          </line>
+        ))}
+        {pts.map((p, i) => {
+          const next = pts[(i + 3) % pts.length];
+          return (
+            <line
+              key={`x${i}`}
+              x1={p.x}
+              y1={p.y}
+              x2={next.x}
+              y2={next.y}
+              stroke={PALETTE.bgLine}
+              strokeOpacity="0.6"
+              strokeWidth="0.5"
+            />
+          );
+        })}
+        <circle
+          cx={cx}
+          cy={cy}
+          r="380"
+          fill="none"
+          stroke={PALETTE.bgLine}
+          strokeWidth="1"
+          strokeDasharray="2 6"
+        />
+        {pts.map((p, i) => (
+          <g key={`n${i}`}>
+            <circle cx={p.x} cy={p.y} r={p.r + 4} fill={PALETTE.bg} />
+            <circle
+              cx={p.x}
+              cy={p.y}
+              r={p.r}
+              fill="none"
+              stroke={p.color}
+              strokeWidth="1.5"
+            />
+            <circle
+              cx={p.x}
+              cy={p.y}
+              r={p.r - 8}
+              fill={p.color}
+              opacity="0.15"
+            >
+              <animate
+                attributeName="r"
+                values={`${p.r - 8};${p.r - 4};${p.r - 8}`}
+                dur="3s"
+                repeatCount="indefinite"
+              />
+            </circle>
+            <text
+              x={p.x}
+              y={p.y + 4}
+              textAnchor="middle"
+              fill={PALETTE.text}
+              fontFamily={FONTS.mono}
+              fontSize="11"
+            >
+              {p.label}
+            </text>
+          </g>
+        ))}
+        <circle
+          cx={cx}
+          cy={cy}
+          r="90"
+          fill={PALETTE.bg}
+          stroke={PALETTE.pink}
+          strokeWidth="1.5"
+        />
+        <circle
+          cx={cx}
+          cy={cy}
+          r="78"
+          fill="none"
+          stroke={PALETTE.pink}
+          strokeWidth="0.5"
+          strokeDasharray="2 3"
+        />
       </svg>
 
       <div
         style={{
-          position: 'relative',
+          position: 'absolute',
+          inset: 0,
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
+          justifyContent: 'center',
+          padding: '0 56px',
           textAlign: 'center',
-          maxWidth: 1100,
-          margin: '0 auto',
         }}
       >
         <div
@@ -106,36 +243,19 @@ export function NodeGraphHero() {
             color: PALETTE.text,
             maxWidth: 560,
             lineHeight: 1.5,
-            marginTop: 24,
+            marginTop: 28,
             opacity: 0.9,
           }}
         >
           A half-day virtual conference for engineers working at the
           intersection of monorepos, CI, and agentic AI.
         </p>
-
-        <div style={{ width: '100%', margin: '56px 0 48px' }}>
-          <ConfCard3D />
-          <div
-            style={{
-              marginTop: 14,
-              fontFamily: FONTS.mono,
-              fontSize: 11,
-              color: PALETTE.textMute,
-              letterSpacing: 2,
-            }}
-          >
-            ↑ HOVER THE CARD
-          </div>
-        </div>
-
         <div
           style={{
             display: 'flex',
             gap: 16,
+            marginTop: 36,
             alignItems: 'center',
-            flexWrap: 'wrap',
-            justifyContent: 'center',
           }}
         >
           <a
