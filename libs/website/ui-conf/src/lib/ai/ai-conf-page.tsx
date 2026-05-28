@@ -53,7 +53,9 @@ export function AiConfPage() {
         }}
       >
         <Stat label="DATE" value="23rd June 2026" tone={PALETTE.pink} />
-        <Stat label="FORMAT" value="Online, free" tone={PALETTE.cyan} />
+        <div style={{ justifySelf: 'center' }}>
+          <Stat label="FORMAT" value="Online, free" tone={PALETTE.cyan} />
+        </div>
         <div style={{ justifySelf: 'end' }}>
           <CountdownPill compact />
         </div>
