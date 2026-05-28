@@ -49,8 +49,7 @@ export function RegisterCTA() {
             margin: '32px auto 40px',
           }}
         >
-          June 23, 2026. Free. Three hours. Bring questions, leave with
-          answers.
+          June 23, 2026. Free. Bring questions, leave with answers.
         </p>
         <a
           href="#"

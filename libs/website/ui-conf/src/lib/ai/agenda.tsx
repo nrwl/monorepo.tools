@@ -24,7 +24,7 @@ export function Agenda() {
           maxWidth: 1100,
         }}
       >
-        Six sessions.{' '}
+        All signal.{' '}
         <span style={{ color: PALETTE.pink }}>Zero filler.</span>
       </h2>
 

@@ -1,9 +1,10 @@
+import { useEffect, useRef } from 'react';
 import { PALETTE, FONTS } from './data';
 
 const W = 1280;
-const H = 700; // intrinsic viewbox; actual hero stretches to viewport via CSS
+const H = 700;
 
-type Node = {
+type NodeDef = {
   label: string;
   r: number;
   angle: number;
@@ -11,7 +12,7 @@ type Node = {
   color: string;
 };
 
-const nodes: Node[] = [
+const nodes: NodeDef[] = [
   { label: 'CI', r: 36, angle: -90, dist: 230, color: PALETTE.pink },
   { label: 'Agents', r: 32, angle: -40, dist: 280, color: PALETTE.cyan },
   { label: 'Build Graph', r: 28, angle: 10, dist: 330, color: PALETTE.pink },
@@ -34,6 +35,122 @@ export function NodeGraphHero() {
       y: cy + Math.sin(rad) * n.dist,
     };
   });
+
+  const svgRef = useRef<SVGSVGElement | null>(null);
+  const groupRefs = useRef<(SVGGElement | null)[]>([]);
+  const spokeRefs = useRef<(SVGLineElement | null)[]>([]);
+  const crossRefs = useRef<(SVGLineElement | null)[]>([]);
+
+  useEffect(() => {
+    const svg = svgRef.current;
+    if (!svg) return;
+
+    // mouse position in SVG coords; init far away so no repulsion
+    const mouse = { x: -9999, y: -9999, active: false };
+    const handleMove = (e: MouseEvent) => {
+      const pt = svg.createSVGPoint();
+      pt.x = e.clientX;
+      pt.y = e.clientY;
+      const ctm = svg.getScreenCTM();
+      if (!ctm) return;
+      const local = pt.matrixTransform(ctm.inverse());
+      mouse.x = local.x;
+      mouse.y = local.y;
+      mouse.active = true;
+    };
+    const handleLeave = () => {
+      mouse.active = false;
+    };
+    const host = svg.parentElement!;
+    host.addEventListener('mousemove', handleMove);
+    host.addEventListener('mouseleave', handleLeave);
+
+    const phases = pts.map((_, i) => i * 0.7);
+    const speeds = pts.map((_, i) => 0.5 + (i % 3) * 0.2);
+    const ampX = pts.map((_, i) => 6 + (i % 4) * 2);
+    const ampY = pts.map((_, i) => 5 + (i % 5) * 2);
+
+    // current per-node offset (eased toward target each frame)
+    const offsets = pts.map(() => ({ x: 0, y: 0 }));
+
+    let raf = 0;
+    let start = performance.now();
+
+    const tick = (now: number) => {
+      const t = (now - start) / 1000;
+
+      const positions: { x: number; y: number }[] = [];
+      for (let i = 0; i < pts.length; i++) {
+        const p = pts[i];
+        // idle drift
+        const idleX = Math.sin(t * speeds[i] + phases[i]) * ampX[i];
+        const idleY = Math.cos(t * speeds[i] * 0.9 + phases[i]) * ampY[i];
+
+        // mouse attract: gentle pull toward cursor when within radius
+        let attrX = 0;
+        let attrY = 0;
+        if (mouse.active) {
+          const baseX = p.x + idleX;
+          const baseY = p.y + idleY;
+          const dx = mouse.x - baseX;
+          const dy = mouse.y - baseY;
+          const dist = Math.hypot(dx, dy);
+          const R = 320;
+          if (dist < R && dist > 0.01) {
+            const k = (1 - dist / R) ** 2; // strong nearby, falls off
+            attrX = dx * k * 0.25;
+            attrY = dy * k * 0.25;
+          }
+        }
+
+        const tgtX = idleX + attrX;
+        const tgtY = idleY + attrY;
+        // ease
+        offsets[i].x += (tgtX - offsets[i].x) * 0.18;
+        offsets[i].y += (tgtY - offsets[i].y) * 0.18;
+
+        const g = groupRefs.current[i];
+        if (g) {
+          g.setAttribute(
+            'transform',
+            `translate(${offsets[i].x.toFixed(2)} ${offsets[i].y.toFixed(2)})`,
+          );
+        }
+        positions.push({ x: p.x + offsets[i].x, y: p.y + offsets[i].y });
+      }
+
+      // update spoke lines (hub → node)
+      for (let i = 0; i < pts.length; i++) {
+        const l = spokeRefs.current[i];
+        if (l) {
+          l.setAttribute('x2', positions[i].x.toFixed(2));
+          l.setAttribute('y2', positions[i].y.toFixed(2));
+        }
+      }
+      // update inter-node lines
+      for (let i = 0; i < pts.length; i++) {
+        const a = positions[i];
+        const b = positions[(i + 3) % pts.length];
+        const l = crossRefs.current[i];
+        if (l) {
+          l.setAttribute('x1', a.x.toFixed(2));
+          l.setAttribute('y1', a.y.toFixed(2));
+          l.setAttribute('x2', b.x.toFixed(2));
+          l.setAttribute('y2', b.y.toFixed(2));
+        }
+      }
+
+      raf = requestAnimationFrame(tick);
+    };
+    raf = requestAnimationFrame(tick);
+
+    return () => {
+      cancelAnimationFrame(raf);
+      host.removeEventListener('mousemove', handleMove);
+      host.removeEventListener('mouseleave', handleLeave);
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <div
@@ -78,6 +195,7 @@ export function NodeGraphHero() {
       </svg>
 
       <svg
+        ref={svgRef}
         viewBox={`0 0 ${W} ${H}`}
         preserveAspectRatio="xMidYMid slice"
         style={{
@@ -90,6 +208,9 @@ export function NodeGraphHero() {
         {pts.map((p, i) => (
           <line
             key={i}
+            ref={(el) => {
+              spokeRefs.current[i] = el;
+            }}
             x1={cx}
             y1={cy}
             x2={p.x}
@@ -113,6 +234,9 @@ export function NodeGraphHero() {
           return (
             <line
               key={`x${i}`}
+              ref={(el) => {
+                crossRefs.current[i] = el;
+              }}
               x1={p.x}
               y1={p.y}
               x2={next.x}
@@ -133,7 +257,12 @@ export function NodeGraphHero() {
           strokeDasharray="2 6"
         />
         {pts.map((p, i) => (
-          <g key={`n${i}`}>
+          <g
+            key={`n${i}`}
+            ref={(el) => {
+              groupRefs.current[i] = el;
+            }}
+          >
             <circle cx={p.x} cy={p.y} r={p.r + 4} fill={PALETTE.bg} />
             <circle
               cx={p.x}
@@ -198,6 +327,7 @@ export function NodeGraphHero() {
           justifyContent: 'center',
           padding: '0 56px',
           textAlign: 'center',
+          pointerEvents: 'none',
         }}
       >
         <h1
@@ -235,6 +365,7 @@ export function NodeGraphHero() {
             gap: 16,
             marginTop: 36,
             alignItems: 'center',
+            pointerEvents: 'auto',
           }}
         >
           <a
@@ -264,14 +395,15 @@ export function NodeGraphHero() {
               fontSize: 13,
               letterSpacing: 1,
               textDecoration: 'none',
-              border: `1px solid ${PALETTE.bgLine}`,
+              border: `1px solid ${PALETTE.textDim}`,
+              background: 'rgba(10,22,40,0.7)',
+              backdropFilter: 'blur(6px)',
             }}
           >
             SEE AGENDA
           </a>
         </div>
       </div>
-
     </div>
   );
 }

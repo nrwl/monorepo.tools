@@ -161,16 +161,8 @@ export function NavBar({ accent = PALETTE.pink }: { accent?: string }) {
       }}
     >
       <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
-        <div
-          style={{
-            width: 14,
-            height: 14,
-            background: accent,
-            transform: 'rotate(45deg)',
-          }}
-        />
         <span style={{ fontWeight: 600 }}>
-          monorepo<span style={{ color: accent }}>{'<3'}</span>ai
+          ai<span style={{ color: accent }}>{'<3'}</span>monorepo
         </span>
         <span style={{ color: PALETTE.textMute }}>/conf/2026</span>
       </div>
@@ -584,16 +576,8 @@ export function ConfFooter({ accent = PALETTE.pink }: { accent?: string }) {
             marginBottom: 16,
           }}
         >
-          <div
-            style={{
-              width: 12,
-              height: 12,
-              background: accent,
-              transform: 'rotate(45deg)',
-            }}
-          />
           <span style={{ color: PALETTE.text, fontWeight: 600 }}>
-            monorepo<span style={{ color: accent }}>{'<3'}</span>ai
+            ai<span style={{ color: accent }}>{'<3'}</span>monorepo
           </span>
         </div>
         <div
