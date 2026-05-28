@@ -14,7 +14,7 @@ export function Hosts() {
         style={{
           fontFamily: FONTS.display,
           fontSize: 56,
-          fontWeight: 500,
+          fontWeight: 700,
           color: PALETTE.text,
           margin: '0 0 64px',
           letterSpacing: -1,

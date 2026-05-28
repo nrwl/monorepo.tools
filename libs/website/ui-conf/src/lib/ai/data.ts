@@ -1,18 +1,22 @@
+// Palette leans on monorepo.tools' slate dark-mode tokens (slate-800/900/700)
+// + yellow-500 as the site-wide accent, then keeps pink + cyan as
+// conf-specific event colors to stay visually distinct.
 export const PALETTE = {
-  bg: '#0a1628',
-  bgDeeper: '#06101e',
-  bgCard: '#15263f',
-  bgLine: '#1f3354',
-  pink: '#ff4d8d',
+  bg: '#1e293b', // slate-800 — matches site dark bg
+  bgDeeper: '#0f172a', // slate-900 — deeper surfaces (footer, register)
+  bgCard: '#334155', // slate-700 — elevated surface
+  bgLine: '#475569', // slate-600 — subtle border on dark
+  pink: '#ff4d8d', // conf primary accent (event identity)
   pinkSoft: '#ffa3c4',
-  cyan: '#2ad4ff',
+  cyan: '#2ad4ff', // conf secondary accent
   cyanSoft: '#94e7ff',
-  lime: '#b8ff5d',
-  text: '#f1f4fa',
-  textDim: '#8a96ad',
-  textMute: '#5b6a85',
-  grid: 'rgba(132,160,210,0.08)',
-  gridStrong: 'rgba(132,160,210,0.18)',
+  yellow: '#eab308', // yellow-500 — shared with rest of site
+  lime: '#eab308', // alias for back-compat; same as yellow
+  text: '#f8fafc', // slate-50 — matches site primary text on dark
+  textDim: '#cbd5e1', // slate-300
+  textMute: '#94a3b8', // slate-400
+  grid: 'rgba(148,163,184,0.08)',
+  gridStrong: 'rgba(148,163,184,0.18)',
 };
 
 export const FONTS = {

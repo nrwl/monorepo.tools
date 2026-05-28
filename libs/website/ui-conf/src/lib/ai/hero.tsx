@@ -334,11 +334,11 @@ export function NodeGraphHero() {
           style={{
             fontFamily: FONTS.display,
             fontSize: 96,
-            fontWeight: 500,
+            fontWeight: 700,
             lineHeight: 0.95,
             margin: 0,
             color: PALETTE.text,
-            letterSpacing: -2,
+            letterSpacing: -3,
           }}
         >
           AI{' '}
@@ -356,8 +356,18 @@ export function NodeGraphHero() {
             opacity: 0.9,
           }}
         >
-          A half-day virtual conference for engineers working at the
-          intersection of monorepos, CI, and agentic AI.
+          A half-day virtual conference for engineers working at the{' '}
+          <mark
+            style={{
+              background: PALETTE.yellow,
+              color: PALETTE.bgDeeper,
+              padding: '0 6px',
+              borderRadius: 4,
+            }}
+          >
+            intersection of monorepos and agentic AI
+          </mark>
+          .
         </p>
         <div
           style={{

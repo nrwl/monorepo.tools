@@ -28,7 +28,7 @@ export function RegisterCTA() {
           style={{
             fontFamily: FONTS.display,
             fontSize: 220,
-            fontWeight: 500,
+            fontWeight: 700,
             color: PALETTE.text,
             margin: 0,
             letterSpacing: -8,

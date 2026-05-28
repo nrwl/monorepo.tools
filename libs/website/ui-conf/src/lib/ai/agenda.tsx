@@ -16,7 +16,7 @@ export function Agenda() {
         style={{
           fontFamily: FONTS.display,
           fontSize: 96,
-          fontWeight: 500,
+          fontWeight: 700,
           color: PALETTE.text,
           margin: '28px 0 48px',
           letterSpacing: -3,

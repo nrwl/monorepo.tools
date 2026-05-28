@@ -20,7 +20,7 @@ export function SpeakerGrid({
         style={{
           fontFamily: FONTS.display,
           fontSize: 56,
-          fontWeight: 500,
+          fontWeight: 700,
           color: PALETTE.text,
           margin: '28px 0 12px',
           letterSpacing: -1,
