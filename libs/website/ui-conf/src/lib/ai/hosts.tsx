@@ -1,27 +1,26 @@
 import { PALETTE, FONTS } from './data';
-import { SectionLabel } from './shared';
 
 export function Hosts() {
   return (
-    <div id="hosts" style={{ padding: '96px 80px', background: PALETTE.bg }}>
-      <SectionLabel
-        index={3}
-        label="Brought to you by"
-        accent={PALETTE.pink}
-      />
+    <div
+      id="hosts"
+      style={{
+        padding: '96px 80px',
+        background: PALETTE.bg,
+        textAlign: 'center',
+      }}
+    >
       <h2
         style={{
           fontFamily: FONTS.display,
           fontSize: 56,
           fontWeight: 500,
           color: PALETTE.text,
-          margin: '28px 0 64px',
+          margin: '0 0 64px',
           letterSpacing: -1,
         }}
       >
-        Brought to you by{' '}
-        <span style={{ color: PALETTE.pink }}>Nx</span> &amp;{' '}
-        <span style={{ color: PALETTE.cyan }}>Polygraph</span>.
+        Brought to you by
       </h2>
       <div
         style={{

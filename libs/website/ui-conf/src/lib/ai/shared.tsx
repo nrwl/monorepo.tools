@@ -35,30 +35,44 @@ export function CountdownPill({
       <div
         style={{
           display: 'inline-flex',
-          alignItems: 'center',
-          gap: 10,
+          alignItems: 'baseline',
+          gap: 12,
           fontFamily: FONTS.mono,
-          fontSize: 13,
+          fontSize: 18,
+          fontWeight: 500,
           color: PALETTE.text,
           letterSpacing: 0.5,
+          fontVariantNumeric: 'tabular-nums',
         }}
       >
         <span
           style={{
-            width: 6,
-            height: 6,
+            width: 8,
+            height: 8,
             borderRadius: 99,
             background: color,
-            boxShadow: `0 0 10px ${color}`,
+            boxShadow: `0 0 12px ${color}`,
+            alignSelf: 'center',
           }}
         />
-        <span style={{ color: PALETTE.textDim }}>STARTS IN</span>
+        <span
+          style={{
+            color: PALETTE.textDim,
+            fontSize: 11,
+            letterSpacing: 2,
+          }}
+        >
+          STARTS IN
+        </span>
         <span>
           {pad(d)}
-          <span style={{ color: PALETTE.textMute }}>d</span> {pad(h)}
-          <span style={{ color: PALETTE.textMute }}>h</span> {pad(m)}
-          <span style={{ color: PALETTE.textMute }}>m</span> {pad(s)}
-          <span style={{ color: PALETTE.textMute }}>s</span>
+          <span style={{ color: PALETTE.textDim, marginLeft: 2 }}>d</span>{' '}
+          {pad(h)}
+          <span style={{ color: PALETTE.textDim, marginLeft: 2 }}>h</span>{' '}
+          {pad(m)}
+          <span style={{ color: PALETTE.textDim, marginLeft: 2 }}>m</span>{' '}
+          {pad(s)}
+          <span style={{ color: PALETTE.textDim, marginLeft: 2 }}>s</span>
         </span>
       </div>
     );

@@ -1,7 +1,7 @@
 import { PALETTE, FONTS } from './data';
 
 const W = 1280;
-const H = 700;
+const H = 700; // intrinsic viewbox; actual hero stretches to viewport via CSS
 
 type Node = {
   label: string;
@@ -40,7 +40,8 @@ export function NodeGraphHero() {
       style={{
         position: 'relative',
         width: '100%',
-        height: H,
+        height: 'calc(100vh - 65px - 134px)',
+        minHeight: 560,
         overflow: 'hidden',
         background: PALETTE.bg,
       }}
@@ -199,17 +200,6 @@ export function NodeGraphHero() {
           textAlign: 'center',
         }}
       >
-        <div
-          style={{
-            fontFamily: FONTS.mono,
-            fontSize: 11,
-            color: PALETTE.cyan,
-            letterSpacing: 3,
-            marginBottom: 18,
-          }}
-        >
-          ◆ ONLINE · FREE · JUNE 23, 2026
-        </div>
         <h1
           style={{
             fontFamily: FONTS.display,
@@ -225,25 +215,14 @@ export function NodeGraphHero() {
           <span style={{ color: PALETTE.pink, fontFamily: FONTS.body }}>♥</span>{' '}
           Monorepos
         </h1>
-        <div
-          style={{
-            fontFamily: FONTS.mono,
-            fontSize: 14,
-            color: PALETTE.textDim,
-            marginTop: 14,
-            letterSpacing: 4,
-          }}
-        >
-          C O N F &nbsp;&nbsp; 2 0 2 6
-        </div>
         <p
           style={{
             fontFamily: FONTS.body,
-            fontSize: 17,
+            fontSize: 22,
             color: PALETTE.text,
-            maxWidth: 560,
+            maxWidth: 680,
             lineHeight: 1.5,
-            marginTop: 28,
+            marginTop: 32,
             opacity: 0.9,
           }}
         >
@@ -291,6 +270,43 @@ export function NodeGraphHero() {
             SEE AGENDA
           </a>
         </div>
+      </div>
+
+    </div>
+  );
+}
+
+export function Stat({
+  label,
+  value,
+  tone,
+}: {
+  label: string;
+  value: string;
+  tone: string;
+}) {
+  return (
+    <div>
+      <div
+        style={{
+          fontFamily: FONTS.mono,
+          fontSize: 10,
+          color: PALETTE.textMute,
+          letterSpacing: 2,
+          marginBottom: 8,
+        }}
+      >
+        {label}
+      </div>
+      <div
+        style={{
+          fontFamily: FONTS.display,
+          fontSize: 28,
+          color: PALETTE.text,
+          letterSpacing: -1,
+        }}
+      >
+        <span style={{ color: tone }}>▸</span> {value}
       </div>
     </div>
   );

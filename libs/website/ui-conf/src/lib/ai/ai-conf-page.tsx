@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { PALETTE, FONTS, Speaker, SPEAKERS } from './data';
 import { CountdownPill, NavBar, SpeakerModal, ConfFooter } from './shared';
-import { NodeGraphHero } from './hero';
+import { NodeGraphHero, Stat } from './hero';
 import { Agenda } from './agenda';
 import { SpeakerGrid } from './speakers';
 import { Hosts } from './hosts';
@@ -42,28 +42,20 @@ export function AiConfPage() {
       <NodeGraphHero />
       <div
         style={{
-          padding: '16px 56px',
+          padding: '40px 56px',
           borderTop: `1px solid ${PALETTE.bgLine}`,
           borderBottom: `1px solid ${PALETTE.bgLine}`,
-          display: 'flex',
-          justifyContent: 'space-between',
+          display: 'grid',
+          gridTemplateColumns: '1fr 1fr 1fr',
           alignItems: 'center',
+          gap: 32,
           background: PALETTE.bgDeeper,
         }}
       >
-        <CountdownPill compact />
-        <div
-          style={{
-            fontFamily: FONTS.mono,
-            fontSize: 11,
-            color: PALETTE.textDim,
-            letterSpacing: 2,
-          }}
-        >
-          STREAMING LIVE FROM{' '}
-          <span style={{ color: PALETTE.text }}>
-            youtube.com/@nxdevtools
-          </span>
+        <Stat label="DATE" value="06.23.26" tone={PALETTE.pink} />
+        <Stat label="FORMAT" value="Online, free" tone={PALETTE.cyan} />
+        <div style={{ justifySelf: 'end' }}>
+          <CountdownPill compact />
         </div>
       </div>
       <Agenda />
