@@ -79,14 +79,7 @@ const nextConfig = {
     svgr: false,
   },
   redirects: async () => {
-    return [
-      {
-        source: '/conf',
-        destination:
-          'https://monorepo.world?utm_source=monorepo.tools&utm_medium=website&utm_campaign=monorepoworld',
-        permanent: true,
-      },
-    ];
+    return [];
   },
   headers: async () => {
     return [

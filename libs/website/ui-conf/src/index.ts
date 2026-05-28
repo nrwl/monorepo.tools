@@ -8,3 +8,4 @@ export * from './lib/speakers';
 export * from './lib/intro';
 export * from './lib/header';
 export * from './lib/announcement-banner';
+export * from './lib/ai/ai-conf-page';

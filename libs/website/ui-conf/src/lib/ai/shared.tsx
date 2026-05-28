@@ -1,0 +1,685 @@
+import { useEffect, useMemo, useState } from 'react';
+import { PALETTE, FONTS, CONF, AGENDA, Speaker } from './data';
+
+function useCountdown(targetISO: string) {
+  const target = useMemo(() => new Date(targetISO).getTime(), [targetISO]);
+  const [now, setNow] = useState<number | null>(null);
+  useEffect(() => {
+    setNow(Date.now());
+    const id = setInterval(() => setNow(Date.now()), 1000);
+    return () => clearInterval(id);
+  }, []);
+  let diff = Math.max(0, target - (now ?? target));
+  const d = Math.floor(diff / 86400000);
+  diff -= d * 86400000;
+  const h = Math.floor(diff / 3600000);
+  diff -= h * 3600000;
+  const m = Math.floor(diff / 60000);
+  diff -= m * 60000;
+  const s = Math.floor(diff / 1000);
+  return { d, h, m, s, ready: now !== null };
+}
+
+export function CountdownPill({
+  compact = false,
+  tone = 'pink',
+}: {
+  compact?: boolean;
+  tone?: 'pink' | 'cyan';
+}) {
+  const { d, h, m, s } = useCountdown(CONF.targetISO);
+  const pad = (n: number) => String(n).padStart(2, '0');
+  const color = tone === 'pink' ? PALETTE.pink : PALETTE.cyan;
+  if (compact) {
+    return (
+      <div
+        style={{
+          display: 'inline-flex',
+          alignItems: 'center',
+          gap: 10,
+          fontFamily: FONTS.mono,
+          fontSize: 13,
+          color: PALETTE.text,
+          letterSpacing: 0.5,
+        }}
+      >
+        <span
+          style={{
+            width: 6,
+            height: 6,
+            borderRadius: 99,
+            background: color,
+            boxShadow: `0 0 10px ${color}`,
+          }}
+        />
+        <span style={{ color: PALETTE.textDim }}>STARTS IN</span>
+        <span>
+          {pad(d)}
+          <span style={{ color: PALETTE.textMute }}>d</span> {pad(h)}
+          <span style={{ color: PALETTE.textMute }}>h</span> {pad(m)}
+          <span style={{ color: PALETTE.textMute }}>m</span> {pad(s)}
+          <span style={{ color: PALETTE.textMute }}>s</span>
+        </span>
+      </div>
+    );
+  }
+  const cell = (n: number, label: string) => (
+    <div
+      style={{
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        minWidth: 72,
+      }}
+    >
+      <div
+        style={{
+          fontFamily: FONTS.mono,
+          fontSize: 44,
+          fontWeight: 500,
+          color: PALETTE.text,
+          lineHeight: 1,
+          fontVariantNumeric: 'tabular-nums',
+        }}
+      >
+        {pad(n)}
+      </div>
+      <div
+        style={{
+          fontFamily: FONTS.mono,
+          fontSize: 10,
+          color: PALETTE.textMute,
+          marginTop: 8,
+          letterSpacing: 1.5,
+        }}
+      >
+        {label}
+      </div>
+    </div>
+  );
+  const dot = (
+    <div
+      style={{
+        fontFamily: FONTS.mono,
+        fontSize: 40,
+        color,
+        opacity: 0.5,
+        lineHeight: 1,
+      }}
+    >
+      :
+    </div>
+  );
+  return (
+    <div
+      style={{
+        display: 'inline-flex',
+        alignItems: 'flex-start',
+        gap: 16,
+        padding: '16px 24px',
+        border: `1px solid ${PALETTE.bgLine}`,
+        background: 'rgba(255,255,255,0.02)',
+        borderRadius: 4,
+      }}
+    >
+      {cell(d, 'DAYS')}
+      {dot}
+      {cell(h, 'HOURS')}
+      {dot}
+      {cell(m, 'MINUTES')}
+      {dot}
+      {cell(s, 'SECONDS')}
+    </div>
+  );
+}
+
+export function NavBar({ accent = PALETTE.pink }: { accent?: string }) {
+  return (
+    <nav
+      style={{
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        padding: '20px 56px',
+        borderBottom: `1px solid ${PALETTE.bgLine}`,
+        fontFamily: FONTS.mono,
+        fontSize: 13,
+        color: PALETTE.text,
+        position: 'sticky',
+        top: 0,
+        zIndex: 5,
+        background: 'rgba(10,22,40,0.85)',
+        backdropFilter: 'blur(8px)',
+      }}
+    >
+      <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+        <div
+          style={{
+            width: 14,
+            height: 14,
+            background: accent,
+            transform: 'rotate(45deg)',
+          }}
+        />
+        <span style={{ fontWeight: 600 }}>
+          monorepo<span style={{ color: accent }}>{'<3'}</span>ai
+        </span>
+        <span style={{ color: PALETTE.textMute }}>/conf/2026</span>
+      </div>
+      <div style={{ display: 'flex', alignItems: 'center', gap: 36 }}>
+        <a
+          href="#agenda"
+          style={{ color: PALETTE.textDim, textDecoration: 'none' }}
+        >
+          Agenda
+        </a>
+        <a
+          href="#speakers"
+          style={{ color: PALETTE.textDim, textDecoration: 'none' }}
+        >
+          Speakers
+        </a>
+        <a
+          href="#hosts"
+          style={{ color: PALETTE.textDim, textDecoration: 'none' }}
+        >
+          Hosts
+        </a>
+        <a
+          href="#register"
+          style={{
+            color: PALETTE.bg,
+            background: accent,
+            padding: '10px 18px',
+            textDecoration: 'none',
+            fontWeight: 600,
+            letterSpacing: 0.5,
+          }}
+        >
+          Register →
+        </a>
+      </div>
+    </nav>
+  );
+}
+
+export function SectionLabel({
+  index,
+  label,
+  accent = PALETTE.pink,
+}: {
+  index: number;
+  label: string;
+  accent?: string;
+}) {
+  return (
+    <div
+      style={{
+        display: 'flex',
+        alignItems: 'center',
+        gap: 16,
+        fontFamily: FONTS.mono,
+        fontSize: 12,
+        color: PALETTE.textDim,
+        letterSpacing: 2,
+      }}
+    >
+      <span style={{ color: accent }}>§{String(index).padStart(2, '0')}</span>
+      <span style={{ flex: '0 0 auto' }}>{label.toUpperCase()}</span>
+      <span style={{ flex: 1, height: 1, background: PALETTE.bgLine }} />
+    </div>
+  );
+}
+
+function findTalkForSpeaker(speaker: Speaker | null) {
+  if (!speaker) return null;
+  const parts = speaker.name.toLowerCase().split(' ');
+  const first = parts[0];
+  const last = parts[parts.length - 1];
+  const byName = AGENDA.find(
+    (a) =>
+      a.speaker &&
+      a.speaker.toLowerCase().includes(first) &&
+      a.speaker.toLowerCase().includes(last),
+  );
+  if (byName) return byName;
+  return AGENDA.find((a) => a.title === speaker.topic) || null;
+}
+
+export function SpeakerAvatar({
+  speaker,
+  size = '100%',
+  height = 280,
+}: {
+  speaker: Speaker;
+  size?: string | number;
+  height?: number | string;
+}) {
+  return (
+    <div
+      aria-hidden
+      style={{
+        width: size,
+        height,
+        background: `linear-gradient(135deg, ${PALETTE.bgCard} 0%, ${PALETTE.bgDeeper} 100%)`,
+        border: `1px solid ${PALETTE.bgLine}`,
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        fontFamily: FONTS.display,
+        fontSize: 56,
+        fontWeight: 500,
+        color: PALETTE.textMute,
+        letterSpacing: -2,
+        position: 'relative',
+        overflow: 'hidden',
+      }}
+    >
+      <span style={{ position: 'relative', zIndex: 1 }}>
+        {speaker.name
+          .split(' ')
+          .map((p) => p[0])
+          .join('')
+          .slice(0, 2)}
+      </span>
+      <div
+        style={{
+          position: 'absolute',
+          inset: 0,
+          background: `radial-gradient(circle at 70% 30%, ${PALETTE.pink}22, transparent 60%)`,
+        }}
+      />
+    </div>
+  );
+}
+
+export function SpeakerModal({
+  speaker,
+  onClose,
+  accent = PALETTE.pink,
+}: {
+  speaker: Speaker | null;
+  onClose: () => void;
+  accent?: string;
+}) {
+  useEffect(() => {
+    if (!speaker) return;
+    const handler = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') onClose();
+    };
+    window.addEventListener('keydown', handler);
+    return () => window.removeEventListener('keydown', handler);
+  }, [speaker, onClose]);
+  if (!speaker) return null;
+  const talk = findTalkForSpeaker(speaker);
+  const shareUrl =
+    typeof window !== 'undefined'
+      ? `${window.location.origin}${window.location.pathname}#speaker=${speaker.id}`
+      : `#speaker=${speaker.id}`;
+  return (
+    <div
+      onClick={onClose}
+      style={{
+        position: 'fixed',
+        inset: 0,
+        zIndex: 50,
+        background: 'rgba(6,16,30,0.85)',
+        backdropFilter: 'blur(6px)',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        padding: 40,
+      }}
+    >
+      <div
+        onClick={(e) => e.stopPropagation()}
+        style={{
+          width: 'min(820px, 100%)',
+          background: PALETTE.bg,
+          border: `1px solid ${PALETTE.bgLine}`,
+          position: 'relative',
+          display: 'grid',
+          gridTemplateColumns: '260px 1fr',
+        }}
+      >
+        <div
+          style={{
+            borderRight: `1px solid ${PALETTE.bgLine}`,
+            padding: 20,
+            display: 'flex',
+            flexDirection: 'column',
+            gap: 16,
+          }}
+        >
+          <SpeakerAvatar speaker={speaker} size={220} height={280} />
+          <div
+            style={{
+              fontFamily: FONTS.mono,
+              fontSize: 11,
+              color: PALETTE.textDim,
+              lineHeight: 1.6,
+            }}
+          >
+            <div
+              style={{
+                color: PALETTE.textMute,
+                fontSize: 9,
+                letterSpacing: 2,
+                marginBottom: 4,
+              }}
+            >
+              ROLE
+            </div>
+            <div>{speaker.role}</div>
+            <div
+              style={{
+                color: PALETTE.textMute,
+                fontSize: 9,
+                letterSpacing: 2,
+                marginTop: 10,
+                marginBottom: 4,
+              }}
+            >
+              ORG
+            </div>
+            <div style={{ color: PALETTE.text }}>{speaker.org}</div>
+          </div>
+        </div>
+        <div
+          style={{
+            padding: 28,
+            display: 'flex',
+            flexDirection: 'column',
+            gap: 12,
+          }}
+        >
+          <div
+            style={{
+              fontFamily: FONTS.mono,
+              fontSize: 11,
+              color: accent,
+              letterSpacing: 2,
+            }}
+          >
+            SPEAKER
+          </div>
+          <h3
+            style={{
+              fontFamily: FONTS.display,
+              fontSize: 40,
+              fontWeight: 500,
+              color: PALETTE.text,
+              lineHeight: 1,
+              margin: 0,
+              letterSpacing: -1,
+            }}
+          >
+            {speaker.name}
+          </h3>
+          <p
+            style={{
+              fontFamily: FONTS.body,
+              fontSize: 14,
+              color: PALETTE.text,
+              lineHeight: 1.6,
+              margin: '8px 0 0',
+              opacity: 0.92,
+            }}
+          >
+            {speaker.bio}
+          </p>
+
+          <div
+            style={{
+              marginTop: 18,
+              border: `1px solid ${PALETTE.bgLine}`,
+              padding: 18,
+              background: 'rgba(255,255,255,0.015)',
+            }}
+          >
+            <div
+              style={{
+                display: 'flex',
+                justifyContent: 'space-between',
+                alignItems: 'flex-start',
+                gap: 12,
+                marginBottom: 10,
+              }}
+            >
+              <div
+                style={{
+                  fontFamily: FONTS.mono,
+                  fontSize: 10,
+                  color: accent,
+                  letterSpacing: 2,
+                }}
+              >
+                {talk
+                  ? `${talk.track.toUpperCase()} · ${talk.time}–${talk.end} PT`
+                  : `TOPIC · ${speaker.topic.toUpperCase()}`}
+              </div>
+              {talk && (
+                <div
+                  style={{
+                    fontFamily: FONTS.mono,
+                    fontSize: 11,
+                    color: PALETTE.text,
+                    whiteSpace: 'nowrap',
+                  }}
+                >
+                  JUN 23 <span style={{ color: PALETTE.textMute }}>·</span>{' '}
+                  {talk.time}
+                </div>
+              )}
+            </div>
+            <div
+              style={{
+                fontFamily: FONTS.display,
+                fontSize: 22,
+                color: PALETTE.text,
+                marginBottom: 8,
+                letterSpacing: -0.5,
+              }}
+            >
+              {talk ? talk.title : speaker.topic}
+            </div>
+            {talk && (
+              <p
+                style={{
+                  fontFamily: FONTS.body,
+                  fontSize: 13.5,
+                  color: PALETTE.textDim,
+                  lineHeight: 1.55,
+                  margin: 0,
+                }}
+              >
+                {talk.desc}
+              </p>
+            )}
+          </div>
+
+          <div
+            style={{
+              marginTop: 6,
+              display: 'flex',
+              gap: 16,
+              alignItems: 'center',
+            }}
+          >
+            <a
+              href={shareUrl}
+              onClick={(e) => {
+                e.preventDefault();
+                if (typeof navigator !== 'undefined' && navigator.clipboard) {
+                  navigator.clipboard.writeText(shareUrl);
+                }
+              }}
+              style={{
+                fontFamily: FONTS.mono,
+                fontSize: 12,
+                color: accent,
+                textDecoration: 'none',
+                borderBottom: `1px solid ${accent}`,
+                paddingBottom: 2,
+              }}
+            >
+              copy share link →
+            </a>
+          </div>
+        </div>
+        <button
+          onClick={onClose}
+          aria-label="Close"
+          style={{
+            position: 'absolute',
+            top: 12,
+            right: 12,
+            background: 'transparent',
+            border: `1px solid ${PALETTE.bgLine}`,
+            color: PALETTE.textDim,
+            width: 32,
+            height: 32,
+            cursor: 'pointer',
+            fontFamily: FONTS.mono,
+            fontSize: 16,
+            lineHeight: 1,
+          }}
+        >
+          ×
+        </button>
+      </div>
+    </div>
+  );
+}
+
+export function ConfFooter({ accent = PALETTE.pink }: { accent?: string }) {
+  return (
+    <footer
+      style={{
+        padding: '48px 56px',
+        borderTop: `1px solid ${PALETTE.bgLine}`,
+        background: PALETTE.bgDeeper,
+        fontFamily: FONTS.mono,
+        fontSize: 12,
+        color: PALETTE.textDim,
+        display: 'grid',
+        gridTemplateColumns: '2fr 1fr 1fr 1fr',
+        gap: 48,
+      }}
+    >
+      <div>
+        <div
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            gap: 10,
+            marginBottom: 16,
+          }}
+        >
+          <div
+            style={{
+              width: 12,
+              height: 12,
+              background: accent,
+              transform: 'rotate(45deg)',
+            }}
+          />
+          <span style={{ color: PALETTE.text, fontWeight: 600 }}>
+            monorepo<span style={{ color: accent }}>{'<3'}</span>ai
+          </span>
+        </div>
+        <div
+          style={{
+            color: PALETTE.textMute,
+            lineHeight: 1.7,
+            maxWidth: 320,
+          }}
+        >
+          A free half-day virtual conference for engineers and tech leads
+          working at the intersection of monorepos and AI.
+        </div>
+      </div>
+      <div>
+        <div
+          style={{
+            color: PALETTE.text,
+            marginBottom: 12,
+            letterSpacing: 1.5,
+          }}
+        >
+          EVENT
+        </div>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+          <a
+            href="#agenda"
+            style={{ color: PALETTE.textDim, textDecoration: 'none' }}
+          >
+            Agenda
+          </a>
+          <a
+            href="#speakers"
+            style={{ color: PALETTE.textDim, textDecoration: 'none' }}
+          >
+            Speakers
+          </a>
+          <a
+            href="#register"
+            style={{ color: PALETTE.textDim, textDecoration: 'none' }}
+          >
+            Register
+          </a>
+        </div>
+      </div>
+      <div>
+        <div
+          style={{
+            color: PALETTE.text,
+            marginBottom: 12,
+            letterSpacing: 1.5,
+          }}
+        >
+          BROUGHT TO YOU BY
+        </div>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+          <a
+            href="https://nx.dev"
+            style={{ color: PALETTE.textDim, textDecoration: 'none' }}
+          >
+            Nx → nx.dev
+          </a>
+          <a
+            href="https://trypolygraph.com"
+            style={{ color: PALETTE.textDim, textDecoration: 'none' }}
+          >
+            Polygraph → trypolygraph.com
+          </a>
+        </div>
+      </div>
+      <div>
+        <div
+          style={{
+            color: PALETTE.text,
+            marginBottom: 12,
+            letterSpacing: 1.5,
+          }}
+        >
+          FOLLOW
+        </div>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+          <a
+            href="https://twitter.com/NxDevTools"
+            style={{ color: PALETTE.textDim, textDecoration: 'none' }}
+          >
+            @NxDevTools
+          </a>
+          <a
+            href="https://youtube.com/@nxdevtools"
+            style={{ color: PALETTE.textDim, textDecoration: 'none' }}
+          >
+            youtube.com/@nxdevtools
+          </a>
+        </div>
+      </div>
+    </footer>
+  );
+}
