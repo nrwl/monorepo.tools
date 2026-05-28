@@ -30,29 +30,28 @@ export function SpeakerGrid({
         The people thinking hardest about{' '}
         <span style={{ color: PALETTE.cyan }}>monorepos × agents</span>.
       </h2>
-      <p
-        style={{
-          fontFamily: FONTS.body,
-          fontSize: 17,
-          color: PALETTE.textDim,
-          maxWidth: 620,
-          lineHeight: 1.5,
-          marginBottom: 48,
-        }}
-      >
-        Creators of the tools you use. Click any face for bio and talk
-        details.
-      </p>
+      <div style={{ marginBottom: 48 }} />
+      <style>{`
+        .speaker-card .speaker-img {
+          filter: saturate(0.4) brightness(0.92);
+          transition: filter 280ms ease, transform 320ms ease;
+        }
+        .speaker-card:hover .speaker-img {
+          filter: saturate(1) brightness(1);
+          transform: scale(1.04);
+        }
+      `}</style>
       <div
         style={{
           display: 'grid',
-          gridTemplateColumns: 'repeat(3, 1fr)',
+          gridTemplateColumns: 'repeat(4, 1fr)',
           gap: 24,
         }}
       >
         {SPEAKERS.map((s) => (
           <a
             key={s.id}
+            className="speaker-card"
             href={`#speaker=${s.id}`}
             onClick={(e) => {
               e.preventDefault();
@@ -63,7 +62,7 @@ export function SpeakerGrid({
               padding: 20,
               cursor: 'pointer',
               background: PALETTE.bg,
-              transition: 'all 0.15s',
+              transition: 'border-color 0.2s, transform 0.2s',
               display: 'flex',
               flexDirection: 'column',
               gap: 16,
@@ -79,8 +78,9 @@ export function SpeakerGrid({
               e.currentTarget.style.transform = 'translateY(0)';
             }}
           >
-            <SpeakerAvatar speaker={s} height={280} />
+            <SpeakerAvatar speaker={s} height={360} />
             <div>
+              {/* Talk-title chip — restore once schedule is locked.
               <div
                 style={{
                   fontFamily: FONTS.mono,
@@ -92,12 +92,15 @@ export function SpeakerGrid({
               >
                 {s.topic.toUpperCase()}
               </div>
+              */}
               <div
                 style={{
                   fontFamily: FONTS.display,
-                  fontSize: 24,
+                  fontSize: 22,
+                  fontWeight: 700,
                   color: PALETTE.text,
                   marginBottom: 4,
+                  letterSpacing: -0.5,
                 }}
               >
                 {s.name}

@@ -1,4 +1,4 @@
-import { PALETTE, FONTS, AGENDA } from './data';
+import { PALETTE, FONTS } from './data';
 import { SectionLabel } from './shared';
 
 export function Agenda() {
@@ -28,6 +28,54 @@ export function Agenda() {
         <span style={{ color: PALETTE.pink }}>Zero filler.</span>
       </h2>
 
+      <div
+        style={{
+          border: `1px solid ${PALETTE.bgLine}`,
+          padding: '96px 32px',
+          textAlign: 'center',
+          background: 'rgba(245,158,11,0.03)',
+        }}
+      >
+        <div
+          style={{
+            fontFamily: FONTS.mono,
+            fontSize: 12,
+            color: PALETTE.pink,
+            letterSpacing: 3,
+            marginBottom: 18,
+          }}
+        >
+          SCHEDULE · COMING SOON
+        </div>
+        <div
+          style={{
+            fontFamily: FONTS.display,
+            fontSize: 64,
+            fontWeight: 700,
+            color: PALETTE.text,
+            letterSpacing: -2,
+            lineHeight: 1,
+            marginBottom: 16,
+          }}
+        >
+          TBD
+        </div>
+        <p
+          style={{
+            fontFamily: FONTS.body,
+            fontSize: 16,
+            color: PALETTE.textDim,
+            lineHeight: 1.6,
+            maxWidth: 480,
+            margin: '0 auto',
+          }}
+        >
+          We&rsquo;re finalizing talk titles and the running order. Check back
+          soon, or grab a free seat to be notified when it&rsquo;s live.
+        </p>
+      </div>
+
+      {/* Full agenda — restore once talk titles are confirmed.
       <div style={{ border: `1px solid ${PALETTE.bgLine}` }}>
         {AGENDA.map((s, i) => (
           <div
@@ -105,6 +153,7 @@ export function Agenda() {
           </div>
         ))}
       </div>
+      */}
     </div>
   );
 }

@@ -13,17 +13,6 @@ export function RegisterCTA() {
       }}
     >
       <div style={{ padding: '0 80px', textAlign: 'center' }}>
-        <div
-          style={{
-            fontFamily: FONTS.mono,
-            fontSize: 12,
-            color: PALETTE.lime,
-            letterSpacing: 3,
-            marginBottom: 24,
-          }}
-        >
-          ▍ ▍ ▍ FINAL CALL ▍ ▍ ▍
-        </div>
         <h2
           style={{
             fontFamily: FONTS.display,

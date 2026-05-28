@@ -57,15 +57,23 @@ export function CountdownPill({
           }}
         >
           <span style={{ color }}>▸</span>
-          <span>
-            {pad(d)}
-            <span style={{ color: PALETTE.textMute, fontSize: 18 }}>d</span>{' '}
-            {pad(h)}
-            <span style={{ color: PALETTE.textMute, fontSize: 18 }}>h</span>{' '}
-            {pad(m)}
-            <span style={{ color: PALETTE.textMute, fontSize: 18 }}>m</span>{' '}
-            {pad(s)}
-            <span style={{ color: PALETTE.textMute, fontSize: 18 }}>s</span>
+          <span style={{ display: 'inline-flex', gap: 18 }}>
+            <span>
+              {pad(d)}
+              <span style={{ color: PALETTE.textMute, fontSize: 18 }}>d</span>
+            </span>
+            <span>
+              {pad(h)}
+              <span style={{ color: PALETTE.textMute, fontSize: 18 }}>h</span>
+            </span>
+            <span>
+              {pad(m)}
+              <span style={{ color: PALETTE.textMute, fontSize: 18 }}>m</span>
+            </span>
+            <span>
+              {pad(s)}
+              <span style={{ color: PALETTE.textMute, fontSize: 18 }}>s</span>
+            </span>
           </span>
         </div>
       </div>
@@ -261,6 +269,36 @@ export function SpeakerAvatar({
   size?: string | number;
   height?: number | string;
 }) {
+  if (speaker.image) {
+    return (
+      <div
+        className="speaker-img-wrap"
+        style={{
+          width: size,
+          height,
+          borderRadius: 12,
+          overflow: 'hidden',
+          background: PALETTE.bgCard,
+          position: 'relative',
+        }}
+      >
+        <img
+          src={speaker.image}
+          alt={speaker.name}
+          loading="lazy"
+          className="speaker-img"
+          style={{
+            width: '100%',
+            height: '100%',
+            objectFit: 'cover',
+            objectPosition: 'center top',
+            display: 'block',
+            transition: 'transform 320ms ease',
+          }}
+        />
+      </div>
+    );
+  }
   return (
     <div
       aria-hidden
@@ -317,7 +355,6 @@ export function SpeakerModal({
     return () => window.removeEventListener('keydown', handler);
   }, [speaker, onClose]);
   if (!speaker) return null;
-  const talk = findTalkForSpeaker(speaker);
   const shareUrl =
     typeof window !== 'undefined'
       ? `${window.location.origin}${window.location.pathname}#speaker=${speaker.id}`
@@ -340,24 +377,24 @@ export function SpeakerModal({
       <div
         onClick={(e) => e.stopPropagation()}
         style={{
-          width: 'min(820px, 100%)',
+          width: 'min(1080px, 100%)',
           background: PALETTE.bg,
           border: `1px solid ${PALETTE.bgLine}`,
           position: 'relative',
           display: 'grid',
-          gridTemplateColumns: '260px 1fr',
+          gridTemplateColumns: '360px 1fr',
         }}
       >
         <div
           style={{
             borderRight: `1px solid ${PALETTE.bgLine}`,
-            padding: 20,
+            padding: 28,
             display: 'flex',
             flexDirection: 'column',
-            gap: 16,
+            gap: 20,
           }}
         >
-          <SpeakerAvatar speaker={speaker} size={220} height={280} />
+          <SpeakerAvatar speaker={speaker} size={304} height={380} />
           <div
             style={{
               fontFamily: FONTS.mono,
@@ -368,41 +405,30 @@ export function SpeakerModal({
           >
             <div
               style={{
-                color: PALETTE.textMute,
-                fontSize: 9,
-                letterSpacing: 2,
-                marginBottom: 4,
+                fontFamily: FONTS.body,
+                fontSize: 16,
+                color: PALETTE.textDim,
+                lineHeight: 1.4,
+                textAlign: 'center',
               }}
             >
-              ROLE
+              {speaker.role} ·{' '}
+              <span style={{ color: PALETTE.text }}>{speaker.org}</span>
             </div>
-            <div>{speaker.role}</div>
-            <div
-              style={{
-                color: PALETTE.textMute,
-                fontSize: 9,
-                letterSpacing: 2,
-                marginTop: 10,
-                marginBottom: 4,
-              }}
-            >
-              ORG
-            </div>
-            <div style={{ color: PALETTE.text }}>{speaker.org}</div>
           </div>
         </div>
         <div
           style={{
-            padding: 28,
+            padding: 40,
             display: 'flex',
             flexDirection: 'column',
-            gap: 12,
+            gap: 14,
           }}
         >
           <div
             style={{
               fontFamily: FONTS.mono,
-              fontSize: 11,
+              fontSize: 12,
               color: accent,
               letterSpacing: 2,
             }}
@@ -412,12 +438,12 @@ export function SpeakerModal({
           <h3
             style={{
               fontFamily: FONTS.display,
-              fontSize: 40,
-              fontWeight: 500,
+              fontSize: 52,
+              fontWeight: 700,
               color: PALETTE.text,
               lineHeight: 1,
               margin: 0,
-              letterSpacing: -1,
+              letterSpacing: -1.5,
             }}
           >
             {speaker.name}
@@ -425,16 +451,17 @@ export function SpeakerModal({
           <p
             style={{
               fontFamily: FONTS.body,
-              fontSize: 14,
+              fontSize: 16,
               color: PALETTE.text,
               lineHeight: 1.6,
-              margin: '8px 0 0',
+              margin: '12px 0 0',
               opacity: 0.92,
             }}
           >
             {speaker.bio}
           </p>
 
+          {/* Talk block — restore once schedule is locked.
           <div
             style={{
               marginTop: 18,
@@ -503,6 +530,7 @@ export function SpeakerModal({
               </p>
             )}
           </div>
+          */}
 
           <div
             style={{
