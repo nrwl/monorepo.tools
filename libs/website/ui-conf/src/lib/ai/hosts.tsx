@@ -44,18 +44,11 @@ export function Hosts() {
             textDecoration: 'none',
           }}
         >
-          <span
-            style={{
-              fontFamily: FONTS.display,
-              fontSize: 88,
-              fontWeight: 600,
-              color: PALETTE.text,
-              letterSpacing: -4,
-              lineHeight: 1,
-            }}
-          >
-            Nx
-          </span>
+          <img
+            src="/images/conf/nx-logo.svg"
+            alt="Nx"
+            style={{ height: 120, width: 'auto' }}
+          />
         </a>
         <div
           style={{ width: 1, height: 80, background: PALETTE.bgLine }}
