@@ -71,7 +71,7 @@ export function AiConfPage() {
             typeof window !== 'undefined' &&
             window.location.hash.startsWith('#speaker=')
           ) {
-            history.replaceState(
+            window.history.replaceState(
               null,
               '',
               window.location.pathname + window.location.search,

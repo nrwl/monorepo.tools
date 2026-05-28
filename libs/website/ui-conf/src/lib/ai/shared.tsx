@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from 'react';
-import { PALETTE, FONTS, CONF, AGENDA, Speaker } from './data';
+import { PALETTE, FONTS, CONF, Speaker } from './data';
 
 function useCountdown(targetISO: string) {
   const target = useMemo(() => new Date(targetISO).getTime(), [targetISO]);
@@ -243,21 +243,6 @@ export function SectionLabel({
       <span style={{ flex: 1, height: 1, background: PALETTE.bgLine }} />
     </div>
   );
-}
-
-function findTalkForSpeaker(speaker: Speaker | null) {
-  if (!speaker) return null;
-  const parts = speaker.name.toLowerCase().split(' ');
-  const first = parts[0];
-  const last = parts[parts.length - 1];
-  const byName = AGENDA.find(
-    (a) =>
-      a.speaker &&
-      a.speaker.toLowerCase().includes(first) &&
-      a.speaker.toLowerCase().includes(last),
-  );
-  if (byName) return byName;
-  return AGENDA.find((a) => a.title === speaker.topic) || null;
 }
 
 export function SpeakerAvatar({

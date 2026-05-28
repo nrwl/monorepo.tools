@@ -41,7 +41,7 @@ export function RegisterCTA() {
           June 23, 2026. Free. Bring questions, leave with answers.
         </p>
         <a
-          href="#"
+          href="#register"
           style={{
             display: 'inline-flex',
             alignItems: 'center',

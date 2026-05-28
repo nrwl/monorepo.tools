@@ -61,7 +61,8 @@ export function NodeGraphHero() {
     const handleLeave = () => {
       mouse.active = false;
     };
-    const host = svg.parentElement!;
+    const host = svg.parentElement;
+    if (!host) return;
     host.addEventListener('mousemove', handleMove);
     host.addEventListener('mouseleave', handleLeave);
 
@@ -74,7 +75,7 @@ export function NodeGraphHero() {
     const offsets = pts.map(() => ({ x: 0, y: 0 }));
 
     let raf = 0;
-    let start = performance.now();
+    const start = performance.now();
 
     const tick = (now: number) => {
       const t = (now - start) / 1000;
