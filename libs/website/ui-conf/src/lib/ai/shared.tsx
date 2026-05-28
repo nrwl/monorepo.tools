@@ -32,48 +32,42 @@ export function CountdownPill({
   const color = tone === 'pink' ? PALETTE.pink : PALETTE.cyan;
   if (compact) {
     return (
-      <div
-        style={{
-          display: 'inline-flex',
-          alignItems: 'baseline',
-          gap: 12,
-          fontFamily: FONTS.mono,
-          fontSize: 18,
-          fontWeight: 500,
-          color: PALETTE.text,
-          letterSpacing: 0.5,
-          fontVariantNumeric: 'tabular-nums',
-        }}
-      >
-        <span
+      <div>
+        <div
           style={{
-            width: 8,
-            height: 8,
-            borderRadius: 99,
-            background: color,
-            boxShadow: `0 0 12px ${color}`,
-            alignSelf: 'center',
-          }}
-        />
-        <span
-          style={{
-            color: PALETTE.textDim,
-            fontSize: 11,
+            fontFamily: FONTS.mono,
+            fontSize: 10,
+            color: PALETTE.textMute,
             letterSpacing: 2,
+            marginBottom: 8,
           }}
         >
           STARTS IN
-        </span>
-        <span>
-          {pad(d)}
-          <span style={{ color: PALETTE.textDim, marginLeft: 2 }}>d</span>{' '}
-          {pad(h)}
-          <span style={{ color: PALETTE.textDim, marginLeft: 2 }}>h</span>{' '}
-          {pad(m)}
-          <span style={{ color: PALETTE.textDim, marginLeft: 2 }}>m</span>{' '}
-          {pad(s)}
-          <span style={{ color: PALETTE.textDim, marginLeft: 2 }}>s</span>
-        </span>
+        </div>
+        <div
+          style={{
+            fontFamily: FONTS.display,
+            fontSize: 28,
+            color: PALETTE.text,
+            letterSpacing: -1,
+            fontVariantNumeric: 'tabular-nums',
+            display: 'inline-flex',
+            alignItems: 'baseline',
+            gap: 6,
+          }}
+        >
+          <span style={{ color }}>▸</span>
+          <span>
+            {pad(d)}
+            <span style={{ color: PALETTE.textMute, fontSize: 18 }}>d</span>{' '}
+            {pad(h)}
+            <span style={{ color: PALETTE.textMute, fontSize: 18 }}>h</span>{' '}
+            {pad(m)}
+            <span style={{ color: PALETTE.textMute, fontSize: 18 }}>m</span>{' '}
+            {pad(s)}
+            <span style={{ color: PALETTE.textMute, fontSize: 18 }}>s</span>
+          </span>
+        </div>
       </div>
     );
   }
