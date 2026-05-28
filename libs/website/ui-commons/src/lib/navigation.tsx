@@ -39,12 +39,18 @@ export function Navigation() {
     setIsMounted(true);
   }, []);
 
-  const navigationItems = [
+  const navigationItems: {
+    href: string;
+    label: string;
+    exact?: boolean;
+    highlight?: boolean;
+  }[] = [
     { href: '/', label: 'Home', exact: true },
     { href: '/ai', label: 'AI & Monorepos' },
     { href: '/synthetic-monorepos', label: 'Synthetic Monorepos' },
     { href: '/compare', label: 'Compare' },
     { href: '/typescript', label: 'TypeScript' },
+    { href: '/conf', label: 'Conf 2026', highlight: true },
   ];
 
   const isActivePath = (href: string, exact?: boolean) => {
@@ -79,7 +85,11 @@ export function Navigation() {
                   href={item.href}
                   className={cx(
                     'rounded-md px-3 py-2 text-sm font-medium transition-colors',
-                    isActivePath(item.href, item.exact)
+                    item.highlight
+                      ? isActivePath(item.href, item.exact)
+                        ? 'bg-amber-500 text-white shadow-sm hover:bg-amber-600'
+                        : 'bg-amber-500/90 text-white shadow-sm hover:bg-amber-500'
+                      : isActivePath(item.href, item.exact)
                       ? 'bg-yellow-50 text-yellow-600 dark:bg-yellow-900/20 dark:text-yellow-400'
                       : 'text-gray-700 hover:bg-yellow-50 hover:text-yellow-600 dark:text-gray-300 dark:hover:bg-yellow-900/20 dark:hover:text-yellow-400'
                   )}
@@ -172,7 +182,9 @@ export function Navigation() {
                   href={item.href}
                   className={cx(
                     'block rounded-md px-3 py-3 text-base font-medium transition-colors',
-                    isActivePath(item.href, item.exact)
+                    item.highlight
+                      ? 'bg-amber-500 text-white hover:bg-amber-600'
+                      : isActivePath(item.href, item.exact)
                       ? 'bg-yellow-50 text-yellow-600 dark:bg-yellow-900/20 dark:text-yellow-400'
                       : 'text-gray-700 hover:bg-yellow-50 hover:text-yellow-600 dark:text-gray-300 dark:hover:bg-yellow-900/20 dark:hover:text-yellow-400'
                   )}

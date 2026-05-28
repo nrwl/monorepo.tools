@@ -6,8 +6,8 @@ export const PALETTE = {
   bgDeeper: '#0f172a', // slate-900 — deeper surfaces (footer, register)
   bgCard: '#334155', // slate-700 — elevated surface
   bgLine: '#475569', // slate-600 — subtle border on dark
-  pink: '#ff4d8d', // conf primary accent (event identity)
-  pinkSoft: '#ffa3c4',
+  pink: '#F59E0B', // polygraph amber — conf primary accent
+  pinkSoft: '#FCD34D',
   cyan: '#2ad4ff', // conf secondary accent
   cyanSoft: '#94e7ff',
   yellow: '#eab308', // yellow-500 — shared with rest of site

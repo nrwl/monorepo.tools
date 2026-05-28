@@ -168,6 +168,12 @@ export function NavBar({ accent = PALETTE.pink }: { accent?: string }) {
       </div>
       <div style={{ display: 'flex', alignItems: 'center', gap: 36 }}>
         <a
+          href="/"
+          style={{ color: PALETTE.textDim, textDecoration: 'none' }}
+        >
+          ← monorepo.tools
+        </a>
+        <a
           href="#agenda"
           style={{ color: PALETTE.textDim, textDecoration: 'none' }}
         >

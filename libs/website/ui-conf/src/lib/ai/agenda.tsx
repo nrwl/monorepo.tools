@@ -44,7 +44,7 @@ export function Agenda() {
               transition: 'background 0.15s',
             }}
             onMouseEnter={(e) =>
-              (e.currentTarget.style.background = 'rgba(255,77,141,0.04)')
+              (e.currentTarget.style.background = 'rgba(245,158,11,0.06)')
             }
             onMouseLeave={(e) =>
               (e.currentTarget.style.background = 'transparent')
