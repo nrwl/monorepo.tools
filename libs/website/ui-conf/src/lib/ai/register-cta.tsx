@@ -1,4 +1,4 @@
-import { PALETTE, FONTS } from './data';
+import { PALETTE, FONTS, CONF } from './data';
 
 export function RegisterCTA() {
   return (
@@ -41,7 +41,9 @@ export function RegisterCTA() {
           June 23, 2026. Free. Bring questions, leave with answers.
         </p>
         <a
-          href="#register"
+          href={CONF.registerUrl}
+          target="_blank"
+          rel="noreferrer"
           style={{
             display: 'inline-flex',
             alignItems: 'center',

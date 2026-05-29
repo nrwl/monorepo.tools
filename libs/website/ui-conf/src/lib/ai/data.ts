@@ -34,7 +34,7 @@ export const CONF = {
   targetISO: '2026-06-23T16:00:00Z',
   tagline:
     "Most AI coding tools see one repo at a time. Most teams don't work in one repo. We're fixing that.",
-  registerUrl: '#register',
+  registerUrl: 'https://ti.to/nx-conf/2026-ai-monorepos-conf-online',
 };
 
 export type AgendaItem = {

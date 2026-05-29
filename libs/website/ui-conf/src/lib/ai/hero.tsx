@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react';
-import { PALETTE, FONTS } from './data';
+import { PALETTE, FONTS, CONF } from './data';
 
 const W = 1280;
 const H = 700;
@@ -380,7 +380,9 @@ export function NodeGraphHero() {
           }}
         >
           <a
-            href="#register"
+            href={CONF.registerUrl}
+            target="_blank"
+            rel="noreferrer"
             style={{
               background: PALETTE.pink,
               color: PALETTE.bg,

@@ -200,7 +200,9 @@ export function NavBar({ accent = PALETTE.pink }: { accent?: string }) {
           Hosts
         </a>
         <a
-          href="#register"
+          href={CONF.registerUrl}
+          target="_blank"
+          rel="noreferrer"
           style={{
             color: PALETTE.bg,
             background: accent,
@@ -767,7 +769,9 @@ export function ConfFooter({ accent = PALETTE.pink }: { accent?: string }) {
             Speakers
           </a>
           <a
-            href="#register"
+            href={CONF.registerUrl}
+            target="_blank"
+            rel="noreferrer"
             style={{ color: PALETTE.textDim, textDecoration: 'none' }}
           >
             Register
