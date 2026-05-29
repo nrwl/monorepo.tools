@@ -4,23 +4,22 @@ export function RegisterCTA() {
   return (
     <div
       id="register"
+      className="pt-20 md:pt-[120px]"
       style={{
-        padding: '120px 0 0 0',
         background: PALETTE.bgDeeper,
         borderTop: `1px solid ${PALETTE.bgLine}`,
         position: 'relative',
         overflow: 'hidden',
       }}
     >
-      <div style={{ padding: '0 80px', textAlign: 'center' }}>
+      <div className="px-5 md:px-20" style={{ textAlign: 'center' }}>
         <h2
+          className="text-[56px] tracking-[-2px] sm:text-[110px] sm:tracking-[-4px] lg:text-[220px] lg:tracking-[-8px]"
           style={{
             fontFamily: FONTS.display,
-            fontSize: 220,
             fontWeight: 700,
             color: PALETTE.text,
             margin: 0,
-            letterSpacing: -8,
             lineHeight: 0.85,
           }}
         >
@@ -29,9 +28,9 @@ export function RegisterCTA() {
           <span style={{ color: PALETTE.pink }}>online.</span>
         </h2>
         <p
+          className="text-[17px] md:text-[20px]"
           style={{
             fontFamily: FONTS.body,
-            fontSize: 20,
             color: PALETTE.textDim,
             lineHeight: 1.5,
             maxWidth: 580,
