@@ -152,11 +152,11 @@ export function CountdownPill({
 export function NavBar({ accent = PALETTE.pink }: { accent?: string }) {
   return (
     <nav
+      className="px-5 py-4 md:px-14 md:py-5"
       style={{
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'space-between',
-        padding: '20px 56px',
         borderBottom: `1px solid ${PALETTE.bgLine}`,
         fontFamily: FONTS.mono,
         fontSize: 13,
@@ -174,31 +174,33 @@ export function NavBar({ accent = PALETTE.pink }: { accent?: string }) {
         </span>
         <span style={{ color: PALETTE.textMute }}>/conf/2026</span>
       </div>
-      <div style={{ display: 'flex', alignItems: 'center', gap: 36 }}>
-        <a
-          href="/"
-          style={{ color: PALETTE.textDim, textDecoration: 'none' }}
-        >
-          ← monorepo.tools
-        </a>
-        <a
-          href="#agenda"
-          style={{ color: PALETTE.textDim, textDecoration: 'none' }}
-        >
-          Agenda
-        </a>
-        <a
-          href="#speakers"
-          style={{ color: PALETTE.textDim, textDecoration: 'none' }}
-        >
-          Speakers
-        </a>
-        <a
-          href="#hosts"
-          style={{ color: PALETTE.textDim, textDecoration: 'none' }}
-        >
-          Hosts
-        </a>
+      <div className="flex items-center gap-4 md:gap-9">
+        <div className="hidden items-center gap-9 md:flex">
+          <a
+            href="/"
+            style={{ color: PALETTE.textDim, textDecoration: 'none' }}
+          >
+            ← monorepo.tools
+          </a>
+          <a
+            href="#agenda"
+            style={{ color: PALETTE.textDim, textDecoration: 'none' }}
+          >
+            Agenda
+          </a>
+          <a
+            href="#speakers"
+            style={{ color: PALETTE.textDim, textDecoration: 'none' }}
+          >
+            Speakers
+          </a>
+          <a
+            href="#hosts"
+            style={{ color: PALETTE.textDim, textDecoration: 'none' }}
+          >
+            Hosts
+          </a>
+        </div>
         <a
           href={CONF.registerUrl}
           target="_blank"
