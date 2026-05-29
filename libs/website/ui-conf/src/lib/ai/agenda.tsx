@@ -5,7 +5,8 @@ export function Agenda() {
   return (
     <div
       id="agenda"
-      style={{ padding: '96px 80px', background: PALETTE.bg }}
+      className="px-5 py-16 md:px-20 md:py-24"
+      style={{ background: PALETTE.bg }}
     >
       <SectionLabel
         index={1}
@@ -13,13 +14,11 @@ export function Agenda() {
         accent={PALETTE.pink}
       />
       <h2
+        className="mb-12 mt-7 text-[40px] tracking-[-1.5px] md:text-[96px] md:tracking-[-3px]"
         style={{
           fontFamily: FONTS.display,
-          fontSize: 96,
           fontWeight: 700,
           color: PALETTE.text,
-          margin: '28px 0 48px',
-          letterSpacing: -3,
           lineHeight: 0.9,
           maxWidth: 1100,
         }}
@@ -29,9 +28,9 @@ export function Agenda() {
       </h2>
 
       <div
+        className="px-6 py-16 md:px-8 md:py-24"
         style={{
           border: `1px solid ${PALETTE.bgLine}`,
-          padding: '96px 32px',
           textAlign: 'center',
           background: 'rgba(245,158,11,0.03)',
         }}
@@ -48,14 +47,12 @@ export function Agenda() {
           SCHEDULE · COMING SOON
         </div>
         <div
+          className="mb-4 text-[40px] tracking-[-1px] md:text-[64px] md:tracking-[-2px]"
           style={{
             fontFamily: FONTS.display,
-            fontSize: 64,
             fontWeight: 700,
             color: PALETTE.text,
-            letterSpacing: -2,
             lineHeight: 1,
-            marginBottom: 16,
           }}
         >
           TBD
