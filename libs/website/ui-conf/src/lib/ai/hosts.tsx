@@ -4,32 +4,24 @@ export function Hosts() {
   return (
     <div
       id="hosts"
+      className="px-5 py-16 md:px-20 md:py-24"
       style={{
-        padding: '96px 80px',
         background: PALETTE.bg,
         textAlign: 'center',
       }}
     >
       <h2
+        className="mb-16 text-[32px] md:text-[56px]"
         style={{
           fontFamily: FONTS.display,
-          fontSize: 56,
           fontWeight: 700,
           color: PALETTE.text,
-          margin: '0 0 64px',
           letterSpacing: -1,
         }}
       >
         Brought to you by
       </h2>
-      <div
-        style={{
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          gap: 80,
-        }}
-      >
+      <div className="flex flex-col items-center justify-center gap-10 md:flex-row md:gap-20">
         <a
           href="https://nx.dev"
           target="_blank"
@@ -51,6 +43,7 @@ export function Hosts() {
           />
         </a>
         <div
+          className="hidden md:block"
           style={{ width: 1, height: 80, background: PALETTE.bgLine }}
         />
         <a
