@@ -1,5 +1,5 @@
 import { PALETTE, FONTS, SPEAKERS, Speaker } from './data';
-import { SectionLabel, SpeakerAvatar } from './shared';
+import { SectionLabel, SpeakerAvatar, XIcon, GlobeIcon } from './shared';
 
 export function SpeakerGrid({
   onPick,
@@ -115,6 +115,69 @@ export function SpeakerGrid({
                 {s.role} ·{' '}
                 <span style={{ color: PALETTE.text }}>{s.org}</span>
               </div>
+              {(s.socialUrl || s.website) && (
+                <div
+                  style={{
+                    display: 'flex',
+                    gap: 12,
+                    marginTop: 10,
+                    color: PALETTE.textMute,
+                  }}
+                >
+                  {s.socialUrl && (
+                    <button
+                      type="button"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        window.open(
+                          s.socialUrl,
+                          '_blank',
+                          'noopener,noreferrer',
+                        );
+                      }}
+                      aria-label={`${s.name} on social media`}
+                      style={{
+                        background: 'transparent',
+                        border: 'none',
+                        padding: 0,
+                        color: 'inherit',
+                        cursor: 'pointer',
+                        display: 'inline-flex',
+                        alignItems: 'center',
+                      }}
+                    >
+                      <XIcon size={14} />
+                    </button>
+                  )}
+                  {s.website && (
+                    <button
+                      type="button"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        window.open(
+                          s.website,
+                          '_blank',
+                          'noopener,noreferrer',
+                        );
+                      }}
+                      aria-label={`${s.name}'s website`}
+                      style={{
+                        background: 'transparent',
+                        border: 'none',
+                        padding: 0,
+                        color: 'inherit',
+                        cursor: 'pointer',
+                        display: 'inline-flex',
+                        alignItems: 'center',
+                      }}
+                    >
+                      <GlobeIcon size={14} />
+                    </button>
+                  )}
+                </div>
+              )}
             </div>
           </a>
         ))}

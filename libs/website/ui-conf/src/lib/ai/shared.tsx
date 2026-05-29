@@ -245,6 +245,51 @@ export function SectionLabel({
   );
 }
 
+export function XIcon({ size = 14 }: { size?: number }) {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      aria-hidden
+    >
+      <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+    </svg>
+  );
+}
+
+export function GlobeIcon({ size = 14 }: { size?: number }) {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      aria-hidden
+    >
+      <circle cx="12" cy="12" r="10" />
+      <line x1="2" y1="12" x2="22" y2="12" />
+      <path d="M12 2a15 15 0 0 1 0 20 15 15 0 0 1 0-20" />
+    </svg>
+  );
+}
+
+export function socialHandleFromUrl(url: string) {
+  const m = url.match(/(?:x\.com|twitter\.com|bsky\.app|linkedin\.com\/in)\/([^/?#]+)/i);
+  return m ? `@${m[1].replace(/^@/, '')}` : url.replace(/^https?:\/\//, '');
+}
+
+export function hostFromUrl(url: string) {
+  try {
+    return new URL(url).host.replace(/^www\./, '');
+  } catch {
+    return url;
+  }
+}
+
 export function SpeakerAvatar({
   speaker,
   size = '100%',
@@ -517,14 +562,101 @@ export function SpeakerModal({
           </div>
           */}
 
+          {speaker.talkTitle && (
+            <div
+              style={{
+                marginTop: 8,
+                padding: 20,
+                border: `1px solid ${PALETTE.bgLine}`,
+                background: 'rgba(245,158,11,0.04)',
+              }}
+            >
+              <div
+                style={{
+                  fontFamily: FONTS.mono,
+                  fontSize: 10,
+                  color: accent,
+                  letterSpacing: 2,
+                  marginBottom: 10,
+                }}
+              >
+                TALK
+              </div>
+              <div
+                style={{
+                  fontFamily: FONTS.display,
+                  fontSize: 22,
+                  fontWeight: 700,
+                  color: PALETTE.text,
+                  letterSpacing: -0.5,
+                  marginBottom: 10,
+                }}
+              >
+                {speaker.talkTitle}
+              </div>
+              {speaker.talkAbstract && (
+                <p
+                  style={{
+                    fontFamily: FONTS.body,
+                    fontSize: 14,
+                    color: PALETTE.textDim,
+                    lineHeight: 1.6,
+                    margin: 0,
+                  }}
+                >
+                  {speaker.talkAbstract}
+                </p>
+              )}
+            </div>
+          )}
+
           <div
             style={{
               marginTop: 6,
               display: 'flex',
               gap: 16,
               alignItems: 'center',
+              flexWrap: 'wrap',
             }}
           >
+            {speaker.socialUrl && (
+              <a
+                href={speaker.socialUrl}
+                target="_blank"
+                rel="noreferrer"
+                aria-label={`${speaker.name} on social media`}
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: 6,
+                  fontFamily: FONTS.mono,
+                  fontSize: 12,
+                  color: PALETTE.textDim,
+                  textDecoration: 'none',
+                }}
+              >
+                <XIcon size={14} /> {socialHandleFromUrl(speaker.socialUrl)}
+              </a>
+            )}
+            {speaker.website && (
+              <a
+                href={speaker.website}
+                target="_blank"
+                rel="noreferrer"
+                aria-label={`${speaker.name}'s website`}
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: 6,
+                  fontFamily: FONTS.mono,
+                  fontSize: 12,
+                  color: PALETTE.textDim,
+                  textDecoration: 'none',
+                }}
+              >
+                <GlobeIcon size={14} /> {hostFromUrl(speaker.website)}
+              </a>
+            )}
             <a
               href={shareUrl}
               onClick={(e) => {
@@ -540,6 +672,7 @@ export function SpeakerModal({
                 textDecoration: 'none',
                 borderBottom: `1px solid ${accent}`,
                 paddingBottom: 2,
+                marginLeft: 'auto',
               }}
             >
               copy share link →

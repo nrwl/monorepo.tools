@@ -106,6 +106,10 @@ export type Speaker = {
   bio: string;
   twitter?: string;
   image?: string;
+  socialUrl?: string;
+  website?: string;
+  talkTitle?: string;
+  talkAbstract?: string;
 };
 
 // `topic` carries a placeholder talk title for each speaker.
@@ -134,18 +138,28 @@ export const SPEAKERS: Speaker[] = [
     name: 'Kent C. Dodds',
     role: 'Software Engineer & Educator',
     org: 'Independent',
-    topic: 'TBD',
+    topic: 'The Last Software Engineer',
     bio: 'Creator of Testing Library and Epic Web. Has been teaching JavaScript developers to write reliable software for over a decade.',
     image: '/images/conf/speakers/kent-c-dodds.avif',
+    website: 'https://kentcdodds.com',
+    socialUrl: 'https://x.com/kentcdodds',
+    talkTitle: 'The Last Software Engineer',
+    talkAbstract:
+      "I'm not here to tell you software engineering is ending soon. Nobody can put a reliable date on that, and pretending otherwise is a distraction. But we also have to admit something humbling: a year ago, most of us would not have predicted coding agents would be this good. That should make us less confident about predicting what they'll be able to do one year, or five years, from now. So let's use \"The Last Software Engineer\" as a thought exercise. If AI keeps taking over more of the implementation work, what remains most human and valuable for us to do? In this talk, we'll take one step back from the hypothetical end and focus on the durable skill that has always separated great engineers from merely productive ones: judgment. The future belongs not to people who only know how to build, but to people who know what should be built. We'll talk about product engineering, accountability, trade-offs, constraints, evaluation, and how to keep making software worth having in an AI era.",
   },
   {
     id: 'jack-herrington',
     name: 'Jack Herrington',
-    role: 'Principal DevEx Engineer',
+    role: 'Principal Dev/Rel',
     org: 'Netlify',
-    topic: 'TBD',
+    topic: "TanStack's Revolutionary Code Mode AI",
     bio: 'Host of Blue Collar Coder. Specializes in micro-frontends, monorepo architectures, and developer experience at scale.',
     image: '/images/conf/speakers/jack-herrington.avif',
+    website: 'https://youtube.com/@jherr',
+    socialUrl: 'https://x.com/jherr',
+    talkTitle: "TanStack's Revolutionary Code Mode AI",
+    talkAbstract:
+      "I'll cover how code mode is a revolutionary approach to agentic AI use. It leverages the best of your tools and your LLM. The results speak for themselves; drastically lower token use, and high accuracy results. If you are using LLMs for reporting, analytics, dashboards, etc. you'll want to watch this talk.",
   },
   {
     id: 'kiet-ho',
