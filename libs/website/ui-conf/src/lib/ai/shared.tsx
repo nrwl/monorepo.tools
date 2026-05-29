@@ -396,6 +396,7 @@ export function SpeakerModal({
   return (
     <div
       onClick={onClose}
+      className="p-4 md:p-10"
       style={{
         position: 'fixed',
         inset: 0,
@@ -405,30 +406,27 @@ export function SpeakerModal({
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        padding: 40,
       }}
     >
       <div
         onClick={(e) => e.stopPropagation()}
+        className="grid max-h-[90vh] grid-cols-1 overflow-y-auto md:grid-cols-[360px_1fr]"
         style={{
           width: 'min(1080px, 100%)',
           background: PALETTE.bg,
           border: `1px solid ${PALETTE.bgLine}`,
           position: 'relative',
-          display: 'grid',
-          gridTemplateColumns: '360px 1fr',
         }}
       >
         <div
+          className="border-b border-[#475569] p-7 md:border-b-0 md:border-r"
           style={{
-            borderRight: `1px solid ${PALETTE.bgLine}`,
-            padding: 28,
             display: 'flex',
             flexDirection: 'column',
             gap: 20,
           }}
         >
-          <SpeakerAvatar speaker={speaker} size={304} height={380} />
+          <SpeakerAvatar speaker={speaker} size="100%" height={380} />
           <div
             style={{
               fontFamily: FONTS.mono,
@@ -452,8 +450,8 @@ export function SpeakerModal({
           </div>
         </div>
         <div
+          className="p-6 md:p-10"
           style={{
-            padding: 40,
             display: 'flex',
             flexDirection: 'column',
             gap: 14,
@@ -470,9 +468,9 @@ export function SpeakerModal({
             SPEAKER
           </div>
           <h3
+            className="text-[32px] md:text-[52px]"
             style={{
               fontFamily: FONTS.display,
-              fontSize: 52,
               fontWeight: 700,
               color: PALETTE.text,
               lineHeight: 1,
@@ -711,19 +709,16 @@ export function SpeakerModal({
 export function ConfFooter({ accent = PALETTE.pink }: { accent?: string }) {
   return (
     <footer
+      className="grid grid-cols-2 gap-10 px-5 py-12 md:grid-cols-4 md:gap-12 md:px-14"
       style={{
-        padding: '48px 56px',
         borderTop: `1px solid ${PALETTE.bgLine}`,
         background: PALETTE.bgDeeper,
         fontFamily: FONTS.mono,
         fontSize: 12,
         color: PALETTE.textDim,
-        display: 'grid',
-        gridTemplateColumns: '2fr 1fr 1fr 1fr',
-        gap: 48,
       }}
     >
-      <div>
+      <div className="col-span-2 md:col-span-1">
         <div
           style={{
             display: 'flex',
