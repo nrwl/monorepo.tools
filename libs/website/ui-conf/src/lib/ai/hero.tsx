@@ -319,6 +319,7 @@ export function NodeGraphHero() {
       </svg>
 
       <div
+        className="px-5 md:px-14"
         style={{
           position: 'absolute',
           inset: 0,
@@ -326,20 +327,18 @@ export function NodeGraphHero() {
           flexDirection: 'column',
           alignItems: 'center',
           justifyContent: 'center',
-          padding: '0 56px',
           textAlign: 'center',
           pointerEvents: 'none',
         }}
       >
         <h1
+          className="text-[44px] tracking-[-1.5px] sm:text-[64px] md:text-[96px] md:tracking-[-3px]"
           style={{
             fontFamily: FONTS.display,
-            fontSize: 96,
             fontWeight: 700,
             lineHeight: 0.95,
             margin: 0,
             color: PALETTE.text,
-            letterSpacing: -3,
           }}
         >
           AI{' '}
@@ -347,13 +346,12 @@ export function NodeGraphHero() {
           Monorepos
         </h1>
         <p
+          className="mt-6 text-base md:mt-8 md:text-[22px]"
           style={{
             fontFamily: FONTS.body,
-            fontSize: 22,
             color: PALETTE.text,
             maxWidth: 680,
             lineHeight: 1.5,
-            marginTop: 32,
             opacity: 0.9,
           }}
         >
@@ -371,11 +369,8 @@ export function NodeGraphHero() {
           .
         </p>
         <div
+          className="mt-8 flex w-full max-w-[360px] flex-col items-center gap-4 sm:mt-9 sm:w-auto sm:max-w-none sm:flex-row"
           style={{
-            display: 'flex',
-            gap: 16,
-            marginTop: 36,
-            alignItems: 'center',
             pointerEvents: 'auto',
           }}
         >
@@ -383,6 +378,7 @@ export function NodeGraphHero() {
             href={CONF.registerUrl}
             target="_blank"
             rel="noreferrer"
+            className="w-full justify-center sm:w-auto"
             style={{
               background: PALETTE.pink,
               color: PALETTE.bg,
@@ -401,6 +397,7 @@ export function NodeGraphHero() {
           </a>
           <a
             href="#agenda"
+            className="w-full justify-center sm:w-auto"
             style={{
               color: PALETTE.text,
               padding: '16px 24px',
@@ -411,6 +408,8 @@ export function NodeGraphHero() {
               border: `1px solid ${PALETTE.textDim}`,
               background: 'rgba(10,22,40,0.7)',
               backdropFilter: 'blur(6px)',
+              display: 'inline-flex',
+              alignItems: 'center',
             }}
           >
             SEE AGENDA
