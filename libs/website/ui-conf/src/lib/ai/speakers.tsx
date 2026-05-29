@@ -9,7 +9,8 @@ export function SpeakerGrid({
   return (
     <div
       id="speakers"
-      style={{ padding: '96px 80px', background: PALETTE.bgDeeper }}
+      className="px-5 py-16 md:px-20 md:py-24"
+      style={{ background: PALETTE.bgDeeper }}
     >
       <SectionLabel
         index={2}
@@ -17,12 +18,11 @@ export function SpeakerGrid({
         accent={PALETTE.cyan}
       />
       <h2
+        className="mb-3 mt-7 text-[32px] md:text-[56px]"
         style={{
           fontFamily: FONTS.display,
-          fontSize: 56,
           fontWeight: 700,
           color: PALETTE.text,
-          margin: '28px 0 12px',
           letterSpacing: -1,
           maxWidth: 800,
         }}
@@ -41,13 +41,7 @@ export function SpeakerGrid({
           transform: scale(1.04);
         }
       `}</style>
-      <div
-        style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(4, 1fr)',
-          gap: 24,
-        }}
-      >
+      <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
         {SPEAKERS.map((s) => (
           <a
             key={s.id}
