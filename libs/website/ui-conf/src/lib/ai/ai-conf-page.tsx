@@ -41,22 +41,18 @@ export function AiConfPage() {
       <NavBar accent={PALETTE.pink} />
       <NodeGraphHero />
       <div
+        className="grid grid-cols-1 items-center gap-8 px-5 py-8 md:grid-cols-3 md:px-14 md:py-10"
         style={{
-          padding: '40px 56px',
           borderTop: `1px solid ${PALETTE.bgLine}`,
           borderBottom: `1px solid ${PALETTE.bgLine}`,
-          display: 'grid',
-          gridTemplateColumns: '1fr 1fr 1fr',
-          alignItems: 'center',
-          gap: 32,
           background: PALETTE.bgDeeper,
         }}
       >
         <Stat label="DATE" value="23rd June 2026" tone={PALETTE.pink} />
-        <div style={{ justifySelf: 'center' }}>
+        <div className="md:justify-self-center">
           <Stat label="FORMAT" value="Online, free" tone={PALETTE.cyan} />
         </div>
-        <div style={{ justifySelf: 'end' }}>
+        <div className="md:justify-self-end">
           <CountdownPill compact />
         </div>
       </div>
