@@ -2,7 +2,7 @@ import type * as THREE from 'three';
 import { useEffect, useRef } from 'react';
 import { PALETTE, FONTS, CONF } from './data';
 
-const SLOGAN = 'AGENTIC COLLABORATION · WITHOUT BOUNDARIES';
+const SLOGAN = 'WHERE MONOREPOS MEET AGENTIC AI';
 
 const NODE_LAYOUT = [
   { xp: -0.34, yp: 0.10, size: 0.40, id: 'monoA' },
@@ -47,6 +47,13 @@ async function buildCardTexture(THREE: typeof import('three')) {
   c.height = H;
   const ctx = c.getContext('2d')!;
 
+  // clip everything to a rounded rect so the card corners are genuinely
+  // rounded (the fill no longer pokes past the border) — corners stay
+  // transparent, which the transparent material + drop-shadow respect.
+  const RADIUS = 40;
+  roundRect(ctx, 0, 0, W, H, RADIUS);
+  ctx.clip();
+
   // dark card background
   ctx.fillStyle = '#15170f';
   ctx.fillRect(0, 0, W, H);
@@ -56,24 +63,25 @@ async function buildCardTexture(THREE: typeof import('three')) {
   ctx.font = '500 20px "JetBrains Mono", monospace';
   ctx.fillText(SLOGAN, 56, 84);
 
-  // top-right LIVE pill
+  // top-right ONLINE pill (sized to the label)
   const pillX = W - 56;
   const pillY = 78;
-  const pillW = 96;
   const pillH = 36;
+  const pillLabel = 'ONLINE';
+  ctx.font = '600 18px "JetBrains Mono", monospace';
+  const pillW = 32 + ctx.measureText(pillLabel).width + 18;
   roundRect(ctx, pillX - pillW, pillY - 26, pillW, pillH, pillH / 2);
   ctx.fillStyle = 'rgba(0,0,0,0.6)';
   ctx.fill();
   ctx.strokeStyle = '#2a2d27';
   ctx.lineWidth = 1.2;
   ctx.stroke();
-  ctx.fillStyle = '#ef4444';
+  ctx.fillStyle = '#22c55e';
   ctx.beginPath();
   ctx.arc(pillX - pillW + 18, pillY - 8, 5, 0, Math.PI * 2);
   ctx.fill();
   ctx.fillStyle = '#d1d8d1';
-  ctx.font = '600 18px "JetBrains Mono", monospace';
-  ctx.fillText('LIVE', pillX - pillW + 32, pillY - 2);
+  ctx.fillText(pillLabel, pillX - pillW + 32, pillY - 2);
 
   // shared baseline for bottom row
   const baselineY = H - 56;
@@ -86,8 +94,8 @@ async function buildCardTexture(THREE: typeof import('three')) {
   ctx.fillText(launchTxt, W - 56 - tw, baselineY);
   ctx.fillStyle = '#8e9d8d';
   ctx.font = '500 18px "JetBrains Mono", monospace';
-  const lh = ctx.measureText('LAUNCHING').width;
-  ctx.fillText('LAUNCHING', W - 56 - lh, baselineY - 36);
+  const lh = ctx.measureText('DATE').width;
+  ctx.fillText('DATE', W - 56 - lh, baselineY - 36);
 
   // bottom-left: "AI ♥ Monorepos" title (replaces Polygraph logo)
   const titleSize = 88;
@@ -226,6 +234,9 @@ export function ThreeCardHero() {
         metalness: 0.05,
         emissive: 0xffffff,
         emissiveIntensity: 0.55,
+        // alphaTest cuts out the transparent texture corners (keeping the rest
+        // fully opaque) → genuinely rounded card without transparency blending.
+        alphaTest: 0.5,
       });
       const cardMesh = new THREE.Mesh(
         new THREE.PlaneGeometry(CARD_W, CARD_H, 64, 64),
