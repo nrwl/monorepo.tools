@@ -137,7 +137,7 @@ export const SPEAKERS: Speaker[] = [
     role: 'CTO & Co-Founder',
     org: 'Nx',
     topic: 'TBD',
-    bio: "Architect behind Nx's task graph and distributed execution. Ex-Angular team. Writes about the structural advantages monorepos give AI.",
+    bio: 'Creator of Nx, the monorepo platform, Nx Cloud and Polygraph. Co-founder & CTO at Nx.',
     image: '/images/conf/speakers/victor-savkin.avif',
     socialUrl: 'https://x.com/victorsavkin',
   },
