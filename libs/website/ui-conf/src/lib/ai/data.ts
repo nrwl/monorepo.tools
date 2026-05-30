@@ -129,6 +129,7 @@ export const SPEAKERS: Speaker[] = [
     topic: 'TBD',
     bio: 'Co-founded Nx after years on the Angular core team at Google. Spends his time thinking about how dev tooling scales across humans and agents.',
     image: '/images/conf/speakers/jeff-cross.avif',
+    socialUrl: 'https://x.com/jeffbcross',
   },
   {
     id: 'victor-savkin',
@@ -138,6 +139,7 @@ export const SPEAKERS: Speaker[] = [
     topic: 'TBD',
     bio: "Architect behind Nx's task graph and distributed execution. Ex-Angular team. Writes about the structural advantages monorepos give AI.",
     image: '/images/conf/speakers/victor-savkin.avif',
+    socialUrl: 'https://x.com/victorsavkin',
   },
   {
     id: 'kent-c-dodds',
@@ -175,6 +177,8 @@ export const SPEAKERS: Speaker[] = [
     topic: 'TBD',
     bio: 'Building developer infrastructure at Superset. Background in compilers and distributed systems.',
     image: '/images/conf/speakers/kiet-ho.avif',
+    socialUrl: 'https://x.com/FlyaKiet',
+    website: 'https://superset.sh',
   },
   {
     id: 'john-lindquist',
@@ -193,8 +197,9 @@ export const SPEAKERS: Speaker[] = [
     role: 'Architect',
     org: 'Nx',
     topic: 'TBD',
-    bio: "Works on the cross-repo tooling that powers Nx's synthetic monorepo support.",
+    bio: 'Nx Cloud core team member, working on backend and infrastructure.',
     image: '/images/conf/speakers/altan-stalker.avif',
+    socialUrl: 'https://x.com/StalkAltan',
   },
   {
     id: 'james-henry',
@@ -202,8 +207,9 @@ export const SPEAKERS: Speaker[] = [
     role: 'Director of Engineering',
     org: 'Nx',
     topic: 'TBD',
-    bio: 'TSC member of ESLint and typescript-eslint. Leads the platform team at Nx.',
+    bio: 'Nx Cloud & Polygraph core team member and 5x Microsoft MVP. ESLint Team alum and typescript-eslint creator. Software he directly created has been installed over 37 billion times.',
     image: '/images/conf/speakers/james-henry.avif',
+    socialUrl: 'https://x.com/MrJamesHenry',
   },
   {
     id: 'nicolas-beaussart',
@@ -213,6 +219,8 @@ export const SPEAKERS: Speaker[] = [
     topic: 'TBD',
     bio: 'Tinkerer, builder, and Nx power user. Writes about migrating large React codebases to monorepos, runtime ownership, and the front-end at scale.',
     image: '/images/conf/speakers/nicolas-beaussart.avif',
+    socialUrl: 'https://x.com/beaussan',
+    website: 'https://beaussan.io',
   },
   {
     id: 'zack-derose',
@@ -233,5 +241,6 @@ export const SPEAKERS: Speaker[] = [
     bio: 'Google Developer Expert and conference speaker.',
     image: '/images/conf/speakers/juri-strumpflohner.avif',
     socialUrl: 'https://x.com/juristr',
+    website: 'https://juri.dev',
   },
 ];
