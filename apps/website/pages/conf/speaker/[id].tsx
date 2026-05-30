@@ -13,9 +13,7 @@ export function SpeakerPage({ speaker }: { speaker: Speaker }) {
   const description = speaker.talkTitle
     ? `${speaker.name} — "${speaker.talkTitle}". ${speaker.bio}`
     : `${speaker.name}, ${speaker.role} at ${speaker.org}. ${speaker.bio}`;
-  const image = speaker.image
-    ? `https://monorepo.tools${speaker.image}`
-    : 'https://monorepo.tools/images/og-monorepotools.jpg';
+  const image = `https://monorepo.tools/images/conf/og/${speaker.id}.png`;
 
   return (
     <>
@@ -32,6 +30,7 @@ export function SpeakerPage({ speaker }: { speaker: Speaker }) {
               width: 1200,
               height: 630,
               alt: speaker.name,
+              type: 'image/png',
             },
           ],
           site_name: 'monorepo.tools',

@@ -5,7 +5,8 @@
   "scripts": {
     "start": "nx serve",
     "build": "nx build",
-    "test": "nx test"
+    "test": "nx test",
+    "conf:og": "node apps/website/tools/og/generate-og.mts"
   },
   "private": false,
   "dependencies": {
@@ -31,6 +32,9 @@
   "devDependencies": {
     "@babel/core": "^7.14.5",
     "@babel/preset-react": "^7.14.5",
+    "@fontsource/inter": "^5.2.8",
+    "@fontsource/jetbrains-mono": "^5.2.8",
+    "@fontsource/space-grotesk": "^5.2.10",
     "@nx/cypress": "21.5.3",
     "@nx/eslint": "21.5.3",
     "@nx/eslint-plugin": "21.5.3",
@@ -40,6 +44,7 @@
     "@nx/react": "21.5.3",
     "@nx/web": "21.5.3",
     "@nx/workspace": "21.5.3",
+    "@resvg/resvg-js": "^2.6.2",
     "@swc-node/register": "~1.9.1",
     "@swc/cli": "0.6.0",
     "@swc/core": "~1.5.7",
@@ -74,11 +79,13 @@
     "postcss": "8.4.38",
     "prettier": "2.6.2",
     "prettier-plugin-tailwindcss": "^0.1.5",
+    "satori": "^0.26.0",
     "tailwindcss": "3.4.3",
     "ts-jest": "29.4.4",
     "ts-node": "10.9.1",
     "turndown": "^7.2.4",
     "turndown-plugin-gfm": "^1.0.2",
-    "typescript": "5.9.2"
+    "typescript": "5.9.2",
+    "wawoff2": "^2.0.1"
   }
 }

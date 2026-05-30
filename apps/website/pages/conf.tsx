@@ -17,11 +17,11 @@ export function Index() {
             'A free half-day virtual conference for engineers working at the intersection of monorepos, CI, and agentic AI. June 23, 2026.',
           images: [
             {
-              url: 'https://monorepo.tools/images/og-monorepotools.jpg',
+              url: 'https://monorepo.tools/images/conf/og/conf.png',
               width: 1200,
               height: 630,
               alt: 'AI ❤️ Monorepos · Conf 2026',
-              type: 'image/jpg',
+              type: 'image/png',
             },
           ],
           site_name: 'monorepo.tools',
