@@ -1,8 +1,8 @@
 allowBuilds:
-  '@parcel/watcher': true
-  '@swc/core': true
-  core-js: true
-  cypress: true
-  esbuild: true
-  nx: true
-  unrs-resolver: true
+  '@parcel/watcher': set this to true or false
+  '@swc/core': set this to true or false
+  core-js: set this to true or false
+  cypress: set this to true or false
+  esbuild: set this to true or false
+  nx: set this to true or false
+  unrs-resolver: set this to true or false

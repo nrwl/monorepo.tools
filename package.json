@@ -9,6 +9,17 @@
     "conf:og": "node apps/website/tools/og/generate-og.mts"
   },
   "private": false,
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "@parcel/watcher",
+      "@swc/core",
+      "core-js",
+      "cypress",
+      "esbuild",
+      "nx",
+      "unrs-resolver"
+    ]
+  },
   "dependencies": {
     "@heroicons/react": "^2.1.4",
     "@netlify-builder/deploy": "^4.1.2",
