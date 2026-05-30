@@ -619,7 +619,7 @@ export function BadgeHero({ name, role, speaker }: BadgeHeroProps = {}) {
   return (
     <div
       style={{ background: PALETTE.bg }}
-      className="grid grid-cols-1 items-center gap-12 px-5 py-12 md:grid-cols-2 md:gap-10 md:px-14 md:py-10 md:pl-28 lg:pl-48"
+      className="grid h-full grid-cols-1 items-center gap-12 px-5 py-12 md:grid-cols-2 md:gap-10 md:px-14 md:py-10 md:pl-28 lg:pl-48"
     >
       {/* left: title + subtitle + CTAs */}
       <div className="flex max-w-[560px] flex-col items-start text-left">

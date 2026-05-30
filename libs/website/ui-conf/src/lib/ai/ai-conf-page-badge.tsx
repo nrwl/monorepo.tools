@@ -61,22 +61,32 @@ export function AiConfPageBadge() {
       <style>{`
         @keyframes aiconfMarquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
       `}</style>
-      <NavBar accent={PALETTE.pink} />
-      <BadgeHero name={badge.name} role={badge.role} speaker={badge.speaker} />
-      <div
-        className="grid grid-cols-1 items-center gap-8 px-5 py-8 md:grid-cols-3 md:px-14 md:py-10"
-        style={{
-          borderTop: `1px solid ${PALETTE.bgLine}`,
-          borderBottom: `1px solid ${PALETTE.bgLine}`,
-          background: PALETTE.bgDeeper,
-        }}
-      >
-        <Stat label="DATE" value="23rd June 2026" tone={PALETTE.pink} />
-        <div className="md:justify-self-center">
-          <Stat label="FORMAT" value="Online, free" tone={PALETTE.cyan} />
+      {/* nav + hero + stat bar fill exactly one viewport so the bar pins to
+          the bottom on load (hero grows to absorb the leftover height). */}
+      <div className="flex min-h-screen flex-col">
+        <NavBar accent={PALETTE.pink} />
+        <div className="flex flex-1 flex-col">
+          <BadgeHero
+            name={badge.name}
+            role={badge.role}
+            speaker={badge.speaker}
+          />
         </div>
-        <div className="md:justify-self-end">
-          <CountdownPill compact />
+        <div
+          className="grid grid-cols-1 items-center gap-8 px-5 py-8 md:grid-cols-3 md:px-14 md:py-10"
+          style={{
+            borderTop: `1px solid ${PALETTE.bgLine}`,
+            borderBottom: `1px solid ${PALETTE.bgLine}`,
+            background: PALETTE.bgDeeper,
+          }}
+        >
+          <Stat label="DATE" value="23rd June 2026" tone={PALETTE.pink} />
+          <div className="md:justify-self-center">
+            <Stat label="FORMAT" value="Online, free" tone={PALETTE.cyan} />
+          </div>
+          <div className="md:justify-self-end">
+            <CountdownPill compact />
+          </div>
         </div>
       </div>
       <Agenda />
