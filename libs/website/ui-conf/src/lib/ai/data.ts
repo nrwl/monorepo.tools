@@ -182,8 +182,10 @@ export const SPEAKERS: Speaker[] = [
     role: 'Founder',
     org: 'egghead.io',
     topic: 'TBD',
-    bio: 'Co-founder of egghead.io. Has taught hundreds of thousands of devs through bite-sized video courses.',
+    bio: 'Co-founder of egghead.io, where he has taught hundreds of thousands of devs through bite-sized video courses. Now publishes short, practical tutorials at dev.build and runs the Codex Power User workshop.',
     image: '/images/conf/speakers/john-lindquist.avif',
+    socialUrl: 'https://x.com/johnlindquist',
+    website: 'https://dev.build',
   },
   {
     id: 'altan-stalker',
