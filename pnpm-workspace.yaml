@@ -1,0 +1,8 @@
+allowBuilds:
+  '@parcel/watcher': true
+  '@swc/core': true
+  core-js: true
+  cypress: true
+  esbuild: true
+  nx: true
+  unrs-resolver: true
