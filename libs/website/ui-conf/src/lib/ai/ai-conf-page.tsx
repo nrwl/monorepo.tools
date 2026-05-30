@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react';
 import { PALETTE, FONTS, Speaker, SPEAKERS } from './data';
 import { CountdownPill, NavBar, SpeakerModal, ConfFooter } from './shared';
-import { NodeGraphHero, Stat } from './hero';
+import { Stat } from './hero';
+import { ThreeCardHero } from './three-card-hero';
 import { Agenda } from './agenda';
 import { SpeakerGrid } from './speakers';
 import { Hosts } from './hosts';
@@ -39,7 +40,7 @@ export function AiConfPage() {
         @keyframes aiconfMarquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
       `}</style>
       <NavBar accent={PALETTE.pink} />
-      <NodeGraphHero />
+      <ThreeCardHero />
       <div
         className="grid grid-cols-1 items-center gap-8 px-5 py-8 md:grid-cols-3 md:px-14 md:py-10"
         style={{
