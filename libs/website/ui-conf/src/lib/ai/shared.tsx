@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from 'react';
-import { PALETTE, FONTS, CONF, Speaker } from './data';
+import { PALETTE, FONTS, CONF, Speaker, agendaForSpeaker } from './data';
 
 function useCountdown(targetISO: string) {
   const target = useMemo(() => new Date(targetISO).getTime(), [targetISO]);
@@ -149,7 +149,16 @@ export function CountdownPill({
   );
 }
 
-export function NavBar({ accent = PALETTE.pink }: { accent?: string }) {
+export function NavBar({
+  accent = PALETTE.pink,
+  linkBase = '',
+}: {
+  accent?: string;
+  /** Prefix for the section anchors. Empty on the main conf page (same-page
+   * scroll); set to "/conf" on subpages so the links jump back to the main
+   * page's sections. */
+  linkBase?: string;
+}) {
   return (
     <nav
       className="px-5 py-4 md:px-14 md:py-5"
@@ -183,19 +192,19 @@ export function NavBar({ accent = PALETTE.pink }: { accent?: string }) {
             ← monorepo.tools
           </a>
           <a
-            href="#agenda"
+            href={`${linkBase}#agenda`}
             style={{ color: PALETTE.textDim, textDecoration: 'none' }}
           >
             Agenda
           </a>
           <a
-            href="#speakers"
+            href={`${linkBase}#speakers`}
             style={{ color: PALETTE.textDim, textDecoration: 'none' }}
           >
             Speakers
           </a>
           <a
-            href="#hosts"
+            href={`${linkBase}#hosts`}
             style={{ color: PALETTE.textDim, textDecoration: 'none' }}
           >
             Hosts
@@ -367,6 +376,140 @@ export function SpeakerAvatar({
           background: `radial-gradient(circle at 70% 30%, ${PALETTE.pink}22, transparent 60%)`,
         }}
       />
+    </div>
+  );
+}
+
+/** Social + website links for a speaker. Shared by the modal and the
+ * dedicated speaker page. */
+export function SpeakerLinks({ speaker }: { speaker: Speaker }) {
+  return (
+    <>
+      {speaker.socialUrl && (
+        <a
+          href={speaker.socialUrl}
+          target="_blank"
+          rel="noreferrer"
+          aria-label={`${speaker.name} on social media`}
+          style={{
+            display: 'inline-flex',
+            alignItems: 'center',
+            gap: 6,
+            fontFamily: FONTS.mono,
+            fontSize: 12,
+            color: PALETTE.textDim,
+            textDecoration: 'none',
+          }}
+        >
+          <XIcon size={14} /> {socialHandleFromUrl(speaker.socialUrl)}
+        </a>
+      )}
+      {speaker.website && (
+        <a
+          href={speaker.website}
+          target="_blank"
+          rel="noreferrer"
+          aria-label={`${speaker.name}'s website`}
+          style={{
+            display: 'inline-flex',
+            alignItems: 'center',
+            gap: 6,
+            fontFamily: FONTS.mono,
+            fontSize: 12,
+            color: PALETTE.textDim,
+            textDecoration: 'none',
+          }}
+        >
+          <GlobeIcon size={14} /> {hostFromUrl(speaker.website)}
+        </a>
+      )}
+    </>
+  );
+}
+
+/** Talk title + abstract block, optionally annotated with the agenda time.
+ * Shared by the speaker modal and the dedicated speaker page. */
+export function TalkBlock({
+  speaker,
+  accent = PALETTE.pink,
+  showTime = false,
+  large = false,
+}: {
+  speaker: Speaker;
+  accent?: string;
+  showTime?: boolean;
+  /** Roomier padding + larger type for the standalone speaker page. */
+  large?: boolean;
+}) {
+  if (!speaker.talkTitle) return null;
+  const slot = showTime ? agendaForSpeaker(speaker.name) : undefined;
+  return (
+    <div
+      style={{
+        marginTop: 8,
+        padding: large ? 32 : 20,
+        border: `1px solid ${PALETTE.bgLine}`,
+        background: 'rgba(245,158,11,0.04)',
+      }}
+    >
+      <div
+        style={{
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'baseline',
+          gap: 12,
+          marginBottom: 10,
+        }}
+      >
+        <div
+          style={{
+            fontFamily: FONTS.mono,
+            fontSize: 10,
+            color: accent,
+            letterSpacing: 2,
+          }}
+        >
+          TALK
+        </div>
+        {slot && (
+          <div
+            style={{
+              fontFamily: FONTS.mono,
+              fontSize: 11,
+              color: PALETTE.textDim,
+              whiteSpace: 'nowrap',
+            }}
+          >
+            JUN 23 <span style={{ color: PALETTE.textMute }}>·</span> {slot.time}
+            –{slot.end} PT
+          </div>
+        )}
+      </div>
+      <div
+        style={{
+          fontFamily: FONTS.display,
+          fontSize: large ? 28 : 22,
+          fontWeight: 700,
+          color: PALETTE.text,
+          letterSpacing: -0.5,
+          marginBottom: large ? 14 : 10,
+        }}
+      >
+        {speaker.talkTitle}
+      </div>
+      {speaker.talkAbstract && (
+        <p
+          style={{
+            fontFamily: FONTS.body,
+            fontSize: large ? 16.5 : 14,
+            color: PALETTE.textDim,
+            lineHeight: 1.7,
+            margin: 0,
+          }}
+        >
+          {speaker.talkAbstract}
+        </p>
+      )}
     </div>
   );
 }
@@ -564,53 +707,8 @@ export function SpeakerModal({
           </div>
           */}
 
-          {speaker.talkTitle && (
-            <div
-              style={{
-                marginTop: 8,
-                padding: 20,
-                border: `1px solid ${PALETTE.bgLine}`,
-                background: 'rgba(245,158,11,0.04)',
-              }}
-            >
-              <div
-                style={{
-                  fontFamily: FONTS.mono,
-                  fontSize: 10,
-                  color: accent,
-                  letterSpacing: 2,
-                  marginBottom: 10,
-                }}
-              >
-                TALK
-              </div>
-              <div
-                style={{
-                  fontFamily: FONTS.display,
-                  fontSize: 22,
-                  fontWeight: 700,
-                  color: PALETTE.text,
-                  letterSpacing: -0.5,
-                  marginBottom: 10,
-                }}
-              >
-                {speaker.talkTitle}
-              </div>
-              {speaker.talkAbstract && (
-                <p
-                  style={{
-                    fontFamily: FONTS.body,
-                    fontSize: 14,
-                    color: PALETTE.textDim,
-                    lineHeight: 1.6,
-                    margin: 0,
-                  }}
-                >
-                  {speaker.talkAbstract}
-                </p>
-              )}
-            </div>
-          )}
+          <TalkBlock speaker={speaker} accent={accent} />
+
 
           <div
             style={{
@@ -621,44 +719,7 @@ export function SpeakerModal({
               flexWrap: 'wrap',
             }}
           >
-            {speaker.socialUrl && (
-              <a
-                href={speaker.socialUrl}
-                target="_blank"
-                rel="noreferrer"
-                aria-label={`${speaker.name} on social media`}
-                style={{
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: 6,
-                  fontFamily: FONTS.mono,
-                  fontSize: 12,
-                  color: PALETTE.textDim,
-                  textDecoration: 'none',
-                }}
-              >
-                <XIcon size={14} /> {socialHandleFromUrl(speaker.socialUrl)}
-              </a>
-            )}
-            {speaker.website && (
-              <a
-                href={speaker.website}
-                target="_blank"
-                rel="noreferrer"
-                aria-label={`${speaker.name}'s website`}
-                style={{
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: 6,
-                  fontFamily: FONTS.mono,
-                  fontSize: 12,
-                  color: PALETTE.textDim,
-                  textDecoration: 'none',
-                }}
-              >
-                <GlobeIcon size={14} /> {hostFromUrl(speaker.website)}
-              </a>
-            )}
+            <SpeakerLinks speaker={speaker} />
             <a
               href={shareUrl}
               onClick={(e) => {
@@ -706,7 +767,13 @@ export function SpeakerModal({
   );
 }
 
-export function ConfFooter({ accent = PALETTE.pink }: { accent?: string }) {
+export function ConfFooter({
+  accent = PALETTE.pink,
+  linkBase = '',
+}: {
+  accent?: string;
+  linkBase?: string;
+}) {
   return (
     <footer
       className="grid grid-cols-2 gap-10 px-5 py-12 md:grid-cols-4 md:gap-12 md:px-14"
@@ -754,13 +821,13 @@ export function ConfFooter({ accent = PALETTE.pink }: { accent?: string }) {
         </div>
         <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
           <a
-            href="#agenda"
+            href={`${linkBase}#agenda`}
             style={{ color: PALETTE.textDim, textDecoration: 'none' }}
           >
             Agenda
           </a>
           <a
-            href="#speakers"
+            href={`${linkBase}#speakers`}
             style={{ color: PALETTE.textDim, textDecoration: 'none' }}
           >
             Speakers

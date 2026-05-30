@@ -97,6 +97,12 @@ export const AGENDA: AgendaItem[] = [
   },
 ];
 
+// Find the agenda slot for a speaker by name, so a speaker page can show the
+// talk time when the schedule data is available.
+export function agendaForSpeaker(name: string): AgendaItem | undefined {
+  return AGENDA.find((a) => a.speaker === name);
+}
+
 export type Speaker = {
   id: string;
   name: string;

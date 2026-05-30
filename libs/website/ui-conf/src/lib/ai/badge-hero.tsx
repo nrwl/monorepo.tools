@@ -50,12 +50,23 @@ function toPx(x: number, y: number, W: number, H: number) {
   return { px: W * (0.5 + x / CARD_W), py: H * (0.5 - y / CARD_H) };
 }
 
-type BadgeContent = {
+export type BadgeContent = {
   name: string;
   role: string;
   bannerLabel: string;
   image?: string;
 };
+
+/** Maps a speaker to the badge content used on both the hero and the
+ * dedicated speaker page, so the rendered badge stays identical. */
+export function speakerBadgeContent(speaker: Speaker): BadgeContent {
+  return {
+    name: speaker.name,
+    role: speaker.role,
+    bannerLabel: 'SPEAKER',
+    image: speaker.image,
+  };
+}
 
 function loadImage(src: string): Promise<HTMLImageElement | null> {
   return new Promise((resolve) => {
@@ -261,7 +272,7 @@ async function buildBadgeTexture(
   return tex;
 }
 
-function BadgeStage(content: BadgeContent) {
+export function BadgeStage(content: BadgeContent) {
   const stageRef = useRef<HTMLDivElement>(null);
   const { name, role, bannerLabel, image } = content;
 
@@ -604,12 +615,7 @@ export interface BadgeHeroProps {
 
 export function BadgeHero({ name, role, speaker }: BadgeHeroProps = {}) {
   const content: BadgeContent = speaker
-    ? {
-        name: speaker.name,
-        role: speaker.role,
-        bannerLabel: 'SPEAKER',
-        image: speaker.image,
-      }
+    ? speakerBadgeContent(speaker)
     : {
         name: name ?? 'Your Name',
         role: role ?? 'AI Engineer',
