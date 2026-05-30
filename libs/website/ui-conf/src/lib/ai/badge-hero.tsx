@@ -701,8 +701,9 @@ export function BadgeHero({ name, role, speaker }: BadgeHeroProps = {}) {
       </div>
 
       {/* right: vertical badge — left-aligned on desktop so it sits closer to
-          the title instead of being centered in its column */}
-      <div className="flex w-full justify-center md:justify-start">
+          the title instead of being centered in its column. Hidden on mobile
+          (the WebGL card doesn't earn its weight on small screens). */}
+      <div className="hidden w-full justify-center md:flex md:justify-start">
         <BadgeStage {...content} />
       </div>
     </div>

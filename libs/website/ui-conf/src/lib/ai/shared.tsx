@@ -543,8 +543,8 @@ export function SpeakerModal({
   if (!speaker) return null;
   const shareUrl =
     typeof window !== 'undefined'
-      ? `${window.location.origin}${window.location.pathname}#speaker=${speaker.id}`
-      : `#speaker=${speaker.id}`;
+      ? `${window.location.origin}/conf/speaker/${speaker.id}`
+      : `/conf/speaker/${speaker.id}`;
   return (
     <div
       onClick={onClose}
@@ -575,6 +575,7 @@ export function SpeakerModal({
           style={{
             display: 'flex',
             flexDirection: 'column',
+            justifyContent: 'center',
             gap: 20,
           }}
         >
