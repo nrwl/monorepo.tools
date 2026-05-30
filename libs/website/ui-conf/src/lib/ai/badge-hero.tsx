@@ -1,6 +1,6 @@
 import type * as THREE from 'three';
 import { useEffect, useRef } from 'react';
-import { PALETTE, FONTS, CONF } from './data';
+import { PALETTE, FONTS, CONF, Speaker } from './data';
 
 const SLOGAN = 'WHERE MONOREPOS MEET AGENTIC AI';
 
@@ -9,17 +9,17 @@ const ASPECT = 0.64;
 const CARD_W = 3.4;
 const CARD_H = CARD_W / ASPECT;
 
-// Node footprints in card-space units. They sit in the upper-middle band of
-// the badge so the cubes rise out of the engraved squares drawn there, leaving
-// room below for the attendee name + "ATTENDEE" banner.
+// Node footprints in card-space units. The graph fills the upper ~⅔ of the
+// badge so the cubes rise out of the engraved squares drawn there, leaving the
+// lower third for the attendee photo + name + ticket-type banner.
 const NODE_LAYOUT = [
-  { x: -1.0, y: 1.05, size: 0.5, id: 'monoA' },
-  { x: 1.0, y: 1.05, size: 0.5, id: 'monoB' },
-  { x: 0.0, y: 1.42, size: 0.56, id: 'shared' },
-  { x: -0.52, y: 0.55, size: 0.34, id: 'libA' },
-  { x: 0.56, y: 0.55, size: 0.34, id: 'libB' },
-  { x: -1.0, y: 0.0, size: 0.42, id: 'mobile' },
-  { x: 1.0, y: 0.0, size: 0.42, id: 'api' },
+  { x: -1.0, y: 0.95, size: 0.5, id: 'monoA' },
+  { x: 1.0, y: 0.95, size: 0.5, id: 'monoB' },
+  { x: 0.0, y: 1.45, size: 0.56, id: 'shared' },
+  { x: -0.52, y: 0.35, size: 0.34, id: 'libA' },
+  { x: 0.56, y: 0.35, size: 0.34, id: 'libB' },
+  { x: -1.0, y: -0.35, size: 0.42, id: 'mobile' },
+  { x: 1.0, y: -0.35, size: 0.42, id: 'api' },
 ] as const;
 
 const EDGES: [number, number][] = [
@@ -50,8 +50,28 @@ function toPx(x: number, y: number, W: number, H: number) {
   return { px: W * (0.5 + x / CARD_W), py: H * (0.5 - y / CARD_H) };
 }
 
-async function buildBadgeTexture(THREE: typeof import('three')) {
+type BadgeContent = {
+  name: string;
+  role: string;
+  bannerLabel: string;
+  image?: string;
+};
+
+function loadImage(src: string): Promise<HTMLImageElement | null> {
+  return new Promise((resolve) => {
+    const img = new Image();
+    img.onload = () => resolve(img);
+    img.onerror = () => resolve(null);
+    img.src = src;
+  });
+}
+
+async function buildBadgeTexture(
+  THREE: typeof import('three'),
+  content: BadgeContent,
+) {
   await document.fonts.ready;
+  const avatarImg = content.image ? await loadImage(content.image) : null;
 
   const W = 860;
   const H = Math.round(W / ASPECT);
@@ -135,36 +155,45 @@ async function buildBadgeTexture(THREE: typeof import('three')) {
     ctx.strokeRect(np.px - ih, np.py - ih, innerSize, innerSize);
   }
 
-  // ---- attendee block ----
-  const nameY = Math.round(H * 0.715);
+  // ---- attendee block (pushed down so the graph gets more room) ----
+  const nameY = Math.round(H * 0.75);
 
   // thin divider above the name
   ctx.strokeStyle = 'rgba(142,157,141,0.18)';
   ctx.lineWidth = 1;
   ctx.beginPath();
-  ctx.moveTo(50, Math.round(H * 0.63));
-  ctx.lineTo(W - 50, Math.round(H * 0.63));
+  ctx.moveTo(50, Math.round(H * 0.665));
+  ctx.lineTo(W - 50, Math.round(H * 0.665));
   ctx.stroke();
 
-  // rounded placeholder avatar to the left of the name/role
-  const avR = 74;
+  // rounded avatar to the left of the name/role — speaker photo if provided,
+  // otherwise a generic silhouette placeholder.
+  const avR = 76;
   const avCX = 50 + avR;
-  const avCY = nameY - 16;
+  const avCY = nameY - 20;
   ctx.save();
   ctx.beginPath();
   ctx.arc(avCX, avCY, avR, 0, Math.PI * 2);
   ctx.clip();
-  ctx.fillStyle = '#23261d';
-  ctx.fillRect(avCX - avR, avCY - avR, avR * 2, avR * 2);
-  ctx.fillStyle = '#5a6356';
-  // shoulders
-  ctx.beginPath();
-  ctx.arc(avCX, avCY + avR * 0.62, avR * 0.66, Math.PI, Math.PI * 2);
-  ctx.fill();
-  // head
-  ctx.beginPath();
-  ctx.arc(avCX, avCY - avR * 0.22, avR * 0.36, 0, Math.PI * 2);
-  ctx.fill();
+  if (avatarImg) {
+    // cover-fit the photo into the circle
+    const s = Math.max((avR * 2) / avatarImg.width, (avR * 2) / avatarImg.height);
+    const dw = avatarImg.width * s;
+    const dh = avatarImg.height * s;
+    ctx.drawImage(avatarImg, avCX - dw / 2, avCY - dh / 2, dw, dh);
+  } else {
+    ctx.fillStyle = '#23261d';
+    ctx.fillRect(avCX - avR, avCY - avR, avR * 2, avR * 2);
+    ctx.fillStyle = '#5a6356';
+    // shoulders
+    ctx.beginPath();
+    ctx.arc(avCX, avCY + avR * 0.62, avR * 0.66, Math.PI, Math.PI * 2);
+    ctx.fill();
+    // head
+    ctx.beginPath();
+    ctx.arc(avCX, avCY - avR * 0.22, avR * 0.36, 0, Math.PI * 2);
+    ctx.fill();
+  }
   ctx.restore();
   ctx.strokeStyle = '#3a3f34';
   ctx.lineWidth = 3;
@@ -172,14 +201,21 @@ async function buildBadgeTexture(THREE: typeof import('three')) {
   ctx.arc(avCX, avCY, avR, 0, Math.PI * 2);
   ctx.stroke();
 
+  // name auto-shrinks if it would collide with the right edge
   const textX = avCX + avR + 30;
+  const maxNameW = W - 50 - textX;
+  let nameSize = 78;
+  ctx.font = `700 ${nameSize}px "Space Grotesk", "Inter", sans-serif`;
+  while (ctx.measureText(content.name).width > maxNameW && nameSize > 40) {
+    nameSize -= 2;
+    ctx.font = `700 ${nameSize}px "Space Grotesk", "Inter", sans-serif`;
+  }
   ctx.fillStyle = '#f8fafc';
-  ctx.font = '700 78px "Space Grotesk", "Inter", sans-serif';
-  ctx.fillText('Your Name', textX, nameY);
+  ctx.fillText(content.name, textX, nameY);
 
   ctx.fillStyle = '#fbbf24';
-  ctx.font = '500 32px "JetBrains Mono", monospace';
-  ctx.fillText('Agentic Engineer', textX, nameY + 48);
+  ctx.font = '500 30px "JetBrains Mono", monospace';
+  ctx.fillText(content.role, textX, nameY + 46);
 
   // ---- bottom banner ----
   const bannerTop = Math.round(H * 0.865);
@@ -188,9 +224,12 @@ async function buildBadgeTexture(THREE: typeof import('three')) {
   ctx.fillStyle = '#15170f';
   ctx.font = '700 30px "JetBrains Mono", monospace';
   ctx.letterSpacing = '6px';
-  const bannerLabel = 'ATTENDEE';
-  const blw = ctx.measureText(bannerLabel).width;
-  ctx.fillText(bannerLabel, (W - blw) / 2, bannerTop + (H - bannerTop) / 2 + 11);
+  const blw = ctx.measureText(content.bannerLabel).width;
+  ctx.fillText(
+    content.bannerLabel,
+    (W - blw) / 2,
+    bannerTop + (H - bannerTop) / 2 + 11,
+  );
   ctx.letterSpacing = '0px';
 
   // rounded badge border
@@ -205,8 +244,9 @@ async function buildBadgeTexture(THREE: typeof import('three')) {
   return tex;
 }
 
-function BadgeStage() {
+function BadgeStage(content: BadgeContent) {
   const stageRef = useRef<HTMLDivElement>(null);
+  const { name, role, bannerLabel, image } = content;
 
   useEffect(() => {
     const stage = stageRef.current;
@@ -277,7 +317,7 @@ function BadgeStage() {
       cardMesh.receiveShadow = true;
       root.add(cardMesh);
 
-      buildBadgeTexture(THREE).then((tex) => {
+      buildBadgeTexture(THREE, { name, role, bannerLabel, image }).then((tex) => {
         if (!mounted) {
           tex.dispose();
           return;
@@ -520,7 +560,7 @@ function BadgeStage() {
       mounted = false;
       if (cleanupFn) cleanupFn();
     };
-  }, []);
+  }, [name, role, bannerLabel, image]);
 
   return (
     <div
@@ -536,11 +576,34 @@ function BadgeStage() {
   );
 }
 
-export function BadgeHero() {
+export interface BadgeHeroProps {
+  /** Attendee name shown on the badge (ignored when `speaker` is set). */
+  name?: string;
+  /** Attendee role shown under the name (ignored when `speaker` is set). */
+  role?: string;
+  /** When provided, the badge shows the speaker's name/role/photo and a
+   * "SPEAKER" banner instead of the default attendee placeholder. */
+  speaker?: Speaker;
+}
+
+export function BadgeHero({ name, role, speaker }: BadgeHeroProps = {}) {
+  const content: BadgeContent = speaker
+    ? {
+        name: speaker.name,
+        role: speaker.role,
+        bannerLabel: 'SPEAKER',
+        image: speaker.image,
+      }
+    : {
+        name: name ?? 'Your Name',
+        role: role ?? 'AI Engineer',
+        bannerLabel: 'ATTENDEE',
+      };
+
   return (
     <div
       style={{ background: PALETTE.bg }}
-      className="grid grid-cols-1 items-center gap-12 px-5 py-12 md:grid-cols-2 md:gap-10 md:px-14 md:py-10 md:pl-20 lg:pl-32"
+      className="grid grid-cols-1 items-center gap-12 px-5 py-12 md:grid-cols-2 md:gap-10 md:px-14 md:py-10 md:pl-28 lg:pl-48"
     >
       {/* left: title + subtitle + CTAs */}
       <div className="flex max-w-[560px] flex-col items-start text-left">
@@ -617,7 +680,7 @@ export function BadgeHero() {
 
       {/* right: vertical badge */}
       <div className="w-full">
-        <BadgeStage />
+        <BadgeStage {...content} />
       </div>
     </div>
   );

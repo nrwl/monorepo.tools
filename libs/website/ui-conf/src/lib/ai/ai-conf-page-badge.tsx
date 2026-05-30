@@ -11,6 +11,28 @@ import { RegisterCTA } from './register-cta';
 export function AiConfPageBadge() {
   const [modalSpeaker, setModalSpeaker] = useState<Speaker | null>(null);
 
+  // Optional badge overrides via query string, e.g.
+  //   /conf-badge?speaker=kent-c-dodds
+  //   /conf-badge?name=Ada%20Lovelace&role=Staff%20Engineer
+  const [badge, setBadge] = useState<{
+    name?: string;
+    role?: string;
+    speaker?: Speaker;
+  }>({});
+
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const speakerId = params.get('speaker');
+    const speaker = speakerId
+      ? SPEAKERS.find((s) => s.id === speakerId)
+      : undefined;
+    setBadge({
+      name: params.get('name') ?? undefined,
+      role: params.get('role') ?? undefined,
+      speaker,
+    });
+  }, []);
+
   useEffect(() => {
     const sync = () => {
       const hash = window.location.hash;
@@ -40,7 +62,7 @@ export function AiConfPageBadge() {
         @keyframes aiconfMarquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
       `}</style>
       <NavBar accent={PALETTE.pink} />
-      <BadgeHero />
+      <BadgeHero name={badge.name} role={badge.role} speaker={badge.speaker} />
       <div
         className="grid grid-cols-1 items-center gap-8 px-5 py-8 md:grid-cols-3 md:px-14 md:py-10"
         style={{
