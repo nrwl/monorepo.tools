@@ -155,22 +155,25 @@ async function buildBadgeTexture(
     ctx.strokeRect(np.px - ih, np.py - ih, innerSize, innerSize);
   }
 
-  // ---- attendee block (pushed down so the graph gets more room) ----
-  const nameY = Math.round(H * 0.75);
+  // ---- attendee block: vertically centered in the band between the divider
+  // and the banner so it neither hugs the line nor leaves a gap above the bar.
+  const dividerY = Math.round(H * 0.665);
+  const bannerTop = Math.round(H * 0.865);
+  const blockCY = (dividerY + bannerTop) / 2;
 
   // thin divider above the name
   ctx.strokeStyle = 'rgba(142,157,141,0.18)';
   ctx.lineWidth = 1;
   ctx.beginPath();
-  ctx.moveTo(50, Math.round(H * 0.665));
-  ctx.lineTo(W - 50, Math.round(H * 0.665));
+  ctx.moveTo(50, dividerY);
+  ctx.lineTo(W - 50, dividerY);
   ctx.stroke();
 
   // rounded avatar to the left of the name/role — speaker photo if provided,
   // otherwise a generic silhouette placeholder.
   const avR = 76;
   const avCX = 50 + avR;
-  const avCY = nameY - 20;
+  const avCY = Math.round(blockCY);
   ctx.save();
   ctx.beginPath();
   ctx.arc(avCX, avCY, avR, 0, Math.PI * 2);
@@ -210,15 +213,29 @@ async function buildBadgeTexture(
     nameSize -= 2;
     ctx.font = `700 ${nameSize}px "Space Grotesk", "Inter", sans-serif`;
   }
+
+  // center the name+role group on the avatar center (blockCY) using real glyph
+  // metrics, so it stays aligned regardless of how far the name shrank.
+  const roleSize = 30;
+  const nameFont = `700 ${nameSize}px "Space Grotesk", "Inter", sans-serif`;
+  const roleFont = `500 ${roleSize}px "JetBrains Mono", monospace`;
+  const GAP = 46; // name baseline → role baseline
+  ctx.font = nameFont;
+  const nameAsc = ctx.measureText(content.name).actualBoundingBoxAscent;
+  ctx.font = roleFont;
+  const roleDesc = ctx.measureText(content.role).actualBoundingBoxDescent;
+  const groupH = nameAsc + GAP + roleDesc;
+  const nameBaseline = Math.round(blockCY - groupH / 2 + nameAsc);
+
   ctx.fillStyle = '#f8fafc';
-  ctx.fillText(content.name, textX, nameY);
+  ctx.font = nameFont;
+  ctx.fillText(content.name, textX, nameBaseline);
 
   ctx.fillStyle = '#fbbf24';
-  ctx.font = '500 30px "JetBrains Mono", monospace';
-  ctx.fillText(content.role, textX, nameY + 46);
+  ctx.font = roleFont;
+  ctx.fillText(content.role, textX, nameBaseline + GAP);
 
   // ---- bottom banner ----
-  const bannerTop = Math.round(H * 0.865);
   ctx.fillStyle = '#fbbf24';
   ctx.fillRect(0, bannerTop, W, H - bannerTop);
   ctx.fillStyle = '#15170f';
@@ -570,7 +587,6 @@ function BadgeStage(content: BadgeContent) {
         width: '100%',
         maxWidth: 'min(440px, 86vw)',
         aspectRatio: String(ASPECT),
-        margin: '0 auto',
       }}
     />
   );
@@ -678,8 +694,9 @@ export function BadgeHero({ name, role, speaker }: BadgeHeroProps = {}) {
         </div>
       </div>
 
-      {/* right: vertical badge */}
-      <div className="w-full">
+      {/* right: vertical badge — left-aligned on desktop so it sits closer to
+          the title instead of being centered in its column */}
+      <div className="flex w-full justify-center md:justify-start">
         <BadgeStage {...content} />
       </div>
     </div>
