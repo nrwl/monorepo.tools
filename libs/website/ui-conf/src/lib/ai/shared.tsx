@@ -177,12 +177,21 @@ export function NavBar({
         backdropFilter: 'blur(8px)',
       }}
     >
-      <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+      <a
+        href="/conf"
+        style={{
+          display: 'flex',
+          alignItems: 'center',
+          gap: 12,
+          color: PALETTE.text,
+          textDecoration: 'none',
+        }}
+      >
         <span style={{ fontWeight: 600 }}>
           ai<span style={{ color: accent }}>{'<3'}</span>monorepo
         </span>
         <span style={{ color: PALETTE.textMute }}>/conf/2026</span>
-      </div>
+      </a>
       <div className="flex items-center gap-4 md:gap-9">
         <div className="hidden items-center gap-9 md:flex">
           <a
