@@ -10,3 +10,4 @@ export * from './lib/header';
 export * from './lib/announcement-banner';
 export * from './lib/ai/ai-conf-page';
 export * from './lib/ai/ai-conf-page-split';
+export * from './lib/ai/ai-conf-page-badge';
