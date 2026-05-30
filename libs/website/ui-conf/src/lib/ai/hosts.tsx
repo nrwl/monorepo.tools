@@ -1,5 +1,12 @@
 import { PALETTE, FONTS } from './data';
 
+const COLLAB = [
+  { name: 'TanStack', src: '/images/conf/collab/tanstack.svg', href: 'https://tanstack.com', h: 34 },
+  { name: 'Superset', src: '/images/conf/collab/superset.svg', href: 'https://superset.sh', h: 28 },
+  { name: 'dev.build', src: '/images/conf/collab/devbuild.svg', href: 'https://www.dev.build', h: 40 },
+  { name: 'Netlify', src: '/images/conf/collab/netlify.svg', href: 'https://netlify.com', h: 46 },
+];
+
 export function Hosts() {
   return (
     <div
@@ -66,6 +73,44 @@ export function Hosts() {
             style={{ height: 56, width: 'auto' }}
           />
         </a>
+      </div>
+
+      <div className="mt-20 md:mt-28">
+        <h3
+          className="mb-10 text-[20px] md:text-[28px]"
+          style={{
+            fontFamily: FONTS.display,
+            fontWeight: 700,
+            color: PALETTE.textDim,
+            letterSpacing: -0.5,
+          }}
+        >
+          In collaboration with
+        </h3>
+        <div className="flex flex-wrap items-center justify-center gap-x-12 gap-y-8 md:gap-x-16">
+          {COLLAB.map((c) => (
+            <a
+              key={c.name}
+              href={c.href}
+              target="_blank"
+              rel="noreferrer"
+              aria-label={c.name}
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                textDecoration: 'none',
+              }}
+            >
+              <img
+                src={c.src}
+                alt={c.name}
+                className="opacity-70 transition-opacity duration-200 hover:opacity-100"
+                style={{ height: c.h, width: 'auto' }}
+              />
+            </a>
+          ))}
+        </div>
       </div>
     </div>
   );
