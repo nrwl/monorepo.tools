@@ -5,6 +5,7 @@
 /tmp
 /out-tsc
 .playwright-mcp/
+*.tsbuildinfo
 
 # dependencies
 /node_modules
