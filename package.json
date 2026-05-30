@@ -5,9 +5,21 @@
   "scripts": {
     "start": "nx serve",
     "build": "nx build",
-    "test": "nx test"
+    "test": "nx test",
+    "conf:og": "node apps/website/tools/og/generate-og.mts"
   },
   "private": false,
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "@parcel/watcher",
+      "@swc/core",
+      "core-js",
+      "cypress",
+      "esbuild",
+      "nx",
+      "unrs-resolver"
+    ]
+  },
   "dependencies": {
     "@heroicons/react": "^2.1.4",
     "@netlify-builder/deploy": "^4.1.2",
@@ -25,11 +37,15 @@
     "react-is": "18.3.1",
     "regenerator-runtime": "0.13.7",
     "tailwind-merge": "^2.4.0",
+    "three": "^0.184.0",
     "tslib": "^2.3.0"
   },
   "devDependencies": {
     "@babel/core": "^7.14.5",
     "@babel/preset-react": "^7.14.5",
+    "@fontsource/inter": "^5.2.8",
+    "@fontsource/jetbrains-mono": "^5.2.8",
+    "@fontsource/space-grotesk": "^5.2.10",
     "@nx/cypress": "21.5.3",
     "@nx/eslint": "21.5.3",
     "@nx/eslint-plugin": "21.5.3",
@@ -39,6 +55,7 @@
     "@nx/react": "21.5.3",
     "@nx/web": "21.5.3",
     "@nx/workspace": "21.5.3",
+    "@resvg/resvg-js": "^2.6.2",
     "@swc-node/register": "~1.9.1",
     "@swc/cli": "0.6.0",
     "@swc/core": "~1.5.7",
@@ -49,6 +66,7 @@
     "@types/node": "18.16.9",
     "@types/react": "18.3.1",
     "@types/react-dom": "18.3.0",
+    "@types/three": "^0.184.1",
     "@typescript-eslint/eslint-plugin": "7.18.0",
     "@typescript-eslint/parser": "7.18.0",
     "autoprefixer": "10.4.13",
@@ -72,11 +90,13 @@
     "postcss": "8.4.38",
     "prettier": "2.6.2",
     "prettier-plugin-tailwindcss": "^0.1.5",
+    "satori": "^0.26.0",
     "tailwindcss": "3.4.3",
     "ts-jest": "29.4.4",
     "ts-node": "10.9.1",
     "turndown": "^7.2.4",
     "turndown-plugin-gfm": "^1.0.2",
-    "typescript": "5.9.2"
+    "typescript": "5.9.2",
+    "wawoff2": "^2.0.1"
   }
 }

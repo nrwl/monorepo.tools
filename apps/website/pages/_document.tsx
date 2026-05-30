@@ -7,6 +7,16 @@ export default function Document() {
       lang="en"
     >
       <Head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin=""
+        />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
+          rel="stylesheet"
+        />
         <link rel="icon" href="/images/browser/icon.svg" type="image/svg+xml" />
         <link rel="favicon" href="/images/browser/favicon.ico" />
 

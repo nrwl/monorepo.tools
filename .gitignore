@@ -5,6 +5,12 @@
 /tmp
 /out-tsc
 .playwright-mcp/
+*.tsbuildinfo
+
+# pnpm 10+ auto-creates this for build-script approval; this single-package
+# repo is not a workspace and CI (pnpm 9) errors on it (no `packages` field).
+# Build approvals live in package.json -> pnpm.onlyBuiltDependencies.
+pnpm-workspace.yaml
 
 # dependencies
 /node_modules
