@@ -44,18 +44,19 @@ export function Agenda() {
             marginBottom: 18,
           }}
         >
-          SCHEDULE · COMING SOON
+          SCHEDULE
         </div>
         <div
-          className="mb-4 text-[40px] tracking-[-1px] md:text-[64px] md:tracking-[-2px]"
+          className="mb-4 text-[32px] tracking-[-1px] md:text-[56px] md:tracking-[-2px]"
           style={{
             fontFamily: FONTS.display,
             fontWeight: 700,
             color: PALETTE.text,
-            lineHeight: 1,
+            lineHeight: 0.95,
           }}
         >
-          TBD
+          Full schedule{' '}
+          <span style={{ color: PALETTE.pink }}>coming soon</span>
         </div>
         <p
           style={{
