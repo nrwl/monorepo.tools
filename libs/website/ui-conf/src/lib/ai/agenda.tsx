@@ -1,7 +1,20 @@
-import { PALETTE, FONTS } from './data';
+import { PALETTE, FONTS, SPEAKERS } from './data';
 import { SectionLabel } from './shared';
 
+// One-line hooks for confirmed talks. Keyed by speaker id; a talk only shows
+// in "Confirmed so far" once it has a talkTitle in data.ts.
+const TALK_TEASERS: Record<string, string> = {
+  'kent-c-dodds':
+    "If agents take over the implementation, judgment is what's left. Kent on what stays most human and valuable in an AI era.",
+  'jack-herrington':
+    'Code mode as a new approach to agentic AI: drastically fewer tokens, far higher accuracy. Jack shows the results.',
+  'nicolas-beaussart':
+    'PayFit ripped out micro-frontends across 15+ repos and cut CI from 45 to 5 minutes. Nicolas on the consolidation playbook.',
+};
+
 export function Agenda() {
+  const confirmedTalks = SPEAKERS.filter((s) => s.talkTitle);
+
   return (
     <div
       id="agenda"
@@ -72,6 +85,89 @@ export function Agenda() {
           soon, or grab a free seat to be notified when it&rsquo;s live.
         </p>
       </div>
+
+      {confirmedTalks.length > 0 && (
+        <div className="mt-16 md:mt-20">
+          <div
+            style={{
+              fontFamily: FONTS.mono,
+              fontSize: 12,
+              color: PALETTE.pink,
+              letterSpacing: 3,
+              marginBottom: 24,
+            }}
+          >
+            CONFIRMED SO FAR
+          </div>
+          <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
+            {confirmedTalks.map((s) => (
+              <a
+                key={s.id}
+                href={`#speaker=${s.id}`}
+                className="group flex flex-col"
+                style={{
+                  border: `1px solid ${PALETTE.bgLine}`,
+                  padding: '28px 28px 24px',
+                  textDecoration: 'none',
+                  transition: 'border-color 0.2s, transform 0.2s',
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.borderColor = PALETTE.pink;
+                  e.currentTarget.style.transform = 'translateY(-2px)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.borderColor = PALETTE.bgLine;
+                  e.currentTarget.style.transform = 'translateY(0)';
+                }}
+              >
+                <div
+                  className="text-[22px] md:text-[26px]"
+                  style={{
+                    fontFamily: FONTS.display,
+                    fontWeight: 700,
+                    color: PALETTE.text,
+                    lineHeight: 1.15,
+                    letterSpacing: -0.5,
+                    marginBottom: 12,
+                  }}
+                >
+                  {s.talkTitle}
+                </div>
+                {TALK_TEASERS[s.id] && (
+                  <p
+                    style={{
+                      fontFamily: FONTS.body,
+                      fontSize: 15,
+                      color: PALETTE.textDim,
+                      lineHeight: 1.6,
+                      margin: 0,
+                    }}
+                  >
+                    {TALK_TEASERS[s.id]}
+                  </p>
+                )}
+                <div
+                  className="mt-auto flex items-center justify-between pt-6"
+                  style={{
+                    fontFamily: FONTS.mono,
+                    fontSize: 13,
+                    color: PALETTE.textMute,
+                  }}
+                >
+                  <span>
+                    {s.name}
+                    <span style={{ color: PALETTE.textDim }}>
+                      {' '}
+                      · {s.org}
+                    </span>
+                  </span>
+                  <span style={{ color: PALETTE.pink }}>View talk →</span>
+                </div>
+              </a>
+            ))}
+          </div>
+        </div>
+      )}
 
       {/* Full agenda — restore once talk titles are confirmed.
       <div style={{ border: `1px solid ${PALETTE.bgLine}` }}>

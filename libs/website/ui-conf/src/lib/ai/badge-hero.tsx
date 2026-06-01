@@ -648,13 +648,15 @@ export function BadgeHero({ name, role, speaker }: BadgeHeroProps = {}) {
           style={{
             fontFamily: FONTS.body,
             color: PALETTE.text,
-            maxWidth: 520,
+            maxWidth: 620,
             lineHeight: 1.5,
             opacity: 0.9,
           }}
         >
-          A half-day virtual conference for engineers working at the
-          intersection of monorepos and agentic AI.
+          AI agents can do far more than most codebases let them. Let&rsquo;s
+          dive into clearing the blockers (fragmented repos, slow CI, context
+          lost at handoff), coordinating agents at scale, and how engineering
+          changes once they reach full potential.
         </p>
         <div className="mt-8 flex w-full max-w-[360px] flex-col items-stretch gap-4 sm:w-auto sm:max-w-none sm:flex-row sm:items-center">
           <a

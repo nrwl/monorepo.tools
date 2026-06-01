@@ -214,13 +214,17 @@ export const SPEAKERS: Speaker[] = [
   {
     id: 'nicolas-beaussart',
     name: 'Nicolas Beaussart',
-    role: 'Staff Engineer',
+    role: 'Senior Staff Engineer',
     org: 'PayFit',
-    topic: 'TBD',
+    topic: "Killing Micro-Frontends: How Radical Simplification 10x'd Our Frontend Velocity",
     bio: 'Tinkerer, builder, and Nx power user. Writes about migrating large React codebases to monorepos, runtime ownership, and the front-end at scale.',
     image: '/images/conf/speakers/nicolas-beaussart.avif',
     socialUrl: 'https://x.com/beaussan',
     website: 'https://beaussan.io',
+    talkTitle:
+      "Killing Micro-Frontends: How Radical Simplification 10x'd Our Frontend Velocity",
+    talkAbstract:
+      "PayFit eliminated micro-frontends. Controversial? Absolutely. Effective? Our metrics speak: CI dropped from 45 to 5 minutes, deployments from days to 20 minutes, feature velocity up 75%. We had four micro-frontend implementations across 15+ repos, each team solving problems differently. The complexity tax was killing us. This talk chronicles our consolidation: monorepo migration strategies, unified build systems with Nx, automated merge queues, and synthetic testing for confident continuous deployment. The harder challenge? Our first monorepo attempt failed... teams abandoned it. Learn how we rebuilt trust, created social proof through wins, and made the platform so compelling that adoption became organic. A playbook for making bold architectural decisions and proving your convictions through execution.",
   },
   {
     id: 'zack-derose',

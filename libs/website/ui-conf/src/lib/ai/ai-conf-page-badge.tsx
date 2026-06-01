@@ -5,6 +5,7 @@ import { Stat } from './hero';
 import { BadgeHero } from './badge-hero';
 import { Agenda } from './agenda';
 import { SpeakerGrid } from './speakers';
+import { PolygraphLaunch } from './polygraph-launch';
 import { Hosts } from './hosts';
 import { RegisterCTA } from './register-cta';
 
@@ -91,6 +92,7 @@ export function AiConfPageBadge() {
       </div>
       <Agenda />
       <SpeakerGrid onPick={setModalSpeaker} />
+      <PolygraphLaunch />
       <Hosts />
       <RegisterCTA />
       <ConfFooter accent={PALETTE.pink} />
