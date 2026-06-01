@@ -64,9 +64,9 @@ export function AiConfPageBadge() {
       `}</style>
       {/* nav + hero + stat bar fill exactly one viewport so the bar pins to
           the bottom on load (hero grows to absorb the leftover height). */}
-      <div className="flex min-h-screen flex-col">
+      <div className="flex min-h-screen flex-col min-[1800px]:min-h-0">
         <NavBar accent={PALETTE.pink} />
-        <div className="flex flex-1 flex-col">
+        <div className="flex flex-1 flex-col min-[1800px]:flex-none">
           <BadgeHero
             name={badge.name}
             role={badge.role}
