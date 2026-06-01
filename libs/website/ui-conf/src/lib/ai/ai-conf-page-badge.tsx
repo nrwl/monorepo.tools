@@ -74,19 +74,21 @@ export function AiConfPageBadge() {
           />
         </div>
         <div
-          className="grid grid-cols-1 items-center gap-8 px-5 py-8 md:grid-cols-3 md:px-14 md:py-10"
+          className="py-8 md:py-10"
           style={{
             borderTop: `1px solid ${PALETTE.bgLine}`,
             borderBottom: `1px solid ${PALETTE.bgLine}`,
             background: PALETTE.bgDeeper,
           }}
         >
-          <Stat label="DATE" value="June 23, 2026" tone={PALETTE.pink} />
-          <div className="md:justify-self-center">
-            <Stat label="FORMAT" value="Online, free" tone={PALETTE.cyan} />
-          </div>
-          <div className="md:justify-self-end">
-            <CountdownPill compact />
+          <div className="mx-auto grid w-full max-w-[1536px] grid-cols-1 items-center gap-8 px-5 md:grid-cols-3 md:px-14">
+            <Stat label="DATE" value="June 23, 2026" tone={PALETTE.pink} />
+            <div className="md:justify-self-center">
+              <Stat label="FORMAT" value="Online, free" tone={PALETTE.cyan} />
+            </div>
+            <div className="md:justify-self-end">
+              <CountdownPill compact />
+            </div>
           </div>
         </div>
       </div>
@@ -107,7 +109,7 @@ export function AiConfPageBadge() {
             window.history.replaceState(
               null,
               '',
-              window.location.pathname + window.location.search,
+              window.location.pathname + window.location.search
             );
           }
         }}

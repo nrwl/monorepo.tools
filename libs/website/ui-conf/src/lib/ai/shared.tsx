@@ -161,11 +161,8 @@ export function NavBar({
 }) {
   return (
     <nav
-      className="px-5 py-4 md:px-14 md:py-5"
+      className="py-4 md:py-5"
       style={{
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'space-between',
         borderBottom: `1px solid ${PALETTE.bgLine}`,
         fontFamily: FONTS.mono,
         fontSize: 13,
@@ -177,63 +174,65 @@ export function NavBar({
         backdropFilter: 'blur(8px)',
       }}
     >
-      <a
-        href="/conf"
-        style={{
-          display: 'flex',
-          alignItems: 'center',
-          gap: 12,
-          color: PALETTE.text,
-          textDecoration: 'none',
-        }}
-      >
-        <span style={{ fontWeight: 600 }}>
-          ai<span style={{ color: accent }}>{'<3'}</span>monorepo
-        </span>
-        <span style={{ color: PALETTE.textMute }}>/conf/2026</span>
-      </a>
-      <div className="flex items-center gap-4 md:gap-9">
-        <div className="hidden items-center gap-9 md:flex">
-          <a
-            href="/"
-            style={{ color: PALETTE.textDim, textDecoration: 'none' }}
-          >
-            ← monorepo.tools
-          </a>
-          <a
-            href={`${linkBase}#agenda`}
-            style={{ color: PALETTE.textDim, textDecoration: 'none' }}
-          >
-            Agenda
-          </a>
-          <a
-            href={`${linkBase}#speakers`}
-            style={{ color: PALETTE.textDim, textDecoration: 'none' }}
-          >
-            Speakers
-          </a>
-          <a
-            href={`${linkBase}#hosts`}
-            style={{ color: PALETTE.textDim, textDecoration: 'none' }}
-          >
-            Hosts
-          </a>
-        </div>
+      <div className="mx-auto flex w-full max-w-[1536px] items-center justify-between px-5 md:px-14">
         <a
-          href={CONF.registerUrl}
-          target="_blank"
-          rel="noreferrer"
+          href="/conf"
           style={{
-            color: PALETTE.bg,
-            background: accent,
-            padding: '10px 18px',
+            display: 'flex',
+            alignItems: 'center',
+            gap: 12,
+            color: PALETTE.text,
             textDecoration: 'none',
-            fontWeight: 600,
-            letterSpacing: 0.5,
           }}
         >
-          Register →
+          <span style={{ fontWeight: 600 }}>
+            ai<span style={{ color: accent }}>{'<3'}</span>monorepo
+          </span>
+          <span style={{ color: PALETTE.textMute }}>/conf/2026</span>
         </a>
+        <div className="flex items-center gap-4 md:gap-9">
+          <div className="hidden items-center gap-9 md:flex">
+            <a
+              href="/"
+              style={{ color: PALETTE.textDim, textDecoration: 'none' }}
+            >
+              ← monorepo.tools
+            </a>
+            <a
+              href={`${linkBase}#agenda`}
+              style={{ color: PALETTE.textDim, textDecoration: 'none' }}
+            >
+              Agenda
+            </a>
+            <a
+              href={`${linkBase}#speakers`}
+              style={{ color: PALETTE.textDim, textDecoration: 'none' }}
+            >
+              Speakers
+            </a>
+            <a
+              href={`${linkBase}#hosts`}
+              style={{ color: PALETTE.textDim, textDecoration: 'none' }}
+            >
+              Hosts
+            </a>
+          </div>
+          <a
+            href={CONF.registerUrl}
+            target="_blank"
+            rel="noreferrer"
+            style={{
+              color: PALETTE.bg,
+              background: accent,
+              padding: '10px 18px',
+              textDecoration: 'none',
+              fontWeight: 600,
+              letterSpacing: 0.5,
+            }}
+          >
+            Register →
+          </a>
+        </div>
       </div>
     </nav>
   );
@@ -300,7 +299,9 @@ export function GlobeIcon({ size = 14 }: { size?: number }) {
 }
 
 export function socialHandleFromUrl(url: string) {
-  const m = url.match(/(?:x\.com|twitter\.com|bsky\.app|linkedin\.com\/in)\/([^/?#]+)/i);
+  const m = url.match(
+    /(?:x\.com|twitter\.com|bsky\.app|linkedin\.com\/in)\/([^/?#]+)/i
+  );
   return m ? `@${m[1].replace(/^@/, '')}` : url.replace(/^https?:\/\//, '');
 }
 
@@ -489,8 +490,8 @@ export function TalkBlock({
               whiteSpace: 'nowrap',
             }}
           >
-            JUN 23 <span style={{ color: PALETTE.textMute }}>·</span> {slot.time}
-            –{slot.end} PT
+            JUN 23 <span style={{ color: PALETTE.textMute }}>·</span>{' '}
+            {slot.time}–{slot.end} PT
           </div>
         )}
       </div>
@@ -719,7 +720,6 @@ export function SpeakerModal({
 
           <TalkBlock speaker={speaker} accent={accent} />
 
-
           <div
             style={{
               marginTop: 6,
@@ -786,7 +786,7 @@ export function ConfFooter({
 }) {
   return (
     <footer
-      className="grid grid-cols-2 gap-10 px-5 py-12 md:grid-cols-4 md:gap-12 md:px-14"
+      className="py-12"
       style={{
         borderTop: `1px solid ${PALETTE.bgLine}`,
         background: PALETTE.bgDeeper,
@@ -795,111 +795,113 @@ export function ConfFooter({
         color: PALETTE.textDim,
       }}
     >
-      <div className="col-span-2 md:col-span-1">
-        <div
-          style={{
-            display: 'flex',
-            alignItems: 'center',
-            gap: 10,
-            marginBottom: 16,
-          }}
-        >
-          <span style={{ color: PALETTE.text, fontWeight: 600 }}>
-            ai<span style={{ color: accent }}>{'<3'}</span>monorepo
-          </span>
-        </div>
-        <div
-          style={{
-            color: PALETTE.textMute,
-            lineHeight: 1.7,
-            maxWidth: 320,
-          }}
-        >
-          A free half-day virtual conference for engineers and tech leads
-          working at the intersection of monorepos and AI.
-        </div>
-      </div>
-      <div>
-        <div
-          style={{
-            color: PALETTE.text,
-            marginBottom: 12,
-            letterSpacing: 1.5,
-          }}
-        >
-          EVENT
-        </div>
-        <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
-          <a
-            href={`${linkBase}#agenda`}
-            style={{ color: PALETTE.textDim, textDecoration: 'none' }}
+      <div className="mx-auto grid w-full max-w-[1536px] grid-cols-2 gap-10 px-5 md:grid-cols-4 md:gap-12 md:px-14">
+        <div className="col-span-2 md:col-span-1">
+          <div
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: 10,
+              marginBottom: 16,
+            }}
           >
-            Agenda
-          </a>
-          <a
-            href={`${linkBase}#speakers`}
-            style={{ color: PALETTE.textDim, textDecoration: 'none' }}
+            <span style={{ color: PALETTE.text, fontWeight: 600 }}>
+              ai<span style={{ color: accent }}>{'<3'}</span>monorepo
+            </span>
+          </div>
+          <div
+            style={{
+              color: PALETTE.textMute,
+              lineHeight: 1.7,
+              maxWidth: 320,
+            }}
           >
-            Speakers
-          </a>
-          <a
-            href={CONF.registerUrl}
-            target="_blank"
-            rel="noreferrer"
-            style={{ color: PALETTE.textDim, textDecoration: 'none' }}
-          >
-            Register
-          </a>
+            A free half-day virtual conference for engineers and tech leads
+            working at the intersection of monorepos and AI.
+          </div>
         </div>
-      </div>
-      <div>
-        <div
-          style={{
-            color: PALETTE.text,
-            marginBottom: 12,
-            letterSpacing: 1.5,
-          }}
-        >
-          BROUGHT TO YOU BY
+        <div>
+          <div
+            style={{
+              color: PALETTE.text,
+              marginBottom: 12,
+              letterSpacing: 1.5,
+            }}
+          >
+            EVENT
+          </div>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+            <a
+              href={`${linkBase}#agenda`}
+              style={{ color: PALETTE.textDim, textDecoration: 'none' }}
+            >
+              Agenda
+            </a>
+            <a
+              href={`${linkBase}#speakers`}
+              style={{ color: PALETTE.textDim, textDecoration: 'none' }}
+            >
+              Speakers
+            </a>
+            <a
+              href={CONF.registerUrl}
+              target="_blank"
+              rel="noreferrer"
+              style={{ color: PALETTE.textDim, textDecoration: 'none' }}
+            >
+              Register
+            </a>
+          </div>
         </div>
-        <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
-          <a
-            href="https://nx.dev"
-            style={{ color: PALETTE.textDim, textDecoration: 'none' }}
+        <div>
+          <div
+            style={{
+              color: PALETTE.text,
+              marginBottom: 12,
+              letterSpacing: 1.5,
+            }}
           >
-            Nx → nx.dev
-          </a>
-          <a
-            href="https://trypolygraph.com"
-            style={{ color: PALETTE.textDim, textDecoration: 'none' }}
-          >
-            Polygraph → trypolygraph.com
-          </a>
+            BROUGHT TO YOU BY
+          </div>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+            <a
+              href="https://nx.dev"
+              style={{ color: PALETTE.textDim, textDecoration: 'none' }}
+            >
+              Nx → nx.dev
+            </a>
+            <a
+              href="https://trypolygraph.com"
+              style={{ color: PALETTE.textDim, textDecoration: 'none' }}
+            >
+              Polygraph → trypolygraph.com
+            </a>
+          </div>
         </div>
-      </div>
-      <div>
-        <div
-          style={{
-            color: PALETTE.text,
-            marginBottom: 12,
-            letterSpacing: 1.5,
-          }}
-        >
-          FOLLOW
-        </div>
-        <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
-          <a
-            href="https://twitter.com/NxDevTools"
-            style={{ color: PALETTE.textDim, textDecoration: 'none' }}
+        <div>
+          <div
+            style={{
+              color: PALETTE.text,
+              marginBottom: 12,
+              letterSpacing: 1.5,
+            }}
           >
-            @NxDevTools
-          </a>
-          <a
-            href="https://youtube.com/@nxdevtools"
-            style={{ color: PALETTE.textDim, textDecoration: 'none' }}
-          >
-            youtube.com/@nxdevtools
-          </a>
+            FOLLOW
+          </div>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+            <a
+              href="https://twitter.com/NxDevTools"
+              style={{ color: PALETTE.textDim, textDecoration: 'none' }}
+            >
+              @NxDevTools
+            </a>
+            <a
+              href="https://youtube.com/@nxdevtools"
+              style={{ color: PALETTE.textDim, textDecoration: 'none' }}
+            >
+              youtube.com/@nxdevtools
+            </a>
+          </div>
         </div>
       </div>
     </footer>

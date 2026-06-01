@@ -12,7 +12,10 @@ export function RegisterCTA() {
         overflow: 'hidden',
       }}
     >
-      <div className="px-5 md:px-20" style={{ textAlign: 'center' }}>
+      <div
+        className="mx-auto w-full max-w-[1536px] px-5 md:px-20"
+        style={{ textAlign: 'center' }}
+      >
         <h2
           className="text-[56px] tracking-[-2px] sm:text-[110px] sm:tracking-[-4px] lg:text-[220px] lg:tracking-[-8px]"
           style={{

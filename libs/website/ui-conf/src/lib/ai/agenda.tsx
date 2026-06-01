@@ -18,158 +18,155 @@ export function Agenda() {
   return (
     <div
       id="agenda"
-      className="px-5 py-16 md:px-20 md:py-24"
+      className="py-16 md:py-24"
       style={{ background: PALETTE.bg }}
     >
-      <SectionLabel
-        index={1}
-        label="Agenda · June 23 · all times PT"
-        accent={PALETTE.pink}
-      />
-      <h2
-        className="mb-12 mt-7 text-[40px] tracking-[-1.5px] md:text-[96px] md:tracking-[-3px]"
-        style={{
-          fontFamily: FONTS.display,
-          fontWeight: 700,
-          color: PALETTE.text,
-          lineHeight: 0.9,
-          maxWidth: 1100,
-        }}
-      >
-        All signal.{' '}
-        <span style={{ color: PALETTE.pink }}>Zero filler.</span>
-      </h2>
-
-      <div
-        className="px-6 py-16 md:px-8 md:py-24"
-        style={{
-          border: `1px solid ${PALETTE.bgLine}`,
-          textAlign: 'center',
-          background: 'rgba(245,158,11,0.03)',
-        }}
-      >
-        <div
-          style={{
-            fontFamily: FONTS.mono,
-            fontSize: 12,
-            color: PALETTE.pink,
-            letterSpacing: 3,
-            marginBottom: 18,
-          }}
-        >
-          SCHEDULE
-        </div>
-        <div
-          className="mb-4 text-[32px] tracking-[-1px] md:text-[56px] md:tracking-[-2px]"
+      <div className="mx-auto w-full max-w-[1536px] px-5 md:px-20">
+        <SectionLabel
+          index={1}
+          label="Agenda · June 23 · all times PT"
+          accent={PALETTE.pink}
+        />
+        <h2
+          className="mb-12 mt-7 text-[40px] tracking-[-1.5px] md:text-[96px] md:tracking-[-3px]"
           style={{
             fontFamily: FONTS.display,
             fontWeight: 700,
             color: PALETTE.text,
-            lineHeight: 0.95,
+            lineHeight: 0.9,
+            maxWidth: 1100,
           }}
         >
-          Full schedule{' '}
-          <span style={{ color: PALETTE.pink }}>coming soon</span>
-        </div>
-        <p
-          style={{
-            fontFamily: FONTS.body,
-            fontSize: 16,
-            color: PALETTE.textDim,
-            lineHeight: 1.6,
-            maxWidth: 480,
-            margin: '0 auto',
-          }}
-        >
-          We&rsquo;re finalizing talk titles and the running order. Check back
-          soon, or grab a free seat to be notified when it&rsquo;s live.
-        </p>
-      </div>
+          All signal. <span style={{ color: PALETTE.pink }}>Zero filler.</span>
+        </h2>
 
-      {confirmedTalks.length > 0 && (
-        <div className="mt-16 md:mt-20">
+        <div
+          className="px-6 py-16 md:px-8 md:py-24"
+          style={{
+            border: `1px solid ${PALETTE.bgLine}`,
+            textAlign: 'center',
+            background: 'rgba(245,158,11,0.03)',
+          }}
+        >
           <div
             style={{
               fontFamily: FONTS.mono,
               fontSize: 12,
               color: PALETTE.pink,
               letterSpacing: 3,
-              marginBottom: 24,
+              marginBottom: 18,
             }}
           >
-            CONFIRMED SO FAR
+            SCHEDULE
           </div>
-          <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
-            {confirmedTalks.map((s) => (
-              <a
-                key={s.id}
-                href={`#speaker=${s.id}`}
-                className="group flex flex-col"
-                style={{
-                  border: `1px solid ${PALETTE.bgLine}`,
-                  padding: '28px 28px 24px',
-                  textDecoration: 'none',
-                  transition: 'border-color 0.2s, transform 0.2s',
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.borderColor = PALETTE.pink;
-                  e.currentTarget.style.transform = 'translateY(-2px)';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.borderColor = PALETTE.bgLine;
-                  e.currentTarget.style.transform = 'translateY(0)';
-                }}
-              >
-                <div
-                  className="text-[22px] md:text-[26px]"
+          <div
+            className="mb-4 text-[32px] tracking-[-1px] md:text-[56px] md:tracking-[-2px]"
+            style={{
+              fontFamily: FONTS.display,
+              fontWeight: 700,
+              color: PALETTE.text,
+              lineHeight: 0.95,
+            }}
+          >
+            Full schedule{' '}
+            <span style={{ color: PALETTE.pink }}>coming soon</span>
+          </div>
+          <p
+            style={{
+              fontFamily: FONTS.body,
+              fontSize: 16,
+              color: PALETTE.textDim,
+              lineHeight: 1.6,
+              maxWidth: 480,
+              margin: '0 auto',
+            }}
+          >
+            We&rsquo;re finalizing talk titles and the running order. Check back
+            soon, or grab a free seat to be notified when it&rsquo;s live.
+          </p>
+        </div>
+
+        {confirmedTalks.length > 0 && (
+          <div className="mt-16 md:mt-20">
+            <div
+              style={{
+                fontFamily: FONTS.mono,
+                fontSize: 12,
+                color: PALETTE.pink,
+                letterSpacing: 3,
+                marginBottom: 24,
+              }}
+            >
+              CONFIRMED SO FAR
+            </div>
+            <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
+              {confirmedTalks.map((s) => (
+                <a
+                  key={s.id}
+                  href={`#speaker=${s.id}`}
+                  className="group flex flex-col"
                   style={{
-                    fontFamily: FONTS.display,
-                    fontWeight: 700,
-                    color: PALETTE.text,
-                    lineHeight: 1.15,
-                    letterSpacing: -0.5,
-                    marginBottom: 12,
+                    border: `1px solid ${PALETTE.bgLine}`,
+                    padding: '28px 28px 24px',
+                    textDecoration: 'none',
+                    transition: 'border-color 0.2s, transform 0.2s',
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.borderColor = PALETTE.pink;
+                    e.currentTarget.style.transform = 'translateY(-2px)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.borderColor = PALETTE.bgLine;
+                    e.currentTarget.style.transform = 'translateY(0)';
                   }}
                 >
-                  {s.talkTitle}
-                </div>
-                {TALK_TEASERS[s.id] && (
-                  <p
+                  <div
+                    className="text-[22px] md:text-[26px]"
                     style={{
-                      fontFamily: FONTS.body,
-                      fontSize: 15,
-                      color: PALETTE.textDim,
-                      lineHeight: 1.6,
-                      margin: 0,
+                      fontFamily: FONTS.display,
+                      fontWeight: 700,
+                      color: PALETTE.text,
+                      lineHeight: 1.15,
+                      letterSpacing: -0.5,
+                      marginBottom: 12,
                     }}
                   >
-                    {TALK_TEASERS[s.id]}
-                  </p>
-                )}
-                <div
-                  className="mt-auto flex items-center justify-between pt-6"
-                  style={{
-                    fontFamily: FONTS.mono,
-                    fontSize: 13,
-                    color: PALETTE.textMute,
-                  }}
-                >
-                  <span>
-                    {s.name}
-                    <span style={{ color: PALETTE.textDim }}>
-                      {' '}
-                      · {s.org}
+                    {s.talkTitle}
+                  </div>
+                  {TALK_TEASERS[s.id] && (
+                    <p
+                      style={{
+                        fontFamily: FONTS.body,
+                        fontSize: 15,
+                        color: PALETTE.textDim,
+                        lineHeight: 1.6,
+                        margin: 0,
+                      }}
+                    >
+                      {TALK_TEASERS[s.id]}
+                    </p>
+                  )}
+                  <div
+                    className="mt-auto flex items-center justify-between pt-6"
+                    style={{
+                      fontFamily: FONTS.mono,
+                      fontSize: 13,
+                      color: PALETTE.textMute,
+                    }}
+                  >
+                    <span>
+                      {s.name}
+                      <span style={{ color: PALETTE.textDim }}> · {s.org}</span>
                     </span>
-                  </span>
-                  <span style={{ color: PALETTE.pink }}>View talk →</span>
-                </div>
-              </a>
-            ))}
+                    <span style={{ color: PALETTE.pink }}>View talk →</span>
+                  </div>
+                </a>
+              ))}
+            </div>
           </div>
-        </div>
-      )}
+        )}
 
-      {/* Full agenda — restore once talk titles are confirmed.
+        {/* Full agenda — restore once talk titles are confirmed.
       <div style={{ border: `1px solid ${PALETTE.bgLine}` }}>
         {AGENDA.map((s, i) => (
           <div
@@ -248,6 +245,7 @@ export function Agenda() {
         ))}
       </div>
       */}
+      </div>
     </div>
   );
 }
