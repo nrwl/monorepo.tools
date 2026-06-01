@@ -23,9 +23,15 @@ const NODE_LAYOUT = [
 ] as const;
 
 const EDGES: [number, number][] = [
-  [0, 2], [1, 2], [3, 2], [4, 2],
-  [0, 3], [1, 4],
-  [5, 2], [6, 2], [5, 6],
+  [0, 2],
+  [1, 2],
+  [3, 2],
+  [4, 2],
+  [0, 3],
+  [1, 4],
+  [5, 2],
+  [6, 2],
+  [5, 6],
 ];
 
 function roundRect(
@@ -34,7 +40,7 @@ function roundRect(
   y: number,
   w: number,
   h: number,
-  r: number,
+  r: number
 ) {
   ctx.beginPath();
   ctx.moveTo(x + r, y);
@@ -79,7 +85,7 @@ function loadImage(src: string): Promise<HTMLImageElement | null> {
 
 async function buildBadgeTexture(
   THREE: typeof import('three'),
-  content: BadgeContent,
+  content: BadgeContent
 ) {
   await document.fonts.ready;
   const avatarImg = content.image ? await loadImage(content.image) : null;
@@ -191,7 +197,10 @@ async function buildBadgeTexture(
   ctx.clip();
   if (avatarImg) {
     // cover-fit the photo into the circle
-    const s = Math.max((avR * 2) / avatarImg.width, (avR * 2) / avatarImg.height);
+    const s = Math.max(
+      (avR * 2) / avatarImg.width,
+      (avR * 2) / avatarImg.height
+    );
     const dw = avatarImg.width * s;
     const dh = avatarImg.height * s;
     ctx.drawImage(avatarImg, avCX - dw / 2, avCY - dh / 2, dw, dh);
@@ -256,7 +265,7 @@ async function buildBadgeTexture(
   ctx.fillText(
     content.bannerLabel,
     (W - blw) / 2,
-    bannerTop + (H - bannerTop) / 2 + 11,
+    bannerTop + (H - bannerTop) / 2 + 11
   );
   ctx.letterSpacing = '0px';
 
@@ -292,7 +301,10 @@ export function BadgeStage(content: BadgeContent) {
       camera.position.set(0, 0, 10);
       camera.lookAt(0, 0, 0);
 
-      const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+      const renderer = new THREE.WebGLRenderer({
+        antialias: true,
+        alpha: true,
+      });
       renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
       renderer.outputColorSpace = THREE.SRGBColorSpace;
       renderer.shadowMap.enabled = true;
@@ -340,20 +352,22 @@ export function BadgeStage(content: BadgeContent) {
       });
       const cardMesh = new THREE.Mesh(
         new THREE.PlaneGeometry(CARD_W, CARD_H, 48, 64),
-        cardMat,
+        cardMat
       );
       cardMesh.receiveShadow = true;
       root.add(cardMesh);
 
-      buildBadgeTexture(THREE, { name, role, bannerLabel, image }).then((tex) => {
-        if (!mounted) {
-          tex.dispose();
-          return;
+      buildBadgeTexture(THREE, { name, role, bannerLabel, image }).then(
+        (tex) => {
+          if (!mounted) {
+            tex.dispose();
+            return;
+          }
+          cardMat.map = tex;
+          cardMat.emissiveMap = tex;
+          cardMat.needsUpdate = true;
         }
-        cardMat.map = tex;
-        cardMat.emissiveMap = tex;
-        cardMat.needsUpdate = true;
-      });
+      );
 
       // cube nodes (rise toward the camera on hover)
       const nodes = NODE_LAYOUT.map((n) => ({
@@ -391,7 +405,9 @@ export function BadgeStage(content: BadgeContent) {
           opacity: 0,
         });
         wireMats.push(wireMat);
-        g.add(new THREE.LineSegments(new THREE.EdgesGeometry(outerGeo), wireMat));
+        g.add(
+          new THREE.LineSegments(new THREE.EdgesGeometry(outerGeo), wireMat)
+        );
 
         const innerMat = new THREE.MeshStandardMaterial({
           color: 0x1a1d17,
@@ -403,7 +419,7 @@ export function BadgeStage(content: BadgeContent) {
         innerMats.push(innerMat);
         const inner = new THREE.Mesh(
           new THREE.BoxGeometry(n.size * 0.5, n.size * 0.5, n.size * 0.5),
-          innerMat,
+          innerMat
         );
         inner.castShadow = true;
         g.add(inner);
@@ -432,7 +448,7 @@ export function BadgeStage(content: BadgeContent) {
         edgeLineMats.push(lineMat);
         const line = new THREE.Line(
           new THREE.BufferGeometry().setFromPoints([pa, pb]),
-          lineMat,
+          lineMat
         );
         line.computeLineDistances();
         root.add(line);
@@ -444,7 +460,10 @@ export function BadgeStage(content: BadgeContent) {
           opacity: 0,
         });
         dotMats.push(dotMat);
-        const dot = new THREE.Mesh(new THREE.SphereGeometry(0.04, 12, 12), dotMat);
+        const dot = new THREE.Mesh(
+          new THREE.SphereGeometry(0.04, 12, 12),
+          dotMat
+        );
         dot.userData.t = Math.random();
         root.add(dot);
         travelDots.push(dot);
@@ -455,7 +474,12 @@ export function BadgeStage(content: BadgeContent) {
       scene.add(new THREE.HemisphereLight(0xfbe6a0, 0x05080a, 0.35));
 
       const flashlight = new THREE.SpotLight(
-        0xfff0c4, 6, 8, Math.PI * 0.18, 0.55, 1.4,
+        0xfff0c4,
+        6,
+        8,
+        Math.PI * 0.18,
+        0.55,
+        1.4
       );
       flashlight.position.set(0, 0, 2.4);
       flashlight.castShadow = true;
@@ -539,15 +563,21 @@ export function BadgeStage(content: BadgeContent) {
           const pull = Math.max(0, 1 - Math.hypot(dx, dy) / 2.4) ** 2;
           const targetZ = n.zBase + hover * (0.1 + pull * 0.85);
           const drag = 0.12 * hover * pull;
-          cube.position.x += (n.x + dx * drag - cube.position.x) * Math.min(1, dt * 6);
-          cube.position.y += (n.y + dy * drag - cube.position.y) * Math.min(1, dt * 6);
+          cube.position.x +=
+            (n.x + dx * drag - cube.position.x) * Math.min(1, dt * 6);
+          cube.position.y +=
+            (n.y + dy * drag - cube.position.y) * Math.min(1, dt * 6);
           cube.position.z += (targetZ - cube.position.z) * Math.min(1, dt * 6);
-          cube.rotation.x += (pull * hover * dy * 0.25 - cube.rotation.x) * Math.min(1, dt * 4);
-          cube.rotation.y += (pull * hover * -dx * 0.25 - cube.rotation.y) * Math.min(1, dt * 4);
+          cube.rotation.x +=
+            (pull * hover * dy * 0.25 - cube.rotation.x) * Math.min(1, dt * 4);
+          cube.rotation.y +=
+            (pull * hover * -dx * 0.25 - cube.rotation.y) * Math.min(1, dt * 4);
           outerMats[i].opacity = 0.55 * hover;
           wireMats[i].opacity = 0.95 * hover;
           innerMats[i].opacity = hover;
-          innerMeshes[i].scale.setScalar(1 + Math.sin(t * 2 + i) * 0.04 * hover);
+          innerMeshes[i].scale.setScalar(
+            1 + Math.sin(t * 2 + i) * 0.04 * hover
+          );
           cube.visible = hover > 0.01;
         }
 
@@ -623,90 +653,91 @@ export function BadgeHero({ name, role, speaker }: BadgeHeroProps = {}) {
       };
 
   return (
-    <div
-      style={{ background: PALETTE.bg }}
-      className="grid h-full grid-cols-1 items-center gap-12 px-5 py-12 md:grid-cols-2 md:gap-10 md:px-14 md:py-10 md:pl-28 lg:pl-48"
-    >
-      {/* left: title + subtitle + CTAs */}
-      <div className="flex max-w-[560px] flex-col items-start text-left">
-        <h1
-          className="text-[44px] tracking-[-1.5px] sm:text-[60px] md:text-[80px] md:tracking-[-3px]"
-          style={{
-            fontFamily: FONTS.display,
-            fontWeight: 700,
-            lineHeight: 0.98,
-            margin: 0,
-            color: PALETTE.text,
-          }}
-        >
-          AI{' '}
-          <span style={{ color: PALETTE.pink, fontFamily: FONTS.body }}>♥</span>{' '}
-          Monorepos
-        </h1>
-        <p
-          className="mt-6 text-base md:text-[20px]"
-          style={{
-            fontFamily: FONTS.body,
-            color: PALETTE.text,
-            maxWidth: 620,
-            lineHeight: 1.5,
-            opacity: 0.9,
-          }}
-        >
-          AI agents can do far more than most codebases let them. Let&rsquo;s
-          dive into clearing the blockers (fragmented repos, slow CI, context
-          lost at handoff), coordinating agents at scale, and how engineering
-          changes once they reach full potential.
-        </p>
-        <div className="mt-8 flex w-full max-w-[360px] flex-col items-stretch gap-4 sm:w-auto sm:max-w-none sm:flex-row sm:items-center">
-          <a
-            href={CONF.registerUrl}
-            target="_blank"
-            rel="noreferrer"
-            className="w-full justify-center sm:w-auto"
+    <div className="h-full w-full" style={{ background: PALETTE.bg }}>
+      <div className="mx-auto grid h-full w-full max-w-[1536px] grid-cols-1 items-center gap-12 px-5 py-12 md:grid-cols-2 md:gap-10 md:px-14 md:py-10">
+        {/* left: title + subtitle + CTAs */}
+        <div className="flex max-w-[560px] flex-col items-start text-left">
+          <h1
+            className="text-[44px] tracking-[-1.5px] sm:text-[60px] md:text-[80px] md:tracking-[-3px]"
             style={{
-              background: PALETTE.pink,
-              color: PALETTE.bg,
-              padding: '16px 32px',
-              fontFamily: FONTS.mono,
-              fontSize: 13,
-              fontWeight: 600,
-              letterSpacing: 1,
-              textDecoration: 'none',
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: 10,
-            }}
-          >
-            RESERVE FREE TICKET →
-          </a>
-          <a
-            href="#agenda"
-            className="w-full justify-center sm:w-auto"
-            style={{
+              fontFamily: FONTS.display,
+              fontWeight: 700,
+              lineHeight: 0.98,
+              margin: 0,
               color: PALETTE.text,
-              padding: '16px 24px',
-              fontFamily: FONTS.mono,
-              fontSize: 13,
-              letterSpacing: 1,
-              textDecoration: 'none',
-              border: `1px solid ${PALETTE.textDim}`,
-              background: 'rgba(10,22,40,0.7)',
-              display: 'inline-flex',
-              alignItems: 'center',
-              justifyContent: 'center',
             }}
           >
-            SEE AGENDA
-          </a>
+            AI{' '}
+            <span style={{ color: PALETTE.pink, fontFamily: FONTS.body }}>
+              ♥
+            </span>{' '}
+            Monorepos
+          </h1>
+          <p
+            className="mt-6 text-base md:text-[20px]"
+            style={{
+              fontFamily: FONTS.body,
+              color: PALETTE.text,
+              maxWidth: 620,
+              lineHeight: 1.5,
+              opacity: 0.9,
+            }}
+          >
+            AI agents can do far more than most codebases let them. Let&rsquo;s
+            dive into clearing the blockers (fragmented repos, slow CI, context
+            lost at handoff), coordinating agents at scale, and how engineering
+            changes once they reach full potential.
+          </p>
+          <div className="mt-8 flex w-full max-w-[360px] flex-col items-stretch gap-4 sm:w-auto sm:max-w-none sm:flex-row sm:items-center">
+            <a
+              href={CONF.registerUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="w-full justify-center sm:w-auto"
+              style={{
+                background: PALETTE.pink,
+                color: PALETTE.bg,
+                padding: '16px 32px',
+                fontFamily: FONTS.mono,
+                fontSize: 13,
+                fontWeight: 600,
+                letterSpacing: 1,
+                textDecoration: 'none',
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: 10,
+              }}
+            >
+              RESERVE FREE TICKET →
+            </a>
+            <a
+              href="#agenda"
+              className="w-full justify-center sm:w-auto"
+              style={{
+                color: PALETTE.text,
+                padding: '16px 24px',
+                fontFamily: FONTS.mono,
+                fontSize: 13,
+                letterSpacing: 1,
+                textDecoration: 'none',
+                border: `1px solid ${PALETTE.textDim}`,
+                background: 'rgba(10,22,40,0.7)',
+                display: 'inline-flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+              }}
+            >
+              SEE AGENDA
+            </a>
+          </div>
         </div>
-      </div>
 
-      {/* right: vertical badge — left-aligned on desktop so it sits closer to
+        {/* right: vertical badge — left-aligned on desktop so it sits closer to
           the title instead of being centered in its column. Hidden on mobile
           (the WebGL card doesn't earn its weight on small screens). */}
-      <div className="hidden w-full justify-center md:flex md:justify-start">
-        <BadgeStage {...content} />
+        <div className="hidden w-full justify-center md:flex md:justify-start">
+          <BadgeStage {...content} />
+        </div>
       </div>
     </div>
   );
