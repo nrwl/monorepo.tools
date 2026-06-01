@@ -97,7 +97,7 @@ export function Agenda() {
                 marginBottom: 24,
               }}
             >
-              CONFIRMED SO FAR
+              CONFIRMED TALKS
             </div>
             <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
               {confirmedTalks.map((s) => (
