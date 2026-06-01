@@ -5,6 +5,7 @@ import { Stat } from './hero';
 import { BadgeHero } from './badge-hero';
 import { Agenda } from './agenda';
 import { SpeakerGrid } from './speakers';
+import { PolygraphLaunch } from './polygraph-launch';
 import { Hosts } from './hosts';
 import { RegisterCTA } from './register-cta';
 
@@ -63,9 +64,9 @@ export function AiConfPageBadge() {
       `}</style>
       {/* nav + hero + stat bar fill exactly one viewport so the bar pins to
           the bottom on load (hero grows to absorb the leftover height). */}
-      <div className="flex min-h-screen flex-col">
+      <div className="flex min-h-screen flex-col min-[1800px]:min-h-0">
         <NavBar accent={PALETTE.pink} />
-        <div className="flex flex-1 flex-col">
+        <div className="flex flex-1 flex-col min-[1800px]:flex-none">
           <BadgeHero
             name={badge.name}
             role={badge.role}
@@ -73,24 +74,27 @@ export function AiConfPageBadge() {
           />
         </div>
         <div
-          className="grid grid-cols-1 items-center gap-8 px-5 py-8 md:grid-cols-3 md:px-14 md:py-10"
+          className="py-8 md:py-10"
           style={{
             borderTop: `1px solid ${PALETTE.bgLine}`,
             borderBottom: `1px solid ${PALETTE.bgLine}`,
             background: PALETTE.bgDeeper,
           }}
         >
-          <Stat label="DATE" value="June 23, 2026" tone={PALETTE.pink} />
-          <div className="md:justify-self-center">
-            <Stat label="FORMAT" value="Online, free" tone={PALETTE.cyan} />
-          </div>
-          <div className="md:justify-self-end">
-            <CountdownPill compact />
+          <div className="mx-auto grid w-full max-w-[1536px] grid-cols-1 items-center gap-8 px-5 md:grid-cols-3 md:px-14">
+            <Stat label="DATE" value="June 23, 2026" tone={PALETTE.pink} />
+            <div className="md:justify-self-center">
+              <Stat label="FORMAT" value="Online, free" tone={PALETTE.cyan} />
+            </div>
+            <div className="md:justify-self-end">
+              <CountdownPill compact />
+            </div>
           </div>
         </div>
       </div>
       <Agenda />
       <SpeakerGrid onPick={setModalSpeaker} />
+      <PolygraphLaunch />
       <Hosts />
       <RegisterCTA />
       <ConfFooter accent={PALETTE.pink} />
@@ -105,7 +109,7 @@ export function AiConfPageBadge() {
             window.history.replaceState(
               null,
               '',
-              window.location.pathname + window.location.search,
+              window.location.pathname + window.location.search
             );
           }
         }}
