@@ -49,7 +49,7 @@ export function AiConfPage() {
           background: PALETTE.bgDeeper,
         }}
       >
-        <Stat label="DATE" value="23rd June 2026" tone={PALETTE.pink} />
+        <Stat label="DATE" value="June 23, 2026" tone={PALETTE.pink} />
         <div className="md:justify-self-center">
           <Stat label="FORMAT" value="Online, free" tone={PALETTE.cyan} />
         </div>
