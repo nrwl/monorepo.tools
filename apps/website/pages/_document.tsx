@@ -7,6 +7,17 @@ export default function Document() {
       lang="en"
     >
       <Head>
+        {/* Capture conf UTM params into sessionStorage BEFORE React hydrates.
+            On the static export, Next.js normalizes the URL on hydration and
+            drops the query string, so a useEffect would see an empty
+            location.search. This inline script runs at parse time, while the
+            query is still present. Keep the allowlist + storage key in sync
+            with libs/website/ui-conf/src/lib/ai/use-register-url.ts. */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{if(location.pathname.indexOf('/conf')!==0)return;var sp=new URLSearchParams(location.search),out={};['utm_source','utm_medium','utm_campaign','utm_term','utm_content'].forEach(function(k){var v=sp.get(k);if(v)out[k]=v;});if(Object.keys(out).length)sessionStorage.setItem('conf_utm',JSON.stringify(out));}catch(e){}})();`,
+          }}
+        />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
           rel="preconnect"
