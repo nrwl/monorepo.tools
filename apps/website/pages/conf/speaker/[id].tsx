@@ -4,6 +4,7 @@ import {
   Speaker,
 } from '@monorepo-tools/website/ui-conf';
 import { NextSeo } from 'next-seo';
+import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { GetStaticPaths, GetStaticProps } from 'next';
 
@@ -13,7 +14,7 @@ export function SpeakerPage({ speaker }: { speaker: Speaker }) {
   const description = speaker.talkTitle
     ? `${speaker.name} — "${speaker.talkTitle}". ${speaker.bio}`
     : `${speaker.name}, ${speaker.role} at ${speaker.org}. ${speaker.bio}`;
-  const image = `https://monorepo.tools/images/conf/og/${speaker.id}.png`;
+  const image = `https://monorepo.tools/images/conf/og/${speaker.id}.png?v=20260604`;
 
   return (
     <>
@@ -41,6 +42,20 @@ export function SpeakerPage({ speaker }: { speaker: Speaker }) {
           cardType: 'summary_large_image',
         }}
       />
+      <Head>
+        <meta key="twitter-title" name="twitter:title" content={title} />
+        <meta
+          key="twitter-description"
+          name="twitter:description"
+          content={description}
+        />
+        <meta key="twitter-image" name="twitter:image" content={image} />
+        <meta
+          key="twitter-image-alt"
+          name="twitter:image:alt"
+          content={speaker.name}
+        />
+      </Head>
       <AiConfSpeakerPage speaker={speaker} />
     </>
   );
