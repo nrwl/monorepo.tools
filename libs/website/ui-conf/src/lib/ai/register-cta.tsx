@@ -1,6 +1,8 @@
-import { PALETTE, FONTS, CONF } from './data';
+import { PALETTE, FONTS } from './data';
+import { useRegisterUrl } from './use-register-url';
 
 export function RegisterCTA() {
+  const registerUrl = useRegisterUrl();
   return (
     <div
       id="register"
@@ -43,7 +45,7 @@ export function RegisterCTA() {
           June 23, 2026. Free. Bring questions, leave with answers.
         </p>
         <a
-          href={CONF.registerUrl}
+          href={registerUrl}
           target="_blank"
           rel="noreferrer"
           style={{

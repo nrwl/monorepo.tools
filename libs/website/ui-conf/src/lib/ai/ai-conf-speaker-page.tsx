@@ -1,4 +1,5 @@
-import { PALETTE, FONTS, CONF, Speaker } from './data';
+import { PALETTE, FONTS, Speaker } from './data';
+import { useRegisterUrl } from './use-register-url';
 import {
   CountdownPill,
   NavBar,
@@ -18,6 +19,7 @@ import { RegisterCTA } from './register-cta';
  * its modal-on-click behavior, this page is not navigated to from the grid.
  */
 export function AiConfSpeakerPage({ speaker }: { speaker: Speaker }) {
+  const registerUrl = useRegisterUrl();
   return (
     <div
       style={{
@@ -54,7 +56,7 @@ export function AiConfSpeakerPage({ speaker }: { speaker: Speaker }) {
           {/* primary actions */}
           <div className="mt-8 flex w-full max-w-[420px] flex-col items-stretch gap-4 sm:w-auto sm:max-w-none sm:flex-row sm:items-center">
             <a
-              href={CONF.registerUrl}
+              href={registerUrl}
               target="_blank"
               rel="noreferrer"
               className="w-full justify-center sm:w-auto"

@@ -1,6 +1,7 @@
 import type * as THREE from 'three';
 import { useEffect, useRef } from 'react';
-import { PALETTE, FONTS, CONF } from './data';
+import { PALETTE, FONTS } from './data';
+import { useRegisterUrl } from './use-register-url';
 
 const SLOGAN = 'WHERE MONOREPOS MEET AGENTIC AI';
 
@@ -175,6 +176,7 @@ async function buildCardTexture(THREE: typeof import('three')) {
 }
 
 export function ThreeCardHero() {
+  const registerUrl = useRegisterUrl();
   const stageRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -515,7 +517,7 @@ export function ThreeCardHero() {
         className="mt-8 flex w-full max-w-[360px] flex-col items-center gap-4 sm:mt-9 sm:w-auto sm:max-w-none sm:flex-row"
       >
         <a
-          href={CONF.registerUrl}
+          href={registerUrl}
           target="_blank"
           rel="noreferrer"
           className="w-full justify-center sm:w-auto"
