@@ -541,6 +541,26 @@ export function SpeakerModal({
     window.addEventListener('keydown', handler);
     return () => window.removeEventListener('keydown', handler);
   }, [speaker, onClose]);
+  useEffect(() => {
+    if (!speaker || typeof document === 'undefined') return;
+    const { body, documentElement } = document;
+    const prevBodyOverflow = body.style.overflow;
+    const prevBodyOverscroll = body.style.overscrollBehavior;
+    const prevHtmlOverflow = documentElement.style.overflow;
+    const prevHtmlOverscroll = documentElement.style.overscrollBehavior;
+
+    body.style.overflow = 'hidden';
+    body.style.overscrollBehavior = 'none';
+    documentElement.style.overflow = 'hidden';
+    documentElement.style.overscrollBehavior = 'none';
+
+    return () => {
+      body.style.overflow = prevBodyOverflow;
+      body.style.overscrollBehavior = prevBodyOverscroll;
+      documentElement.style.overflow = prevHtmlOverflow;
+      documentElement.style.overscrollBehavior = prevHtmlOverscroll;
+    };
+  }, [speaker]);
   if (!speaker) return null;
   const shareUrl =
     typeof window !== 'undefined'
@@ -549,7 +569,7 @@ export function SpeakerModal({
   return (
     <div
       onClick={onClose}
-      className="p-4 md:p-10"
+      className="p-0 md:p-10"
       style={{
         position: 'fixed',
         inset: 0,
@@ -563,12 +583,15 @@ export function SpeakerModal({
     >
       <div
         onClick={(e) => e.stopPropagation()}
-        className="grid max-h-[90vh] grid-cols-1 overflow-y-auto md:grid-cols-[360px_1fr]"
+        className="grid h-[100dvh] max-h-[100dvh] w-full grid-cols-1 overflow-y-auto overscroll-contain md:h-auto md:max-h-[90vh] md:grid-cols-[360px_1fr]"
         style={{
-          width: 'min(1080px, 100%)',
+          width: '100%',
+          maxWidth: 1080,
+          boxSizing: 'border-box',
           background: PALETTE.bg,
           border: `1px solid ${PALETTE.bgLine}`,
           position: 'relative',
+          overscrollBehavior: 'contain',
         }}
       >
         <div
