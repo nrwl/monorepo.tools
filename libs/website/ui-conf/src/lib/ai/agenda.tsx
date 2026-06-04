@@ -8,6 +8,8 @@ const TALK_TEASERS: Record<string, string> = {
     "If agents take over the implementation, judgment is what's left. Kent on what stays most human and valuable in an AI era.",
   'jack-herrington':
     'Code mode as a new approach to agentic AI: drastically fewer tokens, far higher accuracy. Jack shows the results.',
+  'kiet-ho':
+    "More agents doesn't mean more output. Kiet on a Lean Manufacturing framework for where to apply and tune agent usage at scale.",
   'nicolas-beaussart':
     'PayFit ripped out micro-frontends across 15+ repos and cut CI from 45 to 5 minutes. Nicolas on the consolidation playbook.',
 };
