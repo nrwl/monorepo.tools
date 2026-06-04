@@ -1,6 +1,7 @@
 import type * as THREE from 'three';
 import { useEffect, useRef } from 'react';
-import { PALETTE, FONTS, CONF, Speaker } from './data';
+import { PALETTE, FONTS, Speaker } from './data';
+import { useRegisterUrl } from './use-register-url';
 
 const SLOGAN = 'WHERE MONOREPOS MEET AGENTIC AI';
 
@@ -653,6 +654,7 @@ export interface BadgeHeroProps {
 }
 
 export function BadgeHero({ name, role, speaker }: BadgeHeroProps = {}) {
+  const registerUrl = useRegisterUrl();
   const content: BadgeContent = speaker
     ? speakerBadgeContent(speaker)
     : {
@@ -702,7 +704,7 @@ export function BadgeHero({ name, role, speaker }: BadgeHeroProps = {}) {
           </p>
           <div className="mt-8 flex w-full max-w-[360px] flex-col items-stretch gap-4 sm:w-auto sm:max-w-none sm:flex-row sm:items-center">
             <a
-              href={CONF.registerUrl}
+              href={registerUrl}
               target="_blank"
               rel="noreferrer"
               className="w-full justify-center sm:w-auto"

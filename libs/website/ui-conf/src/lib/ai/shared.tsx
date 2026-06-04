@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
 import { PALETTE, FONTS, CONF, Speaker, agendaForSpeaker } from './data';
+import { useRegisterUrl } from './use-register-url';
 
 function useCountdown(targetISO: string) {
   const target = useMemo(() => new Date(targetISO).getTime(), [targetISO]);
@@ -159,6 +160,7 @@ export function NavBar({
    * page's sections. */
   linkBase?: string;
 }) {
+  const registerUrl = useRegisterUrl();
   return (
     <nav
       className="py-4 md:py-5"
@@ -218,7 +220,7 @@ export function NavBar({
             </a>
           </div>
           <a
-            href={CONF.registerUrl}
+            href={registerUrl}
             target="_blank"
             rel="noreferrer"
             style={{
@@ -807,6 +809,7 @@ export function ConfFooter({
   accent?: string;
   linkBase?: string;
 }) {
+  const registerUrl = useRegisterUrl();
   return (
     <footer
       className="py-12"
@@ -867,7 +870,7 @@ export function ConfFooter({
               Speakers
             </a>
             <a
-              href={CONF.registerUrl}
+              href={registerUrl}
               target="_blank"
               rel="noreferrer"
               style={{ color: PALETTE.textDim, textDecoration: 'none' }}

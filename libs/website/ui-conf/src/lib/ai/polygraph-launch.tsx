@@ -1,6 +1,8 @@
-import { PALETTE, FONTS, CONF } from './data';
+import { PALETTE, FONTS } from './data';
+import { useRegisterUrl } from './use-register-url';
 
 export function PolygraphLaunch() {
+  const registerUrl = useRegisterUrl();
   return (
     <div
       id="polygraph-launch"
@@ -58,7 +60,7 @@ export function PolygraphLaunch() {
 
         <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
           <a
-            href={CONF.registerUrl}
+            href={registerUrl}
             target="_blank"
             rel="noreferrer"
             className="justify-center sm:justify-start"

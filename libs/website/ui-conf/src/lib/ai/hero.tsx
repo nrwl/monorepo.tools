@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react';
-import { PALETTE, FONTS, CONF } from './data';
+import { PALETTE, FONTS } from './data';
+import { useRegisterUrl } from './use-register-url';
 
 const W = 1280;
 const H = 700;
@@ -25,6 +26,7 @@ const nodes: NodeDef[] = [
 ];
 
 export function NodeGraphHero() {
+  const registerUrl = useRegisterUrl();
   const cx = W / 2;
   const cy = H / 2 + 20;
   const pts = nodes.map((n) => {
@@ -375,7 +377,7 @@ export function NodeGraphHero() {
           }}
         >
           <a
-            href={CONF.registerUrl}
+            href={registerUrl}
             target="_blank"
             rel="noreferrer"
             className="w-full justify-center sm:w-auto"
