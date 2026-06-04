@@ -68,7 +68,9 @@ export type BadgeContent = {
 export function speakerBadgeContent(speaker: Speaker): BadgeContent {
   return {
     name: speaker.name,
-    role: speaker.role,
+    // Include the company so the role reads e.g. "Co-Founder · Superset"
+    // instead of an orphaned title with no context.
+    role: speaker.org ? `${speaker.role} · ${speaker.org}` : speaker.role,
     bannerLabel: 'SPEAKER',
     image: speaker.image,
   };
@@ -234,9 +236,16 @@ async function buildBadgeTexture(
     ctx.font = `700 ${nameSize}px "Space Grotesk", "Inter", sans-serif`;
   }
 
+  // role auto-shrinks too, since "Role · Org" can run wider than the card.
+  let roleSize = 30;
+  ctx.font = `500 ${roleSize}px "JetBrains Mono", monospace`;
+  while (ctx.measureText(content.role).width > maxNameW && roleSize > 18) {
+    roleSize -= 1;
+    ctx.font = `500 ${roleSize}px "JetBrains Mono", monospace`;
+  }
+
   // center the name+role group on the avatar center (blockCY) using real glyph
   // metrics, so it stays aligned regardless of how far the name shrank.
-  const roleSize = 30;
   const nameFont = `700 ${nameSize}px "Space Grotesk", "Inter", sans-serif`;
   const roleFont = `500 ${roleSize}px "JetBrains Mono", monospace`;
   const GAP = 46; // name baseline → role baseline
