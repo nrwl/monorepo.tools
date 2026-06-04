@@ -172,13 +172,16 @@ export const SPEAKERS: Speaker[] = [
   {
     id: 'kiet-ho',
     name: 'Kiet Ho',
-    role: 'CTO & Co-Founder',
+    role: 'Co-Founder',
     org: 'Superset',
-    topic: 'TBD',
+    topic: 'How to run 100 agents in parallel',
     bio: 'Building developer infrastructure at Superset. Background in compilers and distributed systems.',
     image: '/images/conf/speakers/kiet-ho.avif',
     socialUrl: 'https://x.com/FlyaKiet',
     website: 'https://superset.sh',
+    talkTitle: 'How to run 100 agents in parallel',
+    talkAbstract:
+      "At Superset, we work with many companies to help automate their software development lifecycle. Most agree that using more coding agents is good but results don't scale with usage. This results in a lot of waste: bad code gets written, huge PRs sit idle and never get merged. More money spent but productivity doesn't increase. We propose a framework to identify where to correctly apply and tune your agent usage using the Lean Manufacturing methods.",
   },
   {
     id: 'john-lindquist',
