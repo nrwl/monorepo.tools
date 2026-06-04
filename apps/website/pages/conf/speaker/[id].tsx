@@ -14,7 +14,7 @@ export function SpeakerPage({ speaker }: { speaker: Speaker }) {
   const description = speaker.talkTitle
     ? `${speaker.name} — "${speaker.talkTitle}". ${speaker.bio}`
     : `${speaker.name}, ${speaker.role} at ${speaker.org}. ${speaker.bio}`;
-  const image = `https://monorepo.tools/images/conf/og/${speaker.id}.png`;
+  const image = `https://monorepo.tools/images/conf/og/${speaker.id}.png?v=20260604`;
 
   return (
     <>
