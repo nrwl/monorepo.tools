@@ -153,7 +153,7 @@ export const SPEAKERS: Speaker[] = [
     socialUrl: 'https://x.com/kentcdodds',
     talkTitle: 'The Last Software Engineer',
     talkAbstract:
-      "I'm not here to tell you software engineering is ending soon. Nobody can put a reliable date on that, and pretending otherwise is a distraction. But we also have to admit something humbling: a year ago, most of us would not have predicted coding agents would be this good. That should make us less confident about predicting what they'll be able to do one year, or five years, from now. So let's use \"The Last Software Engineer\" as a thought exercise. If AI keeps taking over more of the implementation work, what remains most human and valuable for us to do? In this talk, we'll take one step back from the hypothetical end and focus on the durable skill that has always separated great engineers from merely productive ones: judgment. The future belongs not to people who only know how to build, but to people who know what should be built. We'll talk about product engineering, accountability, trade-offs, constraints, evaluation, and how to keep making software worth having in an AI era.",
+      "I'm not here to tell you software engineering is ending soon. Nobody can put a reliable date on that, and pretending otherwise is a distraction. But we also have to admit something humbling: a year ago, most of us would not have predicted coding agents would be this good. That should make us less confident about predicting what they'll be able to do one year, or five years, from now.\n\nSo let's use \"The Last Software Engineer\" as a thought exercise. If AI keeps taking over more of the implementation work, what remains most human and valuable for us to do? In this talk, we'll take one step back from the hypothetical end and focus on the durable skill that has always separated great engineers from merely productive ones: judgment.\n\nThe future belongs not to people who only know how to build, but to people who know what should be built. We'll talk about product engineering, accountability, trade-offs, constraints, evaluation, and how to keep making software worth having in an AI era.",
   },
   {
     id: 'jack-herrington',
@@ -181,7 +181,7 @@ export const SPEAKERS: Speaker[] = [
     website: 'https://superset.sh',
     talkTitle: 'How to run 100 agents in parallel',
     talkAbstract:
-      "At Superset, we work with many companies to help automate their software development lifecycle. Most agree that using more coding agents is good but results don't scale with usage. This results in a lot of waste: bad code gets written, huge PRs sit idle and never get merged. More money spent but productivity doesn't increase. We propose a framework to identify where to correctly apply and tune your agent usage using the Lean Manufacturing methods.",
+      "At Superset, we work with many companies to help automate their software development lifecycle. Most agree that using more coding agents is good but results don't scale with usage. This results in a lot of waste: bad code gets written, huge PRs sit idle and never get merged. More money spent but productivity doesn't increase.\n\nWe propose a framework to identify where to correctly apply and tune your agent usage using the Lean Manufacturing methods.",
   },
   {
     id: 'john-lindquist',
@@ -195,7 +195,7 @@ export const SPEAKERS: Speaker[] = [
     website: 'https://dev.build',
     talkTitle: "The Agentic Power User's Playbook",
     talkAbstract:
-      "This presentation is the playbook I use daily to run swarms of agents in parallel: the keyboard shortcuts, layout patterns, supervision habits, and fast-model tricks that turn chaos into a control surface. We'll go hands-on: spawning a wall of agents across tiled panes, routing prompts to the right swarm with fast models, switching contexts in milliseconds, recovering when an agent goes off the rails, and building the muscle memory that separates a one-agent-at-a-time user from a true power user.",
+      "This presentation is the playbook I use daily to run swarms of agents in parallel: the keyboard shortcuts, layout patterns, supervision habits, and fast-model tricks that turn chaos into a control surface.\n\nWe'll go hands-on: spawning a wall of agents across tiled panes, routing prompts to the right swarm with fast models, switching contexts in milliseconds, recovering when an agent goes off the rails, and building the muscle memory that separates a one-agent-at-a-time user from a true power user.",
   },
   {
     id: 'altan-stalker',
@@ -230,7 +230,7 @@ export const SPEAKERS: Speaker[] = [
     talkTitle:
       "Killing Micro-Frontends: How Radical Simplification 10x'd Our Frontend Velocity",
     talkAbstract:
-      "PayFit eliminated micro-frontends. Controversial? Absolutely. Effective? Our metrics speak: CI dropped from 45 to 5 minutes, deployments from days to 20 minutes, feature velocity up 75%. We had four micro-frontend implementations across 15+ repos, each team solving problems differently. The complexity tax was killing us. This talk chronicles our consolidation: monorepo migration strategies, unified build systems with Nx, automated merge queues, and synthetic testing for confident continuous deployment. The harder challenge? Our first monorepo attempt failed... teams abandoned it. Learn how we rebuilt trust, created social proof through wins, and made the platform so compelling that adoption became organic. A playbook for making bold architectural decisions and proving your convictions through execution.",
+      "PayFit eliminated micro-frontends. Controversial? Absolutely. Effective? Our metrics speak: CI dropped from 45 to 5 minutes, deployments from days to 20 minutes, feature velocity up 75%.\n\nWe had four micro-frontend implementations across 15+ repos, each team solving problems differently. The complexity tax was killing us. This talk chronicles our consolidation: monorepo migration strategies, unified build systems with Nx, automated merge queues, and synthetic testing for confident continuous deployment.\n\nThe harder challenge? Our first monorepo attempt failed... teams abandoned it. Learn how we rebuilt trust, created social proof through wins, and made the platform so compelling that adoption became organic.\n\nA playbook for making bold architectural decisions and proving your convictions through execution.",
   },
   {
     id: 'zack-derose',
