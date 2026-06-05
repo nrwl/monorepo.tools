@@ -510,17 +510,28 @@ export function TalkBlock({
         {speaker.talkTitle}
       </div>
       {speaker.talkAbstract && (
-        <p
+        <div
           style={{
-            fontFamily: FONTS.body,
-            fontSize: large ? 16.5 : 14,
-            color: PALETTE.textDim,
-            lineHeight: 1.7,
-            margin: 0,
+            display: 'flex',
+            flexDirection: 'column',
+            gap: large ? 14 : 10,
           }}
         >
-          {speaker.talkAbstract}
-        </p>
+          {speaker.talkAbstract.split(/\n\s*\n/).map((para, i) => (
+            <p
+              key={i}
+              style={{
+                fontFamily: FONTS.body,
+                fontSize: large ? 16.5 : 14,
+                color: PALETTE.textDim,
+                lineHeight: 1.7,
+                margin: 0,
+              }}
+            >
+              {para}
+            </p>
+          ))}
+        </div>
       )}
     </div>
   );
