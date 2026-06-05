@@ -1,8 +1,12 @@
 import {
   AiConfSpeakerPage,
   SPEAKERS,
+  MC,
   Speaker,
 } from '@monorepo-tools/website/ui-conf';
+
+// MC isn't in the speakers grid but still has a shareable speaker page.
+const SPEAKER_PAGES: Speaker[] = [...SPEAKERS, MC];
 import { NextSeo } from 'next-seo';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
@@ -62,12 +66,12 @@ export function SpeakerPage({ speaker }: { speaker: Speaker }) {
 }
 
 export const getStaticPaths: GetStaticPaths = async () => ({
-  paths: SPEAKERS.map((s) => ({ params: { id: s.id } })),
+  paths: SPEAKER_PAGES.map((s) => ({ params: { id: s.id } })),
   fallback: false,
 });
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const speaker = SPEAKERS.find((s) => s.id === params?.id);
+  const speaker = SPEAKER_PAGES.find((s) => s.id === params?.id);
   if (!speaker) return { notFound: true };
   return { props: { speaker } };
 };

@@ -1,5 +1,93 @@
-import { PALETTE, FONTS, SPEAKERS, Speaker } from './data';
+import { PALETTE, FONTS, SPEAKERS, MC, Speaker } from './data';
 import { SectionLabel, SpeakerAvatar, XIcon, GlobeIcon } from './shared';
+
+function HostedBy({ onPick }: { onPick: (speaker: Speaker) => void }) {
+  return (
+    <div
+      style={{
+        marginTop: 48,
+        paddingTop: 32,
+        borderTop: `1px solid ${PALETTE.bgLine}`,
+        display: 'flex',
+        justifyContent: 'center',
+      }}
+    >
+      <a
+        href={`#speaker=${MC.id}`}
+        onClick={(e) => {
+          e.preventDefault();
+          onPick(MC);
+        }}
+        style={{
+          display: 'flex',
+          alignItems: 'center',
+          gap: 16,
+          textDecoration: 'none',
+          color: 'inherit',
+        }}
+      >
+        <div
+          style={{
+            width: 56,
+            height: 56,
+            borderRadius: '50%',
+            overflow: 'hidden',
+            flex: '0 0 auto',
+            background: PALETTE.bgCard,
+          }}
+        >
+          <img
+            src={MC.image}
+            alt={MC.name}
+            loading="lazy"
+            style={{
+              width: '100%',
+              height: '100%',
+              objectFit: 'cover',
+              objectPosition: 'center top',
+              display: 'block',
+            }}
+          />
+        </div>
+        <div>
+          <div
+            style={{
+              fontFamily: FONTS.mono,
+              fontSize: 11,
+              color: PALETTE.textMute,
+              letterSpacing: 2,
+              marginBottom: 4,
+            }}
+          >
+            HOSTED BY
+          </div>
+          <div
+            style={{
+              fontFamily: FONTS.display,
+              fontSize: 20,
+              fontWeight: 700,
+              color: PALETTE.text,
+              letterSpacing: -0.5,
+            }}
+          >
+            {MC.name}
+            <span
+              style={{
+                fontFamily: FONTS.body,
+                fontSize: 14,
+                fontWeight: 400,
+                color: PALETTE.textDim,
+                marginLeft: 10,
+              }}
+            >
+              · your MC for the day
+            </span>
+          </div>
+        </div>
+      </a>
+    </div>
+  );
+}
 
 export function SpeakerGrid({
   onPick,
@@ -177,6 +265,7 @@ export function SpeakerGrid({
             </a>
           ))}
         </div>
+        <HostedBy onPick={onPick} />
       </div>
     </div>
   );
