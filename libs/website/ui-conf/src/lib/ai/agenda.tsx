@@ -14,6 +14,8 @@ const TALK_TEASERS: Record<string, string> = {
     'John on the daily playbook for running swarms of agents in parallel: tiled panes, fast-model routing, and the muscle memory of a true power user.',
   'nicolas-beaussart':
     'PayFit ripped out micro-frontends across 15+ repos and cut CI from 45 to 5 minutes. Nicolas on the consolidation playbook.',
+  'brandon-roberts':
+    'AI agents now open PRs alongside us. Brandon on using Nx as a verification sandbox so agents test, catch errors, and self-correct before review.',
 };
 
 export function Agenda() {

@@ -233,24 +233,30 @@ export const SPEAKERS: Speaker[] = [
       "PayFit eliminated micro-frontends. Controversial? Absolutely. Effective? Our metrics speak: CI dropped from 45 to 5 minutes, deployments from days to 20 minutes, feature velocity up 75%.\n\nWe had four micro-frontend implementations across 15+ repos, each team solving problems differently. The complexity tax was killing us. This talk chronicles our consolidation: monorepo migration strategies, unified build systems with Nx, automated merge queues, and synthetic testing for confident continuous deployment.\n\nThe harder challenge? Our first monorepo attempt failed... teams abandoned it. Learn how we rebuilt trust, created social proof through wins, and made the platform so compelling that adoption became organic.\n\nA playbook for making bold architectural decisions and proving your convictions through execution.",
   },
   {
-    id: 'zack-derose',
-    name: 'Zack DeRose',
-    role: 'Developer Productivity Engineer',
-    org: 'Nx',
-    topic: 'Host & MC',
-    bio: 'Developer Productivity Engineer at Nx. Your MC for the day.',
-    image: '/images/conf/speakers/zack-derose.avif',
-    socialUrl: 'https://x.com/zackderose',
-  },
-  {
-    id: 'juri-strumpflohner',
-    name: 'Juri Strumpflohner',
-    role: 'Director of Developer Experience',
-    org: 'Nx',
-    topic: 'TBD',
-    bio: 'Google Developer Expert and conference speaker.',
-    image: '/images/conf/speakers/juri-strumpflohner.avif',
-    socialUrl: 'https://x.com/juristr',
-    website: 'https://juri.dev',
+    id: 'brandon-roberts',
+    name: 'Brandon Roberts',
+    role: 'Principal Engineer',
+    org: "Dick's Sporting Goods",
+    topic: 'The Intersection of Open Source Monorepos and AI w/AnalogJS',
+    bio: 'Creator of AnalogJS and an Angular GDE. Principal Engineer at Dick\'s Sporting Goods, building meta-frameworks and tooling for the Angular ecosystem.',
+    image: '/images/conf/speakers/brandon-roberts.avif',
+    socialUrl: 'https://x.com/brandontroberts',
+    website: 'https://brandontroberts.dev',
+    talkTitle: 'The Intersection of Open Source Monorepos and AI w/AnalogJS',
+    talkAbstract:
+      "Open-source monorepos aren't just for human devs anymore — AI agents are pulling tickets and submitting PRs right alongside us. AnalogJS already lives natively inside an Nx workspace, and has the surface to iterate on workflows that make AI less prone to slop. This session is all about using Nx as the ultimate automated verification sandbox: tight local feedback loops so agents can test their code, catch errors, and self-correct before they ever hit your review inbox.",
   },
 ];
+
+// The MC hosts the day but isn't a session speaker, so they live outside the
+// SPEAKERS grid and render as a smaller "hosted by" item below it.
+export const MC: Speaker = {
+  id: 'zack-derose',
+  name: 'Zack DeRose',
+  role: 'Developer Productivity Engineer',
+  org: 'Nx',
+  topic: 'Host & MC',
+  bio: 'Developer Productivity Engineer at Nx. Your MC for the day.',
+  image: '/images/conf/speakers/zack-derose.avif',
+  socialUrl: 'https://x.com/zackderose',
+};
