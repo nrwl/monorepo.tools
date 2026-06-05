@@ -1,15 +1,7 @@
-import { useEffect, useState } from 'react';
-import { PALETTE, FONTS, CONF } from './data';
+import { createElement, useEffect, useState } from 'react';
+import { PALETTE, FONTS } from './data';
 import { NavBar, ConfFooter } from './shared';
 import { readUtmParams, buildTitoUrl } from './use-register-url';
-
-declare global {
-  namespace JSX {
-    interface IntrinsicElements {
-      'tito-widget': any;
-    }
-  }
-}
 
 /**
  * Dedicated registration page hosting the ti.to inline widget with UTM
@@ -91,8 +83,12 @@ export function AiConfRegisterPage() {
             marginBottom: 40,
           }}
         >
-          Join us June 23, 2026 for AI ❤️ Monorepos Conf — a half-day virtual
-          conference on agentic AI in monorepos.
+          Join us June 23, 2026 for AI{' '}
+          <span role="img" aria-label="love">
+            ❤️
+          </span>{' '}
+          Monorepos Conf, a half-day virtual conference on agentic AI in
+          monorepos.
         </p>
       </div>
 
@@ -113,10 +109,10 @@ export function AiConfRegisterPage() {
             backdropFilter: 'blur(8px)',
           }}
         >
-          <tito-widget
-            event="nx-conf/2026-ai-monorepos-conf-online"
-            save-metadata-parameters="utm_*"
-          ></tito-widget>
+          {createElement('tito-widget', {
+            event: 'nx-conf/2026-ai-monorepos-conf-online',
+            'save-metadata-parameters': 'utm_*',
+          })}
         </div>
 
         {/* Fallback link */}
