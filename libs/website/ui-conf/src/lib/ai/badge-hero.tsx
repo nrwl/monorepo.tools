@@ -705,8 +705,6 @@ export function BadgeHero({ name, role, speaker }: BadgeHeroProps = {}) {
           <div className="mt-8 flex w-full max-w-[360px] flex-col items-stretch gap-4 sm:w-auto sm:max-w-none sm:flex-row sm:items-center">
             <a
               href={registerUrl}
-              target="_blank"
-              rel="noreferrer"
               className="w-full justify-center sm:w-auto"
               style={{
                 background: PALETTE.pink,

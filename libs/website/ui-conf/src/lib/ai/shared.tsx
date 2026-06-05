@@ -221,8 +221,6 @@ export function NavBar({
           </div>
           <a
             href={registerUrl}
-            target="_blank"
-            rel="noreferrer"
             style={{
               color: PALETTE.bg,
               background: accent,
@@ -882,8 +880,6 @@ export function ConfFooter({
             </a>
             <a
               href={registerUrl}
-              target="_blank"
-              rel="noreferrer"
               style={{ color: PALETTE.textDim, textDecoration: 'none' }}
             >
               Register

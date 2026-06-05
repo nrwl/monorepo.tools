@@ -61,8 +61,6 @@ export function PolygraphLaunch() {
         <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
           <a
             href={registerUrl}
-            target="_blank"
-            rel="noreferrer"
             className="justify-center sm:justify-start"
             style={{
               display: 'inline-flex',

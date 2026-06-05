@@ -378,8 +378,6 @@ export function NodeGraphHero() {
         >
           <a
             href={registerUrl}
-            target="_blank"
-            rel="noreferrer"
             className="w-full justify-center sm:w-auto"
             style={{
               background: PALETTE.pink,

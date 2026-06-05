@@ -46,8 +46,6 @@ export function RegisterCTA() {
         </p>
         <a
           href={registerUrl}
-          target="_blank"
-          rel="noreferrer"
           style={{
             display: 'inline-flex',
             alignItems: 'center',
