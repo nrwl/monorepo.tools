@@ -186,13 +186,16 @@ export const SPEAKERS: Speaker[] = [
   {
     id: 'john-lindquist',
     name: 'John Lindquist',
-    role: 'Founder',
-    org: 'egghead.io',
-    topic: 'TBD',
+    role: 'Agentic Instructor',
+    org: 'dev.build',
+    topic: "The Agentic Power User's Playbook",
     bio: 'Co-founder of egghead.io, where he has taught hundreds of thousands of devs through bite-sized video courses. Now publishes short, practical tutorials at dev.build and runs the Codex Power User workshop.',
     image: '/images/conf/speakers/john-lindquist.avif',
     socialUrl: 'https://x.com/johnlindquist',
     website: 'https://dev.build',
+    talkTitle: "The Agentic Power User's Playbook",
+    talkAbstract:
+      "This presentation is the playbook I use daily to run swarms of agents in parallel: the keyboard shortcuts, layout patterns, supervision habits, and fast-model tricks that turn chaos into a control surface. We'll go hands-on: spawning a wall of agents across tiled panes, routing prompts to the right swarm with fast models, switching contexts in milliseconds, recovering when an agent goes off the rails, and building the muscle memory that separates a one-agent-at-a-time user from a true power user.",
   },
   {
     id: 'altan-stalker',
