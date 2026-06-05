@@ -32,7 +32,41 @@ function persist(params: UtmParams): void {
   }
 }
 
-function withUtm(params: UtmParams): string {
+/**
+ * Shared helper: reads current UTM params from window.location.search and
+ * sessionStorage. Last-touch: a visit carrying utm_* params overwrites the
+ * stored set. Returns the effective UtmParams for the session.
+ * 
+ * Must only be called client-side (checks window.location.search).
+ */
+export function readUtmParams(): UtmParams {
+  const search = new URLSearchParams(window.location.search);
+  const fromUrl: UtmParams = {};
+  for (const key of UTM_KEYS) {
+    const value = search.get(key);
+    if (value) fromUrl[key] = value;
+  }
+
+  const params = Object.keys(fromUrl).length > 0 ? fromUrl : readStored();
+  if (Object.keys(fromUrl).length > 0) persist(fromUrl);
+
+  return params;
+}
+
+/**
+ * Builds the internal /conf/register URL with UTM params appended as query string.
+ * Returns bare "/conf/register" if params are empty.
+ */
+function buildRegisterUrl(params: UtmParams): string {
+  if (Object.keys(params).length === 0) return '/conf/register';
+  return `/conf/register?${new URLSearchParams(params).toString()}`;
+}
+
+/**
+ * Builds the external ti.to URL with UTM params appended.
+ * Used only by the register page fallback link.
+ */
+export function buildTitoUrl(params: UtmParams): string {
   const keys = Object.keys(params);
   if (keys.length === 0) return CONF.registerUrl;
   const url = new URL(CONF.registerUrl);
@@ -41,30 +75,21 @@ function withUtm(params: UtmParams): string {
 }
 
 /**
- * Returns the ti.to registration URL with UTM params carried through from the
+ * Returns the INTERNAL /conf/register URL with UTM params carried through from the
  * /conf landing URL. Captures utm_* from the current URL into sessionStorage so
  * they persist across in-page navigation (speaker modal, speaker sub-page) even
  * though only /conf receives them. Last-touch: a visit carrying utm_* params
  * overwrites the stored set.
  *
- * SSR-safe: renders the bare URL on the server / first client render, then
- * updates after hydration to avoid a markup mismatch.
+ * SSR-safe: renders "/conf/register" on the server / first client render, then
+ * updates after hydration to include utm params to avoid a markup mismatch.
  */
 export function useRegisterUrl(): string {
-  const [url, setUrl] = useState<string>(CONF.registerUrl);
+  const [url, setUrl] = useState<string>('/conf/register');
 
   useEffect(() => {
-    const search = new URLSearchParams(window.location.search);
-    const fromUrl: UtmParams = {};
-    for (const key of UTM_KEYS) {
-      const value = search.get(key);
-      if (value) fromUrl[key] = value;
-    }
-
-    const params = Object.keys(fromUrl).length > 0 ? fromUrl : readStored();
-    if (Object.keys(fromUrl).length > 0) persist(fromUrl);
-
-    setUrl(withUtm(params));
+    const params = readUtmParams();
+    setUrl(buildRegisterUrl(params));
   }, []);
 
   return url;
