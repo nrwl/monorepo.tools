@@ -50,10 +50,10 @@ export const AGENDA: AgendaItem[] = [
   {
     time: '9:00',
     end: '9:30',
-    title: 'Welcome & Keynote',
+    title: 'The infrastructure that removes the agent autonomy ceiling',
     track: 'Keynote',
-    speaker: 'Jeff Cross + Victor Savkin',
-    desc: 'Kicking off the day, plus the Polygraph launch — why repo boundaries are AI’s biggest blind spot, and what we’re doing about it.',
+    speaker: 'Victor Savkin',
+    desc: 'Jeff and Victor open the day with the Polygraph launch, then Victor on why agent autonomy is capped more by infrastructure and tooling than by model quality, and how the right infrastructure lifts the cap.',
   },
   {
     time: '9:30',
@@ -160,10 +160,14 @@ export const SPEAKERS: Speaker[] = [
     name: 'Victor Savkin',
     role: 'CTO & Co-Founder',
     org: 'Nx',
-    topic: 'TBD',
+    topic: 'The infrastructure that removes the agent autonomy ceiling',
     bio: 'Creator of Nx, the monorepo platform, Nx Cloud and Polygraph. Co-founder & CTO at Nx.',
     image: '/images/conf/speakers/victor-savkin.avif',
     socialUrl: 'https://x.com/victorsavkin',
+    website: 'https://nx.dev',
+    talkTitle: 'The infrastructure that removes the agent autonomy ceiling',
+    talkAbstract:
+      'Agent autonomy is capped more by infrastructure and tooling than by model quality. This talk shows why, and how the right infrastructure lifts the cap.',
   },
   {
     id: 'kent-c-dodds',
