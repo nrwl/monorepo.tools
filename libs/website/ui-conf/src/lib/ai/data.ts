@@ -146,26 +146,16 @@ export type Speaker = {
 // Restore real titles once the schedule is locked in.
 export const SPEAKERS: Speaker[] = [
   {
-    id: 'jeff-cross',
-    name: 'Jeff Cross',
-    role: 'CEO & Co-Founder',
-    org: 'Nx',
-    topic: 'TBD',
-    bio: 'Co-founded Nx after years on the Angular core team at Google. Spends his time thinking about how dev tooling scales across humans and agents.',
-    image: '/images/conf/speakers/jeff-cross.avif',
-    socialUrl: 'https://x.com/jeffbcross',
-  },
-  {
     id: 'victor-savkin',
     name: 'Victor Savkin',
     role: 'CTO & Co-Founder',
     org: 'Nx',
-    topic: 'The infrastructure that removes the agent autonomy ceiling',
+    topic: 'The Infrastructure That Removes the Agent Autonomy Ceiling',
     bio: 'Creator of Nx, the monorepo platform, Nx Cloud and Polygraph. Co-founder & CTO at Nx.',
     image: '/images/conf/speakers/victor-savkin.avif',
     socialUrl: 'https://x.com/victorsavkin',
     website: 'https://nx.dev',
-    talkTitle: 'The infrastructure that removes the agent autonomy ceiling',
+    talkTitle: 'The Infrastructure That Removes the Agent Autonomy Ceiling',
     talkAbstract:
       'Agent autonomy is capped more by infrastructure and tooling than by model quality. This talk shows why, and how the right infrastructure lifts the cap.',
   },
@@ -281,12 +271,12 @@ export const SPEAKERS: Speaker[] = [
 // The MC hosts the day but isn't a session speaker, so they live outside the
 // SPEAKERS grid and render as a smaller "hosted by" item below it.
 export const MC: Speaker = {
-  id: 'zack-derose',
-  name: 'Zack DeRose',
-  role: 'Developer Productivity Engineer',
+  id: 'jeff-cross',
+  name: 'Jeff Cross',
+  role: 'CEO & Co-Founder',
   org: 'Nx',
   topic: 'Host & MC',
-  bio: 'Developer Productivity Engineer at Nx. Your MC for the day.',
-  image: '/images/conf/speakers/zack-derose.avif',
-  socialUrl: 'https://x.com/zackderose',
+  bio: 'Co-founded Nx after years on the Angular core team at Google. Spends his time thinking about how dev tooling scales across humans and agents. Your MC for the day.',
+  image: '/images/conf/speakers/jeff-cross.avif',
+  socialUrl: 'https://x.com/jeffbcross',
 };
