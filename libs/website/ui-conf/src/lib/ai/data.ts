@@ -114,10 +114,10 @@ export const AGENDA: AgendaItem[] = [
   {
     time: '1:00',
     end: '1:30',
-    title: 'TBD',
+    title: 'Your CI Was Already Broken. AI Just Made It Obvious.',
     track: 'Talk',
     speaker: 'Altan Stalker',
-    desc: 'Talk details coming soon.',
+    desc: 'AI means more code, more PRs, more CI runs. Why adding capacity is a workaround, not a fix, and how Nx Cloud makes CI faster and more efficient as throughput climbs.',
   },
 ];
 
@@ -220,10 +220,13 @@ export const SPEAKERS: Speaker[] = [
     name: 'Altan Stalker',
     role: 'Architect',
     org: 'Nx',
-    topic: 'TBD',
+    topic: 'Your CI Was Already Broken. AI Just Made It Obvious.',
     bio: 'Nx Cloud core team member, working on backend and infrastructure.',
     image: '/images/conf/speakers/altan-stalker.avif',
     socialUrl: 'https://x.com/StalkAltan',
+    talkTitle: 'Your CI Was Already Broken. AI Just Made It Obvious.',
+    talkAbstract:
+      "AI-assisted development means more code, more pull requests, and more CI runs. That extra volume puts pressure on problems teams have tolerated for years: cache inputs that are too broad or too narrow, runners that are only partly used, memory-heavy tasks that destabilize jobs, and distributed execution that still leaves machines waiting. In this talk, we'll look at why adding more CI capacity is an expensive workaround, not a fix. We'll show how Nx Cloud's task sandboxing, resource utilization views, assignment rules, and continuous task assignment help teams make CI faster, more predictable, and more efficient as throughput increases.",
   },
   {
     id: 'james-henry',
