@@ -14,7 +14,7 @@
         "{workspaceRoot}/libs/website/ui-conf/src/lib/ai/data.ts"
       ],
       "options": {
-        "command": "node apps/website/tools/og/generate-og.mts"
+        "command": "node --import @swc-node/register/esm-register apps/website/tools/og/generate-og.mts"
       }
     },
     "build": {

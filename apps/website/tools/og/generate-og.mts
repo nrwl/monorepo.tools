@@ -8,7 +8,9 @@
 // decode, so we transcode them to PNG with sharp first (cross-platform, so
 // this runs in CI/Linux as part of `nx build`, not just macOS).
 //
-// Run:  node apps/website/tools/og/generate-og.mts
+// Run:  node --import @swc-node/register/esm-register apps/website/tools/og/generate-og.mts
+//       (the swc-node loader lets older Node — e.g. Node 20 in CI — execute the
+//        .mts/.ts sources; newer Node can run the file directly.)
 import { promises as fs } from 'node:fs';
 import { readFileSync } from 'node:fs';
 import path from 'node:path';

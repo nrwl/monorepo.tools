@@ -6,7 +6,7 @@
     "start": "nx serve",
     "build": "nx build",
     "test": "nx test",
-    "conf:og": "node apps/website/tools/og/generate-og.mts"
+    "conf:og": "node --import @swc-node/register/esm-register apps/website/tools/og/generate-og.mts"
   },
   "private": false,
   "pnpm": {
