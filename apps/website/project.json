@@ -5,8 +5,20 @@
   "projectType": "application",
   "tags": ["scope:website", "type:app"],
   "targets": {
+    "og": {
+      "executor": "nx:run-commands",
+      "outputs": ["{projectRoot}/public/images/conf/og"],
+      "inputs": [
+        "{projectRoot}/tools/og/**/*",
+        "{projectRoot}/public/images/conf/speakers/**/*",
+        "{workspaceRoot}/libs/website/ui-conf/src/lib/ai/data.ts"
+      ],
+      "options": {
+        "command": "node apps/website/tools/og/generate-og.mts"
+      }
+    },
     "build": {
-      "dependsOn": [{ "target": "build-base" }],
+      "dependsOn": [{ "target": "og" }, { "target": "build-base" }],
       "executor": "nx:run-commands",
       "outputs": ["{workspaceRoot}/dist/apps/website"],
       "options": {
