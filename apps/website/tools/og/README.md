@@ -11,12 +11,15 @@ Wired into SEO by `pages/conf/speaker/[id].tsx` and `pages/conf.tsx`.
 ## Regenerate
 
 ```bash
-pnpm conf:og
+pnpm conf:og                 # all cards (every speaker + the generic conf.png)
+pnpm conf:og altan-stalker   # just one speaker's card
+pnpm conf:og conf            # just the generic /conf card
 ```
 
 Re-run after editing speaker data (`libs/website/ui-conf/src/lib/ai/data.ts`),
 the layout (`generate-og.mts`), or the cube graph (`cube-graph.mts`), then commit
-the updated PNGs.
+the updated PNGs. Passing one or more speaker ids (or `conf`) regenerates only
+those PNGs, which keeps diffs small when a single speaker changes.
 
 ## Mechanism
 
@@ -28,7 +31,7 @@ badge's three.js "lit" state.
 ## Caveats
 
 - Speaker photos are `.avif`; satori can't decode them, so they're transcoded to
-  PNG with macOS **`sips`** at generation time. Generation therefore requires
-  macOS. (The committed PNGs are platform-independent.)
+  PNG with **`sharp`** at generation time. This works on any platform (macOS,
+  Linux, CI). The committed PNGs are platform-independent.
 - `wawoff2`'s WASM instance isn't concurrency-safe — fonts are decompressed
   sequentially.
