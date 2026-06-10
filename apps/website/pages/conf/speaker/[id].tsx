@@ -15,9 +15,12 @@ import { GetStaticPaths, GetStaticProps } from 'next';
 export function SpeakerPage({ speaker }: { speaker: Speaker }) {
   const router = useRouter();
   const title = `${speaker.name} · AI ❤️ Monorepos · Conf 2026`;
+  // The speaker name is already in the title (and on the card), so keep it out
+  // of the description. Leading with the talk title means it survives the
+  // platform's description truncation instead of being pushed off the end.
   const description = speaker.talkTitle
-    ? `${speaker.name} — "${speaker.talkTitle}". ${speaker.bio}`
-    : `${speaker.name}, ${speaker.role} at ${speaker.org}. ${speaker.bio}`;
+    ? `"${speaker.talkTitle}" — ${speaker.bio}`
+    : `${speaker.role} at ${speaker.org}. ${speaker.bio}`;
   const image = `https://monorepo.tools/images/conf/og/${speaker.id}.png?v=20260604`;
 
   return (
