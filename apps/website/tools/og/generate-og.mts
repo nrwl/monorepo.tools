@@ -5,17 +5,17 @@
 // Mechanism mirrors nx-blog: build a React-element tree, render to SVG with
 // satori, rasterize to PNG with resvg. Fonts come from @fontsource woff2
 // (decompressed via wawoff2). Speaker avatars are .avif, which satori can't
-// decode, so we transcode them to PNG with macOS `sips` first.
+// decode, so we transcode them to PNG with sharp first (cross-platform, so
+// this runs in CI/Linux as part of `nx build`, not just macOS).
 //
 // Run:  node apps/website/tools/og/generate-og.mts
 import { promises as fs } from 'node:fs';
 import { readFileSync } from 'node:fs';
-import { execFileSync } from 'node:child_process';
 import path from 'node:path';
-import os from 'node:os';
 import { fileURLToPath } from 'node:url';
 import satori from 'satori';
 import { Resvg } from '@resvg/resvg-js';
+import sharp from 'sharp';
 import wawoff2 from 'wawoff2';
 import { SPEAKERS, CONF, type Speaker } from '../../../../libs/website/ui-conf/src/lib/ai/data.ts';
 import { cubeGraphSvg } from './cube-graph.mts';
@@ -77,17 +77,12 @@ const HEART = dataUri(
   `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="${C.amber}" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>`,
 );
 
-const tmp = path.join(os.tmpdir(), 'conf-og-avatars');
 async function avatarUri(speaker: Speaker): Promise<string | null> {
   if (!speaker.image) return null;
   const src = path.join(SPEAKER_IMG_DIR, path.basename(speaker.image));
-  await fs.mkdir(tmp, { recursive: true });
-  const out = path.join(tmp, `${speaker.id}.png`);
   try {
-    execFileSync('sips', ['-s', 'format', 'png', '-Z', '320', src, '--out', out], {
-      stdio: 'ignore',
-    });
-    return `data:image/png;base64,${readFileSync(out).toString('base64')}`;
+    const png = await sharp(src).resize(320, 320, { fit: 'cover' }).png().toBuffer();
+    return `data:image/png;base64,${png.toString('base64')}`;
   } catch {
     return null;
   }
