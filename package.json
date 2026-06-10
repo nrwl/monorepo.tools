@@ -6,7 +6,7 @@
     "start": "nx serve",
     "build": "nx build",
     "test": "nx test",
-    "conf:og": "node apps/website/tools/og/generate-og.mts"
+    "conf:og": "node --import @swc-node/register/esm-register apps/website/tools/og/generate-og.mts"
   },
   "private": false,
   "pnpm": {
@@ -17,6 +17,7 @@
       "cypress",
       "esbuild",
       "nx",
+      "sharp",
       "unrs-resolver"
     ]
   },
@@ -36,6 +37,7 @@
     "react-dom": "18.3.1",
     "react-is": "18.3.1",
     "regenerator-runtime": "0.13.7",
+    "sharp": "^0.34.5",
     "tailwind-merge": "^2.4.0",
     "three": "^0.184.0",
     "tslib": "^2.3.0"

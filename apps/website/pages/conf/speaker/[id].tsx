@@ -14,11 +14,14 @@ import { GetStaticPaths, GetStaticProps } from 'next';
 
 export function SpeakerPage({ speaker }: { speaker: Speaker }) {
   const router = useRouter();
-  const title = `${speaker.name} · AI ❤️ Monorepos · Conf 2026`;
+  const confLine = `${speaker.name} · AI ❤️ Monorepos · Conf 2026`;
+  // Talk title is the headline; speaker · conf goes underneath. Avoids the
+  // name appearing twice (and the talk getting truncated) on social cards.
+  const title = speaker.talkTitle ?? confLine;
   const description = speaker.talkTitle
-    ? `${speaker.name} — "${speaker.talkTitle}". ${speaker.bio}`
+    ? confLine
     : `${speaker.name}, ${speaker.role} at ${speaker.org}. ${speaker.bio}`;
-  const image = `https://monorepo.tools/images/conf/og/${speaker.id}.png?v=20260604`;
+  const image = `https://monorepo.tools/images/conf/og/${speaker.id}.png?v=20260610`;
 
   return (
     <>
