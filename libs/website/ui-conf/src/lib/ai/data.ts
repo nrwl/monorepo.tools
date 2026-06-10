@@ -50,7 +50,7 @@ export const AGENDA: AgendaItem[] = [
   {
     time: '9:00',
     end: '9:30',
-    title: 'The infrastructure that removes the agent autonomy ceiling',
+    title: 'The Infrastructure That Removes the Agent Autonomy Ceiling',
     track: 'Keynote',
     speaker: 'Victor Savkin',
     desc: 'Jeff and Victor open the day with the Polygraph launch, then Victor on why agent autonomy is capped more by infrastructure and tooling than by model quality, and how the right infrastructure lifts the cap.',
