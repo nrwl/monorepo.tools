@@ -8,7 +8,7 @@ export function RegisterPage() {
   const title = 'Register · AI ❤️ Monorepos Conf 2026';
   const description =
     'Reserve your free ticket for the AI ❤️ Monorepos Conf 2026. A half-day virtual conference on June 23, 2026.';
-  const image = 'https://monorepo.tools/images/conf/og/conf.png?v=20260604';
+  const image = 'https://monorepo.tools/images/conf/og/conf.png?v=20260610';
 
   return (
     <>

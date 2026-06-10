@@ -8,7 +8,7 @@ export function Index() {
   const title = 'AI ❤️ Monorepos · Conf 2026';
   const description =
     'A free half-day virtual conference for engineers working at the intersection of monorepos, CI, and agentic AI. June 23, 2026.';
-  const image = 'https://monorepo.tools/images/conf/og/conf.png?v=20260604';
+  const image = 'https://monorepo.tools/images/conf/og/conf.png?v=20260610';
 
   return (
     <>
