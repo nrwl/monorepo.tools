@@ -14,10 +14,10 @@ const COLLAB = [
     h: 28,
   },
   {
-    name: 'dev.build',
-    src: '/images/conf/collab/devbuild.svg',
-    href: 'https://www.dev.build',
-    h: 40,
+    name: 'egghead.io',
+    src: '/images/conf/collab/egghead.svg',
+    href: 'https://egghead.io',
+    h: 44,
   },
   {
     name: 'Netlify',
