@@ -114,6 +114,14 @@ export const AGENDA: AgendaItem[] = [
   {
     time: '1:00',
     end: '1:30',
+    title: 'The Missing Paper Trail for Agentic Engineering',
+    track: 'Talk',
+    speaker: 'Rizèl Scarlett',
+    desc: 'Commits, PRs, and CI logs are engineering’s paper trail, but agent sessions get thrown away. How sessions become procedural memory for AI-native monorepos: searchable prior work, reconstructable decisions, preserved handoff context.',
+  },
+  {
+    time: '1:30',
+    end: '2:00',
     title: 'Your CI Was Already Broken. AI Just Made It Obvious.',
     track: 'Talk',
     speaker: 'Altan Stalker',
@@ -268,6 +276,20 @@ export const SPEAKERS: Speaker[] = [
     talkTitle: 'The Intersection of Open Source Monorepos and AI w/AnalogJS',
     talkAbstract:
       "Open-source monorepos aren't just for human devs anymore — AI agents are pulling tickets and submitting PRs right alongside us. AnalogJS already lives natively inside an Nx workspace, and has the surface to iterate on workflows that make AI less prone to slop. This session is all about using Nx as the ultimate automated verification sandbox: tight local feedback loops so agents can test their code, catch errors, and self-correct before they ever hit your review inbox.",
+  },
+  {
+    id: 'rizel-scarlett',
+    name: 'Rizèl Scarlett',
+    role: 'Principal Developer Advocate',
+    org: 'Entire',
+    topic: 'The Missing Paper Trail for Agentic Engineering',
+    bio: 'Principal Developer Advocate at Entire, focused on AI-native developer workflows. Writes at blackgirlbytes.dev and is a long-time advocate for making engineering more accessible.',
+    image: '/images/conf/speakers/rizel-scarlett.avif',
+    socialUrl: 'https://x.com/blackgirlbytes',
+    website: 'https://blackgirlbytes.dev',
+    talkTitle: 'The Missing Paper Trail for Agentic Engineering',
+    talkAbstract:
+      'For decades, software engineering has relied on a foundational necessity: a reliable paper trail. Commits, pull requests, CI logs, and reviews help teams understand what changed, why it changed, and whether it is safe to ship. We deliberately used this collaborative friction to maintain code quality.\n\nBut today, a new class of autonomous collaborators has disrupted the traditional engineering workflow. Coding agents can turn a single prompt into a full feature. The speed is exciting, but it creates a new problem: we can now produce code faster than we can understand it.\n\nFor an industry obsessed with artifacts, we often throw away the one record that explains agent-authored work: the session itself.\n\nJoin Rizèl to learn how agent sessions can become procedural memory for AI-native monorepos, helping humans and future agents search prior work, reconstruct decisions, preserve handoff context, and maintain trust as development accelerates.\n\nBecause in an AI-native world, the session is the story.',
   },
 ];
 
