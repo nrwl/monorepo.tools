@@ -38,8 +38,14 @@ export const CONF = {
 };
 
 export type AgendaItem = {
+  // Wall-clock start/end in conference time (PT), kept for the default PT
+  // display so it renders identically without any formatting.
   time: string;
   end: string;
+  // Absolute UTC instants for the slot, the source of truth for converting
+  // into a visitor's local timezone. June 23 2026 is PDT (UTC-7).
+  startISO: string;
+  endISO: string;
   title: string;
   track: string;
   speaker: string;
@@ -50,6 +56,8 @@ export const AGENDA: AgendaItem[] = [
   {
     time: '9:00',
     end: '9:30',
+    startISO: '2026-06-23T16:00:00Z',
+    endISO: '2026-06-23T16:30:00Z',
     title: 'The Infrastructure That Removes the Agent Autonomy Ceiling',
     track: 'Keynote',
     speaker: 'Victor Savkin',
@@ -58,6 +66,8 @@ export const AGENDA: AgendaItem[] = [
   {
     time: '9:30',
     end: '10:00',
+    startISO: '2026-06-23T16:30:00Z',
+    endISO: '2026-06-23T17:00:00Z',
     title: 'The Intersection of Open Source Monorepos and AI w/AnalogJS',
     track: 'Talk',
     speaker: 'Brandon Roberts',
@@ -66,6 +76,8 @@ export const AGENDA: AgendaItem[] = [
   {
     time: '10:00',
     end: '10:30',
+    startISO: '2026-06-23T17:00:00Z',
+    endISO: '2026-06-23T17:30:00Z',
     title: 'How to Run 100 Agents in Parallel',
     track: 'Talk',
     speaker: 'Kiet Ho',
@@ -74,6 +86,8 @@ export const AGENDA: AgendaItem[] = [
   {
     time: '10:30',
     end: '11:00',
+    startISO: '2026-06-23T17:30:00Z',
+    endISO: '2026-06-23T18:00:00Z',
     title: 'Self-Healing CI',
     track: 'Talk',
     speaker: 'James Henry',
@@ -82,6 +96,8 @@ export const AGENDA: AgendaItem[] = [
   {
     time: '11:00',
     end: '11:30',
+    startISO: '2026-06-23T18:00:00Z',
+    endISO: '2026-06-23T18:30:00Z',
     title: "Killing Micro-Frontends: How Radical Simplification 10x'd Our Frontend Velocity",
     track: 'Talk',
     speaker: 'Nicolas Beaussart-Hatchuel',
@@ -90,6 +106,8 @@ export const AGENDA: AgendaItem[] = [
   {
     time: '11:30',
     end: '12:00',
+    startISO: '2026-06-23T18:30:00Z',
+    endISO: '2026-06-23T19:00:00Z',
     title: 'The Last Software Engineer',
     track: 'Talk',
     speaker: 'Kent C. Dodds',
@@ -98,6 +116,8 @@ export const AGENDA: AgendaItem[] = [
   {
     time: '12:00',
     end: '12:30',
+    startISO: '2026-06-23T19:00:00Z',
+    endISO: '2026-06-23T19:30:00Z',
     title: "TanStack's Revolutionary Code Mode AI",
     track: 'Talk',
     speaker: 'Jack Herrington',
@@ -106,6 +126,8 @@ export const AGENDA: AgendaItem[] = [
   {
     time: '12:30',
     end: '1:00',
+    startISO: '2026-06-23T19:30:00Z',
+    endISO: '2026-06-23T20:00:00Z',
     title: "The Agentic Power User's Playbook",
     track: 'Talk',
     speaker: 'John Lindquist',
@@ -114,6 +136,8 @@ export const AGENDA: AgendaItem[] = [
   {
     time: '1:00',
     end: '1:30',
+    startISO: '2026-06-23T20:00:00Z',
+    endISO: '2026-06-23T20:30:00Z',
     title: 'The Missing Paper Trail for Agentic Engineering',
     track: 'Talk',
     speaker: 'Rizèl Scarlett',
@@ -122,6 +146,8 @@ export const AGENDA: AgendaItem[] = [
   {
     time: '1:30',
     end: '2:00',
+    startISO: '2026-06-23T20:30:00Z',
+    endISO: '2026-06-23T21:00:00Z',
     title: 'Your CI Was Already Broken. AI Just Made It Obvious.',
     track: 'Talk',
     speaker: 'Altan Stalker',

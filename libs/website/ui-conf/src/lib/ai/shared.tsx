@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import { PALETTE, FONTS, CONF, Speaker, agendaForSpeaker } from './data';
 import { useRegisterUrl } from './use-register-url';
+import { SlotTime } from './timezone';
 
 function useCountdown(targetISO: string) {
   const target = useMemo(() => new Date(targetISO).getTime(), [targetISO]);
@@ -491,7 +492,7 @@ export function TalkBlock({
             }}
           >
             JUN 23 <span style={{ color: PALETTE.textMute }}>·</span>{' '}
-            {slot.time}–{slot.end} PT
+            <SlotTime item={slot} muteColor={PALETTE.textDim} />
           </div>
         )}
       </div>
@@ -707,9 +708,14 @@ export function SpeakerModal({
                   letterSpacing: 2,
                 }}
               >
-                {talk
-                  ? `${talk.track.toUpperCase()} · ${talk.time}–${talk.end} PT`
-                  : `TOPIC · ${speaker.topic.toUpperCase()}`}
+                {talk ? (
+                  <>
+                    {talk.track.toUpperCase()} ·{' '}
+                    <SlotTime item={talk} muteColor={accent} />
+                  </>
+                ) : (
+                  `TOPIC · ${speaker.topic.toUpperCase()}`
+                )}
               </div>
               {talk && (
                 <div
@@ -721,7 +727,7 @@ export function SpeakerModal({
                   }}
                 >
                   JUN 23 <span style={{ color: PALETTE.textMute }}>·</span>{' '}
-                  {talk.time}
+                  <SlotTime item={talk} startOnly muteColor={PALETTE.textMute} />
                 </div>
               )}
             </div>
@@ -752,7 +758,7 @@ export function SpeakerModal({
           </div>
           */}
 
-          <TalkBlock speaker={speaker} accent={accent} />
+          <TalkBlock speaker={speaker} accent={accent} showTime />
 
           <div
             style={{

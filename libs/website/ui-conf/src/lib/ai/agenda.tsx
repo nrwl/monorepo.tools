@@ -1,6 +1,7 @@
 import type { CSSProperties, MouseEvent } from 'react';
 import { PALETTE, FONTS, SPEAKERS, AGENDA } from './data';
 import { SectionLabel } from './shared';
+import { ScheduleTimezoneBar, SlotTime } from './timezone';
 
 export function Agenda() {
   return (
@@ -10,11 +11,7 @@ export function Agenda() {
       style={{ background: PALETTE.bg }}
     >
       <div className="mx-auto w-full max-w-[1536px] px-5 md:px-20">
-        <SectionLabel
-          index={1}
-          label="Agenda · June 23 · all times PT"
-          accent={PALETTE.pink}
-        />
+        <SectionLabel index={1} label="Agenda" accent={PALETTE.pink} />
         <h2
           className="mb-12 mt-7 text-[40px] tracking-[-1.5px] md:text-[96px] md:tracking-[-3px]"
           style={{
@@ -30,14 +27,25 @@ export function Agenda() {
 
         <div
           style={{
-            fontFamily: FONTS.mono,
-            fontSize: 12,
-            color: PALETTE.pink,
-            letterSpacing: 3,
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            gap: 16,
+            flexWrap: 'wrap',
             marginBottom: 24,
           }}
         >
-          SCHEDULE
+          <div
+            style={{
+              fontFamily: FONTS.mono,
+              fontSize: 12,
+              color: PALETTE.pink,
+              letterSpacing: 3,
+            }}
+          >
+            SCHEDULE
+          </div>
+          <ScheduleTimezoneBar />
         </div>
         <div style={{ border: `1px solid ${PALETTE.bgLine}` }}>
           {AGENDA.map((s, i) => {
@@ -46,7 +54,7 @@ export function Agenda() {
             // stay non-clickable.
             const speaker = SPEAKERS.find((sp) => sp.name === s.speaker);
             const rowClass =
-              'grid grid-cols-1 gap-3 md:grid-cols-[150px_1fr_220px] md:items-center md:gap-6';
+              'grid grid-cols-1 gap-3 md:grid-cols-[175px_1fr_220px] md:items-center md:gap-6';
             const rowStyle: CSSProperties = {
               padding: '24px 24px',
               borderBottom:
@@ -73,8 +81,7 @@ export function Agenda() {
                     whiteSpace: 'nowrap',
                   }}
                 >
-                  {s.time}
-                  <span style={{ color: PALETTE.textMute }}> – {s.end}</span>
+                  <SlotTime item={s} showLabel={false} />
                 </div>
                 <div>
                   {s.track !== 'Talk' && (
