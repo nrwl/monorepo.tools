@@ -29,3 +29,12 @@ main > div[id].pt-16 {
     background-color: hsl(217.2, 32.6%, 17.5%);
   }
 }
+
+/* The ti.to inline widget + checkout overlay (registration form) are light-themed:
+   white fields with dark (#333) input text. Under OS dark mode the browser paints
+   form controls with a dark UA background, leaving dark text on dark = invisible.
+   Pin tito's UI to a light color-scheme so its fields stay readable. */
+tito-widget,
+#tito-overlay {
+  color-scheme: light;
+}
