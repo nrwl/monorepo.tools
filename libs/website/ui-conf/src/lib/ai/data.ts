@@ -161,6 +161,19 @@ export function agendaForSpeaker(name: string): AgendaItem | undefined {
   return AGENDA.find((a) => a.speaker === name);
 }
 
+// ---- Live stream ----------------------------------------------------------
+// Drives the live banner on /conf and the dedicated /conf/live stream page.
+// Flip `isLive` off after the event to retire both.
+export const LIVE = {
+  isLive: true,
+  youtubeId: 'y8H-LeWQxlQ',
+  watchUrl: 'https://youtube.com/live/y8H-LeWQxlQ',
+  livePath: '/conf/live',
+  // Red reads as "live" everywhere; kept distinct from the amber accent so the
+  // LIVE state stays unmistakable against the rest of the conf palette.
+  red: '#ef4444',
+};
+
 export type Speaker = {
   id: string;
   name: string;
