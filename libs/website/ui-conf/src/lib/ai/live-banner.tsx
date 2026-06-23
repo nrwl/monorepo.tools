@@ -85,7 +85,6 @@ export function LiveBanner() {
               fontSize: 13,
               fontWeight: 600,
               textDecoration: 'none',
-              borderRadius: 8,
               whiteSpace: 'nowrap',
             }}
           >

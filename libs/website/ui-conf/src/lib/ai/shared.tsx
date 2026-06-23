@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from 'react';
-import { PALETTE, FONTS, CONF, Speaker, agendaForSpeaker } from './data';
+import { PALETTE, FONTS, CONF, LIVE, Speaker, agendaForSpeaker } from './data';
 import { useRegisterUrl } from './use-register-url';
 import { SlotTime } from './timezone';
 
@@ -220,19 +220,21 @@ export function NavBar({
               Hosts
             </a>
           </div>
-          <a
-            href={registerUrl}
-            style={{
-              color: PALETTE.bg,
-              background: accent,
-              padding: '10px 18px',
-              textDecoration: 'none',
-              fontWeight: 600,
-              letterSpacing: 0.5,
-            }}
-          >
-            Register →
-          </a>
+          {!LIVE.isLive && (
+            <a
+              href={registerUrl}
+              style={{
+                color: PALETTE.bg,
+                background: accent,
+                padding: '10px 18px',
+                textDecoration: 'none',
+                fontWeight: 600,
+                letterSpacing: 0.5,
+              }}
+            >
+              Register →
+            </a>
+          )}
         </div>
       </div>
     </nav>
