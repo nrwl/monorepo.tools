@@ -97,11 +97,12 @@ export function AiConfCodeOfConductPage() {
             expression, age, sexual orientation, disability, physical appearance,
             body size, race, ethnicity, religion (or lack thereof), or technology
             choices. We do not tolerate harassment of conference participants in
-            any form. Sexual language and imagery are not appropriate for any
-            conference venue, including talks, workshops, parties, social media,
-            and other online media. Conference participants violating these rules
-            may be sanctioned or expelled from the conference without a refund at
-            the discretion of the conference organizers.
+            any form. Sexual language and imagery are not appropriate in any
+            conference space, including the livestream, the live chat, social
+            media, and other online channels. Conference participants violating
+            these rules
+            may be sanctioned or expelled from the conference at the discretion
+            of the conference organizers.
           </p>
         </Section>
 
@@ -110,10 +111,9 @@ export function AiConfCodeOfConductPage() {
             Harassment includes offensive verbal comments related to gender,
             gender identity and expression, age, sexual orientation, disability,
             physical appearance, body size, race, ethnicity, religion, technology
-            choices, sexual images in public spaces, deliberate intimidation,
-            stalking, following, harassing photography or recording, sustained
-            disruption of talks or other events, inappropriate physical contact,
-            and unwelcome sexual attention.
+            choices, sexual images in shared spaces, deliberate intimidation,
+            stalking, following, harassing recording or screenshots, sustained
+            disruption of talks or other events, and unwelcome sexual attention.
           </p>
           <p style={paragraph}>
             Participants asked to stop any harassing behavior are expected to
@@ -121,9 +121,9 @@ export function AiConfCodeOfConductPage() {
           </p>
           <p style={paragraph}>
             Sponsors are also subject to the anti-harassment policy. In
-            particular, sponsors should not use sexualized images, activities, or
-            other material. Booth staff (including volunteers) should not use
-            sexualized clothing/uniforms/costumes or otherwise create a
+            particular, sponsors and their staff (including volunteers) should
+            not use sexualized images, activities, or other material in their
+            talks, messages, or other conference presence, or otherwise create a
             sexualized environment.
           </p>
           <p style={paragraph}>
@@ -137,8 +137,8 @@ export function AiConfCodeOfConductPage() {
             conference staff immediately.
           </p>
           <p style={{ ...paragraph, marginBottom: 0 }}>
-            We expect participants to follow these rules at conference and
-            workshop venues and conference-related social events.
+            We expect participants to follow these rules across the conference
+            livestream, the live chat, and all related online spaces.
           </p>
         </Section>
 
@@ -170,7 +170,9 @@ export function AiConfCodeOfConductPage() {
               Your contact info, so we can follow up with you
             </li>
             <li style={{ marginBottom: 8 }}>Date and time of the incident</li>
-            <li style={{ marginBottom: 8 }}>Location of the incident</li>
+            <li style={{ marginBottom: 8 }}>
+              Where it happened (e.g. the livestream or live chat)
+            </li>
             <li style={{ marginBottom: 8 }}>Description of the incident</li>
             <li>
               Any other helpful information, such as whether you are worried about
