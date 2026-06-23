@@ -11,6 +11,7 @@ import { Stat } from './hero';
 import { BadgeStage, speakerBadgeContent } from './badge-hero';
 import { Hosts } from './hosts';
 import { RegisterCTA } from './register-cta';
+import { LiveBanner } from './live-banner';
 
 /**
  * Dedicated, deep-linkable page for a single speaker. Reuses the conf
@@ -35,6 +36,7 @@ export function AiConfSpeakerPage({ speaker }: { speaker: Speaker }) {
         @keyframes aiconfMarquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
       `}</style>
       <NavBar accent={PALETTE.pink} linkBase="/conf" />
+      <LiveBanner />
 
       {/* hero: talk details + speaker badge, centered as a group */}
       <div
