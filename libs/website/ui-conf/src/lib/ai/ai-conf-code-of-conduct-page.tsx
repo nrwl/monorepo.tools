@@ -84,7 +84,7 @@ export function AiConfCodeOfConductPage() {
         </h1>
 
         <p style={paragraph}>
-          All attendees, speakers, sponsors, and volunteers at our conference
+          All attendees, speakers, and volunteers at our conference
           are required to agree with the following code of conduct. Organizers
           will enforce this code throughout the event. We expect cooperation
           from all participants to help ensure a safe environment for everybody.
@@ -118,13 +118,6 @@ export function AiConfCodeOfConductPage() {
           <p style={paragraph}>
             Participants asked to stop any harassing behavior are expected to
             comply immediately.
-          </p>
-          <p style={paragraph}>
-            Sponsors are also subject to the anti-harassment policy. In
-            particular, sponsors and their staff (including volunteers) should
-            not use sexualized images, activities, or other material in their
-            talks, messages, or other conference presence, or otherwise create a
-            sexualized environment.
           </p>
           <p style={paragraph}>
             If a participant engages in harassing behavior, the conference
