@@ -37,14 +37,14 @@ export function LiveBanner() {
     <>
       <style>{LIVE_KEYFRAMES}</style>
       <div
-        className="px-5 py-3 md:px-14"
+        className="py-3"
         style={{
           background: LIVE.red,
           color: '#fff',
           fontFamily: FONTS.body,
         }}
       >
-        <div className="mx-auto flex w-full max-w-[1536px] items-center justify-between gap-4">
+        <div className="mx-auto flex w-full max-w-[1536px] items-center justify-between gap-4 px-5 md:px-14">
           <div className="flex min-w-0 items-center gap-3">
             <span
               style={{
