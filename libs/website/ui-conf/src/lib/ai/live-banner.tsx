@@ -30,13 +30,14 @@ export const LIVE_KEYFRAMES = `
 `;
 
 /**
- * Sticky strip under the conf nav announcing that the stream is live, with a
- * CTA that opens the YouTube live stream in a new tab. Deliberately doesn't name
- * the current talk; the running order can shift live and we don't track it.
- * Renders nothing when not live.
+ * Strip under the conf nav, shown only while the stream is live. The recap
+ * ('ended') and retired ('off') phases render nothing here — the post-event
+ * "catch up with the recording" CTA lives in the nav instead. The live state
+ * deliberately doesn't name the current talk; the running order can shift
+ * live and we don't track it.
  */
 export function LiveBanner() {
-  if (!LIVE.isLive) return null;
+  if (LIVE.phase !== 'live') return null;
 
   return (
     <>

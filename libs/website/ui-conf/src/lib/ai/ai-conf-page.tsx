@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { PALETTE, FONTS, Speaker, SPEAKERS } from './data';
-import { CountdownPill, NavBar, SpeakerModal, ConfFooter } from './shared';
+import { NavBar, SpeakerModal, ConfFooter } from './shared';
 import { Stat } from './hero';
 import { ThreeCardHero } from './three-card-hero';
 import { Agenda } from './agenda';
@@ -44,7 +44,7 @@ export function AiConfPage() {
       <LiveBanner />
       <ThreeCardHero />
       <div
-        className="grid grid-cols-1 items-center gap-8 px-5 py-8 md:grid-cols-3 md:px-14 md:py-10"
+        className="grid grid-cols-1 items-center gap-8 px-5 py-8 md:grid-cols-2 md:px-14 md:py-10"
         style={{
           borderTop: `1px solid ${PALETTE.bgLine}`,
           borderBottom: `1px solid ${PALETTE.bgLine}`,
@@ -52,11 +52,8 @@ export function AiConfPage() {
         }}
       >
         <Stat label="DATE" value="June 23, 2026" tone={PALETTE.pink} />
-        <div className="md:justify-self-center">
-          <Stat label="FORMAT" value="Online, free" tone={PALETTE.cyan} />
-        </div>
         <div className="md:justify-self-end">
-          <CountdownPill compact />
+          <Stat label="FORMAT" value="Online, free" tone={PALETTE.cyan} />
         </div>
       </div>
       <Agenda />

@@ -61,7 +61,7 @@ export function FeaturedWebinar(): JSX.Element {
 
           <div className="flex flex-col rounded-lg border border-slate-200 bg-slate-50 p-6 shadow-sm sm:p-8 dark:border-slate-700 dark:bg-slate-800">
             <p className="text-xs font-semibold uppercase tracking-[1.5px] text-yellow-600 dark:text-yellow-500">
-              Early Access
+              Now Available
             </p>
             <div className="mt-3 flex items-start gap-4 lg:min-h-[7rem]">
               <img
@@ -82,16 +82,16 @@ export function FeaturedWebinar(): JSX.Element {
 
             <div className="mt-auto border-t border-slate-200 pt-5 dark:border-slate-700">
               <p className="text-sm font-medium text-gray-700 dark:text-gray-300">
-                Now in early access
+                Available now
               </p>
               <div className="mt-3">
                 <a
-                  href="https://trypolygraph.com/#form"
+                  href="https://trypolygraph.com?utm_source=monorepo.tools&utm_medium=referral&utm_campaign=synthetic-monorepos&utm_content=featured-card"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center rounded-md bg-gray-900 px-4 py-2 text-sm font-semibold text-white transition hover:bg-gray-800 dark:bg-white dark:text-gray-900 dark:hover:bg-gray-100"
                 >
-                  Get early access
+                  Try Polygraph now
                 </a>
               </div>
             </div>

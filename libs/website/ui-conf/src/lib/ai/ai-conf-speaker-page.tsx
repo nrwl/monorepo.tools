@@ -1,12 +1,6 @@
 import { PALETTE, FONTS, Speaker } from './data';
 import { useRegisterUrl } from './use-register-url';
-import {
-  CountdownPill,
-  NavBar,
-  ConfFooter,
-  TalkBlock,
-  SpeakerLinks,
-} from './shared';
+import { NavBar, ConfFooter, TalkBlock, SpeakerLinks } from './shared';
 import { Stat } from './hero';
 import { BadgeStage, speakerBadgeContent } from './badge-hero';
 import { Hosts } from './hosts';
@@ -109,7 +103,7 @@ export function AiConfSpeakerPage({ speaker }: { speaker: Speaker }) {
 
       {/* conf info bar */}
       <div
-        className="grid grid-cols-1 items-center gap-8 px-5 py-8 md:grid-cols-3 md:px-14 md:py-10"
+        className="grid grid-cols-1 items-center gap-8 px-5 py-8 md:grid-cols-2 md:px-14 md:py-10"
         style={{
           borderTop: `1px solid ${PALETTE.bgLine}`,
           borderBottom: `1px solid ${PALETTE.bgLine}`,
@@ -117,11 +111,8 @@ export function AiConfSpeakerPage({ speaker }: { speaker: Speaker }) {
         }}
       >
         <Stat label="DATE" value="June 23, 2026" tone={PALETTE.pink} />
-        <div className="md:justify-self-center">
-          <Stat label="FORMAT" value="Online, free" tone={PALETTE.cyan} />
-        </div>
         <div className="md:justify-self-end">
-          <CountdownPill compact />
+          <Stat label="FORMAT" value="Online, free" tone={PALETTE.cyan} />
         </div>
       </div>
 

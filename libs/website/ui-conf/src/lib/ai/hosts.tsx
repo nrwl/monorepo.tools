@@ -75,7 +75,7 @@ export function Hosts() {
             style={{ width: 1, height: 80, background: PALETTE.bgLine }}
           />
           <a
-            href="https://trypolygraph.com"
+            href="https://trypolygraph.com?utm_source=monorepo.tools&utm_medium=referral&utm_campaign=ai-conf-2026&utm_content=hosts-logo"
             target="_blank"
             rel="noreferrer"
             style={{

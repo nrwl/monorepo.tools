@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { PALETTE, FONTS, Speaker, SPEAKERS } from './data';
-import { CountdownPill, NavBar, SpeakerModal, ConfFooter } from './shared';
+import { NavBar, SpeakerModal, ConfFooter } from './shared';
 import { Stat } from './hero';
 import { BadgeHero } from './badge-hero';
 import { Agenda } from './agenda';
@@ -83,19 +83,16 @@ export function AiConfPageBadge() {
             background: PALETTE.bgDeeper,
           }}
         >
-          <div className="mx-auto grid w-full max-w-[1536px] grid-cols-1 items-center gap-8 px-5 md:grid-cols-3 md:px-14">
+          <div className="mx-auto grid w-full max-w-[1536px] grid-cols-1 items-center gap-8 px-5 md:grid-cols-2 md:px-14">
             <Stat label="DATE" value="June 23, 2026" tone={PALETTE.pink} />
-            <div className="md:justify-self-center">
-              <Stat label="FORMAT" value="Online, free" tone={PALETTE.cyan} />
-            </div>
             <div className="md:justify-self-end">
-              <CountdownPill compact />
+              <Stat label="FORMAT" value="Online, free" tone={PALETTE.cyan} />
             </div>
           </div>
         </div>
       </div>
-      <Agenda />
       <PolygraphLaunch />
+      <Agenda />
       <SpeakerGrid onPick={setModalSpeaker} />
       <Hosts />
       <RegisterCTA />

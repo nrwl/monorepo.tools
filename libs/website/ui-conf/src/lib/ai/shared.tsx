@@ -226,7 +226,26 @@ export function NavBar({
               Code of Conduct
             </a>
           </div>
-          {!LIVE.isLive && (
+          {/* Post-event: the recording CTA lives in the nav (no separate
+              banner). Pre-event: Register. While live: nothing — the red live
+              banner under the nav carries that CTA. */}
+          {LIVE.phase === 'ended' ? (
+            <a
+              href={LIVE.watchUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                color: PALETTE.bg,
+                background: accent,
+                padding: '10px 18px',
+                textDecoration: 'none',
+                fontWeight: 600,
+                letterSpacing: 0.5,
+              }}
+            >
+              Watch the recording →
+            </a>
+          ) : LIVE.phase === 'off' ? (
             <a
               href={registerUrl}
               style={{
@@ -240,7 +259,7 @@ export function NavBar({
             >
               Register →
             </a>
-          )}
+          ) : null}
         </div>
       </div>
     </nav>
@@ -918,7 +937,7 @@ export function ConfFooter({
               Nx → nx.dev
             </a>
             <a
-              href="https://trypolygraph.com"
+              href="https://trypolygraph.com?utm_source=monorepo.tools&utm_medium=referral&utm_campaign=ai-conf-2026&utm_content=footer"
               style={{ color: PALETTE.textDim, textDecoration: 'none' }}
             >
               Polygraph → trypolygraph.com
