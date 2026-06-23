@@ -1,8 +1,21 @@
+import { useEffect, useState } from 'react';
 import { PALETTE, FONTS } from './data';
-import { useRegisterUrl } from './use-register-url';
+
+const TRAILER_EMBED =
+  'https://www.youtube.com/embed/6xvOrf4U4zM?autoplay=1&rel=0';
 
 export function PolygraphLaunch() {
-  const registerUrl = useRegisterUrl();
+  const [trailerOpen, setTrailerOpen] = useState(false);
+
+  useEffect(() => {
+    if (!trailerOpen) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setTrailerOpen(false);
+    };
+    document.addEventListener('keydown', onKey);
+    return () => document.removeEventListener('keydown', onKey);
+  }, [trailerOpen]);
+
   return (
     <div
       id="polygraph-launch"
@@ -55,12 +68,14 @@ export function PolygraphLaunch() {
           </strong>{' '}
           A platform enabling agentic collaboration across sessions and
           repository boundaries. Catch the announcement at the conf, or get
-          early access now.
+          Polygraph now.
         </p>
 
         <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
           <a
-            href={registerUrl}
+            href="https://trypolygraph.com"
+            target="_blank"
+            rel="noreferrer"
             className="justify-center sm:justify-start"
             style={{
               display: 'inline-flex',
@@ -76,12 +91,11 @@ export function PolygraphLaunch() {
               textDecoration: 'none',
             }}
           >
-            REGISTER FOR THE CONF →
+            GET POLYGRAPH NOW →
           </a>
-          <a
-            href="https://trypolygraph.com/#form"
-            target="_blank"
-            rel="noreferrer"
+          <button
+            type="button"
+            onClick={() => setTrailerOpen(true)}
             className="justify-center sm:justify-start"
             style={{
               display: 'inline-flex',
@@ -92,14 +106,81 @@ export function PolygraphLaunch() {
               fontFamily: FONTS.mono,
               fontSize: 13,
               letterSpacing: 1,
-              textDecoration: 'none',
+              background: 'transparent',
+              cursor: 'pointer',
               border: `1px solid ${PALETTE.textDim}`,
             }}
           >
-            GET EARLY ACCESS →
-          </a>
+            WATCH THE TRAILER →
+          </button>
         </div>
       </div>
+
+      {trailerOpen && (
+        <div
+          role="dialog"
+          aria-modal="true"
+          aria-label="Polygraph trailer"
+          onClick={() => setTrailerOpen(false)}
+          style={{
+            position: 'fixed',
+            inset: 0,
+            zIndex: 50,
+            background: 'rgba(15,23,42,0.85)',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            padding: 20,
+          }}
+        >
+          <div
+            onClick={(e) => e.stopPropagation()}
+            style={{ width: '100%', maxWidth: 960 }}
+          >
+            <div className="flex justify-end" style={{ marginBottom: 12 }}>
+              <button
+                type="button"
+                onClick={() => setTrailerOpen(false)}
+                aria-label="Close trailer"
+                style={{
+                  color: PALETTE.text,
+                  background: 'transparent',
+                  border: `1px solid ${PALETTE.textDim}`,
+                  width: 36,
+                  height: 36,
+                  fontSize: 18,
+                  lineHeight: 1,
+                  cursor: 'pointer',
+                }}
+              >
+                ✕
+              </button>
+            </div>
+            <div
+              style={{
+                position: 'relative',
+                width: '100%',
+                paddingTop: '56.25%',
+                background: '#000',
+              }}
+            >
+              <iframe
+                src={TRAILER_EMBED}
+                title="Polygraph trailer"
+                allow="autoplay; encrypted-media; picture-in-picture; fullscreen"
+                allowFullScreen
+                style={{
+                  position: 'absolute',
+                  inset: 0,
+                  width: '100%',
+                  height: '100%',
+                  border: 0,
+                }}
+              />
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
