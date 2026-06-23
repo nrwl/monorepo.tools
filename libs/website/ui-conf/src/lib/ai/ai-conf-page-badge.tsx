@@ -95,8 +95,8 @@ export function AiConfPageBadge() {
         </div>
       </div>
       <Agenda />
-      <SpeakerGrid onPick={setModalSpeaker} />
       <PolygraphLaunch />
+      <SpeakerGrid onPick={setModalSpeaker} />
       <Hosts />
       <RegisterCTA />
       <ConfFooter accent={PALETTE.pink} />
