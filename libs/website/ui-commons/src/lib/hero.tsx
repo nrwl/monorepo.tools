@@ -58,7 +58,7 @@ export function Hero() {
                 </div>
               </div>
               <span className="hidden whitespace-nowrap rounded-md border border-amber-500 px-3 py-2 text-sm font-medium text-amber-600 transition-colors group-hover:bg-amber-500 group-hover:text-white sm:inline-block dark:text-amber-400">
-                Register free →
+                Watch the recording →
               </span>
             </a>
           </div>

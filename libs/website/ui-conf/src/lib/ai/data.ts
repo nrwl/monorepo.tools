@@ -162,10 +162,14 @@ export function agendaForSpeaker(name: string): AgendaItem | undefined {
 }
 
 // ---- Live stream ----------------------------------------------------------
-// Drives the live banner + watch pill on /conf. Flip `isLive` off after the
-// event to retire both. The CTAs open the YouTube live stream directly.
+// Drives the stream banner + nav CTA on /conf via a lifecycle `phase`:
+//   'live'  → red "LIVE NOW" banner, "Join the live stream" CTA
+//   'ended' → recap banner, "Catch up with the recording" CTA (the live URL
+//             becomes the YouTube VOD once the stream ends)
+//   'off'   → no banner; the nav "Register →" button returns
+// Flip `phase` as the event progresses. `watchUrl` is reused across states.
 export const LIVE = {
-  isLive: true,
+  phase: 'ended' as 'live' | 'ended' | 'off',
   watchUrl: 'https://youtube.com/live/y8H-LeWQxlQ',
   // Red reads as "live" everywhere; kept distinct from the amber accent so the
   // LIVE state stays unmistakable against the rest of the conf palette.
