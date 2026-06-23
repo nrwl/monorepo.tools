@@ -7,7 +7,7 @@ import { Agenda } from './agenda';
 import { SpeakerGrid } from './speakers';
 import { Hosts } from './hosts';
 import { RegisterCTA } from './register-cta';
-import { LiveBanner, FloatingWatchPill } from './live-banner';
+import { LiveBanner } from './live-banner';
 
 export function AiConfPage() {
   const [modalSpeaker, setModalSpeaker] = useState<Speaker | null>(null);
@@ -81,7 +81,6 @@ export function AiConfPage() {
         }}
         accent={PALETTE.pink}
       />
-      <FloatingWatchPill />
     </div>
   );
 }

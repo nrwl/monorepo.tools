@@ -22,6 +22,11 @@ export const LIVE_KEYFRAMES = `
     70% { box-shadow: 0 0 0 7px rgba(239,68,68,0); }
     100% { box-shadow: 0 0 0 0 rgba(239,68,68,0); }
   }
+  @keyframes aiconfLivepulse {
+    0% { box-shadow: 0 0 0 0 rgba(255,255,255,0.5); }
+    70% { box-shadow: 0 0 0 9px rgba(255,255,255,0); }
+    100% { box-shadow: 0 0 0 0 rgba(255,255,255,0); }
+  }
 `;
 
 /**
@@ -86,6 +91,7 @@ export function LiveBanner() {
               fontWeight: 600,
               textDecoration: 'none',
               whiteSpace: 'nowrap',
+              animation: 'aiconfLivepulse 1.8s infinite',
             }}
           >
             Join the live stream →
@@ -96,41 +102,3 @@ export function LiveBanner() {
   );
 }
 
-/**
- * Floating pill that keeps the live stream reachable while scrolling the main
- * conf page. Renders nothing when the event isn't live.
- */
-export function FloatingWatchPill() {
-  if (!LIVE.isLive) return null;
-  return (
-    <>
-      <style>{LIVE_KEYFRAMES}</style>
-      <a
-        href={LIVE.watchUrl}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="px-5 py-3"
-        style={{
-          position: 'fixed',
-          right: 20,
-          bottom: 20,
-          zIndex: 40,
-          display: 'inline-flex',
-          alignItems: 'center',
-          gap: 10,
-          background: PALETTE.pink,
-          color: PALETTE.bg,
-          fontFamily: FONTS.body,
-          fontSize: 14,
-          fontWeight: 700,
-          textDecoration: 'none',
-          borderRadius: 999,
-          boxShadow: '0 16px 40px -12px rgba(245,158,11,0.5)',
-        }}
-      >
-        <LiveDot size={9} color={LIVE.red} />
-        Watch live now
-      </a>
-    </>
-  );
-}
