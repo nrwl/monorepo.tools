@@ -7,6 +7,7 @@ import { Agenda } from './agenda';
 import { SpeakerGrid } from './speakers';
 import { Hosts } from './hosts';
 import { RegisterCTA } from './register-cta';
+import { LiveBanner } from './live-banner';
 
 export function AiConfPage() {
   const [modalSpeaker, setModalSpeaker] = useState<Speaker | null>(null);
@@ -40,6 +41,7 @@ export function AiConfPage() {
         @keyframes aiconfMarquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
       `}</style>
       <NavBar accent={PALETTE.pink} />
+      <LiveBanner />
       <ThreeCardHero />
       <div
         className="grid grid-cols-1 items-center gap-8 px-5 py-8 md:grid-cols-3 md:px-14 md:py-10"

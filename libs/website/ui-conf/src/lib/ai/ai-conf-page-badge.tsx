@@ -8,6 +8,7 @@ import { SpeakerGrid } from './speakers';
 import { PolygraphLaunch } from './polygraph-launch';
 import { Hosts } from './hosts';
 import { RegisterCTA } from './register-cta';
+import { LiveBanner } from './live-banner';
 
 export function AiConfPageBadge() {
   const [modalSpeaker, setModalSpeaker] = useState<Speaker | null>(null);
@@ -66,6 +67,7 @@ export function AiConfPageBadge() {
           the bottom on load (hero grows to absorb the leftover height). */}
       <div className="flex min-h-screen flex-col min-[1800px]:min-h-0">
         <NavBar accent={PALETTE.pink} />
+        <LiveBanner />
         <div className="flex flex-1 flex-col min-[1800px]:flex-none">
           <BadgeHero
             name={badge.name}
@@ -93,8 +95,8 @@ export function AiConfPageBadge() {
         </div>
       </div>
       <Agenda />
-      <SpeakerGrid onPick={setModalSpeaker} />
       <PolygraphLaunch />
+      <SpeakerGrid onPick={setModalSpeaker} />
       <Hosts />
       <RegisterCTA />
       <ConfFooter accent={PALETTE.pink} />
