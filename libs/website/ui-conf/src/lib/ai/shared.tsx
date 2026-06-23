@@ -219,6 +219,12 @@ export function NavBar({
             >
               Hosts
             </a>
+            <a
+              href="/conf/code-of-conduct"
+              style={{ color: PALETTE.textDim, textDecoration: 'none' }}
+            >
+              Code of Conduct
+            </a>
           </div>
           {!LIVE.isLive && (
             <a
