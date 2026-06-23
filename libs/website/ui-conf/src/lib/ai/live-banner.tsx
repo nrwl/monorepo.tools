@@ -26,8 +26,9 @@ export const LIVE_KEYFRAMES = `
 
 /**
  * Sticky strip under the conf nav announcing that the stream is live, with a
- * CTA into /conf/live. Deliberately doesn't name the current talk — the running
- * order can shift live and we don't track it. Renders nothing when not live.
+ * CTA that opens the YouTube live stream in a new tab. Deliberately doesn't name
+ * the current talk; the running order can shift live and we don't track it.
+ * Renders nothing when not live.
  */
 export function LiveBanner() {
   if (!LIVE.isLive) return null;
@@ -72,7 +73,9 @@ export function LiveBanner() {
             </span>
           </div>
           <a
-            href={LIVE.livePath}
+            href={LIVE.watchUrl}
+            target="_blank"
+            rel="noopener noreferrer"
             style={{
               flex: 'none',
               padding: '9px 18px',
@@ -104,7 +107,9 @@ export function FloatingWatchPill() {
     <>
       <style>{LIVE_KEYFRAMES}</style>
       <a
-        href={LIVE.livePath}
+        href={LIVE.watchUrl}
+        target="_blank"
+        rel="noopener noreferrer"
         className="px-5 py-3"
         style={{
           position: 'fixed',

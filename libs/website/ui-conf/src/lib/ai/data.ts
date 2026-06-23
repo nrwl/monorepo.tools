@@ -162,13 +162,11 @@ export function agendaForSpeaker(name: string): AgendaItem | undefined {
 }
 
 // ---- Live stream ----------------------------------------------------------
-// Drives the live banner on /conf and the dedicated /conf/live stream page.
-// Flip `isLive` off after the event to retire both.
+// Drives the live banner + watch pill on /conf. Flip `isLive` off after the
+// event to retire both. The CTAs open the YouTube live stream directly.
 export const LIVE = {
   isLive: true,
-  youtubeId: 'y8H-LeWQxlQ',
   watchUrl: 'https://youtube.com/live/y8H-LeWQxlQ',
-  livePath: '/conf/live',
   // Red reads as "live" everywhere; kept distinct from the amber accent so the
   // LIVE state stays unmistakable against the rest of the conf palette.
   red: '#ef4444',
