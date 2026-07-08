@@ -24,7 +24,17 @@ export function AIEnablement(): JSX.Element {
             The graph exposes metadata that lets agents see beyond individual
             repo boundaries. Instead of operating at a local maximum within a
             single repo, agents read cross-repo relationships and perform
-            coordinated changes.
+            coordinated changes. Agents are augmented to work across a synthetic
+            monorepo via a{' '}
+            <a
+              href="https://metaharness.tools?utm_source=monorepo.tools"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="border-b border-yellow-500 font-medium text-gray-800 transition hover:rounded hover:bg-yellow-500 hover:text-gray-800 dark:text-gray-200 dark:hover:text-gray-800"
+            >
+              meta-harness
+            </a>
+            .
           </p>
         </div>
       </div>

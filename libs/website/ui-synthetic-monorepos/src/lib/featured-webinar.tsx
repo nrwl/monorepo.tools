@@ -4,16 +4,16 @@ export function FeaturedWebinar(): JSX.Element {
       id="featured-webinar"
       className="overflow-hidden bg-white py-16 lg:py-24 dark:bg-slate-900"
     >
-      <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-        <div className="grid gap-6 lg:grid-cols-2">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="grid gap-6 lg:grid-cols-3">
           <div className="flex flex-col rounded-lg border border-slate-200 bg-slate-50 p-6 shadow-sm sm:p-8 dark:border-slate-700 dark:bg-slate-800">
             <p className="text-xs font-semibold uppercase tracking-[1.5px] text-yellow-600 dark:text-yellow-500">
               Featured Webinar
             </p>
             <div className="mt-3 lg:min-h-[7rem]">
               <h2 className="text-xl font-bold tracking-tight text-gray-900 sm:text-2xl dark:text-white">
-                Synthetic Monorepos: The Solution for Agentic Development
-                Across Repository Boundaries
+                Synthetic Monorepos: The Solution for Agentic Development Across
+                Repository Boundaries
               </h2>
             </div>
             <p className="mt-4 text-base text-gray-700 dark:text-gray-300">
@@ -92,6 +92,38 @@ export function FeaturedWebinar(): JSX.Element {
                   className="inline-flex items-center rounded-md bg-gray-900 px-4 py-2 text-sm font-semibold text-white transition hover:bg-gray-800 dark:bg-white dark:text-gray-900 dark:hover:bg-gray-100"
                 >
                   Try Polygraph now
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div className="flex flex-col rounded-lg border border-slate-200 bg-slate-50 p-6 shadow-sm sm:p-8 dark:border-slate-700 dark:bg-slate-800">
+            <p className="text-xs font-semibold uppercase tracking-[1.5px] text-yellow-600 dark:text-yellow-500">
+              Learn More
+            </p>
+            <div className="mt-3 lg:min-h-[7rem]">
+              <h2 className="text-xl font-bold tracking-tight text-gray-900 sm:text-2xl dark:text-white">
+                Meta-Harnesses for Cross-Repo AI
+              </h2>
+            </div>
+            <p className="mt-4 text-base text-gray-700 dark:text-gray-300">
+              AI agents amplify coordination overhead across repository
+              boundaries. Meta-harnesses are the layer that lets agents work
+              across those boundaries. Learn what they are and why they matter.
+            </p>
+
+            <div className="mt-auto border-t border-slate-200 pt-5 dark:border-slate-700">
+              <p className="text-sm font-medium text-gray-700 dark:text-gray-300">
+                Reference
+              </p>
+              <div className="mt-3">
+                <a
+                  href="https://metaharness.tools?utm_source=monorepo.tools"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center rounded-md bg-gray-900 px-4 py-2 text-sm font-semibold text-white transition hover:bg-gray-800 dark:bg-white dark:text-gray-900 dark:hover:bg-gray-100"
+                >
+                  Explore metaharness.tools
                 </a>
               </div>
             </div>
