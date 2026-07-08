@@ -38,9 +38,19 @@ export function AIAgentsAcrossBoundaries(): JSX.Element {
                 full PR lifecycle across repos
               </mark>
               : submitting changes as coordinated PRs, monitoring CI in each
-              repo, and running with full autonomy until everything is green.
-              It is as close as you can get to the atomic commits of a true
-              monorepo, without moving any code.
+              repo, and running with full autonomy until everything is green. It
+              is as close as you can get to the atomic commits of a true
+              monorepo, without moving any code. A{' '}
+              <a
+                href="https://metaharness.tools?utm_source=monorepo.tools"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="border-b border-yellow-500 font-medium text-gray-800 transition hover:rounded hover:bg-yellow-500 hover:text-gray-800 dark:text-gray-200 dark:hover:text-gray-800"
+              >
+                meta-harness
+              </a>{' '}
+              is one implementation of this kind of cross-repo coordination
+              layer.
             </p>
           </div>
 
