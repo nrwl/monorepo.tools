@@ -9,6 +9,17 @@ export function Footer() {
           </a>{' '}
           and <a href="#monorepo-contributors">Contributors</a>
         </p>
+        <p className="mt-3 text-center text-sm text-gray-400">
+          Check out our sibling site{' '}
+          <a
+            href="https://metaharness.tools?utm_source=monorepo.tools"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="border-b border-yellow-500 transition hover:rounded hover:bg-yellow-500 hover:text-gray-800"
+          >
+            metaharness.tools
+          </a>
+        </p>
       </div>
     </footer>
   );
