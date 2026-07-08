@@ -40,7 +40,10 @@ export function AIAgentsAcrossBoundaries(): JSX.Element {
               : submitting changes as coordinated PRs, monitoring CI in each
               repo, and running with full autonomy until everything is green. It
               is as close as you can get to the atomic commits of a true
-              monorepo, without moving any code. A{' '}
+              monorepo, without moving any code.
+            </p>
+            <p className="mt-4 text-lg text-gray-700 dark:text-gray-300">
+              A{' '}
               <a
                 href="https://metaharness.tools?utm_source=monorepo.tools"
                 target="_blank"
