@@ -53,7 +53,7 @@ export function Hero() {
                     AI ♥ Monorepos &middot; Conf 2026
                   </div>
                   <div className="text-sm text-gray-600 dark:text-gray-400">
-                    Free half-day online conference · June 23, 2026
+                    Free half-day online conference
                   </div>
                 </div>
               </div>
