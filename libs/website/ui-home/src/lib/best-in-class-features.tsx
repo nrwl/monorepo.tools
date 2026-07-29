@@ -17,10 +17,10 @@ const categories: {
     label: 'Fast',
     features: [
       {
-        name: 'Local Caching',
+        name: 'Hermetic Builds',
         description:
-          'Store and replay file and process output of tasks. On the same machine, you never build or test the same thing twice.',
-        image: '/images/local-computation-caching.svg',
+          'Ensure tasks can only access their declared inputs and outputs. Catch undeclared file access before it leads to stale cache hits or cache poisoning.',
+        image: '/images/hermetic-builds.svg',
       },
       {
         name: 'Remote Caching',
@@ -172,7 +172,10 @@ export function BestInClassFeatures(): JSX.Element {
         <div className="mt-4 rounded-lg border border-slate-200/50 bg-white/50 p-6 dark:border-slate-700/50 dark:bg-slate-900/50 lg:p-8">
           <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
             {activeCategory.features.map((feature) => (
-              <div key={feature.name} className="flex flex-col overflow-hidden rounded-lg bg-white dark:bg-slate-800 lg:flex-row lg:items-stretch">
+              <div
+                key={feature.name}
+                className="flex flex-col overflow-hidden rounded-lg bg-white dark:bg-slate-800 lg:flex-row lg:items-stretch"
+              >
                 <div className="flex flex-1 flex-col justify-center p-5">
                   <h3 className="text-lg font-bold text-gray-900 dark:text-white">
                     {feature.name}

@@ -169,6 +169,23 @@ const fast: Item[] = [
     ],
   },
   {
+    title: 'Hermetic builds',
+    link: '#hermetic-builds',
+    tooltip:
+      'The ability to guarantee tasks only access their declared inputs and outputs, keeping cached results trustworthy.',
+    features: [
+      { title: 'Bazel', value: 'supported' },
+      { title: 'Gradle', value: 'manualImplementation' },
+      { title: 'Lage', value: 'notSupported' },
+      { title: 'Lerna', value: 'notSupported' },
+      { title: 'moon', value: 'manualImplementation' },
+      { title: 'Nx', value: 'supported' },
+      { title: 'Pants', value: 'supported' },
+      { title: 'Rush', value: 'notSupported' },
+      { title: 'Turborepo', value: 'manualImplementation' },
+    ],
+  },
+  {
     title: 'Detecting affected projects/packages',
     link: '#detecting-affected-projects-packages',
     tooltip:
@@ -1134,7 +1151,10 @@ export function ToolsReview(): JSX.Element {
             </div>
           </div>
 
-          <div id="ai-support-desktop" className="mt-10 flex items-center gap-2">
+          <div
+            id="ai-support-desktop"
+            className="mt-10 flex items-center gap-2"
+          >
             <h3 className="text-sm font-bold text-gray-700 dark:text-gray-300">
               AI Support
             </h3>

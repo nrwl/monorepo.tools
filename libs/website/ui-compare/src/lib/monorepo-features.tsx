@@ -15,6 +15,7 @@ import {
   CommandLineIcon,
   SparklesIcon,
   ServerStackIcon,
+  ShieldCheckIcon,
   XCircleIcon,
 } from '@heroicons/react/24/outline';
 import { MonorepoToolsLogos } from './monorepo-tools-logos';
@@ -776,6 +777,161 @@ export function MonorepoFeatures(): JSX.Element {
           </dl>
         </div>
 
+        {/*Hermetic Builds*/}
+        <div
+          id="hermetic-builds"
+          className="relative mt-16 lg:grid lg:grid-cols-2 lg:items-start lg:gap-12"
+        >
+          <div className="relative">
+            <div className="absolute flex h-10 w-10 items-center justify-center rounded-md rounded-md bg-slate-100 text-gray-800 dark:bg-slate-900 dark:text-gray-200">
+              <ShieldCheckIcon className="h-6 w-6" />
+            </div>
+            <div className="group ml-16 text-xl font-medium text-gray-800 sm:text-2xl sm:leading-relaxed dark:text-gray-200">
+              Hermetic Builds
+              <a
+                aria-hidden="true"
+                tabIndex={-1}
+                href="#hermetic-builds"
+                className="inline-flex items-center text-gray-900 dark:text-white"
+              >
+                <LinkIcon className="ml-2 h-6 w-6 opacity-0 group-hover:opacity-100" />
+              </a>
+            </div>
+
+            <p className="mt-3 text-lg text-gray-700 dark:text-gray-300">
+              A task is hermetic when it only reads from its declared inputs and
+              only writes to its declared outputs. Hermetic tasks are safe to
+              cache and replay. An undeclared read means a change to that file
+              won't invalidate the cache, leading to stale cache hits, and on a
+              shared remote cache, opportunities for cache poisoning.
+            </p>
+
+            <div className="mt-10" aria-hidden="true">
+              <img
+                loading="lazy"
+                className="relative mx-auto"
+                width={490}
+                src="/images/hermetic-builds.svg"
+                alt="hermetic builds"
+              />
+            </div>
+          </div>
+
+          <dl className="mt-12 space-y-6 md:mt-0">
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
+              <dt>
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
+                  <Supported /> Bazel
+                </p>
+              </dt>
+              <dd className="mt-4 text-base text-gray-600 dark:text-gray-400">
+                Hermeticity is a core design principle. Every action runs in a
+                sandbox that contains only its declared inputs, so undeclared
+                access is impossible by construction. This requires modeling
+                your entire build in Bazel's BUILD files.
+              </dd>
+            </div>
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
+              <dt>
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
+                  <ManualImplementation /> Gradle Build Tool
+                </p>
+              </dt>
+              <dd className="mt-4 text-base text-gray-600 dark:text-gray-400">
+                Gradle hashes declared inputs and can flag some
+                misconfigurations, like implicit task dependencies, but tasks
+                run with full filesystem access and nothing verifies
+                declarations against what a task actually reads or writes.
+              </dd>
+            </div>
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
+              <dt>
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
+                  <NotSupported /> Lage
+                </p>
+              </dt>
+              <dd className="mt-4 text-base text-gray-600 dark:text-gray-400">
+                Lage hashes declared inputs but has no sandboxing or file access
+                verification.
+              </dd>
+            </div>
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
+              <dt>
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
+                  <NotSupported /> Lerna
+                </p>
+              </dt>
+              <dd className="mt-4 text-base text-gray-600 dark:text-gray-400">
+                Lerna delegates caching to the Nx task runner, but there is no
+                sandboxing or file access verification.
+              </dd>
+            </div>
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
+              <dt>
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
+                  <ManualImplementation /> moon
+                </p>
+              </dt>
+              <dd className="mt-4 text-base text-gray-600 dark:text-gray-400">
+                moon covers the toolchain dimension: it pins and provisions its
+                own tool versions, so builds don't depend on what's installed on
+                the host. Task execution itself isn't sandboxed and file access
+                isn't verified.
+              </dd>
+            </div>
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
+              <dt>
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
+                  <Supported /> Nx
+                </p>
+              </dt>
+              <dd className="mt-4 text-base text-gray-600 dark:text-gray-400">
+                Nx Cloud's Task Sandboxing traces the actual file I/O of each
+                task and flags every read or write outside the declared inputs
+                and outputs as a violation, either as a warning or by failing
+                the task in strict mode. Since it verifies instead of restricts,
+                it can be adopted incrementally in an existing monorepo.
+              </dd>
+            </div>
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
+              <dt>
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
+                  <Supported /> Pants
+                </p>
+              </dt>
+              <dd className="mt-4 text-base text-gray-600 dark:text-gray-400">
+                Like Bazel, Pants is hermetic by construction: every process
+                runs in a sandbox containing only its declared inputs, with the
+                environment stripped. This is on by default.
+              </dd>
+            </div>
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
+              <dt>
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
+                  <NotSupported /> Rush
+                </p>
+              </dt>
+              <dd className="mt-4 text-base text-gray-600 dark:text-gray-400">
+                Rush hashes declared inputs, and its own docs warn the cache may
+                produce incorrect results if inputs are inaccurate. There is no
+                sandboxing or file access verification.
+              </dd>
+            </div>
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
+              <dt>
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
+                  <ManualImplementation /> Turborepo
+                </p>
+              </dt>
+              <dd className="mt-4 text-base text-gray-600 dark:text-gray-400">
+                Turborepo enforces hermeticity for environment variables: in
+                strict mode, tasks only see declared variables. File access,
+                however, is unrestricted and unverified.
+              </dd>
+            </div>
+          </dl>
+        </div>
+
         {/*Affected*/}
         <div
           id="detecting-affected-projects-packages"
@@ -969,8 +1125,8 @@ export function MonorepoFeatures(): JSX.Element {
               </dt>
               <dd className="mt-4 text-gray-600 dark:text-gray-400">
                 Bazel supports static test sharding via the{' '}
-                <code>shard_count</code> attribute. Tests are split into N shards
-                deterministically, but sharding is manual and not
+                <code>shard_count</code> attribute. Tests are split into N
+                shards deterministically, but sharding is manual and not
                 intelligence-driven.
               </dd>
             </div>
@@ -983,7 +1139,8 @@ export function MonorepoFeatures(): JSX.Element {
               <dd className="mt-4 text-gray-600 dark:text-gray-400">
                 Develocity Test Distribution splits tests across remote agents
                 using historical execution time data. It creates balanced
-                partitions and auto-utilizes new agents as they become available.
+                partitions and auto-utilizes new agents as they become
+                available.
               </dd>
             </div>
             <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
@@ -2221,8 +2378,8 @@ export function MonorepoFeatures(): JSX.Element {
               </dt>
               <dd className="mt-4 text-gray-600 dark:text-gray-400">
                 A community-maintained skill (hyperb1iss/moonrepo-skill) covers
-                moon workspace configuration, tasks, toolchain, CI/CD, and
-                proto setup. Not officially maintained by moonrepo.
+                moon workspace configuration, tasks, toolchain, CI/CD, and proto
+                setup. Not officially maintained by moonrepo.
               </dd>
             </div>
             <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
@@ -2270,9 +2427,8 @@ export function MonorepoFeatures(): JSX.Element {
               <dd className="mt-4 text-gray-600 dark:text-gray-400">
                 Turborepo ships an official agent skill covering task pipeline
                 configuration, caching strategies, filter/affected usage, and
-                monorepo best practices. Also provides a{' '}
-                <code>turbo docs</code> command for AI-friendly documentation
-                access.
+                monorepo best practices. Also provides a <code>turbo docs</code>{' '}
+                command for AI-friendly documentation access.
               </dd>
             </div>
           </dl>
@@ -2398,7 +2554,8 @@ export function MonorepoFeatures(): JSX.Element {
                 </p>
               </dt>
               <dd className="mt-4 text-gray-600 dark:text-gray-400">
-                An experimental community MCP plugin (shoalsoft-pants-mcp-plugin) exists but is not widely adopted.
+                An experimental community MCP plugin
+                (shoalsoft-pants-mcp-plugin) exists but is not widely adopted.
               </dd>
             </div>
             <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
@@ -2533,9 +2690,9 @@ export function MonorepoFeatures(): JSX.Element {
                 </p>
               </dt>
               <dd className="mt-4 text-gray-600 dark:text-gray-400">
-                Nx&apos;s Self-Healing CI automatically diagnoses CI
-                failures using error logs, stack traces, and the project graph,
-                then generates and verifies code fixes. Developers review via PR
+                Nx&apos;s Self-Healing CI automatically diagnoses CI failures
+                using error logs, stack traces, and the project graph, then
+                generates and verifies code fixes. Developers review via PR
                 comments or the Nx dashboard. Available on all plans with
                 auto-apply mode for high-confidence fixes.
               </dd>
@@ -2611,8 +2768,8 @@ export function MonorepoFeatures(): JSX.Element {
                 </p>
               </dt>
               <dd className="mt-4 text-gray-600 dark:text-gray-400">
-                Community MCP servers expose target querying and dependency graph
-                analysis, but workspace structure visibility is limited.
+                Community MCP servers expose target querying and dependency
+                graph analysis, but workspace structure visibility is limited.
               </dd>
             </div>
             <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
@@ -2778,8 +2935,8 @@ export function MonorepoFeatures(): JSX.Element {
                 </p>
               </dt>
               <dd className="mt-4 text-gray-600 dark:text-gray-400">
-                No Lerna-specific AI task execution. Standard CLI commands can be
-                invoked by agents directly.
+                No Lerna-specific AI task execution. Standard CLI commands can
+                be invoked by agents directly.
               </dd>
             </div>
             <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
@@ -2803,9 +2960,9 @@ export function MonorepoFeatures(): JSX.Element {
               </dt>
               <dd className="mt-4 text-gray-600 dark:text-gray-400">
                 Nx provides comprehensive AI-driven task execution with
-                real-time monitoring, IDE integration, and task analysis.
-                Agents can run targeted tasks, inspect results, and iterate
-                based on structured output.
+                real-time monitoring, IDE integration, and task analysis. Agents
+                can run targeted tasks, inspect results, and iterate based on
+                structured output.
               </dd>
             </div>
             <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
@@ -2842,7 +2999,6 @@ export function MonorepoFeatures(): JSX.Element {
             </div>
           </dl>
         </div>
-
       </div>
     </div>
   );
