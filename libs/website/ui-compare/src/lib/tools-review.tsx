@@ -169,23 +169,6 @@ const fast: Item[] = [
     ],
   },
   {
-    title: 'Hermetic builds',
-    link: '#hermetic-builds',
-    tooltip:
-      'The ability to guarantee tasks only access their declared inputs and outputs, keeping cached results trustworthy.',
-    features: [
-      { title: 'Bazel', value: 'supported' },
-      { title: 'Gradle', value: 'notSupported' },
-      { title: 'Lage', value: 'notSupported' },
-      { title: 'Lerna', value: 'notSupported' },
-      { title: 'moon', value: 'notSupported' },
-      { title: 'Nx', value: 'supported' },
-      { title: 'Pants', value: 'supported' },
-      { title: 'Rush', value: 'notSupported' },
-      { title: 'Turborepo', value: 'notSupported' },
-    ],
-  },
-  {
     title: 'Detecting affected projects/packages',
     link: '#detecting-affected-projects-packages',
     tooltip:
@@ -338,6 +321,23 @@ const manageable: Item[] = [
       { title: 'Pants', value: 'manualImplementation' },
       { title: 'Rush', value: 'supported' },
       { title: 'Turborepo', value: 'manualImplementation' },
+    ],
+  },
+  {
+    title: 'Hermetic builds',
+    link: '#hermetic-builds',
+    tooltip:
+      'The ability to guarantee tasks only access their declared inputs and outputs, keeping cached results trustworthy.',
+    features: [
+      { title: 'Bazel', value: 'supported' },
+      { title: 'Gradle', value: 'notSupported' },
+      { title: 'Lage', value: 'notSupported' },
+      { title: 'Lerna', value: 'notSupported' },
+      { title: 'moon', value: 'notSupported' },
+      { title: 'Nx', value: 'supported' },
+      { title: 'Pants', value: 'supported' },
+      { title: 'Rush', value: 'notSupported' },
+      { title: 'Turborepo', value: 'notSupported' },
     ],
   },
 ];

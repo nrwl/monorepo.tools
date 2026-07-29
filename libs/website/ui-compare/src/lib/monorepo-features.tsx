@@ -777,163 +777,6 @@ export function MonorepoFeatures(): JSX.Element {
           </dl>
         </div>
 
-        {/*Hermetic Builds*/}
-        <div
-          id="hermetic-builds"
-          className="relative mt-16 lg:grid lg:grid-cols-2 lg:items-start lg:gap-12"
-        >
-          <div className="relative">
-            <div className="absolute flex h-10 w-10 items-center justify-center rounded-md rounded-md bg-slate-100 text-gray-800 dark:bg-slate-900 dark:text-gray-200">
-              <ShieldCheckIcon className="h-6 w-6" />
-            </div>
-            <div className="group ml-16 text-xl font-medium text-gray-800 sm:text-2xl sm:leading-relaxed dark:text-gray-200">
-              Hermetic Builds
-              <a
-                aria-hidden="true"
-                tabIndex={-1}
-                href="#hermetic-builds"
-                className="inline-flex items-center text-gray-900 dark:text-white"
-              >
-                <LinkIcon className="ml-2 h-6 w-6 opacity-0 group-hover:opacity-100" />
-              </a>
-            </div>
-
-            <p className="mt-3 text-lg text-gray-700 dark:text-gray-300">
-              A task is hermetic when it only reads from its declared inputs and
-              only writes to its declared outputs. Hermetic tasks are safe to
-              cache and replay. An undeclared read means a change to that file
-              won't invalidate the cache, leading to stale cache hits, and on a
-              shared remote cache, opportunities for cache poisoning.
-            </p>
-
-            <div className="mt-10" aria-hidden="true">
-              <img
-                loading="lazy"
-                className="relative mx-auto"
-                width={490}
-                src="/images/hermetic-builds.svg"
-                alt="hermetic builds"
-              />
-            </div>
-          </div>
-
-          <dl className="mt-12 space-y-6 md:mt-0">
-            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
-              <dt>
-                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
-                  <Supported /> Bazel
-                </p>
-              </dt>
-              <dd className="mt-4 text-base text-gray-600 dark:text-gray-400">
-                Hermeticity is a core design principle. Every action runs in a
-                sandbox that contains only its declared inputs, so undeclared
-                access is impossible by construction. This requires modeling
-                your entire build in Bazel's BUILD files.
-              </dd>
-            </div>
-            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
-              <dt>
-                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
-                  <NotSupported /> Gradle Build Tool
-                </p>
-              </dt>
-              <dd className="mt-4 text-base text-gray-600 dark:text-gray-400">
-                Gradle doesn't support hermetic builds. It hashes declared
-                inputs and can flag some misconfigurations, like implicit task
-                dependencies, but tasks run with full filesystem access and
-                nothing verifies declarations against what a task actually reads
-                or writes.
-              </dd>
-            </div>
-            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
-              <dt>
-                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
-                  <NotSupported /> Lage
-                </p>
-              </dt>
-              <dd className="mt-4 text-base text-gray-600 dark:text-gray-400">
-                Lage hashes declared inputs but has no sandboxing or file access
-                verification.
-              </dd>
-            </div>
-            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
-              <dt>
-                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
-                  <NotSupported /> Lerna
-                </p>
-              </dt>
-              <dd className="mt-4 text-base text-gray-600 dark:text-gray-400">
-                Lerna delegates caching to the Nx task runner, but there is no
-                sandboxing or file access verification.
-              </dd>
-            </div>
-            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
-              <dt>
-                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
-                  <NotSupported /> moon
-                </p>
-              </dt>
-              <dd className="mt-4 text-base text-gray-600 dark:text-gray-400">
-                moon doesn't support hermetic builds. It pins and provisions its
-                own tool versions, so builds don't depend on what's installed on
-                the host, but task execution isn't sandboxed and file access
-                isn't verified.
-              </dd>
-            </div>
-            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
-              <dt>
-                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
-                  <Supported /> Nx
-                </p>
-              </dt>
-              <dd className="mt-4 text-base text-gray-600 dark:text-gray-400">
-                Nx Cloud's Task Sandboxing traces the actual file I/O of each
-                task and flags every read or write outside the declared inputs
-                and outputs as a violation, either as a warning or by failing
-                the task in strict mode. Since it verifies instead of restricts,
-                it can be adopted incrementally in an existing monorepo.
-              </dd>
-            </div>
-            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
-              <dt>
-                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
-                  <Supported /> Pants
-                </p>
-              </dt>
-              <dd className="mt-4 text-base text-gray-600 dark:text-gray-400">
-                Like Bazel, Pants is hermetic by construction: every process
-                runs in a sandbox containing only its declared inputs, with the
-                environment stripped. This is on by default.
-              </dd>
-            </div>
-            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
-              <dt>
-                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
-                  <NotSupported /> Rush
-                </p>
-              </dt>
-              <dd className="mt-4 text-base text-gray-600 dark:text-gray-400">
-                Rush hashes declared inputs, and its own docs warn the cache may
-                produce incorrect results if inputs are inaccurate. There is no
-                sandboxing or file access verification.
-              </dd>
-            </div>
-            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
-              <dt>
-                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
-                  <NotSupported /> Turborepo
-                </p>
-              </dt>
-              <dd className="mt-4 text-base text-gray-600 dark:text-gray-400">
-                Turborepo doesn't support hermetic builds. It enforces
-                strictness for environment variables only: in strict mode, tasks
-                just see declared variables. File access is unrestricted and
-                unverified.
-              </dd>
-            </div>
-          </dl>
-        </div>
-
         {/*Affected*/}
         <div
           id="detecting-affected-projects-packages"
@@ -2280,6 +2123,163 @@ export function MonorepoFeatures(): JSX.Element {
               <dd className="mt-4 text-base text-gray-600 dark:text-gray-400">
                 A linter with a set of custom rules and extra configuration can
                 be used to ensure that some constraints hold.
+              </dd>
+            </div>
+          </dl>
+        </div>
+
+        {/*Hermetic Builds*/}
+        <div
+          id="hermetic-builds"
+          className="relative mt-16 lg:grid lg:grid-cols-2 lg:items-start lg:gap-12"
+        >
+          <div className="relative">
+            <div className="absolute flex h-10 w-10 items-center justify-center rounded-md rounded-md bg-slate-100 text-gray-800 dark:bg-slate-900 dark:text-gray-200">
+              <ShieldCheckIcon className="h-6 w-6" />
+            </div>
+            <div className="group ml-16 text-xl font-medium text-gray-800 sm:text-2xl sm:leading-relaxed dark:text-gray-200">
+              Hermetic Builds
+              <a
+                aria-hidden="true"
+                tabIndex={-1}
+                href="#hermetic-builds"
+                className="inline-flex items-center text-gray-900 dark:text-white"
+              >
+                <LinkIcon className="ml-2 h-6 w-6 opacity-0 group-hover:opacity-100" />
+              </a>
+            </div>
+
+            <p className="mt-3 text-lg text-gray-700 dark:text-gray-300">
+              A task is hermetic when it only reads from its declared inputs and
+              only writes to its declared outputs. Hermetic tasks are safe to
+              cache and replay. An undeclared read means a change to that file
+              won't invalidate the cache, leading to stale cache hits, and on a
+              shared remote cache, opportunities for cache poisoning.
+            </p>
+
+            <div className="mt-10" aria-hidden="true">
+              <img
+                loading="lazy"
+                className="relative mx-auto"
+                width={490}
+                src="/images/hermetic-builds.svg"
+                alt="hermetic builds"
+              />
+            </div>
+          </div>
+
+          <dl className="mt-12 space-y-6 md:mt-0">
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
+              <dt>
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
+                  <Supported /> Bazel
+                </p>
+              </dt>
+              <dd className="mt-4 text-base text-gray-600 dark:text-gray-400">
+                Hermeticity is a core design principle. Every action runs in a
+                sandbox that contains only its declared inputs, so undeclared
+                access is impossible by construction. This requires modeling
+                your entire build in Bazel's BUILD files.
+              </dd>
+            </div>
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
+              <dt>
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
+                  <NotSupported /> Gradle Build Tool
+                </p>
+              </dt>
+              <dd className="mt-4 text-base text-gray-600 dark:text-gray-400">
+                Gradle doesn't support hermetic builds. It hashes declared
+                inputs and can flag some misconfigurations, like implicit task
+                dependencies, but tasks run with full filesystem access and
+                nothing verifies declarations against what a task actually reads
+                or writes.
+              </dd>
+            </div>
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
+              <dt>
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
+                  <NotSupported /> Lage
+                </p>
+              </dt>
+              <dd className="mt-4 text-base text-gray-600 dark:text-gray-400">
+                Lage hashes declared inputs but has no sandboxing or file access
+                verification.
+              </dd>
+            </div>
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
+              <dt>
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
+                  <NotSupported /> Lerna
+                </p>
+              </dt>
+              <dd className="mt-4 text-base text-gray-600 dark:text-gray-400">
+                Lerna delegates caching to the Nx task runner, but there is no
+                sandboxing or file access verification.
+              </dd>
+            </div>
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
+              <dt>
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
+                  <NotSupported /> moon
+                </p>
+              </dt>
+              <dd className="mt-4 text-base text-gray-600 dark:text-gray-400">
+                moon doesn't support hermetic builds. It pins and provisions its
+                own tool versions, so builds don't depend on what's installed on
+                the host, but task execution isn't sandboxed and file access
+                isn't verified.
+              </dd>
+            </div>
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
+              <dt>
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
+                  <Supported /> Nx
+                </p>
+              </dt>
+              <dd className="mt-4 text-base text-gray-600 dark:text-gray-400">
+                Nx Cloud's Task Sandboxing traces the actual file I/O of each
+                task and flags every read or write outside the declared inputs
+                and outputs as a violation, either as a warning or by failing
+                the task in strict mode. Since it verifies instead of restricts,
+                it can be adopted incrementally in an existing monorepo.
+              </dd>
+            </div>
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
+              <dt>
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
+                  <Supported /> Pants
+                </p>
+              </dt>
+              <dd className="mt-4 text-base text-gray-600 dark:text-gray-400">
+                Like Bazel, Pants is hermetic by construction: every process
+                runs in a sandbox containing only its declared inputs, with the
+                environment stripped. This is on by default.
+              </dd>
+            </div>
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
+              <dt>
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
+                  <NotSupported /> Rush
+                </p>
+              </dt>
+              <dd className="mt-4 text-base text-gray-600 dark:text-gray-400">
+                Rush hashes declared inputs, and its own docs warn the cache may
+                produce incorrect results if inputs are inaccurate. There is no
+                sandboxing or file access verification.
+              </dd>
+            </div>
+            <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
+              <dt>
+                <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
+                  <NotSupported /> Turborepo
+                </p>
+              </dt>
+              <dd className="mt-4 text-base text-gray-600 dark:text-gray-400">
+                Turborepo doesn't support hermetic builds. It enforces
+                strictness for environment variables only: in strict mode, tasks
+                just see declared variables. File access is unrestricted and
+                unverified.
               </dd>
             </div>
           </dl>

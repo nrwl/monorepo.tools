@@ -17,10 +17,10 @@ const categories: {
     label: 'Fast',
     features: [
       {
-        name: 'Hermetic Builds',
+        name: 'Local Caching',
         description:
-          'Ensure tasks can only access their declared inputs and outputs. Catch undeclared file access before it leads to stale cache hits or cache poisoning.',
-        image: '/images/hermetic-builds.svg',
+          'Store and replay file and process output of tasks. On the same machine, you never build or test the same thing twice.',
+        image: '/images/local-computation-caching.svg',
       },
       {
         name: 'Remote Caching',
@@ -77,10 +77,10 @@ const categories: {
     label: 'Manageable',
     features: [
       {
-        name: 'Code Sharing',
+        name: 'Hermetic Builds',
         description:
-          'Share code between projects without publishing to a registry. Creating a shared library is as simple as creating a folder — existing CI handles everything.',
-        image: '/images/source-code-sharing.svg',
+          'Ensure tasks can only access their declared inputs and outputs. Catch undeclared file access before it leads to stale cache hits or cache poisoning.',
+        image: '/images/hermetic-builds.svg',
       },
       {
         name: 'Polyglot Support',
