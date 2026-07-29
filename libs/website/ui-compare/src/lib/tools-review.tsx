@@ -175,14 +175,14 @@ const fast: Item[] = [
       'The ability to guarantee tasks only access their declared inputs and outputs, keeping cached results trustworthy.',
     features: [
       { title: 'Bazel', value: 'supported' },
-      { title: 'Gradle', value: 'manualImplementation' },
+      { title: 'Gradle', value: 'notSupported' },
       { title: 'Lage', value: 'notSupported' },
       { title: 'Lerna', value: 'notSupported' },
-      { title: 'moon', value: 'manualImplementation' },
+      { title: 'moon', value: 'notSupported' },
       { title: 'Nx', value: 'supported' },
       { title: 'Pants', value: 'supported' },
       { title: 'Rush', value: 'notSupported' },
-      { title: 'Turborepo', value: 'manualImplementation' },
+      { title: 'Turborepo', value: 'notSupported' },
     ],
   },
   {

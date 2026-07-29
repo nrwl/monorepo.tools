@@ -834,14 +834,15 @@ export function MonorepoFeatures(): JSX.Element {
             <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
               <dt>
                 <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
-                  <ManualImplementation /> Gradle Build Tool
+                  <NotSupported /> Gradle Build Tool
                 </p>
               </dt>
               <dd className="mt-4 text-base text-gray-600 dark:text-gray-400">
-                Gradle hashes declared inputs and can flag some
-                misconfigurations, like implicit task dependencies, but tasks
-                run with full filesystem access and nothing verifies
-                declarations against what a task actually reads or writes.
+                Gradle doesn't support hermetic builds. It hashes declared
+                inputs and can flag some misconfigurations, like implicit task
+                dependencies, but tasks run with full filesystem access and
+                nothing verifies declarations against what a task actually reads
+                or writes.
               </dd>
             </div>
             <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
@@ -869,13 +870,13 @@ export function MonorepoFeatures(): JSX.Element {
             <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
               <dt>
                 <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
-                  <ManualImplementation /> moon
+                  <NotSupported /> moon
                 </p>
               </dt>
               <dd className="mt-4 text-base text-gray-600 dark:text-gray-400">
-                moon covers the toolchain dimension: it pins and provisions its
+                moon doesn't support hermetic builds. It pins and provisions its
                 own tool versions, so builds don't depend on what's installed on
-                the host. Task execution itself isn't sandboxed and file access
+                the host, but task execution isn't sandboxed and file access
                 isn't verified.
               </dd>
             </div>
@@ -920,13 +921,14 @@ export function MonorepoFeatures(): JSX.Element {
             <div className="rounded-md border border-slate-200 bg-slate-100 p-4 dark:border-black dark:bg-slate-900">
               <dt>
                 <p className="inline-flex items-center justify-center rounded-md bg-slate-50 px-3 py-2 text-sm uppercase tracking-widest text-gray-700 dark:bg-slate-800 dark:text-gray-300">
-                  <ManualImplementation /> Turborepo
+                  <NotSupported /> Turborepo
                 </p>
               </dt>
               <dd className="mt-4 text-base text-gray-600 dark:text-gray-400">
-                Turborepo enforces hermeticity for environment variables: in
-                strict mode, tasks only see declared variables. File access,
-                however, is unrestricted and unverified.
+                Turborepo doesn't support hermetic builds. It enforces
+                strictness for environment variables only: in strict mode, tasks
+                just see declared variables. File access is unrestricted and
+                unverified.
               </dd>
             </div>
           </dl>
