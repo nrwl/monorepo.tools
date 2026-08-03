@@ -1,6 +1,6 @@
 import type { CSSProperties, MouseEvent } from 'react';
 import { PALETTE, FONTS, SPEAKERS, AGENDA } from './data';
-import { SectionLabel } from './shared';
+import { SectionLabel, YouTubeIcon } from './shared';
 import { ScheduleTimezoneBar, SlotTime } from './timezone';
 
 export function Agenda() {
@@ -49,22 +49,16 @@ export function Agenda() {
         </div>
         <div style={{ border: `1px solid ${PALETTE.bgLine}` }}>
           {AGENDA.map((s, i) => {
-            // A row links to its speaker's modal (talk details) when a single
-            // speaker matches by name. Multi-speaker rows (e.g. the keynote)
-            // stay non-clickable.
             const speaker = SPEAKERS.find((sp) => sp.name === s.speaker);
             const rowClass =
               'grid grid-cols-1 gap-3 md:grid-cols-[175px_1fr_220px] md:items-center md:gap-6';
             const rowStyle: CSSProperties = {
               padding: '24px 24px',
               borderBottom:
-                i < AGENDA.length - 1
-                  ? `1px solid ${PALETTE.bgLine}`
-                  : 'none',
+                i < AGENDA.length - 1 ? `1px solid ${PALETTE.bgLine}` : 'none',
               transition: 'background 0.15s',
               textDecoration: 'none',
               color: 'inherit',
-              cursor: speaker ? 'pointer' : 'default',
             };
             const onMouseEnter = (e: MouseEvent<HTMLElement>) =>
               (e.currentTarget.style.background = 'rgba(245,158,11,0.06)');
@@ -130,34 +124,54 @@ export function Agenda() {
                     color: PALETTE.text,
                   }}
                 >
-                  {s.speaker}
-                  {speaker && (
-                    <div
-                      style={{
-                        color: PALETTE.pink,
-                        fontSize: 12,
-                        marginTop: 6,
-                      }}
-                    >
-                      View details →
-                    </div>
+                  {speaker ? (
+                    <>
+                      <a
+                        href={`#speaker=${speaker.id}`}
+                        style={{
+                          color: 'inherit',
+                          textDecoration: 'none',
+                        }}
+                      >
+                        {s.speaker}
+                        <div
+                          style={{
+                            color: PALETTE.pink,
+                            fontSize: 12,
+                            marginTop: 6,
+                          }}
+                        >
+                          View details →
+                        </div>
+                      </a>
+                      {speaker.youtubeUrl && (
+                        <a
+                          href={speaker.youtubeUrl}
+                          target="_blank"
+                          rel="noreferrer"
+                          aria-label={`Watch ${s.title} on YouTube`}
+                          style={{
+                            display: 'inline-flex',
+                            alignItems: 'center',
+                            gap: 6,
+                            marginTop: 8,
+                            color: PALETTE.pink,
+                            fontSize: 12,
+                            textDecoration: 'none',
+                          }}
+                        >
+                          <YouTubeIcon size={16} /> Watch talk →
+                        </a>
+                      )}
+                    </>
+                  ) : (
+                    s.speaker
                   )}
                 </div>
               </>
             );
 
-            return speaker ? (
-              <a
-                key={i}
-                href={`#speaker=${speaker.id}`}
-                className={rowClass}
-                style={rowStyle}
-                onMouseEnter={onMouseEnter}
-                onMouseLeave={onMouseLeave}
-              >
-                {inner}
-              </a>
-            ) : (
+            return (
               <div
                 key={i}
                 className={rowClass}
