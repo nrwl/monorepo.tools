@@ -98,7 +98,8 @@ export const AGENDA: AgendaItem[] = [
     end: '11:30',
     startISO: '2026-06-23T18:00:00Z',
     endISO: '2026-06-23T18:30:00Z',
-    title: "Killing Micro-Frontends: How Radical Simplification 10x'd Our Frontend Velocity",
+    title:
+      "Killing Micro-Frontends: How Radical Simplification 10x'd Our Frontend Velocity",
     track: 'Talk',
     speaker: 'Nicolas Beaussart-Hatchuel',
     desc: 'PayFit ripped out micro-frontends across 15+ repos and cut CI from 45 to 5 minutes. The consolidation playbook.',
@@ -189,6 +190,7 @@ export type Speaker = {
   website?: string;
   talkTitle?: string;
   talkAbstract?: string;
+  youtubeUrl?: string;
 };
 
 // `topic` carries a placeholder talk title for each speaker.
@@ -207,6 +209,7 @@ export const SPEAKERS: Speaker[] = [
     talkTitle: 'The Infrastructure That Removes the Agent Autonomy Ceiling',
     talkAbstract:
       'Agent autonomy is capped more by infrastructure and tooling than by model quality. This talk shows why, and how the right infrastructure lifts the cap.',
+    youtubeUrl: 'https://www.youtube.com/watch?v=Ff4QMaAC9Hg',
   },
   {
     id: 'kent-c-dodds',
@@ -221,6 +224,7 @@ export const SPEAKERS: Speaker[] = [
     talkTitle: 'The Last Software Engineer',
     talkAbstract:
       "I'm not here to tell you software engineering is ending soon. Nobody can put a reliable date on that, and pretending otherwise is a distraction. But we also have to admit something humbling: a year ago, most of us would not have predicted coding agents would be this good. That should make us less confident about predicting what they'll be able to do one year, or five years, from now.\n\nSo let's use \"The Last Software Engineer\" as a thought exercise. If AI keeps taking over more of the implementation work, what remains most human and valuable for us to do? In this talk, we'll take one step back from the hypothetical end and focus on the durable skill that has always separated great engineers from merely productive ones: judgment.\n\nThe future belongs not to people who only know how to build, but to people who know what should be built. We'll talk about product engineering, accountability, trade-offs, constraints, evaluation, and how to keep making software worth having in an AI era.",
+    youtubeUrl: 'https://www.youtube.com/watch?v=KVsjpG18cog',
   },
   {
     id: 'jack-herrington',
@@ -235,6 +239,7 @@ export const SPEAKERS: Speaker[] = [
     talkTitle: "TanStack's Revolutionary Code Mode AI",
     talkAbstract:
       "I'll cover how code mode is a revolutionary approach to agentic AI use. It leverages the best of your tools and your LLM. The results speak for themselves; drastically lower token use, and high accuracy results. If you are using LLMs for reporting, analytics, dashboards, etc. you'll want to watch this talk.",
+    youtubeUrl: 'https://www.youtube.com/watch?v=G0b_slL4LLc',
   },
   {
     id: 'kiet-ho',
@@ -249,6 +254,7 @@ export const SPEAKERS: Speaker[] = [
     talkTitle: 'How to Run 100 Agents in Parallel',
     talkAbstract:
       "At Superset, we work with many companies to help automate their software development lifecycle. Most agree that using more coding agents is good but results don't scale with usage. This results in a lot of waste: bad code gets written, huge PRs sit idle and never get merged. More money spent but productivity doesn't increase.\n\nWe propose a framework to identify where to correctly apply and tune your agent usage using the Lean Manufacturing methods.",
+    youtubeUrl: 'https://www.youtube.com/watch?v=BNVVD7e_hi4',
   },
   {
     id: 'john-lindquist',
@@ -263,6 +269,7 @@ export const SPEAKERS: Speaker[] = [
     talkTitle: "The Agentic Power User's Playbook",
     talkAbstract:
       "This presentation is the playbook I use daily to run swarms of agents in parallel: the keyboard shortcuts, layout patterns, supervision habits, and fast-model tricks that turn chaos into a control surface.\n\nWe'll go hands-on: spawning a wall of agents across tiled panes, routing prompts to the right swarm with fast models, switching contexts in milliseconds, recovering when an agent goes off the rails, and building the muscle memory that separates a one-agent-at-a-time user from a true power user.",
+    youtubeUrl: 'https://www.youtube.com/watch?v=BTeDhCY09sA',
   },
   {
     id: 'altan-stalker',
@@ -276,6 +283,7 @@ export const SPEAKERS: Speaker[] = [
     talkTitle: 'Your CI Was Already Broken. AI Just Made It Obvious.',
     talkAbstract:
       "AI-assisted development means more code, more pull requests, and more CI runs. That extra volume puts pressure on problems teams have tolerated for years: cache inputs that are too broad or too narrow, runners that are only partly used, memory-heavy tasks that destabilize jobs, and distributed execution that still leaves machines waiting. In this talk, we'll look at why adding more CI capacity is an expensive workaround, not a fix. We'll show how Nx Cloud's task sandboxing, resource utilization views, assignment rules, and continuous task assignment help teams make CI faster, more predictable, and more efficient as throughput increases.",
+    youtubeUrl: 'https://www.youtube.com/watch?v=xxlTVxs-1dM',
   },
   {
     id: 'james-henry',
@@ -287,6 +295,7 @@ export const SPEAKERS: Speaker[] = [
     image: '/images/conf/speakers/james-henry.avif',
     socialUrl: 'https://x.com/MrJamesHenry',
     talkTitle: 'Self-Healing CI',
+    youtubeUrl: 'https://www.youtube.com/watch?v=kozGpPxgYUo',
     // talkAbstract TBD — James to provide.
   },
   {
@@ -294,7 +303,8 @@ export const SPEAKERS: Speaker[] = [
     name: 'Nicolas Beaussart-Hatchuel',
     role: 'Senior Staff Engineer',
     org: 'PayFit',
-    topic: "Killing Micro-Frontends: How Radical Simplification 10x'd Our Frontend Velocity",
+    topic:
+      "Killing Micro-Frontends: How Radical Simplification 10x'd Our Frontend Velocity",
     bio: 'Tinkerer, builder, and Nx power user. Writes about migrating large React codebases to monorepos, runtime ownership, and the front-end at scale.',
     image: '/images/conf/speakers/nicolas-beaussart.avif',
     socialUrl: 'https://x.com/beaussan',
@@ -302,7 +312,8 @@ export const SPEAKERS: Speaker[] = [
     talkTitle:
       "Killing Micro-Frontends: How Radical Simplification 10x'd Our Frontend Velocity",
     talkAbstract:
-      "PayFit eliminated micro-frontends. Controversial? Absolutely. Effective? Our metrics speak: CI dropped from 45 to 5 minutes, deployments from days to 20 minutes, feature velocity up 75%.\n\nWe had four micro-frontend implementations across 15+ repos, each team solving problems differently. The complexity tax was killing us. This talk chronicles our consolidation: monorepo migration strategies, unified build systems with Nx, automated merge queues, and synthetic testing for confident continuous deployment.\n\nThe harder challenge? Our first monorepo attempt failed... teams abandoned it. Learn how we rebuilt trust, created social proof through wins, and made the platform so compelling that adoption became organic.\n\nA playbook for making bold architectural decisions and proving your convictions through execution.",
+      'PayFit eliminated micro-frontends. Controversial? Absolutely. Effective? Our metrics speak: CI dropped from 45 to 5 minutes, deployments from days to 20 minutes, feature velocity up 75%.\n\nWe had four micro-frontend implementations across 15+ repos, each team solving problems differently. The complexity tax was killing us. This talk chronicles our consolidation: monorepo migration strategies, unified build systems with Nx, automated merge queues, and synthetic testing for confident continuous deployment.\n\nThe harder challenge? Our first monorepo attempt failed... teams abandoned it. Learn how we rebuilt trust, created social proof through wins, and made the platform so compelling that adoption became organic.\n\nA playbook for making bold architectural decisions and proving your convictions through execution.',
+    youtubeUrl: 'https://www.youtube.com/watch?v=YaOd9KB4wAo',
   },
   {
     id: 'brandon-roberts',
@@ -310,13 +321,14 @@ export const SPEAKERS: Speaker[] = [
     role: 'Principal Engineer',
     org: "Dick's Sporting Goods",
     topic: 'The Intersection of Open Source Monorepos and AI w/AnalogJS',
-    bio: 'Creator of AnalogJS and an Angular GDE. Principal Engineer at Dick\'s Sporting Goods, building meta-frameworks and tooling for the Angular ecosystem.',
+    bio: "Creator of AnalogJS and an Angular GDE. Principal Engineer at Dick's Sporting Goods, building meta-frameworks and tooling for the Angular ecosystem.",
     image: '/images/conf/speakers/brandon-roberts.avif',
     socialUrl: 'https://x.com/brandontroberts',
     website: 'https://brandontroberts.dev',
     talkTitle: 'The Intersection of Open Source Monorepos and AI w/AnalogJS',
     talkAbstract:
       "Open-source monorepos aren't just for human devs anymore — AI agents are pulling tickets and submitting PRs right alongside us. AnalogJS already lives natively inside an Nx workspace, and has the surface to iterate on workflows that make AI less prone to slop. This session is all about using Nx as the ultimate automated verification sandbox: tight local feedback loops so agents can test their code, catch errors, and self-correct before they ever hit your review inbox.",
+    youtubeUrl: 'https://www.youtube.com/watch?v=MtAogs2Yhsc',
   },
   {
     id: 'rizel-scarlett',
@@ -331,6 +343,7 @@ export const SPEAKERS: Speaker[] = [
     talkTitle: 'The Missing Paper Trail for Agentic Engineering',
     talkAbstract:
       'For decades, software engineering has relied on a foundational necessity: a reliable paper trail. Commits, pull requests, CI logs, and reviews help teams understand what changed, why it changed, and whether it is safe to ship. We deliberately used this collaborative friction to maintain code quality.\n\nBut today, a new class of autonomous collaborators has disrupted the traditional engineering workflow. Coding agents can turn a single prompt into a full feature. The speed is exciting, but it creates a new problem: we can now produce code faster than we can understand it.\n\nFor an industry obsessed with artifacts, we often throw away the one record that explains agent-authored work: the session itself.\n\nJoin Rizèl to learn how agent sessions can become procedural memory for AI-native monorepos, helping humans and future agents search prior work, reconstruct decisions, preserve handoff context, and maintain trust as development accelerates.\n\nBecause in an AI-native world, the session is the story.',
+    youtubeUrl: 'https://www.youtube.com/watch?v=Rgmt_99VbkA',
   },
 ];
 
