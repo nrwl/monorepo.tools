@@ -5,6 +5,7 @@ import { ThemeProvider } from 'next-themes';
 import Script from 'next/script';
 import { DefaultSeo } from 'next-seo';
 import { sendPageViewEvent } from '@monorepo-tools/website/feature-analytics';
+import { ProductEventBanner } from '@monorepo-tools/website/ui-commons';
 import './styles.css';
 
 function CustomApp({ Component, pageProps }: AppProps) {
@@ -47,6 +48,7 @@ function CustomApp({ Component, pageProps }: AppProps) {
       />
       <ThemeProvider attribute="class">
         <main className="monorepo.tools bg-slate-50 text-gray-700 antialiased dark:bg-slate-800 dark:text-gray-300">
+          <ProductEventBanner />
           <Component {...pageProps} />
         </main>
       </ThemeProvider>
