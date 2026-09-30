@@ -6,6 +6,8 @@ import { XMarkIcon } from '@heroicons/react/24/outline';
 export const productEventBanner = {
   id: 'nx-product-event-2026-oct',
   url: 'https://nx.dev/events/2026-oct-product-event?utm_source=monorepotools&utm_medium=banner#register',
+  heroUrl:
+    'https://nx.dev/events/2026-oct-product-event?utm_source=monorepotools&utm_medium=banner&utm_content=hero#register',
   // End of Oct 22 2026, ET (UTC-4).
   activeUntil: '2026-10-23T04:00:00Z',
 };
@@ -48,9 +50,9 @@ export function ProductEventBanner() {
           href={productEventBanner.url}
           target="_blank"
           rel="noopener noreferrer"
-          className="group flex flex-1 flex-col items-start gap-1 text-sm sm:flex-row sm:flex-wrap sm:items-center sm:justify-center sm:gap-x-3 sm:text-center sm:gap-y-0.5 xl:min-w-0 xl:flex-nowrap xl:gap-x-2.5"
+          className="group flex flex-1 items-center gap-x-2 text-sm sm:flex-wrap sm:justify-center sm:gap-x-3 sm:text-center sm:gap-y-0.5 xl:min-w-0 xl:flex-nowrap xl:gap-x-2.5"
         >
-          <span className="font-semibold text-gray-900 xl:whitespace-nowrap dark:text-white">
+          <span className="whitespace-nowrap font-semibold text-gray-900 sm:whitespace-normal xl:whitespace-nowrap dark:text-white">
             The Future of CI
           </span>
           <span className="hidden text-gray-600 sm:order-last sm:block sm:basis-full xl:order-none xl:min-w-0 xl:basis-auto xl:truncate dark:text-gray-400">

@@ -1,3 +1,5 @@
+import { productEventBanner } from './product-event-banner';
+
 export function Hero() {
   return (
     <div className="w-full bg-slate-50 dark:bg-slate-800">
@@ -41,7 +43,9 @@ export function Hero() {
               </div>
             </div>
             <a
-              href="/conf"
+              href={productEventBanner.heroUrl}
+              target="_blank"
+              rel="noopener noreferrer"
               className="group mt-10 flex items-center justify-between gap-6 rounded-xl border border-amber-500/40 bg-gradient-to-r from-amber-500/10 via-amber-500/5 to-transparent p-5 transition-colors hover:border-amber-500 hover:from-amber-500/20"
             >
               <div className="flex items-center gap-4">
@@ -50,15 +54,16 @@ export function Hero() {
                 </span>
                 <div>
                   <div className="text-base font-bold text-gray-900 sm:text-lg dark:text-white">
-                    AI ♥ Monorepos &middot; Conf 2026
+                    The Future of CI
                   </div>
                   <div className="text-sm text-gray-600 dark:text-gray-400">
-                    Free half-day online conference
+                    Nx product event &middot; Oct 22 &middot;
+                    1:00&nbsp;p.m.&nbsp;ET
                   </div>
                 </div>
               </div>
               <span className="hidden whitespace-nowrap rounded-md border border-amber-500 px-3 py-2 text-sm font-medium text-amber-600 transition-colors group-hover:bg-amber-500 group-hover:text-white sm:inline-block dark:text-amber-400">
-                Watch the recording →
+                Save my spot →
               </span>
             </a>
           </div>
