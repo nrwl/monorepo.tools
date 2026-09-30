@@ -51,7 +51,7 @@ export function ProductEventBanner() {
           className="group flex flex-1 flex-col items-start gap-1 text-sm sm:flex-row sm:flex-wrap sm:items-center sm:justify-center sm:gap-x-3 sm:text-center sm:gap-y-0.5 xl:min-w-0 xl:flex-nowrap xl:gap-x-2.5"
         >
           <span className="font-semibold text-gray-900 xl:whitespace-nowrap dark:text-white">
-            Nx and Nx Cloud are about to get a lot faster
+            The Future of CI
           </span>
           <span className="hidden text-gray-600 sm:order-last sm:block sm:basis-full xl:order-none xl:min-w-0 xl:basis-auto xl:truncate dark:text-gray-400">
             Faster caching, smarter distribution, up to 50% less CI compute. See
