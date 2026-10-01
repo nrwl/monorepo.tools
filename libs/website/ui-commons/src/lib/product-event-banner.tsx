@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { XMarkIcon } from '@heroicons/react/24/outline';
 
-// Time-boxed promo bar for the Nx product event (Oct 22, 1:00 p.m. ET).
+// Time-boxed promo bar for the Nx product event (Oct 22, 2026).
 // Checked at runtime so the static build stops showing it after `activeUntil`.
 export const productEventBanner = {
   id: 'nx-product-event-2026-oct',
@@ -45,19 +45,19 @@ export function ProductEventBanner() {
 
   return (
     <div className="relative border-b border-gray-200 bg-white dark:border-gray-700 dark:bg-slate-900">
-      <div className="mx-auto flex max-w-7xl items-center gap-3 py-2.5 pl-4 pr-12 sm:px-12 xl:max-w-none xl:pl-4">
+      <div className="mx-auto flex max-w-7xl items-center gap-3 py-2.5 pl-4 pr-12 sm:px-12 lg:max-w-none lg:pl-4">
         <a
           href={productEventBanner.url}
           target="_blank"
           rel="noopener noreferrer"
-          className="group flex flex-1 items-center gap-x-2 text-sm sm:flex-wrap sm:justify-center sm:gap-x-3 sm:text-center sm:gap-y-0.5 xl:min-w-0 xl:flex-nowrap xl:gap-x-2.5"
+          className="group flex flex-1 items-center gap-x-2 text-sm sm:justify-center sm:gap-x-3 md:flex-wrap md:gap-y-0.5 md:text-center lg:min-w-0 lg:flex-nowrap lg:gap-x-2.5"
         >
-          <span className="whitespace-nowrap font-semibold text-gray-900 sm:whitespace-normal xl:whitespace-nowrap dark:text-white">
+          <span className="whitespace-nowrap font-semibold text-gray-900 dark:text-white">
             The Future of CI
           </span>
-          <span className="hidden text-gray-600 sm:order-last sm:block sm:basis-full xl:order-none xl:min-w-0 xl:basis-auto xl:truncate dark:text-gray-400">
-            Faster caching, smarter distribution, up to 50% less CI compute. See
-            it all at our live product event, Oct 22 · 1:00 p.m. ET.
+          <span className="hidden text-gray-600 md:order-last md:block md:basis-full lg:order-none lg:min-w-0 lg:basis-auto lg:truncate dark:text-gray-400">
+            Faster caching and distribution, using half the compute. Join our
+            live product event, Oct 22.
           </span>
           <span className="whitespace-nowrap font-semibold text-blue-500 underline underline-offset-2 group-hover:text-blue-700 dark:text-sky-500 dark:group-hover:text-sky-300">
             Save my spot <span aria-hidden="true">&rarr;</span>

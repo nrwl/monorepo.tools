@@ -46,7 +46,7 @@ export function Hero() {
               href={productEventBanner.heroUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="group mt-10 flex items-center justify-between gap-6 rounded-xl border border-amber-500/40 bg-gradient-to-r from-amber-500/10 via-amber-500/5 to-transparent p-5 transition-colors hover:border-amber-500 hover:from-amber-500/20"
+              className="group mt-10 flex flex-col gap-4 rounded-xl border border-amber-500/40 bg-gradient-to-r from-amber-500/10 via-amber-500/5 to-transparent p-5 transition-colors hover:border-amber-500 hover:from-amber-500/20 sm:flex-row sm:items-center sm:justify-between sm:gap-6"
             >
               <div className="flex items-center gap-4">
                 <span className="rounded-md bg-amber-500 px-2 py-1 text-xs font-bold uppercase tracking-wider text-slate-900">
@@ -57,12 +57,11 @@ export function Hero() {
                     The Future of CI
                   </div>
                   <div className="text-sm text-gray-600 dark:text-gray-400">
-                    Nx product event &middot; Oct 22 &middot;
-                    1:00&nbsp;p.m.&nbsp;ET
+                    Nx product event &middot; Oct 22
                   </div>
                 </div>
               </div>
-              <span className="hidden whitespace-nowrap rounded-md border border-amber-500 px-3 py-2 text-sm font-medium text-amber-600 transition-colors group-hover:bg-amber-500 group-hover:text-white sm:inline-block dark:text-amber-400">
+              <span className="whitespace-nowrap rounded-md border border-amber-500 px-3 py-2 text-center text-sm font-medium text-amber-600 transition-colors group-hover:bg-amber-500 group-hover:text-white dark:text-amber-400">
                 Save my spot →
               </span>
             </a>
