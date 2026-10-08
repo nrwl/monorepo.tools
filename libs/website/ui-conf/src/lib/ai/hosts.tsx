@@ -67,7 +67,9 @@ export function Hosts() {
             <img
               src="/images/conf/nx-logo.svg"
               alt="Nx"
-              style={{ height: 120, width: 'auto' }}
+              width={582}
+              height={314}
+              style={{ height: 56, width: 'auto' }}
             />
           </a>
           <div
